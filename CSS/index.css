@@ -1,0 +1,141 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 100vh;
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: baseline;  */
+}
+
+a{
+    color: #D9822B;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+     display:inline-block;
+    margin-left: 5px;
+}
+
+.projects a:hover{
+    text-decoration: underline; 
+    margin-left: 0;  
+}
+
+ol{
+    padding-left: 20px;
+}
+
+ol > li {
+    margin-top:10px;
+}
+
+.skills-parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.projects{
+    width: 65%;
+}
+
+.skills-child {
+    background-color: #234361;
+    color: white;
+    padding: 10px;
+    border-radius: 2px;
+    margin-right:10px;
+    margin-bottom: 10px;
+}
+
+.presentation{
+    padding-top: 6%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 30%;
+}
+
+.education, .exp, .skills, .projects, .multimedia, .curiosity{
+    padding-top: 6%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.aboutMe{
+    padding-top: 6%;
+    padding-left: 5%;
+    padding-right: 5%;
+    width:50%;
+    background: #425A70;
+    color: white;
+
+}
+
+.presentation h1, .aboutMe h1, main h1 {
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+.presentation h1, main h1 {
+    color: #3E78AD;
+}
+
+.presentation h2 {
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.socialLinks{
+    margin-top: 40px;
+    color: #14B5D0;
+}
+
+.link{
+    margin-top:10px;
+}
+
+.text{
+    line-height: 25px;
+    width: 100%; 
+}
+
+footer{
+    height: 200px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+@media screen and (max-width: 900px) {
+
+    header{
+        height: auto;
+    }
+    .presentation, .aboutMe{
+        width: 90%;
+    }
+    .presentation, .aboutMe{
+        padding-bottom: 70px;
+    }
+
+    h1{
+        font-size: 30px !important;
+    }
+
+    p{
+        font-size: 14px !important;
+    }
+
+    .skills-parent, .projects{
+        width: 90%;
+    }
+}
