@@ -139,15 +139,22 @@ nav a:hover{
     }
 
     .aboutMe {
-        width: 80%;
+        width: 70%;
     }
 
     .about a {
         width: 250px;
     }
 
+    .socialLinks {
+        width: 70%;
+        background-color: rgba(0,0,0,.4);
+
+    }
+
     .picture{
     background-position: right;
+
 }
 
 
