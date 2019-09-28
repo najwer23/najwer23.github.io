@@ -4,3 +4,124 @@ body{
     padding: 0;
 }
 
+header { 
+    height: 100vh;
+}
+
+nav {
+    text-shadow: 1px 1px grey;
+    display: flex;
+    height: 100px;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.aboutMe {
+    width: 640px;
+    background-color: rgba(0,0,0,.4);
+    padding: 30px;
+    box-shadow: 5px 5px 2px black;
+    
+    
+}
+
+.socialLinks{
+    width: 440px;
+}
+
+.about a { 
+    width: 320px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid white;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 1s;
+}
+
+.about a:hover { 
+    border-style: dotted;
+    
+}
+
+
+nav a {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 1s;
+}
+
+nav a:hover{
+    padding-left: 9px;
+    padding-right: 9px;
+    border: 1px solid white;
+}
+
+.picture{
+    background: url('../IMG/niebieskie_kartki.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.animated {
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+
+@media (max-width: 1200px) {
+    nav .childNav:nth-child(2) {
+        display: none;
+    }
+
+    header {
+        height: 1050px;
+    }
+
+    .about{
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .aboutMe{
+        padding: 20px;
+    }
+
+    .socialLinks {
+        margin-top: 70px;
+        text-align: center;
+        width: 100%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+}
