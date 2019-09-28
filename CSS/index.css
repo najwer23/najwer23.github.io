@@ -20,6 +20,11 @@ nav {
     box-shadow: 0px 2px black;
 }
 
+.childNav {
+    width: 200px;
+    text-align: center;
+}
+
 .about{
     margin-top: 100px;
     display: flex;
@@ -50,12 +55,10 @@ nav {
     display: inline-block;
     text-decoration: none;
     color: inherit;
-    transition: transform 1s;
 }
 
 .about a:hover { 
     border-style: dotted;
-    
 }
 
 
@@ -65,7 +68,6 @@ nav a {
     display: inline-block;
     text-decoration: none;
     color: inherit;
-    transition: transform 1s;
 }
 
 nav a:hover{
@@ -82,8 +84,8 @@ nav a:hover{
 }
 
 .animated {
-    -webkit-animation-duration: 500ms;
-    animation-duration: 500ms;
+    -webkit-animation-duration: 800ms;
+    animation-duration: 800ms;
 }
 
 @keyframes fadeIn {
