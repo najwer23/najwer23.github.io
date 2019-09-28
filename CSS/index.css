@@ -139,15 +139,19 @@ nav a:hover{
     }
 
     .aboutMe {
-        width: 70%;
+        width: calc(90% - 24px);
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
     .about a {
-        width: 250px;
+        width: 230px;
     }
 
     .socialLinks {
-        width: 70%;
+        width: 90%;
+        padding-left:0;
+        padding-right:0;
         background-color: rgba(0,0,0,.4);
 
     }
