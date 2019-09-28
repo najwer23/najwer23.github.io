@@ -103,7 +103,7 @@ nav a:hover{
     }
 
     header {
-        height: 1050px;
+        height: 1100px;
     }
 
     .about{
@@ -112,7 +112,7 @@ nav a:hover{
     }
 
     .aboutMe{
-        padding: 20px;
+        width: 80%;
     }
 
     .socialLinks {
@@ -123,5 +123,55 @@ nav a:hover{
         margin-right: auto;
     }
 
+
+}
+
+@media (max-width: 600px) {
+
+    nav .childNav {
+        width: 150px;
+        font-size: 15px;
+    }
+
+    nav .childNav {
+        text-align: center
+    }
+
+    header {
+        height: 1125px;
+    }
+
+    .aboutMe {
+        width: 80%;
+    }
+
+    .about a {
+        width: 250px;
+    }
+
+}
+
+@media (max-width: 510px) {
+  
+    header {
+        height: 1200px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+  
+    header {
+        height: 1350px;
+    }
+
+}
+
+@media (min-width: 2000px) {
+  
+    header {
+        height: 800px;
+    }
 
 }
