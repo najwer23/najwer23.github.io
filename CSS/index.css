@@ -16,6 +16,8 @@ nav {
     color: white;
     justify-content: space-around;
     align-items: center;
+    background-color: rgba(0,0,0,.4);
+    box-shadow: 0px 2px black;
 }
 
 .about{
@@ -23,6 +25,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     color: white;
+    align-items: baseline;
 }
 
 .aboutMe {
@@ -30,19 +33,20 @@ nav {
     background-color: rgba(0,0,0,.4);
     padding: 30px;
     box-shadow: 5px 5px 2px black;
-    
-    
 }
 
 .socialLinks{
-    width: 440px;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(0,0,0,.7);
+     box-shadow: 5px 5px 2px black;
 }
 
 .about a { 
     width: 320px;
     margin-bottom: 10px;
     padding: 15px;
-    border: 1px solid white;
+    border: 2px solid white;
     display: inline-block;
     text-decoration: none;
     color: inherit;
@@ -114,11 +118,8 @@ nav a:hover{
 
     .socialLinks {
         margin-top: 70px;
-        text-align: center;
-        width: 100%; 
-        margin-left: auto;
-        margin-right: auto;
-        padding-bottom: 50px;
+        width: 80%;
+        margin-bottom: 50px;
     }
 
 
