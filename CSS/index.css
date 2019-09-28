@@ -146,5 +146,10 @@ nav a:hover{
         width: 250px;
     }
 
+    .picture{
+    background-position: right;
+}
+
+
 }
 
