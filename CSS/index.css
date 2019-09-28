@@ -1,141 +1,127 @@
 body{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Muli', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header {
+header { 
     height: 100vh;
-    display: flex; 
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* align-items: baseline;  */
 }
 
-a{
-    color: #D9822B;
-    text-decoration: none;
-}
-
-a:hover{
-    text-decoration: underline;
-     display:inline-block;
-    margin-left: 5px;
-}
-
-.projects a:hover{
-    text-decoration: underline; 
-    margin-left: 0;  
-}
-
-ol{
-    padding-left: 20px;
-}
-
-ol > li {
-    margin-top:10px;
-}
-
-.skills-parent {
+nav {
+    text-shadow: 1px 1px grey;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 70%;
-}
-
-.projects{
-    width: 65%;
-}
-
-.skills-child {
-    background-color: #234361;
+    height: 100px;
     color: white;
-    padding: 10px;
-    border-radius: 2px;
-    margin-right:10px;
-    margin-bottom: 10px;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.presentation{
-    padding-top: 6%;
-    padding-left: 5%;
-    padding-right: 5%;
-    width: 30%;
-}
-
-.education, .exp, .skills, .projects, .multimedia, .curiosity{
-    padding-top: 6%;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.aboutMe{
-    padding-top: 6%;
-    padding-left: 5%;
-    padding-right: 5%;
-    width:50%;
-    background: #425A70;
+.about{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
     color: white;
-
 }
 
-.presentation h1, .aboutMe h1, main h1 {
-    font-size: 50px;
-    letter-spacing: 2px;
-}
-
-.presentation h1, main h1 {
-    color: #3E78AD;
-}
-
-.presentation h2 {
-    font-size: 32px;
-    letter-spacing: 1px;
+.aboutMe {
+    width: 640px;
+    background-color: rgba(0,0,0,.4);
+    padding: 30px;
+    box-shadow: 5px 5px 2px black;
+    
+    
 }
 
 .socialLinks{
-    margin-top: 40px;
-    color: #14B5D0;
+    width: 440px;
 }
 
-.link{
-    margin-top:10px;
+.about a { 
+    width: 320px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid white;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 1s;
 }
 
-.text{
-    line-height: 25px;
-    width: 100%; 
+.about a:hover { 
+    border-style: dotted;
+    
 }
 
-footer{
-    height: 200px;
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
+
+nav a {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 1s;
 }
 
-@media screen and (max-width: 900px) {
+nav a:hover{
+    padding-left: 9px;
+    padding-right: 9px;
+    border: 1px solid white;
+}
 
-    header{
-        height: auto;
-    }
-    .presentation, .aboutMe{
-        width: 90%;
-    }
-    .presentation, .aboutMe{
-        padding-bottom: 70px;
+.picture{
+    background: url('../IMG/niebieskie_kartki.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.animated {
+    -webkit-animation-duration: 500ms;
+    animation-duration: 500ms;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
 
-    h1{
-        font-size: 30px !important;
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+
+@media (max-width: 1200px) {
+    nav .childNav:nth-child(2) {
+        display: none;
     }
 
-    p{
-        font-size: 14px !important;
+    header {
+        height: 1050px;
     }
 
-    .skills-parent, .projects{
-        width: 90%;
+    .about{
+        flex-wrap: wrap;
+        margin-top: 40px;
     }
+
+    .aboutMe{
+        padding: 20px;
+    }
+
+    .socialLinks {
+        margin-top: 70px;
+        text-align: center;
+        width: 100%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }
