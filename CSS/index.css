@@ -104,6 +104,73 @@ nav a:hover{
 }
 
 
+
+/* projects */
+
+.projects {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    background: #080E33;
+    /* background: #0C154A; */
+    /* background: #111E6C; */
+    /* background: #192DA1; */
+    /* background: #2039CC; */
+    /* #E6B40B */
+    
+    /* background: #194A8D; */
+    /* background: #011C40; */
+    /* background: #032859; */
+    
+    color: white;
+}
+
+.projects article{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.projectsProlog {
+    display:flex;
+}
+
+.projectsProlog h3 {
+    max-width: 60%;
+    margin-right: 50px;
+}
+
+.projectsProlog img {
+    width: 300px;
+    height: auto;
+}
+
+.projectRectangleParent{
+    margin-top:70px;
+    display: flex;
+}
+
+.projectRectangleChild{
+    width: 300px;
+    background: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1200px) {
     nav .childNav:nth-child(2) {
         display: none;
@@ -121,7 +188,7 @@ nav a:hover{
     .socialLinks {
         margin-top: 70px;
         width: 80%;
-        margin-bottom: 50px;
+        margin-bottom: 70px;
     }
 
 
@@ -156,10 +223,23 @@ nav a:hover{
 
     }
 
-    .picture{
-    background-position: right;
+    .projectsProlog h3 {
+        max-width: 90%;
+    }
 
-}
+    .picture{
+        background-position: left;
+    }
+
+    .projects article{
+        margin-left: 5%;
+        width: 90%;
+    }
+
+    .projectsProlog img {
+        display:none;
+    }
+
 
 
 }
