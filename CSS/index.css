@@ -130,16 +130,24 @@ nav a:hover{
     margin-right: 10%;
 }
 
-.projectsProlog {
+.projectProlog {
     display:flex;
+    width: 100%;
+    align-items: center;
 }
 
-.projectsProlog h3 {
-    width: 50%;
-    margin-right: 50px;
+.projectPrologChild:nth-child(1) {
+    width: 49%;
 }
 
-.projectsProlog img {
+.projectPrologChild:nth-child(2) {
+    width: 49%;
+    text-align: center;
+
+}
+
+.projectPrologChild img {
+    
     width: 300px;
     height: auto;
 }
@@ -147,14 +155,14 @@ nav a:hover{
 .projectRectangleParent{
     margin-top:80px;
     display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    flex-flow: column wrap;
+    height: 600px;
 }
 
 .projectRectangleChild{
-    width: 480px;     
+    height: auto;   
+    width: 45%;  
     padding: 10px;
-    margin-right: 30px;
     margin-bottom: 30px;
     border: solid 1px #E6B40B; 
 }
@@ -229,12 +237,30 @@ nav a:hover{
         margin-bottom: 70px;
     }
 
+
     .projectRectangleChild{
-        width: 100%;
-        margin-right: 0;
-        
+        width: 45%;
+        /* margin-right: 5%; */
     }
 
+}
+
+@media (max-width: 800px) {
+    .projectRectangleParent{
+        height: auto;
+    }
+
+    .projectRectangleChild {
+        width:95%;
+    }
+
+    .projectPrologChild:nth-child(2) {
+        display:none;
+    }
+
+    .projectPrologChild:nth-child(1) {
+        width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
@@ -279,17 +305,6 @@ nav a:hover{
         margin-left: 5%;
         width: 90%;
     }
-
-    .projectsProlog img {
-        display:none;
-    }
-
-    .projectRectangleChild{
-        width: 100%;
-        margin-right:0;
-    }
-
-
 
 }
 
