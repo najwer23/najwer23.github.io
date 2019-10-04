@@ -77,30 +77,10 @@ nav a:hover{
 }
 
 .picture{
-    background: url('../IMG/niebieskie_kartki.jpg');
+    background-image: url('../IMG/niebieskie_kartki.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
-}
-
-.animated {
-    -webkit-animation-duration: 800ms;
-    animation-duration: 800ms;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
 }
 
 
@@ -156,7 +136,7 @@ nav a:hover{
     margin-top:80px;
     display: flex;
     flex-flow: column wrap;
-    height: 600px;
+    height: 2450px;
 }
 
 .projectRectangleChild{
