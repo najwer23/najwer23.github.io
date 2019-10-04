@@ -141,7 +141,7 @@ nav a:hover{
 
 .projectRectangleChild{
     height: auto;   
-    width: 45%;  
+    width: 550px;  
     padding: 10px;
     margin-bottom: 30px;
     border: solid 1px #E6B40B; 
@@ -197,7 +197,15 @@ nav a:hover{
 
 
 
-@media (max-width: 1320px) {
+@media (max-width: 1460px) {
+    .projectRectangleParent{
+        height: 2850px;
+    }
+
+    .projectRectangleChild{
+        width: 400px;
+    }
+
     nav .childNav:nth-child(2) {
         display: none;
     }
@@ -245,6 +253,10 @@ nav a:hover{
 
 @media (max-width: 600px) {
 
+    .projectRectangleParent{
+        height: auto;
+    }
+    
     nav .childNav {
         width: 150px;
         font-size: 15px;
