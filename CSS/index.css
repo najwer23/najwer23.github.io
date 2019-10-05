@@ -155,7 +155,6 @@ nav a:hover{
 }
 
 .projectPrologChild img {
-    
     width: 300px;
     height: auto;
 }
@@ -227,7 +226,7 @@ nav a:hover{
 
 @media (max-width: 1460px) {
     .projectRectangleParent{
-        height: 2850px;
+        height: 2700px;
     }
 
     .projectRectangleChild{
@@ -259,6 +258,12 @@ nav a:hover{
         /* margin-right: 5%; */
     }
 
+}
+
+@media (max-width: 900px) {
+    .projectRectangleParent{
+        height: 2850px;
+    }
 }
 
 @media (max-width: 800px) {
