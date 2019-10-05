@@ -7,6 +7,7 @@ body{
 header { 
     min-height: 100vh;
     height: auto;
+    width: 100%;
 }
 
 nav {
@@ -26,11 +27,12 @@ nav {
 }
 
 .about{
-    margin-top: 100px;
     display: flex;
     justify-content: space-evenly;
     color: white;
-    align-items: baseline;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100vh - 100px);
 }
 
 .aboutMe {
@@ -44,7 +46,7 @@ nav {
     text-align: center;
     padding: 30px;
     background-color: rgba(0,0,0,.7);
-     box-shadow: 5px 5px 2px black;
+    box-shadow: 5px 5px 2px black;
 }
 
 .about a { 
@@ -216,12 +218,12 @@ nav a:hover{
     }
 
     .aboutMe{
-        width: 80%;
+        width: 60%;
     }
 
     .socialLinks {
         margin-top: 70px;
-        width: 80%;
+        width: 500px;
         margin-bottom: 70px;
     }
 
@@ -298,5 +300,11 @@ nav a:hover{
         width: 90%;
     }
 
+}
+
+@media (max-height: 680px) {
+    .about{
+        min-height: 600px;
+    }
 }
 
