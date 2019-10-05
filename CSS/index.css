@@ -50,6 +50,7 @@ nav {
 }
 
 .aboutMe {
+    font-size: 18px;
     width: 640px;
     background-color: rgba(0,0,0,.4);
     padding: 30px;
@@ -58,7 +59,7 @@ nav {
 
 .socialLinks{
     text-align: center;
-    padding: 30px;
+    padding: 20px 30px 40px 30px;
     background-color: rgba(0,0,0,.7);
     box-shadow: 5px 5px 2px black;
 }
