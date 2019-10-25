@@ -310,10 +310,11 @@ nav a:hover{
     nav .childNav {
         width: 150px;
         font-size: 15px;
+        text-align: center
     }
 
-    nav .childNav {
-        text-align: center
+    nav .childNav:nth-child(3) {
+       width: 100px;
     }
 
     .aboutMe {
