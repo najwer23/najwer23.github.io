@@ -317,9 +317,9 @@ nav a:hover{
     }
 
     .aboutMe {
-        width: calc(90% - 24px);
-        padding-left: 12px;
-        padding-right: 12px;
+        width: calc(90% - 60px);
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .about a {
