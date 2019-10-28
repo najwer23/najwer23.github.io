@@ -49,17 +49,6 @@ nav {
     min-height: calc(100vh - 100px);
 }
 
-/* zapomniało im się xD */
-/* Thanks for reporting the issue! It indeed looks like that we added support for SpaceEvenly for CSS Grid but forgot to also add support for it in Flexbox.  */
-@supports (-ms-flow-from: thingy) { /* Edge only */
-
-    .about {
-        justify-content: space-around;
-        /* you can also add some other adjustments to size, margins etc to get the same positioning */
-    }
-
-}
-
 .aboutMe {
     font-size: 18px;
     width: 640px;
