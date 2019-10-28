@@ -1,0 +1,45 @@
+:root {
+	--marginTopFooter: 0px; 
+	--heightFooter: 125px;
+	--paddingTopFooter: 50px;
+	--paddingBottomFooter: 0px;
+
+	--link: white;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	min-height: 100%;
+	position: relative;
+
+}
+
+.pushFooter {
+	padding-bottom: calc(var(--marginTopFooter) + var(--heightFooter) + var(--paddingTopFooter) + var(--paddingBottomFooter));
+}
+
+footer {
+	padding-top: var(--paddingTopFooter);
+	padding-bottom: var(--paddingBottomFooter);
+	color: white;
+	bottom: 0;
+	position: absolute;
+	height: var(--heightFooter);
+	width: 100%;
+	background-color: #bb7f0e;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--link);
+  padding: 10px;
+  background: rgba(0,0,0,0.09);
+}
+
+footer a:hover {
+  border-bottom: solid 2px;
+  transition: all 0.1s linear;
+}

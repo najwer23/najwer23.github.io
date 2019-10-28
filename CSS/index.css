@@ -148,24 +148,20 @@ nav a:hover{
 }
 
 .projectProlog {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: center;
-   min-width: 40%;
-   max-width: 1200px;
-   margin-left:auto;
-   margin-right:auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-.projectPrologChild:nth-child(1) {
-    width: calc(90% - 400px);
-}
-
-.projectPrologChild:nth-child(2) {
-    width: 400px;
-    text-align: center;
-
+.projectPrologChild {
+    width: 600px;
+    margin-left:auto;
+    margin-right: auto;
+    text-align: justify;
 }
 
 .projectPrologChild img {
@@ -174,21 +170,19 @@ nav a:hover{
 }
 
 .projectRectangleParent{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top:80px;
-    display: flex;
-    flex-flow: column wrap;
-    height: 2450px;
-    align-content: center;
+    column-count: 3;
 }
 
-.projectRectangleChild{
-    height: auto;   
-    width: 550px;  
-    padding: 10px;
-    margin-bottom: 30px;
+.projectRectangleChild{ 
+    display: inline-block;
+    margin: 0 0 1em;
+    width: calc(100% - 20px);
+    padding:10px;
     border: solid 1px #E6B40B;
-    margin-left: 13px; 
-    margin-right: 13px; 
 }
 
 .bitbucket{
@@ -230,28 +224,10 @@ nav a:hover{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 1460px) {
-    .projectRectangleParent{
-        height: 2750px;
-    }
-
-    .projectRectangleChild{
-        width: 400px;
-    }
-
-    nav .childNav:nth-child(2) {
-        display: none;
+    
+    .projectPrologChild:nth-child(1){
+        width:100%;
     }
 
     .about{
@@ -269,42 +245,22 @@ nav a:hover{
         margin-bottom: 70px;
     }
 
-
-    .projectRectangleChild{
-        width: 45%;
-        /* margin-right: 5%; */
-    }
-
-}
-
-@media (max-width: 900px) {
     .projectRectangleParent{
-        height: 2850px;
+        margin-top: 50px;
+        column-count: 2;
+    }
+
+    .projects{
+        padding-bottom: 50px;
     }
 }
 
-@media (max-width: 800px) {
-    .projectRectangleParent{
-        height: auto;
-    }
-
-    .projectRectangleChild {
-        width:95%;
-    }
-
-    .projectPrologChild:nth-child(2) {
-        display:none;
-    }
-
-    .projectPrologChild:nth-child(1) {
-        width: 100%;
-    }
-}
 
 @media (max-width: 600px) {
 
     .projectRectangleParent{
-        height: auto;
+        column-count: 1;
+        width: 100%;
     }
     
     nav .childNav {
