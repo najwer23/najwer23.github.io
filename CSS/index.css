@@ -15,17 +15,13 @@
 body{
     font-family: 'Muli', sans-serif;
     margin: 0;
-    padding: 0;
 }
 
 header { 
-    min-height: 100vh;
-    height: auto;
     width: 100%;
 }
 
 nav {
-    /* text-shadow: 1px 1px grey; */
     display: flex;
     height: 100px;
     color: white;
@@ -47,6 +43,19 @@ nav {
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 100px);
+}
+
+@media all and (-ms-high-contrast:none)
+{
+    .about{
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        min-height: calc(100vh - 100px);
+        height: 100px
+    }
 }
 
 .aboutMe {
@@ -137,10 +146,6 @@ nav a:hover{
 }
 
 .projectProlog {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     width: 90%;
     margin-left:auto;
     margin-right:auto;
