@@ -264,7 +264,7 @@ nav a:hover{
 
     .projectRectangleParent{
         column-count: 1;
-        width: 100%;
+        width: 90%;
     }
     
     nav .childNav {
