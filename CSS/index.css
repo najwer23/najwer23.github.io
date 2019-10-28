@@ -142,9 +142,9 @@ nav a:hover{
 }
 
 .projects article{
-  width: 90%;
-  margin-left:auto;
-  margin-right:auto;
+    width: 90%;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .projectProlog {
@@ -161,7 +161,7 @@ nav a:hover{
     width: 600px;
     margin-left:auto;
     margin-right: auto;
-    text-align: justify;
+    text-align: left;
 }
 
 .projectPrologChild img {
@@ -228,6 +228,10 @@ nav a:hover{
     
     .projectPrologChild:nth-child(1){
         width:100%;
+    }
+
+    nav .childNav:nth-child(2) {
+        display: none;
     }
 
     .about{
