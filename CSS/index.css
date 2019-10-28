@@ -45,19 +45,6 @@ nav {
     min-height: calc(100vh - 100px);
 }
 
-@media all and (-ms-high-contrast:none)
-{
-    .about{
-        color: white;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        min-height: calc(100vh - 100px);
-        height: 100px
-    }
-}
-
 .aboutMe {
     font-size: 18px;
     width: 640px;
