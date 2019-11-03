@@ -102,115 +102,7 @@ nav a:hover{
     z-index: -1;
 }
 
-
-
-/* projects */
-
-.projects {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background: #080E33;
-    /* background: #0C154A; */
-    /* background: #111E6C; */
-    /* background: #192DA1; */
-    /* background: #2039CC; */
-    /* #E6B40B */
-    
-    /* background: #194A8D; */
-    /* background: #011C40; */
-    /* background: #032859; */
-    color: white;
-}
-
-.projects h2 {
-    text-align: center;
-}
-
-.projects article{
-    width: 90%;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.projectProlog {
-    width: 90%;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.projectPrologChild {
-    width: 600px;
-    margin-left:auto;
-    margin-right: auto;
-    text-align: left;
-}
-
-.projectPrologChild img {
-    width: 300px;
-    height: auto;
-}
-
-.projectRectangleParent{
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:80px;
-    column-count: 3;
-}
-
-.projectRectangleChild{ 
-    display: inline-block;
-    margin: 0 0 1em;
-    width: calc(100% - 20px);
-    padding:10px;
-    border: solid 1px #E6B40B;
-}
-
-.bitbucket{
-    background: rgb(13, 78, 163);
-}
-
-.yt{
-    background: #c4302b;
-}
-
-.www {
-    background: #168039;
-}
-
-.projectLink{
-    text-align: center;
-    line-height: 50px;
-    display: block;
-    width: 100%;
-    height: 50px;
-    color: white;
-    text-decoration:none;
-    margin-top:10px;
-}
-
-.projectLink:hover{
-    background: #E6B40B;
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -ms-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s;
-    transition: all .2s ease-in-out;
-}
-
-
-
-
-
-
-
 @media (max-width: 1460px) {
-    
-    .projectPrologChild:nth-child(1){
-        width:100%;
-    }
-
     nav .childNav:nth-child(2) {
         display: none;
     }
@@ -229,24 +121,10 @@ nav a:hover{
         width: 500px;
         margin-bottom: 70px;
     }
-
-    .projectRectangleParent{
-        margin-top: 50px;
-        column-count: 2;
-    }
-
-    .projects{
-        padding-bottom: 50px;
-    }
 }
 
 
 @media (max-width: 600px) {
-
-    .projectRectangleParent{
-        column-count: 1;
-        width: 90%;
-    }
     
     nav .childNav {
         width: 150px;
@@ -276,18 +154,8 @@ nav a:hover{
 
     }
 
-    .projectsProlog h3 {
-        width: 100%;
-        margin: 0;
-    }
-
     .picture{
         background-position: left;
-    }
-
-    .projects article{
-        margin-left: 5%;
-        width: 90%;
     }
 
 }
