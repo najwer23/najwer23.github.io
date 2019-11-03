@@ -29,17 +29,17 @@ footer {
 	position: absolute;
 	height: var(--heightFooter);
 	width: 100%;
-	background-color: #FEB41C;
+	background-color: #51575E;
 }
 
 footer a {
-  text-decoration: none;
-  color: var(--link);
-  padding: 10px;
-  background: #A653A0;
+	text-decoration: none;
+	color: var(--link);
+	padding: 10px;
+	border: solid 1px;
 }
 
 footer a:hover {
-  border-bottom: solid 2px;
-  transition: all 0.1s linear;
+	border: dotted 1px;
+	transition: all 0.1s linear;
 }

@@ -19,6 +19,7 @@ body{
 
 header { 
     width: 100%;
+    background: #35495E;
 }
 
 nav {
@@ -27,8 +28,6 @@ nav {
     color: white;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(0,0,0,.4);
-    box-shadow: 0 6px 6px rgba(0,0,0,0.9);
 }
 
 .childNav {
@@ -48,11 +47,13 @@ nav {
 .aboutMe {
     font-size: 18px;
     width: 640px;
-    background-color: rgba(0,0,0,.4);
     padding: 40px;
-    box-shadow: 6px 6px 6px rgba(0,0,0,0.9);
     margin-left: 30px;
     margin-right: 30px;
+    border: 1px solid white;
+    min-height: 420px; 
+    background-color: rgba(0,0,0,.4);
+ 
 }
 
 .socialLinks{
@@ -60,8 +61,10 @@ nav {
     margin-right: 30px;
     text-align: center;
     padding: 30px 40px 50px 40px;
-    background-color: rgba(0,0,0,.7);
-    box-shadow: 6px 6px 6px rgba(0,0,0,0.9);
+    border: 1px solid white;
+    min-height: 420px;  
+    background-color: rgba(0,0,0,.4);
+
 }
 
 .about a { 
@@ -72,8 +75,6 @@ nav {
     display: inline-block;
     text-decoration: none;
     color: inherit;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.9);
-
 }
 
 .about a:hover { 
@@ -82,25 +83,28 @@ nav {
 
 
 nav a {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left:9px;
+    padding-right: 9px;
     display: inline-block;
     text-decoration: none;
     color: inherit;
+    border: 1px solid white;
 }
 
 nav a:hover{
     padding-left: 9px;
     padding-right: 9px;
-    border: 1px solid white;
+    border: 1px dotted white;
 }
 
+ /*
 .picture{
     background-image: url('../IMG/komp_niebieskie_kartki.jpg');
     background-size: cover;
     background-position: center;
-    z-index: -1;
+    z-index: -1; 
 }
+*/
 
 @media (max-width: 1460px) {
     nav .childNav:nth-child(2) {
@@ -150,14 +154,12 @@ nav a:hover{
         width: 90%;
         padding-left:0;
         padding-right:0;
-        background-color: rgba(0,0,0,.4);
-
     }
-
+/*
     .picture{
         background-position: left;
     }
-
+*/
 }
 
 @media (max-height: 680px) {
