@@ -29,14 +29,14 @@ footer {
 	position: absolute;
 	height: var(--heightFooter);
 	width: 100%;
-	background-color: #bb7f0e;
+	background-color: #FEB41C;
 }
 
 footer a {
   text-decoration: none;
   color: var(--link);
   padding: 10px;
-  background: rgba(0,0,0,0.09);
+  background: #A653A0;
 }
 
 footer a:hover {
