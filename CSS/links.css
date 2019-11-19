@@ -1,0 +1,22 @@
+a {
+    color: white;
+	text-decoration: none;
+	padding: 10px;
+	border-bottom: solid 2px;
+	border-color: transparent;
+	background: rgba(0,0,0,0.09);
+}
+
+a:hover {
+	border-color: white;
+	transition: all 0.1s linear;
+}
+
+
+
+
+
+
+footer a { 
+    background: rgba(0,0,0,0.2);
+}
