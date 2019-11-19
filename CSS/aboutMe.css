@@ -1,0 +1,62 @@
+.aboutMe {
+    padding: 50px 10% 50px 10%;
+    width: 80%;
+    background: rgb(108, 143, 172);
+    color: white;
+}
+
+.myStory {
+    display: flex;
+}
+
+.myStoryText {
+    width: 700px;
+    line-height: 130%;
+}
+
+.myStoryImg {
+    width: 320px;
+    height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: transform .1s;
+}
+
+.myStoryImg:hover{
+    transform: scale(1.1);
+}
+
+.socials {
+    padding: 20px 0 25px 0;
+    width: 700px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.socialLink{
+    height: 50px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+@media (max-width: 500px) {
+    .aboutMe {
+        padding-left: 5%;
+        padding-right: 5%;
+        width: 90%;
+    }
+}
+
+@media (max-width: 900px) {
+    .myStoryText, .socials {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .myStoryImg {
+        display:none;
+    }
+}
+
