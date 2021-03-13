@@ -1,8 +1,7 @@
 
 # Portfolio Mariusz Najwer
-```
 [https://najwer23.github.io/](https://najwer23.github.io/)
-```
+
 
 ## Requirements
 * Yarn ^1.22.0
@@ -12,12 +11,12 @@
 ```
 git clone https://github.com/najwer23/najwer23.github.io.git
 ```
-## Go to folder ./client in project and run commands
+## Run in folder client/
 ```
 yarn install
 yarn start
 ```
-## Deploy - Go to folder ./client in project and run command
+## Deploy - Run in folder client/
 ```
 yarn run deploy
 ``` 
