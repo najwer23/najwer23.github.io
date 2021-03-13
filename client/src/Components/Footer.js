@@ -13,7 +13,7 @@ function Footer() {
         'https://twitter.com/najwer23': <FontAwesomeIcon icon={faTwitter}  size="2x" />,
         'mailto:najwer23@live.com': <FontAwesomeIcon icon={faAt} size="2x" />,
         'https://www.linkedin.com/in/najwer23/': <FontAwesomeIcon icon={faLinkedinIn} size="2x" />,
-        'https://najwer23.github.io/documents/pdf/CV_PL_Mariusz_Najwer_2019.pdf': <FontAwesomeIcon icon={faFilePdf}  size="2x" />,
+        'https://najwer23.github.io/documents/pdf/CV_Mariusz_Najwer_PL.pdf': <FontAwesomeIcon icon={faFilePdf}  size="2x" />,
     }
     
     return (
