@@ -161,7 +161,7 @@ function Projects() {
                         <i> {x.desc} </i> <br />
                         <br />
                         <a href={x.link} rel="noreferrer" target="_blank">
-                            <div className='btn wave'>Checkout!</div>
+                            <div className='btn wave'>Check out!</div>
                         </a>
                     </li>
                 ))}
