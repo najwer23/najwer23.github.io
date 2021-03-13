@@ -69,6 +69,18 @@ function Projects() {
             'link': 'https://github.com/najwer23/symfony-5-websocket'
         },
         {
+            'title': 'Custom video player (2020)',
+            'desc': '',
+            'lan': 'JavaScript',
+            'link': 'https://najwer23.github.io/video-player/'
+        },
+        {
+            'title': 'Fullscreen slider (2019)',
+            'desc': '',
+            'lan': 'JavaScript',
+            'link': 'https://najwer23.github.io/fullscreen-slider/'
+        },
+        {
             'title': 'Fancy Calendar (2019)',
             'desc': 'Strange calendar - less than 6 steps for choice date!',
             'lan': 'JavaScript',
