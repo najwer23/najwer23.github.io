@@ -45,6 +45,12 @@ function Projects() {
 
     let objProjects = [
         {
+            'title': 'Porfolio',
+            'desc': 'You are here!',
+            'lan': 'HTML5, CSS3, JavaScript (ReactJS)',
+            'link': '/'
+        },
+        {
             'title': 'Antoni Gaudi (2021)',
             'desc': 'Main problem: Masonry Layout',
             'lan': 'Symfony5, Twig, webpack, JavaScript, HTML, CSS3, Leaflet',
