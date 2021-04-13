@@ -1,27 +1,96 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons'
+import React, { Component } from 'react';
 import '../CSS/Nav.css';
 
-function Nav() {
-    const objHashLinks = {
-        '/': <FontAwesomeIcon icon={faHome} size="lg"/>,
-        '#about': "Hello!",
-        '#education': 'Education',
-        '#skills': 'Skills',
-        '#projects': 'Projects'
+const routes = [
+    { path: "/", name: 'Home', exact:null },
+    { path: "#about", name: 'About'},
+    { path: "#education", name: 'Education'},
+    { path: "#skills", name: 'Skills'},
+    { path: "#projects", name: 'Projects'},
+];
+const titleAppInNav = "Mariusz Najwer"
+
+class Hamburger extends Component {
+    constructor(props) {
+        super(props);
     }
-    return (
-        <div>
-            <nav>
-                <ul>
-                    {Object.keys(objHashLinks).map((v,i)=>(
-                        <li key={i}><a href={v}>{objHashLinks[v]}</a></li>
-                    ))}
-                    <li>najwer23@live.com</li>
+
+    componentDidMount() {
+        window.addEventListener("resize", this.menuMobileHide);
+    }
+    componentWillUnmount() {
+        window.addEventListener("resize", null);
+    }
+
+    menuMobileHide() {
+        const hamburgerBtn = document.querySelector('.hamburger-button');
+        const menuMobile = document.querySelector('.menu-mobile');
+        
+        if (window.innerWidth > 1000) {
+            document.body.classList.remove("scroll");
+            hamburgerBtn.classList.remove("hamburger-active");
+            menuMobile.classList.remove('menu-mobile-active');
+            hamburgerBtn.setAttribute('aria-expanded', hamburgerBtn.classList.contains('hamburger-active'));
+        }
+    }
+
+    menuMobileClick() {
+        const hamburgerBtn = document.querySelector('.hamburger-button');
+        const menuMobile = document.querySelector('.menu-mobile');
+
+        hamburgerBtn.classList.toggle('hamburger-active');
+        hamburgerBtn.setAttribute('aria-expanded', hamburgerBtn.classList.contains('hamburger-active'));
+        menuMobile.classList.toggle('menu-mobile-active');
+        document.body.classList.toggle('scroll');
+    }
+
+    render() {
+        return (
+            <div className="hamburger">
+                <button className="hamburger-button" onClick={this.menuMobileClick} aria-expanded="false">
+                    <span className="screen-read-only">Open / Close Menu</span>
+                    <span className="hamburger-box">
+                        <span className="hamburger-box-line"></span>
+                    </span>
+                </button>
+            </div>
+        )
+    }
+}
+
+class MobileMenu extends Hamburger {
+    render() {
+        return (
+            <div className="menu-mobile">   
+                <ul className="menu-mobile-links">
+                    <li>{titleAppInNav}</li>
+                    {routes.map((v, i) => <li onClick={this.menuMobileClick} key={i}><a href={v.path}>{v.name}</a></li>)}
+                    <li>Mariusz Najwer <br />2021</li>
                 </ul>
+            </div>
+        )
+    } 
+}
+
+function Nav() {
+    return (
+        <>
+            <nav>
+                <MobileMenu />
+                <div className="menu">
+                    <div className="menu-box">
+                        <Hamburger />
+                        <div className="menu-title"> <FontAwesomeIcon style={{color: "orange"}} icon={faAddressCard} size="lg" /> {titleAppInNav} </div>
+                        <ul className="menu-list">
+                            {routes.map((v, i) => <li key={i}><a href={v.path}>{v.name}</a></li>)}
+                        </ul>
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150"><path fill="#24272b" fillOpacity="1" d="M0,96L120,80C240,64,480,32,720,21.3C960,11,1200,21,1320,26.7L1440,32L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
             </nav>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#52385C" fill-opacity="1" d="M0,160L6.2,170.7C12.3,181,25,203,37,181.3C49.2,160,62,96,74,101.3C86.2,107,98,181,111,202.7C123.1,224,135,192,148,160C160,128,172,96,185,112C196.9,128,209,192,222,234.7C233.8,277,246,299,258,277.3C270.8,256,283,192,295,176C307.7,160,320,192,332,186.7C344.6,181,357,139,369,106.7C381.5,75,394,53,406,64C418.5,75,431,117,443,112C455.4,107,468,53,480,53.3C492.3,53,505,107,517,117.3C529.2,128,542,96,554,101.3C566.2,107,578,149,591,181.3C603.1,213,615,235,628,234.7C640,235,652,213,665,186.7C676.9,160,689,128,702,101.3C713.8,75,726,53,738,80C750.8,107,763,181,775,192C787.7,203,800,149,812,154.7C824.6,160,837,224,849,213.3C861.5,203,874,117,886,90.7C898.5,64,911,96,923,138.7C935.4,181,948,235,960,256C972.3,277,985,267,997,256C1009.2,245,1022,235,1034,208C1046.2,181,1058,139,1071,133.3C1083.1,128,1095,160,1108,170.7C1120,181,1132,171,1145,154.7C1156.9,139,1169,117,1182,133.3C1193.8,149,1206,203,1218,218.7C1230.8,235,1243,213,1255,197.3C1267.7,181,1280,171,1292,186.7C1304.6,203,1317,245,1329,234.7C1341.5,224,1354,160,1366,160C1378.5,160,1391,224,1403,234.7C1415.4,245,1428,203,1434,181.3L1440,160L1440,0L1433.8,0C1427.7,0,1415,0,1403,0C1390.8,0,1378,0,1366,0C1353.8,0,1342,0,1329,0C1316.9,0,1305,0,1292,0C1280,0,1268,0,1255,0C1243.1,0,1231,0,1218,0C1206.2,0,1194,0,1182,0C1169.2,0,1157,0,1145,0C1132.3,0,1120,0,1108,0C1095.4,0,1083,0,1071,0C1058.5,0,1046,0,1034,0C1021.5,0,1009,0,997,0C984.6,0,972,0,960,0C947.7,0,935,0,923,0C910.8,0,898,0,886,0C873.8,0,862,0,849,0C836.9,0,825,0,812,0C800,0,788,0,775,0C763.1,0,751,0,738,0C726.2,0,714,0,702,0C689.2,0,677,0,665,0C652.3,0,640,0,628,0C615.4,0,603,0,591,0C578.5,0,566,0,554,0C541.5,0,529,0,517,0C504.6,0,492,0,480,0C467.7,0,455,0,443,0C430.8,0,418,0,406,0C393.8,0,382,0,369,0C356.9,0,345,0,332,0C320,0,308,0,295,0C283.1,0,271,0,258,0C246.2,0,234,0,222,0C209.2,0,197,0,185,0C172.3,0,160,0,148,0C135.4,0,123,0,111,0C98.5,0,86,0,74,0C61.5,0,49,0,37,0C24.6,0,12,0,6,0L0,0Z"></path></svg>
-        </div>
+        </>
     )
 }
 
