@@ -5,7 +5,6 @@ import '../CSS/Nav.css';
 
 const routes = [
     { path: "/", name: 'Home', exact:null },
-    { path: "#education", name: 'Education'},
     { path: "#skills", name: 'Skills'},
     { path: "#projects", name: 'Projects'},
 ];

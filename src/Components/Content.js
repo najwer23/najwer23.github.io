@@ -15,7 +15,6 @@ function InitAOS () {
 function Content() {
     return ([
         <About />,
-        <Education />,
         <Skills />,
         <Projects />
     ])
@@ -25,16 +24,26 @@ function About() {
     InitAOS()
         
     const arr = [
-        'I am a Web Developer!',
-        'I am always energetic and eager to learn new skills',
-        'I take my work seriously, I do have a good sense of humour!',
-        'I like building things'
+        <p> I am a Web Developer! </p>,
+        <p> Love cakes </p>,
+        <> 
+            <p>Wrocław University of Science and Technology</p>
+            <p><strong>Master of Science</strong>, Computer Science</p>
+            <p><FontAwesomeIcon style={{color: "orange"}} icon={faCalendarCheck} size="1x" /> 1.02.2018 – 25.07.2019</p>
+            <p><i>Research and comparative study of relational and non-relational database systems</i></p>      
+        </>,
+        <> 
+            <p>Wrocław University of Science and Technology</p>
+            <p><strong>Bachelor of Science</strong>, Control Engineering and Robotics</p>
+            <p><FontAwesomeIcon style={{color: "orange"}} icon={faCalendarCheck} size="1x" /> 1.10.2014 – 19.01.2018</p>
+            <p><i>Web application supporting online booking system</i></p>
+        </>
     ]
 
     return (
         <section id="about" className='content-section'>
-            <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_about_me.svg`} alt="img about"/>
-            <ResponsiveMasonry className='wrapper-adv-m-c' columnsCountBreakPoints={{300: 1, 700: 2}}>
+            <header style={{marginBottom: "20px", paddingTop: "0"}} data-aos="zoom-in-up">About</header>
+            <ResponsiveMasonry className='wrapper-adv-m-c' columnsCountBreakPoints={{400: 1, 700: 2}}>
                 <Masonry columnsCount={2}>
                     {arr.map((v,i)=> (<div data-aos="zoom-in-up" className="adv-m-c" key={i.toString()}>{v} </div>))} 
                 </Masonry>  
@@ -43,27 +52,27 @@ function About() {
     )
 }
 
-function Education() {  
+function Skills() {   
     InitAOS()
+    const arrSkills = [
+        'HTML5 CSS3 LESS SASS',
+        ' JAVASCRIPT JQUERY REACT',
+        'JSON XML FREEMARKER TWIG',
+        'YARN NPM WEBPACK BABEL',
+        'CHARTJS LEAFLETJS WEBSOCKET',
+        'SYMFONY5 PHP7 PHPUNIT ',
+        'DOCTRINE NOSQL SQL',
+        'C C++ C# MATLAB GIT',
+        'LINUX AWS GROOVY',
+        'CRYPTO ALGORITHMS',
+    ]
     return (
-        <section id="education" className="content-section">
-            <header data-aos="zoom-in-up">Education</header>
-            <ResponsiveMasonry className='wrapper-adv-m-c' columnsCountBreakPoints={{300: 1, 700: 2}}>
-                <Masonry columnsCount={2}>
-                    <div data-aos="zoom-in-up" className="adv-m-c">
-                        <p>Wrocław University of Science and Technology</p>
-                        <p><strong>Master of Science</strong>, Computer Science</p>
-                        <p><FontAwesomeIcon style={{color: "orange"}} icon={faCalendarCheck} size="1x" /> 1.02.2018 – 25.07.2019</p>
-                        <p><i>Research and comparative study of relational and non-relational database systems</i></p>
-                    </div>
-                    <div data-aos="zoom-in-up" className="adv-m-c">
-                        <p>Wrocław University of Science and Technology</p>
-                        <p><strong>Bachelor of Science</strong>, Control Engineering and Robotics</p>
-                        <p><FontAwesomeIcon style={{color: "orange"}} icon={faCalendarCheck} size="1x" /> 1.10.2014 – 19.01.2018</p>
-                        <p><i>Web application supporting online booking system</i></p>
-                    </div>
-                </Masonry>  
-            </ResponsiveMasonry> 
+        <section id="skills" className="content-section">
+            <header style={{marginBottom: "50px"}}  data-aos="zoom-in-up">Skills</header>
+            <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_percentages.svg`} alt="img about"/>
+            <div className='boxLetters'>
+                {arrSkills.map((v,i)=><div data-aos="zoom-in-up" key={i.toString()} className='letters'>{v}</div>)}                
+            </div>
         </section> 
     )
 }
@@ -195,32 +204,6 @@ function Projects() {
                 ))}
             </ul>
            
-        </article> 
-    )
-}
-
-
-
-function Skills() {   
-    InitAOS()
-    const arrSkills = [
-        'HTML5 CSS3 LESS SASS,',
-        'JAVASCRIPT JQUERY,',
-        'AJAX JSON XML YARN NPM,',
-        'SYMFONY5 PHP7 TWIG,',
-        'DOCTRINE SQL PHPUNIT,',
-        'BOOTSTRAP NOSQL GIT,',
-        'C C++ C# MATLAB SCRUM,',
-        'LINUX AWS GROOVY,',
-        'CRYPTO ALGORITHMS.',
-    ]
-    return (
-        <article id="skills" className="rootInfo">
-            <header data-aos="zoom-in-up"><h1>Skills</h1></header>
-            <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_percentages.svg`} alt="img about"/>
-            <div className='boxLetters'>
-                {arrSkills.map((v,i)=><div data-aos="zoom-in-up" key={i.toString()} className='letters'>{v}</div>)}                
-            </div>
         </article> 
     )
 }
