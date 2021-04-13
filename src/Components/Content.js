@@ -1,9 +1,16 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../CSS/Content.css';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from "react"
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons'
+
+function InitAOS () {
+    useEffect(() => {
+        Aos.init({duration: 1500});
+    }, []);    
+}
 
 function Content() {
     return ([
@@ -36,15 +43,33 @@ function About() {
     )
 }
 
-function InitAOS () {
-    useEffect(() => {
-        Aos.init({duration: 1500});
-    }, []);    
+function Education() {  
+    InitAOS()
+    return (
+        <section id="education" className="content-section">
+            <header data-aos="zoom-in-up">Education</header>
+            <ResponsiveMasonry className='wrapper-adv-m-c' columnsCountBreakPoints={{300: 1, 700: 2}}>
+                <Masonry columnsCount={2}>
+                    <div data-aos="zoom-in-up" className="adv-m-c">
+                        <p>Wrocław University of Science and Technology</p>
+                        <p><strong>Master of Science</strong>, Computer Science</p>
+                        <p><FontAwesomeIcon style={{color: "orange"}} icon={faCalendarCheck} size="1x" /> 1.02.2018 – 25.07.2019</p>
+                        <p><i>Research and comparative study of relational and non-relational database systems</i></p>
+                    </div>
+                    <div data-aos="zoom-in-up" className="adv-m-c">
+                        <p>Wrocław University of Science and Technology</p>
+                        <p><strong>Bachelor of Science</strong>, Control Engineering and Robotics</p>
+                        <p><FontAwesomeIcon style={{color: "orange"}} icon={faCalendarCheck} size="1x" /> 1.10.2014 – 19.01.2018</p>
+                        <p><i>Web application supporting online booking system</i></p>
+                    </div>
+                </Masonry>  
+            </ResponsiveMasonry> 
+        </section> 
+    )
 }
 
 function Projects() {   
     InitAOS(); 
-
 
     let objProjects = [
         {
@@ -195,29 +220,6 @@ function Skills() {
             <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_percentages.svg`} alt="img about"/>
             <div className='boxLetters'>
                 {arrSkills.map((v,i)=><div data-aos="zoom-in-up" key={i.toString()} className='letters'>{v}</div>)}                
-            </div>
-        </article> 
-    )
-}
-
-function Education() {  
-    InitAOS()
-    return (
-        <article id="education" className="rootInfo">
-            <header data-aos="zoom-in-up"><h1>Education</h1></header>
-            <div data-aos="zoom-in-up" className="uni">
-                <p>Wrocław University of Science and Technology<br />
-                   <b><u>Master of Science</u></b> - Computer Science, <br />
-                   1.02.2018 – 25.07.2019 <br /><br />
-                   <b>Thesis: </b><i>Research and comparative study of relational and non-relational database systems</i></p>
-                <br />
-                ***
-            </div>
-            <div data-aos="zoom-in-up" className="uni">
-                <p>Wrocław University of Science and Technology<br />
-                    <b><u>Bachelor of Science</u></b> - Control Engineering and Robotics, <br />
-                   1.10.2014 – 19.01.2018 <br /><br />
-                   <b>Thesis: </b><i>Web application supporting online booking system</i></p>
             </div>
         </article> 
     )
