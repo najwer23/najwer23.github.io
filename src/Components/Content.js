@@ -1,10 +1,11 @@
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '../CSS/RootInfo.css';
+import '../CSS/Content.css';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from "react"
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 
-function RootInfo() {
+function Content() {
     return ([
         <About />,
         <Education />,
@@ -16,26 +17,28 @@ function RootInfo() {
 function About() {   
     InitAOS()
         
-    const aboutCard = [
+    const arr = [
         'I am a Web Developer!',
-        'I am always energetic and eager to learn new skills..',
-        'even though I take my work seriously, I do have a good sense of humour!'
+        'I am always energetic and eager to learn new skills',
+        'I take my work seriously, I do have a good sense of humour!',
+        'I like building things'
     ]
 
     return (
-        <article id="about" className="rootInfo">
-            <header data-aos="zoom-in-up"><h1>Hello!</h1></header>
-            <img data-aos="zoom-in-up" className='rootImg' src={`${process.env.PUBLIC_URL}/assets/images/undraw_about_me.svg`} alt="img about"/>
-            <div className='cardBox'>
-                {aboutCard.map((v,i)=><div data-aos="zoom-in-up" key={i.toString()} className='card card-2'><p>{v}</p></div>)}
-            </div>
-        </article> 
+        <section id="about" className='content-section'>
+            <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_about_me.svg`} alt="img about"/>
+            <ResponsiveMasonry className='wrapper-adv-m-c' columnsCountBreakPoints={{300: 1, 700: 2}}>
+                <Masonry columnsCount={2}>
+                    {arr.map((v,i)=> (<div data-aos="zoom-in-up" className="adv-m-c" key={i.toString()}>{v} </div>))} 
+                </Masonry>  
+            </ResponsiveMasonry>  
+        </section> 
     )
 }
 
 function InitAOS () {
     useEffect(() => {
-        Aos.init({duration: 3000});
+        Aos.init({duration: 1500});
     }, []);    
 }
 
@@ -151,7 +154,7 @@ function Projects() {
     return (
         <article id='projects' className="rootInfo">
             <header data-aos="zoom-in-up"><h1>Projects</h1></header>
-            <img data-aos="zoom-in-up" className='rootImg' src={`${process.env.PUBLIC_URL}/assets/images/undraw_freelancer.svg`} alt="img about"/>
+            <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_freelancer.svg`} alt="img about"/>
         
             <ul className="projects-timeline">
                 {objProjects.map((x,i) => (
@@ -189,7 +192,7 @@ function Skills() {
     return (
         <article id="skills" className="rootInfo">
             <header data-aos="zoom-in-up"><h1>Skills</h1></header>
-            <img data-aos="zoom-in-up" className='rootImg' src={`${process.env.PUBLIC_URL}/assets/images/undraw_percentages.svg`} alt="img about"/>
+            <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_percentages.svg`} alt="img about"/>
             <div className='boxLetters'>
                 {arrSkills.map((v,i)=><div data-aos="zoom-in-up" key={i.toString()} className='letters'>{v}</div>)}                
             </div>
@@ -220,6 +223,6 @@ function Education() {
     )
 }
 
-export default RootInfo;
+export default Content;
 
 

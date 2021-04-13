@@ -3,7 +3,7 @@ import "aos/dist/aos.css";
 import { Component, useEffect, React } from "react"
 import Footer from './Components/Footer';
 import Nav from './Components/Nav';
-import RootInfo from './Components/RootInfo';
+import Content from './Components/Content';
 import './CSS/index.css';
 
 function InitAOS() {
@@ -18,7 +18,7 @@ function App() {
     return (
         <>
             <Nav />
-            <RootInfo />
+            <Content />
             <Footer />
         </>
     )
