@@ -206,8 +206,8 @@ function Projects() {
     ];
 
     return (
-        <article id='projects' className="rootInfo">
-            <header data-aos="zoom-in-up"><h1>Projects</h1></header>
+        <section id="projects" className="content-section">
+            <header style={{marginBottom: "50px"}}  data-aos="zoom-in-up">Projects</header>
             <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_freelancer.svg`} alt="img about"/>
         
             <ul className="projects-timeline">
@@ -223,8 +223,7 @@ function Projects() {
                     </li>
                 ))}
             </ul>
-           
-        </article> 
+        </section> 
     )
 }
 

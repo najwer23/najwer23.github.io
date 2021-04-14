@@ -47,22 +47,6 @@
 
 
 
-.rootInfo {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-}
-
-.rootInfo h1 {
-    font-size: 5em;
-    text-align: center;
-    letter-spacing: 0;
-}
-
-.rootInfo p {
-    font-size: 2.5em;
-}
 
 .boxLetters {
     margin-top: 50px;
@@ -130,8 +114,8 @@
 
 /* timeline */
 .projects-timeline li {
-    font-size: 1.5em;
-    line-height: 1.75em;
+    font-size: 1.1em;
+    line-height: 1.7em;
     border-top: 3px solid;
     -o-border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
     border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
