@@ -65,6 +65,10 @@
     text-decoration: none;
 }
 
+.projects-timeline-btn {
+    width: 200px;
+}
+
 .btn {   
     background-color: white;
     border: 1px solid #52385C;

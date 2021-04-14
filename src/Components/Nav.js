@@ -63,9 +63,9 @@ class MobileMenu extends Hamburger {
         return (
             <div className="menu-mobile">   
                 <ul className="menu-mobile-links">
-                    <li>{titleAppInNav}</li>
+                    <li>Menu</li>
                     {routes.map((v, i) => <li onClick={this.menuMobileClick} key={i}><a href={v.path}>{v.name}</a></li>)}
-                    <li>Mariusz Najwer <br />2021</li>
+                    <li>{titleAppInNav} <br />2021</li>
                 </ul>
             </div>
         )
