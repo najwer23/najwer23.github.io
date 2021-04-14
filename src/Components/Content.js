@@ -32,7 +32,7 @@ function About() {
     }
         
     const arr = [
-        <p><FontAwesomeIcon style={{color: "orange"}} icon={faDesktop} size="1x" /> Programmer / Web Developer <br /><span style={{fontSize: "10px"}}>(Stack Overflow answer searching expert)</span></p>,
+        <p><FontAwesomeIcon style={{color: "orange"}} icon={faDesktop} size="1x" /> Programmer / Web Developer</p>,
         <p><FontAwesomeIcon style={{color: "tomato"}} icon={faHeart} size="1x" /> Love cakes </p>,
         <> 
             <p>Wrocław University of Science and Technology</p>
