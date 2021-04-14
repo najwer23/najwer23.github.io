@@ -4,7 +4,8 @@ import Aos from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from "react"
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
-import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarCheck, faDesktop, faHeart, faFilePdf } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 function InitAOS () {
     useEffect(() => {
@@ -22,10 +23,17 @@ function Content() {
 
 function About() {   
     InitAOS()
+
+    const objSocialLinks = {
+        'https://github.com/najwer23': <FontAwesomeIcon icon={faGithub} style={{color: "black"}}  size="2x" />,
+        'https://twitter.com/najwer23': <FontAwesomeIcon icon={faTwitter}  style={{color: "#1DA1F2"}} size="2x" />,
+        'https://www.linkedin.com/in/najwer23/': <FontAwesomeIcon icon={faLinkedinIn} style={{color: "##EC2126"}} size="2x" />,
+        'https://najwer23.github.io/documents/pdf/CV_Mariusz_Najwer_PL.pdf': <FontAwesomeIcon icon={faFilePdf} style={{color: "#EC2126"}} size="2x" />,
+    }
         
     const arr = [
-        <p> I am a Web Developer! </p>,
-        <p> Love cakes </p>,
+        <p><FontAwesomeIcon style={{color: "orange"}} icon={faDesktop} size="1x" /> Programmer / Web Developer <br /><span style={{fontSize: "10px"}}>(Stack Overflow answer searching expert)</span></p>,
+        <p><FontAwesomeIcon style={{color: "tomato"}} icon={faHeart} size="1x" /> Love cakes </p>,
         <> 
             <p>Wrocław University of Science and Technology</p>
             <p><strong>Master of Science</strong>, Computer Science</p>
@@ -37,7 +45,19 @@ function About() {
             <p><strong>Bachelor of Science</strong>, Control Engineering and Robotics</p>
             <p><FontAwesomeIcon style={{color: "orange"}} icon={faCalendarCheck} size="1x" /> 1.10.2014 – 19.01.2018</p>
             <p><i>Web application supporting online booking system</i></p>
-        </>
+        </>,
+        <>  
+            <address style={{display: "block", textAlign: "left!important"}}>
+                <a href="mailto:najwer23@live.com">najwer23@live.com</a><br />
+            </address>
+        </>, 
+        <div className="socialAbout"> 
+            {Object.keys(objSocialLinks).map((v,i)=>(
+                <a key={i} href={v} rel="noreferrer" target="_blank">
+                    {objSocialLinks[v]}
+                </a>
+            ))} 
+        </div>
     ]
 
     return (
