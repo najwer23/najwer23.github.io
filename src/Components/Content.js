@@ -27,7 +27,7 @@ function About() {
     const objSocialLinks = {
         'https://github.com/najwer23': <FontAwesomeIcon icon={faGithub} style={{color: "black"}}  size="2x" />,
         'https://twitter.com/najwer23': <FontAwesomeIcon icon={faTwitter}  style={{color: "#1DA1F2"}} size="2x" />,
-        'https://www.linkedin.com/in/najwer23/': <FontAwesomeIcon icon={faLinkedinIn} style={{color: "##EC2126"}} size="2x" />,
+        'https://www.linkedin.com/in/najwer23/': <FontAwesomeIcon icon={faLinkedinIn} style={{color: "#0e76a8"}} size="2x" />,
         'https://najwer23.github.io/documents/pdf/CV_Mariusz_Najwer_PL.pdf': <FontAwesomeIcon icon={faFilePdf} style={{color: "#EC2126"}} size="2x" />,
     }
         
