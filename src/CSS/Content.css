@@ -1,59 +1,52 @@
-.rootInfo {
+.content-section {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
 }
 
-.rootInfo h1 {
-    font-size: 5em;
+.content-img {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-section header{
     text-align: center;
-    letter-spacing: 0;
+    padding-top: 100px;
+    font-size: 2.5rem;
 }
 
-.rootInfo p {
-    font-size: 2.5em;
+.adv-m-c {
+    text-align: center;
+    padding: 15px;
+    margin:15px;
+    border: solid 1px grey;
+    background-color: white !important;
+    -webkit-box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    border-radius: 4px;
 }
 
-.rootImg {
-    width: 100%;
+.wrapper-adv-m-c {
+    margin-top: 25px;
 }
 
-.cardBox {
-    margin-top: 50px;
+.socialAbout {
     display: flex;
-    width: 100%;
-    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.card {
-    background: #fff;
-    border-radius: 2px;
-    margin: 0 auto 2rem auto;
-    position: relative;
-    width: calc(90% - 80px);
-    max-width: calc(100% - 80px);
-    padding: 40px;
-    font-size: 1em;
-    text-align: center;
-}
 
-.card:first-child {
-    background-color: #52385C;
-    color: #FFE506;
-}
 
-.card-2 {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
 
-.card-2:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
 
-.uni {
-    font-size: 0.7em;
-}
+
+
+
+
+
 
 .boxLetters {
     margin-top: 50px;
@@ -62,20 +55,18 @@
 
 .letters {
     text-align: center;
-    word-spacing: -25px;
-    font-size: 1.5em;
-    letter-spacing: 25px;
+    word-spacing: 20px;
+    font-size: 1.2em;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.letters:hover {
-    word-spacing: 10px;
-    letter-spacing: 0;
-}
-
 .projects-timeline a {
     text-decoration: none;
+}
+
+.projects-timeline-btn {
+    width: 200px;
 }
 
 .btn {   
@@ -127,8 +118,8 @@
 
 /* timeline */
 .projects-timeline li {
-    font-size: 1.5em;
-    line-height: 1.75em;
+    font-size: 1.1em;
+    line-height: 1.7em;
     border-top: 3px solid;
     -o-border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
     border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
@@ -186,23 +177,7 @@
 }
 
 @media (max-width: 900px) {
-    .letters {
-        word-spacing: 0px;
-        letter-spacing: 0px;
-    }
-    .cardBox {
-        flex-wrap: wrap;
-        margin-top: 25px;
-        width: 100%;
-    }
-    .rootInfo {
-        margin-top: 0px;
+    .content-section{
         padding: 0px 20px 0 20px;
-    }
-    .rootInfo h1 {
-        font-size: 2.5rem;
-    }
-    .rootInfo p {
-        font-size: 1.25rem;
     }
 }

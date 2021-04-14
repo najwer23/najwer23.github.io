@@ -1,17 +1,38 @@
 .foot {
-    margin-top: 50px;
+    margin-top: 200px;
 }
 
-.foot-contact{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-
+.foot-box{
     background-color: #24272b;
     margin-top: -10px;
-    height: 10rem;
+    padding: 100px 0 100px 0;
+    font-weight: 800;
+
 }
+
+.foot-item {
+    width: 1000px;
+    margin: 0px auto 0px auto;
+    line-height: 175%;
+    text-align: left;
+    color: white;
+}
+
+
+
+
+.flex-columns {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.flex-columns-item {
+    margin-bottom: 75px;
+}
+
+
+
 
 .foot-social {
     display: flex;
@@ -29,10 +50,15 @@
     color: white;
 }
 
-.foot-name {
-    margin-top: 20px;
-    line-height: 175%;
-    text-align: center;
-    color: white;
-    letter-spacing: 5px;
+@media (max-width: 1000px) {
+    .flex-columns {
+        flex-flow: column wrap;
+    }
+    .foot-social-item {
+        text-align: left;
+    }
+
+    .foot-item {
+        width: 90%;
+    }
 }

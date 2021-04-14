@@ -1,13 +1,21 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import '../CSS/RootInfo.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../CSS/Content.css';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from "react"
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+import { faCalendarCheck, faDesktop, faHeart, faFilePdf } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
-function RootInfo() {
+function InitAOS () {
+    useEffect(() => {
+        Aos.init({duration: 1500});
+    }, []);    
+}
+
+function Content() {
     return ([
         <About />,
-        <Education />,
         <Skills />,
         <Projects />
     ])
@@ -15,33 +23,82 @@ function RootInfo() {
 
 function About() {   
     InitAOS()
+
+    const objSocialLinks = {
+        'https://github.com/najwer23': <FontAwesomeIcon icon={faGithub} style={{color: "black"}}  size="2x" />,
+        'https://twitter.com/najwer23': <FontAwesomeIcon icon={faTwitter}  style={{color: "#1DA1F2"}} size="2x" />,
+        'https://www.linkedin.com/in/najwer23/': <FontAwesomeIcon icon={faLinkedinIn} style={{color: "#0e76a8"}} size="2x" />,
+        'https://najwer23.github.io/documents/pdf/CV_Mariusz_Najwer_PL.pdf': <FontAwesomeIcon icon={faFilePdf} style={{color: "#EC2126"}} size="2x" />,
+    }
         
-    const aboutCard = [
-        'I am a Web Developer!',
-        'I am always energetic and eager to learn new skills..',
-        'even though I take my work seriously, I do have a good sense of humour!'
+    const arr = [
+        <p><FontAwesomeIcon style={{color: "orange"}} icon={faDesktop} size="1x" /> Programmer / Web Developer <br /><span style={{fontSize: "10px"}}>(Stack Overflow answer searching expert)</span></p>,
+        <p><FontAwesomeIcon style={{color: "tomato"}} icon={faHeart} size="1x" /> Love cakes </p>,
+        <> 
+            <p>Wrocław University of Science and Technology</p>
+            <p><strong>Master of Science</strong>, Computer Science</p>
+            <p><FontAwesomeIcon style={{color: "orange"}} icon={faCalendarCheck} size="1x" /> 1.02.2018 – 25.07.2019</p>
+            <p><i>Research and comparative study of relational and non-relational database systems</i></p>      
+        </>,
+        <> 
+            <p>Wrocław University of Science and Technology</p>
+            <p><strong>Bachelor of Science</strong>, Control Engineering and Robotics</p>
+            <p><FontAwesomeIcon style={{color: "orange"}} icon={faCalendarCheck} size="1x" /> 1.10.2014 – 19.01.2018</p>
+            <p><i>Web application supporting online booking system</i></p>
+        </>,
+        <>  
+            <address style={{display: "block", textAlign: "left!important"}}>
+                <a href="mailto:najwer23@live.com">najwer23@live.com</a><br />
+            </address>
+        </>, 
+        <div className="socialAbout"> 
+            {Object.keys(objSocialLinks).map((v,i)=>(
+                <a key={i} href={v} rel="noreferrer" target="_blank">
+                    {objSocialLinks[v]}
+                </a>
+            ))} 
+        </div>
     ]
 
     return (
-        <article id="about" className="rootInfo">
-            <header data-aos="zoom-in-up"><h1>Hello!</h1></header>
-            <img data-aos="zoom-in-up" className='rootImg' src={`${process.env.PUBLIC_URL}/assets/images/undraw_about_me.svg`} alt="img about"/>
-            <div className='cardBox'>
-                {aboutCard.map((v,i)=><div data-aos="zoom-in-up" key={i.toString()} className='card card-2'><p>{v}</p></div>)}
-            </div>
-        </article> 
+        <section id="about" className='content-section'>
+            <header style={{marginBottom: "20px", paddingTop: "0"}} data-aos="zoom-in-up">About</header>
+            <ResponsiveMasonry className='wrapper-adv-m-c' columnsCountBreakPoints={{400: 1, 700: 2}}>
+                <Masonry columnsCount={2}>
+                    {arr.map((v,i)=> (<div data-aos="zoom-in-up" className="adv-m-c" key={i.toString()}>{v} </div>))} 
+                </Masonry>  
+            </ResponsiveMasonry>  
+        </section> 
     )
 }
 
-function InitAOS () {
-    useEffect(() => {
-        Aos.init({duration: 3000});
-    }, []);    
+function Skills() {   
+    InitAOS()
+    const arrSkills = [
+        'HTML5 CSS3 LESS SASS',
+        ' JAVASCRIPT JQUERY REACT',
+        'JSON XML FREEMARKER TWIG',
+        'YARN NPM WEBPACK BABEL',
+        'CHARTJS LEAFLETJS WEBSOCKET',
+        'SYMFONY5 PHP7 PHPUNIT ',
+        'DOCTRINE NOSQL SQL',
+        'C C++ C# MATLAB GIT',
+        'LINUX AWS GROOVY',
+        'CRYPTO ALGORITHMS',
+    ]
+    return (
+        <section id="skills" className="content-section">
+            <header style={{marginBottom: "50px"}}  data-aos="zoom-in-up">Skills</header>
+            <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_percentages.svg`} alt="img about"/>
+            <div className='boxLetters'>
+                {arrSkills.map((v,i)=><div data-aos="zoom-in-up" key={i.toString()} className='letters'>{v}</div>)}                
+            </div>
+        </section> 
+    )
 }
 
 function Projects() {   
     InitAOS(); 
-
 
     let objProjects = [
         {
@@ -149,9 +206,9 @@ function Projects() {
     ];
 
     return (
-        <article id='projects' className="rootInfo">
-            <header data-aos="zoom-in-up"><h1>Projects</h1></header>
-            <img data-aos="zoom-in-up" className='rootImg' src={`${process.env.PUBLIC_URL}/assets/images/undraw_freelancer.svg`} alt="img about"/>
+        <section id="projects" className="content-section">
+            <header style={{marginBottom: "50px"}}  data-aos="zoom-in-up">Projects</header>
+            <img data-aos="zoom-in-up" className='content-img' src={`${process.env.PUBLIC_URL}/assets/images/undraw_freelancer.svg`} alt="img about"/>
         
             <ul className="projects-timeline">
                 {objProjects.map((x,i) => (
@@ -160,66 +217,18 @@ function Projects() {
                         {x.lan} <br /> <br />
                         <i> {x.desc} </i> <br />
                         <br />
-                        <a href={x.link} rel="noreferrer" target="_blank">
-                            <div className='btn wave'>Check out!</div>
-                        </a>
+                        <div className="projects-timeline-btn"> 
+                            <a href={x.link} rel="noreferrer" target="_blank">
+                                <div className='btn wave'>Check out!</div>
+                            </a>
+                        </div>
                     </li>
                 ))}
             </ul>
-           
-        </article> 
+        </section> 
     )
 }
 
-
-
-function Skills() {   
-    InitAOS()
-    const arrSkills = [
-        'HTML5 CSS3 LESS SASS,',
-        'JAVASCRIPT JQUERY,',
-        'AJAX JSON XML YARN NPM,',
-        'SYMFONY5 PHP7 TWIG,',
-        'DOCTRINE SQL PHPUNIT,',
-        'BOOTSTRAP NOSQL GIT,',
-        'C C++ C# MATLAB SCRUM,',
-        'LINUX AWS GROOVY,',
-        'CRYPTO ALGORITHMS.',
-    ]
-    return (
-        <article id="skills" className="rootInfo">
-            <header data-aos="zoom-in-up"><h1>Skills</h1></header>
-            <img data-aos="zoom-in-up" className='rootImg' src={`${process.env.PUBLIC_URL}/assets/images/undraw_percentages.svg`} alt="img about"/>
-            <div className='boxLetters'>
-                {arrSkills.map((v,i)=><div data-aos="zoom-in-up" key={i.toString()} className='letters'>{v}</div>)}                
-            </div>
-        </article> 
-    )
-}
-
-function Education() {  
-    InitAOS()
-    return (
-        <article id="education" className="rootInfo">
-            <header data-aos="zoom-in-up"><h1>Education</h1></header>
-            <div data-aos="zoom-in-up" className="uni">
-                <p>Wrocław University of Science and Technology<br />
-                   <b><u>Master of Science</u></b> - Computer Science, <br />
-                   1.02.2018 – 25.07.2019 <br /><br />
-                   <b>Thesis: </b><i>Research and comparative study of relational and non-relational database systems</i></p>
-                <br />
-                ***
-            </div>
-            <div data-aos="zoom-in-up" className="uni">
-                <p>Wrocław University of Science and Technology<br />
-                    <b><u>Bachelor of Science</u></b> - Control Engineering and Robotics, <br />
-                   1.10.2014 – 19.01.2018 <br /><br />
-                   <b>Thesis: </b><i>Web application supporting online booking system</i></p>
-            </div>
-        </article> 
-    )
-}
-
-export default RootInfo;
+export default Content;
 
 
