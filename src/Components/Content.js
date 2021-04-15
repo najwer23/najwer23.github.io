@@ -106,30 +106,42 @@ function Projects() {
         {
             'title': 'Porfolio',
             'desc': 'You are here!',
-            'lan': 'HTML5, CSS3, JavaScript (ReactJS)',
+            'lan': 'HTML5, CSS3, JavaScript (ReactJS), Chart.js',
             'link': '/'
         },
         {
+            'title': 'Numerical integration (2021)',
+            'desc': 'Monte Carlo Integration, Rectangle rule Integration, Trapezoidal rule Integration, Graph of a function of one variable',
+            'lan': 'HTML, CSS3, JavaScript Chart.js, Webpack, Babel',
+            'link': 'https://najwer23.github.io/chart/'
+        },
+        {
+            'title': 'Coffee4u (2021)',
+            'desc': 'Website for a cafe with the possibility of checking coffee prices',
+            'lan': 'HTML, CSS3, JavaScript, React.js (ES6, JSX, class-inheritance, events, route, hooks, Masonry Layout, Leaflet)',
+            'link': 'https://coffee4u.herokuapp.com/'
+        },
+        {
             'title': 'Antoni Gaudi (2021)',
-            'desc': 'Main problem: Masonry Layout',
+            'desc': 'Website about Antoni Gaudi',
             'lan': 'Symfony5, Twig, webpack, JavaScript, HTML, CSS3, Leaflet',
             'link': 'https://antoni-gaudi.herokuapp.com/'
         },
         {
             'title': 'Blackjack (2020)',
-            'desc': '',
+            'desc': 'A card game the object of which is to be dealt cards having a higher count than those of the dealer up to but not exceeding 21',
             'lan': 'JavaScript HTML, CSS3, JSON',
             'link': 'https://najwer23.github.io/blackjack/'
         },
         {
             'title': 'Aktywni w Sporcie (2020)',
-            'desc': 'Commercial product',
+            'desc': 'A web application that allows you to buy sports insurance',
             'lan': 'HTML5, CSS3, Freemarker, GIT, JavaScript (jQuery, Gulp.js, Node.js), Groovy, SQL',
             'link': 'https://portal.tueuropa.pl/frontend/products/showProduct.html?prodId=2031&su=10000&lu=1&us=bieganie_grupa_1&o_ochrony=90'
         },
         {
             'title': 'WebSocket with Symfony5 - simply chat (2020)',
-            'desc': '',
+            'desc': 'I am using websocket to make a 2-way chat with new Symfony 5.',
             'lan': 'Symfony5, JavaScript',
             'link': 'https://github.com/najwer23/symfony-5-websocket'
         },
@@ -141,25 +153,27 @@ function Projects() {
         },
         {
             'title': 'Fullscreen slider (2019)',
-            'desc': '',
+            'desc': 'Looping slider with photos',
             'lan': 'JavaScript',
             'link': 'https://najwer23.github.io/fullscreen-slider/'
         },
         {
             'title': 'Fancy Calendar (2019)',
-            'desc': 'Strange calendar - less than 6 steps for choice date!',
+            'desc': 'Custom calendar that only requires 6 steps to select a date. A new idea for standard calendars',
             'lan': 'JavaScript',
             'link': 'https://najwer23.github.io/fancy-calendar/'
         },
         {
             'title': 'RSA and ElGamal algorithm (2019)',
-            'desc': 'Binary number with U2 format (operations * / - +), Miller-Rabin test, Extended Euclidean algorithm, private and public key',
+            'desc': "Asymmetric cryptography, also known as public-key cryptography, is a process that uses a pair of related keys one public key and one private key to encrypt and decrypt a message and protect it from unauthorized access or use. A public key is a cryptographic key that can be used by any person to encrypt a message so that it can only be deciphered by the intended recipient with their private key. A private key also known as a secret key is shared only with key's initiator."+
+            'Main problem of this task is represent big Prime Numbers and making operations of this numbers. Binary number with U2 format (operations * / - +), Miller-Rabin test, Extended Euclidean algorithm, private and public key',
             'lan': "C#",
             'link': 'https://github.com/najwer23/binary-rsa'
         },
         {
             'title': 'Binary Bose–Chaudhuri–Hocquenghem code (2019)',
-            'desc': 'I had a lot of fun with this badass',
+            'desc': 'One of the key features of BCH codes is that during code design, there is a precise control over the number of symbol errors correctable by the code. In particular, it is possible to design binary BCH codes that can correct multiple bit errors. Another advantage of BCH codes is the ease with which they can be decoded, namely, via an algebraic method known as syndrome decoding. This simplifies the design of the decoder for these codes, using small low-power electronic hardware.' + 
+            'BCH codes are used in applications such as satellite communications, compact disc players, DVDs, disk drives, solid-state drives, quantum-resistant cryptography and two-dimensional bar codes.',
             'lan': "Matlab",
             'link': 'https://github.com/najwer23/bch-code'
         },
@@ -171,25 +185,25 @@ function Projects() {
         },
         {
             'title': 'Simply CMS for Blog (2018)',
-            'desc': '',
+            'desc': 'I solved the problem of content management on blog pages. Own paging mechanism and sql database',
             'lan': "Symfony4, Twig, Ajax, JSON, jQuery, SQL, JavaScript",
             'link': 'https://my23.000webhostapp.com/'
         },
         {
             'title': 'Web App for reservation place to doctor (2018)',
-            'desc': '',
+            'desc': 'A simple application that allows you to book a place with a doctor',
             'lan': "Symfony4, Twig, Ajax, JSON, JavaScript, jQuery, SQL",
             'link': 'https://github.com/najwer23/lekarz'
         },
         {
             'title': 'Complex number calculator (2017)',
-            'desc': 'Polymorphism, Multiplication of 2 numbers, Dividing 2 numbers, Root of a complex number, Power of n-degree of a complex number.',
+            'desc': 'A Complex Number is a combination of a Real Number and an Imaginary Number. e.g. 1+2i. I have implemented possible operations on complex numbers: Polymorphism, Multiplication of 2 numbers, Dividing 2 numbers, Root of a complex number, Power of n-degree of a complex number.',
             'lan': "C++",
             'link': 'https://github.com/najwer23/kalkulator-liczb-zespolonych'
         },
         {
             'title': 'Graph algorithms  (2017)',
-            'desc': 'BFS, Bellman Ford, DFS, Dijkstra, Kruskal, Prim.',
+            'desc': 'A graph is an abstract notation used to represent the connection between pairs of objects. I have implemented the following algorithms: BFS, Bellman Ford, DFS, Dijkstra, Kruskal, Prim.',
             'lan': "C++",
             'link': 'https://github.com/najwer23/graph-algorithms'
         },
@@ -201,9 +215,9 @@ function Projects() {
         },
         {
             'title': 'Sorting algorithms (2017)',
-            'desc': 'Bidirectional Bubble Sort, Bubble Sort, Heap Sort, Insertion Sort, Merge Sort, Quick Sort, Selection Sort, Shell Sort, Stupid Bubble Sort.',
+            'desc': 'A sorting algorithm is a method for reorganizing a large number of items into a specific order, such as alphabetical, highest-to-lowest value or shortest-to-longest distance. I have implemented the following algorithms: Bidirectional Bubble Sort, Bubble Sort, Heap Sort, Insertion Sort, Merge Sort, Quick Sort, Selection Sort, Shell Sort, Stupid Bubble Sort.',
             'lan': "C++",
-            'link': 'https://github.com/najwer23/sorting-algorithms'
+            'link': 'https://github.com/najwer23/sorting-algorithms',
         }
     ];
 
@@ -215,9 +229,13 @@ function Projects() {
             <ul className="projects-timeline">
                 {objProjects.map((x,i) => (
                     <li data-aos="zoom-in-up" key={i.toString()} >
-                        <strong> {x.title} </strong><br />
-                        {x.lan} <br /> <br />
-                        <i> {x.desc} </i> <br />
+                        <strong> {x.title} </strong>
+                        <br />
+                        {x.lan} 
+                        <br /> 
+                        <br />
+                        <i> {x.desc} </i> 
+                        <br />
                         <br />
                         <div className="projects-timeline-btn"> 
                             <a href={x.link} rel="noreferrer" target="_blank">
