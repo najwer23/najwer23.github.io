@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 import { faCalendarCheck, faDesktop, faHeart, faFilePdf } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
+import {Pie} from 'react-chartjs-2';
 
 function InitAOS () {
     useEffect(() => {
@@ -17,7 +18,8 @@ function Content() {
     return ([
         <About />,
         <Skills />,
-        <Projects />
+        <Projects />,
+        <Hobby />
     ])
 }
 
@@ -225,6 +227,48 @@ function Projects() {
                     </li>
                 ))}
             </ul>
+        </section> 
+    )
+}
+
+
+
+function Hobby() {   
+    const state = {
+        labels: ['Sky', 'Shady side of pyramid', 'Sunny side of pyramid'],
+        datasets: [
+            {
+                backgroundColor: [
+                    '#7ECEFC',
+                    '#BE5B06',
+                    '#F3C12A'
+                ],
+                hoverBackgroundColor: [
+                    '#237AB0',
+                    '#D64804',
+                    '#DB981A'
+                ],
+                data: [70, 10, 20]
+            }
+        ]
+    }
+   
+    return (
+        <section id="hobby" className="content-section">
+            <header style={{marginBottom: "50px"}} >I do like charts</header>
+            <div>
+            <Pie
+                data={state}
+                options={{
+                    legend:{
+                        display:true,
+                        position:'bottom'
+                    },
+                    rotation: 2.4  
+                }}
+            />
+
+            </div>
         </section> 
     )
 }
