@@ -239,7 +239,7 @@ function Projects() {
                         <br />
                         <div className="projects-timeline-btn"> 
                             <a href={x.link} rel="noreferrer" target="_blank">
-                                <div className='btn wave'>Check out!</div>
+                                <div className='btn wave'>Check it out</div>
                             </a>
                         </div>
                     </li>
