@@ -1,0 +1,27 @@
+/* Only Chrome */
+html::-webkit-scrollbar {
+  width: 5px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: orange;
+  background-clip: padding-box;
+  border: 1px solid #0d0d0d;
+}
+html::-webkit-scrollbar-track {
+  background-color: #0d0d0d;
+}
+::-webkit-scrollbar-button {
+  background-color: #0d0d0d;
+}
+/* Only IE */
+html {
+  scrollbar-face-color: orange;
+  scrollbar-shadow-color: #0d0d0d;
+  scrollbar-highlight-color: #0d0d0d;
+  scrollbar-arrow-color: #0d0d0d;
+}
+/* Only FireFox */
+html {
+  scrollbar-color: orange #0d0d0d;
+  scrollbar-width: thin !important;
+}
