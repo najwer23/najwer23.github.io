@@ -1,6 +1,8 @@
 # Portfolio
 (IE11, Chrome, Firefox, Edge)
 
+[https://najwer23.github.io/](https://najwer23.github.io/)
+
 ## Inside
 - Babel, 
 - CSS, 
@@ -10,6 +12,8 @@
 - Webpack 
     - MiniCssExtractPlugin
     - HtmlWebpackPlugin
+    - CssMinimizerPlugin
+    - CleanWebpackPlugin
     - File manager
 - HTML template
 
