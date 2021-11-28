@@ -2,13 +2,15 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 var entryCustom = {};
 let entryArr = [
   "index", 
-  "style", 
+  "loader/style", 
+  "loader/file",
   "dataInObj", 
   "hamburger", 
   "masonry"
@@ -21,44 +23,33 @@ for (let i = 0; i < entryArr.length; i++) {
 module.exports = {
   entry: entryCustom,
   output: {
-    path: path.resolve(__dirname, './build'),
-    filename: '[name].bunde.js'
+    filename: '[name].[fullhash].bunde.js',
+    path: path.resolve(__dirname, './build')
   },
   optimization: {
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: "styles",
-          type: "css/mini-extract",
-          chunks: "all",
-          enforce: true,
-        },
-      },
-    },
     minimizer: [
       '...',
+      new CssMinimizerPlugin(),
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      linkType: "text/css",
-    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "index.html"),
       favicon: "./assets/img/fg.png",
-    }),
-    new ImageMinimizerPlugin({
-      minimizerOptions: {
-        // Lossless optimization with custom option
-        // Feel free to experiment with options for better result for you
-        plugins: [
-          ["gifsicle", { interlaced: true }],
-          ["jpegtran", { progressive: true }],
-          ["optipng", { optimizationLevel: 5 }],
-        ],
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
       },
-    })
-
+      inject: "body",
+      // scriptLoading: "defer"
+    }),
+    new MiniCssExtractPlugin({
+      linkType: "text/css",
+      filename: "[name].[fullhash].css",
+      chunkFilename: "[id].css"
+    }),
+    new CleanWebpackPlugin(),
   ],
   target: ['web', 'es5'],
   module: {
@@ -84,7 +75,7 @@ module.exports = {
         use: ['file-loader']
       },
       {
-        test: /\.(sass|scss|css)$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
