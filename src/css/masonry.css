@@ -1,4 +1,5 @@
 #masonry3-container,
+#masonry4-container,
 #masonry1-container,
 #masonry2-container {
   width: 1200px;
@@ -13,6 +14,7 @@
 }
 
 #masonry1-container div[id^="masonry1-child"],
+#masonry4-container div[id^="masonry4-child"],
 #masonry2-container div[id^="masonry2-child"] {
   background-color: #24272b;
   padding: 40px;
@@ -27,11 +29,13 @@
   position: relative;
 }
 
+#masonry4-container div[id^="masonry4-child"],
 #masonry2-container div[id^="masonry2-child"] {
   padding: 30px;
 }
 
 #masonry1 div[id^="masonry1-child"] p,
+#masonry4 div[id^="masonry4-child"] p,
 #masonry2 div[id^="masonry2-child"] p {
   margin-top: 15px;
   font-size: 1em;
@@ -39,6 +43,7 @@
 }
 
 #masonry1 div[id^="masonry1-child"] h2,
+#masonry4 div[id^="masonry4-child"] h2,
 #masonry2 div[id^="masonry2-child"] h2 {
   font-size: 1.3em;
   line-height: 1.3em;
@@ -49,17 +54,20 @@
 
 @media (max-width: 1200px) {
   #masonry1-container,
+  #masonry4-container,
   #masonry2-container,
   #masonry3-container {
     width: 90%;
   }
 
   #masonry1 div[id^="masonry1-child"] p,
+  #masonry4 div[id^="masonry4-child"] p,
   #masonry2 div[id^="masonry2-child"] p {
     font-size: 0.7em;
   }
 
   #masonry1 div[id^="masonry1-child"] h2,
+  #masonry4 div[id^="masonry4-child"] h2,
   #masonry2 div[id^="masonry2-child"] h2 {
     font-size: 1em;
   }
@@ -69,6 +77,7 @@
   }
 
   #masonry1-container div[id^="masonry1-child"],
+  #masonry4-container div[id^="masonry4-child"],
   #masonry2-container div[id^="masonry2-child"] {
       padding: 15px;
   }

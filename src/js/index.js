@@ -1,12 +1,13 @@
-import { projectObj } from './dataInObj'
+import { projectArrOfObj, toolsArrOfObj } from './dataInObj'
 
 //The DOMContentLoaded event fires when the initial 
 //HTML document has been completely loaded and parsed, 
 //without waiting for stylesheets, images, and subframes
 // to finish loading.
 window.addEventListener('DOMContentLoaded', () => {
-    addItemsToMasonryGrid("#masonry2") 
+    addItemsToMasonryGrid("#masonry2", projectArrOfObj) 
     addItemsToMasonryGridImg("#masonry3") 
+    addItemsToMasonryGrid("#masonry4", toolsArrOfObj); 
 });
 
 window.onload = function () {
@@ -33,7 +34,6 @@ function addItemsToMasonryGridImg(parent) {
         masonryChild.appendChild(ele)
         parentEle.appendChild(masonryChild)
     }
-
 }
 
 function createMasonryChild(parentEle,i) {
@@ -43,29 +43,29 @@ function createMasonryChild(parentEle,i) {
     return masonryChild
 }
 
-function addItemsToMasonryGrid(parent) {
+function addItemsToMasonryGrid(parent, arrOfObj) {
     let parentEle = document.querySelector(parent)
     let masonryChild;
     let ele;
 
-    for(let i=0; i<projectObj.length; i++) {
+    for(let i=0; i<arrOfObj.length; i++) {
         masonryChild = createMasonryChild(parentEle, i)
         
         ele = document.createElement('h2')
-        ele.innerHTML = projectObj[i].title;
+        ele.innerHTML = arrOfObj[i].title;
         masonryChild.appendChild(ele)
 
         ele = document.createElement('p')
-        ele.innerHTML = "<i>" + projectObj[i].lan + "</i>";
+        ele.innerHTML = "<i>" + arrOfObj[i].lan + "</i>";
         masonryChild.appendChild(ele)
 
         ele = document.createElement('p')
-        ele.innerHTML = projectObj[i].desc;
+        ele.innerHTML = arrOfObj[i].desc;
         masonryChild.appendChild(ele)
 
         ele = document.createElement('a')
         ele.className = "orange"
-        ele.href = projectObj[i].link
+        ele.href = arrOfObj[i].link
         ele.rel = "noreferrer"
         ele.target = "blank"
         ele.innerHTML = "<br>Check it out!";

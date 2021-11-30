@@ -1,4 +1,4 @@
-let projectObj = [
+let projectArrOfObj = [
     {
         'title': 'The traveling salesman problem with Simulated Annealing. Euclidean distance (2021)',
         'desc': 'The traveling salesman problem is a classic problem in combinatorial optimization.This problem is to find the shortest path that a salesman should take to traverse through a list of cities and return to the origin city.The list of cities and the distance between each pair are provided. Simulated annealing(SA) is a probabilistic technique for approximating the global optimum of a given function.',
@@ -116,4 +116,19 @@ let projectObj = [
     }
 ];
 
-export { projectObj }
+let toolsArrOfObj = [
+  {
+    title: "Webpack5 with HTML page - starter kit",
+    desc: "Webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.",
+    lan: "",
+    link: "https://github.com/najwer23/website-starter-pack",
+  },
+  {
+    title: "Webpack5 with React.js - starter kit",
+    desc: "Webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.",
+    lan: "",
+    link: "https://github.com/najwer23/website-starter-pack-react",
+  }
+];
+
+export { projectArrOfObj, toolsArrOfObj }

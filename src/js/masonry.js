@@ -3,7 +3,8 @@ var CURRENT_NUMBER_OF_COLUMNS = {}
 var MASONRY_ARR_ID = [
     "masonry1",
     "masonry2",
-    "masonry3"
+    "masonry3",
+    "masonry4"
 ]
 
 
