@@ -9,10 +9,6 @@
   margin-bottom: 25px;
 }
 
-#masonry3-container {
-  margin-top: 0;
-}
-
 #masonry1-container div[id^="masonry1-child"],
 #masonry4-container div[id^="masonry4-child"],
 #masonry2-container div[id^="masonry2-child"] {
