@@ -57,6 +57,7 @@ function addItemsToMasonryGrid(parent, arrOfObj) {
 
         ele = document.createElement('p')
         ele.innerHTML = "<i>" + arrOfObj[i].lan + "</i>";
+        ele.style["color"] = arrOfObj[i].lanColor;
         masonryChild.appendChild(ele)
 
         ele = document.createElement('p')
