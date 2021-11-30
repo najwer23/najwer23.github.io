@@ -75,7 +75,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(ico|eot|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
+        test: /\.(eot|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
         type: "asset/resource",
       },
       {
