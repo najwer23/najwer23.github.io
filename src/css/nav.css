@@ -78,15 +78,17 @@ nav,
 }
 
 .hamburger-button {
-  margin-left: 7%;
   padding: 10px 10px 6px 10px;
   position: fixed;
   cursor: pointer;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0); /* transparent - ios has problem with hex */ 
   border: 2px solid orange;
-  bottom: 25px;
-  right: 21px;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
   z-index: 10000;
+
 }
 
 .hamburger-button,
@@ -146,12 +148,40 @@ nav,
 .menu-mobile {
   height: 100vh;
   width: 100%;
-  color: #1e3552;
-  background-color: #e1caad;
+  color: orange;
+  background-color: #575151;
   visibility: hidden;
   transform: translateY(100%);
   position: fixed;
   z-index: 9999;
+}
+
+/* Only Chrome */
+.menu-mobile::-webkit-scrollbar {
+  width: 5px;
+}
+.menu-mobile::-webkit-scrollbar-thumb {
+  background-color: orange;
+  background-clip: padding-box;
+  border: 1px solid #0d0d0d;
+}
+.menu-mobile::-webkit-scrollbar-track {
+  background-color: #0d0d0d;
+}
+::-webkit-scrollbar-button {
+  background-color: #0d0d0d;
+}
+/* Only IE */
+.menu-mobile {
+  scrollbar-face-color: orange;
+  scrollbar-shadow-color: #0d0d0d;
+  scrollbar-highlight-color: #0d0d0d;
+  scrollbar-arrow-color: #0d0d0d;
+}
+/* Only FireFox */
+.menu-mobile {
+  scrollbar-color: orange #0d0d0d;
+  scrollbar-width: thin !important;
 }
 
 .menu-mobile-active {
@@ -190,7 +220,7 @@ nav,
 .menu-mobile-links a {
   text-decoration: none;
   color: white;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .menu-mobile-links li:last-child {
