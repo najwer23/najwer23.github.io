@@ -1,6 +1,6 @@
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faGithub, faTwitter, faLinkedin} from "@fortawesome/free-brands-svg-icons";
-import { faCodeBranch, faArrowRight, faCopyright, faRegistered, faMailBulk, faFilePdf, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCodeBranch, faArrowRight, faCopyright, faRegistered, faMailBulk, faFilePdf, faCheck, faFilm } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
     faCheck,
@@ -12,7 +12,8 @@ library.add(
     faTwitter,
     faMailBulk,
     faFilePdf,
-    faLinkedin
+    faLinkedin,
+    faFilm
 );
 dom.watch();
 
