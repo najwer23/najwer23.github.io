@@ -17,8 +17,8 @@
   font-size: 1.1em;
   line-height: 1.5em;
   border: 3px solid;
-  -o-border-image: linear-gradient(to right, #705e78 0%, grey 100%);
-  border-image: linear-gradient(to right, #705e78 0%, grey 100%);
+  -o-border-image: linear-gradient(to right, #C0C0C0 0%, grey 100%);
+  border-image: linear-gradient(to right, #999d9e 0%, grey 100%);
   border-image-slice: 1;
   border-width: 3px;
   margin: 0;

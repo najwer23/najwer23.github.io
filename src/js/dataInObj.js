@@ -1,5 +1,21 @@
 let projectArrOfObj = [
   {
+    title: "Custom scrollbar with JavaScript",
+    desc: "The same scrollbar on every page",
+    lan: "HTML, CSS3, JavaScript",
+    link: "https://najwer23.github.io/scrollbar/",
+    lanColor: "#D9BA5F",
+  },
+
+  {
+    title: "Infinite pure JavaScript carousel (click and touch events)",
+    desc: "Netflix carousel",
+    lan: "HTML, CSS3, JavaScript",
+    link: "https://najwer23.github.io/carousel/",
+    lanColor: "#D9BA5F",
+  },
+
+  {
     title:
       "The traveling salesman problem with Simulated Annealing. Euclidean distance (2021)",
     desc: "The traveling salesman problem is a classic problem in combinatorial optimization.This problem is to find the shortest path that a salesman should take to traverse through a list of cities and return to the origin city.The list of cities and the distance between each pair are provided. Simulated annealing(SA) is a probabilistic technique for approximating the global optimum of a given function.",
