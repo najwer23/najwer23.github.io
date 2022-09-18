@@ -1,12 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './CSS/index.css';
-import './CSS/muliFont.css';
-import App from './App';
+import React from "react";
+import { createRoot } from "react-dom/client";
 
-ReactDOM.render(
-  <React.StrictMode>
+import App from "./js/App";
+
+const root = createRoot(document.getElementById("root"));
+root.render(
+  <>
     <App />
-  </React.StrictMode>,
-  document.querySelector('#root')
+  </>
 );
