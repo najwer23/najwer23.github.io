@@ -1,14 +1,30 @@
 let projectArrOfObj = [
   {
-    title: "Custom scrollbar with JavaScript",
-    desc: "The same scrollbar on every page",
+    title: "App supporting calisthenics training 2022",
+    desc: `
+      - 100 pushups training plan, <br>
+      - 300 squats training plan, <br>
+      - 300 situps training plan, <br>
+      - 40 pullups training plan, <br>
+      - Weight Calendar, <br>
+      - Weather stations, <br>
+      - Fancy Charts, <br>
+    `,
+    lan: "JavaScript React.js Node.js, dynamoDB, AWS, Google Cloud Platform",
+    link: "https://our-chassis-231708.lm.r.appspot.com/",
+    lanColor: "#D9BA5F",
+  },
+
+  {
+    title: "Custom scrollbar with JavaScript 2022",
+    desc: "The same scrollbar on every browser",
     lan: "HTML, CSS3, JavaScript",
     link: "https://najwer23.github.io/scrollbar/",
     lanColor: "#D9BA5F",
   },
 
   {
-    title: "Infinite pure JavaScript carousel (click and touch events)",
+    title: "Infinite pure JavaScript carousel (click and touch events) 2022",
     desc: "Netflix carousel",
     lan: "HTML, CSS3, JavaScript",
     link: "https://najwer23.github.io/carousel/",
