@@ -1,5 +1,9 @@
+.foot {
+    margin-top: 200px;
+}
+
 .foot-box{
-    background-color: iherit;
+    background-color: #24272b;
     margin-top: -10px;
     padding: 100px 0 100px 0;
     font-weight: 800;
@@ -7,12 +11,14 @@
 }
 
 .foot-item {
-    width: 1200px;
+    width: 1000px;
     margin: 0px auto 0px auto;
     line-height: 175%;
     text-align: left;
     color: white;
 }
+
+
 
 
 .flex-columns {
@@ -32,7 +38,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
 .foot-social a {
@@ -40,18 +45,12 @@
 }
 
 .foot-social-item {
-    width: 320px;
-    height: 60px;
+    width: 50px;
     text-align: center;
     color: white;
-    display: flex;
 }
 
-.social-icon {
-    width: 60px;
-}
-
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
     .flex-columns {
         flex-flow: column wrap;
     }

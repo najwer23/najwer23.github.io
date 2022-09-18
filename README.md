@@ -1,46 +1,26 @@
-# Portfolio
-(IE11, Chrome, Firefox, Edge)
 
+# Portfolio Mariusz Najwer
 [https://najwer23.github.io/](https://najwer23.github.io/)
 
-## Inside
-- Babel, 
-- CSS, 
-- JavaScript
-- FontAwesome 5
-- Font Muli
-- Webpack 
-    - MiniCssExtractPlugin
-    - HtmlWebpackPlugin
-    - CssMinimizerPlugin
-    - CleanWebpackPlugin
-    - File manager
-- HTML template
 
-## Usage
-### Installation
-```sh
-$ yarn install
+## Requirements
+* Yarn ^1.22.0
+* Node ^14.16.0
+
+## Instalation
 ```
-
-### Dev
-```sh
-$ yarn start
+git clone https://github.com/najwer23/najwer23.github.io.git
 ```
-
-### Production
-```sh
-$ yarn build
+## Run in folder client/
 ```
-
-### Deploy
-```sh
-$ yarn deploy
+yarn install
+yarn start
 ```
-
-### Author
-Mariusz Najwer
-[https://najwer23.github.io/](https://najwer23.github.io/)
-
-### License
+## Deploy - Run in folder client/
+```
+yarn run deploy
+``` 
+## MIT License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+![image](https://user-images.githubusercontent.com/52133025/111073814-7ecf7d00-84e0-11eb-9e56-aeddecbfcd3b.png)
