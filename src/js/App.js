@@ -7,13 +7,7 @@ export default function App() {
     <>
       <ApplyPageBreaks />
       <div className="page" contentEditable="true">
-        <p>
-          Test First <code>.page</code> element
-        </p>
-        <p>
-          Mariusz Najwer <br />
-          https://www.linkedin.com/in/najwer23/
-        </p>
+        
       </div>
       {/* <div className="page" contentEditable="true">
         <p>
