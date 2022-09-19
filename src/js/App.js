@@ -1,14 +1,14 @@
 import "../css/FontMulish.css";
 import "../css/App.css";
 import ApplyPageBreaks from "./ApplyPageBreaks";
+import PageIntro from "./PageIntro";
 
 export default function App() {
   return (
     <>
       <ApplyPageBreaks />
-      <div className="page" contentEditable="true">
-        
-      </div>
+			<PageIntro />
+
       {/* <div className="page" contentEditable="true">
         <p>
           Second <code>.page</code> element

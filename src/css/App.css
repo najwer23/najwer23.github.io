@@ -1,1 +1,29 @@
 @import "sheets-of-paper-a4";
+
+.intro {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.intro-title {
+	width: 60%;
+}
+
+.intro-title-name {
+	font-size: 45px;
+}
+
+.intro-title-desc {
+	font-size: 14px;
+	color: orangered;
+}
+
+.intro-links {
+	width: 40%;
+}
+
+.intro-link {
+	text-align: right;
+	font-size: 13px;
+	margin-top: 2px;
+}
