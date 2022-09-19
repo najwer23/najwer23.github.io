@@ -35,7 +35,7 @@
 
 .intro {
 	display: flex;
-	margin-bottom: 20px;
+	margin-bottom: 80px;
 }
 
 .intro-title {
@@ -85,4 +85,9 @@
 
 .section-2-col-desc-title {
 	font-size: 18px;
+}
+
+.exp {
+	margin-top: 20px;
+	margin-bottom: 20px;
 }

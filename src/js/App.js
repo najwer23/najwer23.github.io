@@ -5,6 +5,7 @@ import ApplyPageBreaks from "./ApplyPageBreaks";
 import PageIntro from "./PageIntro";
 import PageAbout from "./PageAbout";
 import PageEducation from "./PageEducation";
+import PageExp from "./PageExp";
 import ChangeLanguage from "./ChangeLanguage";
 
 import { useState } from "react";
@@ -23,6 +24,7 @@ export default function App() {
 					<PageIntro />
 					<PageAbout />
 					<PageEducation />
+					<PageExp />
 				</div>
 			</LanguageContext.Provider>
 

@@ -12,6 +12,14 @@ export const t = {
 			desc3: "Studia Inżynierskie, CONTROL ENGINEERING AND ROBOTICS",
 			desc4: "2014.10 ‑ 2018.01, Wrocław",
 		},
+		exp: {
+			title: "EXPERIENCE",
+			companyTitle: "EUROPA UBEZPIECZENIA - FULL STACK DEVELOPER",
+			year1: "2019.09.01 – 2021.10.31; 2 years, 2 months",
+			companyTitle2: "FLHF S.A - FRONTEND WEB DEVELOPER",
+			year2: "2021.11.01 – current",
+			year3: "2017.07; 1 month"
+		},
 	},
 	PL: {
 		about: {
@@ -25,6 +33,14 @@ export const t = {
 			desc2: "2018.02 ‑ 2019.06, Wrocław",
 			desc3: "Studia Inżynierskie, AUTOMATYKA I ROBOTYKA, 4.5",
 			desc4: "2014.10 ‑ 2018.01, Wrocław",
+		},
+		exp: {
+			title: "DOŚWIADCZENIE",
+			companyTitle: "EUROPA UBEZPIECZENIA - FULL STACK DEVELOPER",
+			year1: "2019.09.01 – 2021.10.31; 2 lata, 2 miesiące",
+			companyTitle2: "FLHF S.A - FRONTEND WEB DEVELOPER",
+			year2: "2021.11.01 – obecnie",
+			year3: "2017.07; 1 miesiąc"
 		},
 	},
 };
