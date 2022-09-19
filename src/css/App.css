@@ -76,3 +76,13 @@
 	margin-top: 30px;
 	margin-bottom: 20px;
 }
+
+.section-2-col {
+	display: flex;
+	gap: 30px;
+	margin-top: 10px;
+}
+
+.section-2-col-desc-title {
+	font-size: 18px;
+}
