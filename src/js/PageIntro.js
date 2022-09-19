@@ -1,5 +1,3 @@
-import PageBreak from "./PageBreak";
-
 const Links = {
 	"tel:+48519792189": <>+48{'\u00A0'}519{'\u00A0'}792{'\u00A0'}189</>,
 	"mailto:najwer23@live.com": "najwer23@live.com",
@@ -9,7 +7,7 @@ const Links = {
 export default function PageIntro() {
 	return (
 		<>
-			<div className="page" contentEditable="false">
+			<div className="page">
 				<div className="intro">
 					<div className="intro-title">
 						<div className="intro-title-name"><span style={{fontWeight: "bold"}}>Mariusz</span> Najwer</div>

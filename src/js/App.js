@@ -1,15 +1,28 @@
 import "../css/FontMulish.css";
 import "../css/App.css";
+import LanguageContext from "./LanguageContext";
 import ApplyPageBreaks from "./ApplyPageBreaks";
 import PageIntro from "./PageIntro";
+import PageAbout from "./PageAbout";
+import ChangeLanguage from "./ChangeLanguage";
+
+import { useState } from "react";
 
 export default function App() {
-  return (
-    <>
-      <ApplyPageBreaks />
-			<PageIntro />
+	const [language, setLanguage] = useState("PL");
 
-      {/* <div className="page" contentEditable="true">
+	console.log("App", language)
+
+  return (
+		<>
+			<LanguageContext.Provider value={{ language, setLanguage }}>
+				<ApplyPageBreaks />
+				<ChangeLanguage />
+				<PageIntro />
+				<PageAbout />
+			</LanguageContext.Provider>
+
+			{/* <div className="page" contentEditable="true">
         <p>
           Second <code>.page</code> element
         </p>
@@ -87,8 +100,8 @@ export default function App() {
           takimata sanctus est Lorem ipsum dolor sit amet.
         </p>
       </div> */}
-    </>
-  );
+		</>
+	);
 }
 
 // src={`${process.env.PUBLIC_URL}/assets/images/undraw_percentages.svg`}
