@@ -7,21 +7,19 @@ const Links = {
 export default function PageIntro() {
 	return (
 		<>
-			<div className="page">
-				<div className="intro">
-					<div className="intro-title">
-						<div className="intro-title-name"><span style={{fontWeight: "bold"}}>Mariusz</span> Najwer</div>
-						<div className="intro-title-desc">JavaScript Developer</div>
-					</div>
-					<div className="intro-links">
-						{Object.keys(Links).map((v, i) => (
-							<div className="intro-link" key={i}>
-								<a key={i} href={v} rel="noreferrer" target="_blank">
-									{Links[v]}
-								</a>
-							</div>
-						))}
-					</div>
+			<div className="intro">
+				<div className="intro-title">
+					<div className="intro-title-name"><b>Mariusz</b> Najwer</div>
+					<div className="intro-title-desc"><b>JavaScript Developer</b></div>
+				</div>
+				<div className="intro-links">
+					{Object.keys(Links).map((v, i) => (
+						<div className="intro-link" key={i}>
+							<a key={i} href={v} rel="noreferrer" target="_blank">
+								{Links[v]}
+							</a>
+						</div>
+					))}
 				</div>
 			</div>
 		</>

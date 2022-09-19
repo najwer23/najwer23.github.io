@@ -18,8 +18,10 @@ export default function App() {
 			<LanguageContext.Provider value={{ language, setLanguage }}>
 				<ApplyPageBreaks />
 				<ChangeLanguage />
-				<PageIntro />
-				<PageAbout />
+				<div className="page">
+					<PageIntro />
+					<PageAbout />
+				</div>
 			</LanguageContext.Provider>
 
 			{/* <div className="page" contentEditable="true">

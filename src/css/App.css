@@ -11,6 +11,28 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.section-title-line {
+	width: 300px;
+	height: 3px;
+	background-color: orangered;
+	margin-top: 3px;
+	margin-bottom: 10px;
+}
+
+.section-title {
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.section-title::first-letter {
+	font-size: 22px;
+}
+
+.section-desc {
+	font-size: 15px;
+}
+
 .intro {
 	display: flex;
 	margin-bottom: 20px;
@@ -48,4 +70,9 @@
 
 .language button{
 	background: white;
+}
+
+.about {
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
