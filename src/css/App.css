@@ -98,3 +98,16 @@
 	gap: 5px;
 	flex-wrap: wrap;
 }
+
+.skills {
+	margin-bottom: 20px;
+}
+
+.project {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.project-tech {
+	font-size: 12px;
+}

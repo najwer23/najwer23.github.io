@@ -8,6 +8,9 @@ import PageEducation from "./PageEducation";
 import PageExp from "./PageExp";
 import ChangeLanguage from "./ChangeLanguage";
 import PageSkills from "./PageSkills";
+import PageProjects from "./PageProjects";
+import PageProjects2 from "./PageProjects2";
+import PageProjects3 from "./PageProjects3";
 
 import { useState } from "react";
 
@@ -28,6 +31,13 @@ export default function App() {
 					<PageExp />
 				</div>
 				<div className="page">
+					<PageProjects />
+				</div>
+				<div className="page">
+					<PageProjects2 />
+				</div>
+				<div className="page">
+					<PageProjects3 />
 					<PageSkills />
 				</div>
 			</LanguageContext.Provider>
