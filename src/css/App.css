@@ -91,3 +91,10 @@
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+.skills-container {
+	display: flex;
+	align-items: baseline;
+	gap: 5px;
+	flex-wrap: wrap;
+}

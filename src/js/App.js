@@ -7,6 +7,7 @@ import PageAbout from "./PageAbout";
 import PageEducation from "./PageEducation";
 import PageExp from "./PageExp";
 import ChangeLanguage from "./ChangeLanguage";
+import PageSkills from "./PageSkills";
 
 import { useState } from "react";
 
@@ -25,6 +26,9 @@ export default function App() {
 					<PageAbout />
 					<PageEducation />
 					<PageExp />
+				</div>
+				<div className="page">
+					<PageSkills />
 				</div>
 			</LanguageContext.Provider>
 

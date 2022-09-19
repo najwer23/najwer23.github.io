@@ -18,7 +18,10 @@ export const t = {
 			year1: "2019.09.01 – 2021.10.31; 2 years, 2 months",
 			companyTitle2: "FLHF S.A - FRONTEND WEB DEVELOPER",
 			year2: "2021.11.01 – current",
-			year3: "2017.07; 1 month"
+			year3: "2017.07; 1 month",
+		},
+		skills: {
+			title: "Skills",
 		},
 	},
 	PL: {
@@ -40,7 +43,10 @@ export const t = {
 			year1: "2019.09.01 – 2021.10.31; 2 lata, 2 miesiące",
 			companyTitle2: "FLHF S.A - FRONTEND WEB DEVELOPER",
 			year2: "2021.11.01 – obecnie",
-			year3: "2017.07; 1 miesiąc"
+			year3: "2017.07; 1 miesiąc",
+		},
+		skills: {
+			title: "W tych technologiach czuję się dobrze",
 		},
 	},
 };
