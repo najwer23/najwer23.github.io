@@ -121,4 +121,10 @@
 .corner-right {
 	padding-top: 20px;
 	padding-right: 20px;
+	display: flex;
+	column-gap: 10px;
+}
+
+.corner-right button {
+	padding: 5px;
 }
