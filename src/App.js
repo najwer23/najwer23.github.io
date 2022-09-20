@@ -2,7 +2,7 @@ import "./fonts/FontMulish.css";
 import "./App.css";
 import LanguageContext from "./context/LanguageContext";
 
-import HashRoutes from "./custom-routes/HashRoutes";
+import CustomHashRoutes from "./custom-routes/CustomHashRoutes";
 import { useState } from "react";
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
   return (
 		<>
 			<LanguageContext.Provider value={{ language, setLanguage }}>
-				<HashRoutes />
+				<CustomHashRoutes />
 			</LanguageContext.Provider>
 		</>
 	);
