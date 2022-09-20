@@ -109,15 +109,6 @@ export default function PageExp() {
 								<div className="section-desc">
 									{Trans.t[language].exp.year3}
 								</div>
-								<div
-									className="section-desc"
-									style={{
-										marginTop: "10px",
-										fontSize: "12px",
-										marginBottom: "20px",
-									}}
-								>
-								</div>
 							</div>
 						</div>
 					</div>
