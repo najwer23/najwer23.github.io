@@ -17,8 +17,6 @@ import { useState } from "react";
 export default function App() {
 	const [language, setLanguage] = useState("PL");
 
-	console.log("App", language)
-
   return (
 		<>
 			<LanguageContext.Provider value={{ language, setLanguage }}>

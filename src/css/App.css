@@ -61,15 +61,16 @@
 	margin-top: 2px;
 }
 
-.language {
+.corner-left {
 	margin-top: 20px;
 	margin-left: 20px;
 	display: flex;
 	gap: 10px;
 }
 
-.language button{
+.corner-left button{
 	background: white;
+	height: 20px;
 }
 
 .about {
@@ -110,4 +111,14 @@
 
 .project-tech {
 	font-size: 12px;
+}
+
+.utils {
+	display: flex;
+	justify-content: space-between;
+}
+
+.corner-right {
+	padding-top: 20px;
+	padding-right: 20px;
 }

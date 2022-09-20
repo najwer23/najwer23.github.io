@@ -162,5 +162,6 @@ table {
 
 	.non-printable {
 		visibility: hidden;
+		display: none;
 	}
 }
