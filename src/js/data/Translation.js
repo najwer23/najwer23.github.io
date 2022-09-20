@@ -27,7 +27,7 @@ export const t = {
 			title: "My projects",
 			project1: (
 				<div>
-					<div>APLIKACJA WSPIERAJĄCA TRENING KALISTENIKI (SPA)</div>
+					<div>APP SUPPORTING CALISTHENICS TRAINING (SPA)</div>
 					<div className="project-tech">
 						(React.js, Node.js (express.js), DynamoDB, Google Cloud Platform)
 					</div>
@@ -138,7 +138,7 @@ export const t = {
 			),
 			project6: (
 				<div>
-					<div>ALGORYTMY KRYPTOGRAFII ASYMETRYCZNEJ ELGAMAL I RSA</div>
+					<div>RSA and ElGamal algorithm</div>
 					<div className="project-tech">(C#)</div>
 					<ul>
 						<li>
@@ -217,7 +217,7 @@ export const t = {
 			),
 			project10: (
 				<div>
-					<div>Masonry layout problem</div>
+					<div>MASONRY LAYOUT PROBLEM</div>
 					<div className="project-tech">(JavaScript, HTML5, CSS3)</div>
 					<ul>
 						<li>
@@ -471,15 +471,15 @@ export const t = {
 			),
 			project10: (
 				<div>
-					<div>Masonry layout problem</div>
+					<div>MASONRY LAYOUT PROBLEM</div>
 					<div className="project-tech">(JavaScript, HTML5, CSS3)</div>
 					<ul>
 						<li>
-							Masonry layout is a layout method where one axis uses a typical
-							strict grid layout, most often columns, and the other a masonry
-							layout. On the masonry axis, rather than sticking to a strict grid
-							with gaps being left after shorter items, the items in the
-							following row rise up to completely fill the gaps.
+							Metoda układu, w której jedna oś wykorzystuje typowy ścisły układ
+							siatki, najczęściej kolumny, a druga układ muru. Na osi muru,
+							zamiast trzymać się ścisłej siatki z lukami pozostawionymi po
+							krótszych elementach, elementy w następnym rzędzie unoszą się, aby
+							całkowicie wypełnić luki.
 						</li>
 					</ul>
 					<a
