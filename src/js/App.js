@@ -15,7 +15,7 @@ import PageProjects3 from "./PageProjects3";
 import { useState } from "react";
 
 export default function App() {
-	const [language, setLanguage] = useState("PL");
+	const [language, setLanguage] = useState("EN");
 
   return (
 		<>
