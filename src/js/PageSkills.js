@@ -29,18 +29,18 @@ export default function PageSkills() {
 				<div className="section-title-line"></div>
 				<div className="skills-container">
 					{Object.keys(obj).map((v, i, arr) => (
-						<>
+						<div key={v}>
 							{obj[v]}
-							{(i < arr.length - 1) ? (
+							{i < arr.length - 1 ? (
 								<FontAwesomeIcon
 									icon={faCircle}
 									size="2xs"
-									style={{ color: "orangered" }}
+									style={{ color: "orangered", marginLeft: "10px" }}
 								/>
 							) : (
 								""
 							)}
-						</>
+						</div>
 					))}
 				</div>
 			</div>

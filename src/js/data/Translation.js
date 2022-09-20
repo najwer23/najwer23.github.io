@@ -126,6 +126,9 @@ export const t = {
 				<div>
 					<div>BLACKJACK</div>
 					<div className="project-tech">(HTML5, CSS3, JavaScript)</div>
+					<ul>
+
+					</ul>
 					<a
 						href="https://najwer23.github.io/blackjack/"
 						rel="noreferrer"
