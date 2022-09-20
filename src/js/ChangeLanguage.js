@@ -71,7 +71,7 @@ export default function ChangeLanguage(props) {
 						className="noselect"
 						type="button"
 						onClick={() => printPDF()}
-						style={{ marginLeft: "20px" }}
+						style={{ marginLeft: "10px" }}
 					>
 						<FontAwesomeIcon
 							icon={faFilePdf}
