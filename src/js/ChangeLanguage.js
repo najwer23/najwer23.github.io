@@ -48,22 +48,27 @@ export default function ChangeLanguage(props) {
 		<>
 			<div className="utils non-printable">
 				<div className="corner-left">
-					<button
-						className="noselect"
-						type="button"
-						onClick={() => setLanguage("PL")}
-						style={{ background: detectColorByLanguage("PL") }}
-					>
-						PL
-					</button>
-					<button
-						className="noselect"
-						type="button"
-						onClick={() => setLanguage("EN")}
-						style={{ background: detectColorByLanguage("EN") }}
-					>
-						EN
-					</button>
+					<div className="language">
+						<button
+							className="noselect"
+							type="button"
+							onClick={() => setLanguage("PL")}
+							style={{ background: detectColorByLanguage("PL") }}
+						>
+							PL
+						</button>
+						<button
+							className="noselect"
+							type="button"
+							onClick={() => setLanguage("EN")}
+							style={{ background: detectColorByLanguage("EN") }}
+						>
+							EN
+						</button>
+					</div>
+					<div className="update">
+						20.09.2022, 15:02
+					</div>
 				</div>
 
 				<div className="corner-right">

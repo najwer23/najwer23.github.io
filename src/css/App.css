@@ -129,11 +129,14 @@
 .corner-left {
 	margin-top: 20px;
 	margin-left: 20px;
+}
+
+.language {
 	display: flex;
 	gap: 10px;
 }
 
-.corner-left button{
+.language button{
 	background: white;
 	height: 40px;
 	width: 40px;
@@ -141,4 +144,10 @@
 	border: 1px solid orangered;
 	border-radius: 50%;
 	font-weight: 600;
+}
+
+.corner-left .update {
+	font-size: 10px;
+	margin-top: 10px;
+	font-weight: 700;
 }
