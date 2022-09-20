@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 var Config = {};
 Config.pixelsPerInch = 96;
 Config.pageHeightInCentimeter = 29.7; // must match 'min-height' from 'css/sheets-of-paper-*.css' being used
@@ -105,6 +107,9 @@ function applyAutomaticPageBreaks(
 }
 
 export default function ApplyPageBreaks() {
-  applyPageBreaks();
+	useEffect(() => {
+		applyPageBreaks();
+	}, []);
+
   return;
 }
