@@ -9,11 +9,7 @@ export default function App() {
   return (
 		<>
 			<LanguageContext.Provider value={{ language, setLanguage }}>
-				In progress..
-				<br />
-				<br />
-
-				https://najwer23.github.io/resume/ <br />
+				https://najwer23.github.io/resume/
 			</LanguageContext.Provider>
 		</>
 	);
