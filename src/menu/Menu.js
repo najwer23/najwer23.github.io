@@ -7,25 +7,12 @@ const MENU = {
 	notlogged: {
 		mobile: [
 			{ path: "/", text: "Strona Główna", innerPage: true },
-			{ path: "/travel", text: "Travel" },
+			{ path: "/travel", text: "Podróże" },
 			{ path: "/resume", text: "O mnie", outPage: true },
 		],
 		desktop: [
 			{ path: "/", text: "Strona Główna", innerPage: true },
-			{ path: "/travel", text: "Travel" },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
-			{ path: "/resume", text: "O mnie", outPage: true },
+			{ path: "/travel", text: "Podróże" },
 			{ path: "/resume", text: "O mnie", outPage: true },
 		],
 	},
@@ -47,6 +34,7 @@ export default function Main(props) {
 		const toggle = document.getElementById("toggle");
 		const circle = document.getElementById("bg-circle");
 		const circleWidth = circle.clientWidth;
+
 		const getVpdr = () => {
 			const vph = Math.pow(html.offsetHeight, 2); // Height
 			const vpw = Math.pow(html.offsetWidth, 2); // Width
@@ -54,9 +42,22 @@ export default function Main(props) {
 			return (vpd * 2) / circleWidth; // Circle radius
 		};
 
+		const setPadding = () => {
+				let ul = document.querySelector(".bnavbar ul");
+				ul.style.paddingTop = 100 + "px";
+				ul.style.paddingBottom = 100 + "px";
+
+				if (ul.clientHeight < self.innerHeight) {
+					let half = (self.innerHeight - ul.offsetHeight + 200) / 2;
+					ul.style.paddingTop = half + "px";
+					ul.style.paddingBottom = half + "px";
+				}
+		}
+
 		const openbnavbar = () => {
 			const openTimeline = new TimelineMax();
 			openTimeline.to(".bnavbar", 0, { display: "flex" });
+			setPadding();
 			openTimeline.to("#bg-circle", 1.5, {
 				scale: getVpdr(),
 				ease: Expo.easeInOut,
@@ -104,6 +105,7 @@ export default function Main(props) {
 		window.onresize = () => {
 			if (isOpen) {
 				gsap.to("#bg-circle", 1, { scale: getVpdr(), ease: Expo.easeInOut });
+				setPadding();
 			}
 		};
 	}, []);
