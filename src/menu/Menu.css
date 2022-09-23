@@ -1,5 +1,5 @@
 .bnavbar-toggle {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   transition: transform 400ms;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -10,7 +10,7 @@
   z-index: 20;
   top: 1rem;
   right: 1rem;
-  background: transparent;
+  background: rgba(0,0,0,0);
   border: none;
   outline: none;
   padding: 0;
@@ -21,7 +21,7 @@
   transition-property: stroke, stroke-dasharray, stroke-dashoffset;
   transition-timing-function: ease;
   transition-duration: 400ms;
-  stroke: #24272B;
+  stroke: red;
   stroke-width: 5.5;
   stroke-linecap: round;
 }
@@ -108,7 +108,7 @@
   transform: scale(0);
   width: 80px;
   height: 80px;
-  background: #9ECBF7;
+  background: whitesmoke;
   position: fixed;
   top: 1rem;
   right: 1rem;

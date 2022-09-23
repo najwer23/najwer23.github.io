@@ -1,0 +1,48 @@
+.web-header {
+	height: 120px;
+	background: #E6E6E6;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.web-container {
+	max-width: 1920px;
+	padding-left: 42px;
+	padding-right: 42px;
+  margin: auto;
+}
+
+.web-title {
+	height: 120px;
+	display: flex;
+	align-items: center;
+}
+
+a {
+	text-decoration: unset;
+}
+
+.web-title span {
+	height: 120px;
+	line-height: 120px;
+	font-size: 40px;
+	color: black;
+	font-weight: 800;
+	text-decoration: none;
+}
+
+@media (max-width: 500px) {
+	.web-title span {
+		font-size: 22px;
+	}
+
+	.web-title {
+		margin-left: 5%;
+	}
+
+	.web-container {
+    max-width: 1920px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: auto;
+}
+}
