@@ -8,6 +8,7 @@
 	width: calc(33.333333%  - 33.333333px);
 	background-color: grey;
 	height: 600px;
+	overflow: hidden;
 }
 
 .grid-child-container {
@@ -26,6 +27,8 @@
 .grid-child-title:hover + img{
 	filter: grayscale(0);
 	opacity: 1;
+	overflow: hidden;
+	transform: scale(1.1);
 }
 
 .grid-child-container {
