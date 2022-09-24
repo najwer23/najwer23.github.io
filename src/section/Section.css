@@ -3,6 +3,8 @@
 	padding-left: 42px;
 	padding-right: 42px;
 	margin-top: 75px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media (max-width: 500px) {

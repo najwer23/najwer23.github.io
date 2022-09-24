@@ -52,7 +52,6 @@ export default function Footer() {
 					<div className="footer-container-col center">Be Alive</div>
 
 					<div className="footer-container-col right">
-						<div className="footer-container-child">Podróże</div>
 						<div className="footer-container-child">
 							<a
 								href="https://najwer23.github.io/resume/"
