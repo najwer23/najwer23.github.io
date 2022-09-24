@@ -1,13 +1,18 @@
 import Footer from "../footer/Footer";
-import Menu from "../menu/Menu"
-import Title from "./Title"
+import Header from "../header/Header"
+import Section from "../section/Section";
+import GridTemplate from "../grid/GridTemplate";
 
 export default function Main() {
 	return (
 		<>
-			<Menu menuType={"notlogged"} />
-			<Title />
+			<Header />
+
+			<Section content={<GridTemplate />} />
+
 			<Footer />
 		</>
 	);
 }
+
+
