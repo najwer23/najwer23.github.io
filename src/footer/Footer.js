@@ -51,7 +51,7 @@ export default function Footer() {
 					<div className="footer-container-col right">
 						<div className="footer-container-child">
 							<div className="footer-container-child">
-								<FontAwesomeIcon icon={faPenNib} size="1x" /> 25.09.2022, 14:33
+								<FontAwesomeIcon icon={faPenNib} size="1x" /> 25.09.2022, 22:17
 							</div>
 						</div>
 					</div>

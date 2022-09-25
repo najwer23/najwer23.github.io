@@ -1,5 +1,5 @@
 .popup-menu {
-	z-index: 99;
+	z-index: 999999;
 	align-items: center;
 	justify-content: center;
 	position: fixed;
@@ -58,7 +58,7 @@ nav ul li {
 nav a {
 	font-size: 36px;
 	color: black;
-	font-weight: 600;
+	font-weight: 700;
 	text-decoration: none;
 }
 
