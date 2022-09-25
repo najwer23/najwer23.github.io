@@ -13,10 +13,12 @@ const MENU = {
 	notlogged: {
 		mobile: [
 			{ path: "/", text: "Strona Główna", innerPage: true },
+			{ path: "/blog", text: "Blog", innerPage: true },
 			{ path: "/resume", text: "O mnie", outPage: true },
 		],
 		desktop: [
 			{ path: "/", text: "Strona Główna", innerPage: true },
+			{ path: "/blog", text: "Blog", innerPage: true },
 			{ path: "/resume", text: "O mnie", outPage: true },
 		],
 	},

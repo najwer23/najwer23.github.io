@@ -9,6 +9,7 @@
 	background-color: grey;
 	height: 600px;
 	overflow: hidden;
+	position: relative;
 }
 
 .grid-child-container {
@@ -22,6 +23,27 @@
 	width: 100%;
 	filter: grayscale(1);
 	opacity: 0.5;
+}
+
+.grid-child-info {
+	position: absolute;
+	z-index: 20;
+	bottom: 0;
+	left: 0;
+	display: none;
+	height: 80px;
+	line-height: 80px;
+	width: 100%;
+	background: rgba(0,0,0,0.7);
+	text-align: center;
+	color: aliceblue;
+	font-size: 20px;
+}
+
+
+
+.grid-child-container:hover > .grid-child-info {
+	display: block;
 }
 
 .grid-child-title:hover + img{

@@ -1,6 +1,7 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import Blog from "../blog/Blog"
+import Barcelona from "../blog/Barcelona"
 import Main from "../main/Main"
 
 export default function CustomHashRoutes() {
@@ -12,6 +13,10 @@ export default function CustomHashRoutes() {
 		{
 			path: "/blog",
 			element: <Blog />,
+		},
+		{
+			path: "/blog/barcelona",
+			element: <Barcelona />,
 		},
 		{
 			path: "/",
