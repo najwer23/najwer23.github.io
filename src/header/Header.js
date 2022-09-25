@@ -1,5 +1,7 @@
 import "./Header.css";
 import Menu from "./menu/Menu"
+import { Link } from "react-router-dom";
+
 
 export default function Header() {
 	return (
@@ -7,9 +9,9 @@ export default function Header() {
 			<header className="header-wrapper">
 				<div className="header-container">
 					<div className="header-logo">
-						<a href="/">
+						<Link to={"/"} title={"Mariusz Najwer"}>
 							<span>Mariusz Najwer</span>
-						</a>
+						</Link>
 					</div>
 					<div className="header-menu">
 						<Menu menuType={"notlogged"} />
