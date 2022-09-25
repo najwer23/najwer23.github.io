@@ -2,6 +2,7 @@ import "./Menu.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import useWindowSize from "../../custom-hooks/useWindowSize";
+import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faBars,
@@ -12,19 +13,22 @@ import {
 const MENU = {
 	notlogged: {
 		mobile: [
-			{ path: "/", text: "Strona Główna", innerPage: true },
-			{ path: "/blog", text: "Blog", innerPage: true },
+			{ path: "/", text: "Strona Główna" },
+			{ path: "/blog", text: "Blog" },
 			{ path: "/resume", text: "O mnie", outPage: true },
+			{ path: "https://jabber-23.ue.r.appspot.com/", text: "Jabber", outPage: true },
 		],
 		desktop: [
-			{ path: "/", text: "Strona Główna", innerPage: true },
-			{ path: "/blog", text: "Blog", innerPage: true },
+			{ path: "/", text: "Strona Główna" },
+			{ path: "/blog", text: "Blog" },
 			{ path: "/resume", text: "O mnie", outPage: true },
+			{ path: "https://jabber-23.ue.r.appspot.com/", text: "Jabber", outPage: true },
 		],
 	},
 };
 
 export default function Menu(props) {
+	const { pathname } = useLocation();
 	const [width, height] = useWindowSize();
 	const [menu, setMenu] = useState();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,7 +82,7 @@ export default function Menu(props) {
 						{menu &&
 							menu.map((v, i) => (
 								<li key={i}>
-									{v.outPage || v.innerPage ? (
+									{v.outPage ? (
 										<a
 											href={v.path}
 											rel="noreferrer"
@@ -88,7 +92,7 @@ export default function Menu(props) {
 											{v.text}
 										</a>
 									) : (
-										<Link to={v.path} className="noselect">
+										<Link to={v.path} className="noselect" style={{color: pathname == v.path ? "grey" : "inherit"}}>
 											{v.text}
 										</Link>
 									)}
