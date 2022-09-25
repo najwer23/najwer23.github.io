@@ -30,9 +30,6 @@ export default function Footer() {
 						<div className="footer-container-child">
 							<FontAwesomeIcon icon={faCopyright} size="1x" /> Mariusz Najwer
 						</div>
-						<div className="footer-container-child">
-							<FontAwesomeIcon icon={faPenNib} size="1x" /> 21.09.2022, 00:33
-						</div>
 
 						<div className="footer-social">
 							{Object.keys(socialLinks).map((v, i) => (
@@ -53,14 +50,9 @@ export default function Footer() {
 
 					<div className="footer-container-col right">
 						<div className="footer-container-child">
-							<a
-								href="https://najwer23.github.io/resume/"
-								rel="noreferrer"
-								target="_blank"
-								className="noselect"
-							>
-								<div className="foot-social-item">O mnie</div>
-							</a>
+							<div className="footer-container-child">
+								<FontAwesomeIcon icon={faPenNib} size="1x" /> 25.09.2022, 14:33
+							</div>
 						</div>
 					</div>
 				</div>
