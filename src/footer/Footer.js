@@ -46,7 +46,7 @@ export default function Footer() {
 						</div>
 
 						<div className="footer-container-child">
-								<FontAwesomeIcon icon={faPenNib} size="1x" /> 25.09.2022, 22:17
+								<FontAwesomeIcon icon={faPenNib} size="1x" /> 02.01.2023, 15:45
 							</div>
 					</div>
 				</div>
