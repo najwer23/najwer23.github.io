@@ -15,7 +15,7 @@ body {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: #24272b;
+	/* background-color: #24272b; */
 }
 
 .footer-container {
@@ -34,7 +34,7 @@ body {
 	text-align: center;
 	letter-spacing: 5px;
 	font-size: 40px;
-	color: white;
+	color: #24272b;
 	font-weight: bold;
 }
 
@@ -47,7 +47,7 @@ body {
 }
 
 .footer-container-child {
-	color: white;
+	color: #24272b;
 	margin-bottom: 5px;
 	font-size: 18px;
 }
@@ -56,7 +56,7 @@ footer a:visited,
 footer a:focus,
 footer a:hover,
 footer a {
-	color: white;
+	color: #24272b;
 	text-decoration: none;
 }
 
@@ -72,7 +72,7 @@ footer a {
 	}
 
 	.footer-push {
-		padding-bottom: 600px;
+		padding-bottom: 450px;
 	}
 
 	.footer-container-col.center,

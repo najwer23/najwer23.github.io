@@ -85,5 +85,14 @@
 @media (max-width: 900px) {
 	.grid-child {
 		width: 100%;
+		height: 400px;
+	}
+
+	.grid-child img {
+		height: 400px;
+	}
+
+	.grid-container {
+		gap: 25px;
 	}
 }
