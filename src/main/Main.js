@@ -13,7 +13,7 @@ const HOME = [
 	{
 		path: "/resume",
 		outPage: true,
-		title: "About",
+		title: "Resume",
 		src: "https://lh3.googleusercontent.com/pw/AL9nZEW5vXsca7XGPfpGFEa6hfIzDzEJcDXon0tzpFNkvdBjtseAdG38M3CQkKPNnNppZdBhOzeHQ9eI5OllspWoJVDKpSRCQK8xegInSY2EDcRzMM0XqvnLptCEfSoyZbFWhV2VSx-znwzus7ADsRiE6kwL=w1280-h851-no?authuser=0",
 	},
 	{
