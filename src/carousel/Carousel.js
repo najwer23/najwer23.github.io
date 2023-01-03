@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import "./Carousel.css";
 
-export default function GridTemplate(props) {
+export default function Carousel(props) {
 	const TITLE = props.title;
 	const ITEMS = props.arr;
 
