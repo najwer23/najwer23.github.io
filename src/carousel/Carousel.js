@@ -6,35 +6,29 @@ export default function GridTemplate(props) {
 	const ITEMS = props.arr;
 
 	useEffect(() => {
+		let carouselId = `#${props.id}`;
 
 		var carouselDataIn = {
-			[`#${props.id}`]: {},
+			[carouselId]: {
+				isMousedownActive: false,
+				isMousemoveActive: false,
+				translationX: 0,
+				mouseStartX: 0,
+				oneLenghtOfSlider: 0,
+				oneFrameDisplayed: 0,
+				hiddeArrowOnWidth: 600,
+			},
 		};
 
-		initCarousel();
+		if (document.querySelector(carouselId)) {
+			calculateWidthForCarousel(carouselId);
+			addMouseEventsToSlider(carouselId);
+			window.addEventListener("resize", carouselResize);
+		}
 
-		function initCarousel() {
-			let carouselDataInKeys = Object.keys(carouselDataIn);
-
-			for (let i = 0; i < carouselDataInKeys.length; i++) {
-				carouselDataIn[carouselDataInKeys[i]] = {
-					...carouselDataIn[carouselDataInKeys[i]],
-					...{
-						isMousedownActive: false,
-						isMousemoveActive: false,
-						translationX: 0,
-						mouseStartX: 0,
-						oneLenghtOfSlider: 0,
-						oneFrameDisplayed: 0,
-						hiddeArrowOnWidth: 600,
-					},
-				};
-
-				if (document.querySelector(carouselDataInKeys[i])) {
-					calculateWidthForCarousel(carouselDataInKeys[i]);
-					addMouseEventsToSlider(carouselDataInKeys[i]);
-				}
-			}
+		function carouselResize() {
+			calculateWidthForCarousel(carouselId);
+			stateArrows(carouselId);
 		}
 
 		function calculateWidthForCarousel(elementName) {
@@ -44,15 +38,44 @@ export default function GridTemplate(props) {
 			carouselDataIn[elementName].oneLenghtOfSlider = 0;
 			document.querySelectorAll(elementName + " .carousel-item").forEach((x) => {
 					x.style.width = carouselDataIn[elementName].oneFrame + "px";
-					carouselDataIn[elementName].oneLenghtOfSlider +=
-						carouselDataIn[elementName].oneFrame;
+					carouselDataIn[elementName].oneLenghtOfSlider += carouselDataIn[elementName].oneFrame;
 				});
+		}
+
+		function stateArrows(elementName) {
+			const carousel = document.querySelector(elementName);
+			const carouselContainer = carousel.parentNode;
+
+			let AL = carouselContainer.querySelector(".carousel-arrow.left");
+			let AR = carouselContainer.querySelector(".carousel-arrow.right");
+
+			if (window.innerWidth < carouselDataIn[elementName].hiddeArrowOnWidth) {
+				AL.style.display = "none";
+				AR.style.display = "none";
+				return;
+			}
+
+			let a = carouselDataIn[elementName].oneLenghtOfSlider;
+			let b = carouselDataIn[elementName].oneFrameDisplayed;
+			let t = carouselDataIn[elementName].translationX;
+			AL.style.display = "block";
+			AR.style.display = "block";
+
+			// left bound
+			if (t >= 0) {
+				AL.style.display = "none";
+			}
+
+			// right bound
+			if (t <= -a + b) {
+				AR.style.display = "none";
+			}
 		}
 
 		function addMouseEventsToSlider(elementName) {
 			const carousel = document.querySelector(elementName);
 			const carouselContainer = carousel.parentNode;
-			stateArrows();
+			stateArrows(elementName);
 
 			const preventClickOnDrag = (e) => {
 				e.preventDefault();
@@ -80,33 +103,6 @@ export default function GridTemplate(props) {
 				}
 			});
 
-			function stateArrows() {
-				let AL = carouselContainer.querySelector(".carousel-arrow.left");
-				let AR = carouselContainer.querySelector(".carousel-arrow.right");
-
-				if (window.innerWidth < carouselDataIn[elementName].hiddeArrowOnWidth) {
-					AL.style.display = "none";
-					AR.style.display = "none";
-					return;
-				}
-
-				let a = carouselDataIn[elementName].oneLenghtOfSlider;
-				let b = carouselDataIn[elementName].oneFrameDisplayed;
-				let t = carouselDataIn[elementName].translationX;
-				AL.style.display = "block";
-				AR.style.display = "block";
-
-				// left bound
-				if (t >= 0) {
-					AL.style.display = "none";
-				}
-
-				// right bound
-				if (t <= -a + b) {
-					AR.style.display = "none";
-				}
-			}
-
 			function prevPicture() {
 				if (!detectIfTranslationIsPossible()) {
 					return;
@@ -132,7 +128,7 @@ export default function GridTemplate(props) {
 				carousel.style.scrollBehavior = "smooth";
 				carousel.scrollLeft = -t;
 				carouselDataIn[elementName].translationX = t;
-				stateArrows();
+				stateArrows(elementName);
 			}
 
 			function nextPicture() {
@@ -161,7 +157,7 @@ export default function GridTemplate(props) {
 				carousel.style.scrollBehavior = "smooth";
 				carousel.scrollLeft = -t;
 				carouselDataIn[elementName].translationX = t;
-				stateArrows();
+				stateArrows(elementName);
 			}
 
 			function addListenerMulti(el, s, fn) {
@@ -185,13 +181,9 @@ export default function GridTemplate(props) {
 				}
 				carousel.style.scrollBehavior = "initial";
 				carouselDataIn[elementName].translationX = -this.scrollLeft;
-				stateArrows();
+				stateArrows(elementName);
 			});
 
-			window.addEventListener("resize", function (event) {
-				calculateWidthForCarousel(elementName);
-				stateArrows();
-			});
 
 			addListenerMulti(carousel, "mousedown", function (e) {
 				carousel.style.scrollBehavior = "initial";
@@ -258,10 +250,12 @@ export default function GridTemplate(props) {
 					carousel.scrollLeft = -t;
 					carouselDataIn[elementName].translationX = t;
 					carouselDataIn[elementName].mouseStartX = pointerEventToXY(e).x;
-					stateArrows();
+					stateArrows(elementName);
 				}
 			});
 		}
+
+		return () => window.removeEventListener("resize", carouselResize);
 	}, []);
 
 	return (
