@@ -31,7 +31,7 @@ export default function GridTemplate(props) {
 											<FontAwesomeIcon icon={faEye} />
 										</span>
 										{/* <img src={`${process.env.PUBLIC_URL}` + v.src} /> */}
-										<img loading="lazy" src={v.src} />
+										<img src={v.src} />
 										<span className="grid-child-info">{v.title}</span>
 									</span>
 								</a>
@@ -49,7 +49,7 @@ export default function GridTemplate(props) {
 											<FontAwesomeIcon icon={faEye} />
 										</span>
 										{/* <img src={`${process.env.PUBLIC_URL}` + v.src} /> */}
-										<img loading="lazy" src={v.src} />
+										<img src={v.src} />
 										<span className="grid-child-info">{v.title}</span>
 									</span>
 								</Link>
