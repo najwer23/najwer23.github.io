@@ -49,7 +49,8 @@ body {
 .footer-container-child {
 	color: #24272b;
 	margin-bottom: 5px;
-	font-size: 18px;
+	font-size: 22px;
+	font-weight: 700;
 }
 
 footer a:visited,
