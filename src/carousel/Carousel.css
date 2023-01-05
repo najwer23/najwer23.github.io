@@ -52,11 +52,11 @@
 }
 
 .carousel-content .carousel-item:nth-child(2n) {
-	background-color: darkgray;
+	background-color: #565656;
 }
 
 .carousel-content .carousel-item:nth-child(2n+1) {
-	background-color: grey;
+	background-color: #424242;
 }
 
 .carousel-arrow {

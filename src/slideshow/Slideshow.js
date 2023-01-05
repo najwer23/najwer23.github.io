@@ -202,7 +202,7 @@ export default function Slideshow(props) {
 										key={i}
 										className={SLIDESHOW_ID + "-slide slideshow-slide"}
 									>
-										<img src={v.src} />
+										<img src={v.src} alt={"Pictrue " + (i+1)} />
 									</div>
 								))}
 						</div>

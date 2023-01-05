@@ -64,14 +64,14 @@ export default function Menu(props) {
 
 	return (
 		<>
-			<button onClick={() => openMenu()} className="noselect ham">
+			<button onClick={() => openMenu()} className="noselect ham" title="Menu Open" aria-label="Menu Open">
 				<FontAwesomeIcon icon={faBars} size="2xl" />
 			</button>
 
 			<div className="popup-menu" ref={menuPopUp}>
 				<div className="close-button-wrapper">
 					<div className="close-button">
-						<button onClick={() => closeMenu()} className="noselect ham">
+						<button onClick={() => closeMenu()} className="noselect ham" title="Menu Close" aria-label="Menu Close">
 							<FontAwesomeIcon icon={faBars} size="2xl" />
 						</button>
 					</div>

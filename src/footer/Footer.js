@@ -7,18 +7,41 @@ import { faAt, faPenNib } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
 
 export default function Footer() {
-	const socialLinks = {
-		"https://github.com/najwer23": (
-			<FontAwesomeIcon icon={faGithub} />
-		),
-		"https://twitter.com/najwer23": (
-			<FontAwesomeIcon icon={faTwitter} />
-		),
-		"mailto:najwer23@live.com": <FontAwesomeIcon icon={faAt} />,
-		"https://www.linkedin.com/in/najwer23/": (
-			<FontAwesomeIcon icon={faLinkedinIn} />
-		),
-	};
+	// const socialLinks = {
+	// 	"https://github.com/najwer23": (
+	// 		<FontAwesomeIcon icon={faGithub} />
+	// 	),
+	// 	"https://twitter.com/najwer23": (
+	// 		<FontAwesomeIcon icon={faTwitter} />
+	// 	),
+	// 	"mailto:najwer23@live.com": <FontAwesomeIcon icon={faAt} />,
+	// 	"https://www.linkedin.com/in/najwer23/": (
+	// 		<FontAwesomeIcon icon={faLinkedinIn} />
+	// 	),
+	// };
+
+	const SOCIAL_MEDIA = [
+		{
+			title: "Github",
+			path: "https://github.com/najwer23",
+			icon: <FontAwesomeIcon icon={faGithub} />,
+		},
+		{
+			title: "Twitter",
+			path: "https://twitter.com/najwer23",
+			icon: <FontAwesomeIcon icon={faTwitter} />,
+		},
+		{
+			title: "Mail",
+			path: "https://github.com/najwer23",
+			icon: <FontAwesomeIcon icon={faAt} />,
+		},
+		{
+			title: "Linkedin",
+			path: "https://www.linkedin.com/in/najwer23/",
+			icon: <FontAwesomeIcon icon={faLinkedinIn} />,
+		},
+	];
 
 	return (
 		<footer>
@@ -32,22 +55,25 @@ export default function Footer() {
 						</div>
 
 						<div className="footer-social">
-							{Object.keys(socialLinks).map((v, i) => (
-								<a
-									key={i}
-									href={v}
-									rel="noreferrer"
-									target="_blank"
-									className="noselect"
-								>
-									<div className="foot-social-item">{socialLinks[v]}</div>
-								</a>
-							))}
+							{SOCIAL_MEDIA &&
+								SOCIAL_MEDIA.map((v, i) => (
+									<a
+										key={i}
+										href={v.path}
+										rel="noreferrer"
+										title={v.title}
+										target="_blank"
+										className="noselect"
+										aria-label={v.title}
+									>
+										<div className="foot-social-item">{v.icon}</div>
+									</a>
+								))}
 						</div>
 
 						<div className="footer-container-child">
-								<FontAwesomeIcon icon={faPenNib} size="1x" /> 05.01.2023, 23:06
-							</div>
+							<FontAwesomeIcon icon={faPenNib} size="1x" /> 05.01.2023, 23:06
+						</div>
 					</div>
 				</div>
 			</div>

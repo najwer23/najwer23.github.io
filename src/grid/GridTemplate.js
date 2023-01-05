@@ -10,7 +10,7 @@ export default function GridTemplate(props) {
 
 	return (
 		<>
-			{TITLE && <h2>{TITLE}</h2> }
+			{TITLE && <h2>{TITLE}</h2>}
 			<div className="grid-container">
 				{POST &&
 					POST.map((v, i) => (
@@ -31,7 +31,7 @@ export default function GridTemplate(props) {
 											<FontAwesomeIcon icon={faEye} />
 										</span>
 										{/* <img src={`${process.env.PUBLIC_URL}` + v.src} /> */}
-										<img src={v.src} />
+										<img src={v.src} alt={v.title} />
 										<span className="grid-child-info">{v.title}</span>
 									</span>
 								</a>
@@ -49,7 +49,7 @@ export default function GridTemplate(props) {
 											<FontAwesomeIcon icon={faEye} />
 										</span>
 										{/* <img src={`${process.env.PUBLIC_URL}` + v.src} /> */}
-										<img src={v.src} />
+										<img src={v.src} alt={v.title} />
 										<span className="grid-child-info">{v.title}</span>
 									</span>
 								</Link>
