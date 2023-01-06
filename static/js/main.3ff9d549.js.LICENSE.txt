@@ -1,3 +1,8 @@
+/* @preserve
+ * Leaflet 1.9.3, a JS library for interactive maps. https://leafletjs.com
+ * (c) 2010-2022 Vladimir Agafonkin, (c) 2010-2011 CloudMade
+ */
+
 /**
  * @license React
  * react-dom.production.min.js
@@ -39,7 +44,7 @@
  */
 
 /**
- * @remix-run/router v1.0.0
+ * @remix-run/router v1.2.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -50,7 +55,7 @@
  */
 
 /**
- * React Router DOM v6.4.0
+ * React Router DOM v6.6.1
  *
  * Copyright (c) Remix Software Inc.
  *
@@ -61,7 +66,7 @@
  */
 
 /**
- * React Router v6.4.0
+ * React Router v6.6.1
  *
  * Copyright (c) Remix Software Inc.
  *
