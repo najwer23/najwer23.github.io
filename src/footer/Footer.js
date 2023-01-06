@@ -7,19 +7,6 @@ import { faAt, faPenNib } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
 
 export default function Footer() {
-	// const socialLinks = {
-	// 	"https://github.com/najwer23": (
-	// 		<FontAwesomeIcon icon={faGithub} />
-	// 	),
-	// 	"https://twitter.com/najwer23": (
-	// 		<FontAwesomeIcon icon={faTwitter} />
-	// 	),
-	// 	"mailto:najwer23@live.com": <FontAwesomeIcon icon={faAt} />,
-	// 	"https://www.linkedin.com/in/najwer23/": (
-	// 		<FontAwesomeIcon icon={faLinkedinIn} />
-	// 	),
-	// };
-
 	const SOCIAL_MEDIA = [
 		{
 			title: "Github",
@@ -72,7 +59,7 @@ export default function Footer() {
 						</div>
 
 						<div className="footer-container-child">
-							<FontAwesomeIcon icon={faPenNib} size="1x" /> 05.01.2023, 23:06
+							<FontAwesomeIcon icon={faPenNib} size="1x" /> 06.01.2023, 21:11
 						</div>
 					</div>
 				</div>
