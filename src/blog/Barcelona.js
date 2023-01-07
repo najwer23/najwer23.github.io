@@ -111,7 +111,7 @@ function Post() {
 							/>
 							<Marker position={[41.387917, 2.169919]}>
 								<Popup>
-									A pretty CSS3 popup. <br /> Easily customizable.
+									Barcelona!
 								</Popup>
 							</Marker>
 						</MapContainer>
