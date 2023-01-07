@@ -10,6 +10,7 @@
 	height: 600px;
 	overflow: hidden;
 	position: relative;
+	box-shadow: 3px 3px 10px rgb(0 0 0 / 20%);
 }
 
 .grid-child-container {
