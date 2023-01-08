@@ -58,18 +58,11 @@ export default function Carousel(props) {
 			let a = carouselDataIn[elementName].oneLenghtOfSlider;
 			let b = carouselDataIn[elementName].oneFrameDisplayed;
 			let t = carouselDataIn[elementName].translationX;
-			AL.style.display = "block";
-			AR.style.display = "block";
 
-			// left bound
-			if (t >= 0) {
-				AL.style.display = "none";
-			}
+			AL.style.display = t >= 0  ? "none" : "block";
+			AR.style.display = t <= -a + b ? "none" : "block"
 
-			// right bound
-			if (t <= -a + b) {
-				AR.style.display = "none";
-			}
+			console.log(42)
 		}
 
 		function addMouseEventsToSlider(elementName) {
@@ -181,7 +174,6 @@ export default function Carousel(props) {
 				}
 				carousel.style.scrollBehavior = "initial";
 				carouselDataIn[elementName].translationX = -this.scrollLeft;
-				stateArrows(elementName);
 			});
 
 
