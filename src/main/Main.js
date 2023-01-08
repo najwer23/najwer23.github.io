@@ -82,7 +82,7 @@ export default function Main() {
 			<Carousel title="GUI Snippets" id="carousel1" arr={GUI_CAROUSEL} />
 			<Section
 				content={
-					<Slideshow arr={SLIDESHOW} id="slideshow1" title={"FAV Landscape"} />
+					<Slideshow arr={SLIDESHOW} id="slideshow1" title={"Favorite landscape"} />
 				}
 			/>
 
