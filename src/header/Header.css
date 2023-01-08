@@ -29,6 +29,29 @@
 	font-weight: 800;
 }
 
+.header-logo-title {
+	background: linear-gradient(to top right,
+	#3D182B calc(19% - 1px),
+	rgba(0,0,0,0) 19%,
+	rgba(0,0,0,0) calc(20% - 1px),
+	#FF9800 20%,
+	#FF9800 calc(39% - 1px),
+	rgba(0,0,0,0) 39%,
+	rgba(0,0,0,0) calc(40% - 1px),
+	#FF005A 40%,
+	#FF005A calc(59% - 1px),
+	rgba(0,0,0,0) 59%,
+	rgba(0,0,0,0) calc(60% - 1px),
+	#AD0626 60%,
+	#AD0626 calc(79% - 1px),
+	rgba(0,0,0,0) 79%,rgba(0,0,0,0) calc(80% - 1px),
+	grey 80%);
+
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: rgba(0,0,0,0);
+}
+
 @media (max-width: 500px) {
 	.header-container {
 		padding-left: 0;

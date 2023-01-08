@@ -10,7 +10,7 @@ export default function Header() {
 				<div className="header-container">
 					<div className="header-logo">
 						<Link to={"/"} title={"Mariusz Najwer"}>
-							<span>Mariusz Najwer</span>
+							<span className="header-logo-title">Mariusz Najwer</span>
 						</Link>
 					</div>
 					<div className="header-menu">
