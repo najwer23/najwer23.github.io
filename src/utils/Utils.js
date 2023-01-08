@@ -1,0 +1,53 @@
+export function saveToCookie(data) {
+	return true;
+}
+
+export function isEmpty(v) {
+	if (v === undefined) return true;
+
+	if (
+		typeof v == "function" ||
+		typeof v == "number" ||
+		typeof v == "boolean" ||
+		Object.prototype.toString.call(v) === "[object Date]"
+	)
+		return false;
+
+	if (v == null || v.length === 0) return true;
+
+	if (typeof v == "object") {
+		return Object.keys(v).length < 1;
+	}
+
+	return false;
+}
+
+export function setCookie(cname, cvalue, exhours) {
+  const d = new Date();
+  d.setTime(d.getTime() + exhours * 60 * 60 * 1000);
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + JSON.stringify(cvalue) + ";" + expires + ";path=/";
+}
+
+export function getCookie(cname, isObj=false) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+			if (isObj) {
+				return JSON.parse(c.substring(name.length, c.length));
+			}
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+export function dateFormatterFromDt(dt) {
+	return isEmpty(dt) ? null : new Date(dt * 1000).toLocaleString();
+}

@@ -1,0 +1,13 @@
+.forecast-data {
+	font-size: 20px;
+	display: flex;
+	justify-content: space-between;
+	width: 250px;
+	margin-bottom: 3px;
+}
+
+@media (max-width: 500px) {
+	.forecast-data {
+		width: 100%;
+	}
+}

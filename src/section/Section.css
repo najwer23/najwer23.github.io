@@ -7,9 +7,26 @@
 	margin-right: auto;
 }
 
+.section-content {
+	max-width: 1920px;
+	padding-left: 42px;
+	padding-right: 42px;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 @media (max-width: 500px) {
 	.section-main {
 		margin-top: 50px;
+		margin-left: 5%;
+		margin-right: 5%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.section-content {
+		margin-top: 20px;
 		margin-left: 5%;
 		margin-right: 5%;
 		padding-left: 0;

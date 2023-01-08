@@ -23,6 +23,11 @@ const HOME = [
 		title: "Jabber",
 		src: "https://lh3.googleusercontent.com/pw/AL9nZEXErCenXmZhx5vxKSF9usz7IedklH_wT2aVToysRRGZkRs_pH6DGi5hfoqliz-hVaCDnk3D9o_46wEdldcOX6YnYh1fS91Zn8aqwhqoyMXAsHUzqC61t-1HVrpkM46Dw6KbCQZPaaKE-ueJ1ka6tVDw=w958-h435-no?authuser=0",
 	},
+	{
+		path: "/forecast",
+		title: "Forecast",
+		src: "https://lh3.googleusercontent.com/pw/AL9nZEWcFjcbFtHgP-GX832N9rmbLX0xGGnTHrPOQ1opsLjGoEVxeTEFnNTGyoqQX_SSHTy3lC9MXMlGMSJ4KuaTJRCLidLp5rNcqh1ogM9pd6TT2WbyZkWkqzkG51SsgzPSfNgdj5jUimpYB2HH9rzhW5bj=w1280-h720-no?authuser=0",
+	},
 ];
 
 const GUI_CAROUSEL = [
