@@ -13,13 +13,13 @@ import {
 const MENU = {
 	notlogged: {
 		mobile: [
-			{ path: "/", text: "Strona Główna" },
+			{ path: "/", text: "Homepage" },
 			{ path: "/blog", text: "Blog" },
 			{ path: "/resume", text: "Resume", outPage: true },
 			{ path: "https://jabber-23.ue.r.appspot.com/", text: "Jabber", outPage: true },
 		],
 		desktop: [
-			{ path: "/", text: "Strona Główna" },
+			{ path: "/", text: "Homepage" },
 			{ path: "/blog", text: "Blog" },
 			{ path: "/resume", text: "Resume", outPage: true },
 			{ path: "https://jabber-23.ue.r.appspot.com/", text: "Jabber", outPage: true },
