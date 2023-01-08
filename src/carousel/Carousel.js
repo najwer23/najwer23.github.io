@@ -61,8 +61,6 @@ export default function Carousel(props) {
 
 			AL.style.display = t >= 0  ? "none" : "block";
 			AR.style.display = t <= -a + b ? "none" : "block"
-
-			console.log(42)
 		}
 
 		function addMouseEventsToSlider(elementName) {
