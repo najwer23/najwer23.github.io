@@ -19,8 +19,8 @@ export default function Footer() {
 			icon: <FontAwesomeIcon icon={faTwitter} />,
 		},
 		{
-			title: "Mail",
-			path: "https://github.com/najwer23",
+			title: "Mail - najwer23@live.com",
+			path: "mailto:najwer23@live.com",
 			icon: <FontAwesomeIcon icon={faAt} />,
 		},
 		{
@@ -59,7 +59,7 @@ export default function Footer() {
 						</div>
 
 						<div className="footer-container-child">
-							<FontAwesomeIcon icon={faPenNib} size="1x" /> 07.01.2023, 10:24
+							<FontAwesomeIcon icon={faPenNib} size="1x" /> 08.01.2023, 20:47
 						</div>
 					</div>
 				</div>
