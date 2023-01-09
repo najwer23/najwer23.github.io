@@ -49,6 +49,7 @@
 	color: white;
 	text-decoration: none;
 	font-size: 38px;
+	font-weight: 900;
 }
 
 .carousel-content .carousel-standard-item {
@@ -164,6 +165,32 @@
 
 div.carousel-progress-bar-item:last-of-type {
 	margin-right: 0;
+}
+
+.carousel-title h2{
+	background: linear-gradient(to top right,
+	#0D0D0D calc(19% - 1px),
+	rgba(0,0,0,0) 19%,
+	rgba(0,0,0,0) calc(20% - 1px),
+	#404040 20%,
+	#404040 calc(39% - 1px),
+	rgba(0,0,0,0) 39%,
+	rgba(0,0,0,0) calc(40% - 1px),
+	#595959 40%,
+	#595959 calc(59% - 1px),
+	rgba(0,0,0,0) 59%,
+	rgba(0,0,0,0) calc(60% - 1px),
+	#8C8C8C 60%,
+	#8C8C8C calc(79% - 1px),
+	rgba(0,0,0,0) 79%,rgba(0,0,0,0) calc(80% - 1px),
+	grey 80%);
+
+	width: fit-content;
+	font-size: 30px;
+
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: rgba(0,0,0,0);
 }
 
 
