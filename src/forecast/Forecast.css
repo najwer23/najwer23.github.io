@@ -20,14 +20,54 @@
 	height: 397px;
 }
 
+.forecast-wrapper {
+	display: flex;
+}
+
+.forecast-data-8Days-wrapper {
+	margin-top: -20px;
+	margin-left: 40px;
+	width: calc(100% - 290px);
+}
+
+.forecast-data-8Days-wrapper .carousel-section {
+	padding-right: 0;
+}
+
 @media (max-width: 500px) {
 	.forecast-data {
 		width: 100%;
+	}
+
+	.forecast-data-8Days-wrapper .forecast-data {
+		width: 250px;
 	}
 
 	.forecast-data-current,
 	.forecast-data .input-text-with-label,
 	.forecast-data .select-custom {
 		width: 100%;
+	}
+}
+
+@media (max-width: 900px) {
+	.forecast-wrapper {
+		display: block;
+	}
+
+	.forecast-data-8Days-wrapper {
+		width: 100%;
+		margin-top: 0;
+		margin-left: 0;
+	}
+
+	.forecast-data-8Days-wrapper .carousel-content,
+	.forecast-data-8Days-wrapper .carousel-section {
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	.forecast-data-8Days-wrapper .carousel-content {
+		padding-right: 42px;
 	}
 }

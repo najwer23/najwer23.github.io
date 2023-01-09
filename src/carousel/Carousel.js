@@ -4,9 +4,14 @@ import "./Carousel.css";
 export default function Carousel(props) {
 	const TITLE = props.title;
 	const ITEMS = props.arr;
+	const TYPE = props.type;
 
 	useEffect(() => {
 		let carouselId = `#${props.id}`;
+		let carouselItemName = props.itemName || "carousel-item"
+		let mobileItemWidth = props.mobileItewmWidth || 300
+		let desktopItemWidth = props.desktopItemWidth || 400;
+		let scrollTimer;
 
 		var carouselDataIn = {
 			[carouselId]: {
@@ -33,10 +38,10 @@ export default function Carousel(props) {
 
 		function calculateWidthForCarousel(elementName) {
 			let carousel = document.querySelector(elementName);
-			carouselDataIn[elementName].oneFrame = window.innerWidth < 600 ? 300 : 400;
+			carouselDataIn[elementName].oneFrame = window.innerWidth < 600 ? mobileItemWidth : desktopItemWidth;
 			carouselDataIn[elementName].oneFrameDisplayed = carousel.parentElement.offsetWidth;
 			carouselDataIn[elementName].oneLenghtOfSlider = 0;
-			document.querySelectorAll(elementName + " .carousel-item").forEach((x) => {
+			document.querySelectorAll(elementName + " ." + carouselItemName).forEach((x) => {
 					x.style.width = carouselDataIn[elementName].oneFrame + "px";
 					carouselDataIn[elementName].oneLenghtOfSlider += carouselDataIn[elementName].oneFrame;
 				});
@@ -162,7 +167,7 @@ export default function Carousel(props) {
 			}
 
 			//firefox bug fix
-			carousel.querySelectorAll(".carousel-item").forEach((item) => {
+			carousel.querySelectorAll("." + carouselItemName).forEach((item) => {
 				item.addEventListener("mousedown", (e) => e.preventDefault());
 			});
 
@@ -172,6 +177,12 @@ export default function Carousel(props) {
 				}
 				carousel.style.scrollBehavior = "initial";
 				carouselDataIn[elementName].translationX = -this.scrollLeft;
+
+				clearTimeout(scrollTimer);
+				scrollTimer = setTimeout(() => {
+					stateArrows(elementName);
+				}, 20);
+
 			});
 
 
@@ -246,7 +257,36 @@ export default function Carousel(props) {
 		}
 
 		return () => window.removeEventListener("resize", carouselResize);
-	}, []);
+	}, [ITEMS]);
+
+
+	function TypeCarousel(props) {
+		if (TYPE == "forecast") {
+			return (
+				<div id={props.id} className="carousel-content">
+					{ITEMS}
+				</div>
+			);
+		}
+
+		return (
+			<div id={props.id} className="carousel-content">
+				{ITEMS &&
+					ITEMS.map((v, i) => (
+						<a
+							key={i}
+							href={v.path}
+							target={"_blank"}
+							rel="noreferrer"
+							title={v.title}
+							className="carousel-item"
+						>
+							<span>{v.title} </span>
+						</a>
+					))}
+			</div>
+		);
+	}
 
 	return (
 		<>
@@ -254,21 +294,8 @@ export default function Carousel(props) {
 				<div className="carousel-title">{TITLE && <h2>{TITLE}</h2>}</div>
 				<div className="carousel-wrapper">
 					<div className="carousel-container">
-						<div id={props.id} className="carousel-content">
-							{ITEMS &&
-								ITEMS.map((v, i) => (
-									<a
-										key={i}
-										href={v.path}
-										target={"_blank"}
-										rel="noreferrer"
-										title={v.title}
-										className="carousel-item"
-									>
-										<span>{v.title} </span>
-									</a>
-								))}
-						</div>
+
+						<TypeCarousel id={props.id} />
 
 						<div className="carousel-controls">
 							<div className="carousel-arrow left">

@@ -6,6 +6,7 @@ import "./Forecast.css";
 import * as Utils from "../utils/Utils";
 import Select from "../components/select/Select";
 import Loader from "../components/loader/Loader";
+import Carousel from "../carousel/Carousel";
 
 
 export default function Forecast(props) {
@@ -25,6 +26,7 @@ function CurrentForecast(props) {
 	const [coords, setCoords] = useState("51.1:17.0333");
 	const [forecast8Days, setForecast8Days] = useState(Utils.getLocalStorageCookie("forecast8Days_"+props.coords, true) || {});
 	const [forecastCurrent, setForecastCurrent] = useState(Utils.getLocalStorageCookie("forecast_current_"+props.coords, true) || {});
+	let forecast8DaysDivs = [];
 
 	const selectedCity = useRef(null);
 	const townListForSelect = [
@@ -40,10 +42,35 @@ function CurrentForecast(props) {
 		setCoords(selectedCity.current.value);
 	}
 
+	function makeForecastCarousel(arr, arr2) {
+		if (!Utils.isEmpty(arr)) {
+			arr.map((x,i) => (
+				arr2.push(<div key={i} className="forecast-data-current carousel-standard-item">
+					{forecastImgFormater(x.weather)}
+					<ForecastData title={"empty"} value={Utils.dateFormatterFromDt(x.dt)}  />
+					<ForecastData title={"Lat"} value={forecastDataFormat(coords.split(":")[0],5)}/>
+					<ForecastData title={"Lon"} value={forecastDataFormat(coords.split(":")[1],5)}/>
+					<ForecastData title={"Temp"} value={forecastDataFormat(x.temp.day,4)}/>
+					<ForecastData title={"Pressure"} value={forecastDataFormat(x.pressure,3)} />
+					<ForecastData title={"Humidity"} value={forecastDataFormat(x.humidity,2)} />
+					<ForecastData title={"Wind"} value={forecastDataFormat(x.wind_speed,1)} />
+					<ForecastData title={"Clouds"} value={forecastDataFormat(x.clouds,2)} />
+					<ForecastData title={"Sunrise"} value={Utils.dateFormatterFromDt(x.sunrise)?.split(",")[1]} />
+					<ForecastData title={"Sunset"} value={Utils.dateFormatterFromDt(x.sunset)?.split(",")[1]} />
+				</div>)
+			))
+		}
+
+		arr2.shift()
+	}
+
+
+	makeForecastCarousel(forecast8Days, forecast8DaysDivs);
+
 	return (
 		<>
-			<div>
-				<div>
+			<div className="forecast-wrapper">
+				<div className="forecast-data-current-wrapper">
 					<div className="forecast-data">
 						<Select
 							options={townListForSelect}
@@ -80,28 +107,23 @@ function CurrentForecast(props) {
 					)}
 				</div>
 
-				<div>
+				<div className="forecast-data-8Days-wrapper">
 
-				{/*
-					{Utils.isEmpty(forecastCurrent) ? (
+					{Utils.isEmpty(forecast8Days) ? (
 						<div className="forecast-data-current"  style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-							<Loader ldsGrid={true} />
+							{/* <Loader ldsGrid={true} /> */}
 						</div>
 					) : (
-						<div className="forecast-data-current">
-						{forecastImgFormater(forecastCurrent.weather)}
-						<ForecastData title={"empty"} value={Utils.dateFormatterFromDt(forecastCurrent.dt)}  />
-						<ForecastData title={"Lat"} value={forecastDataFormat(coords.split(":")[0],5)}/>
-						<ForecastData title={"Lon"} value={forecastDataFormat(coords.split(":")[1],5)}/>
-						<ForecastData title={"Temp"} value={forecastDataFormat(forecastCurrent.temp,4)}/>
-						<ForecastData title={"Pressure"} value={forecastDataFormat(forecastCurrent.pressure,3)} />
-						<ForecastData title={"Humidity"} value={forecastDataFormat(forecastCurrent.humidity,2)} />
-						<ForecastData title={"Wind"} value={forecastDataFormat(forecastCurrent.wind_speed,1)} />
-						<ForecastData title={"Clouds"} value={forecastDataFormat(forecastCurrent.clouds,2)} />
-						<ForecastData title={"Sunrise"} value={Utils.dateFormatterFromDt(forecastCurrent.sunrise)?.split(",")[1]} />
-						<ForecastData title={"Sunset"} value={Utils.dateFormatterFromDt(forecastCurrent.sunset)?.split(",")[1]} />
-					</div>
-					)} */}
+						<Carousel
+							id="carousel2"
+							type="forecast"
+							arr={forecast8DaysDivs}
+							itemName={"carousel-standard-item"}
+							mobileItemWidth={300}
+							desktopItemWidth={300}
+						/>
+					)}
+
 
 				</div>
 			</div>
@@ -112,7 +134,6 @@ function CurrentForecast(props) {
 function CurrentForecastData(props) {
 
 	useEffect(() => {
-		//setForecastCurrent({});
 		if (!Utils.getLocalStorageCookie("forecast_current_" + props.coords)) {
 			let lat = props.coords.split(":")[0];
 			let lon = props.coords.split(":")[1];

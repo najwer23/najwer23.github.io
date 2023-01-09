@@ -51,6 +51,10 @@
 	font-size: 38px;
 }
 
+.carousel-content .carousel-standard-item {
+	flex-shrink: 0;
+}
+
 .carousel-content .carousel-item:nth-child(2n) {
 	background-color: #565656;
 }
