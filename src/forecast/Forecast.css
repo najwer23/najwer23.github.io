@@ -6,8 +6,22 @@
 	margin-bottom: 3px;
 }
 
+.forecast-data .select-custom {
+	width: 250px;
+	margin-bottom: 10px;
+}
+
+.forecast-data .input-text-with-label label {
+	font-size: 16px;
+}
+
 @media (max-width: 500px) {
 	.forecast-data {
+		width: 100%;
+	}
+
+	.forecast-data .input-text-with-label,
+	.forecast-data .select-custom {
 		width: 100%;
 	}
 }
