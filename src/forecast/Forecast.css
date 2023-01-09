@@ -15,11 +15,17 @@
 	font-size: 16px;
 }
 
+.forecast-data-current {
+	width: 250px;
+	height: 397px;
+}
+
 @media (max-width: 500px) {
 	.forecast-data {
 		width: 100%;
 	}
 
+	.forecast-data-current,
 	.forecast-data .input-text-with-label,
 	.forecast-data .select-custom {
 		width: 100%;

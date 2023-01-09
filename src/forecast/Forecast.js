@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import "./Forecast.css";
 import * as Utils from "../utils/Utils";
 import Select from "../components/select/Select";
+import Loader from "../components/loader/Loader";
 
 
 export default function Forecast(props) {
@@ -22,15 +23,17 @@ export default function Forecast(props) {
 
 function CurrentForecast(props) {
 	const [coords, setCoords] = useState("51.1:17.0333");
-	const [forecast8Days, setForecast8Days] = useState(Utils.getCookie("forecast8Days_"+props.coords, true) || {});
-	const [forecastCurrent, setForecastCurrent] = useState(Utils.getCookie("forecast_current_"+props.coords, true) || {});
+	const [forecast8Days, setForecast8Days] = useState(Utils.getLocalStorageCookie("forecast8Days_"+props.coords, true) || {});
+	const [forecastCurrent, setForecastCurrent] = useState(Utils.getLocalStorageCookie("forecast_current_"+props.coords, true) || {});
 
 	const selectedCity = useRef(null);
 	const townListForSelect = [
-		{ value: "51.1:17.0333", label: "Wrocław" },
-		{ value: "51.1:17.0333", label: "Wrocław" },
-		{ value: "51.1445731:16.2410821", label: "Legnickie Pole" },
-		{ value: "41.3828939:2.1774322", label: "Barcelona" },
+		{ value: "51.1:17.0333", label: "Wrocław (PL)" },
+		{ value: "51.1:17.0333", label: "Wrocław (PL)" },
+		{ value: "51.1445731:16.2410821", label: "Legnickie Pole (PL)" },
+		{ value: "41.3828939:2.1774322", label: "Barcelona (ES)" },
+		{ value: "64.145981:-21.9422367", label: "Reykjavík (IS)" },
+		{ value: "52.4006632:16.91973259", label: "Poznań (PL)" },
 	];
 
 	function handleChange(e) {
@@ -40,45 +43,83 @@ function CurrentForecast(props) {
 	return (
 		<>
 			<div>
-				<div className="forecast-data">
-					<Select
-						options={townListForSelect}
-						onChange={handleChange}
-						innerRef={selectedCity}
-						id={"forcast-city"}
+				<div>
+					<div className="forecast-data">
+						<Select
+							options={townListForSelect}
+							onChange={handleChange}
+							innerRef={selectedCity}
+							id={"forcast-city"}
+						/>
+					</div>
+
+					<CurrentForecastData
+						coords={coords}
+						passForecast8Days={setForecast8Days}
+						passForecastCurrent={setForecastCurrent}
 					/>
+
+					{Utils.isEmpty(forecastCurrent) ? (
+						<div className="forecast-data-current"  style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+							<Loader ldsGrid={true} />
+						</div>
+					) : (
+						<div className="forecast-data-current">
+						{forecastImgFormater(forecastCurrent.weather)}
+						<ForecastData title={"empty"} value={Utils.dateFormatterFromDt(forecastCurrent.dt)}  />
+						<ForecastData title={"Lat"} value={forecastDataFormat(coords.split(":")[0],5)}/>
+						<ForecastData title={"Lon"} value={forecastDataFormat(coords.split(":")[1],5)}/>
+						<ForecastData title={"Temp"} value={forecastDataFormat(forecastCurrent.temp,4)}/>
+						<ForecastData title={"Pressure"} value={forecastDataFormat(forecastCurrent.pressure,3)} />
+						<ForecastData title={"Humidity"} value={forecastDataFormat(forecastCurrent.humidity,2)} />
+						<ForecastData title={"Wind"} value={forecastDataFormat(forecastCurrent.wind_speed,1)} />
+						<ForecastData title={"Clouds"} value={forecastDataFormat(forecastCurrent.clouds,2)} />
+						<ForecastData title={"Sunrise"} value={Utils.dateFormatterFromDt(forecastCurrent.sunrise)?.split(",")[1]} />
+						<ForecastData title={"Sunset"} value={Utils.dateFormatterFromDt(forecastCurrent.sunset)?.split(",")[1]} />
+					</div>
+					)}
 				</div>
 
-				<CurrentForecastData
-					coords={coords}
-					passForecast8Days={setForecast8Days}
-					passForecastCurrent={setForecastCurrent}
-				/>
+				<div>
 
-				{forecastImgFormater(forecastCurrent.weather)}
-				<ForecastData title={"empty"} value={Utils.dateFormatterFromDt(forecastCurrent.dt)}  />
-				<ForecastData title={"Temp"} value={forecastDataFormat(forecastCurrent.temp,4)}/>
-				<ForecastData title={"Pressure"} value={forecastDataFormat(forecastCurrent.pressure,3)} />
-				<ForecastData title={"Humidity"} value={forecastDataFormat(forecastCurrent.humidity,2)} />
-				<ForecastData title={"Wind"} value={forecastDataFormat(forecastCurrent.wind_speed,1)} />
-				<ForecastData title={"Clouds"} value={forecastDataFormat(forecastCurrent.clouds,2)} />
-				<ForecastData title={"Sunrise"} value={Utils.dateFormatterFromDt(forecastCurrent.sunrise)?.split(",")[1]} />
-				<ForecastData title={"Sunset"} value={Utils.dateFormatterFromDt(forecastCurrent.sunset)?.split(",")[1]} />
+				{/*
+					{Utils.isEmpty(forecastCurrent) ? (
+						<div className="forecast-data-current"  style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+							<Loader ldsGrid={true} />
+						</div>
+					) : (
+						<div className="forecast-data-current">
+						{forecastImgFormater(forecastCurrent.weather)}
+						<ForecastData title={"empty"} value={Utils.dateFormatterFromDt(forecastCurrent.dt)}  />
+						<ForecastData title={"Lat"} value={forecastDataFormat(coords.split(":")[0],5)}/>
+						<ForecastData title={"Lon"} value={forecastDataFormat(coords.split(":")[1],5)}/>
+						<ForecastData title={"Temp"} value={forecastDataFormat(forecastCurrent.temp,4)}/>
+						<ForecastData title={"Pressure"} value={forecastDataFormat(forecastCurrent.pressure,3)} />
+						<ForecastData title={"Humidity"} value={forecastDataFormat(forecastCurrent.humidity,2)} />
+						<ForecastData title={"Wind"} value={forecastDataFormat(forecastCurrent.wind_speed,1)} />
+						<ForecastData title={"Clouds"} value={forecastDataFormat(forecastCurrent.clouds,2)} />
+						<ForecastData title={"Sunrise"} value={Utils.dateFormatterFromDt(forecastCurrent.sunrise)?.split(",")[1]} />
+						<ForecastData title={"Sunset"} value={Utils.dateFormatterFromDt(forecastCurrent.sunset)?.split(",")[1]} />
+					</div>
+					)} */}
+
+				</div>
 			</div>
 		</>
 	);
 }
 
 function CurrentForecastData(props) {
+
 	useEffect(() => {
 		//setForecastCurrent({});
-		if (!Utils.getCookie("forecast_current_" + props.coords)) {
+		if (!Utils.getLocalStorageCookie("forecast_current_" + props.coords)) {
 			let lat = props.coords.split(":")[0];
 			let lon = props.coords.split(":")[1];
 			fetchForecast(lat, lon);
 		} else {
-			props.passForecast8Days(Utils.getCookie("forecast8Days_" + props.coords, true));
-			props.passForecastCurrent(Utils.getCookie("forecast_current_" + props.coords, true))
+			props.passForecast8Days(Utils.getLocalStorageCookie("forecast8Days_" + props.coords, true));
+			props.passForecastCurrent(Utils.getLocalStorageCookie("forecast_current_" + props.coords, true))
 		}
 	}, [props.coords]);
 
@@ -99,8 +140,8 @@ function CurrentForecastData(props) {
 			if (data.code == 200) {
 				props.passForecast8Days(data.data.daily);
 				props.passForecastCurrent(data.data.current);
-				Utils.setCookie("forecast_current_" + lat + ":" + lon, data.data.current, 3);
-				Utils.setCookie("forecast8Days_" + + lat + ":" + lon, data.data.daily, 3);
+				Utils.setLocalStorageCookie("forecast_current_" + lat + ":" + lon, data.data.current, 0.5);
+				Utils.setLocalStorageCookie("forecast8Days_" + + lat + ":" + lon, data.data.daily, 0.5);
 			}
 		});
 	}
@@ -151,6 +192,8 @@ function forecastDataFormat(v, n) {
 		return v + ` hPa`;
 	} else if (n == 4) {
 		return v + ` ${"\u00b0"}C`;
+	} else if (n == 5) {
+		return v + ` ${"\u00b0"}`;
 	} else {
 		return v;
 	}
