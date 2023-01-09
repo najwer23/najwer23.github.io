@@ -181,7 +181,7 @@ export default function Carousel(props) {
 				clearTimeout(scrollTimer);
 				scrollTimer = setTimeout(() => {
 					stateArrows(elementName);
-				}, 20);
+				}, 80);
 
 			});
 
