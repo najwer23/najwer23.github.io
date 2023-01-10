@@ -17,9 +17,60 @@ export default function Forecast(props) {
 			<Header />
 			<Section content={TITLE && <h2>{TITLE}</h2>} />
 			<Section content={<CurrentForecast />} type={2} />
+			<Section content={<DescForecast />} />
 			<Footer />
 		</>
 	);
+}
+
+function DescForecast() {
+	return (
+		<>
+			<section className="forecast-desc">
+				<article>
+					<h2>Temperature</h2>
+					<p>
+						Temperature is a physical quantity that expresses hot and cold. The
+						best bedroom temperature for sleep is approximately 18.3 °C.
+					</p>
+				</article>
+				<article>
+					<h2>Pressure</h2>
+					<p>
+						A barometric reading over 1022 hPa is generally considered high, and
+						high pressure is associated with clear skies and calm weather.
+					</p>
+					<p>
+						A barometric reading in the range of 1009 – 1022 hPa can be
+						considered normal, and normal pressure is associated with steady
+						weather.
+					</p>
+					<p>
+						A barometric reading below 1009 hPa is generally considered low, and
+						low pressure is associated with warm air and rainstorms.
+					</p>
+				</article>
+				<article>
+					<h2>Humidity</h2>
+					<p>
+						Humans generally feel comfortable between temperatures of 22 °C to
+						27 °C and a relative humidity of 40% to 60%.
+					</p>
+				</article>
+				<article>
+					<h2>Clouds</h2>
+					<p>
+						No matter what shape or size they are, clouds are essential to life
+						on Earth. During the day they help protect us from the sun’s intense
+						heat. At night they act as a blanket to keep us from getting too
+						cold. They also provide precipitation and signal weather changes and
+						patterns.
+					</p>
+				</article>
+			</section>
+		</>
+	);
+
 }
 
 function CurrentForecast(props) {
@@ -175,7 +226,7 @@ function ForecastData(props) {
 	if (props.title == "empty") {
 		return (
 			<div className="forecast-data">
-				<div>{forecastDataFormat(props.value) == "" ? <br></br> : props.value}  </div>
+				<div>{forecastDataFormat(props.value) == "" ? <br></br> : <i>{props.value}</i>}  </div>
 			</div>
 		);
 	}
@@ -183,7 +234,7 @@ function ForecastData(props) {
 	return (
 		<div className="forecast-data">
 			<div>{props.title}:</div>
-			<div>{props.value}</div>
+			<div><b>{props.value}</b></div>
 		</div>
 	);
 }
