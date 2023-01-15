@@ -32,6 +32,10 @@ const HOME = [
 
 const GUI_CAROUSEL = [
 	{
+		path: "https://najwer23.github.io/gui-challenge/calendar/",
+		title: "Calendar",
+	},
+	{
 		path: "https://najwer23.github.io/gui-challenge/carousel-list/",
 		title: "Carousel",
 	},
