@@ -19,6 +19,7 @@ export default function Carousel(props) {
 				isMousemoveActive: false,
 				translationX: 0,
 				mouseStartX: 0,
+				mouseStartY: 0,
 				oneLenghtOfSlider: 0,
 				oneFrameDisplayed: 0,
 				hiddeArrowOnWidth: 600,
@@ -191,6 +192,7 @@ export default function Carousel(props) {
 				carouselDataIn[elementName].isMousedownActive = true;
 				carouselDataIn[elementName].isMousemoveActive = false;
 				carouselDataIn[elementName].mouseStartX = pointerEventToXY(e).x;
+				carouselDataIn[elementName].mouseStartY = pointerEventToXY(e).y;
 				carousel.style.transition = "none";
 			});
 
@@ -213,6 +215,12 @@ export default function Carousel(props) {
 			});
 
 			addListenerMulti(carousel, "mousemove", function (e) {
+
+				if (carouselDataIn[elementName].mouseStartX == pointerEventToXY(e).x && carouselDataIn[elementName].mouseStartY == pointerEventToXY(e).y) {
+					carouselDataIn[elementName].isMousemoveActive = false;
+					return ;
+				}
+
 				carousel.style.scrollBehavior = "initial";
 				if (!carouselDataIn[elementName].isMousedownActive) {
 					carouselDataIn[elementName].isMousemoveActive = false;
@@ -233,10 +241,7 @@ export default function Carousel(props) {
 					let t = 0;
 
 					carouselDataIn[elementName].isMousemoveActive = true;
-					t =
-						(pointerEventToXY(e).x - carouselDataIn[elementName].mouseStartX) *
-							1 +
-						c;
+					t = (pointerEventToXY(e).x - carouselDataIn[elementName].mouseStartX) *	1 + c;
 
 					// left bound
 					if (t > 0) {
