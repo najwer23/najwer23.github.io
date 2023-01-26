@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./Carousel.css";
+import { Link } from "react-router-dom";
 
 export default function Carousel(props) {
 	const TITLE = props.title;
@@ -270,6 +271,38 @@ export default function Carousel(props) {
 			return (
 				<div id={props.id} className="carousel-content">
 					{ITEMS}
+				</div>
+			);
+		}
+
+
+		if (TYPE == "shortcuts") {
+			return (
+				<div id={props.id} className="carousel-content">
+					{ITEMS &&
+						ITEMS.map((v, i) =>
+							v.outPage ? (
+								<a
+									key={i}
+									href={v.path}
+									target={"_blank"}
+									rel="noreferrer"
+									title={v.title}
+									className={"carousel-item " + TYPE}
+								>
+									<span>{v.title} </span>
+								</a>
+							) : (
+								<Link
+									key={i}
+									to={v.path}
+									title={v.title}
+									className={"carousel-item " + TYPE}
+								>
+									<span>{v.title} </span>
+								</Link>
+							)
+						)}
 				</div>
 			);
 		}

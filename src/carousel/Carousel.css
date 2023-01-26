@@ -61,8 +61,19 @@
 }
 
 .carousel-content .carousel-item:nth-child(2n) {
-	background-color: #565656;
+	background-color: #6667AB;
 }
+
+.carousel-content .carousel-item.shortcuts:nth-child(1) {
+	background-color:orange;
+	color: #0D0D0D;
+}
+
+.carousel-content .carousel-item.shortcuts:nth-child(2n) {
+	background-color:#be3455;
+}
+
+
 
 .carousel-content .carousel-item:nth-child(2n+1) {
 	background-color: #424242;
@@ -195,6 +206,11 @@ div.carousel-progress-bar-item:last-of-type {
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: rgba(0,0,0,0);
+}
+
+.carousel-item span {
+	padding: 20px;
+  text-align: center;
 }
 
 
