@@ -32,7 +32,7 @@ function Post() {
 					</div>
 					<header>
 						<h1>Barcelona. Duma Katalonii</h1>
-						<h2>25.09.2022</h2>
+						<span>25.09.2022</span>
 					</header>
 
 					<article>
