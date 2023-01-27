@@ -188,7 +188,7 @@ export default function Carousel(props) {
 			});
 
 
-			addListenerMulti(carousel, "mousedown", function (e) {
+			carousel.addEventListener("mousedown", function (e) {
 				carousel.style.scrollBehavior = "initial";
 				carouselDataIn[elementName].isMousedownActive = true;
 				carouselDataIn[elementName].isMousemoveActive = false;
@@ -197,12 +197,12 @@ export default function Carousel(props) {
 				carousel.style.transition = "none";
 			});
 
-			addListenerMulti(carousel, "mouseleave", function (e) {
+			carousel.addEventListener("mouseleave", function (e) {
 				carousel.style.scrollBehavior = "initial";
 				carouselDataIn[elementName].isMousedownActive = false;
 			});
 
-			addListenerMulti(carousel, "mouseup", function (e) {
+			carousel.addEventListener("mouseup", function (e) {
 				carousel.style.scrollBehavior = "initial";
 				carouselDataIn[elementName].isMousedownActive = false;
 
@@ -215,8 +215,7 @@ export default function Carousel(props) {
 				carouselDataIn[elementName].isMousemoveActive = false;
 			});
 
-			addListenerMulti(carousel, "mousemove", function (e) {
-
+			carousel.addEventListener("mousemove", function (e) {
 				if (carouselDataIn[elementName].mouseStartX == pointerEventToXY(e).x && carouselDataIn[elementName].mouseStartY == pointerEventToXY(e).y) {
 					carouselDataIn[elementName].isMousemoveActive = false;
 					return ;
