@@ -1,7 +1,5 @@
 .header-wrapper {
 	width: 100%;
-	background-color: #e6e6e6;
-	box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
 }
 
 
@@ -9,7 +7,6 @@
 	max-width: 1920px;
 	padding-left: 42px;
 	padding-right: 42px;
-	background-color: #e6e6e6;
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
