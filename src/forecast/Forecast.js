@@ -196,7 +196,7 @@ function CurrentForecastData(props) {
 	}, [props.coords]);
 
 	function fetchForecast(lat, lon) {
-		let URL = `https://najwer23api.ue.r.appspot.com/najwer23api/forecast/onecall?lat=${lat}&lon=${lon}`;
+		let URL = `https://najwer23api-eu.lm.r.appspot.com/najwer23api/forecast/onecall?lat=${lat}&lon=${lon}`;
 
 		props.passForecast8Days({});
 		props.passForecastCurrent({});
