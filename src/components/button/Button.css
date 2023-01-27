@@ -1,0 +1,70 @@
+.button-link {
+	margin-top: 20px;
+	display: inline-block;
+	background-color: #FF9800;
+	padding: 10px 20px 10px 20px;
+	border-radius: 30px;
+	text-decoration: none;
+	color: black;
+	font-weight: 700;
+}
+
+.additional.links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.additional.links .button-link {
+	font-size: 16px;
+}
+
+button[type="submit"].button1 {
+	box-sizing: border-box;
+	width: 350px;
+	height: 50px;
+	background-color: #3bc442;
+	border: 0;
+	color: black;
+	font-weight: 800;
+	cursor: pointer;
+	font-family: "Mulish";
+	font-size: 20px;
+	border-radius: 20px;
+}
+
+button[type="submit"].button2 {
+	box-sizing: border-box;
+	padding: 10px 20px 10px 20px;
+	background-color: #3bc442;
+	border: 0;
+	color: black;
+	font-weight: 800;
+	cursor: pointer;
+	font-family: "Mulish";
+	font-size: 22px;
+	border-radius: 30px;
+}
+
+button[type="submit"].button2:active,
+button[type="submit"].button1:active {
+	background-color: orange;
+}
+
+button[type="submit"].button2:disabled,
+button[type="submit"].button1:disabled,
+button[type="submit"][disabled]{
+  border: 1px solid #FF005A;
+  background-color: #FF005A;
+  color: white;
+}
+
+@media (max-width: 600px) {
+	button[type="submit"].button1 {
+		width: 100%;
+	}
+	button[type="submit"].button2 {
+		width: auto;
+		font-size: 16px;
+	}
+}

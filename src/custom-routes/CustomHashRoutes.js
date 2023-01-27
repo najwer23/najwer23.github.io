@@ -4,12 +4,14 @@ import Blog from "../blog/Blog";
 import Barcelona from "../blog/Barcelona";
 import Main from "../main/Main";
 import Forecast from "../forecast/Forecast";
+import Error404 from "../pages/error404/Error404";
+
 
 export default function CustomHashRoutes() {
 	let routes = [
 		{
 			path: "*",
-			element: <>Ups..</>
+			element: <Error404 />
 		},
 		{
 			path: "/blog",
