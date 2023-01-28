@@ -158,10 +158,6 @@ export default function Carousel(props) {
 				stateArrows(elementName);
 			}
 
-			function addListenerMulti(el, s, fn) {
-				s.split(" ").forEach((e) => el.addEventListener(e, fn, false));
-			}
-
 			function detectIfTranslationIsPossible() {
 				let a = carouselDataIn[elementName].oneLenghtOfSlider;
 				let b = carouselDataIn[elementName].oneFrameDisplayed;
