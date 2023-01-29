@@ -20,7 +20,7 @@ const SHORTCUTS_CAROUSEL = [
 		title: "Valentine's Day Card",
 	},
 	{
-		path: "https://jabber-42.lm.r.appspot.com",
+		path: "https://jabber.cyclic.app",
 		outPage: true,
 		title: "Jabber",
 	},
