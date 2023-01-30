@@ -13,6 +13,8 @@ export default function Carousel(props) {
 		let mobileItemWidth = props.mobileItewmWidth || 300
 		let desktopItemWidth = props.desktopItemWidth || 400;
 		let scrollTimer;
+		var X2;
+		var X1;
 
 		var carouselDataIn = {
 			[carouselId]: {
@@ -180,9 +182,7 @@ export default function Carousel(props) {
 				scrollTimer = setTimeout(() => {
 					stateArrows(elementName);
 				}, 80);
-
 			});
-
 
 			carousel.addEventListener("mousedown", function (e) {
 				carousel.style.scrollBehavior = "initial";
@@ -191,6 +191,7 @@ export default function Carousel(props) {
 				carouselDataIn[elementName].mouseStartX = pointerEventToXY(e).x;
 				carouselDataIn[elementName].mouseStartY = pointerEventToXY(e).y;
 				carousel.style.transition = "none";
+				X2 = pointerEventToXY(e).x;
 			});
 
 			carousel.addEventListener("mouseleave", function (e) {
@@ -202,21 +203,16 @@ export default function Carousel(props) {
 				carousel.style.scrollBehavior = "initial";
 				carouselDataIn[elementName].isMousedownActive = false;
 
-				if (carouselDataIn[elementName].isMousemoveActive) {
-					carousel.addEventListener("click", preventClickOnDrag);
-				} else {
+				let X1 = carouselDataIn[elementName].mouseStartX;
+				if (Math.abs(X1 - X2) < 35) {
 					carousel.removeEventListener("click", preventClickOnDrag);
+				} else {
+					carousel.addEventListener("click", preventClickOnDrag);
 				}
-
 				carouselDataIn[elementName].isMousemoveActive = false;
 			});
 
 			carousel.addEventListener("mousemove", function (e) {
-				if (carouselDataIn[elementName].mouseStartX == pointerEventToXY(e).x && carouselDataIn[elementName].mouseStartY == pointerEventToXY(e).y) {
-					carouselDataIn[elementName].isMousemoveActive = false;
-					return ;
-				}
-
 				carousel.style.scrollBehavior = "initial";
 				if (!carouselDataIn[elementName].isMousedownActive) {
 					carouselDataIn[elementName].isMousemoveActive = false;
