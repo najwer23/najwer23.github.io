@@ -1,6 +1,10 @@
-function App() {
+import {CustomHashRoutes} from "./routes/CustomHashRoutes";
+import { paths } from "./routes/Paths";
 
-  return <>Mariusz Najwer</>
+export default function App() {
+  return (
+		<>
+			<CustomHashRoutes routes={paths}/>
+		</>
+	);
 }
-
-export default App;
