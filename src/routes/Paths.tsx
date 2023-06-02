@@ -1,4 +1,5 @@
 import { CustomHashRoutesPathElement } from "../types";
+import { Homepage } from "../homepage/Homepage";
 
 export const paths: CustomHashRoutesPathElement[] = [
 	{
@@ -7,6 +8,6 @@ export const paths: CustomHashRoutesPathElement[] = [
 	},
 	{
 		path: "/",
-		element: <>Mariusz 42</>
+		element: <Homepage />
 	}
 ];

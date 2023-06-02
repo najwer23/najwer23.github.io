@@ -1,9 +1,8 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
 import { ScrollToTop } from "./ScrollToTop";
 import { CustomHashRoutesProps } from "../types";
-import { FC } from "react";
 
-export const CustomHashRoutes:FC<CustomHashRoutesProps> = ({routes}) => {
+export const CustomHashRoutes = ({routes}: CustomHashRoutesProps): JSX.Element => {
 	return (
 		<HashRouter>
 			<Routes>
