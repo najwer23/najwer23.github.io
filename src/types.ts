@@ -6,3 +6,7 @@ export interface CustomHashRoutesPathElement {
 export interface CustomHashRoutesProps {
 	routes: CustomHashRoutesPathElement[];
 }
+
+export interface MenuProps {
+	menuType: string
+}
