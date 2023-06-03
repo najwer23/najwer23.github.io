@@ -1,3 +1,5 @@
+//todo rewrite into typescript
+
 export default function Validation(code, parent, value) {
   let errorCreated = document.createElement("p");
   errorCreated.className = "error";
