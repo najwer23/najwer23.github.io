@@ -14,44 +14,40 @@
 	border: 0;
 	cursor: pointer;
 	font-weight: 900;
-
-	&::before {
-		content: '';
-		position: absolute;
-		z-index: -2;
-		left: -100%;
-		top: -100%;
-		width: 300%;
-		height: 300%;
-		background-color: black;
-		background-repeat: no-repeat;
-		background-size: 50% 50%, 50% 50%;
-		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-		background-image: linear-gradient(#FF9800, #FF9800);
-		animation: rotate 22s linear infinite;
-	}
-
-	&::after {
-		content: '';
-		position: absolute;
-		z-index: -1;
-		left: 6px;
-		top: 6px;
-		width: calc(100% - 12px);
-		height: calc(100% - 12px);
-		background: white;
-		border-radius: 5px;
-	}
 }
 
-.snail.red {
-	&::before {
-		background-image: linear-gradient(red, red);
-	}
+.snail::before {
+	content: '';
+	position: absolute;
+	z-index: -2;
+	left: -100%;
+	top: -100%;
+	width: 300%;
+	height: 300%;
+	background-color: black;
+	background-repeat: no-repeat;
+	background-size: 50% 50%, 50% 50%;
+	background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+	background-image: linear-gradient(#FF9800, #FF9800);
+	animation: rotate 22s linear infinite;
 }
 
-.snail.green {
-	&::before {
-		background-image: linear-gradient(#03A64A, #03A64A);
-	}
+.snail::after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	left: 6px;
+	top: 6px;
+	width: calc(100% - 12px);
+	height: calc(100% - 12px);
+	background: white;
+	border-radius: 5px;
+}
+
+.snail.red::before {
+	background-image: linear-gradient(red, red)
+}
+
+.snail.green::before {
+	background-image: linear-gradient(#03A64A, #03A64A);
 }

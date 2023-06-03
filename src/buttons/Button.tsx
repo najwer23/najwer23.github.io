@@ -3,7 +3,7 @@ import "./Button.css"
 interface ButtonProps  {
 	disabled?: boolean;
 	text: string;
-	onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+	onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 	className: string;
 	title: string;
 	ariaLabel: string;
@@ -12,7 +12,11 @@ interface ButtonProps  {
 
 export const Button = ({disabled, text, onClick, className, ariaLabel, title, type}: ButtonProps): JSX.Element => {
 
-	const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => onClick(e);
+	function handleClick(e: React.MouseEvent<HTMLButtonElement>): void {
+		if (onClick !== undefined) {
+			onClick(e);
+		}
+	}
 
 	return (
 		<>

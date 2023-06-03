@@ -1,16 +1,15 @@
 import { InputHTMLAttributes} from "react";
 import "./Input.css"
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface TextareaProps extends InputHTMLAttributes<HTMLInputElement> {
 	id: string;
 	label: string;
-	innerRef: React.RefObject<HTMLInputElement>;
-	type: string;
+	innerRef: React.RefObject<HTMLTextAreaElement>;
 	onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
 }
 
 
-export const Input = ({id, label, innerRef, type, onBlur}: InputProps): JSX.Element => {
+export const Textarea = ({id, label, innerRef, onBlur}: TextareaProps): JSX.Element => {
 
 	function handleBlur(e:  React.FocusEvent<HTMLElement>): void {
 		if (onBlur !== undefined) {
@@ -20,17 +19,16 @@ export const Input = ({id, label, innerRef, type, onBlur}: InputProps): JSX.Elem
 
 	return (
 		<>
-			<div className="input-with-label">
+			<div className="textarea-with-label">
 				<label htmlFor={id}> {label}</label>
 
-				<input
+				<textarea
 					onBlur={handleBlur}
 					ref={innerRef}
-					type={type}
 					name={id}
 					id={id}
-				/>
+				></textarea>
 			</div>
 		</>
 	);
-	}
+}

@@ -1,0 +1,46 @@
+.textarea-with-label,
+.input-with-label {
+	display: flex;
+  flex-direction: column;
+	max-width: 600px;
+}
+
+.textarea-with-label label,
+.input-with-label label {
+	font-size: clamp(1rem, 0.462vw + 0.88rem, 1.25rem);
+	line-height: clamp(1.563rem, 0.576vw + 1.414rem, 1.875rem);
+	color: var(--color1);
+}
+
+form > * + * {
+	margin-top: 1.1rem;
+}
+
+.input-with-label input {
+	box-sizing: border-box;
+	height: 40px;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 10px;
+	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+
+}
+
+.textarea-with-label textarea {
+	padding: 10px;
+	box-sizing: border-box;
+	min-height: 200px;
+	max-width: 600px;
+	max-height: 400px;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+.textarea-with-label .error,
+.input-with-label .error {
+	font-size: 14px;
+	line-height: 1;
+	margin: 2px;
+	color: red;
+}

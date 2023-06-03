@@ -9,8 +9,12 @@ import { Button } from '../buttons/Button';
 export const Nav = () : JSX.Element => {
 	return (
 		<nav className='nav'>
-			<div>
-				<span className='nav-logo-title'>Mariusz Najwer</span>
+			<div className='nav-logo-title-wrapper'>
+				<Link to={"/"} className="noselect">
+					<span className='nav-logo-title'>
+						Mariusz Najwer
+					</span>
+				</Link>
 			</div>
 			<div>
 				<Menu menuType={"notlogged"} />
@@ -32,6 +36,7 @@ const MENU = {
 		],
 		universal: [
 			{ path: "/", text: "Homepage" },
+			{ path: "/contact", text: "Contact" },
 			{ path: "/resume", text: "Resume", outPage: true },
 		]
 	},

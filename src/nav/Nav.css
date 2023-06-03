@@ -12,6 +12,10 @@
 	gap: 20px;
 }
 
+.nav-logo-title-wrapper a {
+	text-decoration: none;
+}
+
 .nav-logo-title {
 	background: linear-gradient(to top right,
 	black calc(19% - 1px),
