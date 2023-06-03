@@ -1,8 +1,9 @@
 import './Nav.css';
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { MenuProps } from '../types';
+import { Button } from '../buttons/Button';
 
 
 export const Nav = () : JSX.Element => {
@@ -50,14 +51,26 @@ const Menu = ({menuType}: MenuProps): JSX.Element => {
 
 	return (
 		<>
-			<button onClick={toggleMenu} className='noselect snail' title="Menu Open" aria-label="Menu Open"> MENU </button>
+			<Button
+				type={"button"}
+				onClick={toggleMenu}
+				className={'noselect snail'}
+				title={"Menu Open"}
+				ariaLabel={"Men Open"}
+				text={"MENU"}
+			/>
 
 			{ isMenuOpen && (
 				<div className="popup-menu">
-					<div className="close-button-wrapper">
-						<div className="close-button">
-							<button onClick={toggleMenu} className='noselect snail red' title="Menu Close" aria-label="Menu Close"> CLOSE </button>
-						</div>
+					<div className="popup-menu-button-close-wrapper">
+						<Button
+							type={"button"}
+							onClick={toggleMenu}
+							className={'noselect snail red'}
+							title={"Menu Close"}
+							ariaLabel={"Menu Close"}
+							text={"CLOSE"}
+						/>
 					</div>
 
 					<div className='layout1'>
@@ -75,7 +88,7 @@ const Menu = ({menuType}: MenuProps): JSX.Element => {
 												{v.text}
 											</a>
 										) : (
-											<Link to={v.path} className="noselect" style={{color: pathname == v.path ? "grey" : "inherit"}}>
+											<Link to={v.path} className="noselect" style={{color: pathname === v.path ? "grey" : "inherit"}}>
 												{v.text}
 											</Link>
 										)}

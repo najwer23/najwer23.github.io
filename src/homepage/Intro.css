@@ -1,0 +1,19 @@
+.intro {
+	display: flex;
+	margin-top: 50px;
+	flex-direction: column;
+	align-items: center;
+}
+
+.intro h2 {
+	font-size: clamp(1.875rem, 5.774vw + 0.381rem, 5rem);
+	line-height: clamp(2.813rem, 6.813vw + 1.05rem, 6.5rem);
+	text-wrap: balance;
+	text-align: center;
+}
+
+.intro h3 {
+	text-align: center;
+	margin: 0;
+	text-wrap: balance;
+}

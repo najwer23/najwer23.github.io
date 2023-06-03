@@ -1,21 +1,31 @@
-import { FC, InputHTMLAttributes } from "react";
+import "./Button.css"
 
-interface ButtonProps extends InputHTMLAttributes<HTMLInputElement> {
+interface ButtonProps  {
 	disabled?: boolean;
-	text: String;
+	text: string;
+	onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+	className: string;
+	title: string;
+	ariaLabel: string;
+	type: 'submit' | 'reset' | 'button' | undefined;
 }
 
-const Button: FC<ButtonProps> = ({disabled, text}) => {
+export const Button = ({disabled, text, onClick, className, ariaLabel, title, type}: ButtonProps): JSX.Element => {
+
+	const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => onClick(e);
+
 	return (
 		<>
 			<button
-				type="submit"
+				type={type}
 				disabled={disabled}
+				onClick={handleClick}
+				className={className}
+				title={title}
+				aria-label={ariaLabel}
 			>
 				{text}
 			</button>
 		</>
 	);
 }
-
-export default Button;
