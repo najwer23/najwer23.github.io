@@ -4,11 +4,16 @@ import { Textarea } from "../inputs/Textarea";
 import { Nav } from "../nav/Nav";
 import { useRef } from "react";
 import Validation from "../validation/Validation";
+import { useAppSelector, useAppDispatch } from "./../hooks";
+import { RootState } from "./../store";
+import * as ContactSlice from "../features/contact/contactSlice";
 
 
 export const Contact = (): JSX.Element => {
 	const email = useRef<HTMLInputElement>(null)
 	const msg = useRef<HTMLTextAreaElement>(null)
+	const dispatch = useAppDispatch();
+	const status = useAppSelector((state: RootState) => state.contact.status);
 
 	function validEmail() {
 		return Validation("email", email.current!.parentNode, email.current!.value);
@@ -27,10 +32,14 @@ export const Contact = (): JSX.Element => {
 		].filter((v) => !v);
 
 		if (valid.length === 0) {
+			let data: any = {
+				email: email.current!.value,
+				msg: msg.current!.value
+			}
+			dispatch(ContactSlice.postData(data));
 
+			msg.current!.value = "";
 		}
-
-
 	}
 
 	return (
@@ -62,9 +71,21 @@ export const Contact = (): JSX.Element => {
 						title={"Send"}
 						ariaLabel={"Send"}
 						text={"Send"}
+						disabled={status == "loading"}
 					/>
 				</form>
 
+				{ status === "loading" && (
+					<>Sending...</>
+				)}
+
+				{ status === "done" && (
+					<>Message sent :)</>
+				)}
+
+				{ status === "error" && (
+					<>Ups.. :(</>
+				)}
 
 			</div>
 		</>

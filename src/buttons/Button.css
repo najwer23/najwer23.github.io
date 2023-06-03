@@ -51,3 +51,7 @@
 .snail.green::before {
 	background-image: linear-gradient(#03A64A, #03A64A);
 }
+
+.snail:disabled::before {
+	background-image: linear-gradient(pink, pink)
+}
