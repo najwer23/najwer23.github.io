@@ -17,3 +17,13 @@
 	margin: 0;
 	text-wrap: balance;
 }
+
+.social-media{
+	margin-top: 30px;
+}
+.social-media-item {
+	padding: 10px;
+	font-size: clamp(1.875rem, 2.309vw + 1.277rem, 3.125rem);
+	line-height: clamp(1.875rem, 2.309vw + 1.277rem, 3.125rem);
+	color: black;
+}
