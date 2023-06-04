@@ -7,6 +7,7 @@ import Validation from "../validation/Validation";
 import { useAppSelector, useAppDispatch } from "./../hooks";
 import { RootState } from "./../store";
 import * as ContactSlice from "../features/contact/contactSlice";
+import { Footer } from "../footer/Footer";
 
 
 export const Contact = (): JSX.Element => {
@@ -88,6 +89,7 @@ export const Contact = (): JSX.Element => {
 				)}
 
 			</div>
+			<Footer />
 		</>
 	);
 }
