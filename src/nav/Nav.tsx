@@ -1,5 +1,5 @@
 import './Nav.css';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { MenuProps } from '../types';
@@ -47,6 +47,15 @@ const Menu = ({menuType}: MenuProps): JSX.Element => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { pathname } = useLocation();
 
+	useEffect(() => {
+		let body = document.querySelector("body")
+		if (isMenuOpen) {
+			body!.classList.add("menu-open");
+		} else {
+			body!.classList.remove("menu-open");
+		}
+	}, [isMenuOpen]);
+
 	let menu: any = {};
 
 	if (menuType === "notlogged" ) menu = MENU["notlogged"]["universal"];
@@ -62,7 +71,7 @@ const Menu = ({menuType}: MenuProps): JSX.Element => {
 				onClick={toggleMenu}
 				className={'noselect snail'}
 				title={"Menu Open"}
-				ariaLabel={"Men Open"}
+				ariaLabel={"Menu Open"}
 				text={"MENU"}
 			/>
 

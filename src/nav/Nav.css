@@ -43,6 +43,9 @@
 	line-height: clamp(2.688rem, 1.191vw + 2.38rem, 3.333rem);
 }
 
+.menu-open {
+	overflow: hidden;
+}
 
 .popup-menu {
 	z-index: 999999;
@@ -90,6 +93,7 @@
 	text-decoration: unset;
 	text-align: right;
 	list-style-type: none;
+	padding-bottom: 100px;
 }
 
 .popup-menu-list li a{
