@@ -38,6 +38,7 @@ const MENU = {
 			{ path: "/", text: "Homepage" },
 			{ path: "/contact", text: "Contact" },
 			{ path: "/faq", text: "FAQ" },
+			{ path: "/404", text: "404" },
 			{ path: "/resume", text: "CV & Résumé", outPage: true },
 		]
 	},
