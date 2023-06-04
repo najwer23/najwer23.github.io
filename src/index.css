@@ -4,7 +4,7 @@
 }
 
 body {
-  margin: 0;
+	margin: 0;
 	padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
   font-style: normal;
@@ -17,6 +17,7 @@ body {
 	max-width: 1920px;
 	padding-left: 42px;
 	padding-right: 42px;
+	margin: auto;
 }
 
 .noselect {

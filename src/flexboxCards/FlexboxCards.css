@@ -34,19 +34,19 @@
 }
 
 /* breakpoints */
-@media (max-width: 575.98px) {
+@media (max-width: 992.98px) {
 	.flexbox-cards-item {
 		--flex-items: 1;
 	}
 }
 
-@media (min-width: 576px) and (max-width: 991.98px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
 	.flexbox-cards-item {
 		--flex-items: 2;
 	}
 }
 
-@media (min-width: 992px) and (max-width: 1599.98px) {
+@media (min-width: 1200px) and (max-width: 1599.98px) {
 	.flexbox-cards-item {
 		--flex-items: 3;
 	}
