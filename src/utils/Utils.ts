@@ -1,7 +1,9 @@
 export function getOrigin(): string {
-	const API_TEST_ORIGIN = "http://localhost:5000";
-	const API_TEST_ORIGIN_NETWORK = "http://192.168.1.18:5000";
-	const API_PROD_ORIGIN = "https://zany-ray-bonnet.cyclic.app"; //https://najwer23api-eu.lm.r.appspot.com";
+	const API_PORT = 5000;
+	const LOCALHOST_IN_NETWORK = "192.168.5.241"
+	const API_TEST_ORIGIN = "http://localhost:" + API_PORT;
+	const API_TEST_ORIGIN_NETWORK = "http://"+ LOCALHOST_IN_NETWORK +":" + API_PORT;
+	const API_PROD_ORIGIN = "https://zany-ray-bonnet.cyclic.app";
 
 	let API_ORIGIN = API_PROD_ORIGIN;
 
@@ -9,13 +11,12 @@ export function getOrigin(): string {
 		API_ORIGIN = API_TEST_ORIGIN;
 	}
 
-	if (window.location.hostname === "192.168.1.18") {
+	if (window.location.hostname === LOCALHOST_IN_NETWORK) {
 		API_ORIGIN = API_TEST_ORIGIN_NETWORK;
 	}
 
 	return API_ORIGIN;
 }
-
 
 
 export async function useFetch(url:string, method:any, body:any) {
@@ -28,7 +29,7 @@ export async function useFetch(url:string, method:any, body:any) {
 		},
 	};
 
-	if (method != "GET") {
+	if (method !== "GET") {
 		fetchObj = { ...fetchObj, body: JSON.stringify(body) };
 	}
 

@@ -71,20 +71,20 @@ export const Contact = (): JSX.Element => {
 						title={"Send"}
 						ariaLabel={"Send"}
 						text={"Send"}
-						disabled={status == "loading"}
+						disabled={status === "loading"}
 					/>
 				</form>
 
 				{ status === "loading" && (
-					<>Sending...</>
+					<div className="custom-msg">Sending...</div>
 				)}
 
 				{ status === "done" && (
-					<>Message sent :)</>
+					<div className="custom-msg">Message sent :)</div>
 				)}
 
 				{ status === "error" && (
-					<>Ups.. :(</>
+					<div className="custom-msg" >Ups.. :(</div>
 				)}
 
 			</div>

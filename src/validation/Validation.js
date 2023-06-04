@@ -17,6 +17,10 @@ export default function Validation(code, parent, value) {
     case "date": objVR = testDate(value); break;
     case "clearError": objVR = clearError(value); break;
     case "naturalNumber": objVR = testNaturalNumber(value); break;
+		default: {
+			// const exhaustiveCheck: never = code;
+			// throw new Error(exhaustiveCheck);
+		}
   }
 
   if (objVR.isError) {
@@ -80,7 +84,7 @@ function testDate(value) {
 }
 
 function testIfTheSameInputs(value) {
-  return value.v1 != value.v2
+  return value.v1 !== value.v2
     ? {
         isError: true,
         msg: "Values are not the same",
@@ -150,7 +154,7 @@ function testNaturalNumber(value) {
 }
 
 function testCredentialsFail(value) {
-  return value == null
+  return value === null
     ? {
         isError: true,
         msg: "Incorrect credentials",
@@ -159,7 +163,7 @@ function testCredentialsFail(value) {
 }
 
 function testEmptyString(value) {
-  return (value == "" || value == null)
+  return (value === "" || value === null)
     ? {
         isError: true,
         msg: "The field cannot be empty",
@@ -168,7 +172,7 @@ function testEmptyString(value) {
 }
 
 function testEmail(value) {
-  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+  if (!/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/.test(value)) {
     return {
       isError: true,
       msg: "Incorrect email address",
@@ -177,11 +181,11 @@ function testEmail(value) {
   return { isError: false };
 }
 
-function addCss2Element(element, style) {
-  for (const property in style) {
-    element.style[property] = style[property];
-  }
-}
+// function addCss2Element(element, style) {
+//   for (const property in style) {
+//     element.style[property] = style[property];
+//   }
+// }
 
 /*
  addCss2Element(errorCreated, {

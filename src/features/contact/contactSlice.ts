@@ -22,6 +22,9 @@ export const ContactSlice = createSlice({
 		setDoneState: (state) => {
 			state.status = "done"
 		},
+		setIdleState: (state) => {
+			state.status = "idle"
+		},
 	},
 });
 
@@ -41,7 +44,11 @@ export const postData = (body?: any) => async (dispatch: any) => {
 	} else {
 		dispatch(setErrorState(data))
 	}
+
+	setTimeout(() => {
+		dispatch(setIdleState())
+	}, 5000)
 }
 
-export const { setErrorState, setLoadingState, setDoneState} = ContactSlice.actions;
+export const { setErrorState, setLoadingState, setDoneState, setIdleState} = ContactSlice.actions;
 export default ContactSlice.reducer;

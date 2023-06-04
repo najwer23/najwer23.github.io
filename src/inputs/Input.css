@@ -44,3 +44,11 @@ form > * + * {
 	margin: 2px;
 	color: red;
 }
+
+.custom-msg {
+	padding-top: 10px;
+	font-size: 14px;
+	line-height: 1;
+	margin: 2px;
+	color: grey;
+}
