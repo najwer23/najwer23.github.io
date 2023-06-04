@@ -18,12 +18,12 @@ const SOCIAL_MEDIA = [
 	{
 		title: "Twitter",
 		path: "https://twitter.com/najwer23",
-		icon: <FontAwesomeIcon icon={faTwitter} />,
+		icon: <FontAwesomeIcon icon={faTwitter} color={"#1DA1F2"}/>,
 	},
 	{
 		title: "Linkedin",
 		path: "https://www.linkedin.com/in/najwer23/",
-		icon: <FontAwesomeIcon icon={faLinkedinIn} />,
+		icon: <FontAwesomeIcon icon={faLinkedinIn} color={"#0e76a8"}/>,
 	},
 ];
 

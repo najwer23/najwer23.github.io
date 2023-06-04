@@ -1,3 +1,4 @@
+import { FlexboxCards } from "../flexboxCards/FlexboxCards"
 import { Nav } from "../nav/Nav"
 import { Intro } from "./Intro"
 
@@ -6,6 +7,7 @@ export const Homepage = () : JSX.Element => {
 		<>
 			<Nav />
 			<Intro />
+			<FlexboxCards />
 		</>
 	)
 }

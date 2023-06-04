@@ -12,7 +12,7 @@ export const CustomHashRoutes = ({routes}: CustomHashRoutesProps): JSX.Element =
 						path={item.path}
 						element={
 							<>
-								<ScrollToTop />
+								{/* <ScrollToTop /> */}
 								{item.element}
 							</>
 						}
