@@ -30,6 +30,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.maxWidth900 {
+	max-width: 900px;
+}
+
 /* breakpoints */
 @media (max-width: 575.98px) {
 	.layout1 {

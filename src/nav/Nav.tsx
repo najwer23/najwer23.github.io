@@ -37,7 +37,8 @@ const MENU = {
 		universal: [
 			{ path: "/", text: "Homepage" },
 			{ path: "/contact", text: "Contact" },
-			{ path: "/resume", text: "Resume", outPage: true },
+			{ path: "/faq", text: "FAQ" },
+			{ path: "/resume", text: "CV & Résumé", outPage: true },
 		]
 	},
 };
@@ -89,6 +90,7 @@ const Menu = ({menuType}: MenuProps): JSX.Element => {
 												rel="noreferrer"
 												target={v.innerPage ? "" : "_blank"}
 												className="noselect"
+												style={{color: "orange"}}
 											>
 												{v.text}
 											</a>
