@@ -1,4 +1,3 @@
-import { Button } from "../buttons/Button"
 import { Link, useNavigate } from "react-router-dom";
 import "./Intro.css"
 
@@ -45,12 +44,6 @@ const SOCIAL_MEDIA = [
 ];
 
 export const Intro = () : JSX.Element => {
-	let navigate = useNavigate();
-
-	function handleClick() {
-		navigate("contact");
-	}
-
 	return (
 		<>
 			<div className='layout1 intro'>
@@ -81,7 +74,6 @@ export const Intro = () : JSX.Element => {
 							</span>
 						))}
 				</div>
-
 			</div>
 		</>
 	)
