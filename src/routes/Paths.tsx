@@ -2,11 +2,12 @@ import { CustomHashRoutesPathElement } from "../types";
 import { Homepage } from "../homepage/Homepage";
 import { Contact } from "../contact/Contact";
 import { Faq } from "../faq/Faq";
+import { Page404 } from "../page404/Page404";
 
 export const paths: CustomHashRoutesPathElement[] = [
 	{
 		path: "*",
-		element: <>Error 404</>
+		element: <Page404 />
 	},
 	{
 		path: "/",
