@@ -1,4 +1,4 @@
-import { CustomHashRoutesPathElement } from "../types";
+import { CustomHashRoutesPathElement } from "../types/types";
 import { Homepage } from "../homepage/Homepage";
 import { Contact } from "../contact/Contact";
 import { Faq } from "../faq/Faq";

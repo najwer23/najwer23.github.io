@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import contactReducer from "./features/contact/contactSlice"
+import githubReducer from "./features/github/githubSlice";
 
 export const store = configureStore({
 	reducer: {
 		contact: contactReducer,
+		github: githubReducer
 	},
 });
 

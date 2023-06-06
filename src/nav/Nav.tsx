@@ -2,7 +2,7 @@ import './Nav.css';
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { MenuProps } from '../types';
+import { MenuProps } from '../types/types';
 import { Button } from '../buttons/Button';
 
 

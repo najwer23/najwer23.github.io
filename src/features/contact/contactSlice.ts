@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { ContactSliceState, ErrorMsg } from "../../types";
+import { ContactSliceState, ErrorMsg } from "../../types/types";
 import * as Utils from "../../utils/Utils";
 
 

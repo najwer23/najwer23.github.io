@@ -2,8 +2,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import { faPenNib } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css"
+import { useAppSelector, useAppDispatch } from "./../hooks";
+import { RootState } from "./../store";
+import * as GithubSlice from "../features/github/githubSlice";
+import { useEffect } from 'react'
+
+
 
 export const Footer = () : JSX.Element => {
+	const githubStatus = useAppSelector((state: RootState) => state.github.status);
+	const githubData = useAppSelector((state: RootState) => state.github.data);
+	const dispatch = useAppDispatch();
+	let lastMody: string = "";
+
+
+	useEffect(() => {
+		dispatch(GithubSlice.getData());
+	}, [dispatch]);
+
+	if (githubStatus === "done") {
+		lastMody = (new Date(githubData!.commit.commit.committer.date)).toLocaleString("pl-PL")
+	}
+
 	return (
 		<>
 			<footer>
@@ -15,7 +35,11 @@ export const Footer = () : JSX.Element => {
 							<p style={{color:"white", fontSize: "16px"}}>
 								<span><FontAwesomeIcon icon={faCopyright} size="1x" /></span>
 								{" "}
-								<span><FontAwesomeIcon icon={faPenNib} size="1x" /> 06.06.2023, 21:54</span>
+								<span>
+									<FontAwesomeIcon icon={faPenNib} size="1x" />
+									{" "}
+									{lastMody}
+								</span>
 							</p>
 						</div>
 					</div>
