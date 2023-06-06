@@ -1,9 +1,18 @@
+import { useEffect } from "react";
 import { Button } from "../buttons/Button";
 import "./Page404.css"
 import { useNavigate } from "react-router-dom";
 
 export const Page404 = (): JSX.Element => {
 	let navigate = useNavigate();
+
+	useEffect(() => {
+		document.body.classList.add('bg404');
+		return () => {
+			document.body.classList.remove('bg404');
+		}
+	}, []);
+
 
 	function handleClick() {
 		navigate("/");

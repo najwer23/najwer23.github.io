@@ -21,7 +21,7 @@ const BackgroundSvg = () : JSX.Element => {
 
 	if (width <= 575.98) {
 		return (
-			<div>
+			<div >
 				<svg style={{ zIndex: -9, position: "absolute" }} width="100%" height="571">
 					<g transform="translate(960,285.5) scale(1,1) translate(-960,-285.5)"><linearGradient id="lg-0.2856862115872085" x1="0" x2="1" y1="0" y2="0">
 						<stop stopColor="#93dbe9" offset="0"></stop>
@@ -43,7 +43,7 @@ const BackgroundSvg = () : JSX.Element => {
 	}
 
 	return (
-		<div >
+		<div className="layout11" style={{ zIndex: -9, position: "absolute", left: 0, right: 0, top: 0 }}>
 			{/* https://loading.io/background/m-wave/ */}
 			<svg style={{ zIndex: -9, position: "absolute" }} width="100%" height="961">
 				<g transform="translate(960,480.5) scale(1,1) translate(-960,-480.5)"><linearGradient id="lg-0.31837929533674436" x1="0" x2="1" y1="0" y2="0">

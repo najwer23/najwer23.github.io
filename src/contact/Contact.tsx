@@ -8,6 +8,8 @@ import { useAppSelector, useAppDispatch } from "./../hooks";
 import { RootState } from "./../store";
 import * as ContactSlice from "../features/contact/contactSlice";
 import { Footer } from "../footer/Footer";
+import { useEffect } from 'react'
+
 
 
 export const Contact = (): JSX.Element => {
@@ -15,6 +17,14 @@ export const Contact = (): JSX.Element => {
 	const msg = useRef<HTMLTextAreaElement>(null)
 	const dispatch = useAppDispatch();
 	const status = useAppSelector((state: RootState) => state.contact.status);
+
+	useEffect(() => {
+		document.body.classList.add('contact');
+		return () => {
+			document.body.classList.remove('contact');
+		}
+	}, []);
+
 
 	function validEmail() {
 		return Validation("email", email.current!.parentNode, email.current!.value);

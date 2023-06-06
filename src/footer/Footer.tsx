@@ -15,7 +15,7 @@ export const Footer = () : JSX.Element => {
 							<p style={{color:"white", fontSize: "16px"}}>
 								<span><FontAwesomeIcon icon={faCopyright} size="1x" /></span>
 								{" "}
-								<span><FontAwesomeIcon icon={faPenNib} size="1x" /> 06.06.2023, 13:22</span>
+								<span><FontAwesomeIcon icon={faPenNib} size="1x" /> 06.06.2023, 21:54</span>
 							</p>
 						</div>
 					</div>

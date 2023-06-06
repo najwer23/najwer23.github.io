@@ -14,6 +14,10 @@ body {
 .footer-container-wrapper {
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+	left: 0;
+	right: 0;
+	max-width: 1920px;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: #24272b;
 }
