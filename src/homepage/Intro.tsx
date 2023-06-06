@@ -31,12 +31,12 @@ const SOCIAL_MEDIA = [
 	{
 		title: "Mail",
 		path: "/contact",
-		icon: <FontAwesomeIcon icon={faAt} color={"lightgrey"}/>,
+		icon: <FontAwesomeIcon icon={faAt} color={"white"}/>,
 	},
 	{
 		title: "Résumé",
 		path: "https://najwer23.github.io/resume/",
-		icon: <FontAwesomeIcon icon={faFilePdf} color={"orangered"}/>,
+		icon: <FontAwesomeIcon icon={faFilePdf} color={"red"}/>,
 		outPage: true
 
 	},

@@ -48,7 +48,6 @@ export const Contact = (): JSX.Element => {
 			<Nav />
 			<div className="layout1">
 				<h2 className="fluid-h2">Send me a message!</h2>
-				<h4 className="fluid-h4"><i>Let's do something special.</i></h4>
 
 				<form onSubmit={handleSubmit}>
 					<Input
