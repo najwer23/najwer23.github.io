@@ -2,7 +2,7 @@
 .input-with-label {
 	display: flex;
   flex-direction: column;
-	max-width: 600px;
+	max-width: 480px;
 }
 
 .textarea-with-label label,
@@ -30,7 +30,7 @@ form > * + * {
 	padding: 10px;
 	box-sizing: border-box;
 	min-height: 200px;
-	max-width: 600px;
+	max-width: 480px;
 	max-height: 400px;
 	font-size: 16px;
 	font-weight: 500;
