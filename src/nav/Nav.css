@@ -17,7 +17,7 @@
 	text-decoration: none;
 }
 
-.nav-logo-title {
+/* .nav-logo-title {
 	background: linear-gradient(to top right,
 	black calc(19% - 1px),
 	rgba(0,0,0,0) 19%,
@@ -38,6 +38,13 @@
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: rgba(0,0,0,0);
+	font-weight: 800;
+	font-size: clamp(2rem, 0.924vw + 1.761rem, 2.5rem);
+	line-height: clamp(2.688rem, 1.191vw + 2.38rem, 3.333rem);
+} */
+
+.nav-logo-title {
+	color: black;
 	font-weight: 800;
 	font-size: clamp(2rem, 0.924vw + 1.761rem, 2.5rem);
 	line-height: clamp(2.688rem, 1.191vw + 2.38rem, 3.333rem);
