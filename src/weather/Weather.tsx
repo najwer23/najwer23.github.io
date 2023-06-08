@@ -79,7 +79,7 @@ export const Weather = (): JSX.Element => {
 			arr.map((x:any, i:number) => (
 				arr2.push(<div key={i} className="forecast-data-current carousel-standard-item">
 					{forecastImgFormater(x.weather)}
-					<ForecastData title={"empty"} value={Utils.dateFormatterFromDt(x.dt)} />
+					<ForecastData title={"dayOfWeek"} value={x.dt} />
 					<ForecastData title={"Temp"} value={forecastDataFormat(x.temp.day, 4)} />
 					<ForecastData title={"Sunrise"} value={Utils.dateFormatterFromDt(x.sunrise)?.split(",")[1]} />
 					<ForecastData title={"Sunset"} value={Utils.dateFormatterFromDt(x.sunset)?.split(",")[1]} />
@@ -130,7 +130,7 @@ export const Weather = (): JSX.Element => {
 							<div className="forecast-data-current-wrapper">
 								<div className="forecast-data-current">
 									{forecastImgFormater(weatherCurrent!.weather)}
-									<ForecastData title={"empty"} value={Utils.dateFormatterFromDt(weatherCurrent!.dt)} />
+									<ForecastData title={"dayOfWeek"} value={weatherCurrent!.dt} />
 									<ForecastData title={"Temp"} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
 									<ForecastData title={"Sunrise"} value={Utils.dateFormatterFromDt(weatherCurrent!.sunrise)?.split(",")[1]} />
 									<ForecastData title={"Sunset"} value={Utils.dateFormatterFromDt(weatherCurrent!.sunset)?.split(",")[1]} />
@@ -171,6 +171,16 @@ function ForecastData(props:any) {
 		);
 	}
 
+
+	if (props.title === "dayOfWeek") {
+		return (
+			<div className="forecast-data">
+				<div><b>{forecastDataFormat(props.value, 0)}.</b></div>
+				<div>{Utils.dateFormatterFromDt(props.value)}</div>
+			</div>
+		);
+	}
+
 	return (
 		<div className="forecast-data">
 			<div>{props.title}:</div>
@@ -199,6 +209,8 @@ function forecastImgFormater(v: Array<any>) {
 function forecastDataFormat(v:any, n: number) {
 	if (Utils.isEmpty(v)) {
 		return "";
+	} else if (n === 0) {
+		return new Date(v*1000).toLocaleString('en-us', { weekday: 'short' })
 	} else if (n === 1) {
 		return (v * 3.6).toFixed(2) + ` km/h`;
 	} else if (n === 2) {
