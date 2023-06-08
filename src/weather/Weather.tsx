@@ -7,10 +7,13 @@ import { useAppSelector, useAppDispatch } from "./../hooks";
 import { RootState } from "./../store";
 import * as WeatherSlice from "../features/weather/weatherSlice";
 import { useEffect, useState } from 'react'
-import { WeatherStatus } from "../types/typesWeather";
+import { Current, WeatherStatus } from "../types/typesWeather";
 import Select from 'react-select';
 import { useWindowSize } from "../utils/Utils";
 import Carousel from "../carousel/Carousel";
+import ChartLine from "../charts/ChartLine";
+import ChartBar from "../charts/ChartBar";
+
 
 const townListForSelect = Utils.sortByLabel([
 	{ value: "51.1:17.0333", label: "Wrocław (PL)" },
@@ -26,6 +29,7 @@ export const Weather = (): JSX.Element => {
 	const weatherStatus = useAppSelector((state: RootState) => state.weather.status);
 	const weatherCurrent = useAppSelector((state: RootState) => state.weather.weatherCurrent);
 	const weather8Days = useAppSelector((state: RootState) => state.weather.weather8Days);
+	const weatherHourly = useAppSelector((state: RootState) => state.weather.weatherHourly);
 	const dispatch = useAppDispatch();
 	const [width,] = useWindowSize();
 	let forecast8DaysDivs:Array<JSX.Element> = [];
@@ -99,6 +103,98 @@ export const Weather = (): JSX.Element => {
 
 
 
+	function dataHourlyWeatherForLineChart(obj: any) {
+		if (obj == null) {
+			return null;
+		}
+
+		let data = structuredClone(obj);
+		let dataTempX: Array<number>=[]
+		let dataTempY: Array<any>=[]
+		let dataTempX_FeelsLike: Array<any> = [];
+
+		for (let [, { dt, temp, feels_like }] of data.entries()) {
+			dataTempY.push(Utils.dateFormatterFromDt(dt)?.split(",")[1].slice(0, 6))
+			dataTempX.push(temp)
+			dataTempX_FeelsLike.push(feels_like)
+		}
+		return {
+			labels: dataTempY,
+			datasets: [
+				{
+					label: "Temperature",
+					data: dataTempX,
+					borderColor: "#A80038",
+					backgroundColor: "#A80038",
+				},
+				{
+					label: "Temperature Feels Like",
+					data: dataTempX_FeelsLike,
+					borderColor: "orangered",
+					backgroundColor: "orangered",
+				},
+			],
+		};
+	}
+
+	function dataHourlyWeatherForLineChart2(obj: any) {
+		if (obj == null) {
+			return null;
+		}
+
+		let data = structuredClone(obj);
+		let dataTempX: Array<number> = []
+		let dataTempY: Array<any> = []
+
+		for (let [, { dt, wind_speed }] of data.entries()) {
+			dataTempY.push(Utils.dateFormatterFromDt(dt)?.split(",")[1].slice(0, 6))
+			dataTempX.push(wind_speed * 3.6)
+		}
+		return {
+			labels: dataTempY,
+			datasets: [
+				{
+					label: "Wind Speed",
+					data: dataTempX,
+					borderColor: "#736D63",
+					backgroundColor: "#736D63",
+				},
+			],
+		};
+
+	}
+
+
+	function dataHourlyWeatherForLineChart3(obj: any) {
+		if (obj == null) {
+			return null;
+		}
+
+		let data = structuredClone(obj);
+		let dataTempX: Array<number> = []
+		let dataTempY: Array<any> = []
+
+		console.log(data)
+
+		for (let [, { dt, rain }] of data.entries()) {
+			dataTempY.push(Utils.dateFormatterFromDt(dt)?.split(",")[1].slice(0, 6))
+			dataTempX.push((rain && rain["1h"]) || 0)
+		}
+		return {
+			labels: dataTempY,
+			datasets: [
+				{
+					label: "Rain",
+					data: dataTempX,
+					borderColor: "#3F4EA6",
+					backgroundColor: "#3F4EA6",
+				},
+			],
+		};
+
+	}
+
+
 
 
 
@@ -123,7 +219,7 @@ export const Weather = (): JSX.Element => {
 
 				<div className="forecast-wrapper">
 					{weatherStatus === WeatherStatus.Loading && (
-						<>Loading..</>
+						<div style={{ minHeight: width <= 899.98 ? "840px" : "430px" }}>Loading..</div>
 					)}
 					{weatherStatus === WeatherStatus.Done && (
 						<>
@@ -156,7 +252,62 @@ export const Weather = (): JSX.Element => {
 						</>
 					)}
 				</div>
+
+				<h2 className="h2-fluid">Weather on graphs</h2>
+
+				<div
+					className="chartWrapper"
+					style={{
+						marginTop: "30px",
+						marginBottom: "50px",
+						height: "700px",
+					}}
+				>
+					<ChartLine
+						title="Temeperature for next 48h"
+						data={dataHourlyWeatherForLineChart(weatherHourly)}
+						ySymbol={` ${"\u00b0"}C`}
+					/>
+				</div>
+
+
+				<div
+					className="chartWrapper"
+					style={{
+						marginTop: "30px",
+						marginBottom: "50px",
+						height: "700px",
+					}}
+				>
+					<ChartLine
+						title="Speed of wind for next 48h"
+						data={dataHourlyWeatherForLineChart2(weatherHourly)}
+						ySymbol={` km/h`}
+					/>
+				</div>
+
+
+				<div
+					className="chartWrapper"
+					style={{
+						marginTop: "30px",
+						marginBottom: "50px",
+						height: "700px",
+					}}
+				>
+					<ChartBar
+						title="Rain for next 48h"
+						data={dataHourlyWeatherForLineChart3(weatherHourly)}
+						ySymbol={` mm/h`}
+					/>
+				</div>
+
 			</div>
+
+
+
+
+
 			<Footer />
 		</>
 	);

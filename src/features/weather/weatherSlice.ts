@@ -7,6 +7,7 @@ const initialState: WeatherSliceState = {
 	coords: "51.1:17.0333",
 	weather8Days: null,
 	weatherCurrent: null,
+	weatherHourly: null,
 };
 
 export const WeatherSlice = createSlice({
@@ -18,6 +19,9 @@ export const WeatherSlice = createSlice({
 		},
 		initWeather8Days: (state, action: PayloadAction<Daily[]>) => {
 			state.weather8Days = action.payload;
+		},
+		initWeatherHourly: (state, action: PayloadAction<Current[]>) => {
+			state.weatherHourly = action.payload;
 		},
 		setStatus: (state, action: PayloadAction<WeatherStatus>) => {
 			state.status = action.payload;
@@ -44,26 +48,24 @@ export const getData = (coords: string) => async (dispatch: any) => {
 			)) as Weather;
 
 			if (data.code === 200) {
+
+				console.log(42,data)
+
 				dispatch(initWeatherCurrent(data.data.current));
+				dispatch(initWeatherHourly(data.data.hourly));
 				dispatch(initWeather8Days(data.data.daily));
 				dispatch(setStatus(WeatherStatus.Done));
 
-				Utils.setLocalStorageCookie(
-					"forecast_current_" + lat + ":" + lon,
-					data.data.current,
-					0.5
-				);
-				Utils.setLocalStorageCookie(
-					"forecast8Days_" + +lat + ":" + lon,
-					data.data.daily,
-					0.5
-				);
+				Utils.setLocalStorageCookie("forecast_current_" + lat + ":" + lon,data.data.current,0.5);
+				Utils.setLocalStorageCookie("forecast_hourly_" + lat + ":" + lon,data.data.hourly,0.5);
+				Utils.setLocalStorageCookie("forecast8Days_" + +lat + ":" + lon,data.data.daily,0.5);
 			} else {
 				dispatch(setStatus(WeatherStatus.Error));
 			}
 		} else {
 			dispatch(initWeatherCurrent(Utils.getLocalStorageCookie("forecast_current_" + coords)));
 			dispatch(initWeather8Days(Utils.getLocalStorageCookie("forecast8Days_" + coords)));
+			dispatch(initWeatherHourly(Utils.getLocalStorageCookie("forecast_hourly_" + coords)));
 			dispatch(setStatus(WeatherStatus.Done));
 		}
 
@@ -74,6 +76,6 @@ export const getData = (coords: string) => async (dispatch: any) => {
 
 
 
-export const { initWeatherCurrent, initWeather8Days, setStatus } =
+export const { initWeatherCurrent, initWeather8Days, setStatus, initWeatherHourly } =
 	WeatherSlice.actions;
 export default WeatherSlice.reducer;

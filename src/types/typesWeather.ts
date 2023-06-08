@@ -3,6 +3,7 @@ export interface WeatherSliceState {
 	coords: string;
 	weather8Days: Daily[] | null;
 	weatherCurrent: Current | null;
+	weatherHourly: Current[] | null
 }
 
 export enum WeatherStatus {

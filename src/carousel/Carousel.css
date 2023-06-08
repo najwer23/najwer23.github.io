@@ -19,10 +19,6 @@
 	border-radius: 10px;
 }
 
-.forecast-data-8Days-wrapper .carousel-container {
-	height: 460px;
-}
-
 .carousel-content {
 	display: flex;
 	transition: transform .5s cubic-bezier(.25, .46, .45, .94);
