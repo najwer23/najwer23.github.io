@@ -11,6 +11,16 @@ import { WeatherStatus } from "../types/typesWeather";
 import Select from 'react-select';
 import { useWindowSize } from "../utils/Utils";
 
+const townListForSelect = Utils.sortByLabel([
+	{ value: "51.1:17.0333", label: "Wrocław (PL)" },
+	{ value: "52.237049:21.017532", label: "Warszawa (PL)" },
+	{ value: "50.270908:19.039993", label: "Katowice (PL)" },
+	{ value: "51.1445731:16.2410821", label: "Legnickie Pole (PL)" },
+	{ value: "41.3828939:2.1774322", label: "Barcelona (ES)" },
+	{ value: "64.145981:-21.9422367", label: "Reykjavík (IS)" },
+	{ value: "52.4006632:16.91973259", label: "Poznań (PL)" },
+]);
+
 export const Weather = (): JSX.Element => {
 	const weatherStatus = useAppSelector((state: RootState) => state.weather.status);
 	const weatherCurrent = useAppSelector((state: RootState) => state.weather.weatherCurrent);
@@ -18,14 +28,6 @@ export const Weather = (): JSX.Element => {
 	const [width,] = useWindowSize();
 
 	const [coords, setCoords] = useState<any>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
-
-	const townListForSelect = [
-		{ value: "51.1:17.0333", label: "Wrocław (PL)" },
-		{ value: "51.1445731:16.2410821", label: "Legnickie Pole (PL)" },
-		{ value: "41.3828939:2.1774322", label: "Barcelona (ES)" },
-		{ value: "64.145981:-21.9422367", label: "Reykjavík (IS)" },
-		{ value: "52.4006632:16.91973259", label: "Poznań (PL)" },
-	];
 
 	const townListForSelectCSS = {
 		control: (base: any) => ({
