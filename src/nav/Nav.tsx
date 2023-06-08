@@ -36,6 +36,7 @@ const MENU = {
 		],
 		universal: [
 			{ path: "/", text: "Homepage" },
+			{ path: "/weather", text: "Weather" },
 			{ path: "/contact", text: "Contact" },
 			{ path: "/faq", text: "FAQ" },
 			{ path: "/404", text: "404" },

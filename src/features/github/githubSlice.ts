@@ -19,7 +19,7 @@ export const GithubSlice = createSlice({
 
 export const getData = () => async (dispatch: any) => {
 	try {
-		const res = await fetch("https://api.github.com/repos/najwer23/najwer23.github.io/branches/main");
+		const res = await fetch("https://api.github.com/repos/najwer23/najwer23.github.io/branches/gh-pages");
 		const data = (await res.json()) as Github;
 		dispatch(initData(data));
 	} catch (err: any) {
