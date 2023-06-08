@@ -77,6 +77,7 @@ export const Weather = (): JSX.Element => {
 						defaultValue={townListForSelect[0]}
 						onChange={setCoords}
 						options={townListForSelect}
+						isSearchable={false}
 					/>
 				</div>
 
