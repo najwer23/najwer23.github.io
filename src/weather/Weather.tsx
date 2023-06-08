@@ -174,8 +174,6 @@ export const Weather = (): JSX.Element => {
 		let dataTempX: Array<number> = []
 		let dataTempY: Array<any> = []
 
-		console.log(data)
-
 		for (let [, { dt, rain }] of data.entries()) {
 			dataTempY.push(Utils.dateFormatterFromDt(dt)?.split(",")[1].slice(0, 6))
 			dataTempX.push((rain && rain["1h"]) || 0)

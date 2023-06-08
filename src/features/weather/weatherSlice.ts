@@ -49,8 +49,6 @@ export const getData = (coords: string) => async (dispatch: any) => {
 
 			if (data.code === 200) {
 
-				console.log(42,data)
-
 				dispatch(initWeatherCurrent(data.data.current));
 				dispatch(initWeatherHourly(data.data.hourly));
 				dispatch(initWeather8Days(data.data.daily));
