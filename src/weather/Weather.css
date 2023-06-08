@@ -17,7 +17,6 @@
 
 .forecast-data-current {
 	width: 250px;
-	height: 397px;
 }
 
 .forecast-wrapper {
@@ -32,6 +31,8 @@
 
 .forecast-data-8Days-wrapper .carousel-section {
 	padding-right: 0;
+	padding-top: 20px;
+	margin-top: 0;
 }
 
 .forecast-desc article p {
