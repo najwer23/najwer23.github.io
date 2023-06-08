@@ -14,7 +14,6 @@ export default function Carousel(props:any) {
 		let desktopItemWidth = props.desktopItemWidth || 400;
 		let scrollTimer:any;
 		var X2:any;
-		var X1:any;
 
 		var carouselDataIn = {
 			[carouselId]: {
@@ -255,11 +254,11 @@ export default function Carousel(props:any) {
 		}
 
 		return () => window.removeEventListener("resize", carouselResize);
-	}, [ITEMS]);
+	}, [ITEMS, props.desktopItemWidth, props.id, props.itemName, props.mobileItewmWidth]);
 
 
 	function TypeCarousel(props:any): JSX.Element {
-		if (TYPE == "forecast") {
+		if (TYPE === "forecast") {
 			return (
 				<div id={props.id} className="carousel-content">
 					{ITEMS}
@@ -268,7 +267,7 @@ export default function Carousel(props:any) {
 		}
 
 
-		if (TYPE == "shortcuts") {
+		if (TYPE === "shortcuts") {
 			return (
 				<div id={props.id} className="carousel-content">
 					{ITEMS &&
