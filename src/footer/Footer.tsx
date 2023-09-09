@@ -21,7 +21,11 @@ export const Footer = () : JSX.Element => {
 	}, [dispatch]);
 
 	if (githubStatus === "done") {
-		lastMody = (new Date(githubData!.commit.commit.committer.date)).toLocaleString("pl-PL")
+		let date = githubData?.commit?.commit?.committer?.date
+		if (date) {
+			lastMody = (new Date(date)).toLocaleString("pl-PL")
+		}
+
 	}
 
 	return (
@@ -33,13 +37,17 @@ export const Footer = () : JSX.Element => {
 					<div className="layout1">
 						<div>
 							<p style={{color:"white", fontSize: "16px"}}>
-								<span><FontAwesomeIcon icon={faCopyright} size="1x" /></span>
-								{" "}
-								<span>
-									<FontAwesomeIcon icon={faPenNib} size="1x" />
-									{" "}
-									{lastMody}
-								</span>
+								{lastMody && (
+									<>
+										<span><FontAwesomeIcon icon={faCopyright} size="1x" /></span>
+											{" "}
+										<span>
+												<FontAwesomeIcon icon={faPenNib} size="1x" />
+												{" "}
+												{lastMody}
+										</span>
+									</>
+								)}
 							</p>
 						</div>
 					</div>
