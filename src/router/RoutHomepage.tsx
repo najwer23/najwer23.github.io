@@ -1,7 +1,11 @@
+import { Grid } from "../grid/Grid"
+
 export const RoutHomepage = (): JSX.Element => {
 	return (
 		<>
-			Halo :)
+			<Grid>
+				<>jhjgfds</>
+			</Grid>
 		</>
 	)
 }
