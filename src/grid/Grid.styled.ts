@@ -9,6 +9,7 @@ export const PageContainerAside = styled.aside<{ $isMenuOpen: boolean }>`
 	position: fixed;
 	height: 100%;
 	padding: 20px;
+	overflow: auto;
 	display: ${(props) => (props.$isMenuOpen ? "block" : "none")};
 
 	@media ${({ theme }) => theme.device.tablet} {

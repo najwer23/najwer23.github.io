@@ -40,6 +40,7 @@ export const Grid = ({children}: Props): JSX.Element => {
 			<PageContainerMain>
 				<MobileHam>
 					<Button
+						styled={"hamburger"}
 						type={"button"}
 						title={"Menu"}
 						text={<FontAwesomeIcon icon={faBurger} size={"2xl"} />}

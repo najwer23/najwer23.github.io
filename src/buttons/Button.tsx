@@ -1,3 +1,5 @@
+import { ButtonStyle } from "./Button.styled";
+
 interface ButtonProps {
 	disabled?: boolean;
 	text: string | React.ReactNode;
@@ -6,9 +8,10 @@ interface ButtonProps {
 	title: string;
 	ariaLabel: string;
 	type: 'submit' | 'reset' | 'button' | undefined;
+	styled?: string;
 }
 
-export const Button = ({ disabled, text, onClick, className, ariaLabel, title, type }: ButtonProps): JSX.Element => {
+export const Button = ({ disabled, text, onClick, className, ariaLabel, title, type, styled }: ButtonProps): JSX.Element => {
 
 	function handleClick(e: React.MouseEvent<HTMLButtonElement>): void {
 		if (onClick !== undefined) {
@@ -17,7 +20,7 @@ export const Button = ({ disabled, text, onClick, className, ariaLabel, title, t
 	}
 
 	return (
-		<>
+		<ButtonStyle $styled={styled}>
 			<button
 				type={type}
 				disabled={disabled}
@@ -28,6 +31,6 @@ export const Button = ({ disabled, text, onClick, className, ariaLabel, title, t
 			>
 				{text}
 			</button>
-		</>
+		</ButtonStyle>
 	);
 }

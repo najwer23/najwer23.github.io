@@ -35,6 +35,7 @@ export const Aside = ({ isMenuOpen, setIsMenuOpen }: Props) => {
 			<PageNav>
 				<MobileHam $isMenuOpen={isMenuOpen}>
 					<Button
+						styled={"hamburger"}
 						type={"button"}
 						title={"Menu"}
 						text={<FontAwesomeIcon icon={faBurger} size={"2xl"} />}
