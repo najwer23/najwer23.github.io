@@ -16,13 +16,10 @@ const navLinks = [
 		text: "Home",
 	},
 	{
-		path: "/about",
-		text: "About",
-	},
-	{
 		path: "https://najwer23.github.io/resume/",
 		text: "Resume",
 		out: true,
+		color: "#F28627"
 	}
 ]
 
@@ -45,11 +42,11 @@ export const Aside = ({ isMenuOpen, setIsMenuOpen }: Props) => {
 				</MobileHam>
 
 				{navLinks && (
-					navLinks.map(({path, text, out}) => (
+					navLinks.map(({path, text, out, color}) => (
 						<React.Fragment key={path + text}>
 							{out && (
 								<StyledNavLink>
-									<Link to={path} target="_blank" rel="noopener noreferrer" style={{ color: "#F28627" }}>
+									<Link to={path} target="_blank" rel="noopener noreferrer" style={{ color: color ?? "grey" }}>
 										{text}
 									</Link>
 								</StyledNavLink>

@@ -32,10 +32,16 @@ export const StyledNavLink = styled.div<{ $current?: boolean }>`
 	text-decoration: ${(props) => (props.$current ? "underline" : "none")};
 
 	a {
-		text-decoration: none;
+		text-decoration: inherit;
 		padding: 5px 5px 5px 0;
 		font-weight: bold;
-		color: black;
+		color: grey;
+	}
+
+	@media ${({ theme }) => theme.device.tablet} {
+		font-size: 50px;
+		line-height: 115%;
+		text-wrap: balance;
 	}
 `;
 
