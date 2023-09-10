@@ -1,6 +1,6 @@
 import { MobileHam, PageContainer, PageContainerMain } from "./Grid.styled"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBurger, faTerminal } from "@fortawesome/free-solid-svg-icons"
+import { faBurger } from "@fortawesome/free-solid-svg-icons"
 import { Button } from "../buttons/Button"
 import { useEffect, useState } from "react"
 import { useWindowSize } from "../hooks/useWindowSize"
@@ -26,13 +26,13 @@ export const Grid = ({children}: Props): JSX.Element => {
 		if (!isMenuOpen && width < theme.device.tabletNum) {
 			body!.classList.remove("menu-open");
 		}
-	}, [isMenuOpen]);
+	}, [isMenuOpen, width, theme.device.tabletNum]);
 
 	useEffect(() => {
 		let body = document.querySelector("body")
 		body!.classList.remove("menu-open");
 		setIsMenuOpen(width > theme.device.tabletNum)
-	}, [width]);
+	}, [width, theme.device.tabletNum]);
 
 	return (
 		<PageContainer>

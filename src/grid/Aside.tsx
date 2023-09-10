@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../buttons/Button";
 import { MobileHam, PageContainerAside, PageNav, StyledNavLink } from "./Grid.styled";
-import { faBurger, faTerminal } from "@fortawesome/free-solid-svg-icons";
+import { faBurger } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
 import React from "react";
 import { useWindowSize } from "../hooks/useWindowSize";
