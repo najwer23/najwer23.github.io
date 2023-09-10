@@ -1,10 +1,16 @@
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import { RoutHomepage } from "./RoutHomepage";
+import { RouteWeather } from "./RouteWeather";
+import { Grid } from "../grid/Grid";
 
 export const router = createHashRouter([
 	{
 		path: "/",
-		element: <RoutHomepage />,
+		element: <Grid><RoutHomepage /></Grid>,
+	},
+	{
+		path: "/weather",
+		element: <Grid><RouteWeather /></Grid>,
 	},
 ]);
 

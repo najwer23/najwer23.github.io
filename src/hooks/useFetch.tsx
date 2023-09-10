@@ -56,6 +56,7 @@ export function useFetch<T = unknown>(
 
 			try {
 				const response = await fetch(url, options)
+
 				if (!response.ok) {
 					throw new Error(response.statusText)
 				}
@@ -77,8 +78,8 @@ export function useFetch<T = unknown>(
 		return () => {
 			cancelRequest.current = true
 		}
-
-	}, [url, options])
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [url])
 
 	return state;
 }

@@ -4,6 +4,8 @@ import { MobileHam, PageContainerAside, PageNav, StyledNavLink } from "./Grid.st
 import { faBurger, faTerminal } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
 import React from "react";
+import { useWindowSize } from "../hooks/useWindowSize";
+import { useTheme } from "styled-components";
 
 interface Props {
 	isMenuOpen: boolean;
@@ -16,6 +18,10 @@ const navLinks = [
 		text: "Home",
 	},
 	{
+		path: "/weather",
+		text: "Weather App",
+	},
+	{
 		path: "https://najwer23.github.io/resume/",
 		text: "Resume",
 		out: true,
@@ -25,6 +31,9 @@ const navLinks = [
 
 export const Aside = ({ isMenuOpen, setIsMenuOpen }: Props) => {
 	const location = useLocation();
+	const [width] = useWindowSize();
+	const theme = useTheme();
+
 	const pathName = location.pathname;
 
 	return (
@@ -52,7 +61,7 @@ export const Aside = ({ isMenuOpen, setIsMenuOpen }: Props) => {
 								</StyledNavLink>
 							)}
 							{!out && (
-								<StyledNavLink $current={pathName==path}>
+								<StyledNavLink $current={pathName === path} onClick={() => width < theme.device.tabletNum && setIsMenuOpen(false)}>
 									<Link to={path}>
 										{text}
 									</Link>

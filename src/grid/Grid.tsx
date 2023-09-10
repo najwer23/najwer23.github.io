@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const Grid = ({children}: Props): JSX.Element => {
-	const [width, height] = useWindowSize()
+	const [width] = useWindowSize()
 	const theme = useTheme();
 	const [isMenuOpen, setIsMenuOpen] = useState(() => width > theme.device.tabletNum)
 
