@@ -1,12 +1,11 @@
 import { useEffect, useReducer, useRef } from 'react'
+import { getLocalStorageCookie, setLocalStorageCookie } from '../utils/Utils'
 
 interface State<T> {
 	data?: T
 	error?: Error
 	status: string
 }
-
-type Cache<T> = { [url: string]: T }
 
 type Action<T> =
 	| { type: 'loading' }
@@ -17,7 +16,6 @@ export function useFetch<T = unknown>(
 	url?: string,
 	options?: RequestInit,
 ): State<T> {
-	const cache = useRef<Cache<T>>({})
 	const cancelRequest = useRef<boolean>(false)
 
 	const initialState: State<T> = {
@@ -42,30 +40,35 @@ export function useFetch<T = unknown>(
 	const [state, dispatch] = useReducer(fetchReducer, initialState)
 
 	useEffect(() => {
-		if (!url) return
+		if (!url) return;
 
 		cancelRequest.current = false
+
+		const localStorageCookieURL = getLocalStorageCookie(url)
 
 		const fetchData = async () => {
 			dispatch({ type: 'loading' })
 
-			if (cache.current[url]) {
-				dispatch({ type: 'fetched', payload: cache.current[url] })
-				return
+			if (localStorageCookieURL) {
+				dispatch({ type: 'fetched', payload: localStorageCookieURL })
+				return;
 			}
 
 			try {
 				const response = await fetch(url, options)
 
 				if (!response.ok) {
-					throw new Error(response.statusText)
+					throw new Error(response.statusText);
 				}
 
-				const data = (await response.json()) as T
-				cache.current[url] = data
-				if (cancelRequest.current) return
+				const data = (await response.json()) as T;
+
+				setLocalStorageCookie(url, data, 0.5)
+
+				if (cancelRequest.current) return;
 
 				dispatch({ type: 'fetched', payload: data })
+
 			} catch (error) {
 				if (cancelRequest.current) return
 
@@ -76,10 +79,11 @@ export function useFetch<T = unknown>(
 		void fetchData()
 
 		return () => {
-			cancelRequest.current = true
+			cancelRequest.current = true;
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [url])
 
 	return state;
 }
+
