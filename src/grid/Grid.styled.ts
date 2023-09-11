@@ -49,6 +49,7 @@ export const MobileHam = styled.div<{ $isMenuOpen?: boolean }>`
 	position: ${(props) => (props.$isMenuOpen ? "" : "fixed")};
 	top: ${(props) => (props.$isMenuOpen ? "" : "20px")};
 	left: ${(props) => (props.$isMenuOpen ? "" : "20px")};
+	z-index: ${(props) => (props.$isMenuOpen ? "" : "9999")};
 
 	@media ${({ theme }) => theme.device.tablet} {
 		display: block;
@@ -64,6 +65,7 @@ export const PageContainerMain = styled.main`
 	width: auto;
 	overflow: auto;
 	padding-top: 20px;
+	min-height: 100vh;
 
 	@media ${({ theme }) => theme.device.tablet} {
 		margin-left: 0;

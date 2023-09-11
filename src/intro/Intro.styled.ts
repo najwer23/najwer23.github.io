@@ -30,7 +30,8 @@ export const IntroStyled = styled.div`
 		}
 	}
 
-	p, ul {
+	p,
+	ul {
 		max-width: 900px;
 		font-size: 22px;
 
@@ -45,6 +46,7 @@ export const IntroStyled = styled.div`
 
 	@media ${({ theme }) => theme.device.tablet} {
 		padding: 0 20px;
+		margin-bottom: 50px;
 	}
 `;
 

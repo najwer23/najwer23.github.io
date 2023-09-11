@@ -19,3 +19,40 @@ export const getLocalStorageCookie = (key: string) => {
 	}
 	return item.value;
 }
+
+export const sortByKeyArrObj = (arr: any) => {
+	let result = [];
+	result.push(arr[0]);
+	result.push(
+		arr
+			.slice(1)
+			.sort((a: any, b: any) =>
+				a.label < b.label ? -1 : Number(a.label > b.label)
+			)
+	);
+	return result.flat(1);
+}
+
+export const isEmpty = (v: any): boolean => {
+	if (v === undefined) return true;
+
+	if (
+		typeof v == "function" ||
+		typeof v == "number" ||
+		typeof v == "boolean" ||
+		Object.prototype.toString.call(v) === "[object Date]"
+	)
+		return false;
+
+	if (v == null || v.length === 0) return true;
+
+	if (typeof v == "object") {
+		return Object.keys(v).length < 1;
+	}
+
+	return false;
+}
+
+export const dateFormatterFromDt = (dt: any): string | null => {
+	return isEmpty(dt) ? null : new Date(dt * 1000).toLocaleString();
+}
