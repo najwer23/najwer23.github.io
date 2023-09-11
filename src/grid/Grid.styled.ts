@@ -35,12 +35,13 @@ export const StyledNavLink = styled.div<{ $current?: boolean }>`
 		text-decoration: inherit;
 		padding: 5px 5px 5px 0;
 		font-weight: bold;
-		color: grey;
+		color: #0d0d0d;
 	}
 
 	@media ${({ theme }) => theme.device.tablet} {
-		font-size: 50px;
+		font-size: 44px;
 		line-height: 115%;
+		text-align: center;
 		text-wrap: balance;
 	}
 `;

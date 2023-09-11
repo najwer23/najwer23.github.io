@@ -23,9 +23,9 @@ const navLinks = [
 	},
 	{
 		path: "https://najwer23.github.io/resume/",
-		text: "Resume",
+		text: "Résumé",
 		out: true,
-		color: "#F28627"
+		color: "#ff253a"
 	}
 ]
 
