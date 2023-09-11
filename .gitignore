@@ -1,4 +1,6 @@
 node_modules
+# production
+/build
 
 .pnp.*
 .yarn/*
