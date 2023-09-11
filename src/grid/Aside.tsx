@@ -22,10 +22,16 @@ const navLinks = [
 		text: "Weather App",
 	},
 	{
+		path: "https://jabber.cyclic.app/",
+		text: "Jabber",
+		out: true,
+		color: "inherit"
+	},
+	{
 		path: "https://najwer23.github.io/resume/",
 		text: "Résumé",
 		out: true,
-		color: "#ff253a"
+		color: "inherit"
 	}
 ]
 

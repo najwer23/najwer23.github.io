@@ -29,13 +29,12 @@ export const PageContainerAside = styled.aside<{ $isMenuOpen: boolean }>`
 export const StyledNavLink = styled.div<{ $current?: boolean }>`
 	font-size: 24px;
 	padding: 5px 5px 5px 0;
-	text-decoration: ${(props) => (props.$current ? "underline" : "none")};
 
 	a {
 		text-decoration: inherit;
 		padding: 5px 5px 5px 0;
 		font-weight: bold;
-		color: #0d0d0d;
+		color: ${(props) => (props.$current ? "#ff253a" : "#0d0d0d")};
 	}
 
 	@media ${({ theme }) => theme.device.tablet} {
@@ -50,7 +49,7 @@ export const MobileHam = styled.div<{ $isMenuOpen?: boolean }>`
 	position: ${(props) => (props.$isMenuOpen ? "" : "fixed")};
 	top: ${(props) => (props.$isMenuOpen ? "" : "20px")};
 	left: ${(props) => (props.$isMenuOpen ? "" : "20px")};
-	z-index: ${(props) => (props.$isMenuOpen ? "" : "9999")};
+	z-index: ${(props) => (props.$isMenuOpen ? "0" : "1")};
 
 	@media ${({ theme }) => theme.device.tablet} {
 		display: block;

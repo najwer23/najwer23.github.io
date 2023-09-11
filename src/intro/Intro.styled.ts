@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const IntroStyled = styled.div`
 	max-width: 1000px;
 	margin-bottom: 150px;
+	padding: 0 20px;
 
 	h1 {
 		font-size: 72px;
