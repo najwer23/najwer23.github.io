@@ -1,62 +1,39 @@
-import { useLayoutEffect, useState } from "react";
-
-
-export function getOrigin(): string {
-	const API_PORT = 5000;
-	const LOCALHOST_IN_NETWORK = "192.168.5.241"
-	const API_TEST_ORIGIN = "http://localhost:" + API_PORT;
-	const API_TEST_ORIGIN_NETWORK = "http://"+ LOCALHOST_IN_NETWORK +":" + API_PORT;
-	const API_PROD_ORIGIN = "https://zany-ray-bonnet.cyclic.app";
-
-	let API_ORIGIN = API_PROD_ORIGIN;
-
-	if (window.location.hostname === "localhost") {
-		API_ORIGIN = API_TEST_ORIGIN;
-	}
-
-	if (window.location.hostname === LOCALHOST_IN_NETWORK) {
-		API_ORIGIN = API_TEST_ORIGIN_NETWORK;
-	}
-
-	return API_ORIGIN;
-}
-
-
-export async function useFetch(url:string, method:any, body:any) {
-	let fetchObj:any = {
-		method: method,
-		credentials: "include",
-		headers: {
-			"Content-Type": "application/json",
-			"Accept": "application/json",
-		},
+export const setLocalStorageCookie = <T>(key: string, value: T, exhours: number) => {
+	const now = new Date();
+	const item = {
+		value: value,
+		expiry: now.getTime() + exhours * 60 * 60 * 1000,
 	};
+	localStorage.setItem(key, JSON.stringify(item));
+}
 
-	if (method !== "GET") {
-		fetchObj = { ...fetchObj, body: JSON.stringify(body) };
+export const getLocalStorageCookie = (key: string) => {
+	const itemStr = localStorage.getItem(key);
+	if (!itemStr) return null;
+	const item = JSON.parse(itemStr);
+	const now = new Date();
+
+	if (now.getTime() > item.expiry) {
+		localStorage.removeItem(key);
+		return null;
 	}
-
-	const res = await fetch(getOrigin() + url, fetchObj);
-	const data = await res.json();
-	return data;
+	return item.value;
 }
 
-export function useWindowSize() {
-	const [size, setSize] = useState([0, 0]);
-	useLayoutEffect(() => {
-		function updateSize() {
-			// android workaround
-			if (size[0] != window.innerWidth)
-				setSize([window.innerWidth, window.innerHeight]);
-		}
-		window.addEventListener("resize", updateSize);
-		updateSize();
-		return () => window.removeEventListener("resize", updateSize);
-	}, [size]);
-	return size;
+export const sortByKeyArrObj = (arr: any) => {
+	let result = [];
+	result.push(arr[0]);
+	result.push(
+		arr
+			.slice(1)
+			.sort((a: any, b: any) =>
+				a.label < b.label ? -1 : Number(a.label > b.label)
+			)
+	);
+	return result.flat(1);
 }
 
-export function isEmpty(v: any): boolean {
+export const isEmpty = (v: any): boolean => {
 	if (v === undefined) return true;
 
 	if (
@@ -76,39 +53,6 @@ export function isEmpty(v: any): boolean {
 	return false;
 }
 
-export function dateFormatterFromDt(dt: any): string|null {
+export const dateFormatterFromDt = (dt: any): string | null => {
 	return isEmpty(dt) ? null : new Date(dt * 1000).toLocaleString();
-}
-
-export function setLocalStorageCookie(key: any, value: any, exhours: any) {
-	const now = new Date();
-	const item = {
-		value: value,
-		expiry: now.getTime() + exhours * 60 * 60 * 1000,
-	};
-	localStorage.setItem(key, JSON.stringify(item));
-}
-
-export function getLocalStorageCookie(key: any) {
-	const itemStr = localStorage.getItem(key);
-	if (!itemStr) return null;
-	const item = JSON.parse(itemStr);
-	const now = new Date();
-
-	if (now.getTime() > item.expiry) {
-		localStorage.removeItem(key);
-		return null;
-	}
-	return item.value;
-}
-
-export function sortByLabel(arr:any) {
-	let result = [];
-	result.push(arr[0]);
-	result.push(
-		arr
-			.slice(1)
-			.sort((a:any, b:any) => (a.label < b.label ? -1 : Number(a.label > b.label)))
-	);
-	return result.flat(1);
 }

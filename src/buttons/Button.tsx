@@ -1,16 +1,17 @@
-import "./Button.css"
+import { ButtonStyle } from "./Button.styled";
 
-interface ButtonProps  {
+interface ButtonProps {
 	disabled?: boolean;
-	text: string;
+	text: string | React.ReactNode;
 	onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
-	className: string;
+	className?: string;
 	title: string;
 	ariaLabel: string;
 	type: 'submit' | 'reset' | 'button' | undefined;
+	styled?: string;
 }
 
-export const Button = ({disabled, text, onClick, className, ariaLabel, title, type}: ButtonProps): JSX.Element => {
+export const Button = ({ disabled, text, onClick, className, ariaLabel, title, type, styled }: ButtonProps): JSX.Element => {
 
 	function handleClick(e: React.MouseEvent<HTMLButtonElement>): void {
 		if (onClick !== undefined) {
@@ -19,7 +20,7 @@ export const Button = ({disabled, text, onClick, className, ariaLabel, title, ty
 	}
 
 	return (
-		<>
+		<ButtonStyle $styled={styled}>
 			<button
 				type={type}
 				disabled={disabled}
@@ -30,6 +31,6 @@ export const Button = ({disabled, text, onClick, className, ariaLabel, title, ty
 			>
 				{text}
 			</button>
-		</>
+		</ButtonStyle>
 	);
 }

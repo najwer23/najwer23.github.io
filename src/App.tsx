@@ -1,10 +1,13 @@
-import {CustomHashRoutes} from "./routes/CustomHashRoutes";
-import { paths } from "./routes/Paths";
+import { LangProvider } from './translation/useTranslationContext';
+import { CustomRouter } from './router/CustomRouter';
+import { Theme } from './theme/Theme';
 
-export default function App() {
-  return (
-		<>
-			<CustomHashRoutes routes={paths}/>
-		</>
+export const App = (): JSX.Element => {
+	return (
+		<Theme>
+			<LangProvider>
+					<CustomRouter />
+			</LangProvider>
+		</Theme>
 	);
 }

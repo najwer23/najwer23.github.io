@@ -1,346 +1,93 @@
-import { useEffect } from "react";
-import "./Carousel.css";
-import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react"
+import { ArrowLeft, ArrowRight, CarouselStyled, CarouselWrapper } from "./Carousel.styled"
+import { Button } from "../buttons/Button"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
+import { useWindowSize } from "../hooks/useWindowSize"
 
-export default function Carousel(props:any) {
-	const TITLE = props.title;
-	const ITEMS = props.arr;
-	const TYPE = props.type;
+interface Props {
+	children: React.ReactNode
+}
 
+export const Carousel = ({ children }: Props): JSX.Element => {
+	const carouselRef = useRef<any>(null)
+	const [showArrowLeft, setShowArrowLeft ] = useState<boolean>(false)
+	const [showArrowRight, setShowArrowRight ] = useState<boolean>(false)
+	const [width] = useWindowSize();
+
+	// check if show right arrow
 	useEffect(() => {
-		let carouselId = `#${props.id}`;
-		let carouselItemName = props.itemName || "carousel-item"
-		let mobileItemWidth = props.mobileItewmWidth || 300
-		let desktopItemWidth = props.desktopItemWidth || 400;
-		let scrollTimer:any;
-		var X2:any;
+		let timerId = setTimeout(() => {
+			handleScroll()
+		}, 1);
 
-		var carouselDataIn = {
-			[carouselId]: {
-				isMousedownActive: false,
-				isMousemoveActive: false,
-				translationX: 0,
-				mouseStartX: 0,
-				mouseStartY: 0,
-				oneLenghtOfSlider: 0,
-				oneFrameDisplayed: 0,
-				hiddeArrowOnWidth: 600,
-				oneFrame: 0,
-			},
-		};
+		return () => clearTimeout(timerId);
+	}, [width]);
 
-		if (document.querySelector(carouselId)) {
-			calculateWidthForCarousel(carouselId);
-			addMouseEventsToSlider(carouselId);
-			window.addEventListener("resize", carouselResize);
-		}
+	const slideLeft = () => {
+		carouselRef.current.scrollLeft -= carouselRef.current.offsetWidth
+	}
 
-		function carouselResize() {
-			calculateWidthForCarousel(carouselId);
-			stateArrows(carouselId);
-		}
+	const slideRight = () => {
+		carouselRef.current.scrollLeft += carouselRef.current.offsetWidth
+	}
 
-		function calculateWidthForCarousel(elementName:any) {
-			let carousel = document.querySelector(elementName);
-			carouselDataIn[elementName].oneFrame = window.innerWidth < 600 ? mobileItemWidth : desktopItemWidth;
-			carouselDataIn[elementName].oneFrameDisplayed = carousel.parentElement.offsetWidth;
-			carouselDataIn[elementName].oneLenghtOfSlider = 0;
-			document.querySelectorAll(elementName + " ." + carouselItemName).forEach((x:any) => {
-				x.style.width = carouselDataIn[elementName].oneFrame + "px";
-				carouselDataIn[elementName].oneLenghtOfSlider += carouselDataIn[elementName].oneFrame;
-			});
-		}
-
-		function stateArrows(elementName: any) {
-			const carousel = document.querySelector(elementName);
-			const carouselContainer = carousel.parentNode;
-
-			let AL = carouselContainer.querySelector(".carousel-arrow.left");
-			let AR = carouselContainer.querySelector(".carousel-arrow.right");
-
-			if (window.innerWidth < carouselDataIn[elementName].hiddeArrowOnWidth) {
-				AL.style.display = "none";
-				AR.style.display = "none";
-				return;
+	const handleScroll = () => {
+		if (carouselRef.current.scrollLeft <= 0) {
+			setShowArrowLeft(false)
+			if ((carouselRef.current.scrollWidth - carouselRef.current.clientWidth) !== 0) {
+				setShowArrowRight(true)
+			} else {
+				setShowArrowRight(false)
 			}
-
-			let a = carouselDataIn[elementName].oneLenghtOfSlider;
-			let b = carouselDataIn[elementName].oneFrameDisplayed;
-			let t = carouselDataIn[elementName].translationX;
-
-			AL.style.display = t >= 0 ? "none" : "block";
-			AR.style.display = t <= -a + b ? "none" : "block"
+		} else if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth - carouselRef.current.clientWidth ) {
+			setShowArrowLeft(true)
+			setShowArrowRight(false)
+		} else {
+			setShowArrowLeft(true)
+			setShowArrowRight(true)
 		}
-
-		function addMouseEventsToSlider(elementName:any) {
-			const carousel = document.querySelector(elementName);
-			const carouselContainer = carousel.parentNode;
-			stateArrows(elementName);
-
-			const preventClickOnDrag = (e: { preventDefault: () => void; stopImmediatePropagation: () => void; }) => {
-				e.preventDefault();
-				e.stopImmediatePropagation();
-			};
-
-			const pointerEventToXY = function (e:any) {
-				var coordinates = { x: 0, y: 0 };
-				if (e.type.includes("touch")) {
-					coordinates.x = e.changedTouches[0].pageX;
-					coordinates.y = e.changedTouches[0].pageY;
-				} else if (e.type.includes("mouse")) {
-					coordinates.x = e.pageX;
-					coordinates.y = e.pageY;
-				}
-				return coordinates;
-			};
-
-			carouselContainer.addEventListener("click", function (e:any) {
-				if (e.target.closest(".carousel-arrow.right")) {
-					nextPicture();
-				}
-				if (e.target.closest(".carousel-arrow.left")) {
-					prevPicture();
-				}
-			});
-
-			function prevPicture() {
-				if (!detectIfTranslationIsPossible()) {
-					return;
-				}
-
-				let b = carouselDataIn[elementName].oneFrameDisplayed;
-				let c = carouselDataIn[elementName].translationX;
-				let d = carouselDataIn[elementName].oneFrame;
-				let t = 0;
-
-				// translation left
-				t = c + b;
-
-				// align to next object
-				let h = b % d;
-				t = t - h;
-
-				// left bound
-				if (t >= 0) {
-					t = 0;
-				}
-
-				carousel.style.scrollBehavior = "smooth";
-				carousel.scrollLeft = -t;
-				carouselDataIn[elementName].translationX = t;
-				stateArrows(elementName);
-			}
-
-			function nextPicture() {
-				if (!detectIfTranslationIsPossible()) {
-					return;
-				}
-
-				let a = carouselDataIn[elementName].oneLenghtOfSlider;
-				let b = carouselDataIn[elementName].oneFrameDisplayed;
-				let c = carouselDataIn[elementName].translationX;
-				let d = carouselDataIn[elementName].oneFrame;
-				let t = 0;
-
-				// translation right
-				t = c - b;
-
-				// align to next object
-				let h = b % d;
-				t = t + h;
-
-				// right bound
-				if (t < -a + b) {
-					t = -a + b;
-				}
-
-				carousel.style.scrollBehavior = "smooth";
-				carousel.scrollLeft = -t;
-				carouselDataIn[elementName].translationX = t;
-				stateArrows(elementName);
-			}
-
-			function detectIfTranslationIsPossible() {
-				let a = carouselDataIn[elementName].oneLenghtOfSlider;
-				let b = carouselDataIn[elementName].oneFrameDisplayed;
-				return a > b;
-			}
-
-			//firefox bug fix
-			carousel.querySelectorAll("." + carouselItemName).forEach((item:any) => {
-				item.addEventListener("mousedown", (e:any) => e.preventDefault());
-			});
-
-			carousel.addEventListener("scroll", function (this:any, e:any) {
-				if (!detectIfTranslationIsPossible()) {
-					return;
-				}
-				carousel.style.scrollBehavior = "initial";
-				carouselDataIn[elementName].translationX = -this.scrollLeft;
-
-				clearTimeout(scrollTimer);
-				scrollTimer = setTimeout(() => {
-					stateArrows(elementName);
-				}, 80);
-			});
-
-			carousel.addEventListener("mousedown", function (e:any) {
-				carousel.style.scrollBehavior = "initial";
-				carouselDataIn[elementName].isMousedownActive = true;
-				carouselDataIn[elementName].isMousemoveActive = false;
-				carouselDataIn[elementName].mouseStartX = pointerEventToXY(e).x;
-				carouselDataIn[elementName].mouseStartY = pointerEventToXY(e).y;
-				carousel.style.transition = "none";
-				X2 = pointerEventToXY(e).x;
-			});
-
-			carousel.addEventListener("mouseleave", function () {
-				carousel.style.scrollBehavior = "initial";
-				carouselDataIn[elementName].isMousedownActive = false;
-			});
-
-			carousel.addEventListener("mouseup", function () {
-				carousel.style.scrollBehavior = "initial";
-				carouselDataIn[elementName].isMousedownActive = false;
-
-				let X1 = carouselDataIn[elementName].mouseStartX;
-				if (Math.abs(X1 - X2) < 35) {
-					carousel.removeEventListener("click", preventClickOnDrag);
-				} else {
-					carousel.addEventListener("click", preventClickOnDrag);
-				}
-				carouselDataIn[elementName].isMousemoveActive = false;
-			});
-
-			carousel.addEventListener("mousemove", function (e:any) {
-				carousel.style.scrollBehavior = "initial";
-				if (!carouselDataIn[elementName].isMousedownActive) {
-					carouselDataIn[elementName].isMousemoveActive = false;
-					carousel.removeEventListener("click", preventClickOnDrag);
-					return;
-				}
-
-				if (!detectIfTranslationIsPossible()) {
-					return;
-				}
-
-				if (carouselDataIn[elementName].isMousedownActive) {
-					e.preventDefault();
-
-					let a = carouselDataIn[elementName].oneLenghtOfSlider;
-					let b = carouselDataIn[elementName].oneFrameDisplayed;
-					let c = carouselDataIn[elementName].translationX;
-					let t = 0;
-
-					carouselDataIn[elementName].isMousemoveActive = true;
-					t = (pointerEventToXY(e).x - carouselDataIn[elementName].mouseStartX) * 1 + c;
-
-					// left bound
-					if (t > 0) {
-						t = 0;
-					}
-
-					//right bound
-					if (t < -a + b) {
-						t = -a + b;
-					}
-
-					carousel.scrollLeft = -t;
-					carouselDataIn[elementName].translationX = t;
-					carouselDataIn[elementName].mouseStartX = pointerEventToXY(e).x;
-					stateArrows(elementName);
-				}
-			});
-		}
-
-		return () => window.removeEventListener("resize", carouselResize);
-	}, [ITEMS, props.desktopItemWidth, props.id, props.itemName, props.mobileItewmWidth]);
-
-
-	function TypeCarousel(props:any): JSX.Element {
-		if (TYPE === "forecast") {
-			return (
-				<div id={props.id} className="carousel-content">
-					{ITEMS}
-				</div>
-			);
-		}
-
-
-		if (TYPE === "shortcuts") {
-			return (
-				<div id={props.id} className="carousel-content">
-					{ITEMS &&
-						ITEMS.map((v:any, i:number) =>
-							v.outPage ? (
-								<a
-									key={i}
-									href={v.path}
-									target={"_blank"}
-									rel="noreferrer"
-									title={v.title}
-									className={"carousel-item " + TYPE}
-								>
-									<span>{v.title} </span>
-								</a>
-							) : (
-								<Link
-									key={i}
-									to={v.path}
-									title={v.title}
-									className={"carousel-item " + TYPE}
-								>
-									<span>{v.title} </span>
-								</Link>
-							)
-						)}
-				</div>
-			);
-		}
-
-		return (
-			<div id={props.id} className="carousel-content">
-				{ITEMS &&
-					ITEMS.map((v: any, i: number) => (
-						<a
-							key={i}
-							href={v.path}
-							target={"_blank"}
-							rel="noreferrer"
-							title={v.title}
-							className="carousel-item"
-						>
-							<span>{v.title} </span>
-						</a>
-					))}
-			</div>
-		);
 	}
 
 	return (
-		<>
-			<section className="carousel-section">
-				<div className="carousel-title">{TITLE && <h2>{TITLE}</h2>}</div>
-				<div className="carousel-wrapper">
-					<div className="carousel-container">
-
-						<TypeCarousel id={props.id} />
-
-						<div className="carousel-controls">
-							<div className="carousel-arrow left">
-								<div className="carousel-arrow left arrow-text">
-									<div className="arrow-n-left"></div>
-								</div>
-							</div>
-							<div className="carousel-arrow right">
-								<div className="carousel-arrow right arrow-text">
-									<div className="arrow-n-right"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		</>
-	);
+		<CarouselWrapper>
+			<CarouselStyled ref={carouselRef} onScroll={handleScroll}>
+				<ArrowLeft $showArrow={showArrowLeft}>
+					<Button
+						styled={"arrow"}
+						text={<FontAwesomeIcon icon={faAngleLeft} color={"black"} size={"2x"} />}
+						title={"ArrowLeft"}
+						ariaLabel={"arrow-left"}
+						type={"button"}
+						onClick={slideLeft} />
+				</ArrowLeft>
+				{children}
+				<ArrowRight $showArrow={showArrowRight}>
+					<Button
+						styled={"arrow"}
+						text={<FontAwesomeIcon icon={faAngleRight} color={"black"} size={"2x"} />}
+						title={"ArrowRight"}
+						ariaLabel={"arrow-left"}
+						type={"button"}
+						onClick={slideRight} />
+				</ArrowRight>
+			</CarouselStyled>
+		</CarouselWrapper>
+	)
 }
+
+
+
+// useEffect(() => {
+// 	let timerId = setTimeout(() => {
+// 		console.log(forecastData8DaysRef.current.offsetWidth)
+// 		console.log(forecastData8DaysRef.current.scrollWidth)
+// 		console.log(forecastData8DaysRef.current.children[0].offsetWidth)
+// 		//forecastData8DaysRef.current.scrollLeft += forecastData8DaysRef.current.offsetWidth
+// 	}, 1);
+
+// 	return () => clearTimeout(timerId);
+// }, [])
+
+
+// https://elisavettriant.github.io/intersection-observer-slider-react/

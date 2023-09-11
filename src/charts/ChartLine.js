@@ -1,35 +1,35 @@
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend,
 } from "chart.js";
 
 import { Line } from "react-chartjs-2";
 
 ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
+	CategoryScale,
+	LinearScale,
+	PointElement,
+	LineElement,
+	Title,
+	Tooltip,
+	Legend
 );
 
 const data = {
-  datasets: [
-    {
-      label: "",
-      data: {},
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-    },
-  ],
+	datasets: [
+		{
+			label: "",
+			data: {},
+			borderColor: "rgb(255, 99, 132)",
+			backgroundColor: "rgba(255, 99, 132, 0.5)",
+		},
+	],
 };
 
 export default function ChartLine(props) {
@@ -76,5 +76,5 @@ export default function ChartLine(props) {
 		},
 	};
 
-  return <Line options={options} data={props.data || data} />;
+	return <Line options={options} data={props.data || data} />;
 }
