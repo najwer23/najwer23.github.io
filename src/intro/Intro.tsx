@@ -26,13 +26,7 @@ const SOCIAL_MEDIA = [
 		path: "https://www.linkedin.com/in/najwer23/",
 		icon: <FontAwesomeIcon icon={faLinkedinIn} color={"black"} />,
 		outPage: true
-	},
-	{
-		title: "Leetcode",
-		path: "https://leetcode.com/najwer23/",
-		icon: <FontAwesomeIcon icon={faCode} color={"black"} />,
-		outPage: true
-	},
+	}
 ];
 
 export const Intro = (): JSX.Element => {

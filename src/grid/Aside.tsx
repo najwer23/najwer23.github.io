@@ -25,13 +25,17 @@ const navLinks = [
 		path: "https://jabber.cyclic.app/",
 		text: "Jabber",
 		out: true,
-		color: "inherit"
+	},
+	{
+		path: "https://leetcode.com/najwer23/",
+		text: "Leetcode",
+		out: true,
 	},
 	{
 		path: "https://najwer23.github.io/resume/",
 		text: "Résumé",
 		out: true,
-		color: "inherit"
+		decpration: "underline"
 	}
 ]
 
@@ -57,11 +61,11 @@ export const Aside = ({ isMenuOpen, setIsMenuOpen }: Props) => {
 				</MobileHam>
 
 				{navLinks && (
-					navLinks.map(({path, text, out, color}) => (
+					navLinks.map(({ path, text, out, decpration }) => (
 						<React.Fragment key={path + text}>
 							{out && (
 								<StyledNavLink>
-									<Link to={path} target="_blank" rel="noopener noreferrer" style={{ color: color ?? "grey" }}>
+									<Link to={path} target="_blank" rel="noopener noreferrer" style={{ textDecoration: decpration ?? "" }}>
 										{text}
 									</Link>
 								</StyledNavLink>
