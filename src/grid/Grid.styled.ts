@@ -28,20 +28,22 @@ export const PageContainerAside = styled.aside<{ $isMenuOpen: boolean }>`
 
 export const StyledNavLink = styled.div<{ $current?: boolean }>`
 	font-size: 24px;
-	padding: 5px 5px 5px 0;
+	padding: 7px 5px 7px 0;
 
 	a {
 		text-decoration: inherit;
 		padding: 5px 5px 5px 0;
 		font-weight: bold;
+		line-height: 100%;
 		color: ${(props) => (props.$current ? "#ff253a" : "#0d0d0d")};
 	}
 
 	@media ${({ theme }) => theme.device.tablet} {
 		font-size: 44px;
-		line-height: 115%;
+		line-height: 100%;
 		text-align: center;
 		text-wrap: balance;
+		padding: 15px 5px 15px 0;
 	}
 `;
 

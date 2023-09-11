@@ -32,6 +32,11 @@ const navLinks = [
 		out: true,
 	},
 	{
+		path: "https://najwer23.github.io/react-redux-ts/",
+		text: "Geometric Figures",
+		out: true,
+	},
+	{
 		path: "https://najwer23.github.io/resume/",
 		text: "Résumé",
 		out: true,
