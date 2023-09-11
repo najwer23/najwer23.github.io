@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +18,7 @@ const SOCIAL_MEDIA = [
 	{
 		title: "Twitter",
 		path: "https://twitter.com/najwer23",
-		icon: <FontAwesomeIcon icon={faTwitter} color={"black"} />,
+		icon: <FontAwesomeIcon icon={faXTwitter} color={"black"} />,
 		outPage: true
 	},
 	{
