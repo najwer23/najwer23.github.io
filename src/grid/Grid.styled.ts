@@ -36,6 +36,16 @@ export const StyledNavLink = styled.div<{ $current?: boolean }>`
 		font-weight: bold;
 		line-height: 100%;
 		color: ${(props) => (props.$current ? "#ff253a" : "#0d0d0d")};
+		display: block;
+
+		cursor: pointer;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	}
 
 	@media ${({ theme }) => theme.device.tablet} {
@@ -43,18 +53,23 @@ export const StyledNavLink = styled.div<{ $current?: boolean }>`
 		line-height: 100%;
 		text-align: center;
 		text-wrap: balance;
-		padding: 15px 5px 15px 0;
+		padding: 0;
+
+		a {
+			padding: 15px 5px 15px 0;
+		}
 	}
 `;
 
 export const MobileHam = styled.div<{ $isMenuOpen?: boolean }>`
 	position: ${(props) => (props.$isMenuOpen ? "" : "fixed")};
 	top: ${(props) => (props.$isMenuOpen ? "" : "20px")};
-	left: ${(props) => (props.$isMenuOpen ? "" : "20px")};
+	right: 20px; //${(props) => (props.$isMenuOpen ? "" : "20px")};
 	z-index: ${(props) => (props.$isMenuOpen ? "0" : "1")};
 
 	@media ${({ theme }) => theme.device.tablet} {
 		display: block;
+		margin-left: ${(props) => (props.$isMenuOpen ? "calc(100% - 50px)" : "")};
 	}
 
 	@media ${({ theme }) => theme.device.desktop} {
