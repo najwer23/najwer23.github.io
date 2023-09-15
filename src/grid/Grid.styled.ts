@@ -26,7 +26,7 @@ export const PageContainerAside = styled.aside<{ $isMenuOpen: boolean }>`
 	}
 `;
 
-export const StyledNavLink = styled.div<{ $current?: boolean }>`
+export const StyledNavLink = styled.div<{ $current?: boolean; $outLink?: boolean }>`
 	font-size: 24px;
 	padding: 7px 5px 7px 0;
 
@@ -46,6 +46,14 @@ export const StyledNavLink = styled.div<{ $current?: boolean }>`
 		-ms-user-select: none;
 		user-select: none;
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
+
+	&.outLink {
+		margin-top: 50px;
+	}
+
+	&.outLink ~ &.outLink {
+		margin-top: 0px;
 	}
 
 	@media ${({ theme }) => theme.device.tablet} {

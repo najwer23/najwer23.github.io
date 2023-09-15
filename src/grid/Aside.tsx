@@ -69,7 +69,7 @@ export const Aside = ({ isMenuOpen, setIsMenuOpen }: Props) => {
 					navLinks.map(({ path, text, out, decpration }) => (
 						<React.Fragment key={path + text}>
 							{out && (
-								<StyledNavLink>
+								<StyledNavLink className="outLink">
 									<Link to={path} target="_blank" rel="noopener noreferrer" style={{ textDecoration: decpration ?? "" }}>
 										{text}
 									</Link>
