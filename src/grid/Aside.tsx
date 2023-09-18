@@ -22,6 +22,27 @@ const navLinks = [
 		text: "Weather App",
 	},
 	{
+		path: "https://najwer23.github.io/resume/",
+		text: "Résumé",
+		out: true,
+		decpration: "underline"
+	},
+	{
+		path: "https://restilo.pl/",
+		text: "Restilo",
+		out: true,
+	},
+	{
+		path: "https://tueuropa.pl/ubezpieczenia-sportowe/ubezpieczenie-nnw-sport.htm",
+		text: "Active in Sport",
+		out: true,
+	},
+	{
+		path: "https://tueuropa.pl/ubezpieczenia-turystyczne.htm",
+		text: "Itravel",
+		out: true,
+	},
+	{
 		path: "https://jabber.cyclic.app/",
 		text: "Jabber",
 		out: true,
@@ -36,12 +57,6 @@ const navLinks = [
 		text: "Geometric Figures",
 		out: true,
 	},
-	{
-		path: "https://najwer23.github.io/resume/",
-		text: "Résumé",
-		out: true,
-		decpration: "underline"
-	}
 ]
 
 export const Aside = ({ isMenuOpen, setIsMenuOpen }: Props) => {
