@@ -1,6 +1,6 @@
 import { Intro } from "../intro/Intro"
 
-export const RoutHomepage = (): JSX.Element => {
+export const RouteHomepage = (): JSX.Element => {
 	return (
 		<>
 			<Intro/>

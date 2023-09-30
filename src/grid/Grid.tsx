@@ -2,7 +2,7 @@ import { MobileHam, PageContainer, PageContainerMain } from "./Grid.styled"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBurger } from "@fortawesome/free-solid-svg-icons"
 import { Button } from "../buttons/Button"
-import { useEffect, useState } from "react"
+import { useLayoutEffect, useState } from "react"
 import { useWindowSize } from "../hooks/useWindowSize"
 import { useTheme } from "styled-components"
 import { Aside } from "./Aside"
@@ -16,7 +16,7 @@ export const Grid = ({children}: Props): JSX.Element => {
 	const theme = useTheme();
 	const [isMenuOpen, setIsMenuOpen] = useState(() => width > theme.device.tabletNum)
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		let body = document.querySelector("body")
 
 		if (isMenuOpen && width < theme.device.tabletNum) {
@@ -28,7 +28,7 @@ export const Grid = ({children}: Props): JSX.Element => {
 		}
 	}, [isMenuOpen, width, theme.device.tabletNum]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		let body = document.querySelector("body")
 		body!.classList.remove("menu-open");
 		setIsMenuOpen(width > theme.device.tabletNum)

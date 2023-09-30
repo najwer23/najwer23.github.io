@@ -5,30 +5,72 @@ interface State<T> {
 	data?: T
 	error?: Error
 	status: string
+	executeFetch?: (body?: any) => void
 }
 
 type Action<T> =
 	| { type: 'loading' }
-	| { type: 'fetched'; payload: T }
+	| { type: 'done'; payload: T }
 	| { type: 'error'; payload: Error }
 
 export function useFetch<T = unknown>(
 	url?: string,
-	options?: RequestInit,
+	options?: any,
+	executeOnMount = true
 ): State<T> {
 	const cancelRequest = useRef<boolean>(false)
+
+	const fetchData = async (body?: any) => {
+		dispatch({ type: 'loading' })
+
+		if (!url) return;
+
+		cancelRequest.current = false;
+
+		const localStorageCookieURL = getLocalStorageCookie(url)
+
+		if (options.method === "GET") {
+			if (localStorageCookieURL) {
+				dispatch({ type: 'done', payload: localStorageCookieURL })
+				return;
+			}
+		}
+
+		try {
+			if (options.method !== "GET") {
+				options = { ...options, body: JSON.stringify(body)};
+			}
+
+			const response = await fetch(url, options)
+
+			if (!response.ok) {
+				throw new Error(response.statusText);
+			}
+
+			const data = (await response.json()) as T;
+			options.method === "GET" && setLocalStorageCookie(url, data, 0.5)
+
+			if (cancelRequest.current) return;
+			dispatch({ type: 'done', payload: data })
+
+		} catch (error) {
+			if (cancelRequest.current) return
+			dispatch({ type: 'error', payload: error as Error })
+		}
+	}
 
 	const initialState: State<T> = {
 		error: undefined,
 		data: undefined,
 		status: "idle",
+		executeFetch: fetchData,
 	}
 
 	const fetchReducer = (state: State<T>, action: Action<T>): State<T> => {
 		switch (action.type) {
 			case 'loading':
-				return { ...initialState, status: "fetching" }
-			case 'fetched':
+				return { ...initialState, status: "loading" }
+			case 'done':
 				return { ...initialState, data: action.payload, status: "done" }
 			case 'error':
 				return { ...initialState, error: action.payload, status: "error" }
@@ -40,49 +82,9 @@ export function useFetch<T = unknown>(
 	const [state, dispatch] = useReducer(fetchReducer, initialState)
 
 	useEffect(() => {
-		if (!url) return;
-
-		cancelRequest.current = false
-
-		const localStorageCookieURL = getLocalStorageCookie(url)
-
-		const fetchData = async () => {
-			dispatch({ type: 'loading' })
-
-			if (localStorageCookieURL) {
-				dispatch({ type: 'fetched', payload: localStorageCookieURL })
-				return;
-			}
-
-			try {
-				const response = await fetch(url, options)
-
-				if (!response.ok) {
-					throw new Error(response.statusText);
-				}
-
-				const data = (await response.json()) as T;
-
-				setLocalStorageCookie(url, data, 0.5)
-
-				if (cancelRequest.current) return;
-
-				dispatch({ type: 'fetched', payload: data })
-
-			} catch (error) {
-				if (cancelRequest.current) return
-
-				dispatch({ type: 'error', payload: error as Error })
-			}
-		}
-
-		void fetchData()
-
-		return () => {
-			cancelRequest.current = true;
-		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [url])
+		if (executeOnMount) fetchData();
+		// eslint-disable-next-line
+	}, [url]);
 
 	return state;
 }

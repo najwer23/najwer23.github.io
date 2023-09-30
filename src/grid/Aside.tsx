@@ -22,6 +22,10 @@ const navLinks = [
 		text: "Weather App",
 	},
 	{
+		path: "/contact",
+		text: "Contact",
+	},
+	{
 		path: "https://najwer23.github.io/resume/",
 		text: "Résumé",
 		out: true,
@@ -82,7 +86,7 @@ export const Aside = ({ isMenuOpen, setIsMenuOpen }: Props) => {
 
 				{navLinks && (
 					navLinks.map(({ path, text, out, decpration }) => (
-						<React.Fragment key={path + text}>
+						<React.Fragment key={text}>
 							{out && (
 								<StyledNavLink className="outLink">
 									<Link to={path} target="_blank" rel="noopener noreferrer" style={{ textDecoration: decpration ?? "" }}>

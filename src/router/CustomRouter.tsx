@@ -1,5 +1,6 @@
 import { RouterProvider, ScrollRestoration, createHashRouter } from "react-router-dom";
-import { RoutHomepage } from "./RoutHomepage";
+import { RouteHomepage } from "./RouteHomepage";
+import { RouteContact } from "./RouteContact";
 import { RouteWeather } from "./RouteWeather";
 import { Grid } from "../grid/Grid";
 
@@ -9,7 +10,7 @@ export const router = createHashRouter([
 		element: (
 			<>
 				<Grid>
-					<RoutHomepage />
+					<RouteHomepage />
 				</Grid>
 				<ScrollRestoration />
 			</>
@@ -21,6 +22,17 @@ export const router = createHashRouter([
 			<>
 				<Grid>
 					<RouteWeather />
+				</Grid>
+				<ScrollRestoration />
+			</>
+		),
+	},
+	{
+		path: "/contact",
+		element: (
+			<>
+				<Grid>
+					<RouteContact />
 				</Grid>
 				<ScrollRestoration />
 			</>
