@@ -10,7 +10,7 @@ import ChartLine from "../charts/ChartLine";
 import ChartBar from "../charts/ChartBar";
 
 export const Weather = (): JSX.Element => {
-	const [coords, setCoords] = useState<{value: string; label: string}>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
+	const [coords, setCoords] = useState<{ value: string; label: string }>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
 	const lat = coords.value.split(":")[0];
 	const lon = coords.value.split(":")[1];
 	let origin = "https://zany-ray-bonnet.cyclic.app";
@@ -86,27 +86,27 @@ export const Weather = (): JSX.Element => {
 			<ForecastDataWrapper>
 				<ForecastDataCurrent>
 					{status === "done" ? (
-					<>
-						{forecastImgFormater(weatherCurrent!.weather)}
-						<ForecastData title={"dayOfWeek"} value={weatherCurrent!.dt} />
-						<ForecastData title={"Temp"} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
-						<ForecastData title={"Sunrise"} value={dateFormatterFromDt(weatherCurrent!.sunrise)?.split(",")[1]} />
-						<ForecastData title={"Sunset"} value={dateFormatterFromDt(weatherCurrent!.sunset)?.split(",")[1]} />
-						<ForecastData title={"Wind"} value={forecastDataFormat(weatherCurrent!.wind_speed, 1)} />
-						<ForecastData title={"Pressure"} value={forecastDataFormat(weatherCurrent!.pressure, 3)} />
-						<ForecastData title={"Humidity"} value={forecastDataFormat(weatherCurrent!.humidity, 2)} />
-						<ForecastData title={"Clouds"} value={forecastDataFormat(weatherCurrent!.clouds, 2)} />
-						<ForecastData title={"Lat"} value={forecastDataFormat(coords.value?.split(":")[0], 5)} />
-						<ForecastData title={"Lon"} value={forecastDataFormat(coords.value?.split(":")[1], 5)} />
-					</>
+						<>
+							{forecastImgFormater(weatherCurrent!.weather)}
+							<ForecastData title={"dayOfWeek"} value={weatherCurrent!.dt} />
+							<ForecastData title={"Temp"} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
+							<ForecastData title={"Sunrise"} value={dateFormatterFromDt(weatherCurrent!.sunrise)?.split(",")[1]} />
+							<ForecastData title={"Sunset"} value={dateFormatterFromDt(weatherCurrent!.sunset)?.split(",")[1]} />
+							<ForecastData title={"Wind"} value={forecastDataFormat(weatherCurrent!.wind_speed, 1)} />
+							<ForecastData title={"Pressure"} value={forecastDataFormat(weatherCurrent!.pressure, 3)} />
+							<ForecastData title={"Humidity"} value={forecastDataFormat(weatherCurrent!.humidity, 2)} />
+							<ForecastData title={"Clouds"} value={forecastDataFormat(weatherCurrent!.clouds, 2)} />
+							<ForecastData title={"Lat"} value={forecastDataFormat(coords.value?.split(":")[0], 5)} />
+							<ForecastData title={"Lon"} value={forecastDataFormat(coords.value?.split(":")[1], 5)} />
+						</>
 					) : (
-							<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
+						<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
 					)}
 				</ForecastDataCurrent>
 
 				{status === "done" ? (
 					<Carousel>
-						{weather8Days && weather8Days.filter((_:unknown,i:number) => i !== 0).map((x:any, i:number) => (
+						{weather8Days && weather8Days.filter((_: unknown, i: number) => i !== 0).map((x: any, i: number) => (
 							<div key={x.dt}>
 								{forecastImgFormater(x.weather)}
 								<ForecastData title={"dayOfWeek"} value={x.dt} />
@@ -121,8 +121,8 @@ export const Weather = (): JSX.Element => {
 						))}
 					</Carousel>
 				) : (
-					<div style={{minHeight: "365px"}}>
-							<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
+					<div style={{ minHeight: "365px" }}>
+						<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
 					</div>
 				)}
 			</ForecastDataWrapper>
@@ -276,21 +276,30 @@ function dataHourlyWeatherForLineChart3(obj: any) {
 	}
 
 	let data = structuredClone(obj);
-	let dataTempX: Array<number> = []
+	let dataTempXRain: Array<number> = []
+	let dataTempXSnow: Array<number> = []
 	let dataTempY: Array<any> = []
 
-	for (let [, { dt, rain }] of data.entries()) {
+	for (let [, { dt, rain, snow }] of data.entries()) {
 		dataTempY.push(dateFormatterFromDt(dt)?.split(",")[1].slice(0, 6))
-		dataTempX.push((rain && rain["1h"]) || 0)
+		dataTempXRain.push((rain && rain["1h"]) || 0)
+		dataTempXSnow.push((snow && snow["1h"]) || 0)
 	}
+
 	return {
 		labels: dataTempY,
 		datasets: [
 			{
 				label: "Rain",
-				data: dataTempX,
+				data: dataTempXRain,
 				borderColor: "#3F4EA6",
 				backgroundColor: "#3F4EA6",
+			},
+			{
+				label: "Snow",
+				data: dataTempXSnow,
+				borderColor: "#3fa6a6",
+				backgroundColor: "#3fa6a6",
 			},
 		],
 	};
