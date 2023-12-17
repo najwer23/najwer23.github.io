@@ -5,7 +5,6 @@ import { faGithub, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { IntroStyled, SocialMedia } from "./Intro.styled";
 
-
 const SOCIAL_MEDIA = [
 	{
 		title: "Github",
