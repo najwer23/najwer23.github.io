@@ -1,5 +1,4 @@
 import { useRef } from "react"
-import { Button } from "../buttons/Button"
 import { Input } from "../inputs/Input"
 import { Textarea } from "../inputs/Textarea"
 import { ContactStyled, FormContact } from "./Contact.styled"
@@ -8,6 +7,7 @@ import { useFetch } from "../hooks/useFetch"
 import { Form } from "../inputs/Forms.styled"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
+import { Button } from "najwer23storybook/lib/Button";
 
 export const Contact = (): JSX.Element => {
 	const email = useRef<HTMLInputElement>(null)
@@ -78,17 +78,15 @@ export const Contact = (): JSX.Element => {
 
 					<Button
 						type={"submit"}
-						styled={'standard'}
-						title={"Send"}
-						ariaLabel={"Send"}
 						text={"Send"}
+						ariaLabel={"Send msg"}
 						disabled={status === "loading"}
 					/>
 				</Form>
 			</FormContact>
 
 			{status === "loading" && (
-				<div style={{marginTop: "10px"}}>
+				<div style={{ marginTop: "10px" }}>
 					<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="1x" />
 					{" "} Loading..
 				</div>

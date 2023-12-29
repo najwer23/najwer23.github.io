@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "../buttons/Button";
+import { Button } from "najwer23storybook/lib/Button";
 import { MobileHam, PageContainerAside, PageNav, StyledNavLink } from "./Grid.styled";
 import { faBurger } from "@fortawesome/free-solid-svg-icons";
 import { Link, useLocation } from "react-router-dom";
@@ -75,10 +75,8 @@ export const Aside = ({ isMenuOpen, setIsMenuOpen }: Props) => {
 			<PageNav>
 				<MobileHam $isMenuOpen={isMenuOpen}>
 					<Button
-						styled={"hamburger"}
 						type={"button"}
-						title={"Menu"}
-						text={<FontAwesomeIcon icon={faBurger} size={"2xl"} />}
+						text={<FontAwesomeIcon icon={faBurger} size={"lg"} />}
 						ariaLabel={"menu-close"}
 						onClick={() => setIsMenuOpen(false)}
 					/>

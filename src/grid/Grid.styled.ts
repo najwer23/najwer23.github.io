@@ -72,7 +72,7 @@ export const StyledNavLink = styled.div<{ $current?: boolean; $outLink?: boolean
 export const MobileHam = styled.div<{ $isMenuOpen?: boolean }>`
 	position: ${(props) => (props.$isMenuOpen ? "" : "fixed")};
 	top: ${(props) => (props.$isMenuOpen ? "" : "20px")};
-	right: 20px; //${(props) => (props.$isMenuOpen ? "" : "20px")};
+	right: 13px; //${(props) => (props.$isMenuOpen ? "" : "20px")};
 	z-index: ${(props) => (props.$isMenuOpen ? "0" : "1")};
 
 	@media ${({ theme }) => theme.device.tablet} {

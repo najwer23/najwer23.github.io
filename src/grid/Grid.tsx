@@ -1,7 +1,7 @@
 import { MobileHam, PageContainer, PageContainerMain } from "./Grid.styled"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBurger } from "@fortawesome/free-solid-svg-icons"
-import { Button } from "../buttons/Button"
+import { Button } from "najwer23storybook/lib/Button";
 import { useLayoutEffect, useState } from "react"
 import { useWindowSize } from "../hooks/useWindowSize"
 import { useTheme } from "styled-components"
@@ -40,10 +40,8 @@ export const Grid = ({children}: Props): JSX.Element => {
 			<PageContainerMain>
 				<MobileHam>
 					<Button
-						styled={"hamburger"}
 						type={"button"}
-						title={"Menu"}
-						text={<FontAwesomeIcon icon={faBurger} size={"2xl"} />}
+						text={<FontAwesomeIcon icon={faBurger} size={"lg"} />}
 						ariaLabel={"menu-open"}
 						onClick={() => setIsMenuOpen(!isMenuOpen)}
 					/>

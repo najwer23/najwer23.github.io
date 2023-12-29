@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { ArrowLeft, ArrowRight, CarouselStyled, CarouselWrapper } from "./Carousel.styled"
-import { Button } from "../buttons/Button"
+import { Button } from "najwer23storybook/lib/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons"
 import { useWindowSize } from "../hooks/useWindowSize"
@@ -11,8 +11,8 @@ interface Props {
 
 export const Carousel = ({ children }: Props): JSX.Element => {
 	const carouselRef = useRef<any>(null)
-	const [showArrowLeft, setShowArrowLeft ] = useState<boolean>(false)
-	const [showArrowRight, setShowArrowRight ] = useState<boolean>(false)
+	const [showArrowLeft, setShowArrowLeft] = useState<boolean>(false)
+	const [showArrowRight, setShowArrowRight] = useState<boolean>(false)
 	const [width] = useWindowSize();
 
 	// check if show right arrow
@@ -40,7 +40,7 @@ export const Carousel = ({ children }: Props): JSX.Element => {
 			} else {
 				setShowArrowRight(false)
 			}
-		} else if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth - carouselRef.current.clientWidth ) {
+		} else if (carouselRef.current.scrollLeft >= carouselRef.current.scrollWidth - carouselRef.current.clientWidth) {
 			setShowArrowLeft(true)
 			setShowArrowRight(false)
 		} else {
@@ -54,20 +54,16 @@ export const Carousel = ({ children }: Props): JSX.Element => {
 			<CarouselStyled ref={carouselRef} onScroll={handleScroll}>
 				<ArrowLeft $showArrow={showArrowLeft}>
 					<Button
-						styled={"arrow"}
-						text={<FontAwesomeIcon icon={faAngleLeft} color={"black"} size={"2x"} />}
-						title={"ArrowLeft"}
-						ariaLabel={"arrow-left"}
+						text={<FontAwesomeIcon icon={faAngleLeft} color={"white"} size={"lg"} />}
+						ariaLabel={"move carousel left"}
 						type={"button"}
 						onClick={slideLeft} />
 				</ArrowLeft>
 				{children}
 				<ArrowRight $showArrow={showArrowRight}>
 					<Button
-						styled={"arrow"}
-						text={<FontAwesomeIcon icon={faAngleRight} color={"black"} size={"2x"} />}
-						title={"ArrowRight"}
-						ariaLabel={"arrow-left"}
+						text={<FontAwesomeIcon icon={faAngleRight} color={"white"} size={"lg"} />}
+						ariaLabel={"move carousel right"}
 						type={"button"}
 						onClick={slideRight} />
 				</ArrowRight>
