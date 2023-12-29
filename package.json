@@ -50,6 +50,6 @@
 	},
 	"packageManager": "yarn@3.6.3",
 	"devDependencies": {
-		"najwer23storybook": "^2.0.40"
+		"najwer23storybook": "^2.0.41"
 	}
 }

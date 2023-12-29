@@ -9355,7 +9355,7 @@ __metadata:
     "@types/react-dom": ^18.2.18
     chart.js: ^4.4.1
     gh-pages: ^6.1.1
-    najwer23storybook: ^2.0.40
+    najwer23storybook: ^2.0.41
     react: ^18.2.0
     react-chartjs-2: 5.2.0
     react-dom: ^18.2.0
@@ -9368,13 +9368,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"najwer23storybook@npm:^2.0.40":
-  version: 2.0.40
-  resolution: "najwer23storybook@npm:2.0.40"
+"najwer23storybook@npm:^2.0.41":
+  version: 2.0.41
+  resolution: "najwer23storybook@npm:2.0.41"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 6e21ce1aca2e2f97db8f5586e67cabca7378d4d542f9ad0e465945c7a2de8d30892a3a3f5bfefe5436eda5f4b02ae4215abf8e57f88b48957b6264c3f56e6567
+  checksum: c2fac2ed0b6afb3942ac01e7755b7f139219cd388dc633ee2d3a5331eab22ff9e3ac4c35d154c7dca65d1d33b5b48b3563e939331a734e5a73c8987bad68a215
   languageName: node
   linkType: hard
 
