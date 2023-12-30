@@ -5,13 +5,11 @@ export const router = createHashRouter([
 		path: "/",
 		element: (
 			<>
-				<>Mariusz</>
+				<>https://www.linkedin.com/in/najwer23/</>
 				<ScrollRestoration />
 			</>
 		),
 	},
 ]);
 
-export const RouterHash = (): JSX.Element => {
-	return <RouterProvider router={router} />
-}
+export const RouterHash = () => <RouterProvider router={router} />

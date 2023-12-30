@@ -1,3 +1,3 @@
 import { RouterHash } from './router/RouterHash';
 
-export const App = (): JSX.Element => <RouterHash />
+export const App = () => <RouterHash />
