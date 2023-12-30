@@ -4,9 +4,12 @@
 
 ## Self Update
 ```
-npm i -g npm-check-updates
 ncu -u
-npm install
+```
+
+## Yarn update
+```
+yarn set version latest
 ```
 
 ## Installation

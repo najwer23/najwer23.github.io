@@ -15,7 +15,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
-	"packageManager": "yarn@3.6.3",
+	"packageManager": "yarn@4.0.2",
 	"devDependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.5.1",
 		"@fortawesome/free-brands-svg-icons": "^6.5.1",
