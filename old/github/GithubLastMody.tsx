@@ -1,4 +1,4 @@
-import { useFetch } from "../hooks/useFetch"
+import { useFetch } from "../old/hooks/useFetch"
 
 export const GithubLastMody = (): JSX.Element => {
 	const { data, status } = useFetch<any>("https://api.github.com/repos/najwer23/design-system/branches/main")

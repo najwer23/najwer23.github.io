@@ -16,11 +16,8 @@
 		"react": "^18.2.0",
 		"react-chartjs-2": "5.2.0",
 		"react-dom": "^18.2.0",
-		"react-redux": "^9.0.4",
 		"react-router-dom": "^6.21.1",
 		"react-scripts": "5.0.1",
-		"react-select": "^5.8.0",
-		"styled-components": "^6.1.6",
 		"typescript": "^5.3.3"
 	},
 	"scripts": {
@@ -29,24 +26,6 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
 	},
 	"packageManager": "yarn@3.6.3",
 	"devDependencies": {
