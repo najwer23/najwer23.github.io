@@ -1,36 +1,36 @@
 :root {
-  --n23-color-primary: #7a2e44;
-  --n23-color-on-primary: #324186;
-  --n23-color-on-primary-active: #232f5c;
-  --n23-color-secondary: #6a288a;
-  --n23-color-on-secondary: #184a4e;
+	--n23-color-primary: #7a2e44;
+	--n23-color-on-primary: #324186;
+	--n23-color-on-primary-active: #232F5C;
+	--n23-color-secondary: #6a288a;
+	--n23-color-on-secondary: #184a4e;
 
-  --n23-color-surface: #e9ecef;
-  --n23-color-font: #161925;
-  
-  --n23-color-font-asideMenu: #e9ecef;
+	--n23-color-surface: #e9ecef;
+	--n23-color-font: #161925;
+	--n23-color-font-asideMenu: #e9ecef;
 
-  --n23-color-error: #ff3333;
-  --n23-color-success: #1f5120;
-  --n23-color-warning: #424242;
 
-  --n23-grey: #4d4d4d;
+	--n23-color-error: #FF3333;
+	--n23-color-success: #1f5120;
+	--n23-color-warning: #424242;
 
-  --n23-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 20px 0 rgba(0, 0, 0, 0.19);
+	--n23-grey: #4D4D4D;
 
-  --n23-font-weight-thiner: 200;
-  --n23-font-weight-thin: 400;
-  --n23-font-weight-normal: 600;
-  --n23-font-weight-bold: 900;
+	--n23-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
-  --n23-font-size-normal: 18px;
-  --n23-font-size-big: 22px;
-  --n23-font-size-small: 14px;
+	--n23-font-weight-thiner: 200;
+	--n23-font-weight-thin: 400;
+	--n23-font-weight-normal: 600;
+	--n23-font-weight-bold: 900;
 
-  --n23-font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
+	--n23-font-size-normal: 18px;
+	--n23-font-size-big: 22px;
+	--n23-font-size-small: 14px;
+	--n23-font-size-bigger: 28px;
+
+	--n23-font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+		segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
+		sans-serif;
 }
 
 body {
