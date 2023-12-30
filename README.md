@@ -1,5 +1,5 @@
 
-# Portfolio Mariusz Najwer
+# Portfolio
 [https://najwer23.github.io/](https://najwer23.github.io/)
 
 ## Self Update
