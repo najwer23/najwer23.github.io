@@ -1,12 +1,32 @@
 import { RouterProvider, ScrollRestoration, createHashRouter } from "react-router-dom";
+import { Home } from "../pages/home/Home";
+import { Contact } from "../pages/contact/Contact";
 
 export const router = createHashRouter([
 	{
 		path: "/",
 		element: (
 			<>
-				<>https://www.linkedin.com/in/najwer23/</>
-				<ScrollRestoration />
+				<Home/>
+				{/* <ScrollRestoration /> */}
+			</>
+		),
+	},
+	{
+		path: "/sss",
+		element: (
+			<>
+				<Home />
+				{/* <ScrollRestoration /> */}
+			</>
+		),
+	},
+	{
+		path: "/contact",
+		element: (
+			<>
+				<Contact />
+				{/* <ScrollRestoration /> */}
 			</>
 		),
 	},

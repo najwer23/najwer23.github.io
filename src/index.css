@@ -7,6 +7,8 @@
 
   --n23-color-surface: #e9ecef;
   --n23-color-font: #161925;
+  
+  --n23-color-font-asideMenu: #e9ecef;
 
   --n23-color-error: #ff3333;
   --n23-color-success: #1f5120;
@@ -34,4 +36,15 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--n23-color-surface);
 }
+
+@media (max-width: 575.98px) {}
+
+@media (max-width: 576px) and (max-width: 767.98px) {}
+
+@media (max-width: 768px) and (max-width: 991.98px) {}
+
+@media (max-width: 992px) and (max-width: 1199.98px) {}
+
+@media (min-width: 1200px) and (max-width: 1399.98px) {}
