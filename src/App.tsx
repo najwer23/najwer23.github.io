@@ -1,13 +1,3 @@
-import { LangProvider } from './translation/useTranslationContext';
-import { CustomRouter } from './router/CustomRouter';
-import { Theme } from './theme/Theme';
+import { RouterHash } from './router/RouterHash';
 
-export const App = (): JSX.Element => {
-	return (
-		<Theme>
-			<LangProvider>
-					<CustomRouter />
-			</LangProvider>
-		</Theme>
-	);
-}
+export const App = (): JSX.Element => <RouterHash />
