@@ -1,6 +1,7 @@
 import { RouterProvider, ScrollRestoration, createHashRouter } from "react-router-dom";
 import { Home } from "../pages/home/Home";
 import { Contact } from "../pages/contact/Contact";
+import { Weather } from "../pages/weather/Weather";
 
 export const router = createHashRouter([
 	{
@@ -17,6 +18,15 @@ export const router = createHashRouter([
 		element: (
 			<>
 				<Contact />
+				<ScrollRestoration />
+			</>
+		),
+	},
+	{
+		path: "/weather",
+		element: (
+			<>
+				<Weather />
 				<ScrollRestoration />
 			</>
 		),

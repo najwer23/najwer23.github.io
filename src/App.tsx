@@ -3,15 +3,17 @@ import { RouterHash } from './router/RouterHash';
 
 import { MenuAside } from "najwer23storybook/lib/MenuAside";
 
+import styles from './App.module.css'
+
 export const App = () => {
     return (
-        <div style={{display: "flex", maxWidth: "1920px", margin: "auto"}}>
+        <div className={styles["container"]}>
             
-            <div style={{flexShrink: 0 }}>
+            <div className={styles["asideMenu"]}>
                 <MenuAside {...MENU_ASIDE} />
             </div>
             
-            <div style={{ flexGrow: "min(1,2)" }}>
+            <div className={styles["routeDiv"]}>
                 <RouterHash />
             </div>
         </div>
