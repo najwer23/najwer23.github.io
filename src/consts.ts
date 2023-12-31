@@ -1,19 +1,6 @@
-interface ItemLink {
-  itemLink: string;
-  itemLinkText: string;
-  itemLinkType: "hash" | "link" | "linkOut";
-}
+import { MenuAsideType } from "najwer23storybook/lib/menuAside/index.types";
 
-interface ItemGroup {
-  menuTitle: string;
-  items: ItemLink[];
-}
-
-interface MENU_ASIDE_Props {
-  menuItems: ItemGroup[][];
-}
-
-export const MENU_ASIDE: MENU_ASIDE_Props = {
+export const MENU_ASIDE: MenuAsideType = {
   menuItems: [
     [
       {
