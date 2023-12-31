@@ -87,28 +87,29 @@ export const Weather = (): JSX.Element => {
             </div>
 
             <div className={styles["forecastDataWrapper"]}>
-                <div className={styles["forecastDataCurrent"]}>
-                    {status === "done" ? (
-                        <>
-                            {forecastImgFormater(weatherCurrent!.weather)}
-                            <ForecastData title={"dayOfWeek"} value={weatherCurrent!.dt} />
-                            <ForecastData title={"Temp"} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
-                            <ForecastData title={"Sunrise"} value={dateFormatterFromDt(weatherCurrent!.sunrise)?.split(",")[1]} />
-                            <ForecastData title={"Sunset"} value={dateFormatterFromDt(weatherCurrent!.sunset)?.split(",")[1]} />
-                            <ForecastData title={"Wind"} value={forecastDataFormat(weatherCurrent!.wind_speed, 1)} />
-                            <ForecastData title={"Pressure"} value={forecastDataFormat(weatherCurrent!.pressure, 3)} />
-                            <ForecastData title={"Humidity"} value={forecastDataFormat(weatherCurrent!.humidity, 2)} />
-                            <ForecastData title={"Clouds"} value={forecastDataFormat(weatherCurrent!.clouds, 2)} />
-                            <ForecastData title={"Lat"} value={forecastDataFormat(coords.value?.split(":")[0], 5)} />
-                            <ForecastData title={"Lon"} value={forecastDataFormat(coords.value?.split(":")[1], 5)} />
-                        </>
-                    ) : (
-                        <FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
-                    )}
-                </div>
-
+                
                 {status === "done" ? (
                     <Carousel>
+                        <div className={styles["forecastDataCurrent"]}>
+                            {status === "done" ? (
+                                <>
+                                    {forecastImgFormater(weatherCurrent!.weather)}
+                                    <ForecastData title={"dayOfWeek"} value={weatherCurrent!.dt} />
+                                    <ForecastData title={"Temp"} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
+                                    <ForecastData title={"Sunrise"} value={dateFormatterFromDt(weatherCurrent!.sunrise)?.split(",")[1]} />
+                                    <ForecastData title={"Sunset"} value={dateFormatterFromDt(weatherCurrent!.sunset)?.split(",")[1]} />
+                                    <ForecastData title={"Wind"} value={forecastDataFormat(weatherCurrent!.wind_speed, 1)} />
+                                    <ForecastData title={"Pressure"} value={forecastDataFormat(weatherCurrent!.pressure, 3)} />
+                                    <ForecastData title={"Humidity"} value={forecastDataFormat(weatherCurrent!.humidity, 2)} />
+                                    <ForecastData title={"Clouds"} value={forecastDataFormat(weatherCurrent!.clouds, 2)} />
+                                    <ForecastData title={"Lat"} value={forecastDataFormat(coords.value?.split(":")[0], 5)} />
+                                    <ForecastData title={"Lon"} value={forecastDataFormat(coords.value?.split(":")[1], 5)} />
+                                </>
+                            ) : (
+                                <FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
+                            )}
+                        </div>
+
                         {weather8Days && weather8Days.filter((_: unknown, i: number) => i !== 0).map((x: any) => (
                             <div key={x.dt}>
                                 {forecastImgFormater(x.weather)}

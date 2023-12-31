@@ -3,7 +3,6 @@ export const setLocalStorageCookie = <T>(
   value: T,
   exhours: number
 ) => {
-  console.log(1)
   const now = new Date();
   const item = {
     value: value,
