@@ -1,0 +1,71 @@
+/* https://fluidtypography.com/ */
+
+@layer homeContent {
+  .homeContent {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 125px;
+
+    @media (max-width: 767.98px) {
+      padding-left: 35px;
+      padding-right: 35px;
+      padding-top: 50px;
+    }
+  }
+
+  .homeContentText1 {
+    font-weight: var(--n23-font-weight-bold);
+    font-family: var(--n23-font-family);
+    text-wrap: balance;
+    font-size: clamp(3.25rem, 3.187vw + 2.425rem, 6.25rem);
+    line-height: clamp(3.575rem, 4.834vw + 2.324rem, 8.125rem);
+    margin-bottom: 15px;
+  }
+
+  .homeContentText2 {
+    font-weight: var(--n23-font-weight-bold);
+    font-family: var(--n23-font-family);
+    color: var(--n23-color-on-primary);
+    font-size: clamp(1.75rem, 0.93vw + 1.509rem, 2.625rem);
+    line-height: clamp(1.925rem, 1.58vw + 1.516rem, 3.413rem);
+    text-wrap: balance;
+  }
+
+  .socialMedia {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    & span {
+      font-size: clamp(2.375rem, 2.125vw + 1.825rem, 4.375rem);
+      line-height: clamp(3.563rem, 2.258vw + 2.978rem, 5.688rem);
+      margin-right: 20px;
+    }
+  }
+
+  .pageLinks {
+    font-weight: var(--n23-font-weight-bold);
+    font-family: var(--n23-font-family);
+
+    font-size: clamp(1.375rem, 0.398vw + 1.272rem, 1.75rem);
+    line-height: clamp(1.513rem, 0.81vw + 1.303rem, 2.275rem);
+
+    display: flex;
+    gap: 15px;
+
+    & a {
+      font-weight: var(--n23-font-weight-bold);
+      font-size: var(--n23-font-size-bigger);
+      color: var(--n23-color-on-secondary);
+      text-decoration: none;
+      transition: 0.2s;
+
+      font-size: clamp(1.375rem, 0.398vw + 1.272rem, 1.75rem);
+      line-height: clamp(1.513rem, 0.81vw + 1.303rem, 2.275rem);
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

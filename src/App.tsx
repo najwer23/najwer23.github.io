@@ -5,13 +5,15 @@ import { MenuAside } from "najwer23storybook/lib/MenuAside";
 
 export const App = () => {
     return (
-        <div style={{display: "flex"}}>
+        <div style={{display: "flex", maxWidth: "1920px", margin: "auto"}}>
             
-            <div style={{flexShrink: 0}}>
+            <div style={{flexShrink: 0 }}>
                 <MenuAside {...MENU_ASIDE} />
             </div>
             
-            <RouterHash />
+            <div style={{ flexGrow: "min(1,2)" }}>
+                <RouterHash />
+            </div>
         </div>
     )
 }

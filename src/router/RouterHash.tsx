@@ -8,7 +8,7 @@ export const router = createHashRouter([
 		element: (
 			<>
 				<Home/>
-				{/* <ScrollRestoration /> */}
+				<ScrollRestoration />
 			</>
 		),
 	},
@@ -17,7 +17,7 @@ export const router = createHashRouter([
 		element: (
 			<>
 				<Contact />
-				{/* <ScrollRestoration /> */}
+				<ScrollRestoration />
 			</>
 		),
 	},

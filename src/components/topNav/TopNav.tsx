@@ -2,7 +2,6 @@ import { GithubLastMody } from '../github/GithubLastMody'
 import styles from './index.module.css'
 
 export const TopNav = () => {
-    console.log(styles)
     return (
         <>
             <div className={styles['topNavWrapper']}>
