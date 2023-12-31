@@ -29,6 +29,11 @@ export const MENU_ASIDE: MENU_ASIDE_Props = {
             itemLinkText: "Weather",
             itemLinkType: "hash",
           },
+          {
+            itemLink: "contact",
+            itemLinkText: "Contact",
+            itemLinkType: "hash",
+          },
         ],
       },
       {
