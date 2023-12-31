@@ -13,15 +13,6 @@ export const router = createHashRouter([
 		),
 	},
 	{
-		path: "/sss",
-		element: (
-			<>
-				<Home />
-				{/* <ScrollRestoration /> */}
-			</>
-		),
-	},
-	{
 		path: "/contact",
 		element: (
 			<>

@@ -1,61 +1,11 @@
+import { TopNav } from '../../components/topNav/TopNav'
+import './index.css'
+
 export const Home = () => {
-    return <div>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-        <p>gh jg h gh gh g jg hg hj ghjg jh ghjg hjghj ghjgh </p>
-    </div>
+    return (
+        <>  
+            <TopNav />
+        </>
+    )
         
 }
