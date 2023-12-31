@@ -44,7 +44,7 @@ export const Weather = (): JSX.Element => {
             },
             color: state.isSelected ? "black" : "",
         }),
-        input: (base: any, state: any) => ({
+        input: (base: any) => ({
             ...base,
             width: "max-content",
             minWidth: "100%",
@@ -109,7 +109,7 @@ export const Weather = (): JSX.Element => {
 
                 {status === "done" ? (
                     <Carousel>
-                        {weather8Days && weather8Days.filter((_: unknown, i: number) => i !== 0).map((x: any, i: number) => (
+                        {weather8Days && weather8Days.filter((_: unknown, i: number) => i !== 0).map((x: any) => (
                             <div key={x.dt}>
                                 {forecastImgFormater(x.weather)}
                                 <ForecastData title={"dayOfWeek"} value={x.dt} />
