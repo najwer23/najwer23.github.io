@@ -1,4 +1,9 @@
 @layer contact {
+
+  .customInputWrapper {
+    max-width: 500px;
+  }
+
   .contactStyled {
     margin-bottom: 150px;
     padding: 40px 100px 0 100px;
@@ -41,8 +46,4 @@
       margin: 15px 5px;
     }
   }
-}
-
-.FormContact {
-  margin-top: 30px;
 }

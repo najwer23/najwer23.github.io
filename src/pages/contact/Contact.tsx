@@ -1,15 +1,15 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
-import { Button } from "najwer23storybook/lib/Button";
 import styles from './index.module.css'
 import { useFetch } from "../../hooks/useFetch";
-import { Input } from "./inputs/Input";
-import { Textarea } from "./inputs/Textarea";
-import { Validation } from "./inputs/Validation";
-
+import { Input } from "najwer23storybook/lib/Input";
+import { Textarea } from "najwer23storybook/lib/Textarea";
+import { Button } from "najwer23storybook/lib/Button";
 
 export const Contact = (): JSX.Element => {
+    const [form, setForm] = useState<{ [key: string]: boolean }>({})
+    const [showMsg, setShowMsg] = useState<boolean>(false)
     const email = useRef<HTMLInputElement>(null)
     const msg = useRef<HTMLTextAreaElement>(null)
 
@@ -24,25 +24,38 @@ export const Contact = (): JSX.Element => {
         false
     )
 
-    function validEmail() {
-        return Validation("email", email.current!.parentNode, email.current!.value);
-    }
+    useEffect(() => {
+        if (status === "done") {
+            setShowMsg(true)
 
-    function validMsg() {
-        return Validation("emptyString", msg.current!.parentNode, msg.current!.value);
-    }
+            const timeId = setTimeout(() => {
+                setShowMsg(false)
+            }, 3000)
+
+            return () => clearTimeout(timeId)
+        }
+    }, [status]);
 
     function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>): void {
-        e.preventDefault()
+        e.preventDefault();
 
-        let valid = [
-            validEmail(),
-            validMsg()
-        ].filter((v) => !v);
+        let focusCheck = [
+            email.current,
+            msg.current
+        ];
 
-        if (valid.length === 0) {
+        let skip = false;
+        focusCheck.map(v => {
+            if (((form[v!.name]) || (form[v!.name] === undefined)) && !skip) {
+                v!.focus();
+                skip = true;
+            }
+        })
+        if (skip) return;
+
+        if (Object.values(form).filter((v) => v).length === 0) {
             if (executeFetch) {
-                let body: any = {
+                let body = {
                     email: email.current!.value,
                     msg: msg.current!.value
                 }
@@ -50,7 +63,12 @@ export const Contact = (): JSX.Element => {
             }
 
             msg.current!.value = "";
+            setForm({ ...form, [msg.current!.name]: true });
         }
+    }
+
+    const handleBlur = (e: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>, isError: boolean) => {
+        setForm({ ...form, [e.target.name]: isError });
     }
 
     return (
@@ -60,25 +78,32 @@ export const Contact = (): JSX.Element => {
             <form onSubmit={handleSubmit}>
 
                 <br />
-                
-                <Input
-                    innerRef={email}
-                    id={"email"}
-                    label={"Email"}
-                    type="text"
-                    onBlur={validEmail}
-                />
 
-                <br />
+                <div className={styles["customInputWrapper"]}>
+                    <Input
+                        innerRef={email}
+                        errorOptions={{
+                            empty: true,
+                            email: true
+                        }}
+                        label="Email"
+                        name="email"
+                        onBlur={(e, isError) => handleBlur(e, isError)}
+                        type="text"
+                    />
+                </div>
 
-                <Textarea
-                    onBlur={validMsg}
-                    innerRef={msg}
-                    id={"msg"}
-                    label={"Message"}
-                />
-
-                <br />
+                <div className={styles["customInputWrapper"]}>
+                    <Textarea
+                        innerRef={msg}
+                        errorOptions={{
+                            empty: true
+                        }}
+                        label="Message"
+                        name="msg"
+                        onBlur={(e, isError) => handleBlur(e, isError)}
+                    />
+                </div>
 
                 <Button
                     type={"submit"}
@@ -95,7 +120,7 @@ export const Contact = (): JSX.Element => {
                 </div>
             )}
 
-            {status === "done" && (
+            {status === "done" && showMsg && (
                 <div style={{ marginTop: "10px" }}>
                     Email sent :)
                 </div>

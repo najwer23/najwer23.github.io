@@ -22,10 +22,12 @@
 	--n23-font-weight-thin: 400;
 	--n23-font-weight-normal: 600;
 	--n23-font-weight-bold: 900;
+	--n23-font-weight-semi-bold: 700;
 
 	--n23-font-size-normal: 18px;
 	--n23-font-size-big: 22px;
 	--n23-font-size-small: 14px;
+	--n23-font-size-semi-small: 16px;
 	--n23-font-size-bigger: 28px;
 
 	--n23-font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
