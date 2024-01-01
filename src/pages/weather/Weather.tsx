@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 import Select from 'react-select';
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Carousel } from "./Carousel/Carousel";
+import { Carousel } from "najwer23storybook/lib/Carousel";
 import { ChartLine } from "../../components/charts/ChartLine"
 import { ChartBar } from "../../components/charts/ChartBar";
 import { useFetch } from "../../hooks/useFetch";
@@ -89,7 +89,10 @@ export const Weather = (): JSX.Element => {
             <div className={styles["forecastDataWrapper"]}>
                 
                 {status === "done" ? (
-                    <Carousel>
+                    <Carousel
+                        arrowLeftIcon={<FontAwesomeIcon icon={faAngleLeft} color={"white"} size={"lg"} />}
+                        arrowRightIcon={<FontAwesomeIcon icon={faAngleRight} color={"white"} size={"lg"} />}
+                    >
                         <div className={styles["forecastDataCurrent"]}>
                             {status === "done" ? (
                                 <>
