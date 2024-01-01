@@ -20,5 +20,5 @@ export const GithubLastMody = ({ repoName }: Props): JSX.Element => {
         })
     }
 
-    return <>{lastMody || "\u00a0"}</>;
+    return <> L {lastMody || "\u00a0"}</>;
 }
