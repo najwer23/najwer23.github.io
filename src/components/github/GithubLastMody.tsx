@@ -11,8 +11,14 @@ export const GithubLastMody = ({ repoName }: Props): JSX.Element => {
     let lastMody: string = "";
 
     if (status === "done") {
-        lastMody = (new Date(data!.commit.commit.committer.date)).toLocaleString("pl-PL")
+        lastMody = (new Date(data!.commit.commit.committer.date)).toLocaleString("pl-PL", {
+            day: '2-digit',
+            month: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            year: 'numeric',
+        })
     }
 
-    return <>{lastMody || "\u00a0"}</>;
+    return <>{lastMody.padStart(2, "0") || "\u00a0"}</>;
 }
