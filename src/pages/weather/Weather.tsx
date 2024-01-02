@@ -373,7 +373,6 @@ function ForecastData(props: any) {
     }
 
     if (props.title === "dayOfWeek") {
-        console.log(props.value)
         return (
             <div className={styles["forecastDataStyle"]} >
                 <div><b>{forecastDataFormat(props.value, 0)}.</b></div>
