@@ -1,6 +1,6 @@
 {
   "name": "najwer23.github.io",
-  "version": "4.0.16",
+  "version": "4.0.17",
   "type": "module",
   "homepage": "https://najwer23.github.io/",
   "scripts": {
@@ -28,7 +28,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "gh-pages": "^6.1.1",
-    "najwer23storybook": "^3.1.16",
+    "najwer23storybook": "^3.1.17",
     "react": "^18.2.0",
     "react-chartjs-2": "5.2.0",
     "react-dom": "^18.2.0",
