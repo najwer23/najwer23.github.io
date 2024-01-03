@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
 import styles from './index.module.css'
 import { useFetch } from "../../hooks/useFetch";
-import { Input } from "najwer23storybook/lib/index";
-import { Textarea } from "najwer23storybook/lib/index";
-import { Button } from "najwer23storybook/lib/index";
+import { Input } from "najwer23storybook";
+import { Textarea } from "najwer23storybook";
+import { Button } from "najwer23storybook";
 
 export const Contact = (): JSX.Element => {
     const [form, setForm] = useState<{ [key: string]: boolean }>({})
