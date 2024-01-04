@@ -1,13 +1,13 @@
 {
   "name": "najwer23.github.io",
-  "version": "4.0.25",
+  "version": "4.0.26",
   "type": "module",
   "homepage": "https://najwer23.github.io/",
   "scripts": {
-    "deploy": "npm version patch --force && yarn run build && gh-pages -d build",
+    "deploy": "npm version patch --force && yarn run build && gh-pages -d build && rimraf build",
     "start": "vite --open --host",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "preview": "yarn build && vite preview --open --host",
     "god": "ncu -u && yarn install && yarn run start"
   },
   "devDependencies": {
@@ -28,12 +28,13 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "gh-pages": "^6.1.1",
-    "najwer23storybook": "^4.0.1",
+    "najwer23storybook": "^4.0.2",
     "react": "^18.2.0",
     "react-chartjs-2": "5.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1",
     "react-select": "^5.8.0",
+    "rimraf": "^5.0.5",
     "typescript": "^5.3.3",
     "vite": "^5.0.10"
   },
