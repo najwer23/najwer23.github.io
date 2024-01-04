@@ -53,19 +53,25 @@ export const MENU_ASIDE: MenuAsideType = {
             itemLinkType: "linkOut",
           },
           {
-            itemLink: "https://tueuropa.pl/ubezpieczenia-mieszkania-i-domu.htm",
-            itemLinkText: "My house",
+            itemLink: "https://restilo.pl/",
+            itemLinkText: "Restilo",
             itemLinkType: "linkOut",
           },
           {
-            itemLink: "https://restilo.pl/",
-            itemLinkText: "Restilo",
+            itemLink: "https://tueuropa.pl/ubezpieczenia-mieszkania-i-domu.htm",
+            itemLinkText: "My house",
             itemLinkType: "linkOut",
           },
           {
             itemLink:
               "https://tueuropa.pl/ubezpieczenia-sportowe/ubezpieczenie-nnw-sport.htm",
             itemLinkText: "Active in Sport",
+            itemLinkType: "linkOut",
+          },
+          {
+            itemLink:
+              "https://tueuropa.pl/ubezpieczenia-zycia-i-zdrowia/ubezpieczenie-twojego-zdrowia-myhealth.htm",
+            itemLinkText: "My Health",
             itemLinkType: "linkOut",
           },
           {
