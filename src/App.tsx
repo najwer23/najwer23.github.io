@@ -1,7 +1,7 @@
 import { MENU_ASIDE } from './consts';
 import { RouterHash } from './router/RouterHash';
 
-import { MenuAside } from "najwer23storybook";
+import { MenuAside } from "najwer23storybook/lib/MenuAside";
 
 import styles from './App.module.css'
 

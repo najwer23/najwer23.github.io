@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import Select from 'react-select';
 import { faAngleLeft, faAngleRight, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Carousel } from "najwer23storybook";
+import { Carousel } from "najwer23storybook/lib/Carousel";
 import { ChartLine } from "../../components/charts/ChartLine"
 import { ChartBar } from "../../components/charts/ChartBar";
 import { useFetch } from "../../hooks/useFetch";
