@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import Select from 'react-select';
 import { faAngleLeft, faAngleRight, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Carousel } from "najwer23storybook/lib/Carousel";
+import { Button } from "najwer23storybook/lib/Button";
 import { ChartLine } from "../../components/charts/ChartLine"
 import { ChartBar } from "../../components/charts/ChartBar";
 import { useFetch } from "../../hooks/useFetch";
@@ -10,7 +10,6 @@ import { sortByKeyArrObj } from "../../functions/sortByKeyArrObj";
 import { dateFormatterFromDt } from "../../functions/dateFormatterFromDt";
 import { isEmpty } from "../../functions/isEmpty";
 import styles from './index.module.css'
-
 
 export const Weather = (): JSX.Element => {
     const [coords, setCoords] = useState<{ value: string; label: string }>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
@@ -26,35 +25,6 @@ export const Weather = (): JSX.Element => {
             "Accept": "application/json",
         },
     });
-
-    const townListForSelectCSS = {
-        control: (base: any) => ({
-            ...base,
-            border: 0,
-            boxShadow: 'none'
-        }),
-        option: (base: any, state: any) => ({
-            ...base,
-            width: "max-content",
-            minWidth: "100%",
-            backgroundColor: state.isSelected ? "#c4c4c4" : "",
-            '&:hover': {
-                backgroundColor: state.isSelected ? '#c4c4c4' : 'whitesmoke',
-                cursor: "pointer"
-            },
-            color: state.isSelected ? "black" : "",
-        }),
-        input: (base: any) => ({
-            ...base,
-            width: "max-content",
-            minWidth: "100%",
-        }),
-        menu: (base: any) => ({
-            ...base,
-            width: "max-content",
-            minWidth: "100%",
-        }),
-    }
 
     const townListForSelect = useMemo(() => {
         return sortByKeyArrObj([
@@ -77,13 +47,16 @@ export const Weather = (): JSX.Element => {
             <h1>Weather </h1>
 
             <div className={styles["selectWrapper"]}>
-                <Select
-                    styles={townListForSelectCSS}
-                    defaultValue={townListForSelect[0]}
-                    onChange={setCoords}
-                    options={townListForSelect}
-                    isSearchable={false}
-                />
+                {townListForSelect.map(({value, label}) => (
+                    <Button 
+                        key={value}
+                        text={label} 
+                        type={"button"} 
+                        ariaLabel={`button town -${label}`} 
+                        onClick={() => setCoords({value, label})} 
+                        disabled={coords.value === value}
+                    />
+                ))}
             </div>
 
             <div className={styles["forecastDataWrapper"]}>
