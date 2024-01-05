@@ -11,6 +11,8 @@ import { dateFormatterFromDt } from "../../functions/dateFormatterFromDt";
 import { isEmpty } from "../../functions/isEmpty";
 import styles from './index.module.css'
 
+import { Text } from "najwer23storybook/lib/Text";
+
 export const Weather = (): JSX.Element => {
     const [coords, setCoords] = useState<{ value: string; label: string }>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
     const lat = coords.value.split(":")[0];
@@ -44,7 +46,7 @@ export const Weather = (): JSX.Element => {
 
     return (
         <div className={styles["weatherStyled"]}>
-            <h1>Weather </h1>
+            <Text kind='h2'> Weather </Text>
 
             <div className={styles["selectWrapper"]}>
                 {townListForSelect.map(({value, label}) => (

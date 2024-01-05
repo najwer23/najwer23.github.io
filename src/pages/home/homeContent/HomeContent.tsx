@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faNpm, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
+import { Text } from "najwer23storybook/lib/Text";
+
+
 const SOCIAL_MEDIA = [
     {
         title: "Github",
@@ -34,7 +37,7 @@ const SOCIAL_MEDIA = [
 export const HomeContent = () => {
     return (
         <div className={styles["homeContent"]}>
-            <div className={styles["homeContentText1"]}>Mariusz Najwer</div>
+            <Text kind='h1'> Mariusz Najwer </Text>
             <div className={styles["homeContentText2"]}>Frontend Software Engineer</div>
 
             <div className={styles["socialMedia"]}>

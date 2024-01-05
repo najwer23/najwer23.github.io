@@ -6,6 +6,8 @@ import { useFetch } from "../../hooks/useFetch";
 import { Input } from "najwer23storybook/lib/Input";
 import { Textarea } from "najwer23storybook/lib/Textarea";
 import { Button } from "najwer23storybook/lib/Button";
+import { Text } from "najwer23storybook/lib/Text";
+
 
 export const Contact = (): JSX.Element => {
     const [form, setForm] = useState<{ [key: string]: boolean }>({})
@@ -73,7 +75,7 @@ export const Contact = (): JSX.Element => {
 
     return (
         <div className={styles["contactStyled"]}>
-            <h1>Contact </h1>
+            <Text kind='h2'> Contact </Text>
 
             <form onSubmit={handleSubmit}>
 
