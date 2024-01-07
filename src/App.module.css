@@ -1,19 +1,19 @@
 @layer app {
-  .container {
-    display: flex;
-    max-width: 1920px;
-    margin: auto;
-  }
+	.container {
+		display: flex;
+		max-width: 1920px;
+		margin: auto;
+	}
 
-  .asideMenu {
-    flex-shrink: 0;
-  }
+	.asideMenu {
+		flex-shrink: 0;
+	}
 
-  .routeDiv {
-    width: calc(100% - 400px);
+	.routeDiv {
+		width: calc(100% - 400px);
 
-    @media (max-width: 1199.98px) {
-      width: 100%;
-    }
-  }
+		@media (max-width: 1199.98px) {
+			width: 100%;
+		}
+	}
 }

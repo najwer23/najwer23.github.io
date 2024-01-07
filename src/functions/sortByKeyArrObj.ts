@@ -9,4 +9,4 @@ export const sortByKeyArrObj = (arr: any) => {
 			)
 	);
 	return result.flat(1);
-}
+};

@@ -1,49 +1,48 @@
 @layer contact {
+	.customInputWrapper {
+		max-width: 500px;
+	}
 
-  .customInputWrapper {
-    max-width: 500px;
-  }
+	.contactStyled {
+		margin-bottom: 150px;
+		padding: 40px 100px 0 100px;
 
-  .contactStyled {
-    margin-bottom: 150px;
-    padding: 40px 100px 0 100px;
+		@media (max-width: 1199.98px) {
+			padding: 50px 20px 0 20px;
+		}
 
-    @media (max-width: 1199.98px) {
-      padding: 50px 20px 0 20px;
-    }
+		font-weight: var(--n23-font-weight-normal);
+		font-family: var(--n23-font-family);
 
-    font-weight: var(--n23-font-weight-normal);
-    font-family: var(--n23-font-family);
+		h1 {
+			font-size: 72px;
+			margin-top: 0;
+			margin-bottom: 0;
+			line-height: 115%;
+			text-wrap: balance;
+		}
 
-    h1 {
-      font-size: 72px;
-      margin-top: 0;
-      margin-bottom: 0;
-      line-height: 115%;
-      text-wrap: balance;
-    }
+		h2 {
+			font-size: 42px;
+			color: #0d0d0d;
+			text-wrap: balance;
+		}
 
-    h2 {
-      font-size: 42px;
-      color: #0d0d0d;
-      text-wrap: balance;
-    }
+		h3 {
+			max-width: 900px;
+			font-size: 32px;
+			color: #0d0d0d;
+			text-wrap: balance;
+		}
 
-    h3 {
-      max-width: 900px;
-      font-size: 32px;
-      color: #0d0d0d;
-      text-wrap: balance;
-    }
+		p,
+		ul {
+			max-width: 900px;
+			font-size: 22px;
+		}
 
-    p,
-    ul {
-      max-width: 900px;
-      font-size: 22px;
-    }
-
-    ul li {
-      margin: 15px 5px;
-    }
-  }
+		ul li {
+			margin: 15px 5px;
+		}
+	}
 }

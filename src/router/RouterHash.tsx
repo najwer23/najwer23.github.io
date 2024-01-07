@@ -8,7 +8,7 @@ export const router = createHashRouter([
 		path: "/",
 		element: (
 			<>
-				<Home/>
+				<Home />
 				<ScrollRestoration />
 			</>
 		),

@@ -40,7 +40,7 @@ interface Props {
 	data: ChartData<'line'> | null
 }
 
-export const ChartLine = ({ title, ySymbol, data } : Props) => {
+export const ChartLine = ({ title, ySymbol, data }: Props) => {
 	const options: ChartOptions<'line'> = {
 		maintainAspectRatio: false,
 		responsive: true,

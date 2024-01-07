@@ -1,62 +1,72 @@
 /* https://fluidtypography.com/ */
 
 @layer homeContent {
-  .homeContent {
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 125px;
+	.homeContent {
+		padding-left: 100px;
+		padding-right: 100px;
+		padding-top: 125px;
+		padding-bottom: 100px;
 
-    @media (max-width: 767.98px) {
-      padding-left: 35px;
-      padding-right: 35px;
-      padding-top: 50px;
-    }
-  }
+		@media (max-width: 767.98px) {
+			padding-left: 35px;
+			padding-right: 35px;
+			padding-top: 75px;
+			padding-bottom: 125px;
+		}
+	}
 
-  .homeContentText2 {
-    font-weight: var(--n23-font-weight-bold);
-    font-family: var(--n23-font-family);
-    color: var(--n23-color-on-primary);
-    font-size: clamp(1.75rem, 0.93vw + 1.509rem, 2.625rem);
-    line-height: clamp(1.925rem, 1.58vw + 1.516rem, 3.413rem);
-    text-wrap: balance;
-  }
+	.homeContentSpace {
+		margin-bottom: 150px;
 
-  .socialMedia {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    & span {
-      font-size: clamp(2.375rem, 2.125vw + 1.825rem, 4.375rem);
-      line-height: clamp(3.563rem, 2.258vw + 2.978rem, 5.688rem);
-      margin-right: 20px;
-    }
-  }
+		@media (max-width: 767.98px) {
+			margin-bottom: 20px;
+		}
+	}
 
-  .pageLinks {
-    font-weight: var(--n23-font-weight-bold);
-    font-family: var(--n23-font-family);
+	.homeContentText2 {
+		font-weight: var(--n23-font-weight-bold);
+		font-family: var(--n23-font-family);
+		color: var(--n23-color-on-primary);
+		font-size: clamp(1.75rem, 0.93vw + 1.509rem, 2.625rem);
+		line-height: clamp(1.925rem, 1.58vw + 1.516rem, 3.413rem);
+		text-wrap: balance;
+	}
 
-    font-size: clamp(1.375rem, 0.398vw + 1.272rem, 1.75rem);
-    line-height: clamp(1.513rem, 0.81vw + 1.303rem, 2.275rem);
+	.socialMedia {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		& span {
+			font-size: clamp(2.375rem, 2.125vw + 1.825rem, 4.375rem);
+			line-height: clamp(3.563rem, 2.258vw + 2.978rem, 5.688rem);
+			margin-right: 20px;
+		}
+	}
 
-    display: flex;
-    gap: 15px;
+	.pageLinks {
+		font-weight: var(--n23-font-weight-bold);
+		font-family: var(--n23-font-family);
 
-    & a {
-      font-weight: var(--n23-font-weight-bold);
-      font-size: var(--n23-font-size-bigger);
-      color: var(--n23-color-on-secondary);
-      text-decoration: none;
-      transition: 0.2s;
+		font-size: clamp(1.375rem, 0.398vw + 1.272rem, 1.75rem);
+		line-height: clamp(1.513rem, 0.81vw + 1.303rem, 2.275rem);
 
-      font-size: clamp(1.375rem, 0.398vw + 1.272rem, 1.75rem);
-      line-height: clamp(1.513rem, 0.81vw + 1.303rem, 2.275rem);
+		display: flex;
+		gap: 15px;
 
-      @media (hover: hover) and (pointer: fine) {
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
+		& a {
+			font-weight: var(--n23-font-weight-bold);
+			font-size: var(--n23-font-size-bigger);
+			color: var(--n23-color-on-secondary);
+			text-decoration: none;
+			transition: 0.2s;
+
+			font-size: clamp(1.375rem, 0.398vw + 1.272rem, 1.75rem);
+			line-height: clamp(1.513rem, 0.81vw + 1.303rem, 2.275rem);
+
+			@media (hover: hover) and (pointer: fine) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
 }
