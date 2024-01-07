@@ -6,8 +6,6 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 import { Text } from "najwer23storybook/lib/Text";
 import { Marquee } from "najwer23storybook/lib/Marquee";
-import { ScrollRestoration } from 'react-router-dom';
-
 
 
 const SOCIAL_MEDIA = [
