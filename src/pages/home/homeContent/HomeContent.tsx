@@ -41,10 +41,6 @@ const MARQUEE_TECH = [
 		alt: "js logo"
 	},
 	{
-		src: "node.png",
-		alt: "node logo"
-	},
-	{
 		src: "ts.png",
 		alt: "ts logo"
 	},
