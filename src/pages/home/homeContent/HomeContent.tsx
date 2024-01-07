@@ -68,6 +68,9 @@ export const HomeContent = () => {
 				</Text>
 			</div>
 
+
+			<div className={styles["homeContentSpace"]}></div>
+
 		</>
 	)
 
