@@ -37,14 +37,14 @@
      @media (hover: hover) and (pointer: fine) {
         &:hover {
           animation: none;
-          transform: scale(1, 1);
+          transform: scale(1.1, 1.1);
         }
       }
 
 
     & a {
       transition: 0.2s;
-      border-radius: 8px;
+      border-radius: 12px;
       display: inline-block;
       padding: 10px 17px;
       color: var(--n23-color-surface);
