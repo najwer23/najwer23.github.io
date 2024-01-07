@@ -5,6 +5,9 @@ import { faGithub, faNpm, faXTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 import { Text } from "najwer23storybook/lib/Text";
+import { Marquee } from "najwer23storybook/lib/Marquee";
+import { ScrollRestoration } from 'react-router-dom';
+
 
 
 const SOCIAL_MEDIA = [
@@ -33,6 +36,37 @@ const SOCIAL_MEDIA = [
 		outPage: true
 	}
 ];
+
+const MARQUEE_TECH = [
+	{
+		src: "js.png",
+		alt: "js logo"
+	},
+	{
+		src: "node.png",
+		alt: "node logo"
+	},
+	{
+		src: "ts.png",
+		alt: "ts logo"
+	},
+	{
+		src: "react.png",
+		alt: "react logo"
+	},
+	{
+		src: "html.png",
+		alt: "html logo"
+	},
+	{
+		src: "css.png",
+		alt: "css logo"
+	},
+	{
+		src: "angular.png",
+		alt: "angular logo"
+	},
+]
 
 export const HomeContent = () => {
 	return (
@@ -66,8 +100,24 @@ export const HomeContent = () => {
 				<Text kind='p'>
 					A frontend software engineer is a professional who focuses on the user-facing side of software, working on everything that users see and interact with while using an application. They are responsible for creating platforms that are visually appealing, easy to use, and meet the client or company's needs. Their work involves aspects such as functionality, layout, speed, and user experience. Frontend engineers typically plan, design, build, and implement the user interface systems of websites, software programs, and web-based applications. They are also known as front-end developers and are considered software engineers who specialize in website and web application design using technologies such as HTML, CSS, and JavaScript. This role requires a combination of coding and creativity, making it suitable for those interested in technology and design
 				</Text>
-			</div>
 
+				<br />
+				<Text kind='h3'>
+					Technologies I use!
+				</Text>
+				<br />
+				<br />
+				<Marquee>
+					<>
+						{MARQUEE_TECH &&
+							MARQUEE_TECH.map(({ src, alt }) => (
+								<div key={alt}>
+									<img src={`marquee/${src}`} alt={alt} width={150} height={150} />
+								</div>
+							))}
+					</>
+				</Marquee>
+			</div>
 
 			<div className={styles["homeContentSpace"]}></div>
 
