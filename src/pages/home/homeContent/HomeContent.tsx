@@ -60,7 +60,7 @@ export const HomeContent = () => {
 			</div>
 
 			<div className={styles["homeContent"]}>
-				<Text kind='h3'>
+				<Text kind='h2'>
 					What is a Frontend Software Engineer?
 				</Text>
 				<Text kind='p'>
