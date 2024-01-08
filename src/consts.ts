@@ -89,6 +89,16 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkText: "Top model",
 						itemLinkType: "linkOut",
 					},
+					{
+						itemLink: "https://tvn24.pl/biznes",
+						itemLinkText: "Stock quotes",
+						itemLinkType: "linkOut",
+					},
+					{
+						itemLink: "https://tvn.pl/program-tv",
+						itemLinkText: "Electronic program guide",
+						itemLinkType: "linkOut",
+					},
 				],
 			},
 		],
