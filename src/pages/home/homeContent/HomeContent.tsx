@@ -113,8 +113,6 @@ export const HomeContent = () => {
 				</Marquee>
 			</div>
 
-			<div className={styles["homeContentSpace"]}></div>
-
 		</>
 	)
 

@@ -2,6 +2,7 @@ import { MENU_ASIDE } from './consts';
 import { RouterHash } from './router/RouterHash';
 
 import { MenuAside } from "najwer23storybook/lib/MenuAside";
+import { Footer } from "najwer23storybook/lib/Footer";
 
 import styles from './App.module.css'
 
@@ -15,7 +16,10 @@ export const App = () => {
 
 			<div className={styles["routeDiv"]}>
 				<RouterHash />
+				<Footer />
 			</div>
+
+
 		</div>
 	)
 }
