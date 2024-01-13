@@ -117,6 +117,26 @@ export const HomeContent = () => {
 
 				<br />
 				<Text kind='h3'>
+					Why should You hire me?
+				</Text>
+				<Text kind='p'>
+					<b>Detail-oriented:</b> I pay attention to the details to ensure a flawless user interface and experience.
+				</Text>
+				<Text kind='p'>
+					<b>Adaptability and thirst for learning:</b> I have the ability to adapt to new technologies and a strong desire to constantly learn due to the constantly evolving nature of Internet technologies.
+				</Text>
+				<Text kind='p'>
+					<b>Strong technical skills:</b> Proficiency in JavaScript, Typescript, React and Angular, which allows me to achieve success in frontend development.
+				</Text>
+				<Text kind='p'>
+					<b>Soft skills:</b> I believe that effective communication, teamwork and a positive attitude are important for collaborating with other team members and understanding the client's requirements.
+				</Text>
+				<Text kind='p'>
+					<b>Problem-solving mindset:</b> It helps me identify challenges, develop solutions and take appropriate action. Instead of focusing on the negative side of a problem, I try to find a creative solution.
+				</Text>
+
+				<br />
+				<Text kind='h3'>
 					Technologies I use!
 				</Text>
 				<br />
