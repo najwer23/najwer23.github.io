@@ -37,6 +37,14 @@ const SOCIAL_MEDIA = [
 
 const MARQUEE_TECH = [
 	{
+		src: "html.png",
+		alt: "html logo"
+	},
+	{
+		src: "css.png",
+		alt: "css logo"
+	},
+	{
 		src: "js.png",
 		alt: "js logo"
 	},
@@ -49,12 +57,8 @@ const MARQUEE_TECH = [
 		alt: "react logo"
 	},
 	{
-		src: "html.png",
-		alt: "html logo"
-	},
-	{
-		src: "css.png",
-		alt: "css logo"
+		src: "redux.png",
+		alt: "redux logo"
 	},
 	{
 		src: "angular.png",
