@@ -9,7 +9,7 @@
 		padding-right: 100px;
 		box-sizing: border-box;
 
-		@media (max-width: 767.98px) {
+		@media (max-width: 1199.98px) {
 			padding-left: 35px;
 			padding-right: 35px;
 		}
@@ -24,7 +24,7 @@
 		font-size: var(--n23-font-size-normal);
 		margin-right: 20px;
 
-		@media (max-width: 767.98px) {
+		@media (max-width: 1199.98px) {
 			font-size: var(--n23-font-size-small);
 		}
 	}
@@ -33,6 +33,7 @@
 		border-radius: 12px;
 		background-color: var(--n23-color-secondary);
 		animation: zoom-in-zoom-out 1s ease infinite;
+		box-shadow: var(--n23-shadow);
 
 		@media (hover: hover) and (pointer: fine) {
 			&:hover {
