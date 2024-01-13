@@ -57,6 +57,10 @@ const MARQUEE_TECH = [
 		alt: "react logo"
 	},
 	{
+		src: "next.png",
+		alt: "next.js logo"
+	},
+	{
 		src: "redux.png",
 		alt: "redux logo"
 	},
@@ -71,6 +75,10 @@ const MARQUEE_TECH = [
 	{
 		src: "node.png",
 		alt: "node logo"
+	},
+	{
+		src: "ex.png",
+		alt: "express.js logo"
 	},
 	{
 		src: "vite.png",
