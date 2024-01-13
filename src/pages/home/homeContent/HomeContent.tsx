@@ -60,6 +60,22 @@ const MARQUEE_TECH = [
 		src: "angular.png",
 		alt: "angular logo"
 	},
+	{
+		src: "aws.png",
+		alt: "aws logo"
+	},
+	{
+		src: "node.png",
+		alt: "node logo"
+	},
+	{
+		src: "vite.png",
+		alt: "vite logo"
+	},
+	{
+		src: "gh.png",
+		alt: "github logo"
+	},
 ]
 
 export const HomeContent = () => {
@@ -92,7 +108,7 @@ export const HomeContent = () => {
 					What is a Frontend Software Engineer?
 				</Text>
 				<Text kind='p'>
-					A frontend software engineer is a professional who focuses on the user-facing side of software, working on everything that users see and interact with while using an application. They are responsible for creating platforms that are visually appealing, easy to use, and meet the client or company's needs. Their work involves aspects such as functionality, layout, speed, and user experience. Frontend engineers typically plan, design, build, and implement the user interface systems of websites, software programs, and web-based applications. They are also known as front-end developers and are considered software engineers who specialize in website and web application design using technologies such as HTML, CSS, and JavaScript. This role requires a combination of coding and creativity, making it suitable for those interested in technology and design
+					A frontend software engineer is a professional who focuses on the user-facing side of software, working on everything that users see and interact with while using an application. They are responsible for creating platforms that are visually appealing, easy to use, and meet the client or company's needs. Their work involves aspects such as functionality, layout, speed, and user experience. Frontend engineers typically plan, design, build, and implement the user interface systems of websites, software programs, and web-based applications. They are also known as front-end developers and are considered software engineers who specialize in website and web application design using technologies such as HTML, CSS, and JavaScript. This role requires a combination of coding and creativity, making it suitable for those interested in technology and design.
 				</Text>
 
 				<br />

@@ -3,7 +3,7 @@
 		margin-bottom: 150px;
 		padding: 40px 100px 0 100px;
 
-		@media (max-width: 767.98px) {
+		@media (max-width: 1199.98px) {
 			padding: 50px 35px 0 35px;
 		}
 
@@ -30,7 +30,7 @@
 			color: #0d0d0d;
 			text-wrap: balance;
 
-			@media (max-width: 767.98px) {
+			@media (max-width: 1199.98px) {
 				padding-bottom: 0;
 				margin: 0;
 			}
@@ -41,7 +41,7 @@
 			max-width: 900px;
 			font-size: 22px;
 
-			@media (max-width: 767.98px) {
+			@media (max-width: 1199.98px) {
 				font-size: 20px;
 			}
 		}
@@ -50,7 +50,7 @@
 			margin: 15px 5px;
 		}
 
-		@media (max-width: 767.98px) {
+		@media (max-width: 1199.98px) {
 			margin-bottom: 50px;
 		}
 	}
@@ -68,7 +68,7 @@
 		display: flex;
 		gap: 60px;
 
-		@media (max-width: 767.98px) {
+		@media (max-width: 1199.98px) {
 			display: block;
 		}
 	}
