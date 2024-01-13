@@ -107,7 +107,7 @@ export const HomeContent = () => {
 				</div>
 			</div>
 
-			<div className={styles["homeContent"]}>
+			<div className={[styles["homeContent"], styles["last"]].join(' ')}>
 				<Text kind='h2'>
 					What is a Frontend Software Engineer?
 				</Text>

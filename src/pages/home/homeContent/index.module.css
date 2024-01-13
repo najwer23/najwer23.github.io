@@ -15,6 +15,12 @@
 		}
 	}
 
+	.homeContent.last {
+		@media (max-width: 1199.98px) {
+			padding-bottom: 50px;
+		}
+	}
+
 	.homeContentSpace {
 		margin-bottom: 150px;
 
