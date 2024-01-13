@@ -146,7 +146,7 @@ export const HomeContent = () => {
 						{MARQUEE_TECH &&
 							MARQUEE_TECH.map(({ src, alt }) => (
 								<div key={alt}>
-									<img src={`marquee/${src}`} alt={alt} width={150} height={150} />
+									<img src={`marquee/${src}`} alt={alt} width={150} height={150} loading="lazy"/>
 								</div>
 							))}
 					</>
