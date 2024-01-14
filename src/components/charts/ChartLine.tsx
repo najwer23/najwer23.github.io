@@ -9,6 +9,7 @@ import {
 	Legend,
 	ChartOptions,
 	ChartData,
+	Filler
 } from "chart.js";
 
 import { Line } from "react-chartjs-2";
@@ -20,7 +21,8 @@ ChartJS.register(
 	LineElement,
 	Title,
 	Tooltip,
-	Legend
+	Legend,
+	Filler
 );
 
 const dataInit = {
@@ -47,8 +49,15 @@ export const ChartLine = ({ title, ySymbol, data }: Props) => {
 		plugins: {
 			legend: {
 				position: "bottom",
+				// labels: {
+				// 	font: {
+				// 		weight: "bold"
+				// 	},
+				// 	color: "black"
+				// }
 			},
 			title: {
+				color: "black",
 				display: true,
 				text: title,
 				font: {
@@ -66,19 +75,20 @@ export const ChartLine = ({ title, ySymbol, data }: Props) => {
 						return this.getLabelForValue(value as number) + ySymbol;
 					},
 					stepSize: 1,
+					color: "black"
 				},
 				grid: {
-					color: "#404040",
+					color: "lightgrey",
 				},
 			},
 			x: {
 				grid: {
-					color: "#404040",
+					color: "lightgrey",
 					// borderColor: "grey",
 					// tickColor: "#FF6D83",
 				},
 				ticks: {
-					// color: "#FF6D83",
+					color: "black",
 				},
 			},
 		},

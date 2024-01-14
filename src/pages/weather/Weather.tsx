@@ -12,6 +12,7 @@ import { isEmpty } from "../../functions/isEmpty";
 import styles from './index.module.css'
 
 import { Text } from "najwer23storybook/lib/Text";
+import { ScriptableContext } from "chart.js";
 
 export const Weather = (): JSX.Element => {
 	const [coords, setCoords] = useState<{ value: string; label: string }>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
@@ -159,7 +160,7 @@ export const Weather = (): JSX.Element => {
 					}}
 				>
 					<ChartBar
-						title="Rain for next 48h"
+						title="Rain / Snow for next 48h"
 						data={dataHourlyWeatherForLineChart3(weatherHourly)}
 						ySymbol={` mm/h`}
 					/>
@@ -215,8 +216,17 @@ function dataHourlyWeatherForLineChart4(obj: any) {
 			{
 				label: "Pressure",
 				data: dataTempX,
-				borderColor: "#086814",
-				backgroundColor: "#187515",
+				borderColor: "rgb(24, 117, 21)",
+				pointBackgroundColor: "rgb(24, 117, 21)",
+				lineTension: 0.5,
+				backgroundColor: (context: ScriptableContext<"line">) => {
+					const ctx = context.chart.ctx;
+					const gradient = ctx.createLinearGradient(0, 0, 0, 600);
+					gradient.addColorStop(0, "rgba(24, 117, 21,1)");
+					gradient.addColorStop(1, "rgba(24, 117, 21,0)");
+					return gradient;
+				},
+				fill: true
 			},
 		],
 	};
@@ -243,8 +253,17 @@ function dataHourlyWeatherForLineChart2(obj: any) {
 			{
 				label: "Wind Speed",
 				data: dataTempX,
-				borderColor: "#736D63",
-				backgroundColor: "#736D63",
+				borderColor: "grey",
+				pointBackgroundColor: "grey",
+				lineTension: 0.5,
+				backgroundColor: (context: ScriptableContext<"line">) => {
+					const ctx = context.chart.ctx;
+					const gradient = ctx.createLinearGradient(0, 0, 0, 600);
+					gradient.addColorStop(0, "rgba(194, 194, 194,1)");
+					gradient.addColorStop(1, "rgba(194, 194, 194,0)");
+					return gradient;
+				},
+				fill: true
 			},
 		],
 	};
@@ -275,13 +294,25 @@ function dataHourlyWeatherForLineChart3(obj: any) {
 				label: "Rain",
 				data: dataTempXRain,
 				borderColor: "#3F4EA6",
-				backgroundColor: "#3F4EA6",
+				backgroundColor: (context: ScriptableContext<"bar">) => {
+					const ctx = context.chart.ctx;
+					const gradient = ctx.createLinearGradient(0, 0, 0, 600);
+					gradient.addColorStop(0, "#5c6cc9");
+					gradient.addColorStop(1, "#3F4EA6");
+					return gradient;
+				},
 			},
 			{
 				label: "Snow",
 				data: dataTempXSnow,
 				borderColor: "#3fa6a6",
-				backgroundColor: "#3fa6a6",
+				backgroundColor: (context: ScriptableContext<"bar">) => {
+					const ctx = context.chart.ctx;
+					const gradient = ctx.createLinearGradient(0, 0, 0, 600);
+					gradient.addColorStop(0, "rgb(92, 241, 241)");
+					gradient.addColorStop(1, "#3fa6a6");
+					return gradient;
+				},
 			},
 		],
 	};
@@ -311,12 +342,14 @@ function dataHourlyWeatherForLineChart(obj: any) {
 				data: dataTempX,
 				borderColor: "#A80038",
 				backgroundColor: "#A80038",
+				lineTension: 0.5,
 			},
 			{
 				label: "Temperature Feels Like",
 				data: dataTempX_FeelsLike,
 				borderColor: "orangered",
 				backgroundColor: "orangered",
+				lineTension: 0.5,
 			},
 		],
 	};

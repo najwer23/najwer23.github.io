@@ -49,6 +49,7 @@ export const ChartBar = ({ title, ySymbol, data }: Props) => {
 			title: {
 				display: true,
 				text: title,
+				color: "black",
 				font: {
 					size: 18,
 				},
@@ -64,19 +65,20 @@ export const ChartBar = ({ title, ySymbol, data }: Props) => {
 						return this.getLabelForValue(value as number) + ySymbol;
 					},
 					stepSize: 1,
+					color: "black"
 				},
 				grid: {
-					color: "#404040",
+					color: "lightgrey",
 				},
 			},
 			x: {
 				grid: {
-					color: "#404040",
+					color: "lightgrey",
 					// borderColor: "grey",
 					// tickColor: "#FF6D83",
 				},
 				ticks: {
-					// color: "#FF6D83",
+					color: "black",
 				},
 			},
 		},
