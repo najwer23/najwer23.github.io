@@ -38,6 +38,7 @@ export const Weather = (): JSX.Element => {
 			{ value: "41.3828939:2.1774322", label: "Barcelona (ES)" },
 			{ value: "64.145981:-21.9422367", label: "Reykjavík (IS)" },
 			{ value: "52.4006632:16.91973259", label: "Poznań (PL)" },
+			{ value: "50.06143:19.93658", label: "Kraków (PL)" },
 		]);
 	}, []);
 
