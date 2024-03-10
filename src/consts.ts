@@ -81,7 +81,7 @@ export const MENU_ASIDE: MenuAsideType = {
 					},
 					{
 						itemLink: "https://tvn24.pl/",
-						itemLinkText: "Tvn24",
+						itemLinkText: "TVN24",
 						itemLinkType: "linkOut",
 					},
 					{
@@ -90,13 +90,18 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "linkOut",
 					},
 					{
-						itemLink: "https://tvn24.pl/biznes",
+						itemLink: "https://tvn24.pl/biznes/notowania/waluty",
 						itemLinkText: "Stock quotes",
 						itemLinkType: "linkOut",
 					},
 					{
 						itemLink: "https://tvn.pl/program-tv",
 						itemLinkText: "Electronic program guide",
+						itemLinkType: "linkOut",
+					},
+					{
+						itemLink: "#",
+						itemLinkText: "TVN24. Polish Local Government Elections 2024",
 						itemLinkType: "linkOut",
 					},
 				],
