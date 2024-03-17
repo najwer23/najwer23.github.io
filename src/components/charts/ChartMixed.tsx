@@ -6,7 +6,6 @@ import {
 	Title,
 	Tooltip,
 	Legend,
-	ChartData,
 } from "chart.js";
 
 import { Chart } from "react-chartjs-2";
