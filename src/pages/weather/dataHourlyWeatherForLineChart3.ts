@@ -36,7 +36,6 @@ export const dataHourlyWeatherForLineChart3 = (
 	maxDataNight = Math.ceil(maxDataNight);
 
 	for (let [, { dt, rain, snow }] of data.entries()) {
-		console.log(dateFormatterFromDt(dt));
 		dataTempY.push(dateFormatterFromDt(dt)?.split(",")[1].slice(0, 6));
 		dataTempXRain.push((rain && rain["1h"]) || 0);
 		dataTempXSnow.push((snow && snow["1h"]) || 0);
