@@ -3,25 +3,29 @@ import {
 	CategoryScale,
 	LinearScale,
 	PointElement,
+	LineElement,
 	BarElement,
 	Title,
 	Tooltip,
 	Legend,
 	Filler,
+	ChartData,
+	ChartOptions,
 } from "chart.js";
 
-import { Chart } from "react-chartjs-2";
 // @ts-ignore
 import { Bar } from "react-chartjs-2";
 // @ts-ignore
 import { Line } from "react-chartjs-2";
 
+import { Chart } from "react-chartjs-2";
 
 ChartJS.register(
 	BarElement,
 	PointElement,
 	CategoryScale,
 	LinearScale,
+	LineElement,
 	Title,
 	Tooltip,
 	Legend,
@@ -42,10 +46,10 @@ const dataInit = {
 interface Props {
 	title: string;
 	ySymbol: string;
-	data: any;
+	data: ChartData<'bar' | 'line' | any> | null;
 }
 export const ChartMixed = ({ title, ySymbol, data }: Props) => {
-	const options = {
+	const options: ChartOptions<any> = {
 		maintainAspectRatio: false,
 		responsive: true,
 		animation: false,

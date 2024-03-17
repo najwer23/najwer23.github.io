@@ -12,8 +12,8 @@ import { Text } from "najwer23storybook/lib/Text";
 import { dataHourlyWeatherForLineChart } from "./dataHourlyWeatherForLineChart";
 import { dataHourlyWeatherForLineChart4 } from "./dataHourlyWeatherForLineChart4";
 import { dataHourlyWeatherForLineChart2 } from "./dataHourlyWeatherForLineChart2";
-// import { dataHourlyWeatherForLineChart3 } from "./dataHourlyWeatherForLineChart3";
-// import { ChartMixed } from "../../components/charts/ChartMixed";
+import { dataHourlyWeatherForLineChart3 } from "./dataHourlyWeatherForLineChart3";
+import { ChartMixed } from "../../components/charts/ChartMixed";
 import { forecastDataFormat } from "./forecastDataFormat";
 import { WeatherImg } from "./WeatherImg";
 import { WeatherForecastData } from "./WeatherForecastData";
@@ -156,7 +156,7 @@ export const Weather = (): JSX.Element => {
 				</div>
 			)}
 
-			{/* {status === "done" ? (
+			{status === "done" ? (
 				<div
 					style={{
 						marginTop: "30px",
@@ -174,7 +174,7 @@ export const Weather = (): JSX.Element => {
 				<div style={{ minHeight: "780px" }}>
 					<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
 				</div>
-			)} */}
+			)}
 
 
 			{status === "done" ? (
