@@ -156,7 +156,7 @@ export const Weather = (): JSX.Element => {
 				</div>
 			)}
 
-			{status === "done" ? (
+			{/* {status === "done" ? (
 				<div
 					style={{
 						marginTop: "30px",
@@ -174,7 +174,7 @@ export const Weather = (): JSX.Element => {
 				<div style={{ minHeight: "780px" }}>
 					<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
 				</div>
-			)}
+			)} */}
 
 
 			{status === "done" ? (
