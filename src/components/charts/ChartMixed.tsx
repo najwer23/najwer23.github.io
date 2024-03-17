@@ -2,21 +2,30 @@ import {
 	Chart as ChartJS,
 	CategoryScale,
 	LinearScale,
+	PointElement,
 	BarElement,
 	Title,
 	Tooltip,
 	Legend,
+	Filler,
 } from "chart.js";
 
 import { Chart } from "react-chartjs-2";
+// @ts-ignore
+import { Bar } from "react-chartjs-2";
+// @ts-ignore
+import { Line } from "react-chartjs-2";
+
 
 ChartJS.register(
 	BarElement,
+	PointElement,
 	CategoryScale,
 	LinearScale,
 	Title,
 	Tooltip,
-	Legend
+	Legend,
+	Filler
 );
 
 const dataInit = {
