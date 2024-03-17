@@ -11,6 +11,8 @@ import {
 	Filler,
 	ChartData,
 	ChartOptions,
+	LineController,
+	BarController
 } from "chart.js";
 
 // @ts-ignore
@@ -18,14 +20,14 @@ import { Bar } from "react-chartjs-2";
 // @ts-ignore
 import { Line } from "react-chartjs-2";
 
-import { Chart } from "react-chartjs-2";
-
 ChartJS.register(
 	BarElement,
 	PointElement,
 	CategoryScale,
 	LinearScale,
 	LineElement,
+	LineController,
+	BarController,
 	Title,
 	Tooltip,
 	Legend,
@@ -100,5 +102,5 @@ export const ChartMixed = ({ title, ySymbol, data }: Props) => {
 	};
 
 	// @ts-ignore
-	return <Chart options={options} data={data || dataInit} />;
+	return <Line options={options} data={data || dataInit} />;
 }
