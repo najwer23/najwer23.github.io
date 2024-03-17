@@ -80,23 +80,23 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "linkOut",
 					},
 					{
+						itemLink: "https://tvn.pl/programy/top-model",
+						itemLinkText: "TVN. Top model",
+						itemLinkType: "linkOut",
+					},
+					{
+						itemLink: "https://tvn.pl/program-tv",
+						itemLinkText: "TVN. Electronic program guide",
+						itemLinkType: "linkOut",
+					},
+					{
 						itemLink: "https://tvn24.pl/",
 						itemLinkText: "TVN24",
 						itemLinkType: "linkOut",
 					},
 					{
-						itemLink: "https://tvn.pl/programy/top-model",
-						itemLinkText: "Top model",
-						itemLinkType: "linkOut",
-					},
-					{
 						itemLink: "https://tvn24.pl/biznes/notowania/waluty",
-						itemLinkText: "Stock quotes",
-						itemLinkType: "linkOut",
-					},
-					{
-						itemLink: "https://tvn.pl/program-tv",
-						itemLinkText: "Electronic program guide",
+						itemLinkText: "TVN24. Stock quotes",
 						itemLinkType: "linkOut",
 					},
 					{

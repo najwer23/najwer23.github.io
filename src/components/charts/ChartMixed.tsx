@@ -2,27 +2,22 @@ import {
 	Chart as ChartJS,
 	CategoryScale,
 	LinearScale,
-	PointElement,
-	LineElement,
+	BarElement,
 	Title,
 	Tooltip,
 	Legend,
-	ChartOptions,
 	ChartData,
-	Filler
 } from "chart.js";
 
-import { Line } from "react-chartjs-2";
+import { Chart } from "react-chartjs-2";
 
 ChartJS.register(
+	BarElement,
 	CategoryScale,
 	LinearScale,
-	PointElement,
-	LineElement,
 	Title,
 	Tooltip,
-	Legend,
-	Filler
+	Legend
 );
 
 const dataInit = {
@@ -39,28 +34,21 @@ const dataInit = {
 interface Props {
 	title: string;
 	ySymbol: string;
-	data: ChartData<'line'> | null
+	data: any;
 }
-
-export const ChartLine = ({ title, ySymbol, data }: Props) => {
-	const options: ChartOptions<'line'> = {
+export const ChartMixed = ({ title, ySymbol, data }: Props) => {
+	const options = {
 		maintainAspectRatio: false,
 		responsive: true,
 		animation: false,
 		plugins: {
 			legend: {
 				position: "bottom",
-				// labels: {
-				// 	font: {
-				// 		weight: "bold"
-				// 	},
-				// 	color: "black"
-				// }
 			},
 			title: {
-				color: "black",
 				display: true,
 				text: title,
+				color: "black",
 				font: {
 					size: 18,
 				},
@@ -72,7 +60,9 @@ export const ChartLine = ({ title, ySymbol, data }: Props) => {
 				//max: 130,
 				ticks: {
 					// Include a dollar sign in the ticks
+					// @ts-ignore
 					callback: function (value) {
+						// @ts-ignore
 						return this.getLabelForValue(value as number) + ySymbol;
 					},
 					stepSize: 1,
@@ -91,9 +81,12 @@ export const ChartLine = ({ title, ySymbol, data }: Props) => {
 				ticks: {
 					color: "black",
 				},
+				offset: false
 			},
+
 		},
 	};
 
-	return <Line options={options} data={data || dataInit} />;
+	// @ts-ignore
+	return <Chart options={options} data={data || dataInit} />;
 }
