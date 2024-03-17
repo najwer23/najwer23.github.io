@@ -31,6 +31,7 @@ export const dataHourlyWeatherForLineChart = (
 		dataTempX_FeelsLike.push(feels_like);
 
 		if (
+			(dt >= sunrise && dt <= sunset ) ||
 			(dt >= sunrise + 86400 && dt <= sunset + 86400) ||
 			(dt >= sunrise + 86400 * 2 && dt <= sunset + 86400 * 2)
 		) {

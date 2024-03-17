@@ -41,6 +41,7 @@ export const dataHourlyWeatherForLineChart3 = (
 		dataTempXSnow.push((snow && snow["1h"]) || 0);
 
 		if (
+			(dt >= sunrise && dt <= sunset) ||
 			(dt >= sunrise + 86400 && dt <= sunset + 86400) ||
 			(dt >= sunrise + 86400 * 2 && dt <= sunset + 86400 * 2)
 		) {
