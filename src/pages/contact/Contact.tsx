@@ -74,7 +74,7 @@ export const Contact = (): JSX.Element => {
 	}
 
 	return (
-		<div className={styles["contactStyled"]}>
+		<div className={styles["contact"]}>
 			<Text kind='h2'> Contact </Text>
 
 			<form onSubmit={handleSubmit}>

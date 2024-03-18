@@ -1,9 +1,5 @@
-@layer contact {
-	.customInputWrapper {
-		max-width: 500px;
-	}
-
-	.contact {
+@layer gallery {
+	.gallery {
 		margin-bottom: 150px;
 		padding: 40px 100px 0 100px;
 
@@ -13,6 +9,5 @@
 
 		font-weight: var(--n23-font-weight-normal);
 		font-family: var(--n23-font-family);
-
 	}
 }

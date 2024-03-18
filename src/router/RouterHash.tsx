@@ -3,6 +3,7 @@ import { Home } from "../pages/home/Home";
 import { Contact } from "../pages/contact/Contact";
 import { Weather } from "../pages/weather/Weather";
 import ScrollToTop from "./ScrollToTop";
+import { Gallery } from "../pages/gallery/Gallery";
 
 export const router = createHashRouter([
 	{
@@ -30,6 +31,15 @@ export const router = createHashRouter([
 			<>
 				<ScrollToTop />
 				<Weather />
+			</>
+		),
+	},
+	{
+		path: "/gallery",
+		element: (
+			<>
+				<ScrollToTop />
+				<Gallery />
 			</>
 		),
 	},

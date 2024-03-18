@@ -51,10 +51,10 @@ export const Weather = (): JSX.Element => {
 	const weatherCurrent = data?.data.current;
 
 	return (
-		<div className={styles["weatherStyled"]}>
+		<div className={styles["weather"]}>
 			<Text kind='h2'> Weather </Text>
 
-			<div className={styles["selectWrapper"]}>
+			<div className={styles["weatherSelectWrapper"]}>
 				{townListForSelect.map(({ value, label }) => (
 					<Button
 						key={value}
@@ -67,14 +67,14 @@ export const Weather = (): JSX.Element => {
 				))}
 			</div>
 
-			<div className={styles["forecastDataWrapper"]}>
+			<div className={styles["weatherWrapper"]}>
 
 				{status === "done" ? (
 					<Carousel
 						arrowLeftIcon={<FontAwesomeIcon icon={faAngleLeft} color={"white"} size={"lg"} />}
 						arrowRightIcon={<FontAwesomeIcon icon={faAngleRight} color={"white"} size={"lg"} />}
 					>
-						<div className={styles["forecastDataCurrent"]}>
+						<div className={styles["weatherCurrent"]}>
 							{status === "done" ? (
 								<>
 									<WeatherImg imgArr={weatherCurrent!.weather} />

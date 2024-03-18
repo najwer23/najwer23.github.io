@@ -12,6 +12,11 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "hash",
 					},
 					{
+						itemLink: "gallery",
+						itemLinkText: "Gallery",
+						itemLinkType: "hash",
+					},
+					{
 						itemLink: "weather",
 						itemLinkText: "Weather",
 						itemLinkType: "hash",
