@@ -12,8 +12,8 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "hash",
 					},
 					{
-						itemLink: "gallery",
-						itemLinkText: "Gallery",
+						itemLink: "quotes",
+						itemLinkText: "Quotes",
 						itemLinkType: "hash",
 					},
 					{

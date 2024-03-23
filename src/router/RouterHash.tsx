@@ -4,6 +4,7 @@ import { Contact } from "../pages/contact/Contact";
 import { Weather } from "../pages/weather/Weather";
 import ScrollToTop from "./ScrollToTop";
 import { Gallery } from "../pages/gallery/Gallery";
+import { Quotes } from "../pages/quotes/Quotes";
 
 export const router = createHashRouter([
 	{
@@ -40,6 +41,15 @@ export const router = createHashRouter([
 			<>
 				<ScrollToTop />
 				<Gallery />
+			</>
+		),
+	},
+	{
+		path: "/quotes",
+		element: (
+			<>
+				<ScrollToTop />
+				<Quotes />
 			</>
 		),
 	},
