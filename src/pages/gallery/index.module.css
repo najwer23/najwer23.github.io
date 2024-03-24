@@ -2,6 +2,7 @@
 	.gallery {
 		margin-bottom: 150px;
 		padding: 40px 100px 0 100px;
+		min-height: 80vh;
 
 		@media (max-width: 1199.98px) {
 			padding: 50px 35px 0 35px;
@@ -9,5 +10,17 @@
 
 		font-weight: var(--n23-font-weight-normal);
 		font-family: var(--n23-font-family);
+	}
+
+	.galleryPic {
+		width: 100%;
+		height: auto;
+		border: 2px solid black;
+
+		& img {
+			display: grid;
+			width: 100%;
+			height: auto;
+		}
 	}
 }
