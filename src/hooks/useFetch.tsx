@@ -1,11 +1,11 @@
-import { useEffect, useReducer, useRef } from 'react'
+import { useLayoutEffect, useReducer, useRef } from 'react'
 import { getLocalStorageCookie } from '../functions/getLocalStorageCookie'
 import { setLocalStorageCookie } from '../functions/setLocalStorageCookie'
 
 interface State<T> {
 	data?: T
 	error?: Error
-	status: string
+	status: "idle" | "loading" | "done" | "error"
 	executeFetch?: (body?: any) => void
 }
 
@@ -82,7 +82,7 @@ export function useFetch<T = unknown>(
 
 	const [state, dispatch] = useReducer(fetchReducer, initialState)
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (executeOnMount) fetchData();
 	}, [url]);
 
