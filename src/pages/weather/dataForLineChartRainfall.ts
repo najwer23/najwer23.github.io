@@ -82,6 +82,7 @@ export const dataForLineChartRainfall = (
 				},
 			},
 			{
+				type: "line",
 				label: "Night",
 				data: dataNight,
 				lineTension: 0.2,

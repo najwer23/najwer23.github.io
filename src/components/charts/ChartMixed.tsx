@@ -101,6 +101,5 @@ export const ChartMixed = ({ title, ySymbol, data }: Props) => {
 		},
 	};
 
-	// @ts-ignore
 	return <Line options={options} data={data || dataInit} />;
 }
