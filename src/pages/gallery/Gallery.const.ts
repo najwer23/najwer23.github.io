@@ -1,5 +1,10 @@
 export const GALLERY = [
 	{
+		src: "https://i.ibb.co/K54ZdyB/mountains-100367.jpg",
+		alt: "Flying birds",
+		ar: 101/67
+	},
+	{
 		src: "https://i.ibb.co/31jnK3Y/Sagrada-Familia-2021.jpg",
 		alt: "Sagrada Família",
 		ar: 4 / 5,
