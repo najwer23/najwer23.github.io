@@ -1,7 +1,8 @@
 import { dateFormatterFromDt } from "../../functions/dateFormatterFromDt";
+import { Forecast } from "./Weather.types";
 
-export const dataHourlyWeatherForLineChart4 = (
-	obj: any,
+export const dataForLineChartWind = (
+	obj: Forecast[],
 	sunrise: number,
 	sunset: number
 ) => {
@@ -12,18 +13,22 @@ export const dataHourlyWeatherForLineChart4 = (
 	let data = structuredClone(obj);
 	let dataTempX: Array<number> = [];
 	let dataTempY: Array<string | undefined> = [];
+
 	let dataNight: Array<number> = [];
 	let minDataNight = Infinity;
 	let maxDataNight = -Infinity;
 
-	for (let [, { pressure }] of data.entries()) {
-		minDataNight = Math.min(pressure, minDataNight);
-		maxDataNight = Math.max(pressure, maxDataNight);
+	for (let [, { wind_speed }] of data.entries()) {
+		minDataNight = Math.min(wind_speed * 3.6, minDataNight);
+		maxDataNight = Math.max(wind_speed * 3.6, maxDataNight);
 	}
 
-	for (let [, { dt, pressure }] of data.entries()) {
+	minDataNight = Math.floor(minDataNight);
+	maxDataNight = Math.ceil(maxDataNight);
+
+	for (let [, { dt, wind_speed }] of data.entries()) {
 		dataTempY.push(dateFormatterFromDt(dt)?.split(",")[1].slice(0, 6));
-		dataTempX.push(pressure);
+		dataTempX.push(wind_speed * 3.6);
 
 		if (
 			(dt >= sunrise && dt <= sunset) ||
@@ -40,27 +45,20 @@ export const dataHourlyWeatherForLineChart4 = (
 		labels: dataTempY,
 		datasets: [
 			{
-				label: "Pressure",
+				label: "Wind Speed",
 				data: dataTempX,
-				borderColor: "rgb(24, 117, 21)",
-				pointBackgroundColor: "rgb(24, 117, 21)",
+				borderColor: "rgb(128,0,128)",
+				backgroundColor: "rgb(128,0,128)",
+				pointBackgroundColor: "rgb(128,0,128)",
 				lineTension: 0.5,
-				backgroundColor: "rgb(24, 117, 21)",
-				// backgroundColor: (context: ScriptableContext<"line">) => {
-				// 	const ctx = context.chart.ctx;
-				// 	const gradient = ctx.createLinearGradient(0, 0, 0, 600);
-				// 	gradient.addColorStop(0, "rgba(24, 117, 21,1)");
-				// 	gradient.addColorStop(1, "rgba(24, 117, 21,0)");
-				// 	return gradient;
-				// },
-				// fill: true,
 			},
 			{
 				label: "Night",
 				data: dataNight,
-				lineTension: 0.5,
+				lineTension: 0.2,
 				radius: 0,
 				backgroundColor: "rgba(194, 194, 194,.6)",
+				borderColor: "transparent",
 				fill: "start",
 			},
 		],

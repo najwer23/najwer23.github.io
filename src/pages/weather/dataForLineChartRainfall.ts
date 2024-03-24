@@ -1,8 +1,9 @@
 import { ScriptableContext } from "chart.js";
 import { dateFormatterFromDt } from "../../functions/dateFormatterFromDt";
+import { Forecast } from "./Weather.types";
 
-export const dataHourlyWeatherForLineChart3 = (
-	obj: any,
+export const dataForLineChartRainfall = (
+	obj: Forecast[],
 	sunrise: number,
 	sunset: number
 ) => {
@@ -81,11 +82,12 @@ export const dataHourlyWeatherForLineChart3 = (
 				},
 			},
 			{
-				type: "line",
 				label: "Night",
 				data: dataNight,
+				lineTension: 0.2,
 				radius: 0,
 				backgroundColor: "rgba(194, 194, 194,.6)",
+				borderColor: "transparent",
 				fill: "start",
 			},
 		],

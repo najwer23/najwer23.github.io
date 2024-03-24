@@ -1,7 +1,8 @@
 import { dateFormatterFromDt } from "../../functions/dateFormatterFromDt";
+import { Forecast } from "./Weather.types";
 
-export const dataHourlyWeatherForLineChart = (
-	obj: any,
+export const dataForLineChartTemp = (
+	obj: Forecast[],
 	sunrise: number,
 	sunset: number
 ) => {
@@ -31,7 +32,7 @@ export const dataHourlyWeatherForLineChart = (
 		dataTempX_FeelsLike.push(feels_like);
 
 		if (
-			(dt >= sunrise && dt <= sunset ) ||
+			(dt >= sunrise && dt <= sunset) ||
 			(dt >= sunrise + 86400 && dt <= sunset + 86400) ||
 			(dt >= sunrise + 86400 * 2 && dt <= sunset + 86400 * 2)
 		) {
@@ -61,9 +62,10 @@ export const dataHourlyWeatherForLineChart = (
 			{
 				label: "Night",
 				data: dataNight,
-				lineTension: 0.5,
+				lineTension: 0.2,
 				radius: 0,
 				backgroundColor: "rgba(194, 194, 194,.6)",
+				borderColor: "transparent",
 				fill: "start",
 			},
 		],

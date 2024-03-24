@@ -9,10 +9,10 @@ import { sortByKeyArrObj } from "../../functions/sortByKeyArrObj";
 import { dateFormatterFromDt } from "../../functions/dateFormatterFromDt";
 import styles from './index.module.css'
 import { Text } from "najwer23storybook/lib/Text";
-import { dataHourlyWeatherForLineChart } from "./dataHourlyWeatherForLineChart";
-import { dataHourlyWeatherForLineChart4 } from "./dataHourlyWeatherForLineChart4";
-import { dataHourlyWeatherForLineChart2 } from "./dataHourlyWeatherForLineChart2";
-import { dataHourlyWeatherForLineChart3 } from "./dataHourlyWeatherForLineChart3";
+import { dataForLineChartTemp } from "./dataForLineChartTemp";
+import { dataForLineChartPressure } from "./dataForLineChartPressure";
+import { dataForLineChartWind } from "./dataForLineChartWind";
+import { dataForLineChartRainfall } from "./dataForLineChartRainfall";
 import { ChartMixed } from "../../components/charts/ChartMixed";
 import { forecastDataFormat } from "./forecastDataFormat";
 import { WeatherImg } from "./WeatherImg";
@@ -80,8 +80,8 @@ export const Weather = (): JSX.Element => {
 									<WeatherImg imgArr={weatherCurrent!.weather} />
 									<WeatherForecastData title={"dayOfWeek"} value={weatherCurrent!.dt} />
 									<WeatherForecastData title={"Temp"} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
-									<WeatherForecastData title={"Sunrise"} value={dateFormatterFromDt(weatherCurrent!.sunrise)?.split(",")[1]} />
-									<WeatherForecastData title={"Sunset"} value={dateFormatterFromDt(weatherCurrent!.sunset)?.split(",")[1]} />
+									<WeatherForecastData title={"Sunrise"} value={dateFormatterFromDt(weatherCurrent!.sunrise)?.split(",")[1] ?? ""} />
+									<WeatherForecastData title={"Sunset"} value={dateFormatterFromDt(weatherCurrent!.sunset)?.split(",")[1]?? ""} />
 									<WeatherForecastData title={"Wind"} value={forecastDataFormat(weatherCurrent!.wind_speed, 1)} />
 									<WeatherForecastData title={"Pressure"} value={forecastDataFormat(weatherCurrent!.pressure, 3)} />
 									<WeatherForecastData title={"Humidity"} value={forecastDataFormat(weatherCurrent!.humidity, 2)} />
@@ -99,8 +99,8 @@ export const Weather = (): JSX.Element => {
 								<WeatherImg imgArr={x.weather} />
 								<WeatherForecastData title={"dayOfWeek"} value={x.dt} />
 								<WeatherForecastData title={"Temp"} value={forecastDataFormat(x.temp.day, 4)} />
-								<WeatherForecastData title={"Sunrise"} value={dateFormatterFromDt(x.sunrise)?.split(",")[1]} />
-								<WeatherForecastData title={"Sunset"} value={dateFormatterFromDt(x.sunset)?.split(",")[1]} />
+								<WeatherForecastData title={"Sunrise"} value={dateFormatterFromDt(x.sunrise)?.split(",")[1] ?? ""} />
+								<WeatherForecastData title={"Sunset"} value={dateFormatterFromDt(x.sunset)?.split(",")[1] ?? ""} />
 								<WeatherForecastData title={"Wind"} value={forecastDataFormat(x.wind_speed, 1)} />
 								<WeatherForecastData title={"Pressure"} value={forecastDataFormat(x.pressure, 3)} />
 								<WeatherForecastData title={"Humidity"} value={forecastDataFormat(x.humidity, 2)} />
@@ -126,7 +126,7 @@ export const Weather = (): JSX.Element => {
 				>
 					<ChartLine
 						title="Temeperature for next 48h"
-						data={dataHourlyWeatherForLineChart(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+						data={dataForLineChartTemp(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
 						ySymbol={` ${"\u00b0"}C`}
 					/>
 				</div>
@@ -146,7 +146,7 @@ export const Weather = (): JSX.Element => {
 				>
 					<ChartLine
 						title="Speed of wind for next 48h"
-						data={dataHourlyWeatherForLineChart2(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+						data={dataForLineChartWind(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
 						ySymbol={` km/h`}
 					/>
 				</div>
@@ -166,7 +166,7 @@ export const Weather = (): JSX.Element => {
 				>
 					<ChartMixed
 						title="Rain / Snow for next 48h"
-						data={dataHourlyWeatherForLineChart3(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+						data={dataForLineChartRainfall(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
 						ySymbol={` mm/h`}
 					/>
 				</div>
@@ -187,7 +187,7 @@ export const Weather = (): JSX.Element => {
 				>
 					<ChartLine
 						title="Pressure"
-						data={dataHourlyWeatherForLineChart4(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+						data={dataForLineChartPressure(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
 						ySymbol={` hPa`}
 					/>
 				</div>

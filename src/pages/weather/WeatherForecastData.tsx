@@ -2,7 +2,7 @@ import { dateFormatterFromDt } from '../../functions/dateFormatterFromDt';
 import { forecastDataFormat } from './forecastDataFormat';
 import styles from './index.module.css'
 
-export const WeatherForecastData = ({title, value}: any) => {
+export const WeatherForecastData = ({title, value}: {title: string; value: string | number}) => {
 	if (title === "empty") {
 		return (
 			<div className={styles["weatherForecastData"]} >
