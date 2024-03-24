@@ -28,14 +28,14 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "gh-pages": "^6.1.1",
-    "najwer23storybook": "^4.1.58",
+    "najwer23storybook": "^4.1.61",
     "react": "^18.2.0",
     "react-chartjs-2": "5.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
     "rimraf": "^5.0.5",
     "typescript": "^5.4.3",
-    "vite": "^5.2.4"
+    "vite": "^5.2.6"
   },
   "packageManager": "yarn@4.0.2"
 }

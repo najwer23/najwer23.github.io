@@ -2551,24 +2551,24 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.6"
     gh-pages: "npm:^6.1.1"
-    najwer23storybook: "npm:^4.1.58"
+    najwer23storybook: "npm:^4.1.61"
     react: "npm:^18.2.0"
     react-chartjs-2: "npm:5.2.0"
     react-dom: "npm:^18.2.0"
     react-router-dom: "npm:^6.22.3"
     rimraf: "npm:^5.0.5"
     typescript: "npm:^5.4.3"
-    vite: "npm:^5.2.4"
+    vite: "npm:^5.2.6"
   languageName: unknown
   linkType: soft
 
-"najwer23storybook@npm:^4.1.58":
-  version: 4.1.58
-  resolution: "najwer23storybook@npm:4.1.58"
+"najwer23storybook@npm:^4.1.61":
+  version: 4.1.61
+  resolution: "najwer23storybook@npm:4.1.61"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 6dc019d84b89f1a8abf95d72915af5914c7204ad29f2cb4b6a0f9d25abfb375eb240a678d0d3c61a295447e0ea2248a78df5e71c843644b76a2f765dd6065875
+  checksum: 9e1aac7605497508fd7ce3123de5b665cfe55c236794f79b837b9d60cd5fdc81fa3084d384011830dcb54dc0749a7079ee401b61ebb8074743ee8381279456a4
   languageName: node
   linkType: hard
 
@@ -3373,9 +3373,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.2.4":
-  version: 5.2.4
-  resolution: "vite@npm:5.2.4"
+"vite@npm:^5.2.6":
+  version: 5.2.6
+  resolution: "vite@npm:5.2.6"
   dependencies:
     esbuild: "npm:^0.20.1"
     fsevents: "npm:~2.3.3"
@@ -3409,7 +3409,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: a8a57da83b5a46d9fc135fc4c51d08e1e60cdc4263ce6e7b23d60501c70605dd541726c331ab4d837ad774cdbf0b78bac088da770287620f81ad8b4d7b39dd74
+  checksum: 9ccaa65521b738ed5d6ad9cd118584a833191d29649eaa77ccb8096a60ded2ca9014193b8b866ad76054d0c89443f7b68b578686e4e2ef83147273e7788408c2
   languageName: node
   linkType: hard
 
