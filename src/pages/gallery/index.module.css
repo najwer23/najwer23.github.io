@@ -16,11 +16,12 @@
 		width: 100%;
 		height: auto;
 		border: 2px solid black;
+		box-sizing: border-box;
 
 		& img {
 			display: grid;
 			width: 100%;
-			height: auto;
+			aspect-ratio: var(--n23-img-ar);
 		}
 	}
 }

@@ -22,8 +22,8 @@ export const Gallery = () => {
 		}} >
 
 			{ GALLERY &&
-				GALLERY.map(({ src, alt }, id) => (
-					<GalleryPic src={src} alt={alt} key={id} />
+				GALLERY.map(({ src, alt, ar}, id) => (
+					<GalleryPic src={src} alt={alt} key={id} ar={ar}/>
 				))}
 
 		</GridMasonry>
