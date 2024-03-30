@@ -7,8 +7,11 @@
 
 	--n23-color-surface: #e9ecef;
 	--n23-color-font: #161925;
-	--n23-color-font-asideMenu: #e9ecef;
 
+	--n23-asideMenu-background-color: #eee;
+	--n23-asideMenu-font-color: var(--n23-color-font);
+	--n23-asideMenu-mobile-background-color: #eee;
+	--n23-asideMenu-border-right-color: var(--n23-color-font);
 
 	--n23-color-error: #FF3333;
 	--n23-color-success: #1f5120;

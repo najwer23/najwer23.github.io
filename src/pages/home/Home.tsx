@@ -17,7 +17,7 @@ export const Home = () => {
 				<HomeSocialMedia />
 
 				<div className={styles["pageLinks"]} >
-					<a href='/#/contact'>Contact</a> /
+					<a href='/#/contact'>Contact</a> <b>/</b>
 					<a href='/#/weather'>Weather</a>
 				</div>
 			</div>
