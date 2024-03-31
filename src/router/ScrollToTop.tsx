@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const ScrollToTop = () => {
+export const ScrollToTop = () => {
 	// Extracts pathname property(key) from an object
 	const { pathname } = useLocation();
 
@@ -12,5 +12,3 @@ const ScrollToTop = () => {
 
 	return null
 }
-
-export default ScrollToTop;

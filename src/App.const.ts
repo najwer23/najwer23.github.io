@@ -31,6 +31,11 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkText: "Contact",
 						itemLinkType: "hash",
 					},
+					{
+						itemLink: "404",
+						itemLinkText: "404",
+						itemLinkType: "hash",
+					},
 				],
 			},
 			{
