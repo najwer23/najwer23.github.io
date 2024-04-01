@@ -30,4 +30,13 @@ export const QUOTES = [
 			"Computers are good at following instructions, but not at reading your mind.",
 		author: "Donald Knuth",
 	},
+	{
+		quote:
+			"Insecure leaders surround themselves with 'yes people'. Effective leaders surround themselves with people who challenge them.",
+		author: "Patrick Bet-David",
+	},
+	{
+		quote: "First do it, then do it right, then do it better.",
+		author: "Addy Osmani",
+	},
 ];
