@@ -1,5 +1,25 @@
 export const QUOTES = [
 	{
+		quote:
+			"Think of yourself as dead. You have lived your life. Now, take what's left and live it properly. What doesn't transmit light creates its own darkness.",
+		author: "Marcus Aurelius",
+	},
+	{
+		quote:
+			"You have power over your mind - not outside events. Realize this, and you will find strength.",
+		author: "Marcus Aurelius",
+	},
+	{
+		quote:
+			"The happiness of your life depends upon the quality of your thoughts.",
+		author: "Marcus Aurelius",
+	},
+	{
+		quote:
+			"Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.",
+		author: "Marcus Aurelius",
+	},
+	{
 		quote: "The best way to predict the future is to invent it.",
 		author: "Alan Kay",
 	},
