@@ -20,6 +20,11 @@ export const QUOTES = [
 		author: "Marcus Aurelius",
 	},
 	{
+		quote:
+			"Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.",
+		author: "Antoine de Saint-Exupéry",
+	},
+	{
 		quote: "The best way to predict the future is to invent it.",
 		author: "Alan Kay",
 	},
