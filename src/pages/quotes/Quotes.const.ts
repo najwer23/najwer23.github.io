@@ -16,8 +16,13 @@ export const QUOTES = [
 	},
 	{
 		quote:
-			"The pursuit of contentment, according to Seneca, is more fulfilling than the unending chase for more, defining real wealth as inner richness.",
+			"It is not the man who has too little, but the man who craves more, that is poor.",
 		author: "Seneca",
+	},
+	{
+		quote:
+			"Sometimes people don't want to hear the truth because they don't want their illusions destroyed.",
+		author: " Friedrich Nietzsche",
 	},
 	{
 		quote: "‍We suffer more often in imagination than in reality.",
@@ -42,6 +47,10 @@ export const QUOTES = [
 		quote:
 			"Everything we hear is an opinion, not a fact. Everything we see is a perspective, not the truth.",
 		author: "Marcus Aurelius",
+	},
+	{
+		quote: "There are no facts, only interpretations.",
+		author: "Friedrich Nietzsche",
 	},
 	{
 		quote:
