@@ -96,7 +96,7 @@ export const MENU_ASIDE: MenuAsideType = {
 					},
 					{
 						itemLink: "https://tvn.pl/programy/top-model",
-						itemLinkText: "TVN. Top model",
+						itemLinkText: "TVN. Top Model",
 						itemLinkType: "linkOut",
 					},
 					{
