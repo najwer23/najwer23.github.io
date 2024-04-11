@@ -115,7 +115,7 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "linkOut",
 					},
 					{
-						itemLink: "#",
+						itemLink: "https://tvn24.pl/wybory-samorzadowe-2024",
 						itemLinkText: "TVN24. Polish Local Government Elections 2024",
 						itemLinkType: "linkOut",
 					},
