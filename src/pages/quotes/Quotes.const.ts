@@ -11,6 +11,30 @@ export const QUOTES = [
 	},
 	{
 		quote:
+			"He suffers more than necessary, who suffers before it is necessary.",
+		author: "Seneca",
+	},
+	{
+		quote:
+			"The pursuit of contentment, according to Seneca, is more fulfilling than the unending chase for more, defining real wealth as inner richness.",
+		author: "Seneca",
+	},
+	{
+		quote: "‍We suffer more often in imagination than in reality.",
+		author: "Seneca",
+	},
+	{
+		quote:
+			"‍True wisdom comes to each of us when we realize how little we understand about life, ourselves, and the world around us.",
+		author: "Seneca",
+	},
+	{
+		quote:
+			"‍He who fears death will never do anything worth of a man who is alive.",
+		author: "Seneca",
+	},
+	{
+		quote:
 			"The happiness of your life depends upon the quality of your thoughts.",
 		author: "Marcus Aurelius",
 	},
