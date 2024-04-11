@@ -2,7 +2,7 @@ export const GALLERY = [
 	{
 		src: "https://i.ibb.co/K54ZdyB/mountains-100367.jpg",
 		alt: "Flying birds",
-		ar: 101/67
+		ar: 101 / 67,
 	},
 	{
 		src: "https://i.ibb.co/31jnK3Y/Sagrada-Familia-2021.jpg",
@@ -77,6 +77,27 @@ export const GALLERY = [
 	{
 		src: "https://i.ibb.co/t8kdHrB/71c30ea8-2b4e-48ba-980b-b222c5dcaa38.webp",
 		alt: "Croatia",
-		ar: 800 / 533
+		ar: 800 / 533,
 	},
+	{
+		src: "https://i.ibb.co/H4Mch3B/barcelona-1545605-640.jpg",
+		alt: "La Pedrera / Casa Milà",
+		ar: 121 / 160,
+	},
+	{
+		src: "https://i.ibb.co/sJxhNVC/quadrant-magic-subirachs-portada-1024x488.jpg",
+		alt: "quadrant magic subirachs portada",
+		ar: 128 / 61,
+	},
+	{
+		src: "https://i.ibb.co/9tT9wfq/wroclaw-1511660-640.jpg",
+		alt: "Wroclaw",
+		ar: 128 / 85,
+	},
+	{
+		src: "https://i.ibb.co/Gs5K4pJ/318467739-179571174674590-2719368099439007366-n.jpg",
+		alt: "Jakuszyce",
+		ar: 4 / 3,
+	},
+
 ];
