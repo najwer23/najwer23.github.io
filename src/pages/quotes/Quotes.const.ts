@@ -25,6 +25,10 @@ export const QUOTES = [
 		author: " Friedrich Nietzsche",
 	},
 	{
+		quote: "Only ideas won by walking have any value.",
+		author: " Friedrich Nietzsche",
+	},
+	{
 		quote: "‍We suffer more often in imagination than in reality.",
 		author: "Seneca",
 	},
