@@ -17,6 +17,7 @@
 		height: auto;
 		border: 2px solid black;
 		box-sizing: border-box;
+		background-color: #c8c4c4;
 
 		& img {
 			display: grid;
