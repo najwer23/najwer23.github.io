@@ -19,8 +19,12 @@ export const GalleryPic = ({ src, alt, ar }: Props) => {
 	const [srcImg, setSrcImg] = useState("https://i.ibb.co/PGXfnCw/Bez-tytu-u.jpg");
 
 	useEffect(() => {
-		const load = async () => await loadImg(src).then((src) => setSrcImg(src));
-		load();
+		const timeoutId = setTimeout(() => {
+			const load = async () => await loadImg(src).then((src) => setSrcImg(src));
+			load();
+		}, 200);
+
+		return () => clearTimeout(timeoutId);
 	}, [src, setSrcImg]);
 
 	return (
