@@ -4,7 +4,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
-interface NasaData {
+interface ApodData {
 	title: string;
 	explanation: string;
 	media_type: "image" | "video";
@@ -12,18 +12,18 @@ interface NasaData {
 	url: string;
 }
 
-interface NasaResponse {
-	data: NasaData[]
+interface ApodResponse {
+	data: ApodData[]
 }
 
-export const Nasa = () => {
+export const Apod = () => {
 	let origin = "https://zany-ray-bonnet.cyclic.app";
 
-	const { data, status } = useFetch<NasaResponse>(origin + `/najwer23api/nasa/apod`, {
+	const { data, status } = useFetch<ApodResponse>(origin + `/najwer23api/nasa/apod&offset=30&page=1`, {
 		method: "GET",
 	})
 
-	return <div className={styles["nasa"]}>
+	return <div className={styles["apod"]}>
 		<Text kind='h2'> APOD Generator from NASA </Text>
 		<br />
 		<br />

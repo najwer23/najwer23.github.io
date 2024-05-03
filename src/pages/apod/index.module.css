@@ -1,5 +1,5 @@
-@layer nasa {
-	.nasa {
+@layer apod {
+	.apod {
 		margin-bottom: 150px;
 		padding: 40px 100px 0 100px;
 		min-height: 80vh;
