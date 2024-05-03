@@ -2557,7 +2557,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^4.6.2"
     eslint-plugin-react-refresh: "npm:^0.4.6"
     gh-pages: "npm:^6.1.1"
-    najwer23storybook: "npm:^4.1.79"
+    najwer23storybook: "npm:^4.1.80"
     react: "npm:^18.3.1"
     react-chartjs-2: "npm:5.2.0"
     react-dom: "npm:^18.3.1"
@@ -2568,13 +2568,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"najwer23storybook@npm:^4.1.79":
-  version: 4.1.79
-  resolution: "najwer23storybook@npm:4.1.79"
+"najwer23storybook@npm:^4.1.80":
+  version: 4.1.80
+  resolution: "najwer23storybook@npm:4.1.80"
   peerDependencies:
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 02cf0d144f86c50355ca05140d1568ed376da596c3b8fad617d9eae89fee8223a5f0dcd9739e4a7f42e267f36dd18dde262f88ba3bd1238eb4b2ae9fb6754331
+  checksum: 1dc587a2844d5a56d4a7ad45fa0fb6ed11a8fd1f348cbd248b0ca321a8b43618414a99ed74733c300fdb3f34019257e70dc13c1ec0ebc6a290e2fcc7a17ff5ae
   languageName: node
   linkType: hard
 
