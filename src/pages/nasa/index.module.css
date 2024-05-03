@@ -1,0 +1,41 @@
+@layer nasa {
+	.nasa {
+		margin-bottom: 150px;
+		padding: 40px 100px 0 100px;
+		min-height: 80vh;
+
+		font-weight: var(--n23-font-weight-normal);
+		font-family: var(--n23-font-family);
+
+		& section:not(:last-child) {
+			margin-bottom: 150px;
+		}
+
+		& img {
+			aspect-ratio: 2.5/1;
+			object-fit: contain;
+			object-position: left;
+			width: 100%;
+			height: auto;
+		}
+
+		@media (max-width: 575.98px) {
+			& img {
+				aspect-ratio: unset;
+				object-fit: cover;
+				object-position: center;
+				width: 100%;
+				height: 300px;
+			}
+
+			& section:not(:last-child) {
+				margin-bottom: 100px;
+			}
+
+		}
+
+		@media (max-width: 1199.98px) {
+			padding: 50px 35px 0 35px;
+		}
+	}
+}

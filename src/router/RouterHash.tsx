@@ -6,6 +6,7 @@ import { ScrollToTop } from "./ScrollToTop";
 import { Gallery } from "../pages/gallery/Gallery";
 import { Quotes } from "../pages/quotes/Quotes";
 import { Error404 } from "../pages/error404/Error404";
+import { Nasa } from "../pages/nasa/Nasa";
 
 export const router = createHashRouter([
 	{
@@ -51,6 +52,15 @@ export const router = createHashRouter([
 			<>
 				<ScrollToTop />
 				<Quotes />
+			</>
+		),
+	},
+	{
+		path: "/nasa",
+		element: (
+			<>
+				<ScrollToTop />
+				<Nasa />
 			</>
 		),
 	},

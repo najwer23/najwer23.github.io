@@ -27,6 +27,11 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "hash",
 					},
 					{
+						itemLink: "nasa",
+						itemLinkText: "APOD Generator from NASA",
+						itemLinkType: "hash",
+					},
+					{
 						itemLink: "contact",
 						itemLinkText: "Contact",
 						itemLinkType: "hash",
