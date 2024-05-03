@@ -24,7 +24,7 @@ export const Apod = () => {
 	})
 
 	return <div className={styles["apod"]}>
-		<Text kind='h2'> APOD Generator from NASA </Text>
+		<Text kind='h2'> APOD - NASA </Text>
 		<br />
 		<br />
 		<br />
