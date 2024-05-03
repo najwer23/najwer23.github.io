@@ -24,7 +24,7 @@ export const Apod = () => {
 	})
 
 	return <div className={styles["apod"]}>
-		<Text kind='h2'> APOD - NASA </Text>
+		<Text kind='h2'> NASA - APOD</Text>
 		<br />
 		<br />
 		<br />
