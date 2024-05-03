@@ -1,6 +1,7 @@
 import { MenuAsideType } from "najwer23storybook/lib/MenuAside/index.types";
 
 export const MENU_ASIDE: MenuAsideType = {
+	menuTitle: "N",
 	menuItems: [
 		[
 			{
@@ -28,7 +29,7 @@ export const MENU_ASIDE: MenuAsideType = {
 					},
 					{
 						itemLink: "apod",
-						itemLinkText: "NASA - APOD",
+						itemLinkText: "NASA picture of the day",
 						itemLinkType: "hash",
 					},
 					{
@@ -36,11 +37,11 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkText: "Contact",
 						itemLinkType: "hash",
 					},
-					{
-						itemLink: "404",
-						itemLinkText: "404",
-						itemLinkType: "hash",
-					},
+					// {
+					// 	itemLink: "404",
+					// 	itemLinkText: "404",
+					// 	itemLinkType: "hash",
+					// },
 				],
 			},
 			{
