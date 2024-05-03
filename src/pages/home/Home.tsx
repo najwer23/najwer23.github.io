@@ -22,6 +22,14 @@ export const Home = () => {
 				</div>
 			</div>
 
+
+			<div className={styles["deathlyHallows"]} >
+				<div className={styles["veil"]}>
+					<div className={styles["stone"]}></div>
+					<div className={styles["wand"]}></div>
+				</div>
+			</div>
+
 			<div className={[styles["homeContent"], styles["last"]].join(' ')}>
 				<Text kind='h2'>
 					What is a Frontend Software Engineer?
