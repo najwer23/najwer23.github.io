@@ -33,11 +33,11 @@ export const Apod = () => {
 		{status !== "done" && <FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />}
 
 		{data && status === "done" &&
-			data.data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }) => (
+			data.data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
 				media_type === "image" &&
 				<section key={title}>
 					<div>
-						<img src={url} alt={title} loading="lazy" />
+						<img src={url} alt={title} loading={index === 0 ? "eager" : "lazy" }/>
 					</div>
 					<Text kind="h3"> {title} </Text>
 					<Text kind="pSmallBold"> {date} </Text>
