@@ -29,7 +29,7 @@ export const MENU_ASIDE: MenuAsideType = {
 					},
 					{
 						itemLink: "apod",
-						itemLinkText: "NASA picture of the day",
+						itemLinkText: "NASA - picture of the day",
 						itemLinkType: "hash",
 					},
 					{

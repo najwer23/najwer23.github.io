@@ -7,7 +7,7 @@
 		font-weight: var(--n23-font-weight-normal);
 		font-family: var(--n23-font-family);
 
-		& section:not(:last-child) {
+		& section:not(:last-of-type) {
 			margin-bottom: 150px;
 		}
 
@@ -31,11 +31,16 @@
 			& section:not(:last-child) {
 				margin-bottom: 100px;
 			}
-
 		}
 
 		@media (max-width: 1199.98px) {
 			padding: 50px 35px 0 35px;
+		}
+
+		.pagination {
+			margin-top: 85px;
+			display: flex;
+			gap: 10px;
 		}
 	}
 }

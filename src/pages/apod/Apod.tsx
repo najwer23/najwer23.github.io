@@ -3,6 +3,9 @@ import styles from './index.module.css'
 import { useFetch } from "../../hooks/useFetch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "najwer23storybook/lib/Button";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 interface ApodData {
 	title: string;
@@ -17,14 +20,27 @@ interface ApodResponse {
 }
 
 export const Apod = () => {
+	const { page } = useParams();
+	const currentPage = Number(page) || 1;
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		window.scrollTo({
+			top: currentPage == 1 ? 0 : 300,
+			behavior: "smooth",
+		});
+	}, [page]);
+
+	const onClickPagination = (number: number) => navigate("/apod/page/" + (currentPage + number));
+
 	let origin = "https://zany-ray-bonnet.cyclic.app";
 
-	const { data, status } = useFetch<ApodResponse>(origin + `/najwer23api/nasa/apod?offset=30&page=1`, {
+	const { data, status } = useFetch<ApodResponse>(origin + `/najwer23api/nasa/apod?offset=30&page=${currentPage}`, {
 		method: "GET",
 	})
 
 	return <div className={styles["apod"]}>
-		<Text kind='h2'> NASA picture of the day</Text>
+		<Text kind='h2'> NASA - picture of the day</Text>
 		<br />
 		<br />
 		<br />
@@ -33,18 +49,45 @@ export const Apod = () => {
 		{status !== "done" && <FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />}
 
 		{data && status === "done" &&
-			data.data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
-				media_type === "image" &&
-				<section key={title}>
-					<div>
-						<img src={url} alt={title} loading={index === 0 ? "eager" : "lazy" }/>
-					</div>
-					<Text kind="h3"> {title} </Text>
-					<Text kind="pSmallBold"> {date} </Text>
-					<Text kind="p"> {explanation} </Text>
-				</section>
 
-			))}
+			<>
 
+				{data.data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
+					media_type === "image" &&
+					<section key={title}>
+						<div>
+							<img src={url} alt={title} loading={index === 0 ? "eager" : "lazy"} />
+						</div>
+						<Text kind="h3"> {title} </Text>
+						<Text kind="pSmallBold"> {date} </Text>
+						<Text kind="p"> {explanation} </Text>
+					</section>
+
+				))}
+
+
+				<div className={styles["pagination"]}>
+					<Button
+						type={"button"}
+						text={"Prev"}
+						ariaLabel={"Prev page"}
+						onClick={() => onClickPagination(-1)}
+						disabled={currentPage < 2}
+					/>
+					<Button
+						type={"button"}
+						text={currentPage}
+						ariaLabel={"Page " + currentPage}
+						disabled
+					/>
+					<Button
+						type={"button"}
+						text={"Next"}
+						ariaLabel={"Next page"}
+						onClick={() => onClickPagination(1)}
+					/>
+				</div>
+			</>
+		}
 	</div>
 }

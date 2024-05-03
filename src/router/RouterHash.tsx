@@ -55,15 +55,15 @@ export const router = createHashRouter([
 			</>
 		),
 	},
-	{
-		path: "/apod",
+	...["/apod/page/:page", "/apod"].map(path => ({
+		path,
 		element: (
 			<>
 				<ScrollToTop />
 				<Apod />
 			</>
 		),
-	},
+	})),
 	{
 		path: "*",
 		element: (
