@@ -19,7 +19,7 @@ interface ApodResponse {
 export const Apod = () => {
 	let origin = "https://zany-ray-bonnet.cyclic.app";
 
-	const { data, status } = useFetch<ApodResponse>(origin + `/najwer23api/nasa/apod&offset=30&page=1`, {
+	const { data, status } = useFetch<ApodResponse>(origin + `/najwer23api/nasa/apod?offset=30&page=1`, {
 		method: "GET",
 	})
 
