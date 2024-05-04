@@ -29,15 +29,6 @@
 		}
 	}
 
-	.homeContentText2 {
-		font-weight: var(--n23-font-weight-bold);
-		font-family: var(--n23-font-family);
-		color: var(--n23-color-primary);
-		font-size: clamp(1.75rem, 0.93vw + 1.509rem, 2.625rem);
-		line-height: clamp(1.925rem, 1.58vw + 1.516rem, 3.413rem);
-		text-wrap: balance;
-	}
-
 	.socialMedia {
 		margin-top: 50px;
 		margin-bottom: 50px;

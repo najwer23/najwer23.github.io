@@ -12,7 +12,7 @@ export const Home = () => {
 			<TopNav />
 			<div className={styles["homeContent"]}>
 				<Text kind='h1'> Mariusz Najwer </Text>
-				<div className={styles["homeContentText2"]}>Frontend Software Engineer</div>
+				<Text kind='pSubTitle'> Frontend Software Engineer </Text>
 
 				<HomeSocialMedia />
 
