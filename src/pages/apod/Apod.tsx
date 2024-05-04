@@ -33,9 +33,7 @@ export const Apod = () => {
 
 	const onClickPagination = (number: number) => navigate("/apod/page/" + (currentPage + number));
 
-	let origin = "https://zany-ray-bonnet.cyclic.app";
-
-	const { data, status } = useFetch<ApodResponse>(origin + `/najwer23api/nasa/apod?offset=30&page=${currentPage}`, {
+	const { data, status } = useFetch<ApodResponse>(import.meta.env.VITE_NAJWER23API_ORIGIN_PROD + `/najwer23api/nasa/apod?offset=30&page=${currentPage}`, {
 		method: "GET",
 	})
 

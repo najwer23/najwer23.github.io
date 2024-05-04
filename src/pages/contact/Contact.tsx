@@ -15,7 +15,7 @@ export const Contact = (): JSX.Element => {
 	const email = useRef<HTMLInputElement>(null)
 	const msg = useRef<HTMLTextAreaElement>(null)
 
-	const { status, executeFetch } = useFetch<any>("https://zany-ray-bonnet.cyclic.app/najwer23api/contact-me", {
+	const { status, executeFetch } = useFetch<any>(import.meta.env.VITE_NAJWER23API_ORIGIN_PROD + "/najwer23api/contact-me", {
 		method: "POST",
 		credentials: "include",
 		headers: {

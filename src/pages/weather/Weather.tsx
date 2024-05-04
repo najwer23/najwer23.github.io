@@ -22,9 +22,8 @@ export const Weather = (): JSX.Element => {
 	const [coords, setCoords] = useState<{ value: string; label: string }>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
 	const lat = coords.value.split(":")[0];
 	const lon = coords.value.split(":")[1];
-	let origin = "https://zany-ray-bonnet.cyclic.app";
 
-	const { data, status } = useFetch<any>(origin + `/najwer23api/forecast/onecall?lat=${lat}&lon=${lon}`, {
+	const { data, status } = useFetch<any>(import.meta.env.VITE_NAJWER23API_ORIGIN_PROD + `/najwer23api/forecast/onecall?lat=${lat}&lon=${lon}`, {
 		method: "GET",
 		credentials: "include",
 		headers: {
