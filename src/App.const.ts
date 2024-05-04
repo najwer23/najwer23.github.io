@@ -63,7 +63,7 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "linkOut",
 					},
 					{
-						itemLink: "https://jabber.cyclic.app/",
+						itemLink: "https://jabber23.vercel.app/",
 						itemLinkText: "Jabber",
 						itemLinkType: "linkOut",
 					},
