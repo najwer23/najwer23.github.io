@@ -1,10 +1,10 @@
 {
   "name": "najwer23.github.io",
-  "version": "4.1.52",
+  "version": "4.2.0",
   "type": "module",
   "homepage": "https://najwer23.github.io/",
   "scripts": {
-    "deploy": "npm version patch --force && yarn run build && gh-pages -d build && rimraf build",
+    "deploy": "yarn run build && gh-pages -d build && rimraf build",
     "start": "vite --open --host",
     "build": "tsc && vite build",
     "preview": "yarn build && vite preview --open --host",
@@ -28,6 +28,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.6",
     "gh-pages": "^6.1.1",
+    "husky": "^9.0.11",
     "najwer23storybook": "^4.1.85",
     "react": "^18.3.1",
     "react-chartjs-2": "5.2.0",
@@ -37,5 +38,5 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.11"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.2.1"
 }
