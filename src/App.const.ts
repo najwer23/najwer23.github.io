@@ -68,8 +68,7 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "linkOut",
 					},
 					{
-						itemLink:
-							"https://najwer23.github.io/najwer23storybook/?path=/docs/getting-started--docs",
+						itemLink: "https://najwer23.github.io/najwer23storybook",
 						itemLinkText: "Design system",
 						itemLinkType: "linkOut",
 					},
