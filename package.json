@@ -1,6 +1,6 @@
 {
   "name": "najwer23.github.io",
-  "version": "4.2.4",
+  "version": "4.2.5",
   "type": "module",
   "homepage": "https://najwer23.github.io/",
   "scripts": {
@@ -17,7 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@types/chart.js": "^2.9.41",
-    "@types/node": "^20.12.8",
+    "@types/node": "^20.12.9",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
@@ -29,7 +29,7 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "gh-pages": "^6.1.1",
     "husky": "^9.0.11",
-    "najwer23storybook": "^4.1.97",
+    "najwer23storybook": "^4.1.101",
     "react": "^18.3.1",
     "react-chartjs-2": "5.2.0",
     "react-dom": "^18.3.1",
