@@ -37,7 +37,7 @@ export const Apod = () => {
 		method: "GET",
 	})
 
-	return <div className={styles["apod"]}>
+	return <div className={styles.apod}>
 		<Text kind='h2'> NASA - picture of the day</Text>
 		<br />
 		<br />
@@ -64,7 +64,7 @@ export const Apod = () => {
 				))}
 
 
-				<div className={styles["pagination"]}>
+				<div className={styles.pagination}>
 					<Button
 						type={"button"}
 						text={"Prev"}

@@ -6,7 +6,7 @@ import { GALLERY } from "./Gallery.const";
 
 // https://imgbb.com/
 export const Gallery = () => {
-	return <div className={styles["gallery"]}>
+	return <div className={styles.gallery}>
 		<Text kind='h2'> Gallery </Text>
 		<Text kind='p'>Wherever you go, go with all your heart</Text>
 		<br />

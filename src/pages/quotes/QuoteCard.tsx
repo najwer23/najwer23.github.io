@@ -9,8 +9,8 @@ interface Props {
 
 export const QuoteCard = ({ quote, author, quoteId }: Props) => {
 
-	return <div className={styles["quoteCard"]} >
-		<span className={styles["quoteCardId"]}>#{quoteId}</span>
+	return <div className={styles.quoteCard} >
+		<span className={styles.quoteCardId}>#{quoteId}</span>
 		<Text kind="p"> {quote} </Text>
 		<Text kind="pSmallBold"> ~{author} </Text>
 	</div>

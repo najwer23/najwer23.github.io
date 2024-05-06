@@ -74,14 +74,14 @@ export const Contact = (): JSX.Element => {
 	}
 
 	return (
-		<div className={styles["contact"]}>
+		<div className={styles.contact}>
 			<Text kind='h2'> Contact </Text>
 
 			<form onSubmit={handleSubmit}>
 
 				<br />
 
-				<div className={styles["customInputWrapper"]}>
+				<div className={styles.customInputWrapper}>
 					<Input
 						innerRef={email}
 						errorOptions={{
@@ -95,7 +95,7 @@ export const Contact = (): JSX.Element => {
 					/>
 				</div>
 
-				<div className={styles["customInputWrapper"]}>
+				<div className={styles.customInputWrapper}>
 					<Textarea
 						innerRef={msg}
 						errorOptions={{

@@ -28,7 +28,7 @@ export const GalleryPic = ({ src, alt, ar }: Props) => {
 	}, [src, setSrcImg]);
 
 	return (
-		<div className={styles["galleryPic"]} style={
+		<div className={styles.galleryPic} style={
 			{
 				"--n23-img-ar": ar ?? "auto",
 			} as React.CSSProperties}

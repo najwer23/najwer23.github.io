@@ -3,7 +3,7 @@ import { faAngleLeft, faAngleRight, faSpinner } from "@fortawesome/free-solid-sv
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Carousel } from "najwer23storybook/lib/Carousel";
 import { Button } from "najwer23storybook/lib/Button";
-import { ChartLine } from "../../components/charts/ChartLine"
+import { ChartLine } from "../../charts/ChartLine"
 import { useFetch } from "../../hooks/useFetch";
 import { sortByKeyArrObj } from "../../functions/sortByKeyArrObj";
 import { dateFormatterFromDt } from "../../functions/dateFormatterFromDt";
@@ -13,7 +13,7 @@ import { dataForLineChartTemp } from "./dataForLineChartTemp";
 import { dataForLineChartPressure } from "./dataForLineChartPressure";
 import { dataForLineChartWind } from "./dataForLineChartWind";
 import { dataForLineChartRainfall } from "./dataForLineChartRainfall";
-import { ChartMixed } from "../../components/charts/ChartMixed";
+import { ChartMixed } from "../../charts/ChartMixed";
 import { forecastDataFormat } from "./forecastDataFormat";
 import { WeatherImg } from "./WeatherImg";
 import { WeatherForecastData } from "./WeatherForecastData";
@@ -50,10 +50,10 @@ export const Weather = (): JSX.Element => {
 	const weatherCurrent = data?.data.current;
 
 	return (
-		<div className={styles["weather"]}>
+		<div className={styles.weather}>
 			<Text kind='h2'> Weather </Text>
 
-			<div className={styles["weatherSelectWrapper"]}>
+			<div className={styles.weatherSelectWrapper}>
 				{townListForSelect.map(({ value, label }) => (
 					<Button
 						key={value}
@@ -66,14 +66,14 @@ export const Weather = (): JSX.Element => {
 				))}
 			</div>
 
-			<div className={styles["weatherWrapper"]}>
+			<div className={styles.weatherWrapper}>
 
 				{status === "done" ? (
 					<Carousel
 						arrowLeftIcon={<FontAwesomeIcon icon={faAngleLeft} color={"white"} size={"lg"} />}
 						arrowRightIcon={<FontAwesomeIcon icon={faAngleRight} color={"white"} size={"lg"} />}
 					>
-						<div className={styles["weatherCurrent"]}>
+						<div className={styles.weatherCurrent}>
 							{status === "done" ? (
 								<>
 									<WeatherImg imgArr={weatherCurrent!.weather} />

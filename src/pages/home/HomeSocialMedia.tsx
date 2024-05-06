@@ -32,7 +32,7 @@ const SOCIAL_MEDIA = [
 
 
 export const HomeSocialMedia = () => {
-	return <div className={styles["socialMedia"]}>
+	return <div className={styles.socialMedia}>
 		{SOCIAL_MEDIA &&
 			SOCIAL_MEDIA.map(({ path, title, icon }) => (
 				<span key={path + title}>

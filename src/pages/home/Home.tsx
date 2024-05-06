@@ -1,4 +1,4 @@
-import { TopNav } from '../../components/topNav/TopNav'
+import { TopNav } from '../../topNav/TopNav'
 import styles from './index.module.css'
 
 import { Text } from "najwer23storybook/lib/Text";
@@ -10,27 +10,27 @@ export const Home = () => {
 	return (
 		<>
 			<TopNav />
-			<div className={styles["homeContent"]}>
+			<div className={styles.homeContent}>
 				<Text kind='h1'> Mariusz Najwer </Text>
 				<Text kind='pSubTitle'> Frontend Software Engineer </Text>
 
 				<HomeSocialMedia />
 
-				<div className={styles["pageLinks"]} >
+				<div className={styles.pageLinks} >
 					<a href='/#/contact'>Contact</a> <b>/</b>
 					<a href='/#/weather'>Weather</a>
 				</div>
 			</div>
 
 
-			<div className={styles["deathlyHallows"]} >
-				<div className={styles["veil"]}>
-					<div className={styles["stone"]}></div>
-					<div className={styles["wand"]}></div>
+			<div className={styles.deathlyHallows} >
+				<div className={styles.veil}>
+					<div className={styles.stone}></div>
+					<div className={styles.wand}></div>
 				</div>
 			</div>
 
-			<div className={[styles["homeContent"], styles["last"]].join(' ')}>
+			<div className={[styles.homeContent, styles.last].join(' ')}>
 				<Text kind='h2'>
 					What is a Frontend Software Engineer?
 				</Text>

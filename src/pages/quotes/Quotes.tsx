@@ -5,7 +5,7 @@ import { QuoteCard } from "./QuoteCard";
 import { QUOTES } from "./Quotes.const";
 
 export const Quotes = () => {
-	return <div className={styles["quotes"]}>
+	return <div className={styles.quotes}>
 		<Text kind='h2'> Quotes </Text>
 		<br />
 		<br />

@@ -8,13 +8,13 @@ import { MENU_ASIDE } from './App.const';
 
 export const App = () => {
 	return (
-		<div className={styles["container"]}>
+		<div className={styles.container}>
 
-			<div className={styles["asideMenu"]}>
+			<div className={styles.asideMenu}>
 				<MenuAside {...MENU_ASIDE} />
 			</div>
 
-			<div className={styles["routeDiv"]}>
+			<div className={styles.routeDiv}>
 				<RouterHash />
 				<Footer />
 			</div>
