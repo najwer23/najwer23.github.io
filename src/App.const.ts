@@ -13,6 +13,16 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "hash",
 					},
 					{
+						itemLink: "weather",
+						itemLinkText: "Weather",
+						itemLinkType: "hash",
+					},
+					{
+						itemLink: "contact",
+						itemLinkText: "Contact",
+						itemLinkType: "hash",
+					},
+					{
 						itemLink: "gallery",
 						itemLinkText: "Gallery",
 						itemLinkType: "hash",
@@ -23,18 +33,8 @@ export const MENU_ASIDE: MenuAsideType = {
 						itemLinkType: "hash",
 					},
 					{
-						itemLink: "weather",
-						itemLinkText: "Weather",
-						itemLinkType: "hash",
-					},
-					{
 						itemLink: "apod",
 						itemLinkText: "NASA - picture of the day",
-						itemLinkType: "hash",
-					},
-					{
-						itemLink: "contact",
-						itemLinkText: "Contact",
 						itemLinkType: "hash",
 					},
 					// {
