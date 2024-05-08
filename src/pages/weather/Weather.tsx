@@ -17,6 +17,7 @@ import { ChartMixed } from "../../charts/ChartMixed";
 import { forecastDataFormat } from "./forecastDataFormat";
 import { WeatherImg } from "./WeatherImg";
 import { WeatherForecastData } from "./WeatherForecastData";
+import { Container } from "najwer23storybook/lib/Container";
 
 export const Weather = (): JSX.Element => {
 	const [coords, setCoords] = useState<{ value: string; label: string }>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
@@ -50,7 +51,7 @@ export const Weather = (): JSX.Element => {
 	const weatherCurrent = data?.data.current;
 
 	return (
-		<div className={styles.weather}>
+		<Container kind="section">
 			<Text kind='h2'> Weather </Text>
 
 			<div className={styles.weatherSelectWrapper}>
@@ -196,6 +197,6 @@ export const Weather = (): JSX.Element => {
 				</div>
 			)}
 
-		</div>
+		</Container>
 	);
 }

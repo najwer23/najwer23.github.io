@@ -1,16 +1,4 @@
 @layer weather {
-	.weather {
-		margin-bottom: 150px;
-		padding: 40px 100px 0 100px;
-
-		@media (max-width: 1199.98px) {
-			padding: 50px 35px 0 35px;
-		}
-
-		font-weight: var(--n23-font-weight-normal);
-		font-family: var(--n23-font-family);
-	}
-
 	.weatherSelectWrapper {
 		margin-top: 30px;
 		margin-bottom: 30px;

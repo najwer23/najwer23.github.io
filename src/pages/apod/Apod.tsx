@@ -6,6 +6,9 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "najwer23storybook/lib/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
+import { Container } from "najwer23storybook/lib/Container";
+import { Grid } from "najwer23storybook/lib/Grid";
+
 
 interface ApodData {
 	title: string;
@@ -37,55 +40,66 @@ export const Apod = () => {
 		method: "GET",
 	})
 
-	return <div className={styles.apod}>
-		<Text kind='h2'> NASA - picture of the day</Text>
-		<br />
-		<br />
-		<br />
-		<br />
+	return <Container kind="section">
+		<div className={styles.apod}>
 
-		{status !== "done" && <FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />}
+			<Text kind='h2'> NASA - picture of the day</Text>
+			<br />
+			<br />
+			<br />
+			<br />
 
-		{data && status === "done" &&
+			{status !== "done" && <FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />}
 
-			<>
+			{data && status === "done" &&
+				<>
+					{data.data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
+						media_type === "image" &&
+						<section key={title}>
+							<Grid gap={{
+								col: "100px",
+								row: "15px"
+							}} col={{
+								mobile: 1,
+								smallDesktop: 1,
+								desktop: 2,
+								tablet: 1
+							}}>
+								<div>
+									<Text kind="h3"> {title} </Text>
+									<Text kind="pSmallBold"> {date} </Text>
+									<Text kind="p"> {explanation} </Text>
+								</div>
+								<div>
+									<img src={url} alt={title} loading={index === 0 ? "eager" : "lazy"} />
+								</div>
+							</Grid>
+						</section>
+					))}
 
-				{data.data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
-					media_type === "image" &&
-					<section key={title}>
-						<div>
-							<img src={url} alt={title} loading={index === 0 ? "eager" : "lazy"} />
-						</div>
-						<Text kind="h3"> {title} </Text>
-						<Text kind="pSmallBold"> {date} </Text>
-						<Text kind="p"> {explanation} </Text>
-					</section>
-
-				))}
-
-
-				<div className={styles.pagination}>
-					<Button
-						type={"button"}
-						text={"Prev"}
-						ariaLabel={"Prev page"}
-						onClick={() => onClickPagination(-1)}
-						disabled={currentPage < 2}
-					/>
-					<Button
-						type={"button"}
-						text={currentPage}
-						ariaLabel={"Page " + currentPage}
-						disabled
-					/>
-					<Button
-						type={"button"}
-						text={"Next"}
-						ariaLabel={"Next page"}
-						onClick={() => onClickPagination(1)}
-					/>
-				</div>
-			</>
-		}
-	</div>
+					<div className={styles.pagination}>
+						<Button
+							type={"button"}
+							text={"Prev"}
+							ariaLabel={"Prev page"}
+							onClick={() => onClickPagination(-1)}
+							disabled={currentPage < 2}
+						/>
+						<Button
+							type={"button"}
+							text={currentPage}
+							ariaLabel={"Page " + currentPage}
+							disabled
+						/>
+						<Button
+							type={"button"}
+							text={"Next"}
+							ariaLabel={"Next page"}
+							onClick={() => onClickPagination(1)}
+						/>
+					</div>
+				</>
+			}
+		</div>
+	</Container>
 }

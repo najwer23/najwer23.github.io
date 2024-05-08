@@ -5,15 +5,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding-left: 100px;
-		padding-right: 100px;
 		box-sizing: border-box;
-
-		@media (max-width: 1199.98px) {
-			padding-left: 35px;
-			padding-right: 35px;
-		}
-
 		font-family: var(--n23-font-family);
 		font-size: var(--n23-font-size-normal);
 		font-weight: var(--n23-font-weight-normal);

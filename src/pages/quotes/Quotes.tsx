@@ -1,11 +1,11 @@
 import { Text } from "najwer23storybook/lib/Text";
 import { GridMasonry } from "najwer23storybook/lib/GridMasonry"
-import styles from './index.module.css'
 import { QuoteCard } from "./QuoteCard";
 import { QUOTES } from "./Quotes.const";
+import { Container } from "najwer23storybook/lib/Container";
 
 export const Quotes = () => {
-	return <div className={styles.quotes}>
+	return <Container kind="section">
 		<Text kind='h2'> Quotes </Text>
 		<br />
 		<br />
@@ -20,9 +20,9 @@ export const Quotes = () => {
 		}} >
 			{QUOTES &&
 				QUOTES.map(({ quote, author }, id) => (
-					<QuoteCard quote={quote} author={author} quoteId={id+1} key={id} />
+					<QuoteCard quote={quote} author={author} quoteId={id + 1} key={id} />
 				))}
 		</GridMasonry>
 
-	</div>
+	</Container>
 }

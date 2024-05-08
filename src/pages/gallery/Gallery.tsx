@@ -1,12 +1,12 @@
 import { Text } from "najwer23storybook/lib/Text";
-import styles from './index.module.css'
 import { GridMasonry } from "najwer23storybook/lib/GridMasonry";
 import { GalleryPic } from "./GalleryPic";
 import { GALLERY } from "./Gallery.const";
+import { Container } from "najwer23storybook/lib/Container";
 
 // https://imgbb.com/
 export const Gallery = () => {
-	return <div className={styles.gallery}>
+	return <Container kind="section">
 		<Text kind='h2'> Gallery </Text>
 		<Text kind='p'>Wherever you go, go with all your heart</Text>
 		<br />
@@ -27,5 +27,5 @@ export const Gallery = () => {
 				))}
 
 		</GridMasonry>
-	</div>
+	</Container>
 }

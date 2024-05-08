@@ -7,6 +7,7 @@ import { Input } from "najwer23storybook/lib/Input";
 import { Textarea } from "najwer23storybook/lib/Textarea";
 import { Button } from "najwer23storybook/lib/Button";
 import { Text } from "najwer23storybook/lib/Text";
+import { Container } from "najwer23storybook/lib/Container";
 
 
 export const Contact = (): JSX.Element => {
@@ -74,7 +75,7 @@ export const Contact = (): JSX.Element => {
 	}
 
 	return (
-		<div className={styles.contact}>
+		<Container kind="section">
 			<Text kind='h2'> Contact </Text>
 
 			<form onSubmit={handleSubmit}>
@@ -128,6 +129,6 @@ export const Contact = (): JSX.Element => {
 				</div>
 			)}
 
-		</div>
+		</Container>
 	)
 }
