@@ -5,7 +5,7 @@
 		padding-left: 100px;
 		padding-right: 100px;
 		padding-top: 125px;
-		padding-bottom: 0;
+		padding-bottom: 125px;
 
 		@media (max-width: 1199.98px) {
 			padding-left: 35px;
@@ -63,66 +63,5 @@
 				}
 			}
 		}
-	}
-
-	.deathlyHallows {
-		display: flex;
-		justify-content: flex-end;
-		padding-right: 110px;
-
-		@media (max-width: 1199.98px) {
-			display: none;
-		}
-	}
-
-	.veil {
-		width: 0;
-		height: 0;
-		border-right: 80px solid transparent;
-		border-bottom: 140px solid var(--n23-color-surface);
-		border-left: 80px solid transparent;
-		position: relative;
-	}
-
-	.veil:after {
-		width: 0;
-		height: 0;
-		border-right: 90px solid transparent;
-		border-bottom: 160px solid var(--n23-color-font);
-		border-left: 90px solid transparent;
-		position: absolute;
-		top: -13.5px;
-		left: -90px;
-		z-index: -1;
-		content: "";
-	}
-
-	.stone {
-		width: 95px;
-		height: 95px;
-		border: 5px solid var(--n23-color-font);
-		border-radius: 50%;
-		position: relative;
-		left: -53px;
-		bottom: -41px;
-		transition: left 1s;
-	}
-
-	.veil:hover > .stone {
-		left: -200px;
-	}
-
-	.wand {
-		width: 5px;
-		height: 145px;
-		background: var(--n23-color-font);
-		position: absolute;
-		top: 0px;
-		left: -2.5px;
-		transition: left 1s;
-	}
-
-	.veil:hover > .wand {
-		left: 110px;
 	}
 }
