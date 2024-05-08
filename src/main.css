@@ -1,7 +1,7 @@
 :root {
 	--n23-color-primary: #7a2e44;
 	--n23-color-on-primary: #324186;
-	--n23-color-on-primary-active: #232F5C;
+	--n23-color-on-primary-active: #232f5c;
 	--n23-color-secondary: #6a288a;
 	--n23-color-on-secondary: #184a4e;
 
@@ -13,13 +13,14 @@
 	--n23-asideMenu-mobile-background-color: #eee;
 	--n23-asideMenu-border-right-color: var(--n23-color-font);
 
-	--n23-color-error: #FF3333;
+	--n23-color-error: #ff3333;
 	--n23-color-success: #1f5120;
 	--n23-color-warning: #424242;
 
-	--n23-grey: #4D4D4D;
+	--n23-grey: #4d4d4d;
 
-	--n23-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	--n23-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+		0 17px 50px 0 rgba(0, 0, 0, 0.19);
 
 	--n23-font-weight-thiner: 200;
 	--n23-font-weight-thin: 400;
@@ -42,6 +43,18 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: var(--n23-color-surface);
+}
+
+html:has(div[class^="index-module_masonryContainer"]) {
+	& {
+		overflow-y: scroll;
+	}
+}
+
+html:has(div[class^="index-module_homeContent"]) {
+	footer {
+		display: none;
+	}
 }
 
 @media (max-width: 575.98px) {

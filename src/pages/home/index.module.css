@@ -10,10 +10,4 @@
 			margin-right: 20px;
 		}
 	}
-
-	html:has(div[class^="index-module_homeContent"]) {
-		footer {
-			display: none;
-		}
-	}
 }

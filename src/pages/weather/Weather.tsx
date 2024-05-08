@@ -75,23 +75,17 @@ export const Weather = (): JSX.Element => {
 						arrowRightIcon={<FontAwesomeIcon icon={faAngleRight} color={"white"} size={"lg"} />}
 					>
 						<div className={styles.weatherCurrent}>
-							{status === "done" ? (
-								<>
-									<WeatherImg imgArr={weatherCurrent!.weather} />
-									<WeatherForecastData title={"dayOfWeek"} value={weatherCurrent!.dt} />
-									<WeatherForecastData title={"Temp"} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
-									<WeatherForecastData title={"Sunrise"} value={dateFormatterFromDt(weatherCurrent!.sunrise)?.split(",")[1] ?? ""} />
-									<WeatherForecastData title={"Sunset"} value={dateFormatterFromDt(weatherCurrent!.sunset)?.split(",")[1]?? ""} />
-									<WeatherForecastData title={"Wind"} value={forecastDataFormat(weatherCurrent!.wind_speed, 1)} />
-									<WeatherForecastData title={"Pressure"} value={forecastDataFormat(weatherCurrent!.pressure, 3)} />
-									<WeatherForecastData title={"Humidity"} value={forecastDataFormat(weatherCurrent!.humidity, 2)} />
-									<WeatherForecastData title={"Clouds"} value={forecastDataFormat(weatherCurrent!.clouds, 2)} />
-									<WeatherForecastData title={"Lat"} value={forecastDataFormat(coords.value?.split(":")[0], 5)} />
-									<WeatherForecastData title={"Lon"} value={forecastDataFormat(coords.value?.split(":")[1], 5)} />
-								</>
-							) : (
-								<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
-							)}
+							<WeatherImg imgArr={weatherCurrent!.weather} />
+							<WeatherForecastData title={"dayOfWeek"} value={weatherCurrent!.dt} />
+							<WeatherForecastData title={"Temp"} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
+							<WeatherForecastData title={"Sunrise"} value={dateFormatterFromDt(weatherCurrent!.sunrise)?.split(",")[1] ?? ""} />
+							<WeatherForecastData title={"Sunset"} value={dateFormatterFromDt(weatherCurrent!.sunset)?.split(",")[1] ?? ""} />
+							<WeatherForecastData title={"Wind"} value={forecastDataFormat(weatherCurrent!.wind_speed, 1)} />
+							<WeatherForecastData title={"Pressure"} value={forecastDataFormat(weatherCurrent!.pressure, 3)} />
+							<WeatherForecastData title={"Humidity"} value={forecastDataFormat(weatherCurrent!.humidity, 2)} />
+							<WeatherForecastData title={"Clouds"} value={forecastDataFormat(weatherCurrent!.clouds, 2)} />
+							<WeatherForecastData title={"Lat"} value={forecastDataFormat(coords.value?.split(":")[0], 5)} />
+							<WeatherForecastData title={"Lon"} value={forecastDataFormat(coords.value?.split(":")[1], 5)} />
 						</div>
 
 						{weather8Days && weather8Days.filter((_: unknown, i: number) => i !== 0).map((x: any) => (
