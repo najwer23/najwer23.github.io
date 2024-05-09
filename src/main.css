@@ -51,12 +51,6 @@ html:has(div[class^="index-module_masonryContainer"]) {
 	}
 }
 
-html:has(div[class^="index-module_homeContent"]) {
-	footer {
-		visibility: hidden;
-	}
-}
-
 @media (max-width: 575.98px) {
 }
 

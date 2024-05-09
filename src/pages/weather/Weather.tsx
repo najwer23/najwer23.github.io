@@ -18,6 +18,7 @@ import { forecastDataFormat } from "./forecastDataFormat";
 import { WeatherImg } from "./WeatherImg";
 import { WeatherForecastData } from "./WeatherForecastData";
 import { Container } from "najwer23storybook/lib/Container";
+import { Footer } from "najwer23storybook/lib/Footer";
 
 export const Weather = (): JSX.Element => {
 	const [coords, setCoords] = useState<{ value: string; label: string }>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
@@ -190,7 +191,7 @@ export const Weather = (): JSX.Element => {
 					<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
 				</div>
 			)}
-
+			<Footer />
 		</Container>
 	);
 }

@@ -8,7 +8,7 @@ import { Textarea } from "najwer23storybook/lib/Textarea";
 import { Button } from "najwer23storybook/lib/Button";
 import { Text } from "najwer23storybook/lib/Text";
 import { Container } from "najwer23storybook/lib/Container";
-
+import { Footer } from "najwer23storybook/lib/Footer";
 
 export const Contact = (): JSX.Element => {
 	const [form, setForm] = useState<{ [key: string]: boolean }>({})
@@ -128,7 +128,7 @@ export const Contact = (): JSX.Element => {
 					Email sent :)
 				</div>
 			)}
-
+			<Footer />
 		</Container>
 	)
 }

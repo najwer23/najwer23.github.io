@@ -8,7 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { Container } from "najwer23storybook/lib/Container";
 import { Grid } from "najwer23storybook/lib/Grid";
-
+import { Footer } from "najwer23storybook/lib/Footer";
 
 interface ApodData {
 	title: string;
@@ -101,5 +101,6 @@ export const Apod = () => {
 				</>
 			}
 		</div>
+		<Footer />
 	</Container>
 }
