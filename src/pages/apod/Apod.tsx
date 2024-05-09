@@ -46,8 +46,6 @@ export const Apod = () => {
 			<Text kind='h2'> NASA - picture of the day</Text>
 			<br />
 			<br />
-			<br />
-			<br />
 
 			{status !== "done" && <FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />}
 
