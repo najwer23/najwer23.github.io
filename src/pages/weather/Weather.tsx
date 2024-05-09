@@ -176,7 +176,7 @@ export const Weather = (): JSX.Element => {
 				<div
 					style={{
 						marginTop: "30px",
-						marginBottom: "50px",
+						marginBottom: "0",
 						height: "700px",
 					}}
 				>
