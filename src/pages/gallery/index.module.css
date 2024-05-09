@@ -2,14 +2,20 @@
 	.galleryPic {
 		width: 100%;
 		height: auto;
-		border: 2px solid black;
 		box-sizing: border-box;
-		background-color: #c8c4c4;
+		border: 2px solid black;
+		position: relative;
+	}
 
-		& img {
-			display: grid;
-			width: 100%;
-			aspect-ratio: var(--n23-img-ar);
-		}
+	.galleryPic img {
+		opacity: 0;
+		transition: opacity 250ms ease-in-out;
+		display: grid;
+		width: 100%;
+		aspect-ratio: var(--n23-img-ar);
+	}
+
+	.galleryPic.loaded img {
+		opacity: 1;
 	}
 }
