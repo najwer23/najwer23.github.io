@@ -99,5 +99,44 @@ export const GALLERY = [
 		alt: "Jakuszyce",
 		ar: 4 / 3,
 	},
-
+	{
+		src: "https://source.unsplash.com/random/500x700",
+		alt: "Random",
+		ar: 5 / 7,
+	},
+	{
+		src: "https://source.unsplash.com/random/600x600",
+		alt: "Random",
+		ar: 1,
+	},
+	{
+		src: "https://source.unsplash.com/random/400x700",
+		alt: "Random",
+		ar: 4 / 7,
+	},
+	{
+		src: "https://source.unsplash.com/random/800x700",
+		alt: "Random",
+		ar: 8 / 7,
+	},
+	{
+		src: "https://source.unsplash.com/random/900x700",
+		alt: "Random",
+		ar: 9 / 7,
+	},
+	{
+		src: "https://source.unsplash.com/random/400x400",
+		alt: "Random",
+		ar: 1 / 1,
+	},
+	{
+		src: "https://source.unsplash.com/random/800x400",
+		alt: "Random",
+		ar: 8 / 4,
+	},
+	{
+		src: "https://source.unsplash.com/random/300x400",
+		alt: "Random",
+		ar: 3 / 4,
+	},
 ];
