@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { Container } from "najwer23storybook/lib/Container";
 import { Grid } from "najwer23storybook/lib/Grid";
 import { Footer } from "najwer23storybook/lib/Footer";
+import { Picture } from "najwer23storybook/lib/Picture";
 
 interface ApodData {
 	title: string;
@@ -72,7 +73,7 @@ export const Apod = () => {
 											<Text kind="p"> {explanation} </Text>
 										</div>
 										<div>
-											<img src={url} alt={title} loading={index === 0 ? "eager" : "lazy"} />
+											<Picture src={url} alt={title} key={index} />
 										</div>
 									</>
 								}

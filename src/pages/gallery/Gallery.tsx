@@ -1,11 +1,10 @@
 import { Text } from "najwer23storybook/lib/Text";
 import { GridMasonry } from "najwer23storybook/lib/GridMasonry";
-import { GalleryPic } from "./GalleryPic";
 import { GALLERY } from "./Gallery.const";
 import { Container } from "najwer23storybook/lib/Container";
 import { useState } from "react";
 import { Footer } from "najwer23storybook/lib/Footer";
-
+import { Picture } from "najwer23storybook/lib/Picture";
 
 // https://imgbb.com/
 export const Gallery = () => {
@@ -27,10 +26,9 @@ export const Gallery = () => {
 		}}
 			onGridMasonryLoadEnd={(v) => setIsLoadEnd(v)}
 		>
-
 			{ GALLERY &&
 				GALLERY.map(({ src, alt, ar}, id) => (
-					<GalleryPic src={src} alt={alt} key={id} ar={ar}/>
+					<Picture src={src} alt={alt} key={id} ar={ar} kind="border"/>
 				))}
 		</GridMasonry>
 		{isLoadEnd && <Footer />}

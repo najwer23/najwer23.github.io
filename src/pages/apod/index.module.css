@@ -5,9 +5,7 @@
 		}
 
 		& img {
-			margin-top: 15px;
-			width: 100%;
-			height: auto;
+			margin-top: 25px;
 		}
 
 		@media (max-width: 575.98px) {
