@@ -57,20 +57,26 @@ export const Apod = () => {
 							<Grid gap={{
 								col: "100px",
 								row: "15px"
-							}} col={{
-								mobile: 1,
-								smallDesktop: 1,
-								desktop: 2,
-								tablet: 1
-							}}>
-								<div>
-									<Text kind="h3"> {title} </Text>
-									<Text kind="pSmallBold"> {date} </Text>
-									<Text kind="p"> {explanation} </Text>
-								</div>
-								<div>
-									<img src={url} alt={title} loading={index === 0 ? "eager" : "lazy"} />
-								</div>
+							}}
+								col={{
+									mobile: 1,
+									smallDesktop: 1,
+									desktop: 2,
+									tablet: 1
+								}}
+								children={
+									<>
+										<div>
+											<Text kind="h3"> {title} </Text>
+											<Text kind="pSmallBold"> {date} </Text>
+											<Text kind="p"> {explanation} </Text>
+										</div>
+										<div>
+											<img src={url} alt={title} loading={index === 0 ? "eager" : "lazy"} />
+										</div>
+									</>
+								}
+							>
 							</Grid>
 						</section>
 					))}
