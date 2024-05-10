@@ -72,9 +72,7 @@ export const Apod = () => {
 											<Text kind="pSmallBold"> {date} </Text>
 											<Text kind="p"> {explanation} </Text>
 										</div>
-										<div>
-											<Picture src={url} alt={title} key={index} />
-										</div>
+										<Picture src={url} alt={title} key={index} />
 									</>
 								}
 							>
