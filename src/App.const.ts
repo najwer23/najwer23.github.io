@@ -1,7 +1,6 @@
 import { MenuAsideType } from "najwer23storybook/lib/MenuAside/index.types";
 
 export const MENU_ASIDE: MenuAsideType = {
-	menuTitle: "N",
 	menuItems: [
 		[
 			{
