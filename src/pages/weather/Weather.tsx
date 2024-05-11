@@ -20,12 +20,12 @@ import { WeatherForecastData } from "./WeatherForecastData";
 import { Container } from "najwer23storybook/lib/Container";
 import { Footer } from "najwer23storybook/lib/Footer";
 
-export const Weather = (): JSX.Element => {
+export const Weather = () => {
 	const [coords, setCoords] = useState<{ value: string; label: string }>({ value: "51.1:17.0333", label: "Wrocław (PL)" });
 	const lat = coords.value.split(":")[0];
 	const lon = coords.value.split(":")[1];
 
-	const { data, status } = useFetch<any>(import.meta.env.VITE_NAJWER23API_ORIGIN_PROD + `/najwer23api/forecast/onecall?lat=${lat}&lon=${lon}`, {
+	const { data, status } = useFetch<any>(import.meta.env.VITE_NAJWER23API_FASTIFY_ORIGIN + `/openweathermap/forecast/onecall?lat=${lat}&lon=${lon}`, {
 		method: "GET",
 		credentials: "include",
 		headers: {
@@ -47,9 +47,9 @@ export const Weather = (): JSX.Element => {
 		]);
 	}, []);
 
-	const weather8Days = data?.data.daily;
-	const weatherHourly = data?.data.hourly;
-	const weatherCurrent = data?.data.current;
+	const weather8Days = data?.resOpenWeatherMap?.daily;
+	const weatherHourly = data?.resOpenWeatherMap?.hourly;
+	const weatherCurrent = data?.resOpenWeatherMap?.current;
 
 	return (
 		<Container kind="section">
