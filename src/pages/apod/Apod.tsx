@@ -11,16 +11,12 @@ import { Grid } from "najwer23storybook/lib/Grid";
 import { Footer } from "najwer23storybook/lib/Footer";
 import { Picture } from "najwer23storybook/lib/Picture";
 
-interface ApodData {
+interface ApodResponse {
 	title: string;
 	explanation: string;
 	media_type: "image" | "video";
 	date: string;
 	url: string;
-}
-
-interface ApodResponse {
-	data: ApodData[]
 }
 
 export const Apod = () => {
@@ -37,7 +33,7 @@ export const Apod = () => {
 
 	const onClickPagination = (number: number) => navigate("/apod/page/" + (currentPage + number));
 
-	const { data, status } = useFetch<ApodResponse>(import.meta.env.VITE_NAJWER23API_ORIGIN_PROD + `/najwer23api/nasa/apod?offset=30&page=${currentPage}`, {
+	const { data, status } = useFetch<ApodResponse[]>(import.meta.env.VITE_NAJWER23API_FASTIFY_ORIGIN + `/nasa/apod?offset=30&page=${currentPage}`, {
 		method: "GET",
 	})
 
@@ -52,7 +48,7 @@ export const Apod = () => {
 
 			{data && status === "done" &&
 				<>
-					{data.data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
+					{data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
 						media_type === "image" &&
 						<section key={title}>
 							<Grid gap={{
