@@ -46,12 +46,6 @@ body {
 	background-color: var(--n23-color-surface);
 }
 
-html:has(div[class^="index-module_masonryContainer"]) {
-	& {
-		overflow-y: scroll;
-	}
-}
-
 @media (max-width: 575.98px) {
 }
 
