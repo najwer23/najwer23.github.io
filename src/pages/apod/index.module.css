@@ -18,6 +18,14 @@
 			}
 		}
 
+		& span img {
+			@media (max-width: 575.98px) {
+				height: 200px;
+				width: auto;
+				object-fit: contain;
+			}
+		}
+
 		& dialog img {
 			margin-top: 0;
 		}
