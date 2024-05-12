@@ -18,6 +18,10 @@
 			}
 		}
 
+		& dialog img {
+			margin-top: 0;
+		}
+
 		.pagination {
 			margin-top: 85px;
 			display: flex;
