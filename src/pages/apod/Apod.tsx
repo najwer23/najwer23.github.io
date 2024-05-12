@@ -52,7 +52,7 @@ export const Apod = () => {
 
 			{data && status === "done" &&
 				<>
-				{data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date, hdurl }, index) => (
+				{data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
 						media_type === "image" &&
 						<section key={title}>
 							<Grid gap={{
