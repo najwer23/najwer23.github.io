@@ -79,12 +79,9 @@ export const Apod = () => {
 
 										<Dialog modalOpen={dialog[title] || false} modalClose={() => setDialog({ ...dialog, [title]: false })}>
 											<div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-												<div style={{ width: "min(100%,1000px)", height: "min(100%,1000px)" }}>
 													<Picture src={url} alt={title} key={index} />
-												</div>
 											</div>
 										</Dialog>
-
 									</>
 								}
 							>
