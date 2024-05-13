@@ -4,30 +4,24 @@
 			margin-bottom: 150px;
 		}
 
-		& img {
-			margin-top: 25px;
-		}
-
 		@media (max-width: 575.98px) {
 			& section:not(:last-child) {
 				margin-bottom: 100px;
 			}
-
-			& img {
-				margin-top: 0;
-			}
 		}
 
 		& span img {
+			margin-top: 25px;
 			@media (max-width: 575.98px) {
 				height: 200px;
 				width: auto;
 				object-fit: contain;
+				margin-top: 0;
 			}
 		}
 
 		& dialog img {
-			max-height: 70vh;
+			max-height: 75vh;
 			object-fit: contain;
 		}
 
