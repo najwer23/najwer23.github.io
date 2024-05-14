@@ -7,7 +7,7 @@ import { ChartLine } from "../../charts/ChartLine"
 import { useFetch } from "../../hooks/useFetch";
 import { sortByKeyArrObj } from "../../functions/sortByKeyArrObj";
 import { dateFormatterFromDt } from "../../functions/dateFormatterFromDt";
-import styles from './index.module.css'
+import styles from './Weather.module.css'
 import { Text } from "najwer23storybook/lib/Text";
 import { dataForLineChartTemp } from "./dataForLineChartTemp";
 import { dataForLineChartPressure } from "./dataForLineChartPressure";

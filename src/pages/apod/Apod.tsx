@@ -1,5 +1,5 @@
 import { Text } from "najwer23storybook/lib/Text";
-import styles from './index.module.css'
+import styles from './Apod.module.css'
 import { useFetch } from "../../hooks/useFetch";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";

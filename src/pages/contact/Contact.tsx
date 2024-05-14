@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
-import styles from './index.module.css'
+import styles from './Contact.module.css'
 import { useFetch } from "../../hooks/useFetch";
 import { Input } from "najwer23storybook/lib/Input";
 import { Textarea } from "najwer23storybook/lib/Textarea";

@@ -1,4 +1,4 @@
-import styles from './index.module.css'
+import styles from './QuoteCard.module.css'
 import { Text } from "najwer23storybook/lib/Text";
 
 interface Props {
