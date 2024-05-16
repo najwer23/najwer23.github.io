@@ -50,6 +50,7 @@ export const Apod = () => {
 					<br />
 					<Text kind="p"> Something went wrong :( </Text>
 				</div>
+				<Footer />
 			</Container>
 		)
 	}
