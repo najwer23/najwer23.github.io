@@ -41,6 +41,19 @@ export const Apod = () => {
 		method: "GET",
 	})
 
+	if (status === "error") {
+		return (
+			<Container kind="section">
+				<div className={styles.apod}>
+					<Text kind='h2'> NASA - picture of the day</Text>
+					<br />
+					<br />
+					<Text kind="p"> Something went wrong :( </Text>
+				</div>
+			</Container>
+		)
+	}
+
 	return <Container kind="section">
 		<div className={styles.apod}>
 
@@ -52,7 +65,7 @@ export const Apod = () => {
 
 			{data && status === "done" &&
 				<>
-				{data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
+					{data.sort((a, b) => b.date.localeCompare(a.date)).map(({ title, explanation, media_type, url, date }, index) => (
 						media_type === "image" &&
 						<section key={title}>
 							<Grid gap={{
@@ -73,13 +86,13 @@ export const Apod = () => {
 											<Text kind="p"> {explanation} </Text>
 										</div>
 
-										<span onClick={() => setDialog({ ...dialog, [title]: true })} style={{cursor: "pointer"}}>
+										<span onClick={() => setDialog({ ...dialog, [title]: true })} style={{ cursor: "pointer" }}>
 											<Picture src={url} alt={title} key={index} />
 										</span>
 
 										<Dialog modalOpen={dialog[title] || false} modalClose={() => setDialog({ ...dialog, [title]: false })}>
 											<div style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-													<Picture src={url} alt={title} key={index} />
+												<Picture src={url} alt={title} key={index} />
 											</div>
 										</Dialog>
 									</>
