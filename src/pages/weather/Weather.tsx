@@ -104,7 +104,7 @@ export const Weather = () => {
 						))}
 					</Carousel>
 				) : (
-					<div style={{ minHeight: "365px" }}>
+					<div style={{ minHeight: "440px" }}>
 						<FontAwesomeIcon icon={faSpinner} color={"black"} spinPulse size="2x" />
 					</div>
 				)}
