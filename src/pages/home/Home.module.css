@@ -4,6 +4,7 @@
 	.socialMedia {
 		margin-top: 50px;
 		margin-bottom: 50px;
+
 		& span {
 			font-size: clamp(2.375rem, 2.125vw + 1.825rem, 4.375rem);
 			line-height: clamp(3.563rem, 2.258vw + 2.978rem, 5.688rem);
