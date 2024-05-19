@@ -58,7 +58,7 @@ export const Apod = () => {
 	return <Container kind="section">
 		<div className={styles.apod}>
 
-			<Text kind='h2'> NASA - picture of the day</Text>
+			<Text kind='h2'> Picture of the day</Text>
 			<br />
 			<br />
 
