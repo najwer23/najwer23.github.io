@@ -6,6 +6,7 @@ export const WeatherImg = ({imgArr}: {imgArr: {icon: string}[]}) => {
 	} else {
 		return (
 			<img
+				draggable="false"
 				width="100px"
 				height="100px"
 				alt="weather img"
