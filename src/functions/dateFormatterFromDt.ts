@@ -9,6 +9,5 @@ export const dateFormatterFromDt = (dt: any): string | null => {
 				hour: "2-digit",
 				minute: "2-digit",
 				year: "numeric",
-				second: "2-digit",
 		  });
 };
