@@ -124,7 +124,7 @@ export const MENU_ASIDE: MenuTypes = {
 						itemLinkType: "linkOut",
 					},
 					{
-						itemLink: "#",
+						itemLink: "https://tvn24.pl/wybory-do-europarlamentu-2024",
 						itemLinkText: "TVN24. European Elections 2024",
 						itemLinkType: "linkOut",
 					},
