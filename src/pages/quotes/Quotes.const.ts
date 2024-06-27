@@ -1,6 +1,16 @@
 export const QUOTES = [
 	{
 		quote:
+			"I have never in my life learned anything from any man who agreed with me.",
+		author: "Dudley Field Malone",
+	},
+	{
+		quote:
+			"There are two ways of spreading light: to be the candle or the mirror that reflects it.",
+		author: "Edith Wharton",
+	},
+	{
+		quote:
 			"Think of yourself as dead. You have lived your life. Now, take what's left and live it properly. What doesn't transmit light creates its own darkness.",
 		author: "Marcus Aurelius",
 	},
