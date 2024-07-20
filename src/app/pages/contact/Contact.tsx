@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import styles from './Contact.module.css';
-import { useFetch } from '../../hooks/useFetch';
 import { Input } from 'najwer23storybook/lib/Input';
 import { Textarea } from 'najwer23storybook/lib/Textarea';
 import { Button } from 'najwer23storybook/lib/Button';
 import { Text } from 'najwer23storybook/lib/Text';
 import { Container } from 'najwer23storybook/lib/Container';
 import { Footer } from 'najwer23storybook/lib/Footer';
+import { useFetch } from '@najwer23/hooks/useFetch';
 
 export const Contact = (): JSX.Element => {
   const [form, setForm] = useState<{ [key: string]: boolean }>({});

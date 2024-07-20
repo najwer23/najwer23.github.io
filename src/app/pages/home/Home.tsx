@@ -1,11 +1,11 @@
 import { Text } from 'najwer23storybook/lib/Text';
 import { Container } from 'najwer23storybook/lib/Container';
-import { GithubLastMody } from '../../github/GithubLastMody';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faNpm, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import styles from './Home.module.css';
+import { GithubLastMody } from '@najwer23/github/GithubLastMody';
 
 const SOCIAL_MEDIA = [
   {

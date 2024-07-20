@@ -3,22 +3,22 @@ import { faAngleLeft, faAngleRight, faSpinner } from '@fortawesome/free-solid-sv
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Carousel } from 'najwer23storybook/lib/Carousel';
 import { Button } from 'najwer23storybook/lib/Button';
-import { ChartLine } from '../../charts/ChartLine';
-import { useFetch } from '../../hooks/useFetch';
-import { sortByKeyArrObj } from '../../functions/sortByKeyArrObj';
-import { dateFormatterFromDt } from '../../functions/dateFormatterFromDt';
 import styles from './Weather.module.css';
 import { Text } from 'najwer23storybook/lib/Text';
 import { dataForLineChartTemp } from './dataForLineChartTemp';
 import { dataForLineChartPressure } from './dataForLineChartPressure';
 import { dataForLineChartWind } from './dataForLineChartWind';
 import { dataForLineChartRainfall } from './dataForLineChartRainfall';
-import { ChartMixed } from '../../charts/ChartMixed';
 import { forecastDataFormat } from './forecastDataFormat';
 import { WeatherImg } from './WeatherImg';
 import { WeatherForecastData } from './WeatherForecastData';
 import { Container } from 'najwer23storybook/lib/Container';
 import { Footer } from 'najwer23storybook/lib/Footer';
+import { useFetch } from '@najwer23/hooks/useFetch';
+import { sortByKeyArrObj } from '@najwer23/functions/sortByKeyArrObj';
+import { dateFormatterFromDt } from '@najwer23/functions/dateFormatterFromDt';
+import { ChartLine } from '@najwer23/charts/ChartLine';
+import { ChartMixed } from '@najwer23/charts/ChartMixed';
 
 export const Weather = () => {
   const [coords, setCoords] = useState<{ value: string; label: string }>({

@@ -1,6 +1,5 @@
 import { Text } from 'najwer23storybook/lib/Text';
 import styles from './Apod.module.css';
-import { useFetch } from '../../hooks/useFetch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'najwer23storybook/lib/Button';
@@ -11,6 +10,7 @@ import { Grid } from 'najwer23storybook/lib/Grid';
 import { Footer } from 'najwer23storybook/lib/Footer';
 import { Picture } from 'najwer23storybook/lib/Picture';
 import { Dialog } from 'najwer23storybook/lib/Dialog';
+import { useFetch } from '@najwer23/hooks/useFetch';
 
 interface ApodResponse {
   title: string;

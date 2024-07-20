@@ -1,4 +1,4 @@
-import { dateFormatterFromDt } from '../../functions/dateFormatterFromDt';
+import { dateFormatterFromDt } from '@najwer23/functions/dateFormatterFromDt';
 import { Forecast } from './Weather.types';
 
 export const dataForLineChartPressure = (obj: Forecast[], sunrise: number, sunset: number) => {

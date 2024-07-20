@@ -1,6 +1,6 @@
-import { dateFormatterFromDt } from '../../functions/dateFormatterFromDt';
-import { forecastDataFormat } from './forecastDataFormat';
+import { dateFormatterFromDt } from '@najwer23/functions/dateFormatterFromDt';
 import styles from './Weather.module.css';
+import { forecastDataFormat } from './forecastDataFormat';
 
 export const WeatherForecastData = ({ title, value }: { title: string; value: string | number }) => {
   if (title === 'empty') {

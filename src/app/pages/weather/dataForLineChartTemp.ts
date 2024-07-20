@@ -1,7 +1,7 @@
-import { dateFormatterFromDt } from '../../functions/dateFormatterFromDt';
+import { dateFormatterFromDt } from '@najwer23/functions/dateFormatterFromDt';
 import { Forecast } from './Weather.types';
 
-export const dataForLineChartWind = (obj: Forecast[], sunrise: number, sunset: number) => {
+export const dataForLineChartTemp = (obj: Forecast[], sunrise: number, sunset: number) => {
   if (obj == null) {
     return null;
   }
@@ -9,22 +9,23 @@ export const dataForLineChartWind = (obj: Forecast[], sunrise: number, sunset: n
   let data = structuredClone(obj);
   let dataTempX: Array<number> = [];
   let dataTempY: Array<string | undefined> = [];
-
+  let dataTempX_FeelsLike: Array<number> = [];
   let dataNight: Array<number> = [];
   let minDataNight = Infinity;
   let maxDataNight = -Infinity;
 
-  for (let [, { wind_speed }] of data.entries()) {
-    minDataNight = Math.min(wind_speed * 3.6, minDataNight);
-    maxDataNight = Math.max(wind_speed * 3.6, maxDataNight);
+  for (let [, { temp, feels_like }] of data.entries()) {
+    minDataNight = Math.min(feels_like, temp, minDataNight);
+    maxDataNight = Math.max(feels_like, temp, maxDataNight);
   }
 
   minDataNight = Math.floor(minDataNight);
   maxDataNight = Math.ceil(maxDataNight);
 
-  for (let [, { dt, wind_speed }] of data.entries()) {
+  for (let [, { dt, temp, feels_like }] of data.entries()) {
     dataTempY.push(dateFormatterFromDt(dt)?.split(',')[1].slice(0, 6));
-    dataTempX.push(wind_speed * 3.6);
+    dataTempX.push(temp);
+    dataTempX_FeelsLike.push(feels_like);
 
     if (
       (dt >= sunrise && dt <= sunset) ||
@@ -41,11 +42,17 @@ export const dataForLineChartWind = (obj: Forecast[], sunrise: number, sunset: n
     labels: dataTempY,
     datasets: [
       {
-        label: 'Wind Speed',
+        label: 'Temperature',
         data: dataTempX,
-        borderColor: 'rgb(128,0,128)',
-        backgroundColor: 'rgb(128,0,128)',
-        pointBackgroundColor: 'rgb(128,0,128)',
+        borderColor: '#A80038',
+        backgroundColor: '#A80038',
+        lineTension: 0.5,
+      },
+      {
+        label: 'Temperature Feels Like',
+        data: dataTempX_FeelsLike,
+        borderColor: 'orangered',
+        backgroundColor: 'orangered',
         lineTension: 0.5,
       },
       {
