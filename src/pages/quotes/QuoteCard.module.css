@@ -1,15 +1,15 @@
 @layer quotes {
-	.quoteCard {
-		position: relative;
-		padding: 30px;
-		border: 5px solid #d3d3d3;
-	}
+  .quoteCard {
+    position: relative;
+    padding: 30px;
+    border: 5px solid #d3d3d3;
+  }
 
-	.quoteCardId {
-		position: absolute;
-		font-size: 15px;
-		bottom: 2.5px;
-		right: 5px;
-		color: black;
-	}
+  .quoteCardId {
+    position: absolute;
+    font-size: 15px;
+    bottom: 2.5px;
+    right: 5px;
+    color: black;
+  }
 }
