@@ -1,4 +1,4 @@
-import { isEmpty } from "@najwer23/functions/isEmpty";
+import { isEmpty } from '@najwer23/functions/isEmpty';
 
 export const WeatherImg = ({ imgArr }: { imgArr: { icon: string }[] }) => {
   if (isEmpty(imgArr)) {

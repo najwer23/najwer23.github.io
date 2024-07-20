@@ -1,4 +1,4 @@
-import { MenuTypes } from "najwer23storybook/lib/menu/Menu.types";
+import { MenuTypes } from 'najwer23storybook/lib/menu/Menu.types';
 
 export const MENU_ASIDE: MenuTypes = {
   menuItems: [
