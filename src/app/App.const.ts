@@ -126,6 +126,11 @@ export const MENU_ASIDE: MenuTypes = {
             itemLinkText: 'TVN24. European Elections 2024',
             itemLinkType: 'linkOut',
           },
+          {
+            itemLink: 'https://tvn24.pl/tvnwarszawa',
+            itemLinkText: 'TVN Warszawa',
+            itemLinkType: 'linkOut',
+          },
         ],
       },
     ],
