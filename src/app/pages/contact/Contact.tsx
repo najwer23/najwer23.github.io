@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import styles from './Contact.module.css';
@@ -10,12 +10,15 @@ import { Container } from 'najwer23storybook/lib/Container';
 import { Footer } from 'najwer23storybook/lib/Footer';
 import { useFetch } from '@najwer23/hooks/useFetch';
 
-export const Contact = (): JSX.Element => {
-  const [form, setForm] = useState<{ [key: string]: boolean }>({});
-  const [showMsg, setShowMsg] = useState<boolean>(false);
-  const email = useRef<HTMLInputElement>(null);
-  const msg = useRef<HTMLTextAreaElement>(null);
 
+export const Contact = (): JSX.Element => {
+  const [showMsg, setShowMsg] = useState<boolean>(false);
+  const [form, setForm] = useState(() => {
+    return ['email', 'msg'].reduce((acc, key) => {
+      acc[key] = { isError: false, value: '' };
+      return acc;
+    }, {} as { [key: string]: { isError: boolean; value: string } });
+  });
   const { status, executeFetch } = useFetch<any>(
     import.meta.env.VITE_NAJWER23API_FASTIFY_ORIGIN + '/mail/contact-me',
     {
@@ -32,45 +35,42 @@ export const Contact = (): JSX.Element => {
   useEffect(() => {
     if (status === 'done') {
       setShowMsg(true);
-
       const timeId = setTimeout(() => {
         setShowMsg(false);
       }, 3000);
-
       return () => clearTimeout(timeId);
     }
   }, [status]);
 
-  function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>): void {
+  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
-    let focusCheck = [email.current, msg.current];
+    const firstErrorKey = Object.keys(form).find(key => form[key].isError || form[key].value == '');
 
-    let skip = false;
-    focusCheck.map((v) => {
-      if ((form[v!.name] || form[v!.name] === undefined) && !skip) {
-        v!.focus();
-        skip = true;
+    if (firstErrorKey) {
+      const inputElement = document.getElementsByName(firstErrorKey)[0] as HTMLInputElement | HTMLTextAreaElement;
+      if (inputElement) {
+        inputElement.focus();
       }
-    });
-    if (skip) return;
-
-    if (Object.values(form).filter((v) => v).length === 0) {
-      if (executeFetch) {
-        let body = {
-          email: email.current!.value,
-          msg: msg.current!.value,
-        };
-        executeFetch(body);
-      }
-
-      msg.current!.value = '';
-      setForm({ ...form, [msg.current!.name]: true });
+      return;
     }
-  }
+
+    executeFetch?.({
+      email: form.email.value,
+      msg: form.msg.value,
+    });
+
+    setForm(prev => ({
+      ...prev,
+      msg: { ...prev.msg, value: '' },
+    }));
+  };
 
   const handleBlur = (e: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>, isError: boolean) => {
-    setForm({ ...form, [e.target.name]: isError });
+    setForm(prev => ({
+      ...prev,
+      [e.target.name]: { isError, value: e.target.value },
+    }));
   };
 
   return (
@@ -82,7 +82,6 @@ export const Contact = (): JSX.Element => {
 
         <div className={styles.customInputWrapper}>
           <Input
-            innerRef={email}
             errorOptions={{
               empty: true,
               email: true,
@@ -96,7 +95,6 @@ export const Contact = (): JSX.Element => {
 
         <div className={styles.customInputWrapper}>
           <Textarea
-            innerRef={msg}
             errorOptions={{
               empty: true,
             }}
