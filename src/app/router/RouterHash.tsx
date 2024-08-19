@@ -8,7 +8,7 @@ import { Quotes } from '../pages/quotes/Quotes';
 import { Error404 } from '../pages/error404/Error404';
 import { Apod } from '../pages/apod/Apod';
 
-const BASE_TITLE = "Mariusz Najwer - "
+const BASE_TITLE = 'Mariusz Najwer - ';
 
 export const router = createHashRouter([
   {

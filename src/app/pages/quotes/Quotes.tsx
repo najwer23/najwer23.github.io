@@ -8,13 +8,13 @@ import { Footer } from 'najwer23storybook/lib/Footer';
 import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
 interface Props {
-  title: string
+  title: string;
 }
 
-export const Quotes = ({title}: Props) => {
+export const Quotes = ({ title }: Props) => {
   const [isLoadEnd, setIsLoadEnd] = useState(false);
 
-  useDocumentTitle(title)
+  useDocumentTitle(title);
 
   return (
     <Container kind="section">

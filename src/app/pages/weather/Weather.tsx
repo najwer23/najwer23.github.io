@@ -22,11 +22,11 @@ import { ChartMixed } from '@najwer23/charts/ChartMixed';
 import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
 interface Props {
-  title: string
+  title: string;
 }
 
 export const Weather = ({ title }: Props) => {
-  useDocumentTitle(title)
+  useDocumentTitle(title);
 
   const [coords, setCoords] = useState<{ value: string; label: string }>({
     value: '51.1:17.0333',

@@ -12,16 +12,19 @@ import { useFetch } from '@najwer23/hooks/useFetch';
 import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
 interface Props {
-  title: string
+  title: string;
 }
 
-export const Contact = ({title}: Props) => {
+export const Contact = ({ title }: Props) => {
   const [showMsg, setShowMsg] = useState<boolean>(false);
   const [form, setForm] = useState(() => {
-    return ['email', 'msg'].reduce((acc, key) => {
-      acc[key] = { isError: false, value: '' };
-      return acc;
-    }, {} as { [key: string]: { isError: boolean; value: string } });
+    return ['email', 'msg'].reduce(
+      (acc, key) => {
+        acc[key] = { isError: false, value: '' };
+        return acc;
+      },
+      {} as { [key: string]: { isError: boolean; value: string } },
+    );
   });
   const { status, executeFetch } = useFetch<any>(
     import.meta.env.VITE_NAJWER23API_FASTIFY_ORIGIN + '/mail/contact-me',
@@ -36,7 +39,7 @@ export const Contact = ({title}: Props) => {
     false,
   );
 
-  useDocumentTitle(title)
+  useDocumentTitle(title);
 
   useEffect(() => {
     if (status === 'done') {
@@ -51,7 +54,7 @@ export const Contact = ({title}: Props) => {
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>): void => {
     e.preventDefault();
 
-    const firstErrorKey = Object.keys(form).find(key => form[key].isError || form[key].value == '');
+    const firstErrorKey = Object.keys(form).find((key) => form[key].isError || form[key].value == '');
 
     if (firstErrorKey) {
       const inputElement = document.getElementsByName(firstErrorKey)[0] as HTMLInputElement | HTMLTextAreaElement;
@@ -66,14 +69,14 @@ export const Contact = ({title}: Props) => {
       msg: form.msg.value,
     });
 
-    setForm(prev => ({
+    setForm((prev) => ({
       ...prev,
       msg: { ...prev.msg, value: '' },
     }));
   };
 
   const handleBlur = (e: React.FocusEvent<HTMLTextAreaElement | HTMLInputElement>, isError: boolean) => {
-    setForm(prev => ({
+    setForm((prev) => ({
       ...prev,
       [e.target.name]: { isError, value: e.target.value },
     }));

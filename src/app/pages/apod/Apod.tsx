@@ -23,7 +23,7 @@ interface ApodResponse {
 }
 
 interface Props {
-  title: string
+  title: string;
 }
 
 export const Apod = ({ title }: Props) => {
@@ -32,7 +32,7 @@ export const Apod = ({ title }: Props) => {
   const navigate = useNavigate();
   const [dialog, setDialog] = useState<{ [key: string]: boolean }>({});
 
-  useDocumentTitle(title + " - Page: " + currentPage)
+  useDocumentTitle(title + ' - Page: ' + currentPage);
 
   useEffect(() => {
     window.scrollTo({

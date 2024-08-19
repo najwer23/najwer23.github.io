@@ -8,14 +8,14 @@ import { Picture } from 'najwer23storybook/lib/Picture';
 import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
 interface Props {
-  title: string
+  title: string;
 }
 
 // https://imgbb.com/
-export const Gallery = ({title}: Props) => {
+export const Gallery = ({ title }: Props) => {
   const [isLoadEnd, setIsLoadEnd] = useState(false);
 
-  useDocumentTitle(title)
+  useDocumentTitle(title);
 
   return (
     <Container kind="section">

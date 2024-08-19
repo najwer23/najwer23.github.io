@@ -36,43 +36,45 @@ const SOCIAL_MEDIA = [
 ];
 
 interface Props {
-  title: string
+  title: string;
 }
 
 export const Home = ({ title }: Props) => {
-  useDocumentTitle(title)
+  useDocumentTitle(title);
 
-  return <>
-    <Container kind="nav">
-      <div className={styles.nav}>
-        <div className={styles.lastUpdate}>
-          <GithubLastMody repoName="najwer23.github.io" />
+  return (
+    <>
+      <Container kind="nav">
+        <div className={styles.nav}>
+          <div className={styles.lastUpdate}>
+            <GithubLastMody repoName="najwer23.github.io" />
+          </div>
+          <div className={styles.resumeLink}>
+            <a target="_blank" href="https://najwer23.github.io/resume/" rel="noreferrer">
+              Résumé
+            </a>
+          </div>
         </div>
-        <div className={styles.resumeLink}>
-          <a target="_blank" href="https://najwer23.github.io/resume/" rel="noreferrer">
-            Résumé
-          </a>
-        </div>
-      </div>
-    </Container>
-
-    <Container kind="main">
-      <Container kind="homeContent">
-        <Text kind="h1"> Mariusz Najwer </Text>
-        <Text kind="pSubTitle"> Frontend Software Engineer </Text>
-        <div className={styles.socialMedia}>
-          {SOCIAL_MEDIA.map(({ path, title, icon }) => (
-            <span key={path + title}>
-              <a href={path} target="_blank" rel="noopener noreferrer" aria-label={title} title={title}>
-                {icon}
-              </a>
-            </span>
-          ))}
-        </div>
-        <Text kind="p">
-          <i>„Great web design without functionality is like a sports car with no engine.”</i>
-        </Text>
       </Container>
-    </Container>
-  </>
+
+      <Container kind="main">
+        <Container kind="homeContent">
+          <Text kind="h1"> Mariusz Najwer </Text>
+          <Text kind="pSubTitle"> Frontend Software Engineer </Text>
+          <div className={styles.socialMedia}>
+            {SOCIAL_MEDIA.map(({ path, title, icon }) => (
+              <span key={path + title}>
+                <a href={path} target="_blank" rel="noopener noreferrer" aria-label={title} title={title}>
+                  {icon}
+                </a>
+              </span>
+            ))}
+          </div>
+          <Text kind="p">
+            <i>„Great web design without functionality is like a sports car with no engine.”</i>
+          </Text>
+        </Container>
+      </Container>
+    </>
+  );
 };

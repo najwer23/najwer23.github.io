@@ -42,7 +42,9 @@ export function useFetch<T = unknown>(url?: string, options?: any, executeOnMoun
       }
 
       const data = (await response.json()) as T;
-      options.method === 'GET' && setLocalStorageCookie(url, data, 0.5);
+      if (options.method === 'GET') {
+        setLocalStorageCookie(url, data, 0.5);
+      }
 
       if (cancelRequest.current) return;
       dispatch({ type: 'done', payload: data });
