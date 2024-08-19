@@ -19,8 +19,15 @@ import { sortByKeyArrObj } from '@najwer23/functions/sortByKeyArrObj';
 import { dateFormatterFromDt } from '@najwer23/functions/dateFormatterFromDt';
 import { ChartLine } from '@najwer23/charts/ChartLine';
 import { ChartMixed } from '@najwer23/charts/ChartMixed';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
-export const Weather = () => {
+interface Props {
+  title: string
+}
+
+export const Weather = ({ title }: Props) => {
+  useDocumentTitle(title)
+
   const [coords, setCoords] = useState<{ value: string; label: string }>({
     value: '51.1:17.0333',
     label: 'Wrocław (PL)',

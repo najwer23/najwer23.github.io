@@ -5,9 +5,16 @@ import { QUOTES } from './Quotes.const';
 import { Container } from 'najwer23storybook/lib/Container';
 import { useState } from 'react';
 import { Footer } from 'najwer23storybook/lib/Footer';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
-export const Quotes = () => {
+interface Props {
+  title: string
+}
+
+export const Quotes = ({title}: Props) => {
   const [isLoadEnd, setIsLoadEnd] = useState(false);
+
+  useDocumentTitle(title)
 
   return (
     <Container kind="section">

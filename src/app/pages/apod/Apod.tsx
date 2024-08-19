@@ -3,7 +3,7 @@ import styles from './Apod.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Button } from 'najwer23storybook/lib/Button';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Container } from 'najwer23storybook/lib/Container';
 import { Grid } from 'najwer23storybook/lib/Grid';
@@ -11,8 +11,7 @@ import { Footer } from 'najwer23storybook/lib/Footer';
 import { Picture } from 'najwer23storybook/lib/Picture';
 import { Dialog } from 'najwer23storybook/lib/Dialog';
 import { useFetch } from '@najwer23/hooks/useFetch';
-import ReactGA from 'react-ga4';
-
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
 interface ApodResponse {
   title: string;
@@ -23,20 +22,21 @@ interface ApodResponse {
   hdurl: string;
 }
 
-export const Apod = () => {
+interface Props {
+  title: string
+}
+
+export const Apod = ({ title }: Props) => {
   const { page } = useParams();
   const currentPage = Number(page) || 1;
   const navigate = useNavigate();
   const [dialog, setDialog] = useState<{ [key: string]: boolean }>({});
-  const location = useLocation();
 
-  useEffect(() => {
-    ReactGA.send({ hitType: "pageview", page: location.pathname });
-  }, [location])
+  useDocumentTitle(title + " - Page: " + currentPage)
 
   useEffect(() => {
     window.scrollTo({
-      top: currentPage == 1 ? 0 : 300,
+      top: currentPage == 1 ? 0 : 150,
       behavior: 'smooth',
     });
   }, [page]);

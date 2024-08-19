@@ -9,9 +9,13 @@ import { Text } from 'najwer23storybook/lib/Text';
 import { Container } from 'najwer23storybook/lib/Container';
 import { Footer } from 'najwer23storybook/lib/Footer';
 import { useFetch } from '@najwer23/hooks/useFetch';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
+interface Props {
+  title: string
+}
 
-export const Contact = (): JSX.Element => {
+export const Contact = ({title}: Props) => {
   const [showMsg, setShowMsg] = useState<boolean>(false);
   const [form, setForm] = useState(() => {
     return ['email', 'msg'].reduce((acc, key) => {
@@ -31,6 +35,8 @@ export const Contact = (): JSX.Element => {
     },
     false,
   );
+
+  useDocumentTitle(title)
 
   useEffect(() => {
     if (status === 'done') {

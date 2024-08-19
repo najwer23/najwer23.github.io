@@ -1,9 +1,16 @@
 import { Container } from 'najwer23storybook/lib/Container';
 import { Text } from 'najwer23storybook/lib/Text';
 import { Footer } from 'najwer23storybook/lib/Footer';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
-export const Error404 = (): JSX.Element => (
-  <Container kind="section">
+interface Props {
+  title: string
+}
+
+export const Error404 = ({ title }: Props) => {
+  useDocumentTitle(title)
+
+  return <Container kind="section">
     <Text kind="h2"> 404.. </Text>
     <br />
     <Text kind="p">
@@ -18,4 +25,4 @@ export const Error404 = (): JSX.Element => (
     </Text>
     <Footer />
   </Container>
-);
+};

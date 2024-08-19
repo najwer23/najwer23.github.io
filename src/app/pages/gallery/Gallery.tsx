@@ -5,10 +5,17 @@ import { Container } from 'najwer23storybook/lib/Container';
 import { useState } from 'react';
 import { Footer } from 'najwer23storybook/lib/Footer';
 import { Picture } from 'najwer23storybook/lib/Picture';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
+
+interface Props {
+  title: string
+}
 
 // https://imgbb.com/
-export const Gallery = () => {
+export const Gallery = ({title}: Props) => {
   const [isLoadEnd, setIsLoadEnd] = useState(false);
+
+  useDocumentTitle(title)
 
   return (
     <Container kind="section">

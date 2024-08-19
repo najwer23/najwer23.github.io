@@ -8,13 +8,15 @@ import { Quotes } from '../pages/quotes/Quotes';
 import { Error404 } from '../pages/error404/Error404';
 import { Apod } from '../pages/apod/Apod';
 
+const BASE_TITLE = "Mariusz Najwer - "
+
 export const router = createHashRouter([
   {
     path: '/',
     element: (
       <>
         <ScrollToTop />
-        <Home />
+        <Home title={`${BASE_TITLE}Home`} />
         {/* <ScrollRestoration /> */}
       </>
     ),
@@ -24,7 +26,7 @@ export const router = createHashRouter([
     element: (
       <>
         <ScrollToTop />
-        <Contact />
+        <Contact title={`${BASE_TITLE}Contact`} />
       </>
     ),
   },
@@ -33,7 +35,7 @@ export const router = createHashRouter([
     element: (
       <>
         <ScrollToTop />
-        <Weather />
+        <Weather title={`${BASE_TITLE}Weather`} />
       </>
     ),
   },
@@ -42,7 +44,7 @@ export const router = createHashRouter([
     element: (
       <>
         <ScrollToTop />
-        <Gallery />
+        <Gallery title={`${BASE_TITLE}Gallery`} />
       </>
     ),
   },
@@ -51,7 +53,7 @@ export const router = createHashRouter([
     element: (
       <>
         <ScrollToTop />
-        <Quotes />
+        <Quotes title={`${BASE_TITLE}Quotes`} />
       </>
     ),
   },
@@ -60,7 +62,7 @@ export const router = createHashRouter([
     element: (
       <>
         <ScrollToTop />
-        <Apod />
+        <Apod title={`${BASE_TITLE}Picture of the day`} />
       </>
     ),
   })),
@@ -68,7 +70,7 @@ export const router = createHashRouter([
     path: '*',
     element: (
       <>
-        <Error404 />
+        <Error404 title={`${BASE_TITLE}Error 404`} />
       </>
     ),
   },

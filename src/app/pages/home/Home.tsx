@@ -6,6 +6,7 @@ import { faGithub, faNpm, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import styles from './Home.module.css';
 import { GithubLastMody } from '@najwer23/github/GithubLastMody';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 
 const SOCIAL_MEDIA = [
   {
@@ -34,8 +35,14 @@ const SOCIAL_MEDIA = [
   },
 ];
 
-export const Home = () => (
-  <>
+interface Props {
+  title: string
+}
+
+export const Home = ({ title }: Props) => {
+  useDocumentTitle(title)
+
+  return <>
     <Container kind="nav">
       <div className={styles.nav}>
         <div className={styles.lastUpdate}>
@@ -68,4 +75,4 @@ export const Home = () => (
       </Container>
     </Container>
   </>
-);
+};
