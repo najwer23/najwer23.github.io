@@ -7,7 +7,7 @@ import { MENU_ASIDE } from './App.const';
 
 import ReactGA from 'react-ga4';
 
-ReactGA.initialize('GTM-MQF3H8WG');
+ReactGA.initialize('G-SMX3LNRJNF');
 
 export const App = () => (
   <div className={styles.container}>
