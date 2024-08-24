@@ -29,7 +29,7 @@ const SOCIAL_MEDIA = [
   },
   {
     title: 'NPM',
-    path: 'https://www.npmjs.com/package/najwer23storybook',
+    path: 'https://www.npmjs.com/~najwer23',
     icon: <FontAwesomeIcon icon={faNpm} color={'black'} />,
     outPage: true,
   },
