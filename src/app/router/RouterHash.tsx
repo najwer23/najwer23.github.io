@@ -3,6 +3,7 @@ import { Home } from '../pages/home/Home';
 import { Layout } from '../layout/Layout';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { ErrorNotFound } from '../pages/error/ErrorNotFound';
+import { Contact } from '../pages/contact/Contact';
 
 const BASE_TITLE = 'Mariusz Najwer | ';
 
@@ -23,6 +24,10 @@ const router = createHashRouter([
       {
         path: '/home',
         element: <Home title={`${BASE_TITLE}Home`} />,
+      },
+      { 
+        path: '/contact',
+        element: <Contact title={`${BASE_TITLE}Contact`} />,
       },
       {
         path: '*',
