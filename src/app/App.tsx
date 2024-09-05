@@ -1,22 +1,15 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RouterHash } from './router/RouterHash';
-
-import { MenuAside } from 'najwer23storybook/lib/MenuAside';
-
-import styles from './App.module.css';
-import { MENU_ASIDE } from './App.const';
-
 import ReactGA from 'react-ga4';
 
 ReactGA.initialize('G-SMX3LNRJNF');
 
-export const App = () => (
-  <div className={styles.container}>
-    <div className={styles.asideMenu}>
-      <MenuAside {...MENU_ASIDE} />
-    </div>
+const queryClient = new QueryClient();
 
-    <div className={styles.routeDiv}>
+export const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
       <RouterHash />
-    </div>
-  </div>
-);
+    </QueryClientProvider>
+  );
+};

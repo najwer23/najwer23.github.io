@@ -21,19 +21,19 @@ const dataInit = {
     {
       label: '',
       data: {},
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      borderColor: 'white',
+      backgroundColor: 'white',
     },
   ],
 };
 
 interface Props {
   title: string;
-  ySymbol: string;
+  ySymbol?: string;
   data: ChartData<'line'> | null;
 }
 
-export const ChartLine = ({ title, ySymbol, data }: Props) => {
+export const ChartLine = ({ title, ySymbol = '', data }: Props) => {
   const options: ChartOptions<'line'> = {
     maintainAspectRatio: false,
     responsive: true,
@@ -41,15 +41,15 @@ export const ChartLine = ({ title, ySymbol, data }: Props) => {
     plugins: {
       legend: {
         position: 'bottom',
-        // labels: {
-        // 	font: {
-        // 		weight: "bold"
-        // 	},
-        // 	color: "black"
-        // }
+        labels: {
+          font: {
+            weight: 'bold',
+          },
+          color: '#b0b3b7',
+        },
       },
       title: {
-        color: 'black',
+        color: '#b0b3b7',
         display: true,
         text: title,
         font: {
@@ -67,20 +67,20 @@ export const ChartLine = ({ title, ySymbol, data }: Props) => {
             return this.getLabelForValue(value as number) + ySymbol;
           },
           stepSize: 1,
-          color: 'black',
+          color: '#b0b3b7',
         },
         grid: {
-          color: 'lightgrey',
+          color: '#2a2d2f',
         },
       },
       x: {
         grid: {
-          color: 'lightgrey',
+          color: '#2a2d2f',
           // borderColor: "grey",
           // tickColor: "#FF6D83",
         },
         ticks: {
-          color: 'black',
+          color: '#b0b3b7',
         },
       },
     },

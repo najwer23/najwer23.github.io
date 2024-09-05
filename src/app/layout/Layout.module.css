@@ -1,0 +1,27 @@
+@layer Layout {
+  .logo a {
+    background: linear-gradient(
+      to top right,
+      #ff9800 calc(19% - 1px),
+      rgba(0, 0, 0, 0) 19%,
+      rgba(0, 0, 0, 0) calc(20% - 1px),
+      #ff9800 20%,
+      #ff9800 calc(39% - 1px),
+      rgba(0, 0, 0, 0) 39%,
+      rgba(0, 0, 0, 0) calc(40% - 1px),
+      #ff005a 40%,
+      #ff005a calc(59% - 1px),
+      rgba(0, 0, 0, 0) 59%,
+      rgba(0, 0, 0, 0) calc(60% - 1px),
+      #ff005a 60%,
+      grey calc(79% - 1px),
+      rgba(0, 0, 0, 0) 79%,
+      rgba(0, 0, 0, 0) calc(80% - 1px),
+      grey 80%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0) !important;
+  }
+}
