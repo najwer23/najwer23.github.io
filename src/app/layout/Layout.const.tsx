@@ -6,19 +6,32 @@ import { TextBox } from 'najwer23snacks/lib/Textbox';
 export const LAYOUT_NAVIGATION: LayoutNavigation = {
   notLoggedIn: {
     navigationTop: (
-      <TextBox href="https://najwer23.github.io/resume/" target="_blank" tag="h2">
-        Résumé
-      </TextBox>
+      <RouterLinks routes={[{ name: 'Résumé', to: 'https://najwer23.github.io/resume', outside: true }]} tag="h2" />
     ),
     hrColor1: '#2f3031',
     hrColor2: '#2f3031',
-    navigationBottom: <RouterLinks routes={[{ name: 'Contact', to: '/contact' }]} tag="p" />,
+    navigationBottom: (
+      <>
+        <RouterLinks
+          routes={[
+            { name: 'Contact', to: '/contact' },
+            { name: 'Gym', to: 'https://najwer23gym.vercel.app/', outside: true },
+          ]}
+          tag="p"
+        />
+      </>
+    ),
     navigationMobile: (
       <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
-        <RouterLinks routes={[{ name: 'Home', to: '/' }]} tag="h2" />
-        <TextBox href="https://najwer23.github.io/resume/" target="_blank" tag="h2">
-          Résumé
-        </TextBox>
+        <RouterLinks
+          routes={[
+            { name: 'Home', to: '/' },
+            { name: 'Contact', to: '/contact' },
+            { name: 'Résumé', to: 'https://najwer23.github.io/resume', outside: true },
+            { name: 'Gym', to: 'https://najwer23gym.vercel.app/', outside: true },
+          ]}
+          tag="h2"
+        />
       </Grid>
     ),
   },
