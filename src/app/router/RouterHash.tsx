@@ -26,7 +26,7 @@ const router = createHashRouter([
       },
       {
         path: '*',
-        element: <ErrorNotFound />,
+        element: <ErrorNotFound title={`${BASE_TITLE}Error not found`}/>,
       },
     ],
   },
