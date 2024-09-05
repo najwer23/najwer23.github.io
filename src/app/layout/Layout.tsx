@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { LAYOUT_NAVIGATION } from './Layout.const';
 import { RouterLinks } from '../router/RouterLinks';
-import styles2 from './Layout.module.css';
+import styles from './Layout.module.css';
 import { type LayoutNavigation } from './Layout.types';
 
 export const Layout: React.FC<{
@@ -14,7 +14,11 @@ export const Layout: React.FC<{
     <>
       <Navigation
         navigationTitle={
-          <RouterLinks routes={[{ name: 'Mariusz Najwer', to: '/', isTitle: true }]} tag="h2" className={styles2.logo} />
+          <RouterLinks
+            routes={[{ name: 'Mariusz Najwer', to: '/', isTitle: true }]}
+            tag="h2"
+            className={styles.logo}
+          />
         }
         navigationTop={<>{LAYOUT_NAVIGATION[menu].navigationTop}</>}
         navigationMobile={<>{LAYOUT_NAVIGATION[menu].navigationMobile}</>}

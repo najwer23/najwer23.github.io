@@ -12,11 +12,12 @@ export const Home: React.FC<{
       <Grid widthMax={900} layout="container" padding="0" margin="auto">
         <TextBox tag="h1">Frontend Software Engineer</TextBox>
         <TextBox>
-          Mariusz Najwer is passionate and detail-oriented Software Engineer dedicated to building responsive and user-friendly web
-          applications. He is proficient in modern JavaScript frameworks, particularly React and Angular, with a strong
-          foundation in HTML5, CSS3, and responsive design principles. Skilled in collaborating with cross-functional
-          teams to deliver seamless user experiences and optimize application performance. Committed to staying updated
-          with the latest industry trends and best practices in frontend development and UX/UI design.
+          Mariusz Najwer is passionate and detail-oriented Software Engineer dedicated to building responsive and
+          user-friendly web applications. He is proficient in modern JavaScript frameworks, particularly React and
+          Angular, with a strong foundation in HTML5, CSS3, and responsive design principles. Skilled in collaborating
+          with cross-functional teams to deliver seamless user experiences and optimize application performance.
+          Committed to staying updated with the latest industry trends and best practices in frontend development and
+          UX/UI design.
         </TextBox>
 
         <TextBox tag="h2">Social media</TextBox>
