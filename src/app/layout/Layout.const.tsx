@@ -1,7 +1,6 @@
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { RouterLinks } from '../router/RouterLinks';
 import { LayoutNavigation } from './Layout.types';
-import { TextBox } from 'najwer23snacks/lib/Textbox';
 
 export const LAYOUT_NAVIGATION: LayoutNavigation = {
   notLoggedIn: {
@@ -15,7 +14,8 @@ export const LAYOUT_NAVIGATION: LayoutNavigation = {
         <RouterLinks
           routes={[
             { name: 'Contact', to: '/contact' },
-            { name: 'Gym', to: 'https://najwer23gym.vercel.app/', outside: true },
+            { name: 'Design System', to: 'https://najwer23.github.io/najwer23snacks', outside: true },
+            { name: 'Gym', to: 'https://najwer23gym.vercel.app', outside: true },
           ]}
           tag="p"
         />
@@ -28,7 +28,8 @@ export const LAYOUT_NAVIGATION: LayoutNavigation = {
             { name: 'Home', to: '/' },
             { name: 'Contact', to: '/contact' },
             { name: 'Résumé', to: 'https://najwer23.github.io/resume', outside: true },
-            { name: 'Gym', to: 'https://najwer23gym.vercel.app/', outside: true },
+            { name: 'Design System', to: 'https://najwer23.github.io/najwer23snacks', outside: true },
+            { name: 'Gym', to: 'https://najwer23gym.vercel.app', outside: true },
           ]}
           tag="h2"
         />
