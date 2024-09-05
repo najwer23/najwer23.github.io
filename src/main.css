@@ -1,49 +1,49 @@
 :root {
-  --n23snack-font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica,
+  --najwer23snacks-font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica,
     Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 
   /* TextBox */
-  --n23snack-textbox-h1-font-color: #d3d3d3;
-  --n23snack-textbox-h2-font-color: #d6d6d6;
-  --n23snack-textbox-h3-font-color: #adb0b4;
-  --n23snack-textbox-p-font-color: #b0b3b7;
-  --n23snack-textbox-a-font-color: orange;
-  --n23snack-textbox-a-font-color-hover: #ff005a;
-  --n23snack-textbox-title-a-font-color: #ff005a;
-  --n23snack-textbox-title-a-font-color-hover: #ff005a;
+  --najwer23snacks-textbox-h1-font-color: #d3d3d3;
+  --najwer23snacks-textbox-h2-font-color: #d6d6d6;
+  --najwer23snacks-textbox-h3-font-color: #adb0b4;
+  --najwer23snacks-textbox-p-font-color: #b0b3b7;
+  --najwer23snacks-textbox-a-font-color: orange;
+  --najwer23snacks-textbox-a-font-color-hover: #ff005a;
+  --najwer23snacks-textbox-title-a-font-color: #ff005a;
+  --najwer23snacks-textbox-title-a-font-color-hover: #ff005a;
 
   /* Navigation */
   --najwer23snacks-navigation-mobile-bg-color: #121212;
 
   /* Button */
-  --n23snack-button-bg-color: #00a76f;
-  --n23snack-button-bg-color-hover: #007867;
-  --n23snack-button-bg-color-active: #004b50;
-  --n23snack-button-bg-color-focus: #007867;
-  --n23snack-button-bg-color-disabled: #919eab;
-  --n23snack-button-font-color: #ffffff;
-  --n23snack-button-font-size: 18px;
-  --n23snack-button-font-weight: 700;
-  --n23snack-button-font-family: var(--n23snack-font-family);
-  --n23snack-button-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  --najwer23snacks-button-bg-color: #00a76f;
+  --najwer23snacks-button-bg-color-hover: #007867;
+  --najwer23snacks-button-bg-color-active: #004b50;
+  --najwer23snacks-button-bg-color-focus: #007867;
+  --najwer23snacks-button-bg-color-disabled: #919eab;
+  --najwer23snacks-button-font-color: #ffffff;
+  --najwer23snacks-button-font-size: 18px;
+  --najwer23snacks-button-font-weight: 700;
+  --najwer23snacks-button-font-family: var(--najwer23snacks-font-family);
+  --najwer23snacks-button-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   /* Input */
-  --n23snacks-input-label-font-size: 16px;
-  --n23snacks-input-label-font-family: var(--n23snack-font-family);
-  --n23snacks-input-label-font-weight: 700;
-  --n23snacks-input-label-font-color: #b0b3b7;
+  --najwer23snacks-input-label-font-size: 16px;
+  --najwer23snacks-input-label-font-family: var(--najwer23snacks-font-family);
+  --najwer23snacks-input-label-font-weight: 700;
+  --najwer23snacks-input-label-font-color: #b0b3b7;
 
-  --n23snacks-input-input-font-size: 18px;
-  --n23snacks-input-input-font-family: var(--n23snack-font-family);
-  --n23snacks-input-input-font-weight: 600;
-  --n23snacks-input-input-font-color: #161925;
-  --n23snacks-input-input-border-color: #161925;
-  --n23snacks-input-input-placeholder-font-weight: auto;
+  --najwer23snacks-input-input-font-size: 18px;
+  --najwer23snacks-input-input-font-family: var(--najwer23snacks-font-family);
+  --najwer23snacks-input-input-font-weight: 600;
+  --najwer23snacks-input-input-font-color: #161925;
+  --najwer23snacks-input-input-border-color: #161925;
+  --najwer23snacks-input-input-placeholder-font-weight: auto;
 
-  --n23snacks-input-error-font-size: 14px;
-  --n23snacks-input-error-font-family: var(--n23snack-font-family);
-  --n23snacks-input-error-font-weight: 600;
-  --n23snacks-input-error-font-color: #ff3333;
+  --najwer23snacks-input-error-font-size: 14px;
+  --najwer23snacks-input-error-font-family: var(--najwer23snacks-font-family);
+  --najwer23snacks-input-error-font-weight: 600;
+  --najwer23snacks-input-error-font-color: #ff3333;
 
   --najwer23-color-surface: #121212; /* #fdfdfd; */
   --najwer23-color-font: #adb0b4; /* #333333; */
@@ -52,7 +52,7 @@
 body {
   margin: 0;
   padding: 0;
-  color: var(--n23snack-textbox-p-font-color);
+  color: var(--najwer23snacks-textbox-p-font-color);
   background-color: var(--najwer23-color-surface);
-  font-family: var(--n23snack-font-family);
+  font-family: var(--najwer23snacks-font-family);
 }

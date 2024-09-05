@@ -10,7 +10,7 @@ export const RouterLinks: React.FC<{
     <>
       {routes.map((v) =>
         v.outside ? (
-          <TextBox href={v.to} target="_blank" tag={tag}>
+          <TextBox key={v.to} href={v.to} target="_blank" tag={tag}>
             {v.name}
           </TextBox>
         ) : (
