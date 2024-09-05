@@ -1,8 +1,18 @@
 {
   "name": "najwer23.github.io",
   "version": "5.0.0",
-  "author": "Mariusz Najwer",
+  "keywords": [
+    "react",
+    "gh-pages",
+    "typescript",
+    "vite",
+    "vitest",
+    "css modules",
+    "front-end",
+    "yarn"
+  ],
   "homepage": "https://najwer23.github.io/",
+  "author": "Mariusz Najwer",
   "type": "module",
   "scripts": {
     "bench": "vitest bench",
@@ -38,15 +48,5 @@
     "typescript": "^5.5.4",
     "vite": "^5.4.3"
   },
-  "packageManager": "yarn@4.4.0",
-  "keywords": [
-    "react",
-    "gh-pages",
-    "typescript",
-    "vite",
-    "vitest",
-    "css modules",
-    "front-end",
-    "yarn"
-  ]
+  "packageManager": "yarn@4.4.1"
 }
