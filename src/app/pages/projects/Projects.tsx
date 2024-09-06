@@ -45,7 +45,7 @@ export const Projects: React.FC<{
         },
         { name: 'Restilo', to: 'https://restilo.pl/', outside: true },
       ].map((x) => (
-        <RouterLinks routes={[x]} tag="h2" />
+        <RouterLinks routes={[x]} tag="h2" key={x.name} />
       ))}
 
       {[
@@ -62,7 +62,7 @@ export const Projects: React.FC<{
         },
         { name: 'Itravel', to: 'https://tueuropa.pl/ubezpieczenia-turystyczne.htm', outside: true },
       ].map((x) => (
-        <RouterLinks routes={[x]} tag="h3" />
+        <RouterLinks routes={[x]} tag="h3" key={x.name} />
       ))}
 
       {[
@@ -85,7 +85,7 @@ export const Projects: React.FC<{
           outside: true,
         },
       ].map((x) => (
-        <RouterLinks routes={[x]} tag="p" />
+        <RouterLinks routes={[x]} tag="p" key={x.name} />
       ))}
     </Grid>
   );

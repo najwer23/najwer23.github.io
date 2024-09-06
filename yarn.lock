@@ -613,14 +613,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.54.1":
-  version: 5.54.1
-  resolution: "@tanstack/react-query@npm:5.54.1"
+"@tanstack/react-query@npm:^5.55.0":
+  version: 5.55.0
+  resolution: "@tanstack/react-query@npm:5.55.0"
   dependencies:
     "@tanstack/query-core": "npm:5.54.1"
   peerDependencies:
     react: ^18 || ^19
-  checksum: 10c0/d91aafb9b386b6a7eb21be1eb960b91ad60e672c35fa16d408b222e6d731705686a8be34f312afed0165be7945b5fd6f3adebcfa4b920e00e1f5e7cfdcdb35e6
+  checksum: 10c0/77097962dcf0bd2c9e73dbf6459c95b956e949233feeb7bf53e6e0ef7238be8eee67b2b328660a1302daef646c6090928dca5bfbc10386a4e70ab4649b1eb3e2
   languageName: node
   linkType: hard
 
@@ -880,9 +880,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001646":
-  version: 1.0.30001657
-  resolution: "caniuse-lite@npm:1.0.30001657"
-  checksum: 10c0/bf40189e41d0ae9bad59c8b4054ecda3a8603754ad85fc04999679a92e2bca506350573342c9397c14a8b877a50210a37e744d8fc06adf38d1af33686d41db69
+  version: 1.0.30001658
+  resolution: "caniuse-lite@npm:1.0.30001658"
+  checksum: 10c0/e01f19ac72f056d2b4b680ff2e83d1abf99c0ce0863593bc6abbc40c53589a5c1697b4605b0937a3a431addb2145615e941b91c10d6b63475b7292500339406f
   languageName: node
   linkType: hard
 
@@ -999,14 +999,14 @@ __metadata:
   linkType: hard
 
 "debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.3.1, debug@npm:^4.3.4":
-  version: 4.3.6
-  resolution: "debug@npm:4.3.6"
+  version: 4.3.7
+  resolution: "debug@npm:4.3.7"
   dependencies:
-    ms: "npm:2.1.2"
+    ms: "npm:^2.1.3"
   peerDependenciesMeta:
     supports-color:
       optional: true
-  checksum: 10c0/3293416bff072389c101697d4611c402a6bacd1900ac20c0492f61a9cdd6b3b29750fc7f5e299f8058469ef60ff8fb79b86395a30374fbd2490113c1c7112285
+  checksum: 10c0/1471db19c3b06d485a622d62f65947a19a23fbd0dd73f7fd3eafb697eec5360cde447fb075919987899b1a2096e85d35d4eb5a4de09a57600ac9cf7e6c8e768b
   languageName: node
   linkType: hard
 
@@ -1018,9 +1018,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.4":
-  version: 1.5.14
-  resolution: "electron-to-chromium@npm:1.5.14"
-  checksum: 10c0/2a77cd7486347a5d304f31de46b874e3deabc0b665bea91dbe8bf3b52aba59059115a10e5d0edcbd33c1450065a2f7b28b07a2cf1a7de92fefbf443730d69131
+  version: 1.5.17
+  resolution: "electron-to-chromium@npm:1.5.17"
+  checksum: 10c0/7d0f7bc89505a3d96b4632416c331fa23c1fa80c5b6550c5e618dcb34579240d5748b64010fe6cb64ebcc998ab7f2f5a39b8645130e9786685b4031fb5dc926f
   languageName: node
   linkType: hard
 
@@ -1582,9 +1582,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^11.0.0":
-  version: 11.0.0
-  resolution: "lru-cache@npm:11.0.0"
-  checksum: 10c0/827ff0e0739f9b0f30f92f5a5fc97c6a2bd3ae32c0452bc58cb7411d6c589d49536073027293f2d1f02d0c2e72b63b162f238df7e9ff6f4cc0345f92afec4d1d
+  version: 11.0.1
+  resolution: "lru-cache@npm:11.0.1"
+  checksum: 10c0/8bad6603dc67eb5b03520fba05bce5df6473dbba58ac4c6067ed088d29225a0a04416bb1462acd8c1f819d1fbf37920446a1c36bafd9c384bcc54cee0d3b697a
   languageName: node
   linkType: hard
 
@@ -1753,10 +1753,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ms@npm:2.1.2":
-  version: 2.1.2
-  resolution: "ms@npm:2.1.2"
-  checksum: 10c0/a437714e2f90dbf881b5191d35a6db792efbca5badf112f87b9e1c712aace4b4b9b742dd6537f3edf90fd6f684de897cec230abde57e87883766712ddda297cc
+"ms@npm:^2.1.3":
+  version: 2.1.3
+  resolution: "ms@npm:2.1.3"
+  checksum: 10c0/d924b57e7312b3b63ad21fc5b3dc0af5e78d61a1fc7cfb5457edaf26326bf62be5307cc87ffb6862ef1c2b33b0233cdb5d4f01c4c958cc0d660948b65a287a48
   languageName: node
   linkType: hard
 
@@ -1764,7 +1764,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "najwer23.github.io@workspace:."
   dependencies:
-    "@tanstack/react-query": "npm:^5.54.1"
+    "@tanstack/react-query": "npm:^5.55.0"
     "@types/chart.js": "npm:^2.9.41"
     "@types/node": "npm:^22.5.4"
     "@types/react": "npm:^18.3.5"

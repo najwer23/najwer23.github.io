@@ -38,8 +38,6 @@ export const Weather: React.FC<{
     enabled: true,
   });
 
-  console.log(data);
-
   const townListForSelect = useMemo(() => {
     return sortArrOfObjByLabel([
       { value: '51.1:17.0333', label: 'Wrocław (PL)' },
