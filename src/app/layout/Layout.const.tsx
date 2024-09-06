@@ -5,7 +5,11 @@ import { LayoutNavigation } from './Layout.types';
 export const LAYOUT_NAVIGATION: LayoutNavigation = {
   notLoggedIn: {
     navigationTop: (
-      <RouterLinks routes={[{ name: 'Résumé', to: 'https://najwer23.github.io/resume', outside: true }]} tag="h2" />
+      <RouterLinks routes={[
+        { name: 'Design System', to: 'https://najwer23.github.io/najwer23snacks', outside: true },
+        { name: 'Gym', to: 'https://najwer23gym.vercel.app', outside: true },
+        { name: 'Résumé', to: 'https://najwer23.github.io/resume', outside: true }
+      ]} tag="h2" />
     ),
     hrColor1: '#2f3031',
     hrColor2: '#2f3031',
@@ -15,8 +19,6 @@ export const LAYOUT_NAVIGATION: LayoutNavigation = {
           routes={[
             { name: 'Contact', to: '/contact' },
             { name: 'Weather', to: '/weather' },
-            { name: 'Design System', to: 'https://najwer23.github.io/najwer23snacks', outside: true },
-            { name: 'Gym', to: 'https://najwer23gym.vercel.app', outside: true },
           ]}
           tag="p"
         />
