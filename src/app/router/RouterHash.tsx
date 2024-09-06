@@ -6,6 +6,7 @@ import { ErrorNotFound } from '../pages/error/ErrorNotFound';
 import { Contact } from '../pages/contact/Contact';
 import { Weather } from '../pages/weather/Weather';
 import { Projects } from '../pages/projects/Projects';
+import { StockQuotes } from '../pages/stock-quotes/StockQuotes';
 
 const BASE_TITLE = 'Mariusz Najwer | ';
 
@@ -38,6 +39,10 @@ const router = createHashRouter([
       { 
         path: '/weather',
         element: <Weather title={`${BASE_TITLE}Weather`} />,
+      },
+      { 
+        path: '/stock-quotes',
+        element: <StockQuotes title={`${BASE_TITLE}Stock Quotes`} />,
       },
       {
         path: '*',

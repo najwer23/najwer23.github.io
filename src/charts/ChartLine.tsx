@@ -31,9 +31,10 @@ interface Props {
   title: string;
   ySymbol?: string;
   data: ChartData<'line'> | null;
+  yStepSize?: number;
 }
 
-export const ChartLine = ({ title, ySymbol = '', data }: Props) => {
+export const ChartLine = ({ title, ySymbol = '', data, yStepSize=1 }: Props) => {
   const options: ChartOptions<'line'> = {
     maintainAspectRatio: false,
     responsive: true,
@@ -66,7 +67,7 @@ export const ChartLine = ({ title, ySymbol = '', data }: Props) => {
           callback: function (value) {
             return this.getLabelForValue(value as number) + ySymbol;
           },
-          stepSize: 1,
+          stepSize: yStepSize,
           color: '#b0b3b7',
         },
         grid: {
