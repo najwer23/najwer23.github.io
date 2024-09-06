@@ -1,5 +1,5 @@
-import { isEmpty } from '@najwer23/utils/functions/isEmpty';
 import { Picture } from 'najwer23snacks/lib/Picture';
+import { isEmpty } from './Weather.utils';
 
 export const WeatherImg = ({ imgArr }: { imgArr: { icon: string }[] }) => {
   if (isEmpty(imgArr)) {

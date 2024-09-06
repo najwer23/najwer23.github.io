@@ -1,12 +1,12 @@
 import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
-import { queryApod } from './Apod.query';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Picture } from 'najwer23snacks/lib/Picture';
 import { Button } from 'najwer23snacks/lib/Button';
+import { queryApod } from './Apod.query';
 
 export const Apod: React.FC<{
   title: string;

@@ -1,12 +1,9 @@
 import { useMemo, useState } from 'react';
 import styles from './Weather.module.css';
-import { forecastDataFormat } from './forecastDataFormat';
 import { WeatherImg } from './WeatherImg';
 import { WeatherForecastData } from './WeatherForecastData';
 import { ChartLine } from '@najwer23/charts/ChartLine';
 import { ChartMixed } from '@najwer23/charts/ChartMixed';
-import { sortArrOfObjByLabel } from './sortArrOfObjByLabel';
-import { formatDateFromDt } from '@najwer23/utils/functions/formatDateFromDt';
 import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
 import { useQuery } from '@tanstack/react-query';
 import { queryWeatherCoords } from './Weather.query';
@@ -18,6 +15,7 @@ import { dataForLineChartTemp } from './data/dataForLineChartTemp';
 import { dataForLineChartWind } from './data/dataForLineChartWind';
 import { dataForLineChartRainfall } from './data/dataForLineChartRainfall';
 import { dataForLineChartPressure } from './data/dataForLineChartPressure';
+import { forecastDataFormat, formatDateFromDt, sortArrOfObjByLabel } from './Weather.utils';
 
 export const Weather: React.FC<{
   title: string;
@@ -39,6 +37,8 @@ export const Weather: React.FC<{
     retry: 0,
     enabled: true,
   });
+
+  console.log(data);
 
   const townListForSelect = useMemo(() => {
     return sortArrOfObjByLabel([
