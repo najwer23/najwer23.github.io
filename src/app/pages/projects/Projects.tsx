@@ -2,11 +2,22 @@ import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
 import { RouterLinks } from '@najwer23/app/router/RouterLinks';
+import { queryLeetcode } from './Projects.query';
+import { useQuery } from '@tanstack/react-query';
 
 export const Projects: React.FC<{
   title: string;
 }> = ({ title }): JSX.Element => {
   useDocumentTitle(title);
+
+  const { data, isLoading } = useQuery({
+    queryKey: ['queryLeetcode', 'queryLeetcode'],
+    queryFn: queryLeetcode,
+    staleTime: Infinity,
+    gcTime: 30 * 1000 * 60,
+    retry: 0,
+    enabled: true,
+  });
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
@@ -18,10 +29,7 @@ export const Projects: React.FC<{
           tag="h2"
         />
         <RouterLinks routes={[{ name: 'Gym', to: 'https://najwer23gym.vercel.app', outside: true }]} tag="h2" />
-        <RouterLinks
-          routes={[{ name: 'Indio', to: 'https://www.useindio.com/', outside: true }]}
-          tag="h2"
-        />
+        <RouterLinks routes={[{ name: 'Indio', to: 'https://www.useindio.com/', outside: true }]} tag="h2" />
         <RouterLinks
           routes={[{ name: 'Applied Systems', to: 'https://www1.appliedsystems.com/en-us/', outside: true }]}
           tag="h2"
@@ -119,7 +127,19 @@ export const Projects: React.FC<{
           tag="p"
         />
         <RouterLinks
-          routes={[{ name: "Reed–Solomon error correction", to: 'https://najwer23.github.io/bch-code-js/', outside: true }]}
+          routes={[
+            { name: 'Reed–Solomon error correction', to: 'https://najwer23.github.io/bch-code-js/', outside: true },
+          ]}
+          tag="p"
+        />
+        <RouterLinks
+          routes={[
+            {
+              name: `Leetcode problems solved: ${isLoading ? '1000+' : Number(data?.totalSolved) + 18}`,
+              to: 'https://leetcode.com/u/najwer23',
+              outside: true,
+            },
+          ]}
           tag="p"
         />
       </Grid>
