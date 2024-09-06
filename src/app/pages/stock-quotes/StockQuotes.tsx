@@ -14,8 +14,8 @@ export const StockQuotes: React.FC<{
   const queriesStockQuotes = ['usd', 'eur', 'chf'].map((c) => ({
     queryKey: ['queryStockQuotes', 'queryStockQuotes' + c],
     queryFn: () => queryStockQuotes(c),
-    staleTime: 0,
-    gcTime: 0,
+    staleTime: Infinity,
+    gcTime: 30 * 1000 * 60,
     retry: 0,
     enabled: true,
   }));
