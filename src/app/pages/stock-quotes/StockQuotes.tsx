@@ -22,8 +22,6 @@ export const StockQuotes: React.FC<{
 
   const dataStockQuotes = useQueries({ queries: queriesStockQuotes });
 
-  console.log(dataStockQuotes);
-
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
       <TextBox tag="h1"> Stock Quotes</TextBox>
