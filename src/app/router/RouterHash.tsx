@@ -5,6 +5,7 @@ import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { ErrorNotFound } from '../pages/error/ErrorNotFound';
 import { Contact } from '../pages/contact/Contact';
 import { Weather } from '../pages/weather/Weather';
+import { Projects } from '../pages/projects/Projects';
 
 const BASE_TITLE = 'Mariusz Najwer | ';
 
@@ -29,6 +30,10 @@ const router = createHashRouter([
       { 
         path: '/contact',
         element: <Contact title={`${BASE_TITLE}Contact`} />,
+      },
+      { 
+        path: '/projects',
+        element: <Projects title={`${BASE_TITLE}Projects`} />,
       },
       { 
         path: '/weather',

@@ -17,6 +17,7 @@ export const LAYOUT_NAVIGATION: LayoutNavigation = {
           routes={[
             { name: 'Contact', to: '/contact' },
             { name: 'Weather', to: '/weather' },
+            { name: 'Projects', to: '/projects' }
           ]}
           tag="p"
         />
@@ -29,9 +30,8 @@ export const LAYOUT_NAVIGATION: LayoutNavigation = {
             { name: 'Home', to: '/' },
             { name: 'Contact', to: '/contact' },
             { name: 'Weather', to: '/weather' },
+            { name: 'Projects', to: '/projects' },
             { name: 'Résumé', to: 'https://najwer23.github.io/resume', outside: true },
-            // { name: 'Design System', to: 'https://najwer23.github.io/najwer23snacks', outside: true },
-            // { name: 'Gym', to: 'https://najwer23gym.vercel.app', outside: true },
           ]}
           tag="h2"
         />
