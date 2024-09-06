@@ -16,6 +16,7 @@ export const LAYOUT_NAVIGATION: LayoutNavigation = {
             { name: 'Contact', to: '/contact' },
             { name: 'Weather', to: '/weather' },
             { name: 'Stock Quotes', to: '/stock-quotes' },
+            { name: 'APOD', to: '/apod' },
             { name: 'Projects', to: '/projects' },
           ]}
           tag="p"
@@ -31,6 +32,7 @@ export const LAYOUT_NAVIGATION: LayoutNavigation = {
             { name: 'Weather', to: '/weather' },
             { name: 'Stock Quotes', to: '/stock-quotes' },
             { name: 'Projects', to: '/projects' },
+            { name: 'APOD', to: '/apod' },
             { name: 'Résumé', to: 'https://najwer23.github.io/resume', outside: true },
           ]}
           tag="h2"

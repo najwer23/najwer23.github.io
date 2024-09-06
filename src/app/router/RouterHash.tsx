@@ -7,6 +7,7 @@ import { Contact } from '../pages/contact/Contact';
 import { Weather } from '../pages/weather/Weather';
 import { Projects } from '../pages/projects/Projects';
 import { StockQuotes } from '../pages/stock-quotes/StockQuotes';
+import { Apod } from '../pages/apod/Apod';
 
 const BASE_TITLE = 'Mariusz Najwer | ';
 
@@ -44,6 +45,14 @@ const router = createHashRouter([
         path: '/stock-quotes',
         element: <StockQuotes title={`${BASE_TITLE}Stock Quotes`} />,
       },
+      ...['/apod/page/:page', '/apod'].map((path) => ({
+        path,
+        element: (
+          <>
+            <Apod title={`${BASE_TITLE}Picture of the day`} />
+          </>
+        ),
+      })),
       {
         path: '*',
         element: <ErrorNotFound title={`${BASE_TITLE}Error not found`}/>,
