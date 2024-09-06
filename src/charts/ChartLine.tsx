@@ -34,7 +34,7 @@ interface Props {
   yStepSize?: number;
 }
 
-export const ChartLine = ({ title, ySymbol = '', data, yStepSize=1 }: Props) => {
+export const ChartLine = ({ title, ySymbol = '', data, yStepSize = 1 }: Props) => {
   const options: ChartOptions<'line'> = {
     maintainAspectRatio: false,
     responsive: true,

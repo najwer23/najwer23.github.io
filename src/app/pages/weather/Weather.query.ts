@@ -1,5 +1,5 @@
-import { configApiOrgin } from "@najwer23/config/configApiOrgin";
-import { configFetch, executeFetch, ResponseBase } from "@najwer23/config/configFetch";
+import { configApiOrgin } from '@najwer23/config/configApiOrgin';
+import { configFetch, executeFetch, ResponseBase } from '@najwer23/config/configFetch';
 
 type QueryWeatherCoords = {
   data: {

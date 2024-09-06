@@ -77,7 +77,7 @@ export const Apod: React.FC<{
                   ),
               )}
           </Grid>
-          <div style={{display: "flex", justifyContent: "space-between"}}>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Button type={'button'} onClick={() => onClickPagination(-1)} disabled={currentPage < 2}>
               Prev
             </Button>

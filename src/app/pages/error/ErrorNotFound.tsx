@@ -7,7 +7,7 @@ export const ErrorNotFound: React.FC<{
   title: string;
 }> = ({ title }): JSX.Element => {
   useDocumentTitle(title);
-  
+
   return (
     <>
       <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">

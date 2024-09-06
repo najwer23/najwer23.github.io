@@ -1,14 +1,14 @@
-import { StockQuotesRates } from "./StockQuotes.query";
+import { StockQuotesRates } from './StockQuotes.query';
 
 export const dataForLineChartCurrency = (arr: StockQuotesRates) => {
   if (arr == null) {
     return null;
   }
 
-  let dataY = arr.map(x=> x.effectiveDate)
-  let dataXAsk = arr.map(x=> x.ask)
-  let dataXBid = arr.map(x=> x.bid)
-  
+  let dataY = arr.map((x) => x.effectiveDate);
+  let dataXAsk = arr.map((x) => x.ask);
+  let dataXBid = arr.map((x) => x.bid);
+
   return {
     labels: dataY,
     datasets: [

@@ -1,7 +1,7 @@
-import { executeFetch } from "@najwer23/config/configFetch";
+import { executeFetch } from '@najwer23/config/configFetch';
 
 type QueryLeetcode = {
-  totalSolved: number
+  totalSolved: number;
 };
 
 export const queryLeetcode = async (): Promise<QueryLeetcode> => {

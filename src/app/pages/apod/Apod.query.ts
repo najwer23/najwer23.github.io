@@ -1,5 +1,5 @@
-import { configApiOrgin } from "@najwer23/config/configApiOrgin";
-import { executeFetch } from "@najwer23/config/configFetch";
+import { configApiOrgin } from '@najwer23/config/configApiOrgin';
+import { executeFetch } from '@najwer23/config/configFetch';
 
 interface QueryApod {
   title: string;

@@ -29,19 +29,19 @@ const router = createHashRouter([
         path: '/home',
         element: <Home title={`${BASE_TITLE}Home`} />,
       },
-      { 
+      {
         path: '/contact',
         element: <Contact title={`${BASE_TITLE}Contact`} />,
       },
-      { 
+      {
         path: '/projects',
         element: <Projects title={`${BASE_TITLE}Projects`} />,
       },
-      { 
+      {
         path: '/weather',
         element: <Weather title={`${BASE_TITLE}Weather`} />,
       },
-      { 
+      {
         path: '/stock-quotes',
         element: <StockQuotes title={`${BASE_TITLE}Stock Quotes`} />,
       },
@@ -55,7 +55,7 @@ const router = createHashRouter([
       })),
       {
         path: '*',
-        element: <ErrorNotFound title={`${BASE_TITLE}Error not found`}/>,
+        element: <ErrorNotFound title={`${BASE_TITLE}Error not found`} />,
       },
     ],
   },

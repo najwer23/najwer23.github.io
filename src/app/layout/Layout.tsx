@@ -14,11 +14,7 @@ export const Layout: React.FC<{
     <>
       <Navigation
         navigationTitle={
-          <RouterLinks
-            routes={[{ name: 'Mariusz Najwer', to: '/', isTitle: true }]}
-            tag="h2"
-            className={styles.logo}
-          />
+          <RouterLinks routes={[{ name: 'Mariusz Najwer', to: '/', isTitle: true }]} tag="h2" className={styles.logo} />
         }
         navigationTop={<>{LAYOUT_NAVIGATION[menu].navigationTop}</>}
         navigationMobile={<>{LAYOUT_NAVIGATION[menu].navigationMobile}</>}

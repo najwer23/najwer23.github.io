@@ -2,12 +2,11 @@ import { executeFetch } from '@najwer23/config/configFetch';
 
 type QueryStockQuotes = {
   code: string;
-  rates:
-    {
-      ask: number;
-      bid: number;
-      effectiveDate: string;
-    }[]
+  rates: {
+    ask: number;
+    bid: number;
+    effectiveDate: string;
+  }[];
 };
 
 export type StockQuotesRates = QueryStockQuotes['rates'];

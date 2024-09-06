@@ -75,7 +75,9 @@ export const Weather: React.FC<{
 
       <div className={styles.weatherWrapper}>
         {!isLoading ? (
-          <Carousel arrowLeftIcon={<div className={[styles.buttonLeft].join(' ')}></div>} arrowRightIcon={<div className={[styles.buttonRight].join(' ')}></div>}>
+          <Carousel
+            arrowLeftIcon={<div className={[styles.buttonLeft].join(' ')}></div>}
+            arrowRightIcon={<div className={[styles.buttonRight].join(' ')}></div>}>
             <div className={styles.weatherCurrent}>
               <WeatherImg imgArr={weatherCurrent!.weather} />
               <WeatherForecastData title={'dayOfWeek'} value={weatherCurrent!.dt} />
@@ -134,9 +136,7 @@ export const Weather: React.FC<{
           />
         </div>
       ) : (
-        <div style={{ minHeight: '780px' }}>
-          {/* <TextBox>Loading..</TextBox> */}
-        </div>
+        <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
       )}
 
       {!isLoading ? (
@@ -153,9 +153,7 @@ export const Weather: React.FC<{
           />
         </div>
       ) : (
-        <div style={{ minHeight: '780px' }}>
-          {/* <TextBox>Loading..</TextBox> */}
-        </div>
+        <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
       )}
 
       {!isLoading ? (
@@ -172,9 +170,7 @@ export const Weather: React.FC<{
           />
         </div>
       ) : (
-        <div style={{ minHeight: '780px' }}>
-          {/* <TextBox>Loading..</TextBox> */}
-        </div>
+        <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
       )}
 
       {!isLoading ? (
@@ -191,9 +187,7 @@ export const Weather: React.FC<{
           />
         </div>
       ) : (
-        <div style={{ minHeight: '780px' }}>
-          {/* <TextBox>Loading..</TextBox> */}
-        </div>
+        <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
       )}
     </Grid>
   );
