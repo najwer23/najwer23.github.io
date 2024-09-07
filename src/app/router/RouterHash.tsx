@@ -9,7 +9,7 @@ import { Projects } from '../pages/projects/Projects';
 import { StockQuotes } from '../pages/stock-quotes/StockQuotes';
 import { Apod } from '../pages/apod/Apod';
 
-const BASE_TITLE = 'Mariusz Najwer | ';
+const BASE_TITLE = ' | Mariusz Najwer';
 
 const router = createHashRouter([
   {
@@ -23,39 +23,39 @@ const router = createHashRouter([
     children: [
       {
         index: true,
-        element: <Home title={`${BASE_TITLE}Home`} />,
+        element: <Home title={`Home${BASE_TITLE}`} />,
       },
       {
         path: '/home',
-        element: <Home title={`${BASE_TITLE}Home`} />,
+        element: <Home title={`Home${BASE_TITLE}`} />,
       },
       {
         path: '/contact',
-        element: <Contact title={`${BASE_TITLE}Contact`} />,
+        element: <Contact title={`Contact${BASE_TITLE}`} />,
       },
       {
         path: '/projects',
-        element: <Projects title={`${BASE_TITLE}Projects`} />,
+        element: <Projects title={`Projects${BASE_TITLE}`} />,
       },
       {
         path: '/weather',
-        element: <Weather title={`${BASE_TITLE}Weather`} />,
+        element: <Weather title={`Weather${BASE_TITLE}`} />,
       },
       {
         path: '/stock-quotes',
-        element: <StockQuotes title={`${BASE_TITLE}Stock Quotes`} />,
+        element: <StockQuotes title={`Stock Quotes${BASE_TITLE}`} />,
       },
       ...['/apod/page/:page', '/apod'].map((path) => ({
         path,
         element: (
           <>
-            <Apod title={`${BASE_TITLE}Picture of the day`} />
+            <Apod title={`Picture of the day${BASE_TITLE}`} />
           </>
         ),
       })),
       {
         path: '*',
-        element: <ErrorNotFound title={`${BASE_TITLE}Error not found`} />,
+        element: <ErrorNotFound title={`Error not found${BASE_TITLE}`} />,
       },
     ],
   },
