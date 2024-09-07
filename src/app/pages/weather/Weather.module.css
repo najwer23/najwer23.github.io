@@ -30,37 +30,4 @@
     width: 250px;
     margin-bottom: 3px;
   }
-
-  .buttonRight,
-  .buttonLeft {
-    position: relative;
-    padding: 5px 0 5px 0;
-    transition: all 0.2s linear;
-    width: 15px;
-    height: 15px;
-  }
-
-  .buttonRight::after {
-    content: '';
-    display: flex;
-    width: 15px;
-    right: 3px;
-    height: 15px;
-    position: absolute;
-    border-top: 2px solid #fff;
-    border-left: 2px solid #fff;
-    transform: rotate(135deg);
-  }
-
-  .buttonLeft::after {
-    content: '';
-    display: flex;
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    left: 3px;
-    border-top: 2px solid #fff;
-    border-left: 2px solid #fff;
-    transform: rotate(-45deg);
-  }
 }

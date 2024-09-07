@@ -74,9 +74,7 @@ export const Weather: React.FC<{
 
       <div className={styles.weatherWrapper}>
         {!isLoading ? (
-          <Carousel
-            arrowLeftIcon={<div className={[styles.buttonLeft].join(' ')}></div>}
-            arrowRightIcon={<div className={[styles.buttonRight].join(' ')}></div>}>
+          <Carousel>
             <div className={styles.weatherCurrent}>
               <WeatherImg imgArr={weatherCurrent!.weather} />
               <WeatherForecastData title={'dayOfWeek'} value={weatherCurrent!.dt} />
