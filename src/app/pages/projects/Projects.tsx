@@ -24,7 +24,7 @@ export const Projects: React.FC<{
       <TextBox tag="h1"> Projects</TextBox>
 
       {[
-        { name: 'Design System', to: 'https://najwer23.github.io/najwer23snacks' },
+        { name: 'Design System', to: 'https://najwer23.github.io/najwer23snacks', outside: true },
         { name: 'Indio', to: 'https://www.useindio.com/', outside: true },
         { name: 'Gym', to: 'https://najwer23gym.vercel.app', outside: true },
         { name: 'Applied Systems', to: 'https://www1.appliedsystems.com/en-us/', outside: true },
