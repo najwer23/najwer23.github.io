@@ -56,3 +56,22 @@ export const formatDateFromDt = (dt: number): string | null => {
         year: 'numeric',
       });
 };
+
+export const formatDateFromDt2 = (dt: number): string | null => {
+  if (isEmpty(dt)) return null;
+
+  const date = new Date(dt * 1000);
+
+  const formattedString = date.toLocaleString('pl-PL', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  });
+
+  const [datePart, timePart] = formattedString.split(', ');
+  const [day, month, year] = datePart.split('.');
+
+  return `${year}-${month}-${day}, ${timePart}`;
+};

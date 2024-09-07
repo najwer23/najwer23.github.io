@@ -1,5 +1,5 @@
 import styles from './Weather.module.css';
-import { forecastDataFormat, formatDateFromDt } from './Weather.utils';
+import { forecastDataFormat, formatDateFromDt2 } from './Weather.utils';
 
 export const WeatherForecastData = ({ title, value }: { title: string; value: string | number }) => {
   if (title === 'empty') {
@@ -16,7 +16,7 @@ export const WeatherForecastData = ({ title, value }: { title: string; value: st
         <div>
           <div>{forecastDataFormat(value, 0)}.</div>
         </div>
-        <b>{formatDateFromDt(Number(value))}</b>
+        <b>{formatDateFromDt2(Number(value))}</b>
       </div>
     );
   }
