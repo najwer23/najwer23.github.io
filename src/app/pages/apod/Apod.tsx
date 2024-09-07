@@ -47,7 +47,7 @@ export const Apod: React.FC<{
             {data
               ?.sort((a, b) => b.date.localeCompare(a.date))
               .map(
-                ({ title, explanation, media_type, url, date }, index) =>
+                ({ title, explanation, media_type, url, date }, i) =>
                   media_type === 'image' && (
                     <Grid widthMax={1400} layout="container" padding="10px 0 30px 0" margin="auto" key={title}>
                       <Grid
@@ -70,7 +70,7 @@ export const Apod: React.FC<{
                           <TextBox> {explanation} </TextBox>
                         </div>
                         <div>
-                          <Picture src={url} alt={title} key={index} />
+                          <Picture src={url} alt={title} key={i} />
                         </div>
                       </Grid>
                     </Grid>

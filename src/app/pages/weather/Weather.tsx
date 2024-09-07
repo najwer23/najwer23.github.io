@@ -11,11 +11,12 @@ import { Grid } from 'najwer23snacks/lib/Grid';
 import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { Button } from 'najwer23snacks/lib/Button';
 import { Carousel } from 'najwer23snacks/lib/Carousel';
-import { dataForLineChartTemp } from './data/dataForLineChartTemp';
-import { dataForLineChartWind } from './data/dataForLineChartWind';
-import { dataForLineChartRainfall } from './data/dataForLineChartRainfall';
-import { dataForLineChartPressure } from './data/dataForLineChartPressure';
+
 import { forecastDataFormat, formatDateFromDt, sortArrOfObjByLabel } from './Weather.utils';
+import { chartDataTemp } from './chartData/chartDataTemp';
+import { chartDataWind } from './chartData/chartDataWind';
+import { chartDataRainfall } from './chartData/chartDataRainfall';
+import { chartDataPressure } from './chartData/chartDataPressure';
 
 export const Weather: React.FC<{
   title: string;
@@ -129,7 +130,7 @@ export const Weather: React.FC<{
           }}>
           <ChartLine
             title="Temeperature for next 48h"
-            data={dataForLineChartTemp(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+            data={chartDataTemp(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
             ySymbol={` ${'\u00b0'}C`}
           />
         </div>
@@ -146,7 +147,7 @@ export const Weather: React.FC<{
           }}>
           <ChartLine
             title="Speed of wind for next 48h"
-            data={dataForLineChartWind(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+            data={chartDataWind(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
             ySymbol={` km/h`}
           />
         </div>
@@ -163,7 +164,7 @@ export const Weather: React.FC<{
           }}>
           <ChartMixed
             title="Rain / Snow for next 48h"
-            data={dataForLineChartRainfall(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+            data={chartDataRainfall(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
             ySymbol={` mm/h`}
           />
         </div>
@@ -180,7 +181,7 @@ export const Weather: React.FC<{
           }}>
           <ChartLine
             title="Pressure"
-            data={dataForLineChartPressure(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+            data={chartDataPressure(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
             ySymbol={` hPa`}
           />
         </div>

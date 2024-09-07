@@ -1,7 +1,9 @@
 import { Picture } from 'najwer23snacks/lib/Picture';
 import { isEmpty } from './Weather.utils';
 
-export const WeatherImg = ({ imgArr }: { imgArr: { icon: string }[] }) => {
+export const WeatherImg: React.FC<{
+  imgArr: { icon: string }[];
+}> = ({ imgArr }): JSX.Element => {
   if (isEmpty(imgArr)) {
     return <div style={{ width: '100px', height: '100px', marginBottom: '20px' }}> </div>;
   } else {

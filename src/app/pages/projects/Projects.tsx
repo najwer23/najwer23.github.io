@@ -44,8 +44,8 @@ export const Projects: React.FC<{
           outside: true,
         },
         { name: 'Restilo', to: 'https://restilo.pl/', outside: true },
-      ].map((x) => (
-        <RouterLinks routes={[x]} tag="h2" key={x.name} />
+      ].map((v) => (
+        <RouterLinks routes={[v]} tag="h2" key={v.name} />
       ))}
 
       {[
@@ -61,8 +61,8 @@ export const Projects: React.FC<{
           outside: true,
         },
         { name: 'Itravel', to: 'https://tueuropa.pl/ubezpieczenia-turystyczne.htm', outside: true },
-      ].map((x) => (
-        <RouterLinks routes={[x]} tag="h3" key={x.name} />
+      ].map((v) => (
+        <RouterLinks routes={[v]} tag="h3" key={v.name} />
       ))}
 
       {[
@@ -84,8 +84,8 @@ export const Projects: React.FC<{
           to: 'https://leetcode.com/u/najwer23',
           outside: true,
         },
-      ].map((x) => (
-        <RouterLinks routes={[x]} tag="p" key={x.name} />
+      ].map((v) => (
+        <RouterLinks routes={[v]} tag="p" key={v.name} />
       ))}
     </Grid>
   );

@@ -1,7 +1,7 @@
-import { Forecast } from '../Weather.types';
+import { Forecast } from './ChartData.types';
 import { formatDateFromDt } from '../Weather.utils';
 
-export const dataForLineChartTemp = (obj: Forecast[], sunrise: number, sunset: number) => {
+export const chartDataTemp = (obj: Forecast[], sunrise: number, sunset: number) => {
   if (obj == null) {
     return null;
   }

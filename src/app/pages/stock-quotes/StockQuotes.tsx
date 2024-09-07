@@ -4,16 +4,16 @@ import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
 import { queryStockQuotes } from './StockQuotes.query';
 import { useQueries } from '@tanstack/react-query';
 import { ChartLine } from '@najwer23/charts/ChartLine';
-import { dataForLineChartCurrency } from './dataForLineChartCurrency';
+import { chartDataCurrency } from './chartDataCurrency';
 
 export const StockQuotes: React.FC<{
   title: string;
 }> = ({ title }): JSX.Element => {
   useDocumentTitle(title);
 
-  const queriesStockQuotes = ['usd', 'eur', 'chf'].map((c) => ({
-    queryKey: ['queryStockQuotes', 'queryStockQuotes' + c],
-    queryFn: () => queryStockQuotes(c),
+  const queriesStockQuotes = ['usd', 'eur', 'chf'].map((currency) => ({
+    queryKey: ['queryStockQuotes', 'queryStockQuotes' + currency],
+    queryFn: () => queryStockQuotes(currency),
     staleTime: Infinity,
     gcTime: 30 * 1000 * 60,
     retry: 0,
@@ -52,7 +52,7 @@ export const StockQuotes: React.FC<{
                 }}>
                 <ChartLine
                   title={`${v.data!.code}/PLN`}
-                  data={dataForLineChartCurrency(v.data!.rates)}
+                  data={chartDataCurrency(v.data!.rates)}
                   ySymbol={` PLN`}
                   yStepSize={0.001}
                 />

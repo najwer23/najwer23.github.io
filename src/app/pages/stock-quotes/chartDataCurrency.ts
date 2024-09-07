@@ -1,6 +1,6 @@
 import { StockQuotesRates } from './StockQuotes.query';
 
-export const dataForLineChartCurrency = (arr: StockQuotesRates) => {
+export const chartDataCurrency = (arr: StockQuotesRates) => {
   if (arr == null) {
     return null;
   }
