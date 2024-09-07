@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
-<desc>Created with Fabric.js 5.2.4</desc>
-<g transform="matrix(1 0 0 1 540 540)" id="5e80e5e0-7940-4251-81dc-6cad5b81daa7">
-<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: #b0b3b7; fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="512px" height="512px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g><path style="opacity:0.998" fill="#ff0059" d="M -0.5,-0.5 C 90.8333,-0.5 182.167,-0.5 273.5,-0.5C 352.525,60.5189 431.858,121.186 511.5,181.5C 511.5,291.5 511.5,401.5 511.5,511.5C 458.5,511.5 405.5,511.5 352.5,511.5C 235.133,410.798 117.466,310.465 -0.5,210.5C -0.5,140.167 -0.5,69.8333 -0.5,-0.5 Z"/></g>
+<g><path style="opacity:1" fill="#bfc0bf" d="M 273.5,-0.5 C 352.833,-0.5 432.167,-0.5 511.5,-0.5C 511.5,60.1667 511.5,120.833 511.5,181.5C 431.858,121.186 352.525,60.5189 273.5,-0.5 Z"/></g>
+<g><path style="opacity:0.988" fill="#ffa500" d="M -0.5,210.5 C 117.466,310.465 235.133,410.798 352.5,511.5C 234.833,511.5 117.167,511.5 -0.5,511.5C -0.5,411.167 -0.5,310.833 -0.5,210.5 Z"/></g>
 </svg>
