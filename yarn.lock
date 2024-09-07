@@ -1772,7 +1772,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.3.1"
     chart.js: "npm:^4.4.4"
     gh-pages: "npm:^6.1.1"
-    najwer23snacks: "npm:^2.3.3"
+    najwer23snacks: "npm:^2.3.4"
     prettier: "npm:^3.3.3"
     react: "npm:^18.3.1"
     react-chartjs-2: "npm:5.2.0"
@@ -1785,13 +1785,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"najwer23snacks@npm:^2.3.3":
-  version: 2.3.3
-  resolution: "najwer23snacks@npm:2.3.3"
+"najwer23snacks@npm:^2.3.4":
+  version: 2.3.4
+  resolution: "najwer23snacks@npm:2.3.4"
   peerDependencies:
     react: ^18.3.1
     react-dom: ^18.3.1
-  checksum: 10c0/7a39da8c34f19c4945942fac04c9297d18ff4a4752089d4f6ae35171c3089e3ec11205ce0cd59e9744fcf9a7ddbe619b064fcc40cd5ecb6fe6af6d906c97be81
+  checksum: 10c0/bf4597eccc9cf3e1da13377066424ff742f45711c1e4236a9283e01f16e931247e66611cf3882786a0a4360e71c04a223334157501f6708659b925852f8a1206
   languageName: node
   linkType: hard
 

@@ -2,10 +2,12 @@ import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
 import { useQuery } from '@tanstack/react-query';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Picture } from 'najwer23snacks/lib/Picture';
 import { Button } from 'najwer23snacks/lib/Button';
+import { Dialog } from 'najwer23snacks/lib/Dialog';
+
 import { queryApod } from './Apod.query';
 
 export const Apod: React.FC<{
@@ -14,6 +16,7 @@ export const Apod: React.FC<{
   const { page } = useParams();
   const currentPage = Number(page) || 1;
   const navigate = useNavigate();
+  const [dialog, setDialog] = useState<{ [key: string]: boolean }>({});
 
   useDocumentTitle(title + ' - Page: ' + currentPage);
 
@@ -69,9 +72,18 @@ export const Apod: React.FC<{
                           </TextBox>
                           <TextBox> {explanation} </TextBox>
                         </div>
-                        <div>
+
+                        <div onClick={() => setDialog({ ...dialog, [title]: true })} style={{ cursor: 'pointer' }}>
                           <Picture src={url} alt={title} key={i} />
                         </div>
+
+                        <Dialog
+                          modalOpen={dialog[title] || false}
+                          modalClose={() => setDialog({ ...dialog, [title]: false })}>
+                          <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                            <Picture src={url} alt={title} key={i} />
+                          </div>
+                        </Dialog>
                       </Grid>
                     </Grid>
                   ),
