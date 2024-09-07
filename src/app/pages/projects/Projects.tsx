@@ -79,6 +79,7 @@ export const Projects: React.FC<{
         },
         { name: "Valentine's Day Cards", to: 'https://najwer23.github.io/flip-card', outside: true },
         { name: 'Reed–Solomon error correction', to: 'https://najwer23.github.io/bch-code-js/', outside: true },
+        { name: 'Astronomy Picture Of the Day', to: '/apod' },
         {
           name: `Leetcode problems solved: ${isLoading ? '1000+' : Number(data?.totalSolved) + 18}`,
           to: 'https://leetcode.com/u/najwer23',
