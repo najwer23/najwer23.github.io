@@ -7,8 +7,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Picture } from 'najwer23snacks/lib/Picture';
 import { Button } from 'najwer23snacks/lib/Button';
 import { Dialog } from 'najwer23snacks/lib/Dialog';
-
 import { queryApod } from './Apod.query';
+import styles from './Apod.module.css';
 
 export const Apod: React.FC<{
   title: string;
@@ -73,14 +73,14 @@ export const Apod: React.FC<{
                           <TextBox> {explanation} </TextBox>
                         </div>
 
-                        <div onClick={() => setDialog({ ...dialog, [title]: true })} style={{ cursor: 'pointer' }}>
+                        <div onClick={() => setDialog({ ...dialog, [title]: true })} className={styles.pictureWrapper}>
                           <Picture src={url} alt={title} key={i} />
                         </div>
 
                         <Dialog
                           modalOpen={dialog[title] || false}
                           modalClose={() => setDialog({ ...dialog, [title]: false })}>
-                          <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                          <div>
                             <Picture src={url} alt={title} key={i} />
                           </div>
                         </Dialog>
