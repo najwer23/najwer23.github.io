@@ -33,7 +33,7 @@ export const Gallery: React.FC<{
             mobile: 1,
             smallDesktop: 3,
             desktop: 3,
-            tablet: 3,
+            tablet: 2,
           }}>
           {GALLERY &&
             GALLERY.map(({ src, alt, ar }, i) => (
