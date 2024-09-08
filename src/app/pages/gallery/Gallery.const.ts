@@ -2,7 +2,7 @@ export const GALLERY = [
   {
     src: 'https://i.pinimg.com/originals/6d/a7/bf/6da7bf87e217fa0efe1bfdb290fa162e.jpg',
     alt: 'Moon',
-    ar: 296/443,
+    ar: 296 / 443,
   },
   {
     src: 'https://i.ibb.co/31jnK3Y/Sagrada-Familia-2021.jpg',
@@ -93,5 +93,5 @@ export const GALLERY = [
     src: 'https://i.ibb.co/Gs5K4pJ/318467739-179571174674590-2719368099439007366-n.jpg',
     alt: 'Jakuszyce',
     ar: 4 / 3,
-  }
+  },
 ];

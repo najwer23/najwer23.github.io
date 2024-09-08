@@ -43,9 +43,9 @@ export const Apod: React.FC<{
 
   useEffect(() => {
     if (!isLoading) {
-      setDialog({ isOpen: false, src: data?.[0].url ?? "", alt: ""})
+      setDialog({ isOpen: false, src: data?.[0].url ?? '', alt: '' });
     }
-  },[isLoading])
+  }, [isLoading]);
 
   const onClickPagination = (number: number) => navigate('/apod/page/' + (currentPage + number));
 
@@ -55,65 +55,67 @@ export const Apod: React.FC<{
 
       {isLoading && <TextBox>Loading..</TextBox>}
 
-      {!isLoading && (
-        <>
-          <Grid widthMax={1400} layout="container" padding="0px 0 50px 0" margin="auto">
-            {data
-              ?.sort((a, b) => b.date.localeCompare(a.date))
-              .map(
-                ({ title, explanation, media_type, url, date }, i) =>
-                  media_type === 'image' && (
-                    <Grid widthMax={1400} layout="container" padding="10px 0 30px 0" margin="auto" key={title}>
-                      <Grid
-                        layout={'columns'}
-                        gap={{
-                          col: '100px',
-                          row: '0px',
-                        }}
-                        col={{
-                          mobile: 1,
-                          smallDesktop: 2,
-                          desktop: 2,
-                          tablet: 2,
-                        }}>
-                        <div>
-                          <TextBox tag="h2"> {title} </TextBox>
-                          <TextBox>
-                            <b>{date} </b>
-                          </TextBox>
-                          <TextBox> {explanation} </TextBox>
-                        </div>
+      <div style={{ minHeight: '1400px' }}>
+        {!isLoading && (
+          <>
+            <Grid widthMax={1400} layout="container" padding="0px 0 50px 0" margin="auto">
+              {data
+                ?.sort((a, b) => b.date.localeCompare(a.date))
+                .map(
+                  ({ title, explanation, media_type, url, date }, i) =>
+                    media_type === 'image' && (
+                      <Grid widthMax={1400} layout="container" padding="10px 0 30px 0" margin="auto" key={title}>
+                        <Grid
+                          layout={'columns'}
+                          gap={{
+                            col: '100px',
+                            row: '0px',
+                          }}
+                          col={{
+                            mobile: 1,
+                            smallDesktop: 2,
+                            desktop: 2,
+                            tablet: 2,
+                          }}>
+                          <div>
+                            <TextBox tag="h2"> {title} </TextBox>
+                            <TextBox>
+                              <b>{date} </b>
+                            </TextBox>
+                            <TextBox> {explanation} </TextBox>
+                          </div>
 
-                        <div
-                          onClick={() => setDialog({ isOpen: true, src: url, alt: title })}
-                          className={styles.pictureWrapper}>
-                          <Picture src={url} alt={title} key={i} />
-                        </div>
+                          <div
+                            onClick={() => setDialog({ isOpen: true, src: url, alt: title })}
+                            className={styles.pictureWrapper}>
+                            <Picture src={url} alt={title} key={i} />
+                          </div>
+                        </Grid>
                       </Grid>
-                    </Grid>
-                  ),
-              )}
-          </Grid>
+                    ),
+                )}
+            </Grid>
 
-          <Dialog modalOpen={dialog.isOpen} modalClose={() => setDialog({ ...dialog, isOpen: false })}>
-            <div>
-              <Picture src={dialog.src} alt={dialog.alt} />
+            <Dialog modalOpen={dialog.isOpen} modalClose={() => setDialog({ ...dialog, isOpen: false })}>
+              <div>
+                <Picture src={dialog.src} alt={dialog.alt} />
+              </div>
+            </Dialog>
+
+            <div style={{ display: 'flex', justifyContent: 'center', columnGap: '20px' }}>
+              <Button type={'button'} onClick={() => onClickPagination(-1)} disabled={currentPage < 2}>
+                Prev
+              </Button>
+              <Button type={'button'} disabled>
+                {currentPage}
+              </Button>
+              <Button type={'button'} onClick={() => onClickPagination(1)}>
+                Next
+              </Button>
             </div>
-          </Dialog>
-
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Button type={'button'} onClick={() => onClickPagination(-1)} disabled={currentPage < 2}>
-              Prev
-            </Button>
-            <Button type={'button'} disabled>
-              {currentPage}
-            </Button>
-            <Button type={'button'} onClick={() => onClickPagination(1)}>
-              Next
-            </Button>
-          </div>
-        </>
-      )}
+          </>
+        )}
+      </div>
     </Grid>
   );
 };

@@ -26,41 +26,43 @@ export const StockQuotes: React.FC<{
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
       <TextBox tag="h1"> Stock Quotes</TextBox>
 
-      {dataStockQuotes[0].isLoading || dataStockQuotes[1].isLoading || dataStockQuotes[2].isLoading ? (
-        <TextBox>Loading..</TextBox>
-      ) : (
-        <>
-          <Grid widthMax={700} layout="container" padding="0" margin="0">
-            <TextBox>
-              Bid Price (3.9852): This means that the highest price buyers are willing to pay for the asset is 3.9852.
-              If you want to sell the asset, you can sell it at this price.
-            </TextBox>
-            <TextBox>
-              Ask Price (4.0658): This indicates that the lowest price sellers are willing to accept is 4.0658. If you
-              want to buy the asset, you will have to pay this price.
-            </TextBox>
-          </Grid>
+      <div style={{ minHeight: '1400px' }}>
+        {dataStockQuotes[0].isLoading || dataStockQuotes[1].isLoading || dataStockQuotes[2].isLoading ? (
+          <TextBox>Loading..</TextBox>
+        ) : (
+          <>
+            <Grid widthMax={700} layout="container" padding="0" margin="0">
+              <TextBox>
+                Bid Price (3.9852): This means that the highest price buyers are willing to pay for the asset is 3.9852.
+                If you want to sell the asset, you can sell it at this price.
+              </TextBox>
+              <TextBox>
+                Ask Price (4.0658): This indicates that the lowest price sellers are willing to accept is 4.0658. If you
+                want to buy the asset, you will have to pay this price.
+              </TextBox>
+            </Grid>
 
-          <div>
-            {dataStockQuotes.map((v, i) => (
-              <div
-                key={i}
-                style={{
-                  marginTop: '30px',
-                  marginBottom: '50px',
-                  height: '700px',
-                }}>
-                <ChartLine
-                  title={`${v.data!.code}/PLN`}
-                  data={chartDataCurrency(v.data!.rates)}
-                  ySymbol={` PLN`}
-                  yStepSize={0.001}
-                />
-              </div>
-            ))}
-          </div>
-        </>
-      )}
+            <div>
+              {dataStockQuotes.map((v, i) => (
+                <div
+                  key={i}
+                  style={{
+                    marginTop: '30px',
+                    marginBottom: i != dataStockQuotes.length - 1 ? '50px' : 0,
+                    height: '700px',
+                  }}>
+                  <ChartLine
+                    title={`${v.data!.code}/PLN`}
+                    data={chartDataCurrency(v.data!.rates)}
+                    ySymbol={` PLN`}
+                    yStepSize={0.001}
+                  />
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
     </Grid>
   );
 };

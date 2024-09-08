@@ -1,7 +1,6 @@
 import { Footer } from 'najwer23snacks/lib/Footer';
 import { Navigation } from 'najwer23snacks/lib/Navigation';
 import { Outlet } from 'react-router-dom';
-import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { LAYOUT_NAVIGATION } from './Layout.const';
 import { RouterLinks } from '../router/RouterLinks';
 import styles from './Layout.module.css';
@@ -25,9 +24,7 @@ export const Layout: React.FC<{
         navigationWidthMax={1400}
       />
       <Outlet />
-      <Footer footerWidthMax={1400}>
-        <TextBox>Mariusz Najwer, 2024 </TextBox>
-      </Footer>
+      <Footer footerWidthMax={1400} />
     </>
   );
 };
