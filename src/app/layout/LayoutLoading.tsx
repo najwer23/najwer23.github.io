@@ -26,9 +26,7 @@ export const LayoutLoading: React.FC<{
         <TextBox tag="h1">Loading..</TextBox>
       </Grid>
 
-      <Footer footerWidthMax={1400}>
-        <TextBox>Mariusz Najwer, 2024 </TextBox>
-      </Footer>
+      <Footer footerWidthMax={1400} />
     </>
   );
 };
