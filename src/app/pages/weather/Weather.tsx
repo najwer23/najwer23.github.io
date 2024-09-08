@@ -30,7 +30,7 @@ export const Weather: React.FC<{
   const lat = coords.value.split(':')[0];
   const lon = coords.value.split(':')[1];
 
-  const { data, isLoading } = useQuery({
+  const { data, isPending } = useQuery({
     queryKey: ['queryWeatherCoords', 'queryWeatherCoords' + coords.value],
     queryFn: () => queryWeatherCoords(lat, lon),
     staleTime: Infinity,
@@ -58,68 +58,68 @@ export const Weather: React.FC<{
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
-      <TextBox tag="h1"> Weather </TextBox>
-
-      <div className={styles.weatherSelectWrapper}>
-        {townListForSelect.map(({ value, label }) => (
-          <Button
-            key={value}
-            type={'button'}
-            onClick={() => setCoords({ value, label })}
-            disabled={coords.value === value}>
-            {label}
-          </Button>
-        ))}
-      </div>
-
-      <div className={styles.weatherWrapper}>
-        {!isLoading ? (
-          <Carousel>
-            <div className={styles.weatherCurrent}>
-              <WeatherImg imgArr={weatherCurrent!.weather} />
-              <WeatherForecastData title={'dayOfWeek'} value={weatherCurrent!.dt} />
-              <WeatherForecastData title={'Temp'} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
-              <WeatherForecastData
-                title={'Sunrise'}
-                value={formatDateFromDt(weatherCurrent!.sunrise)?.split(',')[1] ?? ''}
-              />
-              <WeatherForecastData
-                title={'Sunset'}
-                value={formatDateFromDt(weatherCurrent!.sunset)?.split(',')[1] ?? ''}
-              />
-              <WeatherForecastData title={'Wind'} value={forecastDataFormat(weatherCurrent!.wind_speed, 1)} />
-              <WeatherForecastData title={'Pressure'} value={forecastDataFormat(weatherCurrent!.pressure, 3)} />
-              <WeatherForecastData title={'Humidity'} value={forecastDataFormat(weatherCurrent!.humidity, 2)} />
-              <WeatherForecastData title={'Clouds'} value={forecastDataFormat(weatherCurrent!.clouds, 2)} />
-              <WeatherForecastData title={'Lat'} value={forecastDataFormat(coords.value?.split(':')[0], 5)} />
-              <WeatherForecastData title={'Lon'} value={forecastDataFormat(coords.value?.split(':')[1], 5)} />
-            </div>
-
-            {weather8Days &&
-              weather8Days
-                .filter((_: unknown, i: number) => i !== 0)
-                .map((x: any) => (
-                  <div key={x.dt}>
-                    <WeatherImg imgArr={x.weather} />
-                    <WeatherForecastData title={'dayOfWeek'} value={x.dt} />
-                    <WeatherForecastData title={'Temp'} value={forecastDataFormat(x.temp.day, 4)} />
-                    <WeatherForecastData title={'Sunrise'} value={formatDateFromDt(x.sunrise)?.split(',')[1] ?? ''} />
-                    <WeatherForecastData title={'Sunset'} value={formatDateFromDt(x.sunset)?.split(',')[1] ?? ''} />
-                    <WeatherForecastData title={'Wind'} value={forecastDataFormat(x.wind_speed, 1)} />
-                    <WeatherForecastData title={'Pressure'} value={forecastDataFormat(x.pressure, 3)} />
-                    <WeatherForecastData title={'Humidity'} value={forecastDataFormat(x.humidity, 2)} />
-                    <WeatherForecastData title={'Clouds'} value={forecastDataFormat(x.clouds, 2)} />
-                  </div>
-                ))}
-          </Carousel>
-        ) : (
-          <div style={{ minHeight: '440px' }}>
-            <TextBox>Loading..</TextBox>
+      {!isPending ? (
+        <>
+          <TextBox tag="h1"> Weather </TextBox>
+          <div className={styles.weatherSelectWrapper}>
+            {townListForSelect.map(({ value, label }) => (
+              <Button
+                key={value}
+                type={'button'}
+                onClick={() => setCoords({ value, label })}
+                disabled={coords.value === value}>
+                {label}
+              </Button>
+            ))}
           </div>
-        )}
-      </div>
+          <div className={styles.weatherWrapper}>
+            <Carousel>
+              <div className={styles.weatherCurrent}>
+                <WeatherImg imgArr={weatherCurrent!.weather} />
+                <WeatherForecastData title={'dayOfWeek'} value={weatherCurrent!.dt} />
+                <WeatherForecastData title={'Temp'} value={forecastDataFormat(weatherCurrent!.temp, 4)} />
+                <WeatherForecastData
+                  title={'Sunrise'}
+                  value={formatDateFromDt(weatherCurrent!.sunrise)?.split(',')[1] ?? ''}
+                />
+                <WeatherForecastData
+                  title={'Sunset'}
+                  value={formatDateFromDt(weatherCurrent!.sunset)?.split(',')[1] ?? ''}
+                />
+                <WeatherForecastData title={'Wind'} value={forecastDataFormat(weatherCurrent!.wind_speed, 1)} />
+                <WeatherForecastData title={'Pressure'} value={forecastDataFormat(weatherCurrent!.pressure, 3)} />
+                <WeatherForecastData title={'Humidity'} value={forecastDataFormat(weatherCurrent!.humidity, 2)} />
+                <WeatherForecastData title={'Clouds'} value={forecastDataFormat(weatherCurrent!.clouds, 2)} />
+                <WeatherForecastData title={'Lat'} value={forecastDataFormat(coords.value?.split(':')[0], 5)} />
+                <WeatherForecastData title={'Lon'} value={forecastDataFormat(coords.value?.split(':')[1], 5)} />
+              </div>
 
-      {!isLoading ? (
+              {weather8Days &&
+                weather8Days
+                  .filter((_: unknown, i: number) => i !== 0)
+                  .map((x: any) => (
+                    <div key={x.dt}>
+                      <WeatherImg imgArr={x.weather} />
+                      <WeatherForecastData title={'dayOfWeek'} value={x.dt} />
+                      <WeatherForecastData title={'Temp'} value={forecastDataFormat(x.temp.day, 4)} />
+                      <WeatherForecastData title={'Sunrise'} value={formatDateFromDt(x.sunrise)?.split(',')[1] ?? ''} />
+                      <WeatherForecastData title={'Sunset'} value={formatDateFromDt(x.sunset)?.split(',')[1] ?? ''} />
+                      <WeatherForecastData title={'Wind'} value={forecastDataFormat(x.wind_speed, 1)} />
+                      <WeatherForecastData title={'Pressure'} value={forecastDataFormat(x.pressure, 3)} />
+                      <WeatherForecastData title={'Humidity'} value={forecastDataFormat(x.humidity, 2)} />
+                      <WeatherForecastData title={'Clouds'} value={forecastDataFormat(x.clouds, 2)} />
+                    </div>
+                  ))}
+            </Carousel>
+          </div>
+        </>
+      ) : (
+        <div style={{ minHeight: '440px' }}>
+          <TextBox tag="h1">Loading..</TextBox>
+        </div>
+      )}
+
+      {!isPending ? (
         <div
           style={{
             marginTop: '30px',
@@ -136,7 +136,7 @@ export const Weather: React.FC<{
         <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
       )}
 
-      {!isLoading ? (
+      {!isPending ? (
         <div
           style={{
             marginTop: '30px',
@@ -153,7 +153,7 @@ export const Weather: React.FC<{
         <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
       )}
 
-      {!isLoading ? (
+      {!isPending ? (
         <div
           style={{
             marginTop: '30px',
@@ -170,7 +170,7 @@ export const Weather: React.FC<{
         <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
       )}
 
-      {!isLoading ? (
+      {!isPending ? (
         <div
           style={{
             marginTop: '30px',

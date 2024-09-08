@@ -32,7 +32,7 @@ export const Apod: React.FC<{
     });
   }, [page]);
 
-  const { data, isLoading } = useQuery({
+  const { data, isPending } = useQuery({
     queryKey: ['queryApod', 'queryApod' + currentPage],
     queryFn: () => queryApod(currentPage),
     staleTime: Infinity,
@@ -42,22 +42,21 @@ export const Apod: React.FC<{
   });
 
   useEffect(() => {
-    if (!isLoading) {
+    if (!isPending) {
       setDialog({ isOpen: false, src: data?.[0].url ?? '', alt: '' });
     }
-  }, [isLoading]);
+  }, [isPending]);
 
   const onClickPagination = (number: number) => navigate('/apod/page/' + (currentPage + number));
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
-      <TextBox tag="h1"> Astronomy Picture Of the Day</TextBox>
-
-      {isLoading && <TextBox>Loading..</TextBox>}
+      {isPending && <TextBox tag='h1'>Loading..</TextBox>}
 
       <div style={{ minHeight: '1400px' }}>
-        {!isLoading && (
+        {!isPending && (
           <>
+            <TextBox tag="h1"> Astronomy Picture Of the Day</TextBox>
             <Grid widthMax={1400} layout="container" padding="0px 0 50px 0" margin="auto">
               {data
                 ?.sort((a, b) => b.date.localeCompare(a.date))

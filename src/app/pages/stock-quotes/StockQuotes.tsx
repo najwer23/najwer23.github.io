@@ -24,13 +24,12 @@ export const StockQuotes: React.FC<{
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
-      <TextBox tag="h1"> Stock Quotes</TextBox>
-
       <div style={{ minHeight: '1400px' }}>
-        {dataStockQuotes[0].isLoading || dataStockQuotes[1].isLoading || dataStockQuotes[2].isLoading ? (
-          <TextBox>Loading..</TextBox>
+        {dataStockQuotes[0].isPending || dataStockQuotes[1].isPending || dataStockQuotes[2].isPending ? (
+          <TextBox tag="h1">Loading..</TextBox>
         ) : (
           <>
+            <TextBox tag="h1"> Stock Quotes</TextBox>
             <Grid widthMax={700} layout="container" padding="0" margin="0">
               <TextBox>
                 Bid Price (3.9852): This means that the highest price buyers are willing to pay for the asset is 3.9852.
