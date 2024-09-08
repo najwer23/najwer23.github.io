@@ -39,10 +39,10 @@ export const chartDataPressure = (obj: Forecast[], sunrise: number, sunset: numb
       {
         label: 'Pressure',
         data: dataTempX,
-        borderColor: 'rgb(24, 117, 21)',
-        pointBackgroundColor: 'rgb(24, 117, 21)',
+        borderColor: '#00FF00',
+        pointBackgroundColor: '#00FF00',
         lineTension: 0,
-        backgroundColor: 'rgb(24, 117, 21)',
+        backgroundColor: '#00FF00',
         // backgroundColor: (context: ScriptableContext<"line">) => {
         // 	const ctx = context.chart.ctx;
         // 	const gradient = ctx.createLinearGradient(0, 0, 0, 600);

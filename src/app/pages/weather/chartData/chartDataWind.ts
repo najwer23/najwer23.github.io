@@ -43,9 +43,9 @@ export const chartDataWind = (obj: Forecast[], sunrise: number, sunset: number) 
       {
         label: 'Wind Speed',
         data: dataTempX,
-        borderColor: 'rgb(128,0,128)',
-        backgroundColor: 'rgb(128,0,128)',
-        pointBackgroundColor: 'rgb(128,0,128)',
+        borderColor: '#A3C1DA',
+        backgroundColor: '#A3C1DA',
+        pointBackgroundColor: '#A3C1DA',
         lineTension: 0.5,
       },
       {
