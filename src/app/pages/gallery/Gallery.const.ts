@@ -1,18 +1,13 @@
 export const GALLERY = [
   {
-    src: 'https://i.ibb.co/K54ZdyB/mountains-100367.jpg',
-    alt: 'Flying birds',
-    ar: 101 / 67,
+    src: 'https://i.pinimg.com/originals/6d/a7/bf/6da7bf87e217fa0efe1bfdb290fa162e.jpg',
+    alt: 'Moon',
+    ar: 296/443,
   },
   {
     src: 'https://i.ibb.co/31jnK3Y/Sagrada-Familia-2021.jpg',
     alt: 'Sagrada Família',
-    ar: 4 / 5,
-  },
-  {
-    src: 'https://i.ibb.co/XY8KxrY/12-sniezka-prawdziwa-perla-karkonoszy.webp',
-    alt: 'Śnieżka',
-    ar: 4 / 3,
+    ar: 1,
   },
   {
     src: 'https://i.ibb.co/PxQ2gPG/beach-1236581-1280.jpg',
@@ -98,45 +93,5 @@ export const GALLERY = [
     src: 'https://i.ibb.co/Gs5K4pJ/318467739-179571174674590-2719368099439007366-n.jpg',
     alt: 'Jakuszyce',
     ar: 4 / 3,
-  },
-  {
-    src: 'https://picsum.photos/500/700',
-    alt: 'Random',
-    ar: 5 / 7,
-  },
-  {
-    src: 'https://picsum.photos/600/600',
-    alt: 'Random',
-    ar: 1,
-  },
-  {
-    src: 'https://picsum.photos/400/700',
-    alt: 'Random',
-    ar: 4 / 7,
-  },
-  {
-    src: 'https://picsum.photos/800/700',
-    alt: 'Random',
-    ar: 8 / 7,
-  },
-  {
-    src: 'https://picsum.photos/900/700',
-    alt: 'Random',
-    ar: 9 / 7,
-  },
-  {
-    src: 'https://picsum.photos/400/400',
-    alt: 'Random',
-    ar: 1 / 1,
-  },
-  {
-    src: 'https://picsum.photos/800/400',
-    alt: 'Random',
-    ar: 8 / 4,
-  },
-  {
-    src: 'https://picsum.photos/300/400',
-    alt: 'Random',
-    ar: 3 / 4,
-  },
+  }
 ];
