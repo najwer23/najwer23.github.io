@@ -40,45 +40,50 @@ export const chartDataRainfall = (obj: Forecast[], sunrise: number, sunset: numb
     }
   }
 
+  let datasets = [
+    {
+      type: 'bar',
+      label: 'Rain',
+      data: dataTempXRain,
+      borderColor: '#3F4EA6',
+      backgroundColor: (context: ScriptableContext<'bar'>) => {
+        const ctx = context.chart.ctx;
+        const gradient = ctx.createLinearGradient(0, 0, 0, 600);
+        gradient.addColorStop(0, '#5c6cc9');
+        gradient.addColorStop(1, '#3F4EA6');
+        return gradient;
+      },
+    },
+    {
+      type: 'line',
+      label: 'Night',
+      data: dataNight,
+      lineTension: 0.2,
+      radius: 0,
+      backgroundColor: 'rgba(194, 194, 194,.1)',
+      borderColor: 'transparent',
+      fill: 'start',
+    },
+  ];
+
+  if (Object.values(dataTempXSnow).reduce((a, b) => a + b, 0) > 0) {
+    datasets.push({
+      type: 'bar',
+      label: 'Snow',
+      data: dataTempXSnow,
+      borderColor: '#3fa6a6',
+      backgroundColor: (context: ScriptableContext<'bar'>) => {
+        const ctx = context.chart.ctx;
+        const gradient = ctx.createLinearGradient(0, 0, 0, 600);
+        gradient.addColorStop(0, 'rgb(92, 241, 241)');
+        gradient.addColorStop(1, '#3fa6a6');
+        return gradient;
+      },
+    });
+  }
+
   return {
     labels: dataTempY,
-    datasets: [
-      {
-        type: 'bar',
-        label: 'Rain',
-        data: dataTempXRain,
-        borderColor: '#3F4EA6',
-        backgroundColor: (context: ScriptableContext<'bar'>) => {
-          const ctx = context.chart.ctx;
-          const gradient = ctx.createLinearGradient(0, 0, 0, 600);
-          gradient.addColorStop(0, '#5c6cc9');
-          gradient.addColorStop(1, '#3F4EA6');
-          return gradient;
-        },
-      },
-      {
-        type: 'bar',
-        label: 'Snow',
-        data: dataTempXSnow,
-        borderColor: '#3fa6a6',
-        backgroundColor: (context: ScriptableContext<'bar'>) => {
-          const ctx = context.chart.ctx;
-          const gradient = ctx.createLinearGradient(0, 0, 0, 600);
-          gradient.addColorStop(0, 'rgb(92, 241, 241)');
-          gradient.addColorStop(1, '#3fa6a6');
-          return gradient;
-        },
-      },
-      {
-        type: 'line',
-        label: 'Night',
-        data: dataNight,
-        lineTension: 0.2,
-        radius: 0,
-        backgroundColor: 'rgba(194, 194, 194,.1)',
-        borderColor: 'transparent',
-        fill: 'start',
-      },
-    ],
+    datasets,
   };
 };
