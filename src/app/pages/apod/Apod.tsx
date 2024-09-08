@@ -16,7 +16,12 @@ export const Apod: React.FC<{
   const { page } = useParams();
   const currentPage = Number(page) || 1;
   const navigate = useNavigate();
-  const [dialog, setDialog] = useState<{ [key: string]: boolean }>({});
+
+  const [dialog, setDialog] = useState<{ isOpen: boolean; src: string; alt: string }>({
+    isOpen: false,
+    src: '',
+    alt: '',
+  });
 
   useDocumentTitle(title + ' - Page: ' + currentPage);
 
@@ -35,6 +40,12 @@ export const Apod: React.FC<{
     retry: 0,
     enabled: true,
   });
+
+  useEffect(() => {
+    if (!isLoading) {
+      setDialog({ isOpen: false, src: data?.[0].url ?? "", alt: ""})
+    }
+  },[isLoading])
 
   const onClickPagination = (number: number) => navigate('/apod/page/' + (currentPage + number));
 
@@ -73,22 +84,23 @@ export const Apod: React.FC<{
                           <TextBox> {explanation} </TextBox>
                         </div>
 
-                        <div onClick={() => setDialog({ ...dialog, [title]: true })} className={styles.pictureWrapper}>
+                        <div
+                          onClick={() => setDialog({ isOpen: true, src: url, alt: title })}
+                          className={styles.pictureWrapper}>
                           <Picture src={url} alt={title} key={i} />
                         </div>
-
-                        <Dialog
-                          modalOpen={dialog[title] || false}
-                          modalClose={() => setDialog({ ...dialog, [title]: false })}>
-                          <div>
-                            <Picture src={url} alt={title} key={i} />
-                          </div>
-                        </Dialog>
                       </Grid>
                     </Grid>
                   ),
               )}
           </Grid>
+
+          <Dialog modalOpen={dialog.isOpen} modalClose={() => setDialog({ ...dialog, isOpen: false })}>
+            <div>
+              <Picture src={dialog.src} alt={dialog.alt} />
+            </div>
+          </Dialog>
+
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Button type={'button'} onClick={() => onClickPagination(-1)} disabled={currentPage < 2}>
               Prev
