@@ -35,7 +35,7 @@ export const Apod: React.FC<{
   const { data, isPending } = useQuery({
     queryKey: ['queryApod', 'queryApod' + currentPage],
     queryFn: () => queryApod(currentPage),
-    staleTime: Infinity,
+    staleTime: 30 * 1000 * 60,
     gcTime: 30 * 1000 * 60,
     retry: 0,
     enabled: true,

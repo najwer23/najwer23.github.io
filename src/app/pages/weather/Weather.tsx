@@ -33,7 +33,7 @@ export const Weather: React.FC<{
   const { data, isPending } = useQuery({
     queryKey: ['queryWeatherCoords', 'queryWeatherCoords' + coords.value],
     queryFn: () => queryWeatherCoords(lat, lon),
-    staleTime: Infinity,
+    staleTime: 30 * 1000 * 60,
     gcTime: 30 * 1000 * 60,
     retry: 0,
     enabled: true,
