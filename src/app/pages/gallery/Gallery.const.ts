@@ -5,6 +5,11 @@ export const GALLERY = [
     ar: 296 / 443,
   },
   {
+    src: 'https://i.pinimg.com/originals/26/79/47/267947eeae9cc87f649f427cbf91ac98.jpg',
+    alt: 'A Night Sky over the Tatra Mountains',
+    ar: 274 / 301,
+  },
+  {
     src: 'https://i.ibb.co/31jnK3Y/Sagrada-Familia-2021.jpg',
     alt: 'Sagrada Família',
     ar: 1,
