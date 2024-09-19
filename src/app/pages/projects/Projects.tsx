@@ -82,7 +82,13 @@ export const Projects: React.FC<{
         { name: 'Astronomy Picture Of the Day', to: '/apod' },
         { name: 'Masonry layout', to: '/gallery' },
         {
-          name: `Leetcode problems solved: ${isLoading ? '1000+' : Number(data?.totalSolved) + 18}`,
+          name: `Leetcode problems solved: ${
+            isLoading
+              ? '1000+'
+              : Number(
+                  data?.najwer23.submitStatsGlobal.acSubmissionNum.find((item) => item.difficulty === 'All')?.count,
+                ) + 18
+          }`,
           to: 'https://leetcode.com/u/najwer23',
           outside: true,
         },
