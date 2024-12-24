@@ -3,7 +3,7 @@ import { isEmpty } from './Weather.utils';
 
 export const WeatherImg: React.FC<{
   imgArr: { icon: string }[];
-}> = ({ imgArr }): JSX.Element => {
+}> = ({ imgArr }) => {
   if (isEmpty(imgArr)) {
     return <div style={{ width: '100px', height: '100px', marginBottom: '20px' }}> </div>;
   } else {

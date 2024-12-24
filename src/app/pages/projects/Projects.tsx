@@ -7,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 
 export const Projects: React.FC<{
   title: string;
-}> = ({ title }): JSX.Element => {
+}> = ({ title }) => {
   useDocumentTitle(title);
 
   const { data, isLoading } = useQuery({
@@ -85,10 +85,10 @@ export const Projects: React.FC<{
           name: `Leetcode problems solved: ${
             isLoading
               ? '1000+'
-              // : Number(
-              //     data?.najwer23.submitStatsGlobal.acSubmissionNum.find((item) => item.difficulty === 'All')?.count,
-              //   ) + 18
-              : data?.totalSolved ?? ""
+              : // : Number(
+                //     data?.najwer23.submitStatsGlobal.acSubmissionNum.find((item) => item.difficulty === 'All')?.count,
+                //   ) + 18
+                (data?.totalSolved ?? '')
           }`,
           to: 'https://leetcode.com/u/najwer23',
           outside: true,

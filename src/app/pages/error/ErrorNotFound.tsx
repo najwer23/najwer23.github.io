@@ -5,7 +5,7 @@ import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
 
 export const ErrorNotFound: React.FC<{
   title: string;
-}> = ({ title }): JSX.Element => {
+}> = ({ title }) => {
   useDocumentTitle(title);
 
   return (

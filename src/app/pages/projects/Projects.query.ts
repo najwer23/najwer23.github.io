@@ -12,7 +12,7 @@ import { executeFetch } from '@najwer23/config/configFetch';
 // };
 
 type QueryLeetcode = {
-  totalSolved: string
+  totalSolved: string;
 };
 
 export const queryLeetcode = async (): Promise<QueryLeetcode> => {

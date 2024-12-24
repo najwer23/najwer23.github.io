@@ -12,7 +12,7 @@ import styles from './Apod.module.css';
 
 export const Apod: React.FC<{
   title: string;
-}> = ({ title }): JSX.Element => {
+}> = ({ title }) => {
   const { page } = useParams();
   const currentPage = Number(page) || 1;
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ export const Apod: React.FC<{
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
-      {isPending && <TextBox tag='h1'>Loading..</TextBox>}
+      {isPending && <TextBox tag="h1">Loading..</TextBox>}
 
       <div style={{ minHeight: '1400px' }}>
         {!isPending && (

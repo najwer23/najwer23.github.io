@@ -5,7 +5,7 @@ export const RouterLinks: React.FC<{
   routes: { name: string; to: string; isTitle?: boolean; outside?: boolean }[];
   tag: TextBoxTag;
   className?: string;
-}> = ({ routes, tag, className }): JSX.Element => {
+}> = ({ routes, tag, className }) => {
   return (
     <>
       {routes.map((v) =>

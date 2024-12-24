@@ -20,7 +20,7 @@ import { chartDataPressure } from './chartData/chartDataPressure';
 
 export const Weather: React.FC<{
   title: string;
-}> = ({ title }): JSX.Element => {
+}> = ({ title }) => {
   useDocumentTitle(title);
 
   const [coords, setCoords] = useState<{ value: string; label: string }>({

@@ -9,7 +9,7 @@ import { Button } from 'najwer23snacks/lib/Button';
 
 export const Contact: React.FC<{
   title: string;
-}> = ({ title }): JSX.Element => {
+}> = ({ title }) => {
   useDocumentTitle(title);
 
   const { mutate, isPending, isError, data, error } = useMutation({

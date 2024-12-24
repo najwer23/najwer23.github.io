@@ -4,7 +4,7 @@ import { forecastDataFormat, formatDateFromDt2 } from './Weather.utils';
 export const WeatherForecastData: React.FC<{
   title: string;
   value: string | number;
-}> = ({ title, value }): JSX.Element => {
+}> = ({ title, value }) => {
   if (title === 'empty') {
     return (
       <div className={styles.weatherForecastData}>

@@ -8,7 +8,7 @@ import { chartDataCurrency } from './chartDataCurrency';
 
 export const StockQuotes: React.FC<{
   title: string;
-}> = ({ title }): JSX.Element => {
+}> = ({ title }) => {
   useDocumentTitle(title);
 
   const queriesStockQuotes = ['usd', 'eur', 'chf'].map((currency) => ({

@@ -10,7 +10,7 @@ import { Dialog } from 'najwer23snacks/lib/Dialog';
 
 export const Gallery: React.FC<{
   title: string;
-}> = ({ title }): JSX.Element => {
+}> = ({ title }) => {
   useDocumentTitle(title);
 
   const [dialog, setDialog] = useState<{ isOpen: boolean; src: string; alt: string }>({

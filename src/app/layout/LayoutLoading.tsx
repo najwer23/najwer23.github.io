@@ -8,7 +8,7 @@ import { LayoutNavigation } from './Layout.types';
 
 export const LayoutLoading: React.FC<{
   menu?: keyof LayoutNavigation;
-}> = ({ menu = 'notLoggedIn' }): JSX.Element => {
+}> = ({ menu = 'notLoggedIn' }) => {
   return (
     <>
       <Navigation
