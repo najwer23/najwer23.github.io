@@ -10,9 +10,19 @@ export const GALLERY = [
     ar: 274 / 301,
   },
   {
-    src: 'https://i.ibb.co/31jnK3Y/Sagrada-Familia-2021.jpg',
-    alt: 'Sagrada Família',
-    ar: 1,
+    src: 'https://i.pinimg.com/1200x/f9/c0/f0/f9c0f05a0f2b34e887de76158189c79f.jpg',
+    alt: 'Clouds',
+    ar: 120 / 161 ,
+  },
+  {
+    src: 'https://i.pinimg.com/736x/ad/ee/00/adee00c3e14918e042d865545756c0be.jpg',
+    alt: 'Shaq',
+    ar: 120 / 161 ,
+  },
+  {
+    src: 'https://i.pinimg.com/736x/9d/c0/86/9dc0865ba564486c6b206661873a44a5.jpg',
+    alt: 'Sagrada',
+    ar: 3 / 4 ,
   },
   {
     src: 'https://i.ibb.co/PxQ2gPG/beach-1236581-1280.jpg',
