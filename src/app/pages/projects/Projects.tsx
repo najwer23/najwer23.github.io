@@ -45,7 +45,7 @@ export const Projects: React.FC<{
         },
         { name: 'Restilo', to: 'https://restilo.pl/', outside: true },
       ].map((v) => (
-        <RouterLinks routes={[v]} tag="h2" key={v.name} />
+        <RouterLinks routes={[v]} tag="h3" key={v.name} />
       ))}
 
       {[
@@ -94,7 +94,7 @@ export const Projects: React.FC<{
           outside: true,
         },
       ].map((v) => (
-        <RouterLinks routes={[v]} tag="p" key={v.name} />
+        <RouterLinks routes={[v]} tag="h3" key={v.name} />
       ))}
     </Grid>
   );
