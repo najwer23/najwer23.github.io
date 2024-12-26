@@ -8,6 +8,14 @@ export const PROJECTS = [
       'A design system is a comprehensive collection of reusable components, guidelines, and standards that helps teams create consistent and cohesive digital products. It serves as a single source of truth, streamlining design and development processes across various platforms and teams. Key features include reusable UI components, thorough documentation, style guides, and design tokens. The benefits of using a design system are substantial, leading to increased efficiency by reducing time spent on repetitive tasks. It also ensures consistency across products, enhancing brand recognition and user experience. Additionally, design systems improve collaboration among stakeholders and allow for scalability and quality control as products evolve.',
   },
   {
+    pictureUrl: 'https://i.pinimg.com/1200x/19/6c/7e/196c7ec088ad11352e36fca05ade0c09.jpg',
+    name: 'Tarmika',
+    to: 'https://bridge.tarmika.com/agentportal/',
+    outside: true,
+    projectDesc:
+      'Tarmika is a single entry solution designed to streamline the quoting process. This portal allows you to submit quote requests and receive quotes from multiple insurance carriers that you’re appointed with through a single entry all on one dashboard',
+  },
+  {
     pictureUrl: 'https://i.pinimg.com/1200x/99/23/2b/99232bf6687536d05f7ed806bac5c8c1.jpg',
     name: 'Indio',
     to: 'https://www.useindio.com/',
@@ -128,7 +136,8 @@ export const PROJECTS = [
     outside: true,
   },
   {
-    projectDesc: 'An application that draws rotated geometric figures (rectangles and ellipses) on a canvas based on data from the API. For each figure it was necessary to draw a "bounding box".',
+    projectDesc:
+      'An application that draws rotated geometric figures (rectangles and ellipses) on a canvas based on data from the API. For each figure it was necessary to draw a "bounding box".',
     pictureUrl: 'https://i.pinimg.com/1200x/26/bf/09/26bf09f70b9cfefea3f8d6f7377dc604.jpg',
     name: 'Geometric figures',
     to: 'https://najwer23.github.io/react-redux-ts',
@@ -155,14 +164,16 @@ export const PROJECTS = [
     to: '/stock-quotes',
   },
   {
-    projectDesc: 'I implemented a robust system featuring a DynamoDB connector for seamless Create, Read, Update, and Delete (CRUD) operations with a NoSQL database, along with a SQL connector for relational databases. To enhance user experience, I developed an efficient session handler and an authentication system that includes login, registration, and password recovery, while addressing security concerns like Cross-Site Request Forgery (CSRF) and Cross-Site Scripting (XSS). I adopted OAuth 2.0 for secure authorization, ensuring reliable account access for users. For secure communication, I use JSON Web Tokens (JWT) to manage user authentication and session integrity. The system connects to external APIs for additional functionalities and data sources. Additionally, I incorporated an email sender to notify users of updates and implemented WebSockets to support real-time data exchange. Together, these components create a comprehensive and secure framework for managing user interactions and data efficiently.',
+    projectDesc:
+      'I implemented a robust system featuring a DynamoDB connector for seamless Create, Read, Update, and Delete (CRUD) operations with a NoSQL database, along with a SQL connector for relational databases. To enhance user experience, I developed an efficient session handler and an authentication system that includes login, registration, and password recovery, while addressing security concerns like Cross-Site Request Forgery (CSRF) and Cross-Site Scripting (XSS). I adopted OAuth 2.0 for secure authorization, ensuring reliable account access for users. For secure communication, I use JSON Web Tokens (JWT) to manage user authentication and session integrity. The system connects to external APIs for additional functionalities and data sources. Additionally, I incorporated an email sender to notify users of updates and implemented WebSockets to support real-time data exchange. Together, these components create a comprehensive and secure framework for managing user interactions and data efficiently.',
     pictureUrl: 'https://i.pinimg.com/1200x/9c/16/ec/9c16ec06c397804495d596eaabb90e83.jpg',
     name: 'Fastify API',
     to: 'https://najwer23api-fastify.vercel.app/',
     outside: true,
   },
   {
-    projectDesc: 'A resume builder is an online tool designed to help you create a professional resume efficiently and effortlessly. It streamlines the process by providing templates, prompts, and formatting options, allowing you to focus on showcasing your skills and experiences without getting bogged down in the details of design. With a resume builder, you can quickly generate a polished resume that stands out to potential employers.',
+    projectDesc:
+      'A resume builder is an online tool designed to help you create a professional resume efficiently and effortlessly. It streamlines the process by providing templates, prompts, and formatting options, allowing you to focus on showcasing your skills and experiences without getting bogged down in the details of design. With a resume builder, you can quickly generate a polished resume that stands out to potential employers.',
     pictureUrl: 'https://i.pinimg.com/1200x/99/3e/5b/993e5b60ad50ccdd9bb1a7943727577e.jpg',
 
     name: 'Résumé',
