@@ -1,6 +1,8 @@
 /* https://fluidtypography.com/ */
 
 :root {
+  color-scheme: dark;
+
   --najwer23snacks-font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
     helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 
