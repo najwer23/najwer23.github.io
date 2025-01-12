@@ -5,6 +5,7 @@ import { queryStockQuotes } from './StockQuotes.query';
 import { useQueries } from '@tanstack/react-query';
 import { ChartLine } from '@najwer23/charts/ChartLine';
 import { chartDataCurrency } from './chartDataCurrency';
+import { Skeleton } from '@najwer23/skeleton/Skeleton';
 
 export const StockQuotes: React.FC<{
   title: string;
@@ -26,7 +27,7 @@ export const StockQuotes: React.FC<{
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
       <div style={{ minHeight: '1400px' }}>
         {dataStockQuotes[0].isPending || dataStockQuotes[1].isPending || dataStockQuotes[2].isPending ? (
-          <TextBox tag="h1">Loading..</TextBox>
+          <Skeleton />
         ) : (
           <>
             <TextBox tag="h1"> Stock Quotes</TextBox>

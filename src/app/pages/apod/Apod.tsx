@@ -9,6 +9,7 @@ import { Button } from 'najwer23snacks/lib/Button';
 import { Dialog } from 'najwer23snacks/lib/Dialog';
 import { queryApod } from './Apod.query';
 import styles from './Apod.module.css';
+import { Skeleton } from '@najwer23/skeleton/Skeleton';
 
 export const Apod: React.FC<{
   title: string;
@@ -51,12 +52,13 @@ export const Apod: React.FC<{
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
-      {isPending && <TextBox tag="h1">Loading..</TextBox>}
+      {isPending && <Skeleton />}
 
       <div style={{ minHeight: '1400px' }}>
         {!isPending && (
           <>
             <TextBox tag="h1"> Astronomy Picture Of the Day</TextBox>
+            {currentPage > 1 && <TextBox tag="p">Page: {currentPage}</TextBox>}
             <Grid widthMax={1400} layout="container" padding="0px 0 50px 0" margin="auto">
               {data
                 ?.sort((a, b) => b.date.localeCompare(a.date))
