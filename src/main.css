@@ -58,5 +58,5 @@ body {
   color: var(--najwer23snacks-textbox-p-font-color);
   background-color: var(--najwer23-color-surface);
   font-family: var(--najwer23snacks-font-family);
-  scrollbar-color: dark;
+  scrollbar-color: #555 #1E1E1E;
 }
