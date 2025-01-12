@@ -1,8 +1,6 @@
 /* https://fluidtypography.com/ */
 
 :root {
-  color-scheme: dark;
-
   --najwer23snacks-font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
     helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 
@@ -59,4 +57,5 @@ body {
   color: var(--najwer23snacks-textbox-p-font-color);
   background-color: var(--najwer23-color-surface);
   font-family: var(--najwer23snacks-font-family);
+  scrollbar-color: dark;
 }
