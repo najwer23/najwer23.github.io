@@ -9,7 +9,7 @@ import { Button } from 'najwer23snacks/lib/Button';
 import { Dialog } from 'najwer23snacks/lib/Dialog';
 import { queryApod } from './Apod.query';
 import styles from './Apod.module.css';
-import { Skeleton } from '@najwer23/skeleton/Skeleton';
+import { Spinner } from '@najwer23/spinner/Spinner';
 
 export const Apod: React.FC<{
   title: string;
@@ -25,13 +25,6 @@ export const Apod: React.FC<{
   });
 
   useDocumentTitle(title + ' - Page: ' + currentPage);
-
-  useEffect(() => {
-    window.scrollTo({
-      top: currentPage == 1 ? 0 : 150,
-      behavior: 'smooth',
-    });
-  }, [page]);
 
   const { data, isPending } = useQuery({
     queryKey: ['queryApod', 'queryApod' + currentPage],
@@ -52,7 +45,7 @@ export const Apod: React.FC<{
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
-      {isPending && <Skeleton />}
+      {isPending && <Spinner />}
 
       <div style={{ minHeight: '1400px' }}>
         {!isPending && (

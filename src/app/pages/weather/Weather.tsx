@@ -17,7 +17,7 @@ import { chartDataTemp } from './chartData/chartDataTemp';
 import { chartDataWind } from './chartData/chartDataWind';
 import { chartDataRainfall } from './chartData/chartDataRainfall';
 import { chartDataPressure } from './chartData/chartDataPressure';
-import { Skeleton } from '@najwer23/skeleton/Skeleton';
+import { Spinner } from '@najwer23/spinner/Spinner';
 
 export const Weather: React.FC<{
   title: string;
@@ -31,7 +31,7 @@ export const Weather: React.FC<{
   const lat = coords.value.split(':')[0];
   const lon = coords.value.split(':')[1];
 
-  const { data, isPending } = useQuery({
+  const { data, isPending, fetchStatus } = useQuery({
     queryKey: ['queryWeatherCoords', 'queryWeatherCoords' + coords.value],
     queryFn: () => queryWeatherCoords(lat, lon),
     staleTime: 30 * 1000 * 60,
@@ -116,7 +116,7 @@ export const Weather: React.FC<{
         </>
       ) : (
         <div style={{ minHeight: '440px' }}>
-          <Skeleton />
+          <Spinner />
         </div>
       )}
 
