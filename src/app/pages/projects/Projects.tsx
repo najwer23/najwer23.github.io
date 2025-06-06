@@ -17,7 +17,7 @@ export const Projects: React.FC<{
 
   const [dialog, setDialog] = useState<{ isOpen: boolean; src: string; alt: string }>({
     isOpen: false,
-    src: PROJECTS[0].pictureUrl ?? "",
+    src: PROJECTS[0].pictureUrl ?? '',
     alt: '',
   });
 
@@ -56,12 +56,14 @@ export const Projects: React.FC<{
                 routes={[
                   {
                     ...v,
-                    name: v.name + (isLoading
-                      ? '1000+'
-                      : // Number(
-                        //   data?.najwer23.submitStatsGlobal.acSubmissionNum.find((item) => item.difficulty === 'All')?.count,
-                        // ) + 18
-                        (data?.totalSolved ?? '')),
+                    name:
+                      v.name +
+                      (isLoading
+                        ? '1000+'
+                        : // Number(
+                          //   data?.najwer23.submitStatsGlobal.acSubmissionNum.find((item) => item.difficulty === 'All')?.count,
+                          // ) + 18
+                          (data?.totalSolved ?? '')),
                   },
                 ]}
                 tag="h3"

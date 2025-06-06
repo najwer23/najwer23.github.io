@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 export function useImmediateThrottledQuery<TData>(
   queryOptions: UseQueryOptions<TData, unknown, TData, any>,
   minLoadingDurationMs = 1000,
-): { result: TData | undefined; isLoading: boolean} {
+): { result: TData | undefined; isLoading: boolean } {
   const result = useQuery<TData, unknown, TData, any>(queryOptions);
 
   const isPending = result.isFetching || result.isLoading;
@@ -53,5 +53,5 @@ export function useImmediateThrottledQuery<TData>(
     };
   }, [isPending, minLoadingDurationMs]);
 
-  return { result:result.data, isLoading: visibleIsPending };
+  return { result: result.data, isLoading: visibleIsPending };
 }

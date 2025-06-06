@@ -1,6 +1,5 @@
 @layer Spinner {
   .loader {
-
     margin: 250px auto 0 auto;
     width: 100px;
     aspect-ratio: 1;

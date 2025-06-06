@@ -48,8 +48,7 @@ export const StockQuotes: React.FC<{ title: string }> = ({ title }) => {
                     marginTop: '30px',
                     marginBottom: i !== resultsArray.length - 1 ? '50px' : 0,
                     height: '700px',
-                  }}
-                >
+                  }}>
                   <ChartLine
                     title={`${v.data?.code ?? 'N/A'}/PLN`}
                     data={chartDataCurrency(v.data?.rates ?? [])}
