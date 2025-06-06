@@ -53,5 +53,5 @@ export function useImmediateThrottledQuery<TData>(
     };
   }, [isPending, minLoadingDurationMs]);
 
-  return { result: result.data, isLoading: visibleIsPending };
+  return { result: result.data, isLoading: visibleIsPending || result.isLoading || result.isFetching};
 }
