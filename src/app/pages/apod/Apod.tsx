@@ -1,7 +1,6 @@
 import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
-import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Picture } from 'najwer23snacks/lib/Picture';
@@ -10,6 +9,7 @@ import { Dialog } from 'najwer23snacks/lib/Dialog';
 import { queryApod } from './Apod.query';
 import styles from './Apod.module.css';
 import { Spinner } from '@najwer23/spinner/Spinner';
+import { useImmediateThrottledQuery } from '@najwer23/utils/hooks/useImmediateThrottledQuery';
 
 export const Apod: React.FC<{
   title: string;
@@ -26,7 +26,7 @@ export const Apod: React.FC<{
 
   useDocumentTitle(title + ' - Page: ' + currentPage);
 
-  const { data, isPending } = useQuery({
+  const { result, isLoading } = useImmediateThrottledQuery({
     queryKey: ['queryApod', 'queryApod' + currentPage],
     queryFn: () => queryApod(currentPage),
     staleTime: 30 * 1000 * 60,
@@ -36,24 +36,24 @@ export const Apod: React.FC<{
   });
 
   useEffect(() => {
-    if (!isPending) {
-      setDialog({ isOpen: false, src: data?.[0].url ?? '', alt: '' });
+    if (!isLoading && result && result.length > 0) {
+      setDialog({ isOpen: false, src: result[0].url ?? '', alt: '' });
     }
-  }, [isPending]);
+  }, [isLoading, result]);
 
   const onClickPagination = (number: number) => navigate('/apod/page/' + (currentPage + number));
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
-      {isPending && <Spinner />}
+      {isLoading && <Spinner />}
 
       <div style={{ minHeight: '1400px' }}>
-        {!isPending && (
+        {!isLoading && (
           <>
             <TextBox tag="h1"> Astronomy Picture Of the Day</TextBox>
             {currentPage > 1 && <TextBox tag="p">Page: {currentPage}</TextBox>}
             <Grid widthMax={1400} layout="container" padding="0px 0 50px 0" margin="auto">
-              {data
+              {result
                 ?.sort((a, b) => b.date.localeCompare(a.date))
                 .map(
                   ({ title, explanation, media_type, url, date }, i) =>

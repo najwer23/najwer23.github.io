@@ -5,7 +5,6 @@ import { WeatherForecastData } from './WeatherForecastData';
 import { ChartLine } from '@najwer23/charts/ChartLine';
 import { ChartMixed } from '@najwer23/charts/ChartMixed';
 import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
-import { useQuery } from '@tanstack/react-query';
 import { queryWeatherCoords } from './Weather.query';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { TextBox } from 'najwer23snacks/lib/Textbox';
@@ -18,6 +17,7 @@ import { chartDataWind } from './chartData/chartDataWind';
 import { chartDataRainfall } from './chartData/chartDataRainfall';
 import { chartDataPressure } from './chartData/chartDataPressure';
 import { Spinner } from '@najwer23/spinner/Spinner';
+import { useImmediateThrottledQuery } from '@najwer23/utils/hooks/useImmediateThrottledQuery';
 
 export const Weather: React.FC<{
   title: string;
@@ -31,7 +31,7 @@ export const Weather: React.FC<{
   const lat = coords.value.split(':')[0];
   const lon = coords.value.split(':')[1];
 
-  const { data, isPending, fetchStatus } = useQuery({
+  const { result, isLoading } = useImmediateThrottledQuery({
     queryKey: ['queryWeatherCoords', 'queryWeatherCoords' + coords.value],
     queryFn: () => queryWeatherCoords(lat, lon),
     staleTime: 30 * 1000 * 60,
@@ -53,26 +53,27 @@ export const Weather: React.FC<{
     ]);
   }, []);
 
-  const weather8Days = data?.resOpenWeatherMap?.daily;
-  const weatherHourly = data?.resOpenWeatherMap?.hourly;
-  const weatherCurrent = data?.resOpenWeatherMap?.current;
+  const weather8Days = result?.resOpenWeatherMap?.daily ?? [];
+  const weatherHourly = result?.resOpenWeatherMap?.hourly ?? [];
+  const weatherCurrent = result?.resOpenWeatherMap?.current;
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
-      {!isPending ? (
+      <TextBox tag="h1"> Weather </TextBox>
+      <div className={styles.weatherSelectWrapper}>
+        {townListForSelect.map(({ value, label }) => (
+          <Button
+            key={value}
+            type={'button'}
+            onClick={() => setCoords({ value, label })}
+            disabled={coords.value === value}>
+            {label}
+          </Button>
+        ))}
+      </div>
+
+      {!isLoading && weather8Days && weatherCurrent ? (
         <>
-          <TextBox tag="h1"> Weather </TextBox>
-          <div className={styles.weatherSelectWrapper}>
-            {townListForSelect.map(({ value, label }) => (
-              <Button
-                key={value}
-                type={'button'}
-                onClick={() => setCoords({ value, label })}
-                disabled={coords.value === value}>
-                {label}
-              </Button>
-            ))}
-          </div>
           <div className={styles.weatherWrapper}>
             <Carousel>
               <div className={styles.weatherCurrent}>
@@ -120,72 +121,52 @@ export const Weather: React.FC<{
         </div>
       )}
 
-      {!isPending ? (
-        <div
-          style={{
-            marginTop: '30px',
-            marginBottom: '50px',
-            height: '700px',
-          }}>
+      {!isLoading ? (
+        <div style={{ marginTop: '30px', marginBottom: '50px', height: '700px' }}>
           <ChartLine
             title="Temeperature for next 48h"
-            data={chartDataTemp(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+            data={chartDataTemp(weatherHourly, weather8Days[0]?.sunrise, weather8Days[0]?.sunset)}
             ySymbol={` ${'\u00b0'}C`}
           />
         </div>
       ) : (
-        <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
+        <div style={{ minHeight: '780px' }}></div>
       )}
 
-      {!isPending ? (
-        <div
-          style={{
-            marginTop: '30px',
-            marginBottom: '50px',
-            height: '700px',
-          }}>
+      {!isLoading ? (
+        <div style={{ marginTop: '30px', marginBottom: '50px', height: '700px' }}>
           <ChartLine
             title="Speed of wind for next 48h"
-            data={chartDataWind(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+            data={chartDataWind(weatherHourly, weather8Days[0]?.sunrise, weather8Days[0]?.sunset)}
             ySymbol={` km/h`}
           />
         </div>
       ) : (
-        <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
+        <div style={{ minHeight: '780px' }}></div>
       )}
 
-      {!isPending ? (
-        <div
-          style={{
-            marginTop: '30px',
-            marginBottom: '50px',
-            height: '700px',
-          }}>
+      {!isLoading ? (
+        <div style={{ marginTop: '30px', marginBottom: '50px', height: '700px' }}>
           <ChartMixed
             title="Rain / Snow for next 48h"
-            data={chartDataRainfall(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+            data={chartDataRainfall(weatherHourly, weather8Days[0]?.sunrise, weather8Days[0]?.sunset)}
             ySymbol={` mm/h`}
           />
         </div>
       ) : (
-        <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
+        <div style={{ minHeight: '780px' }}></div>
       )}
 
-      {!isPending ? (
-        <div
-          style={{
-            marginTop: '30px',
-            marginBottom: '0',
-            height: '700px',
-          }}>
+      {!isLoading ? (
+        <div style={{ marginTop: '30px', marginBottom: '0', height: '700px' }}>
           <ChartLine
             title="Pressure"
-            data={chartDataPressure(weatherHourly, weather8Days[0].sunrise, weather8Days[0].sunset)}
+            data={chartDataPressure(weatherHourly, weather8Days[0]?.sunrise, weather8Days[0]?.sunset)}
             ySymbol={` hPa`}
           />
         </div>
       ) : (
-        <div style={{ minHeight: '780px' }}>{/* <TextBox>Loading..</TextBox> */}</div>
+        <div style={{ minHeight: '780px' }}></div>
       )}
     </Grid>
   );
