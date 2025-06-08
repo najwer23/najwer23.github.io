@@ -5,7 +5,7 @@ import { LayoutNavigation } from './Layout.types';
 export const LAYOUT_NAVIGATION: LayoutNavigation = {
   notLoggedIn: {
     navigationTop: (
-      <RouterLinks routes={[{ name: 'Résumé', to: 'https://najwer23.github.io/resume', outside: true }]} tag="h2" />
+      <RouterLinks routes={[{ name: 'Résumé', to: 'https://najwer23.github.io/resume/', outside: true }]} tag="h2" />
     ),
     hrColor1: '#2f3031',
     hrColor2: '#2f3031',
@@ -35,7 +35,7 @@ export const LAYOUT_NAVIGATION: LayoutNavigation = {
             { name: 'Projects', to: '/projects' },
             { name: 'APOD', to: '/apod' },
             { name: 'Gallery', to: '/gallery' },
-            { name: 'Résumé', to: 'https://najwer23.github.io/resume', outside: true },
+            { name: 'Résumé', to: 'https://najwer23.github.io/resume/', outside: true },
           ]}
           tag="h2"
         />
