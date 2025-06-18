@@ -9,6 +9,7 @@ import { Projects } from '../pages/projects/Projects';
 import { StockQuotes } from '../pages/stock-quotes/StockQuotes';
 import { Apod } from '../pages/apod/Apod';
 import { Gallery } from '../pages/gallery/Gallery';
+import { Tracker } from '../pages/tracker/Tracker';
 
 const BASE_TITLE = ' | Mariusz Najwer';
 
@@ -37,6 +38,10 @@ const router = createHashRouter([
       {
         path: '/projects',
         element: <Projects title={`Projects${BASE_TITLE}`} />,
+      },
+      {
+        path: '/tracker',
+        element: <Tracker title={`Tracker${BASE_TITLE}`} />,
       },
       {
         path: '/weather',
