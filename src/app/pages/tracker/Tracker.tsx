@@ -83,7 +83,7 @@ export const Tracker: React.FC<{ title: string }> = ({ title }) => {
                           <CircleMarker
                             center={[v.locationsList[0].lat, v.locationsList[0].lon]}
                             radius={8}
-                            pathOptions={{ color: '#228B22', fillColor: '#228B22', fillOpacity: 1, weight: 2 }}
+                            pathOptions={{ color: '#D32F2F', fillColor: '#D32F2F', fillOpacity: 1, weight: 2 }}
                           />
                         )}
                         {v.locationsList.length > 1 && (
@@ -93,7 +93,7 @@ export const Tracker: React.FC<{ title: string }> = ({ title }) => {
                               v.locationsList[v.locationsList.length - 1].lon,
                             ]}
                             radius={8}
-                            pathOptions={{ color: '#D32F2F', fillColor: '#D32F2F', fillOpacity: 1, weight: 2 }}
+                            pathOptions={{ color: '#228B22', fillColor: '#228B22', fillOpacity: 1, weight: 2 }}
                           />
                         )}
                       </MapContainer>
