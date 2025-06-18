@@ -1,4 +1,4 @@
-import { configApiOrgin } from '@najwer23/config/configApiOrgin';
+import { configApiOrigin } from '@najwer23/config/configApiOrigin';
 import { executeFetch } from '@najwer23/config/configFetch';
 
 interface QueryApod {
@@ -11,6 +11,6 @@ interface QueryApod {
 }
 
 export const queryApod = async (currentPage: number): Promise<QueryApod[]> => {
-  const url = new URL(`${configApiOrgin()}/nasa/apod?offset=30&page=${currentPage}`);
+  const url = new URL(`${configApiOrigin()}/nasa/apod?offset=30&page=${currentPage}`);
   return await executeFetch(url);
 };

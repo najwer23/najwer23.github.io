@@ -1,4 +1,4 @@
-export const configApiOrgin = (): string => {
+export const configApiOrigin = (): string => {
   const currentUrl = window.location.href.toLowerCase();
 
   // if (currentUrl.includes('localhost') || currentUrl.includes('127.0.0.1')) {
