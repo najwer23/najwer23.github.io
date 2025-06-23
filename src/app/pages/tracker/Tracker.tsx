@@ -38,22 +38,14 @@ export const Tracker: React.FC<{ title: string }> = ({ title }) => {
 
   return (
     <Grid widthMax={1400} layout="container" padding="10px" margin="auto">
-      <div
-        style={{
-          minHeight:
-            (result?.data.items.length ?? 0) === 0
-              ? '240px'
-              : (result?.data.items.length ?? 0) == 1
-                ? '700px'
-                : '1400px',
-        }}>
-        {isLoading ? (
-          <Spinner />
-        ) : (
+      {isLoading && <Spinner />}
+
+      <div style={{ minHeight: '1200px' }}>
+        {!isLoading && (
           <>
             <TextBox tag="h1">Tracker sessions</TextBox>
 
-            <Grid widthMax={1400} layout="container" padding="0px 0 50px 0" margin="auto">
+            <Grid widthMax={1400} layout="container" padding="0" margin="auto">
               {result?.data.items.length == 0 && <TextBox tag="p">There are currently no sessions :(</TextBox>}
 
               {result?.data.items.map((v, i) => (
@@ -99,8 +91,8 @@ export const Tracker: React.FC<{ title: string }> = ({ title }) => {
                       </MapContainer>
                     </div>
                     <div>
-                      <TextBox tag="p">{formatMsToHHMM(v.duration)}</TextBox>
                       <TextBox tag="p">Distance: {(v.totalDistance / 1000).toFixed(3)} km</TextBox>
+                      <TextBox tag="p">{formatMsToHHMM(v.duration)}</TextBox>
                     </div>
                   </Grid>
                 </Grid>
