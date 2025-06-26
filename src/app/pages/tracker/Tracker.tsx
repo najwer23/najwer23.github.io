@@ -40,7 +40,7 @@ export const Tracker: React.FC<{ title: string }> = ({ title }) => {
     <Grid widthMax={1400} layout="container" padding="10px" margin="auto">
       {isLoading && <Spinner />}
 
-      <div style={{ minHeight: '1200px' }}>
+      <div style={{ minHeight: '1000px' }}>
         {!isLoading && (
           <>
             <TextBox tag="h1">Tracker sessions</TextBox>
