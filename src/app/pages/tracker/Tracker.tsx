@@ -4,12 +4,12 @@ import { Spinner } from '@najwer23/spinner/Spinner';
 import { useImmediateThrottledQuery } from '@najwer23/utils/hooks/useImmediateThrottledQuery';
 import { QueryTrackerData, queryTrackerData } from './Tracker.query';
 import { TextBox } from 'najwer23snacks/lib/Textbox';
-
+import styles from "./Tracke.module.css"
 import { MapContainer, TileLayer, Polyline, CircleMarker } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHourglassHalf, faRoute } from '@fortawesome/free-solid-svg-icons';
+import { faBurger, faGaugeHigh, faHourglassHalf, faRoute } from '@fortawesome/free-solid-svg-icons';
 
 export const Tracker: React.FC<{ title: string }> = ({ title }) => {
   useDocumentTitle(title);
@@ -97,15 +97,27 @@ export const Tracker: React.FC<{ title: string }> = ({ title }) => {
                         col={{ mobile: 2, smallDesktop: 2, desktop: 2, tablet: 2 }}>
                         <div>
                           <TextBox tag="p">
-                            <FontAwesomeIcon icon={faRoute} color="white" size={'2x'} />
+                            <FontAwesomeIcon icon={faRoute} size={'2x'} />
                           </TextBox>
-                          <TextBox tag="h3">{(v.totalDistance / 1000).toFixed(3)} km</TextBox>
+                          <TextBox tag="h3" className={styles.resultText}>{(v.totalDistance / 1000).toFixed(3)} km</TextBox>
                         </div>
                         <div>
                           <TextBox tag="p">
-                            <FontAwesomeIcon icon={faHourglassHalf} color="white" size={'2x'} />
+                            <FontAwesomeIcon icon={faHourglassHalf} size={'2x'} />
                           </TextBox>
                           <TextBox tag="h3">{formatMsToHHMM(v.duration)}</TextBox>
+                        </div>
+                        <div>
+                          <TextBox tag="p">
+                            <FontAwesomeIcon icon={faGaugeHigh} size={'2x'} />
+                          </TextBox>
+                          <TextBox tag="h3">{(v.totalDistance / (v.duration/1000) * 3.6).toFixed(2) + " km / h"}</TextBox>
+                        </div>
+                        <div>
+                          <TextBox tag="p">
+                            <FontAwesomeIcon icon={faBurger} size={'2x'} />
+                          </TextBox>
+                          <TextBox tag="h3">{(((3.3 * 100 * (v.duration/1000) * 3.5) / (200 * 60))/ 655).toFixed(2)}</TextBox>
                         </div>
                       </Grid>
                     </div>
