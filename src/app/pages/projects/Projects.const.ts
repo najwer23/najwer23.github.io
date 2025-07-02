@@ -2,7 +2,7 @@ export const PROJECTS = [
   {
     pictureUrl: 'https://i.pinimg.com/1200x/35/01/8e/35018e10c4b5b537e1044c7f62c4e968.jpg',
     name: 'Design System',
-    to: 'https://najwer23.github.io/najwer23snacks',
+    to: 'https://najwer23.github.io/najwer23morsels',
     outside: true,
     projectDesc:
       'A design system is a comprehensive collection of reusable components, guidelines, and standards that helps teams create consistent and cohesive digital products. It serves as a single source of truth, streamlining design and development processes across various platforms and teams. Key features include reusable UI components, thorough documentation, style guides, and design tokens. The benefits of using a design system are substantial, leading to increased efficiency by reducing time spent on repetitive tasks. It also ensures consistency across products, enhancing brand recognition and user experience. Additionally, design systems improve collaboration among stakeholders and allow for scalability and quality control as products evolve.',
