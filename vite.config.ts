@@ -10,9 +10,9 @@ export default defineConfig({
 
     VitePWA({
       registerType: 'autoUpdate',
-      strategies: 'injectManifest', // Use injectManifest strategy
-      srcDir: 'src', // Directory where your custom sw file is
-      filename: 'custom-sw.js', // Your custom service worker filename
+      strategies: 'injectManifest', 
+      srcDir: 'src', 
+      filename: 'najwer23sw.js',
       workbox: {
         // You can add Workbox options here if needed
         // e.g., navigateFallback: '/index.html'

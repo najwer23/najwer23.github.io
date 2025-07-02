@@ -28,9 +28,8 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
 
-  // No offline fallback for navigation requests
-
   if (url.pathname.startsWith('/resume')) {
+    // Keep your existing cache-first strategy for /resume
     event.respondWith(
       caches.open(RESUME_CACHE).then(cache =>
         cache.match(event.request).then(cachedResponse => {
@@ -47,21 +46,23 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Default caching for other requests
+  // Network-first strategy for DEFAULT_CACHE
   event.respondWith(
     caches.open(DEFAULT_CACHE).then(cache =>
-      cache.match(event.request).then(cachedResponse => {
-        if (cachedResponse) {
-          return cachedResponse;
-        }
-        return fetch(event.request).then(networkResponse => {
+      fetch(event.request)
+        .then(networkResponse => {
+          // Update cache with fresh response
           cache.put(event.request, networkResponse.clone());
           return networkResponse;
-        });
-      })
+        })
+        .catch(() =>
+          // If network fails, fallback to cache
+          cache.match(event.request)
+        )
     )
   );
 });
+
 
 self.addEventListener('message', event => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
