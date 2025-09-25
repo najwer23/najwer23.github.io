@@ -10,7 +10,7 @@ export const Home: React.FC<{
   return (
     <Grid widthMax={1400} layout="container" padding="10px 10px 10px 10px" margin="auto">
       <Grid widthMax={900} layout="container" padding="0" margin="auto">
-        <TextBox tag="h1">Frontend Software Engineer</TextBox>
+        <TextBox tag="h1">Software Engineer</TextBox>
         <TextBox>
           Mariusz Najwer is passionate and detail-oriented Software Engineer dedicated to building responsive and
           user-friendly web applications. He is proficient in modern JavaScript frameworks, particularly React and
