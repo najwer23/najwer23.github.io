@@ -34,7 +34,9 @@ export const Gallery: React.FC<{
             smallDesktop: 3,
             desktop: 3,
             tablet: 2,
-          }}>
+          }}
+          delay={10}
+          >
           {GALLERY &&
             GALLERY.map(({ src, alt, ar }, i) => (
               <div
