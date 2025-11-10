@@ -1,6 +1,6 @@
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { RouterLinks } from '../router/RouterLinks';
-import { LayoutNavigation } from './Layout.types';
+import type { LayoutNavigation } from './Layout.types';
 
 export const LAYOUT_NAVIGATION: LayoutNavigation = {
   notLoggedIn: {

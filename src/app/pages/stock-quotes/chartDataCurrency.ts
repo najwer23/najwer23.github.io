@@ -1,4 +1,4 @@
-import { StockQuotesRates } from './StockQuotes.query';
+import { type StockQuotesRates } from './StockQuotes.query';
 
 export const chartDataCurrency = (arr: StockQuotesRates) => {
   if (arr == null) {

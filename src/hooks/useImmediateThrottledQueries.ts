@@ -1,4 +1,4 @@
-import { UseQueryOptions, UseQueryResult, useQueries } from '@tanstack/react-query';
+import { type UseQueryOptions, type UseQueryResult, useQueries } from '@tanstack/react-query';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 function arraysEqual(a: boolean[], b: boolean[]) {

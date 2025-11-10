@@ -1,7 +1,7 @@
 import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { useMutation } from '@tanstack/react-query';
 import { Button } from 'najwer23snacks/lib/Button';
-import { Form, FormType } from 'najwer23snacks/lib/Form';
+import { Form, type FormType } from 'najwer23snacks/lib/Form';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { Input } from 'najwer23snacks/lib/Input';
 import { TextBox } from 'najwer23snacks/lib/Textbox';

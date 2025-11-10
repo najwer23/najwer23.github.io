@@ -6,7 +6,7 @@ import { Grid } from 'najwer23snacks/lib/Grid';
 import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { CircleMarker, MapContainer, Polyline, TileLayer } from 'react-leaflet';
 import styles from './Tracke.module.css';
-import { QueryTrackerData, queryTrackerData } from './Tracker.query';
+import { type QueryTrackerData, queryTrackerData } from './Tracker.query';
 import 'leaflet/dist/leaflet.css';
 import { faBurger, faGaugeHigh, faHourglassHalf, faRoute } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
