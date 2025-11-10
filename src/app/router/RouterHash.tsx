@@ -1,15 +1,15 @@
-import { ScrollToTop } from './ScrollToTop';
-import { Home } from '../pages/home/Home';
-import { Layout } from '../layout/Layout';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import { ErrorNotFound } from '../pages/error/ErrorNotFound';
+import { Layout } from '../layout/Layout';
+import { Apod } from '../pages/apod/Apod';
 import { Contact } from '../pages/contact/Contact';
-import { Weather } from '../pages/weather/Weather';
+import { ErrorNotFound } from '../pages/error/ErrorNotFound';
+import { Gallery } from '../pages/gallery/Gallery';
+import { Home } from '../pages/home/Home';
 import { Projects } from '../pages/projects/Projects';
 import { StockQuotes } from '../pages/stock-quotes/StockQuotes';
-import { Apod } from '../pages/apod/Apod';
-import { Gallery } from '../pages/gallery/Gallery';
 import { Tracker } from '../pages/tracker/Tracker';
+import { Weather } from '../pages/weather/Weather';
+import { ScrollToTop } from './ScrollToTop';
 
 const BASE_TITLE = ' | Mariusz Najwer';
 

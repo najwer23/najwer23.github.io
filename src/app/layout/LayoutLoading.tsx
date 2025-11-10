@@ -1,9 +1,9 @@
 import { Footer } from 'najwer23snacks/lib/Footer';
+import { Grid } from 'najwer23snacks/lib/Grid';
 import { Navigation } from 'najwer23snacks/lib/Navigation';
 import { TextBox } from 'najwer23snacks/lib/Textbox';
-import { LAYOUT_NAVIGATION } from './Layout.const';
-import { Grid } from 'najwer23snacks/lib/Grid';
 import { RouterLinks } from '../router/RouterLinks';
+import { LAYOUT_NAVIGATION } from './Layout.const';
 import { LayoutNavigation } from './Layout.types';
 
 export const LayoutLoading: React.FC<{

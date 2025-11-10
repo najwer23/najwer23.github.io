@@ -1,8 +1,8 @@
 import { Footer } from 'najwer23snacks/lib/Footer';
 import { Navigation } from 'najwer23snacks/lib/Navigation';
 import { Outlet } from 'react-router-dom';
-import { LAYOUT_NAVIGATION } from './Layout.const';
 import { RouterLinks } from '../router/RouterLinks';
+import { LAYOUT_NAVIGATION } from './Layout.const';
 import styles from './Layout.module.css';
 import { type LayoutNavigation } from './Layout.types';
 

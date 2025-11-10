@@ -1,5 +1,5 @@
-import { Forecast } from './ChartData.types';
 import { formatDateFromDt } from '../Weather.utils';
+import { Forecast } from './ChartData.types';
 
 export const chartDataTemp = (obj: Forecast[], sunrise: number, sunset: number) => {
   if (obj == null) {

@@ -1,5 +1,5 @@
-import { useQuery, UseQueryOptions } from '@tanstack/react-query';
-import { useState, useEffect, useRef } from 'react';
+import { UseQueryOptions, useQuery } from '@tanstack/react-query';
+import { useEffect, useRef, useState } from 'react';
 
 export function useImmediateThrottledQuery<TData>(
   queryOptions: UseQueryOptions<TData, unknown, TData, any>,

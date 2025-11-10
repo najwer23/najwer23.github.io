@@ -1,5 +1,5 @@
-import styles from './Spinner.module.css';
 import { Grid } from 'najwer23snacks/lib/Grid';
+import styles from './Spinner.module.css';
 
 export const Spinner: React.FC = () => {
   return (

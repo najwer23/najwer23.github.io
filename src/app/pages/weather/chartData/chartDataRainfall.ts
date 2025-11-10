@@ -1,6 +1,6 @@
 import { ScriptableContext } from 'chart.js';
-import { Forecast } from './ChartData.types';
 import { formatDateFromDt } from '../Weather.utils';
+import { Forecast } from './ChartData.types';
 
 export const chartDataRainfall = (obj: Forecast[], sunrise: number, sunset: number) => {
   if (obj == null) {

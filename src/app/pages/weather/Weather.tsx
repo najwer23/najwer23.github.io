@@ -1,23 +1,22 @@
-import { useMemo, useState } from 'react';
-import styles from './Weather.module.css';
-import { WeatherImg } from './WeatherImg';
-import { WeatherForecastData } from './WeatherForecastData';
 import { ChartLine } from '@najwer23/charts/ChartLine';
 import { ChartMixed } from '@najwer23/charts/ChartMixed';
+import { Spinner } from '@najwer23/spinner/Spinner';
 import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
-import { queryWeatherCoords } from './Weather.query';
-import { Grid } from 'najwer23snacks/lib/Grid';
-import { TextBox } from 'najwer23snacks/lib/Textbox';
+import { useImmediateThrottledQuery } from '@najwer23/utils/hooks/useImmediateThrottledQuery';
 import { Button } from 'najwer23snacks/lib/Button';
 import { Carousel } from 'najwer23snacks/lib/Carousel';
-
-import { forecastDataFormat, formatDateFromDt, sortArrOfObjByLabel } from './Weather.utils';
+import { Grid } from 'najwer23snacks/lib/Grid';
+import { TextBox } from 'najwer23snacks/lib/Textbox';
+import { useMemo, useState } from 'react';
+import { chartDataPressure } from './chartData/chartDataPressure';
+import { chartDataRainfall } from './chartData/chartDataRainfall';
 import { chartDataTemp } from './chartData/chartDataTemp';
 import { chartDataWind } from './chartData/chartDataWind';
-import { chartDataRainfall } from './chartData/chartDataRainfall';
-import { chartDataPressure } from './chartData/chartDataPressure';
-import { Spinner } from '@najwer23/spinner/Spinner';
-import { useImmediateThrottledQuery } from '@najwer23/utils/hooks/useImmediateThrottledQuery';
+import styles from './Weather.module.css';
+import { queryWeatherCoords } from './Weather.query';
+import { forecastDataFormat, formatDateFromDt, sortArrOfObjByLabel } from './Weather.utils';
+import { WeatherForecastData } from './WeatherForecastData';
+import { WeatherImg } from './WeatherImg';
 
 export const Weather: React.FC<{
   title: string;
@@ -66,7 +65,8 @@ export const Weather: React.FC<{
             key={value}
             type={'button'}
             onClick={() => setCoords({ value, label })}
-            disabled={coords.value === value}>
+            disabled={coords.value === value}
+          >
             {label}
           </Button>
         ))}

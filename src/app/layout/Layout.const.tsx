@@ -36,7 +36,7 @@ export const LAYOUT_NAVIGATION: LayoutNavigation = {
             { name: 'Projects', to: '/projects' },
             // { name: 'APOD', to: '/apod' },
             { name: 'Gallery', to: '/gallery' },
-             { name: 'Tracker', to: '/tracker' },
+            { name: 'Tracker', to: '/tracker' },
             { name: 'Résumé', to: 'https://najwer23.github.io/resume/', outside: true },
           ]}
           tag="h2"

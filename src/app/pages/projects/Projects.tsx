@@ -1,14 +1,14 @@
-import { TextBox } from 'najwer23snacks/lib/Textbox';
-import { Grid } from 'najwer23snacks/lib/Grid';
-import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
 import { RouterLinks } from '@najwer23/app/router/RouterLinks';
-import { queryLeetcode } from './Projects.query';
+import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
 import { useQuery } from '@tanstack/react-query';
 import { Dialog } from 'najwer23snacks/lib/Dialog';
-import { useState } from 'react';
+import { Grid } from 'najwer23snacks/lib/Grid';
 import { Picture } from 'najwer23snacks/lib/Picture';
-import styles from './Projects.module.css';
+import { TextBox } from 'najwer23snacks/lib/Textbox';
+import { useState } from 'react';
 import { PROJECTS } from './Projects.const';
+import styles from './Projects.module.css';
+import { queryLeetcode } from './Projects.query';
 
 export const Projects: React.FC<{
   title: string;
@@ -49,7 +49,8 @@ export const Projects: React.FC<{
             smallDesktop: 2,
             desktop: 2,
             tablet: 2,
-          }}>
+          }}
+        >
           <div>
             {v.name.includes('Leetcode') ? (
               <RouterLinks
@@ -82,7 +83,8 @@ export const Projects: React.FC<{
             {v.pictureUrl && (
               <div
                 onClick={() => setDialog({ isOpen: true, src: v.pictureUrl, alt: v.name })}
-                className={styles.pictureWrapper}>
+                className={styles.pictureWrapper}
+              >
                 <Picture src={v.pictureUrl} alt={title} key={i} kind="border" />
               </div>
             )}

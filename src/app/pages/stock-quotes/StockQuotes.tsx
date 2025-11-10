@@ -1,11 +1,11 @@
-import { TextBox } from 'najwer23snacks/lib/Textbox';
-import { Grid } from 'najwer23snacks/lib/Grid';
-import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
-import { queryStockQuotes } from './StockQuotes.query';
 import { ChartLine } from '@najwer23/charts/ChartLine';
-import { chartDataCurrency } from './chartDataCurrency';
 import { Spinner } from '@najwer23/spinner/Spinner';
+import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
 import { useImmediateThrottledQueries } from '@najwer23/utils/hooks/useImmediateThrottledQueries';
+import { Grid } from 'najwer23snacks/lib/Grid';
+import { TextBox } from 'najwer23snacks/lib/Textbox';
+import { chartDataCurrency } from './chartDataCurrency';
+import { queryStockQuotes } from './StockQuotes.query';
 
 export const StockQuotes: React.FC<{ title: string }> = ({ title }) => {
   useDocumentTitle(title);
@@ -48,7 +48,8 @@ export const StockQuotes: React.FC<{ title: string }> = ({ title }) => {
                     marginTop: '30px',
                     marginBottom: i !== resultsArray.length - 1 ? '50px' : 0,
                     height: '700px',
-                  }}>
+                  }}
+                >
                   <ChartLine
                     title={`${v.data?.code ?? 'N/A'}/PLN`}
                     data={chartDataCurrency(v.data?.rates ?? [])}

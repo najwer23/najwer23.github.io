@@ -6,12 +6,12 @@ export type QueryTrackerData = {
     items: {
       duration: number;
       locationsList: {
-        lat: number
-        lon: number
-        a: number
-      }[],
-      totalDistance: number
-    }[]
+        lat: number;
+        lon: number;
+        a: number;
+      }[];
+      totalDistance: number;
+    }[];
   };
 } & ResponseBase;
 

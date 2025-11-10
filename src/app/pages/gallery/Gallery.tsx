@@ -1,12 +1,12 @@
-import { TextBox } from 'najwer23snacks/lib/Textbox';
+import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
+import { Dialog } from 'najwer23snacks/lib/Dialog';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { GridMasonry } from 'najwer23snacks/lib/GridMasonry';
-import styles from './Gallery.module.css';
-import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
 import { Picture } from 'najwer23snacks/lib/Picture';
-import { GALLERY } from './Gallery.const';
+import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { useState } from 'react';
-import { Dialog } from 'najwer23snacks/lib/Dialog';
+import { GALLERY } from './Gallery.const';
+import styles from './Gallery.module.css';
 
 export const Gallery: React.FC<{
   title: string;
@@ -36,7 +36,7 @@ export const Gallery: React.FC<{
             tablet: 2,
           }}
           delay={10}
-          >
+        >
           {GALLERY &&
             GALLERY.map(({ src, alt, ar }, i) => (
               <div
@@ -44,7 +44,8 @@ export const Gallery: React.FC<{
                 onClick={() => {
                   setDialog({ isOpen: true, src: src, alt: alt });
                 }}
-                className={styles.pictureWrapper}>
+                className={styles.pictureWrapper}
+              >
                 <Picture src={src} alt={alt} key={i} ar={ar} kind="border" />
               </div>
             ))}

@@ -1,8 +1,9 @@
+import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
-import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
-import { RouterHash } from './router/RouterHash';
 import ReactGA from 'react-ga4';
+import { RouterHash } from './router/RouterHash';
+
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 ReactGA.initialize('G-SMX3LNRJNF');

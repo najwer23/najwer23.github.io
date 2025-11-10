@@ -1,15 +1,15 @@
 import {
-  Chart as ChartJS,
   CategoryScale,
+  ChartData,
+  Chart as ChartJS,
+  ChartOptions,
+  Filler,
+  Legend,
   LinearScale,
-  PointElement,
   LineElement,
+  PointElement,
   Title,
   Tooltip,
-  Legend,
-  ChartOptions,
-  ChartData,
-  Filler,
 } from 'chart.js';
 
 import { Line } from 'react-chartjs-2';

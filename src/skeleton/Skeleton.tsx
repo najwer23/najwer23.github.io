@@ -1,6 +1,6 @@
+import { Grid } from 'najwer23snacks/lib/Grid';
 import { TextBox } from 'najwer23snacks/lib/Textbox';
 import styles from './Skeleton.module.css';
-import { Grid } from 'najwer23snacks/lib/Grid';
 
 export const Skeleton: React.FC = () => {
   return (

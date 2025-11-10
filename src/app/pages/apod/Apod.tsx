@@ -1,15 +1,15 @@
-import { TextBox } from 'najwer23snacks/lib/Textbox';
-import { Grid } from 'najwer23snacks/lib/Grid';
+import { Spinner } from '@najwer23/spinner/Spinner';
 import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Picture } from 'najwer23snacks/lib/Picture';
+import { useImmediateThrottledQuery } from '@najwer23/utils/hooks/useImmediateThrottledQuery';
 import { Button } from 'najwer23snacks/lib/Button';
 import { Dialog } from 'najwer23snacks/lib/Dialog';
-import { queryApod } from './Apod.query';
+import { Grid } from 'najwer23snacks/lib/Grid';
+import { Picture } from 'najwer23snacks/lib/Picture';
+import { TextBox } from 'najwer23snacks/lib/Textbox';
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import styles from './Apod.module.css';
-import { Spinner } from '@najwer23/spinner/Spinner';
-import { useImmediateThrottledQuery } from '@najwer23/utils/hooks/useImmediateThrottledQuery';
+import { queryApod } from './Apod.query';
 
 export const Apod: React.FC<{
   title: string;
@@ -70,7 +70,8 @@ export const Apod: React.FC<{
                             smallDesktop: 2,
                             desktop: 2,
                             tablet: 2,
-                          }}>
+                          }}
+                        >
                           <div>
                             <TextBox tag="h2"> {title} </TextBox>
                             <TextBox>
@@ -81,7 +82,8 @@ export const Apod: React.FC<{
 
                           <div
                             onClick={() => setDialog({ isOpen: true, src: url, alt: title })}
-                            className={styles.pictureWrapper}>
+                            className={styles.pictureWrapper}
+                          >
                             <Picture src={url} alt={title} key={i} />
                           </div>
                         </Grid>
