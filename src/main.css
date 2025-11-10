@@ -1,10 +1,18 @@
 :root {
+  --surface: #eee;
+  --linkColor: orangered;
+  --linkColorHover: orangered;
+
+  --n23mTextBoxColor: black;
 }
 
 body {
+  background-color: var(--surface);
   margin: 0;
   padding: 0;
-  color: var(--najwer23snacks-textbox-p-font-color);
-  background-color: var(--najwer23-color-surface);
-  font-family: var(--najwer23snacks-font-family);
+}
+
+.n23mTextBoxLink {
+  --n23mTextBoxColor: var(--linkColor);
+  --n23mTextBoxColorHover: var(--linkColorHover);
 }

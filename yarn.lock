@@ -2035,41 +2035,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-devtools@npm:5.90.1":
-  version: 5.90.1
-  resolution: "@tanstack/query-devtools@npm:5.90.1"
-  checksum: 10c0/3b69e5441438acf0e753adbf187abf54b5b2e19d7c6d1e465d97278cb8c248bb86d3be193092d50414e4093cbf014093103517cb523daae003e53c867f3c11c2
-  languageName: node
-  linkType: hard
-
 "@tanstack/query-persist-client-core@npm:5.91.6":
   version: 5.91.6
   resolution: "@tanstack/query-persist-client-core@npm:5.91.6"
   dependencies:
     "@tanstack/query-core": "npm:5.90.7"
   checksum: 10c0/73b1e7f8d96feb0295771b24067f2efa3a6ed761cbba6ce2ee33f4086316f5f562aede813520637c6baa2535d725be0cd1176756e70e9e91f722b47fb795b82c
-  languageName: node
-  linkType: hard
-
-"@tanstack/query-sync-storage-persister@npm:^5.90.9":
-  version: 5.90.9
-  resolution: "@tanstack/query-sync-storage-persister@npm:5.90.9"
-  dependencies:
-    "@tanstack/query-core": "npm:5.90.7"
-    "@tanstack/query-persist-client-core": "npm:5.91.6"
-  checksum: 10c0/cd55a390925f420a03550ae9b1381e90199c6d03406fda73d9a06d12e9a5180b786a0edd1e79770e704bdc5f69f499fd730b3b9a9adc20f03aa1821e9f16bea8
-  languageName: node
-  linkType: hard
-
-"@tanstack/react-query-devtools@npm:^5.90.2":
-  version: 5.90.2
-  resolution: "@tanstack/react-query-devtools@npm:5.90.2"
-  dependencies:
-    "@tanstack/query-devtools": "npm:5.90.1"
-  peerDependencies:
-    "@tanstack/react-query": ^5.90.2
-    react: ^18 || ^19
-  checksum: 10c0/526d529bf995426ace7511f51a425ce92dfc1b6dd74c9956a3cd7d68950119e97291bced2ff17173bcdb329eae36c68abc211a4dec32d6e92ab537b41c0533c2
   languageName: node
   linkType: hard
 
@@ -4261,9 +4232,7 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:^7.1.0"
     "@fortawesome/free-solid-svg-icons": "npm:^7.1.0"
     "@fortawesome/react-fontawesome": "npm:^3.1.0"
-    "@tanstack/query-sync-storage-persister": "npm:^5.90.9"
     "@tanstack/react-query": "npm:^5.90.7"
-    "@tanstack/react-query-devtools": "npm:^5.90.2"
     "@tanstack/react-query-persist-client": "npm:^5.90.9"
     "@types/chart.js": "npm:^4.0.1"
     "@types/leaflet": "npm:^1.9.21"
@@ -4274,8 +4243,7 @@ __metadata:
     chart.js: "npm:^4.5.1"
     gh-pages: "npm:^6.3.0"
     leaflet: "npm:1.9.4"
-    najwer23snacks: "npm:^4.0.16"
-    prettier: "npm:^3.6.2"
+    najwer23morsels: "npm:^0.10.19"
     react: "npm:^19.2.0"
     react-chartjs-2: "npm:5.3.1"
     react-dom: "npm:^19.2.0"
@@ -4289,13 +4257,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"najwer23snacks@npm:^4.0.16":
-  version: 4.0.16
-  resolution: "najwer23snacks@npm:4.0.16"
+"najwer23morsels@npm:^0.10.19":
+  version: 0.10.19
+  resolution: "najwer23morsels@npm:0.10.19"
   peerDependencies:
-    react: ^19.0.0
-    react-dom: ^19.0.0
-  checksum: 10c0/4e6fdee3f2519cacb071acb8c1fe137228f96465981ffcd46513cce81fe15ce4d098dce15e23a413cdc5eec982503d6220ba9d73984577894d6fad0d84c0a6af
+    react: ^19.1.0
+    react-dom: ^19.1.0
+  checksum: 10c0/718f868eb7e4f0eb3c424ebbc4eae2308894e16799af3e0068a95e8f253ef55b185590b512cdbd9df90b1530aeba81fe445654db042afb7d58db0a57279c4b55
   languageName: node
   linkType: hard
 
@@ -4547,15 +4515,6 @@ __metadata:
     picocolors: "npm:^1.1.1"
     source-map-js: "npm:^1.2.1"
   checksum: 10c0/5127cc7c91ed7a133a1b7318012d8bfa112da9ef092dddf369ae699a1f10ebbd89b1b9f25f3228795b84585c72aabd5ced5fc11f2ba467eedf7b081a66fad024
-  languageName: node
-  linkType: hard
-
-"prettier@npm:^3.6.2":
-  version: 3.6.2
-  resolution: "prettier@npm:3.6.2"
-  bin:
-    prettier: bin/prettier.cjs
-  checksum: 10c0/488cb2f2b99ec13da1e50074912870217c11edaddedeadc649b1244c749d15ba94e846423d062e2c4c9ae683e2d65f754de28889ba06e697ac4f988d44f45812
   languageName: node
   linkType: hard
 
