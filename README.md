@@ -40,9 +40,9 @@ yarn deploy
 
 # Let's connect!
 
-[![dev.to badge](https://img.shields.io/badge/-Portfolio-%239F2B68?style=flat&logo=GoogleChrome&logoColor=white)](https://najwer23.github.io/)
-[![dev.to badge](https://img.shields.io/badge/-Résumé-%23017745?style=flat&logo=AdobeAcrobatReader&logoColor=white)](https://najwer23.github.io/resume/)
-[![twitter badge](https://img.shields.io/badge/-najwer23-%231FA1F1?style=flat&logo=x&logoColor=white)](https://twitter.com/najwer23)
-[![dev.to badge](https://img.shields.io/badge/-najwer23-%230177B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/najwer23)
-[![dev.to badge](https://img.shields.io/badge/-najwer23-%23ffffff?style=flat&logo=Leetcode)](https://leetcode.com/najwer23/)
-[![dev.to badge](https://img.shields.io/badge/-najwer23-%23cb3837?style=flat&logo=Npm)](https://www.npmjs.com/~najwer23)
+[![Portfolio](https://img.shields.io/badge/Portfolio-9F2B68?style=for-the-badge&logo=googlechrome&logoColor=white)](https://najwer23.github.io/)
+[![Résumé](https://img.shields.io/badge/Résumé-017745?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](https://najwer23.github.io/resume/)
+[![X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/najwer23)
+[![LinkedIn](https://img.shields.io/badge/najwer23-0177B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/najwer23)
+[![LeetCode](https://img.shields.io/badge/najwer23-ffffff?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/najwer23/)
+[![NPM](https://img.shields.io/badge/najwer23-cb3837?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com/~najwer23)
