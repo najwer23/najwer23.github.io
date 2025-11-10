@@ -1,9 +1,9 @@
 import {
   BarElement,
   CategoryScale,
-  ChartData,
+  type ChartData,
   Chart as ChartJS,
-  ChartOptions,
+  type ChartOptions,
   Legend,
   LinearScale,
   Title,

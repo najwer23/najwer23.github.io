@@ -1,62 +1,18 @@
-/* https://fluidtypography.com/ */
-
 :root {
-  --najwer23snacks-font-family:
-    -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu,
-    roboto, noto, arial, sans-serif;
+  --surface: #eee;
+  --linkColor: orangered;
+  --linkColorHover: orangered;
 
-  /* TextBox */
-  --najwer23snacks-textbox-h1-font-color: #d3d3d3;
-  --najwer23snacks-textbox-h2-font-color: #d6d6d6;
-  --najwer23snacks-textbox-h3-font-color: #adb0b4;
-  --najwer23snacks-textbox-p-font-color: #b0b3b7;
-  --najwer23snacks-textbox-a-font-color: orange;
-  --najwer23snacks-textbox-a-font-color-hover: #ff005a;
-  --najwer23snacks-textbox-title-a-font-color: #ff005a;
-  --najwer23snacks-textbox-title-a-font-color-hover: #ff005a;
-
-  /* Navigation */
-  --najwer23snacks-navigation-mobile-bg-color: #121212;
-
-  /* Button */
-  --najwer23snacks-button-bg-color: #00a76f;
-  --najwer23snacks-button-bg-color-hover: #007867;
-  --najwer23snacks-button-bg-color-active: #004b50;
-  --najwer23snacks-button-bg-color-focus: #007867;
-  --najwer23snacks-button-bg-color-disabled: #919eab;
-  --najwer23snacks-button-font-color: #ffffff;
-  --najwer23snacks-button-font-size: 18px;
-  --najwer23snacks-button-font-weight: 700;
-  --najwer23snacks-button-font-family: var(--najwer23snacks-font-family);
-  --najwer23snacks-button-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.24), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-  /* Input */
-  --najwer23snacks-input-label-font-size: 16px;
-  --najwer23snacks-input-label-font-family: var(--najwer23snacks-font-family);
-  --najwer23snacks-input-label-font-weight: 700;
-  --najwer23snacks-input-label-font-color: #b0b3b7;
-
-  --najwer23snacks-input-input-font-size: 18px;
-  --najwer23snacks-input-input-font-family: var(--najwer23snacks-font-family);
-  --najwer23snacks-input-input-font-weight: 600;
-  --najwer23snacks-input-input-font-color: #161925;
-  --najwer23snacks-input-input-border-color: #161925;
-  --najwer23snacks-input-input-placeholder-font-weight: auto;
-
-  --najwer23snacks-input-error-font-size: 14px;
-  --najwer23snacks-input-error-font-family: var(--najwer23snacks-font-family);
-  --najwer23snacks-input-error-font-weight: 600;
-  --najwer23snacks-input-error-font-color: #ff3333;
-
-  /* Others */
-  --najwer23-color-surface: #121212; /* #fdfdfd; */
-  --najwer23-color-font: #adb0b4; /* #333333; */
+  --n23mTextBoxColor: black;
 }
 
 body {
+  background-color: var(--surface);
   margin: 0;
   padding: 0;
-  color: var(--najwer23snacks-textbox-p-font-color);
-  background-color: var(--najwer23-color-surface);
-  font-family: var(--najwer23snacks-font-family);
+}
+
+.n23mTextBoxLink {
+  --n23mTextBoxColor: var(--linkColor);
+  --n23mTextBoxColorHover: var(--linkColorHover);
 }
