@@ -1,4 +1,4 @@
-import { storageItemGet } from '@najwer23/utils/storage/storageItemGet';
+import { storageItemGet } from '@najwer23/storage/storageItemGet';
 
 export interface ResponseBase {
   code: string;

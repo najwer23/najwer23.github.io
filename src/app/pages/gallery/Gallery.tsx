@@ -1,4 +1,4 @@
-import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { Dialog } from 'najwer23snacks/lib/Dialog';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { GridMasonry } from 'najwer23snacks/lib/GridMasonry';

@@ -1,7 +1,7 @@
 import { ChartLine } from '@najwer23/charts/ChartLine';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
+import { useImmediateThrottledQueries } from '@najwer23/hooks/useImmediateThrottledQueries';
 import { Spinner } from '@najwer23/spinner/Spinner';
-import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
-import { useImmediateThrottledQueries } from '@najwer23/utils/hooks/useImmediateThrottledQueries';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { TextBox } from 'najwer23snacks/lib/Textbox';
 import { chartDataCurrency } from './chartDataCurrency';

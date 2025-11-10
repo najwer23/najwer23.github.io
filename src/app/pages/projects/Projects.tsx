@@ -1,5 +1,5 @@
 import { RouterLinks } from '@najwer23/app/router/RouterLinks';
-import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { useQuery } from '@tanstack/react-query';
 import { Dialog } from 'najwer23snacks/lib/Dialog';
 import { Grid } from 'najwer23snacks/lib/Grid';

@@ -1,6 +1,6 @@
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
+import { useImmediateThrottledQuery } from '@najwer23/hooks/useImmediateThrottledQuery';
 import { Spinner } from '@najwer23/spinner/Spinner';
-import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
-import { useImmediateThrottledQuery } from '@najwer23/utils/hooks/useImmediateThrottledQuery';
 import L from 'leaflet';
 import { Grid } from 'najwer23snacks/lib/Grid';
 import { TextBox } from 'najwer23snacks/lib/Textbox';

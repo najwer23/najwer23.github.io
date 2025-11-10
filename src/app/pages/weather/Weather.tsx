@@ -1,8 +1,8 @@
 import { ChartLine } from '@najwer23/charts/ChartLine';
 import { ChartMixed } from '@najwer23/charts/ChartMixed';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
+import { useImmediateThrottledQuery } from '@najwer23/hooks/useImmediateThrottledQuery';
 import { Spinner } from '@najwer23/spinner/Spinner';
-import { useDocumentTitle } from '@najwer23/utils/hooks/useDocumentTitle';
-import { useImmediateThrottledQuery } from '@najwer23/utils/hooks/useImmediateThrottledQuery';
 import { Button } from 'najwer23snacks/lib/Button';
 import { Carousel } from 'najwer23snacks/lib/Carousel';
 import { Grid } from 'najwer23snacks/lib/Grid';
