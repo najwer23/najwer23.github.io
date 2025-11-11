@@ -10,4 +10,42 @@
       width: 260px;
     }
   }
+
+  .homeSliderItemsDesktop {
+    .homeSliderItemsPicture {
+      align-items: center;
+      background: #f7f6f6;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: auto;
+        height: 600px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      display: none;
+    }
+  }
+
+  .homeSliderItemsMobile {
+    display: none;
+
+    .homeSliderItemsPicture {
+      align-items: center;
+      background: #f7f6f6;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: auto;
+        height: 450px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      display: block;
+    }
+  }
 }
