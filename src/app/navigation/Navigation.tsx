@@ -17,7 +17,7 @@ export const Navigation: React.FC = () => {
           }}
         >
           <div>
-            <TextBox desktopSize={26} mobileSize={20} fontWeight={500} tag="a" href="/">
+            <TextBox desktopSize={26} mobileSize={20} fontWeight={500} tag="a" href="/#/">
               @najwer23
             </TextBox>
           </div>

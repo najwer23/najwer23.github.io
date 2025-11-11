@@ -56,7 +56,7 @@ export const Home: React.FC<{}> = () => {
         <Grid layout="container" padding={'100px 0 100px 0'} margin={0}>
           <Grid
             layout="columns"
-            gap={{ col: '40px', row: '40px' }}
+            gap={{ col: '100px', row: '40px' }}
             col={{
               smallDesktop: 2,
               desktop: 2,
@@ -64,65 +64,43 @@ export const Home: React.FC<{}> = () => {
               tablet: 2,
             }}
           >
-            <div>
-              <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                Deliberate Problem-Solving
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
-                I take the time to deeply analyze challenges before rushing to solutions. This ensures that the approach
-                I choose is the best fit for the problem at hand rather than a quick or temporary fix.
-              </TextBox>
-            </div>
-
-            <div>
-              <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                Code Quality and Maintainability
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
-                Writing clean, readable, and well-documented code is a core commitment of mine. I believe that code
-                should be easy for others to understand and extend, which supports long-term project success.
-              </TextBox>
-            </div>
-
-            <div>
-              <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                Continuous Learning and Improvement
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
-                Technology evolves constantly, and so do I. I continuously update my skills and adapt my methods to
-                leverage the latest advancements and improve the quality of my work.
-              </TextBox>
-            </div>
-
-            <div>
-              <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                Collaboration and Communication
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
-                I thrive in cross-functional teams, valuing open feedback and clear communication. Aligning expectations
-                early and keeping everyone in sync accelerates progress and drives better outcomes.
-              </TextBox>
-            </div>
-
-            <div>
-              <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                User-Centric Design
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
-                Prioritizing the end user’s experience is essential. I focus on accessibility and usability to create
-                solutions that truly meet users’ needs and deliver intuitive interactions.
-              </TextBox>
-            </div>
-
-            <div>
-              <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                Efficiency and Scalability
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
-                I design solutions that solve today’s problems while anticipating future growth. This approach ensures
-                that my work remains efficient and scalable as requirements evolve.
-              </TextBox>
-            </div>
+            <>
+              {[
+                {
+                  title: 'Deliberate Problem-Solving',
+                  text: 'I deeply analyze challenges to choose the best fit solutions rather than quick fixes.',
+                },
+                {
+                  title: 'Code Quality and Maintainability',
+                  text: 'I write clean, readable, well-documented code that is easy to understand and extend.',
+                },
+                {
+                  title: 'Continuous Learning and Improvement',
+                  text: 'I constantly update my skills to leverage the latest technology advancements.',
+                },
+                {
+                  title: 'Collaboration and Communication',
+                  text: 'I value open feedback and clear communication to align expectations and drive progress.',
+                },
+                {
+                  title: 'User-Centric Design',
+                  text: 'I prioritize accessibility and usability to create intuitive user experiences.',
+                },
+                {
+                  title: 'Efficiency and Scalability',
+                  text: 'I design solutions that are efficient today and scalable for future growth.',
+                },
+              ].map(({ title, text }) => (
+                <div key={title}>
+                  <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
+                    {title}
+                  </TextBox>
+                  <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
+                    {text}
+                  </TextBox>
+                </div>
+              ))}
+            </>
           </Grid>
         </Grid>
       </Grid>
