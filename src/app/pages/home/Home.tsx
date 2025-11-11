@@ -21,7 +21,7 @@ export const Home: React.FC<{}> = () => {
         </Grid>
       </Grid>
       <Grid layout="container" widthMax={1360} padding={'0'}>
-        <div style={{ height: '400px', width: '100%' }}>
+        <div style={{ height: '260px', width: '100%' }}>
           <SliderScroll gap="10px" isCircular autoPlay autoPlaySpeed={0.5}>
             {[
               { name: 'Angular', color: '#DD0031' },

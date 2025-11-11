@@ -2,13 +2,9 @@
   .homeSliderScrollItems {
     align-items: center;
     display: flex;
-    height: 360px;
+    height: 240px;
     width: 300px;
     justify-content: center;
-
-    @media (max-width: 767.98px) {
-      width: 260px;
-    }
   }
 
   .homeSliderItemsDesktop {
