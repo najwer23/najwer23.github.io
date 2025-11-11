@@ -1,4 +1,10 @@
 @layer n23Home {
+  .homeLine {
+    width: 100%;
+    height: 20px;
+    background-color: rgb(225, 223, 223);
+  }
+
   .homeSliderScrollItems {
     align-items: center;
     display: flex;

@@ -197,6 +197,11 @@ export const Home: React.FC<{}> = () => {
         </div>
       </Grid>
 
+      <Grid layout="container" widthMax={1600} margin={'auto auto 20px auto'}>
+        <Grid layout="container" widthMax={1400} padding={'20px'} margin={'auto'}></Grid>
+        <div className={styles.homeLine}></div>
+      </Grid>
+
       <Grid layout="container" widthMax={1400} padding={'40px 20px 0px 20px'}>
         <Grid layout="container" widthMax={700} padding={'0 0 40px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
