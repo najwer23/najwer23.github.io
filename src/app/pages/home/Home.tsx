@@ -131,16 +131,28 @@ export const Home: React.FC<{}> = () => {
             }}
           >
             <div className={styles.homeSliderItemsPicture} onClick={function PI() {}}>
-              <img src="https://i.pinimg.com/1200x/24/d1/e5/24d1e5325c8e3d5b7a0a295f919ea8d4.jpg"></img>
+              <img
+                draggable="false"
+                src="https://i.pinimg.com/1200x/24/d1/e5/24d1e5325c8e3d5b7a0a295f919ea8d4.jpg"
+              ></img>
             </div>
             <div className={styles.homeSliderItemsPicture} onClick={function PI() {}}>
-              <img src="https://i.pinimg.com/1200x/9b/f6/21/9bf621356954e8629d7e0177fd13fcf1.jpg"></img>
+              <img
+                draggable="false"
+                src="https://i.pinimg.com/1200x/9b/f6/21/9bf621356954e8629d7e0177fd13fcf1.jpg"
+              ></img>
             </div>
             <div className={styles.homeSliderItemsPicture} onClick={function PI() {}}>
-              <img src="https://i.pinimg.com/1200x/65/b2/d4/65b2d4d4779a740edb4e5c9b7b95f3d5.jpg"></img>
+              <img
+                draggable="false"
+                src="https://i.pinimg.com/1200x/65/b2/d4/65b2d4d4779a740edb4e5c9b7b95f3d5.jpg"
+              ></img>
             </div>
             <div className={styles.homeSliderItemsPicture} onClick={function PI() {}}>
-              <img src="https://i.pinimg.com/1200x/ce/81/67/ce8167dae6118358abfa038361209028.jpg"></img>
+              <img
+                draggable="false"
+                src="https://i.pinimg.com/1200x/ce/81/67/ce8167dae6118358abfa038361209028.jpg"
+              ></img>
             </div>
           </Slider>
         </div>
