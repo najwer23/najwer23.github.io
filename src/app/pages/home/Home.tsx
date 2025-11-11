@@ -13,7 +13,7 @@ export const Home: React.FC<{}> = () => {
             The way I work <br /> is not an accident.
           </TextBox>
         </Grid>
-        <Grid layout="container" widthMax={700} padding={'0 0 100px 0'} margin={0}>
+        <Grid layout="container" widthMax={700} padding={'0 0 clamp(40px, 8vw, 100px) 0'} margin={0}>
           <TextBox tag="p" desktopSize={28} mobileSize={22} fontWeight={400}>
             My approach blends precision, creativity, and relentless focus, ensuring that every project I undertake
             delivers beyond expectations.
@@ -47,7 +47,7 @@ export const Home: React.FC<{}> = () => {
       </Grid>
 
       <div style={{ background: 'rgb(225, 223, 223)' }}>
-        <Grid layout="container" widthMax={1400} padding={'20px 20px 20px 20px'} margin={'120px auto 100px auto'}>
+        <Grid layout="container" widthMax={1400} padding={'20px 20px 20px 20px'} margin={'120px auto 80px auto'}>
           <Grid layout="container" padding={'60px 0 60px 0'} margin={'0'}>
             <Grid
               layout="columns"
@@ -100,6 +100,15 @@ export const Home: React.FC<{}> = () => {
           </Grid>
         </Grid>
       </div>
+
+      <Grid layout="container" widthMax={1400} padding={'0px 20px 0px 20px'}>
+        <Grid layout="container" widthMax={700} padding={'0 0 40px 0'} margin={0}>
+          <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
+            Sample projects
+          </TextBox>
+        </Grid>
+      </Grid>
+
       <Grid layout="container" widthMax={1360} padding={'0 0 40px 0'} className={styles.homeSliderItemsDesktop}>
         <div
           style={{
@@ -191,20 +200,7 @@ export const Home: React.FC<{}> = () => {
         </div>
       </Grid>
 
-      <Grid layout="container" widthMax={1600} margin={'auto auto 20px auto'}>
-        <Grid layout="container" widthMax={1400} padding={'20px'} margin={'auto'}></Grid>
-        <div className={styles.homeLine}></div>
-      </Grid>
-
-      <Grid layout="container" widthMax={1400} padding={'40px 20px 0px 20px'}>
-        <Grid layout="container" widthMax={700} padding={'0 0 40px 0'} margin={0}>
-          <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
-            Sample projects
-          </TextBox>
-        </Grid>
-      </Grid>
-
-      <Grid layout="container" widthMax={1400} padding={'0px 20px 20px 20px'}>
+      <Grid layout="container" widthMax={1400} padding={'20px 20px 20px 20px'}>
         <Grid layout="container" widthMax={700} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
             APPLIED SYSTEMS INC.
