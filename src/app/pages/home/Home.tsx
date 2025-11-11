@@ -114,6 +114,7 @@ export const Home: React.FC<{}> = () => {
           }}
         >
           <Slider
+            isCircular
             slidesConfig={{
               desktop: {
                 items: 1,
@@ -153,6 +154,7 @@ export const Home: React.FC<{}> = () => {
           }}
         >
           <Slider
+            isCircular
             slidesConfig={{
               desktop: {
                 items: 1,
