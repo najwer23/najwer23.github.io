@@ -51,58 +51,61 @@ export const Home: React.FC<{}> = () => {
           </SliderScroll>
         </div>
       </Grid>
-      <Grid layout="container" widthMax={1400} padding={'20px 20px 40px 20px'}>
-        <Grid layout="container" padding={'100px 0 50px 0'} margin={0}>
-          <Grid
-            layout="columns"
-            gap={{ col: '100px', row: '40px' }}
-            col={{
-              smallDesktop: 2,
-              desktop: 2,
-              mobile: 1,
-              tablet: 2,
-            }}
-          >
-            <>
-              {[
-                {
-                  title: 'Deliberate Problem-Solving',
-                  text: 'I deeply analyze challenges to choose the best fit solutions rather than quick fixes.',
-                },
-                {
-                  title: 'Code Quality and Maintainability',
-                  text: 'I write clean, readable, well-documented code that is easy to understand and extend.',
-                },
-                {
-                  title: 'Continuous Learning and Improvement',
-                  text: 'I constantly update my skills to leverage the latest technology advancements.',
-                },
-                {
-                  title: 'Collaboration and Communication',
-                  text: 'I value open feedback and clear communication to align expectations and drive progress.',
-                },
-                {
-                  title: 'User-Centric Design',
-                  text: 'I prioritize accessibility and usability to create intuitive user experiences.',
-                },
-                {
-                  title: 'Efficiency and Scalability',
-                  text: 'I design solutions that are efficient today and scalable for future growth.',
-                },
-              ].map(({ title, text }) => (
-                <div key={title}>
-                  <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                    {title}
-                  </TextBox>
-                  <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
-                    {text}
-                  </TextBox>
-                </div>
-              ))}
-            </>
+
+      <div style={{ background: 'rgb(225, 223, 223)' }}>
+        <Grid layout="container" widthMax={1400} padding={'20px 20px 20px 20px'} margin={'120px auto 100px auto'}>
+          <Grid layout="container" padding={'60px 0 60px 0'} margin={'0'}>
+            <Grid
+              layout="columns"
+              gap={{ col: '100px', row: '40px' }}
+              col={{
+                smallDesktop: 2,
+                desktop: 2,
+                mobile: 1,
+                tablet: 2,
+              }}
+            >
+              <>
+                {[
+                  {
+                    title: 'Deliberate Problem-Solving',
+                    text: 'I deeply analyze challenges to choose the best fit solutions rather than quick fixes.',
+                  },
+                  {
+                    title: 'Code Quality and Maintainability',
+                    text: 'I write clean, readable, well-documented code that is easy to understand and extend.',
+                  },
+                  {
+                    title: 'Continuous Learning and Improvement',
+                    text: 'I constantly update my skills to leverage the latest technology advancements.',
+                  },
+                  {
+                    title: 'Collaboration and Communication',
+                    text: 'I value open feedback and clear communication to align expectations and drive progress.',
+                  },
+                  {
+                    title: 'User-Centric Design',
+                    text: 'I prioritize accessibility and usability to create intuitive user experiences.',
+                  },
+                  {
+                    title: 'Efficiency and Scalability',
+                    text: 'I design solutions that are efficient today and scalable for future growth.',
+                  },
+                ].map(({ title, text }) => (
+                  <div key={title}>
+                    <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
+                      {title}
+                    </TextBox>
+                    <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
+                      {text}
+                    </TextBox>
+                  </div>
+                ))}
+              </>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
+      </div>
       <Grid layout="container" widthMax={1360} padding={'0 0 40px 0'} className={styles.homeSliderItemsDesktop}>
         <div
           style={{
