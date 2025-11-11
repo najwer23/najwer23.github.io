@@ -24,27 +24,21 @@ export const Home: React.FC<{}> = () => {
         <div style={{ height: '260px', width: '100%' }}>
           <SliderScroll gap="10px" isCircular autoPlay autoPlaySpeed={0.5}>
             {[
-              { name: 'Angular', color: '#DD0031' },
-              { name: 'React', color: '#61DAFB' },
-              { name: 'Typescript', color: '#3178C6' },
-              { name: 'JavaScript', color: '#F0DB4F' },
-              { name: 'Node.js', color: '#339933' },
-              { name: 'Fastify', color: '#6F2CAC' },
-              { name: 'CSS', color: '#1572B6' },
-              { name: 'AWS', color: '#252F3E' },
-              { name: 'Next.js', color: '#000000' },
-              { name: 'Expo', color: '#1B998B' },
-              { name: 'React Native', color: '#61DAFB' },
-            ].map(({ name, color }) => (
-              <div
-                key={name}
-                className={styles.homeSliderScrollItems}
-                style={{
-                  background: color,
-                }}
-              >
-                <TextBox tag="p" desktopSize={48} mobileSize={35} fontWeight={400} color="white">
-                  {name}
+              'Angular',
+              'React',
+              'Typescript',
+              'JavaScript',
+              'Node.js',
+              'Fastify',
+              'CSS',
+              'AWS',
+              'Next.js',
+              'Expo',
+              'React Native',
+            ].map((v) => (
+              <div key={v} className={styles.homeSliderScrollItems}>
+                <TextBox tag="p" desktopSize={48} mobileSize={35} fontWeight={400} color="black">
+                  {v}
                 </TextBox>
               </div>
             ))}
