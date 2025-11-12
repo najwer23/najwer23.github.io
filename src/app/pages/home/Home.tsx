@@ -45,7 +45,6 @@ export const Home: React.FC<{}> = () => {
           </SliderScroll>
         </div>
       </Grid>
-
       <div style={{ background: 'rgb(225, 223, 223)' }}>
         <Grid layout="container" widthMax={1400} padding={'20px 20px 20px 20px'} margin={'120px auto 80px auto'}>
           <Grid layout="container" padding={'60px 0 60px 0'} margin={'0'}>
@@ -100,7 +99,6 @@ export const Home: React.FC<{}> = () => {
           </Grid>
         </Grid>
       </div>
-
       <Grid layout="container" widthMax={1400} padding={'0px 20px 0px 20px'}>
         <Grid layout="container" widthMax={700} padding={'0 0 40px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
@@ -108,7 +106,6 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
       </Grid>
-
       <Grid layout="container" widthMax={1360} padding={'0 0 40px 0'} className={styles.homeSliderItemsDesktop}>
         <div
           style={{
@@ -199,7 +196,6 @@ export const Home: React.FC<{}> = () => {
           </Slider>
         </div>
       </Grid>
-
       <Grid layout="container" widthMax={1400} padding={'20px 20px 20px 20px'}>
         <Grid layout="container" widthMax={700} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
@@ -220,7 +216,6 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
       </Grid>
-
       <Grid layout="container" widthMax={1400} padding={'40px 20px 20px 20px'}>
         <Grid layout="container" widthMax={700} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
@@ -238,7 +233,6 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
       </Grid>
-
       <Grid layout="container" widthMax={1400} padding={'40px 20px 20px 20px'}>
         <Grid layout="container" widthMax={700} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
@@ -255,19 +249,56 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
       </Grid>
-
-      <Grid layout="container" widthMax={1400} padding={'40px 20px 20px 20px'}>
+      <Grid layout="container" widthMax={1400} padding={'40px 20px 0px 20px'}>
         <Grid layout="container" widthMax={700} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
             EUROPA UBEZPIECZENIA
           </TextBox>
         </Grid>
-        <Grid layout="container" widthMax={900} padding={'0 0 100px 0'} margin={0}>
+        <Grid layout="container" widthMax={900} padding={'0'} margin={0}>
           <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
             My duty was to maintain and develop an internal system for managing insurance policies. The system was used
             by insurance agents and office workers. My tasks included creating new modules, integrating external systems
             (online payments, client data verification, insurance application creation), and optimizing application
             performance. I worked on both the frontend (Angular) and backend (Java, Groovy, SQL) of the application.
+          </TextBox>
+        </Grid>
+      </Grid>
+
+      <Grid
+        layout="flex"
+        widthMax={1400}
+        padding={'80px 20px 50px 20px'}
+        margin={'auto'}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid layout="container" widthMax={850} padding={'40px 0px 20px 0px'}>
+          <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} className={styles.callMe}>
+            Have questions or want to collaborate? Feel free to reach out! Click the button below to go to the contact
+            form, and I'll get back to you as soon as possible. Let's start a conversation!
+          </TextBox>
+        </Grid>
+      </Grid>
+
+      <Grid
+        layout="flex"
+        widthMax={1400}
+        padding={'0 0 100px 0'}
+        margin={'auto'}
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid layout="container" widthMax={850} padding={'0'}>
+          <TextBox
+            tag="a"
+            href="/#/contact-me"
+            desktopSize={30}
+            mobileSize={24}
+            fontWeight={600}
+            className={styles.callMe}
+          >
+            Contact Me
           </TextBox>
         </Grid>
       </Grid>
