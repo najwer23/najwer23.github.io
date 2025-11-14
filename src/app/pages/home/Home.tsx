@@ -18,7 +18,7 @@ export const Home: React.FC<{}> = () => {
           gap={{ col: '100px', row: '40px' }}
         >
           <div className={styles.mePicture} style={{ width: 'min(400px, 100%)' }}>
-            <img src="/me.jpg" width={'100%'} height={'auto'}></img>
+            <img src="/me.jpg" width={'1'} height={'1'}></img>
           </div>
           <div className={styles.meDesc}>
             <Grid layout="container" padding={'0 0 40px 0'} margin={0}>
