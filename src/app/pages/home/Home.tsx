@@ -17,8 +17,13 @@ export const Home: React.FC<{}> = () => {
           padding={'0 0 20px 0'}
           gap={{ col: '100px', row: '40px' }}
         >
-          <div className={styles.mePicture} style={{ width: 'min(400px, 100%)' }}>
-            <img src="/me.jpg" width={'1'} height={'1'}></img>
+          <div style={{ width: 'min(400px, 100%)' }}>
+            <div className={styles.mePicture}>
+              <img src="/me.jpg" width={'1'} height={'1'}></img>
+            </div>
+            <TextBox tag="p" desktopSize={12} mobileSize={12} color="grey" margin={'3px 0 3px 0'}>
+              I byte on both code and class.
+            </TextBox>
           </div>
           <div className={styles.meDesc}>
             <Grid layout="container" padding={'0 0 40px 0'} margin={0}>
