@@ -32,7 +32,7 @@
     width: 300px;
     justify-content: center;
     box-sizing: border-box;
-    border: 2px solid rgb(225, 223, 223);
+    border: 2px solid black;
   }
 
   .homeSliderItemsDesktop {
@@ -41,6 +41,8 @@
       background: #f7f6f6;
       display: flex;
       justify-content: center;
+      border: 2px solid black;
+      box-sizing: border-box;
 
       img {
         width: auto;
@@ -61,6 +63,9 @@
       background: #f7f6f6;
       display: flex;
       justify-content: center;
+      border: 2px solid black;
+      border: 2px solid black;
+      box-sizing: border-box;
 
       img {
         width: auto;
