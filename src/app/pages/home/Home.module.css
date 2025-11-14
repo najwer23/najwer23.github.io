@@ -5,6 +5,24 @@
     background-color: rgb(225, 223, 223);
   }
 
+  .mePicture {
+    padding: 5px;
+    border: 2px solid black;
+    height: fit-content;
+
+    img {
+      display: block;
+    }
+  }
+
+  .meDesc {
+    width: calc(100% - 514px);
+
+    @media (max-width: 949.98px) {
+      width: 100%;
+    }
+  }
+
   .homeSliderScrollItems {
     align-items: center;
     display: flex;
