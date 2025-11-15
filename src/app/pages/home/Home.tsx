@@ -7,13 +7,13 @@ import styles from './Home.module.css';
 export const Home: React.FC<{}> = () => {
   return (
     <>
-      <Grid layout="container" widthMax={1400} padding={'clamp(40px, 8vw, 60px) 20px 40px 20px'}>
+      <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 40px 20px'}>
         <Grid
           layout="flex"
           flexWrap="wrap"
           justifyContent="flexstart"
           alignItems="flexstart"
-          widthMax={1400}
+          widthMax={'1400px'}
           padding={'0 0 20px 0'}
           gap={{ col: '100px', row: '40px' }}
         >
@@ -31,7 +31,7 @@ export const Home: React.FC<{}> = () => {
                 Hello, World!
               </TextBox>
             </Grid>
-            <Grid layout="container" widthMax={800} margin={0}>
+            <Grid layout="container" widthMax={'800px'} margin={0}>
               <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
                 I am a passionate and detail-oriented Software Engineer with over 10 years of experience specializing in
                 modern JavaScript frameworks like React, Angular, Remix, and Svelte. I excel at translating business
@@ -43,7 +43,7 @@ export const Home: React.FC<{}> = () => {
                 communication allow me to bridge the gap between technical concepts and stakeholder needs efficiently.
               </TextBox>
             </Grid>
-            <Grid layout="container" widthMax={700} padding={'40px 0 0px 0'} margin={0}>
+            <Grid layout="container" widthMax={'700px'} padding={'40px 0 0px 0'} margin={0}>
               <ul style={{ margin: 0, paddingLeft: 14 }}>
                 {[
                   ['github.com/najwer23', 'https://github.com/najwer23'],
@@ -64,20 +64,20 @@ export const Home: React.FC<{}> = () => {
         </Grid>
       </Grid>
 
-      <Grid layout="container" widthMax={1400} padding={'clamp(40px, 8vw, 60px) 20px 20px 20px'}>
-        <Grid layout="container" widthMax={700} padding={'0 0 40px 0'} margin={0}>
+      <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 20px 20px'}>
+        <Grid layout="container" widthMax={'700px'} padding={'0 0 40px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
             The way I work <br /> is not an accident.
           </TextBox>
         </Grid>
-        <Grid layout="container" widthMax={700} padding={'0 0 clamp(40px, 8vw, 100px) 0'} margin={0}>
+        <Grid layout="container" widthMax={'700px'} padding={'0 0 clamp(40px, 8vw, 100px) 0'} margin={0}>
           <TextBox tag="p" desktopSize={28} mobileSize={22} fontWeight={400}>
             My approach blends precision, creativity, and relentless focus, ensuring that every project I undertake
             delivers beyond expectations.
           </TextBox>
         </Grid>
       </Grid>
-      <Grid layout="container" widthMax={1360} padding={'0'}>
+      <Grid layout="container" widthMax={'1360px'} padding={'0'}>
         <div style={{ height: '260px', width: '100%' }}>
           <SliderScroll gap="10px" isCircular autoPlay autoPlaySpeed={0.5}>
             {[
@@ -103,7 +103,7 @@ export const Home: React.FC<{}> = () => {
         </div>
       </Grid>
       <div style={{ background: 'rgb(225, 223, 223)' }}>
-        <Grid layout="container" widthMax={1400} padding={'20px 20px 20px 20px'} margin={'120px auto 80px auto'}>
+        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'120px auto 80px auto'}>
           <Grid layout="container" padding={'60px 0 60px 0'} margin={'0'}>
             <Grid
               layout="columns"
@@ -156,14 +156,14 @@ export const Home: React.FC<{}> = () => {
           </Grid>
         </Grid>
       </div>
-      <Grid layout="container" widthMax={1400} padding={'0px 20px 0px 20px'}>
-        <Grid layout="container" widthMax={700} padding={'0 0 40px 0'} margin={0}>
+      <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 0px 20px'}>
+        <Grid layout="container" widthMax={'700px'} padding={'0 0 40px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
             Sample projects
           </TextBox>
         </Grid>
       </Grid>
-      <Grid layout="container" widthMax={1360} padding={'0 0 40px 0'} className={styles.homeSliderItemsDesktop}>
+      <Grid layout="container" widthMax={'1360px'} padding={'0 0 40px 0'} className={styles.homeSliderItemsDesktop}>
         <div
           style={{
             height: '700px',
@@ -214,7 +214,7 @@ export const Home: React.FC<{}> = () => {
           </Slider>
         </div>
       </Grid>
-      <Grid layout="container" widthMax={1360} padding={'0 0 40px 0'} className={styles.homeSliderItemsMobile}>
+      <Grid layout="container" widthMax={'1360px'} padding={'0 0 40px 0'} className={styles.homeSliderItemsMobile}>
         <div
           style={{
             height: '600px',
@@ -253,13 +253,13 @@ export const Home: React.FC<{}> = () => {
           </Slider>
         </div>
       </Grid>
-      <Grid layout="container" widthMax={1400} padding={'20px 20px 20px 20px'}>
-        <Grid layout="container" widthMax={700} padding={'0 0 10px 0'} margin={0}>
+      <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'}>
+        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
             APPLIED SYSTEMS INC.
           </TextBox>
         </Grid>
-        <Grid layout="container" widthMax={900} padding={0} margin={0}>
+        <Grid layout="container" widthMax={'900px'} padding={0} margin={0}>
           <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
             My responsibility was to create a frontend application enabling the purchase of insurance through a website.
             The application was developed using React.js and TypeScript, leveraging the Applied Systems design system.
@@ -273,13 +273,13 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
       </Grid>
-      <Grid layout="container" widthMax={1400} padding={'40px 20px 20px 20px'}>
-        <Grid layout="container" widthMax={700} padding={'0 0 10px 0'} margin={0}>
+      <Grid layout="container" widthMax={'1400px'} padding={'40px 20px 20px 20px'}>
+        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
             WARNER BROS. DISCOVERY, TVN24.pl
           </TextBox>
         </Grid>
-        <Grid layout="container" widthMax={900} padding={0} margin={0}>
+        <Grid layout="container" widthMax={'900px'} padding={0} margin={0}>
           <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
             My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
             technology. The architecture was inspired by the islands concept popularized by Astro.js, featuring
@@ -290,13 +290,13 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
       </Grid>
-      <Grid layout="container" widthMax={1400} padding={'40px 20px 20px 20px'}>
-        <Grid layout="container" widthMax={700} padding={'0 0 10px 0'} margin={0}>
+      <Grid layout="container" widthMax={'1400px'} padding={'40px 20px 20px 20px'}>
+        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
             FLHF S.A
           </TextBox>
         </Grid>
-        <Grid layout="container" widthMax={900} padding={0} margin={0}>
+        <Grid layout="container" widthMax={'900px'} padding={0} margin={0}>
           <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
             My responsibility was to enhance a website initially developed by a software house while simultaneously
             refreshing its graphic design. The core focus was to develop ecommerce-specific components such as sliders,
@@ -306,13 +306,13 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
       </Grid>
-      <Grid layout="container" widthMax={1400} padding={'40px 20px 0px 20px'}>
-        <Grid layout="container" widthMax={700} padding={'0 0 10px 0'} margin={0}>
+      <Grid layout="container" widthMax={'1400px'} padding={'40px 20px 0px 20px'}>
+        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
             EUROPA UBEZPIECZENIA
           </TextBox>
         </Grid>
-        <Grid layout="container" widthMax={900} padding={'0'} margin={0}>
+        <Grid layout="container" widthMax={'900px'} padding={'0'} margin={0}>
           <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
             My duty was to maintain and develop an internal system for managing insurance policies. The system was used
             by insurance agents and office workers. My tasks included creating new modules, integrating external systems
@@ -324,13 +324,13 @@ export const Home: React.FC<{}> = () => {
 
       <Grid
         layout="flex"
-        widthMax={1400}
+        widthMax={'1400px'}
         padding={'80px 20px 50px 20px'}
         margin={'auto'}
         justifyContent="center"
         alignItems="center"
       >
-        <Grid layout="container" widthMax={850} padding={'40px 0px 20px 0px'}>
+        <Grid layout="container" widthMax={'850px'} padding={'40px 0px 20px 0px'}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} className={styles.callMe}>
             Have questions or want to collaborate? Feel free to reach out! Click the button below to go to the contact
             form, and I'll get back to you as soon as possible. Let's start a conversation!
@@ -340,13 +340,13 @@ export const Home: React.FC<{}> = () => {
 
       <Grid
         layout="flex"
-        widthMax={1400}
+        widthMax={'1400px'}
         padding={'0 0 100px 0'}
         margin={'auto'}
         justifyContent="center"
         alignItems="center"
       >
-        <Grid layout="container" widthMax={850} padding={'0'}>
+        <Grid layout="container" widthMax={'850px'} padding={'0'}>
           <TextBox
             tag="a"
             href="/#/contact-me"

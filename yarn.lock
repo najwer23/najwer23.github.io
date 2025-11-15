@@ -2028,42 +2028,42 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.90.8":
-  version: 5.90.8
-  resolution: "@tanstack/query-core@npm:5.90.8"
-  checksum: 10c0/02a96b57aa3f001ba328f22f5869b053120a7650432ee2032921700b5aeebabed0e525d80010a81e0f0aa2e91a70331fca07406f518ce657dc7da532207a0d25
+"@tanstack/query-core@npm:5.90.9":
+  version: 5.90.9
+  resolution: "@tanstack/query-core@npm:5.90.9"
+  checksum: 10c0/d3759529c714658a492e860365452db165f673f9a777c57339072231f90554628798deaadc9fd8b115b028c1dcd3b0fe3fd8d8a2ab25f799d853e2fd020b5734
   languageName: node
   linkType: hard
 
-"@tanstack/query-persist-client-core@npm:5.91.7":
-  version: 5.91.7
-  resolution: "@tanstack/query-persist-client-core@npm:5.91.7"
+"@tanstack/query-persist-client-core@npm:5.91.8":
+  version: 5.91.8
+  resolution: "@tanstack/query-persist-client-core@npm:5.91.8"
   dependencies:
-    "@tanstack/query-core": "npm:5.90.8"
-  checksum: 10c0/f9ffbb7d72d795fc01f2e9d2c441a5c96f7f1df494864a945057a163b901e9eccd6849dbf6e435d01b7dbf27c700abfd7d99d16c93d6547cb9998c7db0d6ca04
+    "@tanstack/query-core": "npm:5.90.9"
+  checksum: 10c0/d12239b576ed49da63857da1f05b607e472481167f69f5992a67e94fa47dc290b391827ab82a6f3068c0d54f1b6e9c084d58ca053acea05f4e82857768e32bb8
   languageName: node
   linkType: hard
 
-"@tanstack/react-query-persist-client@npm:^5.90.10":
-  version: 5.90.10
-  resolution: "@tanstack/react-query-persist-client@npm:5.90.10"
+"@tanstack/react-query-persist-client@npm:^5.90.11":
+  version: 5.90.11
+  resolution: "@tanstack/react-query-persist-client@npm:5.90.11"
   dependencies:
-    "@tanstack/query-persist-client-core": "npm:5.91.7"
+    "@tanstack/query-persist-client-core": "npm:5.91.8"
   peerDependencies:
-    "@tanstack/react-query": ^5.90.8
+    "@tanstack/react-query": ^5.90.9
     react: ^18 || ^19
-  checksum: 10c0/a5296f8b8af557692b835d27bf04feb7e6c6c50f433989720dbe217751aeb99001f9b7f50507ba0897e43a4f24992e7eddc576da81e332495e03332511c3af45
+  checksum: 10c0/90860acab0c602f48a986f9e5771e76ec707ed818a8a852e38f1db5505c0426e3f24e3decc21a0b83178d0d76003220681b6d810dad6e97279d322c0fe61a1f9
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.90.8":
-  version: 5.90.8
-  resolution: "@tanstack/react-query@npm:5.90.8"
+"@tanstack/react-query@npm:^5.90.9":
+  version: 5.90.9
+  resolution: "@tanstack/react-query@npm:5.90.9"
   dependencies:
-    "@tanstack/query-core": "npm:5.90.8"
+    "@tanstack/query-core": "npm:5.90.9"
   peerDependencies:
     react: ^18 || ^19
-  checksum: 10c0/18cc48b4bbddf4bda439fa4ca6e6c624221a8d53a04a20d7a7e416da52653eb331fd05f15bcf553aa456692688801ee6567e447360a699453088e815628ba887
+  checksum: 10c0/3cf3e5b49580a58966db6cca9b35674af62b9322c4b9f388ee0074fe5d0f05d0fbcc83b345f2d84040cab284b02cfcf5f45bb8f79bf4ae85853f66313e0a7d6e
   languageName: node
   linkType: hard
 
@@ -2165,12 +2165,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.2.4":
-  version: 19.2.4
-  resolution: "@types/react@npm:19.2.4"
+"@types/react@npm:^19.2.5":
+  version: 19.2.5
+  resolution: "@types/react@npm:19.2.5"
   dependencies:
     csstype: "npm:^3.0.2"
-  checksum: 10c0/c878262c4bce047e53a44ef644088fce359ebdfdca7060a4ac1717c8362563b9506a7ebae145977836e95d5948b8f8b426dcd516044c3a3c0563a6f1b60408ce
+  checksum: 10c0/1f9a92c73a5ea5b167f59cd0b5b9460fde65bd22b63b6d23bfaace8ad38537df127c97657418b4912a7a03a66e6451e82a41b84718d638ec1c8e4f0515d94793
   languageName: node
   linkType: hard
 
@@ -4232,18 +4232,18 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:^7.1.0"
     "@fortawesome/free-solid-svg-icons": "npm:^7.1.0"
     "@fortawesome/react-fontawesome": "npm:^3.1.0"
-    "@tanstack/react-query": "npm:^5.90.8"
-    "@tanstack/react-query-persist-client": "npm:^5.90.10"
+    "@tanstack/react-query": "npm:^5.90.9"
+    "@tanstack/react-query-persist-client": "npm:^5.90.11"
     "@types/chart.js": "npm:^4.0.1"
     "@types/leaflet": "npm:^1.9.21"
     "@types/node": "npm:^24.10.1"
-    "@types/react": "npm:^19.2.4"
+    "@types/react": "npm:^19.2.5"
     "@types/react-dom": "npm:^19.2.3"
     "@vitejs/plugin-react": "npm:^5.1.1"
     chart.js: "npm:^4.5.1"
     gh-pages: "npm:^6.3.0"
     leaflet: "npm:1.9.4"
-    najwer23morsels: "npm:^0.10.23"
+    najwer23morsels: "npm:^0.10.27"
     react: "npm:^19.2.0"
     react-chartjs-2: "npm:5.3.1"
     react-dom: "npm:^19.2.0"
@@ -4257,13 +4257,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"najwer23morsels@npm:^0.10.23":
-  version: 0.10.23
-  resolution: "najwer23morsels@npm:0.10.23"
+"najwer23morsels@npm:^0.10.27":
+  version: 0.10.27
+  resolution: "najwer23morsels@npm:0.10.27"
   peerDependencies:
     react: ^19.1.0
     react-dom: ^19.1.0
-  checksum: 10c0/ba67bd67cca43d14a464da17efceacb384a37967c7adeed873a3fdc77f6667b19c1b4f8cd5e9c28040e2a07a4c41096ff2e512cfdad2d91ca79b9afa4475484d
+  checksum: 10c0/f5ffd77dc87fcae10b0f44e7c4ab6f92a77c00d2976f69ac1f71d3a113cfa6ba3628d61d4b8ef704be67d53645183ffd0a4daec592bd11e339994ea7d015371b
   languageName: node
   linkType: hard
 

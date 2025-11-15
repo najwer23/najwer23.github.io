@@ -8,8 +8,8 @@ export const Navigation: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <Grid layout="container" widthMax={1600}>
-      <Grid layout="container" widthMax={1400} padding={'20px'} margin={'auto'}>
+    <Grid layout="container" widthMax={'1600px'}>
+      <Grid layout="container" widthMax={'1400px'} padding={'20px'} margin={'auto'}>
         <Grid
           layout="columns"
           gap={{ col: '20px', row: '20px' }}
@@ -87,8 +87,14 @@ export const Navigation: React.FC = () => {
       </Grid>
       <div className={styles.navigationLine}></div>
 
-      <Grid layout="container" widthMax={1400} padding={'20px'} margin={'auto'} className={styles.navigationTabMenu}>
-        <Grid layout="flex" justifyContent="center" widthMax={1400} gap={{ col: '30px', row: '20px' }}>
+      <Grid
+        layout="container"
+        widthMax={'1400px'}
+        padding={'20px'}
+        margin={'auto'}
+        className={styles.navigationTabMenu}
+      >
+        <Grid layout="flex" justifyContent="center" widthMax={'1400px'} gap={{ col: '30px', row: '20px' }}>
           <div>
             <TextBox tag="a" href="/#/home" desktopSize={18} mobileSize={18} fontWeight={400} color="darkgrey">
               Home
