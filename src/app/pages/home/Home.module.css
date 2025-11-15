@@ -5,18 +5,6 @@
     background-color: rgb(225, 223, 223);
   }
 
-  .mePicture {
-    padding: 5px;
-    border: 2px solid black;
-    height: fit-content;
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  }
-
   .meDesc {
     width: calc(100% - 514px);
 
@@ -43,11 +31,6 @@
       justify-content: center;
       border: 2px solid black;
       box-sizing: border-box;
-
-      img {
-        width: auto;
-        height: 600px;
-      }
     }
 
     @media (max-width: 767.98px) {
@@ -64,13 +47,7 @@
       display: flex;
       justify-content: center;
       border: 2px solid black;
-      border: 2px solid black;
       box-sizing: border-box;
-
-      img {
-        width: auto;
-        height: 450px;
-      }
     }
 
     @media (max-width: 767.98px) {
