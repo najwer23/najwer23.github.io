@@ -193,6 +193,7 @@ export const Home: React.FC<{}> = () => {
               <Picture
                 src={'https://i.pinimg.com/1200x/24/d1/e5/24d1e5325c8e3d5b7a0a295f919ea8d4.jpg'}
                 alt={'Photo of tvn24.pl'}
+                loading="eager"
                 ar={1200 / 750}
                 maxHeight="600px"
               ></Picture>
@@ -202,6 +203,7 @@ export const Home: React.FC<{}> = () => {
                 src={'https://i.pinimg.com/1200x/9b/f6/21/9bf621356954e8629d7e0177fd13fcf1.jpg'}
                 alt={'Photo of stock quotes, tvn24.pl'}
                 ar={1200 / 750}
+                loading="eager"
                 maxHeight="600px"
               ></Picture>
             </div>
@@ -210,6 +212,7 @@ export const Home: React.FC<{}> = () => {
                 src={'https://i.pinimg.com/1200x/65/b2/d4/65b2d4d4779a740edb4e5c9b7b95f3d5.jpg'}
                 alt={'Photo of Restilo'}
                 ar={1200 / 750}
+                loading="eager"
                 maxHeight="600px"
               ></Picture>
             </div>
@@ -218,6 +221,7 @@ export const Home: React.FC<{}> = () => {
                 src={'https://i.pinimg.com/1200x/ce/81/67/ce8167dae6118358abfa038361209028.jpg'}
                 alt={'Photo of Europa Ubezpieczenia'}
                 ar={1200 / 750}
+                loading="eager"
                 maxHeight="600px"
               ></Picture>
             </div>
@@ -362,7 +366,7 @@ export const Home: React.FC<{}> = () => {
         alignItems="center"
       >
         <Grid layout="container" widthMax={'850px'} padding={'40px 0px 20px 0px'}>
-          <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} className={styles.callMe}>
+          <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} textAlign="center">
             Have questions or want to collaborate? Feel free to reach out! Click the button below to go to the contact
             form, and I'll get back to you as soon as possible. Let's start a conversation!
           </TextBox>
