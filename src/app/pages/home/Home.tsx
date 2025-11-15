@@ -20,7 +20,7 @@ export const Home: React.FC<{}> = () => {
         >
           <div style={{ width: 'min(400px, 100%)' }}>
             <div className={styles.mePicture}>
-              <Picture src={'/me.jpg'} alt={'Photo of Mariusz Najwer'} ar={1} border></Picture>
+              <Picture src={'/me.jpg'} alt={'Photo of Mariusz Najwer'} ar={1} border loading="eager"></Picture>
             </div>
             <TextBox tag="p" desktopSize={12} mobileSize={12} color="grey" margin={'3px 0 3px 0'}>
               I byte on both code and class.
@@ -94,7 +94,7 @@ export const Home: React.FC<{}> = () => {
               'Expo',
               'React Native',
             ].map((v) => (
-              <div key={v} className={styles.homeSliderScrollItems}>
+              <div key={v} className={styles.homeSliderTech}>
                 <TextBox tag="p" desktopSize={48} mobileSize={35} fontWeight={400} color="black">
                   {v}
                 </TextBox>
@@ -164,13 +164,8 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
       </Grid>
-      <Grid layout="container" widthMax={'1360px'} padding={'0 0 40px 0'} className={styles.homeSliderItemsDesktop}>
-        <div
-          style={{
-            height: '700px',
-            width: '100%',
-          }}
-        >
+      <Grid layout="container" widthMax={'1360px'} padding={'0 0 40px 0'} className={styles.homeSliderProjects}>
+        <div className={styles.homeSliderProjectsWrapper}>
           <Slider
             key={'homeSliderItemsDesktop'}
             isCircular
@@ -189,105 +184,58 @@ export const Home: React.FC<{}> = () => {
               },
             }}
           >
-            <div className={styles.homeSliderItemsPicture}>
+            <div className={styles.homeSliderProjectsPicture}>
               <Picture
-                src={'https://i.pinimg.com/1200x/24/d1/e5/24d1e5325c8e3d5b7a0a295f919ea8d4.jpg'}
+                srcMobile="https://i.pinimg.com/1200x/77/ff/b4/77ffb4f3c2b432a22e51e25fe7dc255c.jpg"
+                arMobile={485 / 681}
+                maxHeightMobile="450px"
+                srcDesktop="https://i.pinimg.com/1200x/24/d1/e5/24d1e5325c8e3d5b7a0a295f919ea8d4.jpg"
+                arDesktop={1200 / 750}
+                maxHeightDesktop="600px"
                 alt={'Photo of tvn24.pl'}
                 loading="eager"
-                ar={1200 / 750}
-                maxHeight="600px"
               ></Picture>
             </div>
-            <div className={styles.homeSliderItemsPicture}>
+            <div className={styles.homeSliderProjectsPicture}>
               <Picture
-                src={'https://i.pinimg.com/1200x/9b/f6/21/9bf621356954e8629d7e0177fd13fcf1.jpg'}
+                srcMobile="https://i.pinimg.com/1200x/8b/96/df/8b96dfc8a5c03b79263ab93b857e2325.jpg"
+                arMobile={481 / 680}
+                maxHeightMobile="450px"
+                srcDesktop="https://i.pinimg.com/1200x/9b/f6/21/9bf621356954e8629d7e0177fd13fcf1.jpg"
+                arDesktop={1200 / 750}
+                maxHeightDesktop="600px"
                 alt={'Photo of stock quotes, tvn24.pl'}
-                ar={1200 / 750}
                 loading="eager"
-                maxHeight="600px"
               ></Picture>
             </div>
-            <div className={styles.homeSliderItemsPicture}>
+            <div className={styles.homeSliderProjectsPicture}>
               <Picture
-                src={'https://i.pinimg.com/1200x/65/b2/d4/65b2d4d4779a740edb4e5c9b7b95f3d5.jpg'}
+                srcMobile="https://i.pinimg.com/1200x/e5/d1/06/e5d106151ca82149c3b7c56cd99a1646.jpg"
+                arMobile={197 / 338}
+                maxHeightMobile="450px"
+                srcDesktop="https://i.pinimg.com/1200x/65/b2/d4/65b2d4d4779a740edb4e5c9b7b95f3d5.jpg"
+                arDesktop={1200 / 750}
+                maxHeightDesktop="600px"
                 alt={'Photo of Restilo'}
-                ar={1200 / 750}
                 loading="eager"
-                maxHeight="600px"
               ></Picture>
             </div>
-            <div className={styles.homeSliderItemsPicture}>
+            <div className={styles.homeSliderProjectsPicture}>
               <Picture
-                src={'https://i.pinimg.com/1200x/ce/81/67/ce8167dae6118358abfa038361209028.jpg'}
+                srcMobile="https://i.pinimg.com/1200x/21/14/c6/2114c62617df7f42b7f0ad6333369423.jpg"
+                arMobile={391 / 677}
+                maxHeightMobile="450px"
+                srcDesktop="https://i.pinimg.com/1200x/ce/81/67/ce8167dae6118358abfa038361209028.jpg"
+                arDesktop={1200 / 750}
+                maxHeightDesktop="600px"
                 alt={'Photo of Europa Ubezpieczenia'}
-                ar={1200 / 750}
                 loading="eager"
-                maxHeight="600px"
               ></Picture>
             </div>
           </Slider>
         </div>
       </Grid>
-      <Grid layout="container" widthMax={'1360px'} padding={'0 0 40px 0'} className={styles.homeSliderItemsMobile}>
-        <div
-          style={{
-            height: '600px',
-            width: '100%',
-          }}
-        >
-          <Slider
-            key={'homeSliderItemsMobile'}
-            isCircular
-            slidesConfig={{
-              desktop: {
-                items: 1,
-                slidesToScroll: 1,
-              },
-              mobile: {
-                items: 1,
-                slidesToScroll: 1,
-              },
-              tablet: {
-                items: 1,
-                slidesToScroll: 1,
-              },
-            }}
-          >
-            <div className={styles.homeSliderItemsPicture} onClick={function PI() {}}>
-              <Picture
-                src={'https://i.pinimg.com/1200x/77/ff/b4/77ffb4f3c2b432a22e51e25fe7dc255c.jpg'}
-                alt={'Photo of tvn24.pl, mobile'}
-                ar={485 / 681}
-                maxHeight="450px"
-              ></Picture>
-            </div>
-            <div className={styles.homeSliderItemsPicture} onClick={function PI() {}}>
-              <Picture
-                src={'https://i.pinimg.com/1200x/8b/96/df/8b96dfc8a5c03b79263ab93b857e2325.jpg'}
-                alt={'Photo of stock quotes, tvn24.pl, mobile'}
-                ar={481 / 680}
-                maxHeight="450px"
-              ></Picture>
-            </div>
-            <div className={styles.homeSliderItemsPicture} onClick={function PI() {}}>
-              <Picture
-                src={'https://i.pinimg.com/1200x/e5/d1/06/e5d106151ca82149c3b7c56cd99a1646.jpg'}
-                alt={'Photo of Restilo, mobile'}
-                ar={197 / 338}
-                maxHeight="450px"
-              ></Picture>
-            </div>
-            <div className={styles.homeSliderItemsPicture} onClick={function PI() {}}>
-              <Picture
-                src={'https://i.pinimg.com/1200x/21/14/c6/2114c62617df7f42b7f0ad6333369423.jpg'}
-                alt={'Photo of Europa Ubezpieczenia, mobile'}
-                ar={391 / 677}
-                maxHeight="450px"
-              ></Picture>
-            </div>
-          </Slider>
-        </div>
-      </Grid>
+
       <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'}>
         <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
