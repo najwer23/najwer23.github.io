@@ -146,7 +146,7 @@ export const Home: React.FC<{}> = () => {
                     <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
                       {title}
                     </TextBox>
-                    <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
+                    <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="pretty">
                       {text}
                     </TextBox>
                   </div>
@@ -260,7 +260,7 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
         <Grid layout="container" widthMax={'900px'} padding={0} margin={0}>
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
+          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
             My responsibility was to create a frontend application enabling the purchase of insurance through a website.
             The application was developed using React.js and TypeScript, leveraging the Applied Systems design system.
             The primary technical challenge was implementing a recursive Depth-First Search (DFS) algorithm to
@@ -280,7 +280,7 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
         <Grid layout="container" widthMax={'900px'} padding={0} margin={0}>
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
+          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
             My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
             technology. The architecture was inspired by the islands concept popularized by Astro.js, featuring
             microfrontend applications implemented with React.js and Web Components. As part of the development team, I
@@ -297,7 +297,7 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
         <Grid layout="container" widthMax={'900px'} padding={0} margin={0}>
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
+          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
             My responsibility was to enhance a website initially developed by a software house while simultaneously
             refreshing its graphic design. The core focus was to develop ecommerce-specific components such as sliders,
             carousels, product listings, search functionality, and a shopping cart. Key priorities included optimizing
@@ -313,7 +313,7 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
         <Grid layout="container" widthMax={'900px'} padding={'0'} margin={0}>
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
+          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
             My duty was to maintain and develop an internal system for managing insurance policies. The system was used
             by insurance agents and office workers. My tasks included creating new modules, integrating external systems
             (online payments, client data verification, insurance application creation), and optimizing application
