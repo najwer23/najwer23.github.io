@@ -20,11 +20,16 @@ export const Home: React.FC<{}> = () => {
         >
           <div style={{ width: 'min(400px, 100%)' }}>
             <div className={styles.mePicture}>
-              <Picture src={'/me.jpg'} alt={'Photo of Mariusz Najwer'} ar={1} border loading="eager"></Picture>
+              <Picture
+                figcaption="I byte on both code and class."
+                figcaptionColor="grey"
+                src={'/me.jpg'}
+                alt={'Photo of Mariusz Najwer'}
+                ar={1}
+                border
+                loading="eager"
+              ></Picture>
             </div>
-            <TextBox tag="p" desktopSize={12} mobileSize={12} color="grey" margin={'3px 0 3px 0'}>
-              I byte on both code and class.
-            </TextBox>
           </div>
           <div className={styles.meDesc}>
             <Grid layout="container" padding={'0 0 40px 0'} margin={0}>
