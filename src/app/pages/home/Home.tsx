@@ -433,12 +433,12 @@ export const Home: React.FC<{}> = () => {
               },
               {
                 src: 'https://i.ibb.co/C5XpQkh/barcelona-2371946-1280.jpg',
-                alt: 'Barelona',
+                alt: 'Barcelona',
                 ar: 16 / 9,
               },
               {
                 src: 'https://i.ibb.co/tsCt9tX/el-born-5301517-1280.jpg',
-                alt: 'Barelona',
+                alt: 'Barcelona',
                 ar: 427 / 640,
               },
               {
