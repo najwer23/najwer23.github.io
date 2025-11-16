@@ -4243,7 +4243,7 @@ __metadata:
     chart.js: "npm:^4.5.1"
     gh-pages: "npm:^6.3.0"
     leaflet: "npm:1.9.4"
-    najwer23morsels: "npm:^0.12.11"
+    najwer23morsels: "npm:^0.13.1"
     react: "npm:^19.2.0"
     react-chartjs-2: "npm:5.3.1"
     react-dom: "npm:^19.2.0"
@@ -4257,13 +4257,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"najwer23morsels@npm:^0.12.11":
-  version: 0.12.11
-  resolution: "najwer23morsels@npm:0.12.11"
+"najwer23morsels@npm:^0.13.1":
+  version: 0.13.1
+  resolution: "najwer23morsels@npm:0.13.1"
   peerDependencies:
     react: ^19.1.0
     react-dom: ^19.1.0
-  checksum: 10c0/b9349ace217a99eadecf5160cba063493d6dc65e44f68161d7fe020ef5ae09dd626affbafadbb23d59c6734dc22521e63faae564153b7bde0344ff246dca38df
+  checksum: 10c0/cb0837719dfba4c708312d554362f60572e0b02b7d13254d9b323bfb12ddfb449a728077611c137509385b42ef2fd02c878e5cafff48e7766c592b892ca61c5d
   languageName: node
   linkType: hard
 
