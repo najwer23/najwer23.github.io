@@ -453,7 +453,7 @@ export const Home: React.FC<{}> = () => {
               },
               {
                 src: 'https://i.ibb.co/S5PV6qy/2df84435-ce2b-42d1-a9cc-e62e9e914441.webp',
-                alt: 'Lizbona',
+                alt: 'Lisboa',
                 ar: 400 / 267,
               },
               {
