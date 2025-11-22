@@ -26,7 +26,7 @@
     "start": "vite --open --host"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.6",
+    "@biomejs/biome": "2.3.7",
     "@tanstack/react-query": "^5.90.10",
     "@tanstack/react-query-persist-client": "^5.90.12",
     "@types/chart.js": "^4.0.1",
@@ -38,24 +38,17 @@
     "chart.js": "^4.5.1",
     "gh-pages": "^6.3.0",
     "leaflet": "1.9.4",
-    "najwer23morsels": "^0.13.3",
+    "najwer23morsels": "^0.14.0",
     "react": "^19.2.0",
     "react-chartjs-2": "5.3.1",
     "react-dom": "^19.2.0",
     "react-ga4": "^2.1.0",
     "react-leaflet": "5.0.0",
     "react-router-dom": "^7.9.6",
-    "rimraf": "^6.1.0",
+    "rimraf": "^6.1.2",
     "typescript": "^5.9.3",
-    "vite": "^7.2.2",
+    "vite": "^7.2.4",
     "vite-plugin-pwa": "^1.1.0"
   },
-  "packageManager": "yarn@4.11.0",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^7.1.0",
-    "@fortawesome/free-brands-svg-icons": "^7.1.0",
-    "@fortawesome/free-regular-svg-icons": "^7.1.0",
-    "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@fortawesome/react-fontawesome": "^3.1.0"
-  }
+  "packageManager": "yarn@4.11.0"
 }
