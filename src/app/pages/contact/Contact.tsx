@@ -197,8 +197,7 @@ export const Contact: React.FC<{}> = () => {
             scrollWheelZoom={false}
             style={{ height: '550px', width: '100%' }}
           >
-            <TileLayer url="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png" />
-            {/* <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" /> */}
+            <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
             <Marker position={[51.094598, 17.020876]}>
               <Popup>Sky Tower, Wrocław</Popup>
             </Marker>
