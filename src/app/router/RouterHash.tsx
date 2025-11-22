@@ -1,5 +1,6 @@
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from '../layout/Layout';
+import { Contact } from '../pages/contact/Contact';
 import { Home } from '../pages/home/Home';
 import { ScrollToTop } from './ScrollToTop';
 
@@ -22,6 +23,10 @@ const router = createHashRouter([
       {
         path: '/home',
         element: <Home />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
       },
     ],
   },

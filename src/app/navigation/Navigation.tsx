@@ -71,6 +71,17 @@ export const Navigation: React.FC = () => {
                 </TextBox>
                 <TextBox
                   tag="a"
+                  href="/#/contact"
+                  desktopSize={30}
+                  mobileSize={30}
+                  fontWeight={400}
+                  color="black"
+                  onClick={() => setMenuOpen((prevMenuOpen) => !prevMenuOpen)}
+                >
+                  Contact Me
+                </TextBox>
+                <TextBox
+                  tag="a"
                   href="https://najwer23.github.io/resume/"
                   desktopSize={32}
                   mobileSize={32}
@@ -98,6 +109,11 @@ export const Navigation: React.FC = () => {
           <div>
             <TextBox tag="a" href="/#/home" desktopSize={18} mobileSize={18} fontWeight={400} color="darkgrey">
               Home
+            </TextBox>
+          </div>
+          <div>
+            <TextBox tag="a" href="/#/contact" desktopSize={18} mobileSize={18} fontWeight={400} color="darkgrey">
+              Contact
             </TextBox>
           </div>
         </Grid>

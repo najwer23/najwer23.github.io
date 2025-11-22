@@ -338,7 +338,7 @@ export const Home: React.FC<{}> = () => {
         <Grid layout="container" widthMax={'850px'} padding={'0'}>
           <TextBox
             tag="a"
-            href="/#/contact-me"
+            href="/#/contact"
             desktopSize={30}
             mobileSize={24}
             fontWeight={600}
