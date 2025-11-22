@@ -7,7 +7,7 @@ import { Input } from 'najwer23morsels/lib/input';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { queryContact } from './Contact.query';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
+import { CircleMarker, MapContainer, Popup, TileLayer, useMap } from 'react-leaflet';
 
 const CenterMapButton = ({ center, zoom }: { center: [number, number]; zoom: number }) => {
   const map = useMap();
@@ -50,24 +50,6 @@ const CenterMapButton = ({ center, zoom }: { center: [number, number]; zoom: num
     </Button>
   );
 };
-
-{
-  /* <button
-      onClick={handleClick}
-      style={{
-        position: 'absolute',
-        top: '10px',
-        right: '10px',
-        zIndex: 1000,
-        padding: '6px 12px',
-        backgroundColor: '#fff',
-        border: '1px solid #ccc',
-        cursor: 'pointer',
-      }}
-    >
-      Center Map
-    </button> */
-}
 
 export const Contact: React.FC<{}> = () => {
   const { mutate, isPending, isError, data, error } = useMutation({
@@ -198,9 +180,15 @@ export const Contact: React.FC<{}> = () => {
             style={{ height: '550px', width: '100%' }}
           >
             <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
-            <Marker position={[51.094598, 17.020876]}>
+
+            <CircleMarker
+              center={[51.094598, 17.020876]}
+              radius={8}
+              pathOptions={{ color: '#D32F2F', fillColor: '#D32F2F', fillOpacity: 1, weight: 2 }}
+            >
               <Popup>Sky Tower, Wrocław</Popup>
-            </Marker>
+            </CircleMarker>
+
             <CenterMapButton center={[51.094598, 17.020876]} zoom={13} />
           </MapContainer>
         </div>
