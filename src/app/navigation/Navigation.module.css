@@ -10,9 +10,66 @@
     background-color: rgb(225, 223, 223);
   }
 
+  .menuPlaceholder {
+    position: fixed;
+    top: 14px;
+    right: calc((100% - clamp(0px, 100%, 1440px) + 40px) / 2);
+    z-index: 9999;
+  }
+
+  .menu {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(225, 223, 223);
+    position: fixed;
+    top: 0;
+    left: 0;
+    clip-path: inset(
+      15px /* top */ calc((100% - clamp(0px, 100vw - 40px, 1400px)) / 2) /* right */
+        calc(100% - 15px) /* bottom 20px + top 20px */
+        calc(100% - (calc((100% - clamp(0px, 100vw - 60px, 1380px)) / 2) + 60px)) /* left: inverting right inset + 20px */
+    );
+    will-change: clip-path;
+    transition: clip-path 250ms ease-out;
+    z-index: 9998;
+    transition-delay: 0s, 0s;
+    overflow: auto;
+
+    .menuContent {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      padding: 150px 0px 150px 0px;
+    }
+  }
+
+  .menuOpen {
+    will-change: clip-path;
+    clip-path: inset(0);
+    transition: clip-path 250ms ease-in;
+    transition-delay: 0s, 0s;
+  }
+
+  .menuItemMobile {
+    display: none;
+  }
+
   @media (max-width: 767.98px) {
     .navigationTabMenu {
       display: none;
+    }
+
+    .menuItemDesktop {
+      display: none;
+    }
+
+    .menuItemMobile {
+      display: block;
+    }
+
+    body:has(.menuItemMobile .menuOpen) {
+      overflow: hidden;
     }
   }
 }

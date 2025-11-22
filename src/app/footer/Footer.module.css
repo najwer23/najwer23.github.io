@@ -1,0 +1,25 @@
+@layer n23Footer {
+  html {
+    height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+    position: relative;
+  }
+
+  .footerPush {
+    /* footerContent + 75px */
+    padding-bottom: 100px;
+  }
+
+  .footerContainer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    /* others */
+    background-image: linear-gradient(to bottom, #dcdada, #eee);
+    height: 100px;
+  }
+}
