@@ -7,7 +7,7 @@ import { Input } from 'najwer23morsels/lib/input';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { queryContact } from './Contact.query';
 import 'leaflet/dist/leaflet.css';
-import { CircleMarker, MapContainer, Popup, TileLayer, useMap } from 'react-leaflet';
+import { CircleMarker, MapContainer, Popup, TileLayer, Tooltip, useMap } from 'react-leaflet';
 
 const CenterMapButton = ({ center, zoom }: { center: [number, number]; zoom: number }) => {
   const map = useMap();
@@ -185,6 +185,9 @@ export const Contact: React.FC<{}> = () => {
               center={[51.094598, 17.020876]}
               radius={8}
               pathOptions={{ color: '#D32F2F', fillColor: '#D32F2F', fillOpacity: 1, weight: 2 }}
+              ref={(ref) => {
+                setTimeout(() => ref?.openPopup(), 500);
+              }}
             >
               <Popup>Sky Tower, Wrocław</Popup>
             </CircleMarker>
@@ -192,7 +195,7 @@ export const Contact: React.FC<{}> = () => {
             <CenterMapButton center={[51.094598, 17.020876]} zoom={13} />
           </MapContainer>
         </div>
-        <TextBox mobileSize={12} desktopSize={12} color="grey">
+        <TextBox mobileSize={12} desktopSize={12} color="grey" margin={'5px 0 0 0'} lineHeight={1}>
           Sky Tower is one of Poland’s tallest and most iconic buildings, located in the heart of Wrocław.
         </TextBox>
       </Grid>
