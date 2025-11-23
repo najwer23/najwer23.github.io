@@ -38,7 +38,7 @@
     "chart.js": "^4.5.1",
     "gh-pages": "^6.3.0",
     "leaflet": "1.9.4",
-    "najwer23morsels": "^0.16.3",
+    "najwer23morsels": "^0.16.5",
     "react": "^19.2.0",
     "react-chartjs-2": "5.3.1",
     "react-dom": "^19.2.0",
