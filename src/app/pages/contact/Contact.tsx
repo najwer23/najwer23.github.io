@@ -7,12 +7,13 @@ import { Input } from 'najwer23morsels/lib/input';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { queryContact } from './Contact.query';
 import 'leaflet/dist/leaflet.css';
-import { CenterMapButton } from '@najwer23/app/leaflet/CenterMapButton';
+import { CenterMapButton } from '@najwer23/leaflet/CenterMapButton';
+import { MarkerWithPopup } from '@najwer23/leaflet/MarkerWithPopup';
 import { useState } from 'react';
-import { CircleMarker, MapContainer, Popup, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 
 export const Contact: React.FC = () => {
-  const [_, setRender] = useState(false);
+  const [mapIsFlying, setMapIsFlying] = useState(false);
 
   const { mutate, isPending, isError, data, error } = useMutation({
     mutationKey: ['queryContact', 'queryContact'],
@@ -125,26 +126,10 @@ export const Contact: React.FC = () => {
 
       <Grid layout="container" widthMax={'100%'} margin={'60px 0 60px 0'}>
         <div style={{ padding: '5px', border: '2px solid black' }}>
-          <MapContainer
-            center={[51.094598, 17.020876]}
-            zoom={13}
-            scrollWheelZoom={false}
-            style={{ height: '550px', width: '100%' }}
-          >
+          <MapContainer center={[51.094598, 17.020876]} zoom={13} style={{ height: '550px', width: '100%' }}>
             <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
-
-            <CircleMarker
-              center={[51.094598, 17.020876]}
-              radius={8}
-              pathOptions={{ color: '#D32F2F', fillColor: '#D32F2F', fillOpacity: 1, weight: 2 }}
-              ref={(ref) => {
-                setTimeout(() => ref?.openPopup());
-              }}
-            >
-              <Popup>Sky Tower, Wrocław</Popup>
-            </CircleMarker>
-
-            <CenterMapButton center={[51.094598, 17.020876]} zoom={13} onCenter={() => setRender((prev) => !prev)} />
+            <MarkerWithPopup mapIsFlying={mapIsFlying} setMapIsFlying={setMapIsFlying} />
+            <CenterMapButton center={[51.094598, 17.020876]} zoom={13} onCenter={() => setMapIsFlying(true)} />
           </MapContainer>
         </div>
         <TextBox mobileSize={12} desktopSize={12} color="grey" margin={'5px 0 0 0'} lineHeight={1}>

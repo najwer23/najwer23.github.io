@@ -13,8 +13,8 @@ export const CenterMapButton = ({
   const map = useMap();
 
   const handleClick = () => {
-    map.flyTo(center, zoom);
     onCenter();
+    map.flyTo(center, zoom);
   };
 
   return (
