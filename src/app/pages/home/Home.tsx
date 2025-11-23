@@ -173,7 +173,7 @@ export const Home: React.FC<{}> = () => {
           </TextBox>
         </Grid>
       </Grid>
-      <Grid layout="container" widthMax={'1360px'} padding={'0 0 40px 0'} className={styles.homeSliderProjects}>
+      <Grid layout="container" widthMax={'1360px'} padding={'0 0 0px 0'} className={styles.homeSliderProjects}>
         <div className={styles.homeSliderProjectsWrapper}>
           <Slider
             key={'homeSliderItemsDesktop'}
@@ -245,9 +245,9 @@ export const Home: React.FC<{}> = () => {
         </div>
       </Grid>
 
-      <div style={{ background: 'rgb(225, 223, 223)' }}>
-        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'60px auto 0px auto'}>
-          <Grid layout="container" padding={'100px 0 100px 0'} margin={'0'}>
+      <div>
+        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'0px auto 0px auto'}>
+          <Grid layout="container" padding={'60px 0 100px 0'} margin={'0'}>
             <Grid
               layout="columns"
               gap={{ col: '40px', row: '40px' }}
