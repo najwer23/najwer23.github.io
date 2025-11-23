@@ -242,116 +242,151 @@ export const Home: React.FC<{}> = () => {
         </div>
       </Grid>
 
-      <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'}>
-        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
-          <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-            APPLIED SYSTEMS INC.
-          </TextBox>
-        </Grid>
-        <Grid layout="container" widthMax={'900px'} padding={0} margin={0}>
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
-            My responsibility was to create a frontend application enabling the purchase of insurance through a website.
-            The application was developed using React.js and TypeScript, leveraging the Applied Systems design system.
-            The primary technical challenge was implementing a recursive Depth-First Search (DFS) algorithm to
-            conditionally render a nested, graph-like structure of questions, where each question’s visibility depended
-            on previous answers. The question data was fetched from the backend as a large JSON payload (around 60,000
-            lines), structured as a Server Driven UI model. The development was part of a 8-person international team
-            spanning Poland, India, Canada, England, the USA, and Australia. In addition to the core questionnaire, I
-            contributed to building an admin panel, implementing user action tracking scripts, creating statistical
-            charts, and ensuring compliance with WCAG 2.1 AA accessibility standards.
-          </TextBox>
-        </Grid>
-      </Grid>
-      <Grid layout="container" widthMax={'1400px'} padding={'40px 20px 20px 20px'}>
-        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
-          <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-            WARNER BROS. DISCOVERY, TVN24.pl
-          </TextBox>
-        </Grid>
-        <Grid layout="container" widthMax={'900px'} padding={0} margin={0}>
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
-            My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
-            technology. The architecture was inspired by the islands concept popularized by Astro.js, featuring
-            microfrontend applications implemented with React.js and Web Components. As part of the development team, I
-            contributed to building multiple interactive widgets, including stock quotes, weather forecasts, polls,
-            quizzes, election tools, TV program guides, and a custom SSR-based microfrontend rendering algorithm that
-            operates without relying on external libraries.
-          </TextBox>
-        </Grid>
-      </Grid>
-      <Grid layout="container" widthMax={'1400px'} padding={'40px 20px 20px 20px'}>
-        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
-          <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-            FLHF S.A
-          </TextBox>
-        </Grid>
-        <Grid layout="container" widthMax={'900px'} padding={0} margin={0}>
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
-            My responsibility was to enhance a website initially developed by a software house while simultaneously
-            refreshing its graphic design. The core focus was to develop ecommerce-specific components such as sliders,
-            carousels, product listings, search functionality, and a shopping cart. Key priorities included optimizing
-            for mobile view, improving SEO, descriptive markup and metadata, and enhancing performance metrics such as
-            Cumulative Layout Shift (CLS), page speed, and accessibility, measured and optimized using Lighthouse.
-          </TextBox>
-        </Grid>
-      </Grid>
-      <Grid layout="container" widthMax={'1400px'} padding={'40px 20px 0px 20px'}>
-        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
-          <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-            EUROPA UBEZPIECZENIA
-          </TextBox>
-        </Grid>
-        <Grid layout="container" widthMax={'900px'} padding={'0'} margin={0}>
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
-            My duty was to maintain and develop an internal system for managing insurance policies. The system was used
-            by insurance agents and office workers. My tasks included creating new modules, integrating external systems
-            (online payments, client data verification, insurance application creation), and optimizing application
-            performance. I worked on both the frontend (Angular) and backend (Java, Groovy, SQL) of the application.
-          </TextBox>
-        </Grid>
-      </Grid>
+      <div style={{ background: 'rgb(225, 223, 223)' }}>
+        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'60px auto 0px auto'}>
+          <Grid layout="container" padding={'100px 0 100px 0'} margin={'0'}>
+            <Grid
+              layout="columns"
+              gap={{ col: '40px', row: '40px' }}
+              col={{
+                smallDesktop: 2,
+                desktop: 2,
+                mobile: 1,
+                tablet: 2,
+              }}
+            >
+              <div style={{ background: 'white', padding: '40px', boxSizing: 'border-box', borderRadius: '10px' }}>
+                <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
+                  APPLIED SYSTEMS INC.
+                </TextBox>
+                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
+                  My responsibility was to create a frontend application enabling the purchase of insurance through a
+                  website. The application was developed using React.js and TypeScript, leveraging the Applied Systems
+                  design system. The primary technical challenge was implementing a recursive Depth-First Search (DFS)
+                  algorithm to conditionally render a nested, graph-like structure of questions, where each question’s
+                  visibility depended on previous answers. The question data was fetched from the backend as a large
+                  JSON payload (around 60,000 lines), structured as a Server Driven UI model. The development was part
+                  of a 8-person international team spanning Poland, India, Canada, England, the USA, and Australia. In
+                  addition to the core questionnaire, I contributed to building an admin panel, implementing user action
+                  tracking scripts, creating statistical charts, and ensuring compliance with WCAG 2.1 AA accessibility
+                  standards.
+                </TextBox>
+              </div>
+              <div
+                style={{
+                  backgroundColor: '#FFF2D5',
+                  padding: '40px',
+                  boxSizing: 'border-box',
+                  borderRadius: '10px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+              >
+                <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
+                  WARNER BROS. DISCOVERY, TVN24.pl 🦄
+                </TextBox>
+                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
+                  My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
+                  technology. The architecture was inspired by the islands concept popularized by Astro.js, featuring
+                  microfrontend applications implemented with React.js and Web Components. As part of the development
+                  team, I contributed to building multiple interactive widgets, including stock quotes, weather
+                  forecasts, polls, quizzes, election tools, TV program guides, and a custom SSR-based microfrontend
+                  rendering algorithm that operates without relying on external libraries.
+                </TextBox>
 
-      <Grid
-        layout="flex"
-        widthMax={'1400px'}
-        padding={'80px 20px 50px 20px'}
-        margin={'auto'}
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid layout="container" widthMax={'850px'} padding={'40px 0px 20px 0px'}>
-          <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} textAlign="center">
-            Have questions or want to collaborate? Feel free to reach out! Click the button below to go to the contact
-            form, and I'll get back to you as soon as possible. Let's start a conversation!
-          </TextBox>
-        </Grid>
-      </Grid>
+                <Grid
+                  layout="flex"
+                  widthMin="100%"
+                  widthMax="100%"
+                  justifyContent="flex-end"
+                  alignItems="flex-end"
+                  minHeight="fit-content"
+                  style={{ flexGrow: 1 }}
+                >
+                  <div style={{ width: '70px', margin: '20px 0 0 0' }}>
+                    <Picture
+                      src={'https://upload.wikimedia.org/wikipedia/commons/c/c0/Sign_of_the_Deathly_Hallows.svg'}
+                      alt={'Deathly Hallows'}
+                      ar={259 / 225}
+                      loading="eager"
+                    ></Picture>
+                  </div>
+                </Grid>
+              </div>
 
-      <Grid
-        layout="flex"
-        widthMax={'1400px'}
-        padding={'0 0 80px 0'}
-        margin={'auto'}
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid layout="container" widthMax={'850px'} padding={'0'}>
-          <TextBox
-            tag="a"
-            href="/#/contact"
-            desktopSize={30}
-            mobileSize={24}
-            fontWeight={600}
-            className={styles.callMe}
+              <div
+                style={{
+                  backgroundColor: '#FFF2D5',
+                  padding: '40px',
+                  boxSizing: 'border-box',
+                  borderRadius: '10px',
+                }}
+              >
+                <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
+                  FLHF S.A
+                </TextBox>
+                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
+                  My responsibility was to enhance a website initially developed by a software house while
+                  simultaneously refreshing its graphic design. The core focus was to develop ecommerce-specific
+                  components such as sliders, carousels, product listings, search functionality, and a shopping cart.
+                  Key priorities included optimizing for mobile view, improving SEO, descriptive markup and metadata,
+                  and enhancing performance metrics such as Cumulative Layout Shift (CLS), page speed, and
+                  accessibility, measured and optimized using Lighthouse.
+                </TextBox>
+              </div>
+              <div style={{ background: 'white', padding: '40px', boxSizing: 'border-box', borderRadius: '10px' }}>
+                <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
+                  EUROPA UBEZPIECZENIA
+                </TextBox>
+                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
+                  My duty was to maintain and develop an internal system for managing insurance policies. The system was
+                  used by insurance agents and office workers. My tasks included creating new modules, integrating
+                  external systems (online payments, client data verification, insurance application creation), and
+                  optimizing application performance. I worked on both the frontend (Angular) and backend (Java, Groovy,
+                  SQL) of the application.
+                </TextBox>
+              </div>
+            </Grid>
+          </Grid>
+        </Grid>
+      </div>
+
+      <div style={{ background: '#FFE083' }}>
+        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'0px auto 80px auto'}>
+          <Grid
+            layout="flex"
+            widthMax={'1400px'}
+            padding={'50px 20px 50px 20px'}
+            margin={'auto'}
+            justifyContent="center"
+            alignItems="center"
           >
-            Contact Me
-          </TextBox>
+            <Grid layout="container" widthMax={'850px'} padding={'40px 0px 20px 0px'}>
+              <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} textAlign="center">
+                Have questions or want to collaborate? Feel free to reach out! Click the button below to go to the
+                contact form, and I'll get back to you as soon as possible. Let's start a conversation!
+              </TextBox>
+            </Grid>
+          </Grid>
+
+          <Grid
+            layout="flex"
+            widthMax={'1400px'}
+            padding={'0 0 80px 0'}
+            margin={'auto'}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Grid layout="container" widthMax={'850px'} padding={'0'}>
+              <TextBox tag="a" href="/#/contact" desktopSize={30} mobileSize={24} fontWeight={800}>
+                Contact Me
+              </TextBox>
+            </Grid>
+          </Grid>
         </Grid>
-      </Grid>
+      </div>
 
       <Grid layout="container" widthMax={'1600px'}>
-        <div className={styles.homeLine}></div>
-
         <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 60px 20px'} minHeight="3000px">
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'20px 0 40px'} textWrap="balance">
             Travel Snapshots in Pixels
