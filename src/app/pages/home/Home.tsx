@@ -38,7 +38,7 @@ export const Home: React.FC<{}> = () => {
           >
             <Grid layout="container" padding={'0 0 40px 0'} margin={0}>
               <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                Hello, World! 🦄
+                Hello, World!
               </TextBox>
             </Grid>
             <Grid layout="container" widthMax={'800px'} margin={0}>
