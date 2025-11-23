@@ -58,42 +58,42 @@ export const Navigation: React.FC = () => {
             </div>
             <div className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''}`}>
               <div className={styles.menuContent}>
-                <TextBox
-                  tag="a"
-                  href="/#/home"
-                  desktopSize={30}
-                  mobileSize={30}
-                  fontWeight={400}
-                  color="black"
-                  className={menuOpen && styles.menuAnimation}
-                  onClick={() => setMenuOpen((prevMenuOpen) => !prevMenuOpen)}
-                >
-                  Home
-                </TextBox>
-                <TextBox
-                  tag="a"
-                  href="/#/contact"
-                  desktopSize={30}
-                  mobileSize={30}
-                  fontWeight={400}
-                  color="black"
-                  className={menuOpen && styles.menuAnimation}
-                  onClick={() => setMenuOpen((prevMenuOpen) => !prevMenuOpen)}
-                >
-                  Contact Me
-                </TextBox>
-                <TextBox
-                  tag="a"
-                  href="https://najwer23.github.io/resume/"
-                  desktopSize={32}
-                  mobileSize={32}
-                  fontWeight={500}
-                  className={menuOpen && styles.menuAnimation}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Résumé
-                </TextBox>
+                {[
+                  { href: '/#/home', label: 'Home', desktopSize: 30, mobileSize: 30, fontWeight: 400, color: 'black' },
+                  {
+                    href: '/#/contact',
+                    label: 'Contact Me',
+                    desktopSize: 30,
+                    mobileSize: 30,
+                    fontWeight: 400,
+                    color: 'black',
+                  },
+                  {
+                    href: 'https://najwer23.github.io/resume/',
+                    label: 'Résumé',
+                    desktopSize: 32,
+                    mobileSize: 32,
+                    fontWeight: 500,
+                    target: '_blank',
+                    rel: 'noreferrer',
+                  },
+                ].map(({ href, label, desktopSize, mobileSize, fontWeight, color, target, rel }) => (
+                  <TextBox
+                    key={label}
+                    tag="a"
+                    href={href}
+                    desktopSize={desktopSize}
+                    mobileSize={mobileSize}
+                    fontWeight={fontWeight}
+                    color={color}
+                    className={menuOpen && styles.menuAnimation}
+                    onClick={() => setMenuOpen((prev) => !prev)}
+                    target={target}
+                    rel={rel}
+                  >
+                    {label}
+                  </TextBox>
+                ))}
               </div>
             </div>
           </div>
@@ -109,16 +109,16 @@ export const Navigation: React.FC = () => {
         className={styles.navigationTabMenu}
       >
         <Grid layout="flex" justifyContent="center" widthMax={'1400px'} gap={{ col: '30px', row: '20px' }}>
-          <div>
-            <TextBox tag="a" href="/#/home" desktopSize={18} mobileSize={18} fontWeight={400} color="darkgrey">
-              Home
-            </TextBox>
-          </div>
-          <div>
-            <TextBox tag="a" href="/#/contact" desktopSize={18} mobileSize={18} fontWeight={400} color="darkgrey">
-              Contact
-            </TextBox>
-          </div>
+          {[
+            { href: '/#/home', label: 'Home' },
+            { href: '/#/contact', label: 'Contact' },
+          ].map(({ href, label }) => (
+            <div key={label}>
+              <TextBox tag="a" href={href} desktopSize={18} mobileSize={18} fontWeight={400} color="darkgrey">
+                {label}
+              </TextBox>
+            </div>
+          ))}
         </Grid>
       </Grid>
     </Grid>
