@@ -366,8 +366,8 @@ export const Home: React.FC<{}> = () => {
           >
             <Grid layout="container" widthMax={'850px'} padding={'40px 0px 20px 0px'}>
               <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} textAlign="center">
-                Have questions or want to collaborate? Feel free to reach out! Click the button below to go to the
-                contact form, and I'll get back to you as soon as possible. Let's start a conversation!
+                Have questions or want to collaborate? Feel free to reach out! Click the link below to go to the contact
+                form, and I'll get back to you as soon as possible. Let's start a conversation!
               </TextBox>
             </Grid>
           </Grid>
