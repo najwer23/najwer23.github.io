@@ -47,7 +47,14 @@ export const Contact: React.FC = () => {
         }}
       >
         <div>
-          <Form onSubmit={handleOnSubmit}>
+          <Form
+            onSubmit={handleOnSubmit}
+            isError={isError}
+            isPending={isPending}
+            isSuccess={data?.code === 'OK'}
+            errorMsg={error?.message}
+            successMsg={data?.message}
+          >
             <Input
               label="Email"
               type="text"
@@ -72,7 +79,6 @@ export const Contact: React.FC = () => {
                 height={'40px'}
                 width={'80px'}
                 padding={0}
-                margin={'0 0 20px 0'}
                 backgroundColor="orangered"
                 backgroundColorDisabled="grey"
               >
@@ -82,22 +88,6 @@ export const Contact: React.FC = () => {
               </Button>
             </Grid>
           </Form>
-
-          {isError && (
-            <TextBox color="#ff3333" mobileSize={14} desktopSize={14}>
-              {error?.message}
-            </TextBox>
-          )}
-          {isPending && (
-            <TextBox color="orange" mobileSize={14} desktopSize={14}>
-              Loading..
-            </TextBox>
-          )}
-          {data?.code === 'OK' && (
-            <TextBox color="#4BB543" mobileSize={14} desktopSize={14}>
-              {data?.message}
-            </TextBox>
-          )}
         </div>
 
         <div>
