@@ -45,8 +45,8 @@
       a {
         opacity: 0;
         will-change: opacity;
-        transition: opacity 0s ease-out;
-        transition-delay: 0s;
+        transition: opacity 0s ease-out !important;
+        transition-delay: 0s !important;
 
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -59,8 +59,8 @@
 
       .menuAnimation {
         opacity: 1;
-        transition: opacity 200ms ease-in;
-        transition-delay: 300ms;
+        transition: opacity 200ms ease-in !important;
+        transition-delay: 300ms !important;
       }
     }
   }
