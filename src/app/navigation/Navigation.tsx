@@ -65,6 +65,7 @@ export const Navigation: React.FC = () => {
                   mobileSize={30}
                   fontWeight={400}
                   color="black"
+                  className={menuOpen && styles.menuAnimation}
                   onClick={() => setMenuOpen((prevMenuOpen) => !prevMenuOpen)}
                 >
                   Home
@@ -76,6 +77,7 @@ export const Navigation: React.FC = () => {
                   mobileSize={30}
                   fontWeight={400}
                   color="black"
+                  className={menuOpen && styles.menuAnimation}
                   onClick={() => setMenuOpen((prevMenuOpen) => !prevMenuOpen)}
                 >
                   Contact Me
@@ -86,6 +88,7 @@ export const Navigation: React.FC = () => {
                   desktopSize={32}
                   mobileSize={32}
                   fontWeight={500}
+                  className={menuOpen && styles.menuAnimation}
                   rel="noreferrer"
                   target="_blank"
                 >

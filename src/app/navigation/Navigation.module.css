@@ -41,6 +41,27 @@
       gap: 20px;
       align-items: center;
       padding: 150px 0px 150px 0px;
+
+      a {
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity 0s ease-out;
+        transition-delay: 0s;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      .menuAnimation {
+        opacity: 1;
+        transition: opacity 200ms ease-in;
+        transition-delay: 300ms;
+      }
     }
   }
 
