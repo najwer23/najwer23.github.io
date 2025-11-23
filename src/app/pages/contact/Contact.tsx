@@ -126,7 +126,12 @@ export const Contact: React.FC = () => {
 
       <Grid layout="container" widthMax={'100%'} margin={'60px 0 60px 0'}>
         <div style={{ padding: '5px', border: '2px solid black' }}>
-          <MapContainer center={[51.094598, 17.020876]} zoom={13} style={{ height: '550px', width: '100%' }}>
+          <MapContainer
+            center={[51.094598, 17.020876]}
+            zoom={13}
+            style={{ height: '550px', width: '100%' }}
+            closePopupOnClick={false}
+          >
             <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
             <MarkerWithPopup mapIsFlying={mapIsFlying} setMapIsFlying={setMapIsFlying} />
             <CenterMapButton center={[51.094598, 17.020876]} zoom={13} onCenter={() => setMapIsFlying(true)} />

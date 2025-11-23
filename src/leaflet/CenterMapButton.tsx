@@ -1,4 +1,6 @@
+import L from 'leaflet';
 import { Button } from 'najwer23morsels/lib/button';
+import { useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
 
 export const CenterMapButton = ({
@@ -11,18 +13,36 @@ export const CenterMapButton = ({
   onCenter: () => void;
 }) => {
   const map = useMap();
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (buttonRef.current) {
+      L.DomEvent.disableClickPropagation(buttonRef.current);
+      L.DomEvent.disableScrollPropagation(buttonRef.current);
+    }
+  }, []);
 
   const handleClick = () => {
-    map.closePopup();
-    setTimeout(() => {
-      onCenter();
-      map.flyTo(center, zoom);
-    }, 300);
+    const currentCenter = map.getCenter();
+    const currentZoom = map.getZoom();
+
+    const isCenterDifferent =
+      Math.abs(currentCenter.lat - center[0]) > 1e-3 || Math.abs(currentCenter.lng - center[1]) > 1e-3;
+    const isZoomDifferent = currentZoom !== zoom;
+
+    if (isCenterDifferent || isZoomDifferent) {
+      map.closePopup();
+      setTimeout(() => {
+        onCenter();
+        map.flyTo(center, zoom);
+      }, 300);
+    }
   };
 
   return (
     <Button
       onClick={handleClick}
+      ref={buttonRef}
       style={{
         position: 'absolute',
         top: '10px',

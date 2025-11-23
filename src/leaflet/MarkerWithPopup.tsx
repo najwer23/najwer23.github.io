@@ -44,8 +44,7 @@ export const MarkerWithPopup: React.FC<MarkerWithPopupProps> = ({ mapIsFlying, s
         center={[51.094598, 17.020876]}
         radius={8}
         pathOptions={{
-          color: '#D32F2F',
-          fillColor: '#D32F2F',
+          fillColor: !mapIsFlying ? '#D32F2F' : 'transparent',
           fillOpacity: 1,
           weight: 2,
         }}
