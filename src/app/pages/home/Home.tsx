@@ -9,7 +9,7 @@ import styles from './Home.module.css';
 export const Home: React.FC<{}> = () => {
   return (
     <>
-      <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 40px 20px'}>
+      <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 0px 20px'}>
         <Grid
           layout="flex"
           flexWrap="wrap"
@@ -17,7 +17,7 @@ export const Home: React.FC<{}> = () => {
           alignItems="flexstart"
           widthMax={'1400px'}
           padding={'0 0 20px 0'}
-          gap={{ col: '100px', row: '40px' }}
+          gap={{ col: '75px', row: '40px' }}
         >
           <div style={{ width: 'min(400px, 100%)' }}>
             <div className={styles.mePicture}>
@@ -32,19 +32,22 @@ export const Home: React.FC<{}> = () => {
               ></Picture>
             </div>
           </div>
-          <div className={styles.meDesc}>
+          <div
+            className={styles.meDesc}
+            style={{ background: 'white', padding: '40px', boxSizing: 'border-box', borderRadius: '10px' }}
+          >
             <Grid layout="container" padding={'0 0 40px 0'} margin={0}>
               <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                Hello, World!
+                Hello, World! 🦄
               </TextBox>
             </Grid>
             <Grid layout="container" widthMax={'800px'} margin={0}>
               <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
                 I am a passionate and detail-oriented Software Engineer with over 10 years of experience specializing in
-                modern JavaScript frameworks like React, Angular, Remix, and Svelte. I excel at translating business
-                requirements into technical solutions, delivering high-quality, responsive, and mobile-first web
-                applications on time and within budget. Committed to writing clean and maintainable code, I thrive in
-                agile environments while effectively collaborating with cross-functional teams and mentoring junior
+                modern <b>JavaScript </b>frameworks like React, Angular, Remix, and Svelte. I excel at translating
+                business requirements into technical solutions, delivering high-quality, responsive, and mobile-first
+                web applications on time and within budget. Committed to writing clean and maintainable code, I thrive
+                in agile environments while effectively collaborating with cross-functional teams and mentoring junior
                 developers. I am continuously growing by engaging with the tech community, contributing to open-source
                 projects, and staying current with industry best practices. My strong problem-solving skills and clear
                 communication allow me to bridge the gap between technical concepts and stakeholder needs efficiently.
@@ -71,10 +74,10 @@ export const Home: React.FC<{}> = () => {
         </Grid>
       </Grid>
 
-      <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 20px 20px'}>
-        <Grid layout="container" widthMax={'700px'} padding={'0 0 40px 0'} margin={0}>
+      <Grid layout="container" widthMax={'1400px'} padding={'clamp(30px, 8vw, 60px) 20px 20px 20px'}>
+        <Grid layout="container" widthMax={'900px'} padding={'0 0 40px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
-            The way I work <br /> is not an accident.
+            The way I work is not an accident.
           </TextBox>
         </Grid>
         <Grid layout="container" widthMax={'700px'} padding={'0 0 clamp(40px, 8vw, 100px) 0'} margin={0}>
@@ -283,7 +286,7 @@ export const Home: React.FC<{}> = () => {
                 }}
               >
                 <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
-                  WARNER BROS. DISCOVERY, TVN24.pl 🦄
+                  WARNER BROS. DISCOVERY, TVN24.pl
                 </TextBox>
                 <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
                   My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
@@ -378,7 +381,15 @@ export const Home: React.FC<{}> = () => {
             alignItems="center"
           >
             <Grid layout="container" widthMax={'850px'} padding={'0'}>
-              <TextBox tag="a" href="/#/contact" desktopSize={30} mobileSize={24} fontWeight={800}>
+              <TextBox
+                tag="a"
+                href="/#/contact"
+                desktopSize={30}
+                mobileSize={24}
+                fontWeight={800}
+                color="black"
+                colorHover="black"
+              >
                 Contact Me
               </TextBox>
             </Grid>
