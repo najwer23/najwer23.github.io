@@ -138,7 +138,7 @@ export const Contact: React.FC = () => {
               radius={8}
               pathOptions={{ color: '#D32F2F', fillColor: '#D32F2F', fillOpacity: 1, weight: 2 }}
               ref={(ref) => {
-                setTimeout(() => ref?.openPopup());
+                setTimeout(() => ref?.openPopup(), 200);
               }}
             >
               <Popup>Sky Tower, Wrocław</Popup>
