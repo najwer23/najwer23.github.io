@@ -1,6 +1,7 @@
 import { CircleMarker as LeafletCircleMarker } from 'leaflet';
 import { useEffect, useRef } from 'react';
-import { CircleMarker, Popup, useMap } from 'react-leaflet';
+import { CircleMarker, useMap } from 'react-leaflet';
+import { CustomPopup } from './customPopup/CustomPopup';
 
 interface MarkerWithPopupProps {
   mapIsFlying: boolean;
@@ -51,7 +52,7 @@ export const MarkerWithPopup: React.FC<MarkerWithPopupProps> = ({ mapIsFlying, s
         }}
         ref={markerRef}
       >
-        <Popup>Sky Tower, Wrocław</Popup>
+        <CustomPopup />
       </CircleMarker>
     </>
   );

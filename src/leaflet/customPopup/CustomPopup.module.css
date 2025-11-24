@@ -1,0 +1,29 @@
+.n23CustomPopup {
+  border: 1px solid black !important;
+}
+
+.n23CustomPopup :global(.leaflet-popup-close-button) {
+  color: #d32f2f !important;
+  font-size: 24px !important;
+  font:
+    22px / 22px Tahoma,
+    Verdana,
+    sans-serif !important;
+}
+.n23CustomPopup :global(.leaflet-popup-content-wrapper) {
+  box-shadow: unset !important;
+}
+
+.n23CustomPopup :global(.leaflet-popup-tip) {
+  box-shadow: unset !important;
+  border: 1px solid black !important;
+  padding: 0 !important;
+}
+
+.n23CustomPopup :global(.leaflet-popup-tip-container) {
+  margin-top: 0 !important;
+}
+
+.n23CustomPopup :global(.leaflet-popup-content) {
+  margin: 3px 25px 3px 8px !important;
+}

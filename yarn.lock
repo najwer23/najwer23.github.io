@@ -2112,12 +2112,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.2.6":
-  version: 19.2.6
-  resolution: "@types/react@npm:19.2.6"
+"@types/react@npm:^19.2.7":
+  version: 19.2.7
+  resolution: "@types/react@npm:19.2.7"
   dependencies:
     csstype: "npm:^3.2.2"
-  checksum: 10c0/23b1100f88662ce9f9e4fcca3a2b4ef9fff1ecde24ede2b2dcbd07731e48d6946fd7fd156cd133f5b25321694b0569cd9b8dd30b22c4e076d1cf4c8cdd9a75cb
+  checksum: 10c0/a7b75f1f9fcb34badd6f84098be5e35a0aeca614bc91f93d2698664c0b2ba5ad128422bd470ada598238cebe4f9e604a752aead7dc6f5a92261d0c7f9b27cfd1
   languageName: node
   linkType: hard
 
@@ -4165,13 +4165,13 @@ __metadata:
     "@types/chart.js": "npm:^4.0.1"
     "@types/leaflet": "npm:^1.9.21"
     "@types/node": "npm:^24.10.1"
-    "@types/react": "npm:^19.2.6"
+    "@types/react": "npm:^19.2.7"
     "@types/react-dom": "npm:^19.2.3"
     "@vitejs/plugin-react": "npm:^5.1.1"
     chart.js: "npm:^4.5.1"
     gh-pages: "npm:^6.3.0"
     leaflet: "npm:1.9.4"
-    najwer23morsels: "npm:^0.16.5"
+    najwer23morsels: "npm:^0.16.6"
     react: "npm:^19.2.0"
     react-chartjs-2: "npm:5.3.1"
     react-dom: "npm:^19.2.0"
@@ -4185,13 +4185,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"najwer23morsels@npm:^0.16.5":
-  version: 0.16.5
-  resolution: "najwer23morsels@npm:0.16.5"
+"najwer23morsels@npm:^0.16.6":
+  version: 0.16.6
+  resolution: "najwer23morsels@npm:0.16.6"
   peerDependencies:
     react: ^19.1.0
     react-dom: ^19.1.0
-  checksum: 10c0/37eaf68ca64b015c8b3c554f3c85ef05dcd7a2aa3f96f6f519ec451b25d226f6fd6453ad5126baa2cf8f43b81dc1da4c7857ced6e9303f80f8f11e303e06a3e4
+  checksum: 10c0/d46ce7ca4e407ad94e9b32349bd01f8041ec0560b70211fb1c91b11d6e1830bcb8e2a69d69b274cb5ef6f8f4cbf662f40c2d1c2b75d8e2282a76a822d0b941a0
   languageName: node
   linkType: hard
 
