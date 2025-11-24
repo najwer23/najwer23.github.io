@@ -2,10 +2,15 @@ import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styles from './Navigation.module.css';
 
 export const Navigation: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (href: string) =>
+    location.pathname === '/' ? href === '/#/home' : href.includes(location.pathname);
 
   return (
     <Grid layout="container" widthMax={'1600px'}>
@@ -62,7 +67,7 @@ export const Navigation: React.FC = () => {
                   { href: '/#/home', label: 'Home', desktopSize: 30, mobileSize: 30, fontWeight: 400, color: 'black' },
                   {
                     href: '/#/contact',
-                    label: 'Contact Me',
+                    label: 'Contact',
                     desktopSize: 30,
                     mobileSize: 30,
                     fontWeight: 400,
@@ -85,7 +90,8 @@ export const Navigation: React.FC = () => {
                     desktopSize={desktopSize}
                     mobileSize={mobileSize}
                     fontWeight={fontWeight}
-                    color={color}
+                    color={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
+                    colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
                     className={menuOpen && styles.menuAnimation}
                     onClick={() => setMenuOpen((prev) => !prev)}
                     target={target}
@@ -114,7 +120,15 @@ export const Navigation: React.FC = () => {
             { href: '/#/contact', label: 'Contact' },
           ].map(({ href, label }) => (
             <div key={label}>
-              <TextBox tag="a" href={href} desktopSize={18} mobileSize={18} fontWeight={400} color="darkgrey">
+              <TextBox
+                tag="a"
+                href={href}
+                desktopSize={18}
+                mobileSize={18}
+                fontWeight={400}
+                color={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
+                colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
+              >
                 {label}
               </TextBox>
             </div>
