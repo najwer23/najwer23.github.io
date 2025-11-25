@@ -46,8 +46,8 @@ export const CenterMapButton = ({
       ref={buttonRef}
       style={{
         position: 'absolute',
-        top: '10px',
-        right: '10px',
+        bottom: '10px',
+        left: '10px',
         zIndex: 1000,
       }}
       type="submit"

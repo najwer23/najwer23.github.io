@@ -73,7 +73,7 @@ export const Contact: React.FC = () => {
               placeholder="Place for your message"
             />
 
-            <Grid layout="flex" widthMax={'100%'} padding={'0'} justifyContent="right" alignItems="right">
+            <Grid layout="flex" widthMax={'100%'} padding={'0'} justifyContent="left" alignItems="right">
               <Button
                 type="submit"
                 disabled={isPending}
