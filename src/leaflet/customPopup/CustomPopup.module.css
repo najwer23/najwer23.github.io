@@ -9,13 +9,6 @@
     22px / 22px Tahoma,
     Verdana,
     sans-serif !important;
-
-  @media (max-width: 767.98px) {
-    font:
-      22px / 25px Tahoma,
-      Verdana,
-      sans-serif !important;
-  }
 }
 
 .n23CustomPopup :global(.leaflet-popup-content-wrapper) {
