@@ -1,3 +1,4 @@
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { Masonry } from 'najwer23morsels/lib/masonry';
 import { Picture } from 'najwer23morsels/lib/picture';
@@ -6,7 +7,9 @@ import { SliderScroll } from 'najwer23morsels/lib/sliderscroll';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import styles from './Home.module.css';
 
-export const Home: React.FC<{}> = () => {
+export const Home: React.FC = () => {
+  useDocumentTitle('Contact | Mariusz Najwer');
+
   return (
     <>
       <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 0px 20px'}>

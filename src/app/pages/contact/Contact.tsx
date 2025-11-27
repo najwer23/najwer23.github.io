@@ -7,6 +7,7 @@ import { Input } from 'najwer23morsels/lib/input';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { queryContact } from './Contact.query';
 import 'leaflet/dist/leaflet.css';
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { CenterMapButton } from '@najwer23/leaflet/CenterMapButton';
 import { MarkerWithPopup } from '@najwer23/leaflet/MarkerWithPopup';
 import { useState } from 'react';
@@ -14,6 +15,8 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 
 export const Contact: React.FC = () => {
   const [mapIsFlying, setMapIsFlying] = useState(false);
+
+  useDocumentTitle('Contact | Mariusz Najwer');
 
   const { mutate, isPending, isError, data, error } = useMutation({
     mutationKey: ['queryContact', 'queryContact'],
