@@ -8,7 +8,7 @@ import { TextBox } from 'najwer23morsels/lib/textbox';
 import styles from './Home.module.css';
 
 export const Home: React.FC = () => {
-  useDocumentTitle('Contact | Mariusz Najwer');
+  useDocumentTitle('Home | Mariusz Najwer');
 
   return (
     <>
