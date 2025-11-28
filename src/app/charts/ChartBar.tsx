@@ -1,47 +1,26 @@
 import {
-  BarController,
   BarElement,
   CategoryScale,
   type ChartData,
   Chart as ChartJS,
   type ChartOptions,
-  Filler,
   Legend,
   LinearScale,
-  LineController,
-  LineElement,
-  PointElement,
   Title,
   Tooltip,
 } from 'chart.js';
 
-// import { Bar } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { Line } from 'react-chartjs-2';
-
-ChartJS.register(
-  BarElement,
-  PointElement,
-  CategoryScale,
-  LinearScale,
-  LineElement,
-  LineController,
-  BarController,
-  Title,
-  Tooltip,
-  Legend,
-  Filler,
-);
+ChartJS.register(BarElement, CategoryScale, LinearScale, Title, Tooltip, Legend);
 
 const dataInit = {
   datasets: [
     {
       label: '',
       data: {},
-      borderColor: 'white',
-      backgroundColor: 'white',
+      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgba(108, 105, 106, 0.5)',
     },
   ],
 };
@@ -49,13 +28,13 @@ const dataInit = {
 interface Props {
   title: string;
   ySymbol: string;
-  data: ChartData<'bar' | 'line' | any> | null;
+  data: ChartData<'bar'> | null;
 }
-export const ChartMixed = ({ title, ySymbol, data }: Props) => {
-  const options: ChartOptions<any> = {
+
+export const ChartBar = ({ title, ySymbol, data }: Props) => {
+  const options: ChartOptions<'bar'> = {
     maintainAspectRatio: false,
     responsive: true,
-    animation: false,
     plugins: {
       legend: {
         position: 'bottom',
@@ -75,33 +54,28 @@ export const ChartMixed = ({ title, ySymbol, data }: Props) => {
         //max: 130,
         ticks: {
           // Include a dollar sign in the ticks
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
           callback: function (value) {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             return this.getLabelForValue(value as number) + ySymbol;
           },
           stepSize: 1,
           color: 'black',
         },
         grid: {
-          color: 'darkgrey',
+          color: 'lightgrey',
         },
       },
       x: {
         grid: {
-          color: 'darkgrey',
+          color: 'lightgrey',
           // borderColor: "grey",
           // tickColor: "#FF6D83",
         },
         ticks: {
           color: 'black',
         },
-        offset: false,
       },
     },
   };
 
-  return <Line options={options} data={data || dataInit} />;
+  return <Bar options={options} data={data || dataInit} />;
 };

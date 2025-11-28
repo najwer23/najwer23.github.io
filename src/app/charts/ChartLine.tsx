@@ -1,6 +1,4 @@
 import {
-  BarController,
-  BarElement,
   CategoryScale,
   type ChartData,
   Chart as ChartJS,
@@ -8,32 +6,15 @@ import {
   Filler,
   Legend,
   LinearScale,
-  LineController,
   LineElement,
   PointElement,
   Title,
   Tooltip,
 } from 'chart.js';
 
-// import { Bar } from 'react-chartjs-2';
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import { Line } from 'react-chartjs-2';
 
-ChartJS.register(
-  BarElement,
-  PointElement,
-  CategoryScale,
-  LinearScale,
-  LineElement,
-  LineController,
-  BarController,
-  Title,
-  Tooltip,
-  Legend,
-  Filler,
-);
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
 
 const dataInit = {
   datasets: [
@@ -48,22 +29,30 @@ const dataInit = {
 
 interface Props {
   title: string;
-  ySymbol: string;
-  data: ChartData<'bar' | 'line' | any> | null;
+  ySymbol?: string;
+  data: ChartData<'line'> | null;
+  yStepSize?: number;
 }
-export const ChartMixed = ({ title, ySymbol, data }: Props) => {
-  const options: ChartOptions<any> = {
+
+export const ChartLine = ({ title, ySymbol = '', data, yStepSize = 1 }: Props) => {
+  const options: ChartOptions<'line'> = {
     maintainAspectRatio: false,
     responsive: true,
     animation: false,
     plugins: {
       legend: {
         position: 'bottom',
+        labels: {
+          font: {
+            weight: 'bold',
+          },
+          color: '#b0b3b7',
+        },
       },
       title: {
+        color: '#b0b3b7',
         display: true,
         text: title,
-        color: 'black',
         font: {
           size: 18,
         },
@@ -75,30 +64,25 @@ export const ChartMixed = ({ title, ySymbol, data }: Props) => {
         //max: 130,
         ticks: {
           // Include a dollar sign in the ticks
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
           callback: function (value) {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
             return this.getLabelForValue(value as number) + ySymbol;
           },
-          stepSize: 1,
-          color: 'black',
+          stepSize: yStepSize,
+          color: '#b0b3b7',
         },
         grid: {
-          color: 'darkgrey',
+          color: '#2a2d2f',
         },
       },
       x: {
         grid: {
-          color: 'darkgrey',
+          color: '#2a2d2f',
           // borderColor: "grey",
           // tickColor: "#FF6D83",
         },
         ticks: {
-          color: 'black',
+          color: '#b0b3b7',
         },
-        offset: false,
       },
     },
   };

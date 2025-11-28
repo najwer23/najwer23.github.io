@@ -74,6 +74,14 @@ export const Navigation: React.FC = () => {
                     color: 'black',
                   },
                   {
+                    href: '/#/weather',
+                    label: 'Weather',
+                    desktopSize: 30,
+                    mobileSize: 30,
+                    fontWeight: 400,
+                    color: 'black',
+                  },
+                  {
                     href: 'https://najwer23.github.io/resume/',
                     label: 'Résumé',
                     desktopSize: 32,
@@ -118,6 +126,7 @@ export const Navigation: React.FC = () => {
           {[
             { href: '/#/home', label: 'Home' },
             { href: '/#/contact', label: 'Contact' },
+            { href: '/#/weather', label: 'Weather' },
           ].map(({ href, label }) => (
             <div key={label}>
               <TextBox

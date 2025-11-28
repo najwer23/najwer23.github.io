@@ -63,7 +63,7 @@ export const ChartMixed = ({ title, ySymbol, data }: Props) => {
       title: {
         display: true,
         text: title,
-        color: 'black',
+        color: '#b0b3b7',
         font: {
           size: 18,
         },
@@ -83,20 +83,20 @@ export const ChartMixed = ({ title, ySymbol, data }: Props) => {
             return this.getLabelForValue(value as number) + ySymbol;
           },
           stepSize: 1,
-          color: 'black',
+          color: '#b0b3b7',
         },
         grid: {
-          color: 'darkgrey',
+          color: '#2a2d2f',
         },
       },
       x: {
         grid: {
-          color: 'darkgrey',
+          color: '#2a2d2f',
           // borderColor: "grey",
           // tickColor: "#FF6D83",
         },
         ticks: {
-          color: 'black',
+          color: '#b0b3b7',
         },
         offset: false,
       },

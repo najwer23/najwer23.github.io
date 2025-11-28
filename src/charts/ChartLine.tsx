@@ -44,13 +44,13 @@ export const ChartLine = ({ title, ySymbol = '', data, yStepSize = 1 }: Props) =
         position: 'bottom',
         labels: {
           font: {
-            weight: 'bold',
+            weight: 'normal',
           },
-          color: '#b0b3b7',
+          color: 'black',
         },
       },
       title: {
-        color: '#b0b3b7',
+        color: 'black',
         display: true,
         text: title,
         font: {
@@ -68,20 +68,20 @@ export const ChartLine = ({ title, ySymbol = '', data, yStepSize = 1 }: Props) =
             return this.getLabelForValue(value as number) + ySymbol;
           },
           stepSize: yStepSize,
-          color: '#b0b3b7',
+          color: 'black',
         },
         grid: {
-          color: '#2a2d2f',
+          color: 'darkgrey',
         },
       },
       x: {
         grid: {
-          color: '#2a2d2f',
+          color: 'darkgrey',
           // borderColor: "grey",
           // tickColor: "#FF6D83",
         },
         ticks: {
-          color: '#b0b3b7',
+          color: 'black',
         },
       },
     },
