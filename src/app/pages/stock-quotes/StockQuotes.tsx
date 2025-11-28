@@ -41,8 +41,9 @@ export const StockQuotes: React.FC = () => {
       </Grid>
 
       <Grid layout="container" widthMax={'1400px'} padding={'0 0 80px 0px'}>
-        {resultsArray.map((v) => (
+        {resultsArray.map((v, i) => (
           <Grid
+            key={i}
             layout="container"
             widthMax={'1400px'}
             padding={'0 20px'}
