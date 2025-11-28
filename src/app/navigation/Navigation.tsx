@@ -64,14 +64,13 @@ export const Navigation: React.FC = () => {
             <div className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''}`}>
               <div className={styles.menuContent}>
                 {[
-                  { href: '/#/home', label: 'Home', desktopSize: 30, mobileSize: 30, fontWeight: 400, color: 'black' },
+                  { href: '/#/home', label: 'Home', desktopSize: 30, mobileSize: 30, fontWeight: 400 },
                   {
                     href: '/#/contact',
                     label: 'Contact',
                     desktopSize: 30,
                     mobileSize: 30,
                     fontWeight: 400,
-                    color: 'black',
                   },
                   {
                     href: '/#/weather',
@@ -79,7 +78,13 @@ export const Navigation: React.FC = () => {
                     desktopSize: 30,
                     mobileSize: 30,
                     fontWeight: 400,
-                    color: 'black',
+                  },
+                  {
+                    href: '/#/stock-quotes',
+                    label: 'Stock Quotes',
+                    desktopSize: 30,
+                    mobileSize: 30,
+                    fontWeight: 400,
                   },
                   {
                     href: 'https://najwer23.github.io/resume/',
@@ -90,7 +95,7 @@ export const Navigation: React.FC = () => {
                     target: '_blank',
                     rel: 'noreferrer',
                   },
-                ].map(({ href, label, desktopSize, mobileSize, fontWeight, color, target, rel }) => (
+                ].map(({ href, label, desktopSize, mobileSize, fontWeight, target, rel }) => (
                   <TextBox
                     key={label}
                     tag="a"
@@ -127,6 +132,7 @@ export const Navigation: React.FC = () => {
             { href: '/#/home', label: 'Home' },
             { href: '/#/contact', label: 'Contact' },
             { href: '/#/weather', label: 'Weather' },
+            { href: '/#/stock-quotes', label: 'Stock Quotes' },
           ].map(({ href, label }) => (
             <div key={label}>
               <TextBox
