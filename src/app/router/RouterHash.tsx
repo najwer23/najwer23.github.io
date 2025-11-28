@@ -4,8 +4,6 @@ import { Contact } from '../pages/contact/Contact';
 import { Home } from '../pages/home/Home';
 import { ScrollToTop } from './ScrollToTop';
 
-const BASE_TITLE = ' | Mariusz Najwer';
-
 const router = createHashRouter([
   {
     path: '/',
