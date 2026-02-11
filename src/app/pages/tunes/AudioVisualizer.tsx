@@ -24,8 +24,8 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
   const [isBuffering, setIsBuffering] = useState(true);
   const lastTimeRef = useRef(0);
 
-  const WIDTH = 1440,
-    HEIGHT = 960;
+  const WIDTH = 720,
+    HEIGHT = 480;
 
   const throttledSetCurrentTime = useCallback((time: number) => {
     if (Date.now() - lastTimeRef.current > 1000) {
@@ -59,7 +59,7 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
     const barWidth = (WIDTH / analyser.frequencyBinCount) * 7;
     let x = 0;
     for (let i = 0; i < analyser.frequencyBinCount; i++) {
-      const barHeight = Math.pow(dataArray[i] / 16, 2);
+      const barHeight = Math.pow(dataArray[i] / 32, 2);
       ctx.fillStyle = `white`;
       ctx.fillRect(x, HEIGHT / 2 - barHeight, barWidth, barHeight * 2);
       x += barWidth + 15;
