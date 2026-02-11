@@ -99,7 +99,7 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
     const source = audioCtx.createMediaElementSource(audio);
 
     source.connect(analyser).connect(audioCtx.destination);
-    analyser.fftSize = 2048;
+    analyser.fftSize = 1024;
 
     const dataArray = new Uint8Array(analyser.frequencyBinCount);
     canvas.width = WIDTH;
