@@ -56,11 +56,11 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
-    const barWidth = (WIDTH / analyser.frequencyBinCount) * 3;
+    const barWidth = (WIDTH / analyser.frequencyBinCount) * 7;
     let x = 0;
     for (let i = 0; i < analyser.frequencyBinCount; i++) {
       const barHeight = Math.pow(dataArray[i] / 16, 2);
-      ctx.fillStyle = `hsl(0, 0%, ${100 - barHeight / 10}%)`;
+      ctx.fillStyle = `white`;
       ctx.fillRect(x, HEIGHT / 2 - barHeight, barWidth, barHeight * 2);
       x += barWidth + 15;
     }
