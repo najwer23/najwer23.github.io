@@ -3,6 +3,7 @@ import { Layout } from '../layout/Layout';
 import { Contact } from '../pages/contact/Contact';
 import { Home } from '../pages/home/Home';
 import { StockQuotes } from '../pages/stock-quotes/StockQuotes';
+import { Tunes } from '../pages/tunes/Tunes';
 import { Weather } from '../pages/weather/Weather';
 import { ScrollToTop } from './ScrollToTop';
 
@@ -35,6 +36,10 @@ const router = createHashRouter([
       {
         path: '/stock-quotes',
         element: <StockQuotes />,
+      },
+      {
+        path: '/tunes',
+        element: <Tunes />,
       },
     ],
   },

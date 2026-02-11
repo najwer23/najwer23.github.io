@@ -64,38 +64,21 @@ export const Navigation: React.FC = () => {
             <div className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''}`}>
               <div className={styles.menuContent}>
                 {[
-                  { href: '/#/home', label: 'Home', desktopSize: 30, mobileSize: 30, fontWeight: 400 },
-                  {
-                    href: '/#/contact',
-                    label: 'Contact',
-                    desktopSize: 30,
-                    mobileSize: 30,
-                    fontWeight: 400,
-                  },
-                  {
-                    href: '/#/weather',
-                    label: 'Weather',
-                    desktopSize: 30,
-                    mobileSize: 30,
-                    fontWeight: 400,
-                  },
-                  {
-                    href: '/#/stock-quotes',
-                    label: 'Stock Quotes',
-                    desktopSize: 30,
-                    mobileSize: 30,
-                    fontWeight: 400,
-                  },
+                  { href: '/#/home', label: 'Home' },
+                  { href: '/#/contact', label: 'Contact' },
+                  { href: '/#/weather', label: 'Weather' },
+                  { href: '/#/stock-quotes', label: 'Stock Quotes' },
+                  { href: '/#/tunes', label: 'Tunes' },
                   {
                     href: 'https://najwer23.github.io/resume/',
                     label: 'Résumé',
-                    desktopSize: 32,
-                    mobileSize: 32,
-                    fontWeight: 500,
+                    desktopSize: 34,
+                    mobileSize: 34,
+                    fontWeight: 600,
                     target: '_blank',
                     rel: 'noreferrer',
                   },
-                ].map(({ href, label, desktopSize, mobileSize, fontWeight, target, rel }) => (
+                ].map(({ href, label, desktopSize = 30, mobileSize = 30, fontWeight = 400, target, rel }) => (
                   <TextBox
                     key={label}
                     tag="a"
@@ -133,6 +116,7 @@ export const Navigation: React.FC = () => {
             { href: '/#/contact', label: 'Contact' },
             { href: '/#/weather', label: 'Weather' },
             { href: '/#/stock-quotes', label: 'Stock Quotes' },
+            { href: '/#/tunes', label: 'Tunes' },
           ].map(({ href, label }) => (
             <div key={label}>
               <TextBox
