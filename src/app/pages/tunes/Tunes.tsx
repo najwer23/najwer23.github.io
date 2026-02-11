@@ -1,7 +1,6 @@
 import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { useImmediateThrottledQuery } from '@najwer23/hooks/useImmediateThrottledQuery';
 import { Grid } from 'najwer23morsels/lib/grid';
-import { useWindowSize } from 'najwer23morsels/lib/hooks';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { useEffect, useState } from 'react';
 import AudioVisualizer from './AudioVisualizer';
@@ -9,7 +8,6 @@ import { queryPlaylist, type Song } from './Playlist.query';
 
 export const Tunes: React.FC = () => {
   useDocumentTitle('Tunes | Mariusz Najwer');
-  const { width } = useWindowSize();
 
   const [selectedSong, setSelectedSong] = useState<Song | null>(null);
   const [counterSong, setCounterSong] = useState<number>(0);
@@ -36,14 +34,14 @@ export const Tunes: React.FC = () => {
 
   return (
     <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 40px 20px'}>
-      <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'0 0 10px 0'}>
+      <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'0'}>
         Tunes
       </TextBox>
       <TextBox tag="p" desktopSize={12} mobileSize={12} fontWeight={500} margin={'0 0 30px 0'}>
         Music source: <b>Free Music Archive</b>
       </TextBox>
 
-      <Grid layout="container" widthMax={'1400px'} minHeight={width <= 767.98 ? '200px' : '200px'} loading={isLoading}>
+      <Grid layout="container" widthMax={'1400px'} minHeight={'180px'} loading={isLoading}>
         <AudioVisualizer song={song} setCounterSong={setCounterSong} playlistLength={playlist.length} />
       </Grid>
 

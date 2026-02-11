@@ -2,7 +2,6 @@ import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import styles from './AudioVisualizer.module.css';
 import type { Song } from './Playlist.query';
 
 interface AudioVisualizerProps {
@@ -12,20 +11,13 @@ interface AudioVisualizerProps {
 }
 
 const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong, playlistLength }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const rafRef = useRef<number>(0);
   const audioCtxRef = useRef<AudioContext | null>(null);
-  const analyserRef = useRef<AnalyserNode | null>(null);
-  const dataArrayRef = useRef<Uint8Array<ArrayBuffer> | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [isBuffering, setIsBuffering] = useState(true);
   const lastTimeRef = useRef(0);
-
-  const WIDTH = 720,
-    HEIGHT = 480;
 
   const throttledSetCurrentTime = useCallback((time: number) => {
     if (Date.now() - lastTimeRef.current > 1000) {
@@ -41,31 +33,6 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
     },
     [throttledSetCurrentTime],
   );
-
-  const draw = useCallback(() => {
-    const analyser = analyserRef.current,
-      dataArray = dataArrayRef.current,
-      ctx = canvasRef.current?.getContext('2d');
-
-    if (!analyser || !dataArray || !ctx) return (rafRef.current = requestAnimationFrame(draw));
-
-    analyser.getByteFrequencyData(dataArray);
-    ctx.clearRect(0, 0, WIDTH, HEIGHT);
-
-    const gradient = ctx.createLinearGradient(0, 0, WIDTH, HEIGHT);
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
-    const barWidth = (WIDTH / analyser.frequencyBinCount) * 7;
-    let x = 0;
-    for (let i = 0; i < analyser.frequencyBinCount; i++) {
-      const barHeight = Math.pow(dataArray[i] / 32, 2);
-      ctx.fillStyle = `white`;
-      ctx.fillRect(x, HEIGHT / 2 - barHeight, barWidth, barHeight * 2);
-      x += barWidth + 15;
-    }
-    rafRef.current = requestAnimationFrame(draw);
-  }, []);
 
   const togglePlay = useCallback(async () => {
     const audio = audioRef.current;
@@ -90,26 +57,11 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
   }, [isPlaying, song?.url]);
 
   const setupAudio = useCallback(() => {
-    const audio = audioRef.current,
-      canvas = canvasRef.current;
-    if (!audio || !canvas || audioCtxRef.current) return draw();
-
+    const audio = audioRef.current;
+    if (!audio || audioCtxRef.current) return;
     const audioCtx = new AudioContext();
-    const analyser = audioCtx.createAnalyser();
-    const source = audioCtx.createMediaElementSource(audio);
-
-    source.connect(analyser).connect(audioCtx.destination);
-    analyser.fftSize = 1024;
-
-    const dataArray = new Uint8Array(analyser.frequencyBinCount);
-    canvas.width = WIDTH;
-    canvas.height = HEIGHT;
-
     audioCtxRef.current = audioCtx;
-    analyserRef.current = analyser;
-    dataArrayRef.current = dataArray;
-    draw();
-  }, [draw]);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -131,8 +83,7 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
         .then(() => {
           setupAudio();
         })
-        .catch((err) => {
-          console.error('Autoplay failed:', err);
+        .catch(() => {
           setIsPlaying(false);
         });
     }
@@ -141,7 +92,6 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
   useEffect(() => {
     setDuration(0);
     setCurrentTime(0);
-    return () => cancelAnimationFrame(rafRef.current);
   }, []);
 
   const formatTime = useCallback((seconds: number): string => {
@@ -164,10 +114,6 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
         widthMax={'1400px'}
         gap={{ col: '40px', row: '20px' }}
       >
-        <div>
-          <canvas ref={canvasRef} className={styles.audioScene} />
-        </div>
-
         <div>
           <TextBox tag="p" desktopSize={25} mobileSize={25} fontWeight={500}>
             {song?.name}
@@ -212,7 +158,7 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
           setDuration(target.duration || 0);
           setTimeout(() => {
             setIsBuffering(false);
-          }, 300);
+          }, 400);
         }}
         onWaiting={() => {
           setDuration(0);
