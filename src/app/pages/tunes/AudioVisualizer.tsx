@@ -104,6 +104,18 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
     return `${formatTime(currentTime)} / ${formatTime(duration)}`;
   }, [duration, currentTime, formatTime]);
 
+  const handleSeekChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const audio = audioRef.current;
+    if (audio && duration > 0) {
+      const percent = parseFloat(e.target.value);
+      const newTime = (percent / 100) * duration;
+      audio.currentTime = newTime;
+      setCurrentTime(newTime);
+    }
+  };
+
+  const seekValue = useMemo(() => (duration > 0 ? (currentTime / duration) * 100 : 0), [currentTime, duration]);
+
   return (
     <Grid layout="container" widthMax={'1400px'} padding={'0'}>
       <Grid
@@ -123,9 +135,21 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
             <i>{song?.author}</i>
           </TextBox>
 
-          <TextBox tag="p" desktopSize={18} mobileSize={18} fontWeight={400} color="gray">
-            {displayTime}
-          </TextBox>
+          <Grid
+            layout="flex"
+            minHeight="20px"
+            flexWrap="wrap"
+            justifyContent="flexstart"
+            alignItems="flexstart"
+            widthMax={'1400px'}
+            gap={{ col: '10px', row: '0px' }}
+          >
+            <input type="range" min="0" max="100" value={seekValue} onChange={handleSeekChange} />
+
+            <TextBox tag="p" desktopSize={14} mobileSize={14} fontWeight={400} color="gray">
+              {displayTime}
+            </TextBox>
+          </Grid>
 
           <Button
             type="button"
@@ -159,10 +183,6 @@ const AudioVisualizer: React.FC<AudioVisualizerProps> = ({ song, setCounterSong,
           setTimeout(() => {
             setIsBuffering(false);
           }, 400);
-        }}
-        onWaiting={() => {
-          setDuration(0);
-          setIsBuffering(true);
         }}
         onTimeUpdate={handleTimeUpdate}
         onEnded={() => {
