@@ -1,6 +1,6 @@
 @layer n23Home {
   .meDesc {
-    width: calc(100% - 479px);
+    width: calc(100% - 460px);
 
     @media (max-width: 949.98px) {
       width: 100%;

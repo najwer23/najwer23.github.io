@@ -20,7 +20,7 @@ export const Home: React.FC = () => {
           alignItems="flexstart"
           widthMax={'1400px'}
           padding={'0 0 20px 0'}
-          gap={{ col: '75px', row: '40px' }}
+          gap={{ col: '60px', row: '40px' }}
         >
           <div style={{ width: 'min(400px, 100%)' }}>
             <div className={styles.mePicture}>
@@ -46,14 +46,11 @@ export const Home: React.FC = () => {
             </Grid>
             <Grid layout="container" widthMax={'800px'} margin={0}>
               <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
-                I am a passionate and detail-oriented Software Engineer with over 10 years of experience specializing in
-                modern <b>JavaScript </b>frameworks like React, Angular, Remix, and Svelte. I excel at translating
-                business requirements into technical solutions, delivering high-quality, responsive, and mobile-first
-                web applications on time and within budget. Committed to writing clean and maintainable code, I thrive
-                in agile environments while effectively collaborating with cross-functional teams and mentoring junior
-                developers. I am continuously growing by engaging with the tech community, contributing to open-source
-                projects, and staying current with industry best practices. My strong problem-solving skills and clear
-                communication allow me to bridge the gap between technical concepts and stakeholder needs efficiently.
+                I am a Software Engineer with extensive experience in frontend and full-stack development across
+                insurance, media, and tech domains. I build scalable web applications using React.js, Angular,
+                TypeScript, JavaScript, Node.js, and modern web technologies. I have contributed to design systems,
+                SSR-driven architectures, and microfrontend development, collaborating with international teams. Based
+                in Wrocław, Poland, open to remote opportunities.
               </TextBox>
             </Grid>
             <Grid layout="container" widthMax={'700px'} padding={'40px 0 0px 0'} margin={0}>
