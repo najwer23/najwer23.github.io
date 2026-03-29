@@ -3,6 +3,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { rssPlugin } from 'vite-plugin-rss';
+import { rssItems } from './rss';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,19 +12,11 @@ export default defineConfig({
     rssPlugin({
       mode: 'define',
       channel: {
-        title: 'Your Blog',
+        title: 'najwer23 Blog',
         link: 'https://najwer23.github.io/#/blog',
         description: 'Your blog RSS feed',
       },
-      items: [
-        {
-          title: 'My First Post',
-          link: 'https://najwer23.github.io/#/blog/post/1',
-          guid: 'my-first-post-1',
-          description: 'Short summary of the post.',
-          pubDate: new Date('2026-03-29T17:00:00+02:00'),
-        },
-      ],
+      items: rssItems,
     }),
     VitePWA({
       registerType: 'autoUpdate',
