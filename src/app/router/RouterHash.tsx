@@ -1,5 +1,6 @@
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from '../layout/Layout';
+import { Blog } from '../pages/blog/Blog';
 import { Contact } from '../pages/contact/Contact';
 import { Home } from '../pages/home/Home';
 import { StockQuotes } from '../pages/stock-quotes/StockQuotes';
@@ -40,6 +41,10 @@ const router = createHashRouter([
       {
         path: '/tunes',
         element: <Tunes />,
+      },
+      {
+        path: '/blog',
+        element: <Blog />,
       },
     ],
   },

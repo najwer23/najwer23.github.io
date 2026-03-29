@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "sections": [
+    {
+      "name": "post-title",
+      "data": {
+        "title": "My first blog post"
+      }
+    },
+    {
+      "name": "post-content",
+      "data": {
+        "content": "My content"
+      }
+    }
+  ]
+}

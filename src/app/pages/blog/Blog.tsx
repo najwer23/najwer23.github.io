@@ -1,0 +1,113 @@
+import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
+import { useImmediateThrottledQueries } from '@najwer23/hooks/useImmediateThrottledQueries';
+import { Button } from 'najwer23morsels/lib/button';
+import { Grid } from 'najwer23morsels/lib/grid';
+import { TextBox } from 'najwer23morsels/lib/textbox';
+import { useState } from 'react';
+import { queryBlog } from './Blog.query';
+import { BlogPost } from './BlogPost';
+
+const maxPost = 5; // TODO: it should be endpoint
+const maxPostPerPage = 3;
+
+export const Blog: React.FC = () => {
+  const [page, setPage] = useState(1);
+
+  useDocumentTitle('Blog | Mariusz Najwer');
+
+  const start = maxPost - maxPostPerPage * page + 1;
+  const end = start + maxPostPerPage - 1;
+  const postsArr = Array.from({ length: end - start + 1 }, (_, i) => end - i).filter((id) => id > 0);
+
+  const firstPage = 1;
+  const lastPage = Math.ceil(maxPost / maxPostPerPage);
+
+  const queriesBlogPost = postsArr.map((id) => ({
+    queryKey: ['queriesBlogPost', id],
+    queryFn: () => queryBlog(id),
+    staleTime: 30 * 60 * 1000,
+    gcTime: 30 * 60 * 1000,
+    retry: 0,
+    enabled: true,
+  }));
+
+  const { resultsArray, isLoading } = useImmediateThrottledQueries(queriesBlogPost);
+
+  const readyPosts = resultsArray.filter((v) => v.data);
+
+  return (
+    <>
+      <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
+        <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin="0">
+          Blog
+        </TextBox>
+
+        {isLoading ? (
+          <>
+            {Array.from({ length: maxPostPerPage }, (_, i) => (
+              <Grid
+                layout="container"
+                widthMax="900px"
+                minHeight="415px"
+                margin="40px 0 auto"
+                key={`blog-placeholder-${i}`}
+                loading={isLoading}
+              >
+                <div />
+              </Grid>
+            ))}
+          </>
+        ) : (
+          <>
+            {readyPosts.map((v) => (
+              <Grid
+                layout="container"
+                widthMax="900px"
+                loading={isLoading}
+                minHeight="415px"
+                margin="40px 0 auto"
+                key={v.data.id}
+              >
+                <BlogPost data={v.data} />
+              </Grid>
+            ))}
+          </>
+        )}
+      </Grid>
+
+      <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 0px 20px">
+        <Grid layout="flex" flexWrap="wrap" alignItems="spacebetween" widthMax={'900px'} margin="0 0 100px">
+          <Button
+            type="button"
+            onClick={() => setPage((prev) => prev - 1)}
+            backgroundColor="orangered"
+            height="40px"
+            width="auto"
+            disabled={page <= firstPage}
+            padding="0 10px"
+            backgroundColorDisabled="#4d4d4d"
+          >
+            <TextBox mobileSize={18} desktopSize={18} color="white">
+              Prev
+            </TextBox>
+          </Button>
+
+          <Button
+            type="button"
+            onClick={() => setPage((prev) => prev + 1)}
+            backgroundColor="orangered"
+            height="40px"
+            width="auto"
+            disabled={page >= lastPage}
+            padding="0 10px"
+            backgroundColorDisabled="#4d4d4d"
+          >
+            <TextBox mobileSize={18} desktopSize={18} color="white">
+              Next
+            </TextBox>
+          </Button>
+        </Grid>
+      </Grid>
+    </>
+  );
+};
