@@ -49,13 +49,26 @@ export const Blog: React.FC = () => {
     if (!isLoading && readyPosts.length === 0) {
       navigate('/blog', { replace: true });
     }
-  }, [isLoading, readyPosts.length, navigate]);
+  }, [isLoading]);
 
   return (
     <>
       <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
         <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin="0">
           Blog
+        </TextBox>
+
+        <TextBox
+          tag="a"
+          target="_blank"
+          href="https://najwer23.github.io/feed.xml"
+          desktopSize={12}
+          mobileSize={12}
+          fontWeight={600}
+          color="var(--linkColor)"
+          colorHover="var(--linkColor)"
+        >
+          RSS
         </TextBox>
 
         {isLoading ? (
@@ -94,36 +107,44 @@ export const Blog: React.FC = () => {
       </Grid>
 
       <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 0px 20px">
-        <Grid layout="flex" flexWrap="wrap" alignItems="spacebetween" widthMax={'900px'} margin="0 0 100px">
-          <Button
-            type="button"
-            onClick={() => goToPage(currentPage - 1)}
-            backgroundColor="orangered"
-            height="40px"
-            width="auto"
-            disabled={currentPage <= firstPage}
-            padding="0 10px"
-            backgroundColorDisabled="#4d4d4d"
-          >
-            <TextBox mobileSize={18} desktopSize={18} color="white">
-              Prev
-            </TextBox>
-          </Button>
+        <Grid
+          layout="flex"
+          flexWrap="wrap"
+          widthMax="900px"
+          margin="0 0 100px"
+          justifyContent={currentPage > firstPage ? 'space-between' : 'flex-end'}
+        >
+          {currentPage > firstPage && (
+            <Button
+              type="button"
+              onClick={() => goToPage(currentPage - 1)}
+              backgroundColor="orangered"
+              height="40px"
+              width="auto"
+              padding="0 10px"
+              backgroundColorDisabled="#4d4d4d"
+            >
+              <TextBox mobileSize={18} desktopSize={18} color="white">
+                Prev
+              </TextBox>
+            </Button>
+          )}
 
-          <Button
-            type="button"
-            onClick={() => goToPage(currentPage + 1)}
-            backgroundColor="orangered"
-            height="40px"
-            width="auto"
-            disabled={currentPage >= lastPage}
-            padding="0 10px"
-            backgroundColorDisabled="#4d4d4d"
-          >
-            <TextBox mobileSize={18} desktopSize={18} color="white">
-              Next
-            </TextBox>
-          </Button>
+          {currentPage < lastPage && (
+            <Button
+              type="button"
+              onClick={() => goToPage(currentPage + 1)}
+              backgroundColor="orangered"
+              height="40px"
+              width="auto"
+              padding="0 10px"
+              backgroundColorDisabled="#4d4d4d"
+            >
+              <TextBox mobileSize={18} desktopSize={18} color="white">
+                Next
+              </TextBox>
+            </Button>
+          )}
         </Grid>
       </Grid>
     </>
