@@ -5,5 +5,17 @@
     <link>https://najwer23.github.io/#/blog</link>
     <description>Your blog RSS feed</description>
     <atom:link href="https://najwer23.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>My First Post</title>
+      <link>https://najwer23.github.io/#/blog/my-first-post</link>
+      <description>Short summary of the post.</description>
+      <pubDate>Sun, 29 Mar 2026 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Second Post</title>
+      <link>https://najwer23.github.io/#/blog/second-post</link>
+      <description>Another summary.</description>
+      <pubDate>Sat, 28 Mar 2026 08:00:00 GMT</pubDate>
+    </item>
   </channel>
 </rss>
