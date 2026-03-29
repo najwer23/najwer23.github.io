@@ -1,0 +1,42 @@
+{
+  "id": 1,
+  "sections": [
+    {
+      "name": "post-title",
+      "data": {
+        "title": "#1 My first blog post",
+        "date": "29/03/2026"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Hi, I’m Mariusz, and this is my new blog."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "I created this space to share what I learn while building software, solving problems, and improving as a developer. Most of my posts will be about JavaScript, React, TypeScript, code quality, and the small details that make code easier to understand and maintain."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "I also want this blog to be practical. That means I’ll try to write about real problems, useful patterns, and lessons from building things that actually run in production."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If you enjoy thoughtful programming posts, debugging stories, or clear explanations of tricky frontend topics, you’re in the right place."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Thanks for reading - and welcome."
+      }
+    }
+  ]
+}
