@@ -3,7 +3,7 @@ import { useImmediateThrottledQueries } from '@najwer23/hooks/useImmediateThrott
 import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { queryBlog } from './Blog.query';
 import { BlogPost } from './BlogPost';
@@ -11,8 +11,8 @@ import { BlogPost } from './BlogPost';
 export const Blog: React.FC = () => {
   useDocumentTitle('Blog | Mariusz Najwer');
 
-  const maxPost = 5; // TODO: it should be endpoint
-  const maxPostPerPage = 3;
+  const maxPost = 1; // TODO: it should be endpoint
+  const maxPostPerPage = Math.min(maxPost, 3);
   const firstPage = 1;
   const lastPage = Math.ceil(maxPost / maxPostPerPage);
 
@@ -45,6 +45,12 @@ export const Blog: React.FC = () => {
 
   const readyPosts = resultsArray.filter((v) => v.data);
 
+  useEffect(() => {
+    if (!isLoading && readyPosts.length === 0) {
+      navigate('/blog', { replace: true });
+    }
+  }, [isLoading, readyPosts.length, navigate]);
+
   return (
     <>
       <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
@@ -60,6 +66,7 @@ export const Blog: React.FC = () => {
                 widthMax="900px"
                 minHeight="415px"
                 margin="40px 0 auto"
+                padding={'20px 0 60px'}
                 key={`blog-placeholder-${i}`}
                 loading={isLoading}
               >
@@ -76,6 +83,7 @@ export const Blog: React.FC = () => {
                 loading={isLoading}
                 minHeight="415px"
                 margin="40px 0 auto"
+                padding={'20px 0 60px'}
                 key={v.data.id}
               >
                 <BlogPost data={v.data} />

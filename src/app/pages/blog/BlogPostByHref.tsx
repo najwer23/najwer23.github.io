@@ -54,7 +54,7 @@ export const BlogPostByHref: React.FC = () => {
         height="40px"
         width="auto"
         padding="0 10px"
-        margin={'0 0 31px'}
+        margin={'0 0 15px'}
         backgroundColorDisabled="#4d4d4d"
       >
         <TextBox mobileSize={18} desktopSize={18} color="white">

@@ -9,8 +9,15 @@ export const Navigation: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-  const isActive = (href: string) =>
-    location.pathname === '/' ? href === '/#/home' : href.includes(location.pathname);
+  const isActive = (href: string) => {
+    if (location.pathname === '/') {
+      return href === '/#/home';
+    } else if (location.pathname.includes('/blog/post')) {
+      return href === '/#/blog';
+    } else {
+      return href.includes(location.pathname);
+    }
+  };
 
   return (
     <Grid layout="container" widthMax={'1600px'}>
@@ -69,6 +76,7 @@ export const Navigation: React.FC = () => {
                   { href: '/#/weather', label: 'Weather' },
                   { href: '/#/stock-quotes', label: 'Stock Quotes' },
                   { href: '/#/tunes', label: 'Tunes' },
+                  { href: '/#/blog', label: 'Blog' },
                   {
                     href: 'https://najwer23.github.io/resume/',
                     label: 'Résumé',
@@ -117,6 +125,7 @@ export const Navigation: React.FC = () => {
             { href: '/#/weather', label: 'Weather' },
             { href: '/#/stock-quotes', label: 'Stock Quotes' },
             { href: '/#/tunes', label: 'Tunes' },
+            { href: '/#/blog', label: 'Blog' },
           ].map(({ href, label }) => (
             <div key={label}>
               <TextBox
