@@ -19,6 +19,7 @@ export default defineConfig({
         {
           title: 'My First Post',
           link: 'https://najwer23.github.io/#/blog/post/1',
+          guid: 'my-first-post-1',
           description: 'Short summary of the post.',
           pubDate: new Date('2026-03-29T17:00:00+02:00'),
         },
