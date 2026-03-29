@@ -3,24 +3,34 @@ import { useImmediateThrottledQueries } from '@najwer23/hooks/useImmediateThrott
 import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
-import { useState } from 'react';
+import { useMemo } from 'react';
+import { useNavigate, useParams } from 'react-router';
 import { queryBlog } from './Blog.query';
 import { BlogPost } from './BlogPost';
 
-const maxPost = 5; // TODO: it should be endpoint
-const maxPostPerPage = 3;
-
 export const Blog: React.FC = () => {
-  const [page, setPage] = useState(1);
-
   useDocumentTitle('Blog | Mariusz Najwer');
 
-  const start = maxPost - maxPostPerPage * page + 1;
-  const end = start + maxPostPerPage - 1;
-  const postsArr = Array.from({ length: end - start + 1 }, (_, i) => end - i).filter((id) => id > 0);
-
+  const maxPost = 5; // TODO: it should be endpoint
+  const maxPostPerPage = 3;
   const firstPage = 1;
   const lastPage = Math.ceil(maxPost / maxPostPerPage);
+
+  const navigate = useNavigate();
+  const { page } = useParams();
+
+  const currentPage = useMemo(() => {
+    const value = Number(page);
+    return Number.isFinite(value) && value > 0 ? value : 1;
+  }, [page]);
+
+  const goToPage = (nextPage: number) => {
+    navigate(nextPage === 1 ? '/blog' : `/blog/page/${nextPage}`);
+  };
+
+  const start = maxPost - maxPostPerPage * currentPage + 1;
+  const end = start + maxPostPerPage - 1;
+  const postsArr = Array.from({ length: end - start + 1 }, (_, i) => end - i).filter((id) => id > 0);
 
   const queriesBlogPost = postsArr.map((id) => ({
     queryKey: ['queriesBlogPost', id],
@@ -79,11 +89,11 @@ export const Blog: React.FC = () => {
         <Grid layout="flex" flexWrap="wrap" alignItems="spacebetween" widthMax={'900px'} margin="0 0 100px">
           <Button
             type="button"
-            onClick={() => setPage((prev) => prev - 1)}
+            onClick={() => goToPage(currentPage - 1)}
             backgroundColor="orangered"
             height="40px"
             width="auto"
-            disabled={page <= firstPage}
+            disabled={currentPage <= firstPage}
             padding="0 10px"
             backgroundColorDisabled="#4d4d4d"
           >
@@ -94,11 +104,11 @@ export const Blog: React.FC = () => {
 
           <Button
             type="button"
-            onClick={() => setPage((prev) => prev + 1)}
+            onClick={() => goToPage(currentPage + 1)}
             backgroundColor="orangered"
             height="40px"
             width="auto"
-            disabled={page >= lastPage}
+            disabled={currentPage >= lastPage}
             padding="0 10px"
             backgroundColorDisabled="#4d4d4d"
           >
