@@ -9,12 +9,26 @@ export default defineConfig({
   plugins: [
     react(),
     rssPlugin({
-      mode: 'meta',
+      mode: 'define',
       channel: {
         title: 'Your Blog',
         link: 'https://najwer23.github.io/#/blog',
         description: 'Your blog RSS feed',
       },
+      items: [
+        {
+          title: 'My First Post',
+          link: 'https://najwer23.github.io/#/blog/my-first-post',
+          description: 'Short summary of the post.',
+          pubDate: new Date('2026-03-29T17:00:00+02:00'),
+        },
+        {
+          title: 'Second Post',
+          link: 'https://najwer23.github.io/#/blog/second-post',
+          description: 'Another summary.',
+          pubDate: new Date('2026-03-28T10:00:00+02:00'),
+        },
+      ],
     }),
     VitePWA({
       registerType: 'autoUpdate',
