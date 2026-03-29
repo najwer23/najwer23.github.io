@@ -2,12 +2,20 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import { rssPlugin } from 'vite-plugin-rss';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-
+    rssPlugin({
+      mode: 'meta',
+      channel: {
+        title: 'Your Blog',
+        link: 'https://najwer23.github.io/#/blog',
+        description: 'Your blog RSS feed',
+      },
+    }),
     VitePWA({
       registerType: 'autoUpdate',
       strategies: 'injectManifest',
