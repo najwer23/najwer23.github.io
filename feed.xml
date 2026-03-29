@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your Blog</title>
+    <link>https://najwer23.github.io/#/blog</link>
+    <description>Your blog RSS feed</description>
+    <atom:link href="https://najwer23.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+  </channel>
+</rss>
