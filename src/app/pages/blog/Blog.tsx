@@ -1,17 +1,30 @@
 import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { useImmediateThrottledQueries } from '@najwer23/hooks/useImmediateThrottledQueries';
+import { useImmediateThrottledQuery } from '@najwer23/hooks/useImmediateThrottledQuery';
 import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { useEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
-import { queryBlog } from './Blog.query';
+import { queryBlog, queryBlogManifest } from './Blog.query';
 import { BlogPost } from './BlogPost';
 
 export const Blog: React.FC = () => {
   useDocumentTitle('Blog | Mariusz Najwer');
 
-  const maxPost = 1; // TODO: it should be endpoint
+  const { result: resultQueryBlogManifest, isLoading: isLoadingResultQueryBlogManifest } = useImmediateThrottledQuery(
+    {
+      queryKey: ['queryBlogManifest'],
+      queryFn: () => queryBlogManifest(),
+      staleTime: 30 * 1000 * 60,
+      gcTime: 30 * 1000 * 60,
+      retry: 0,
+      enabled: true,
+    },
+    0,
+  );
+
+  const maxPost = resultQueryBlogManifest?.numberOfPosts ?? 1;
   const maxPostPerPage = Math.min(maxPost, 3);
   const firstPage = 1;
   const lastPage = Math.ceil(maxPost / maxPostPerPage);
@@ -32,24 +45,25 @@ export const Blog: React.FC = () => {
   const end = start + maxPostPerPage - 1;
   const postsArr = Array.from({ length: end - start + 1 }, (_, i) => end - i).filter((id) => id > 0);
 
-  const queriesBlogPost = postsArr.map((id) => ({
-    queryKey: ['queriesBlogPost', id],
-    queryFn: () => queryBlog(id),
-    staleTime: 30 * 60 * 1000,
-    gcTime: 30 * 60 * 1000,
-    retry: 0,
-    enabled: true,
-  }));
+  const { resultsArray: resultsArrayQueriesBlogPost, isLoading: isLoadingQueriesBlogPost } =
+    useImmediateThrottledQueries(
+      postsArr.map((id) => ({
+        queryKey: ['queriesBlogPost', id],
+        queryFn: () => queryBlog(id),
+        staleTime: 30 * 60 * 1000,
+        gcTime: 30 * 60 * 1000,
+        retry: 0,
+        enabled: !!resultQueryBlogManifest?.numberOfPosts,
+      })),
+    );
 
-  const { resultsArray, isLoading } = useImmediateThrottledQueries(queriesBlogPost);
-
-  const readyPosts = resultsArray.filter((v) => v.data);
+  const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.data);
 
   useEffect(() => {
-    if (!isLoading && readyPosts.length === 0) {
+    if (!isLoadingResultQueryBlogManifest && !isLoadingQueriesBlogPost && blogPosts.length === 0) {
       navigate('/blog', { replace: true });
     }
-  }, [isLoading]);
+  }, [isLoadingQueriesBlogPost, isLoadingResultQueryBlogManifest, blogPosts]);
 
   return (
     <>
@@ -71,7 +85,7 @@ export const Blog: React.FC = () => {
           RSS
         </TextBox>
 
-        {isLoading ? (
+        {isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest ? (
           <>
             {Array.from({ length: maxPostPerPage }, (_, i) => (
               <Grid
@@ -81,7 +95,7 @@ export const Blog: React.FC = () => {
                 margin="40px 0 auto"
                 padding={'20px 0 60px'}
                 key={`blog-placeholder-${i}`}
-                loading={isLoading}
+                loading={isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest}
               >
                 <div />
               </Grid>
@@ -89,11 +103,11 @@ export const Blog: React.FC = () => {
           </>
         ) : (
           <>
-            {readyPosts.map((v) => (
+            {blogPosts.map((v) => (
               <Grid
                 layout="container"
                 widthMax="900px"
-                loading={isLoading}
+                loading={isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest}
                 minHeight="415px"
                 margin="40px 0 auto"
                 padding={'20px 0 60px'}
