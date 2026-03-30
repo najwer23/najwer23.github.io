@@ -69,7 +69,7 @@ export const BlogPostByHref: React.FC = () => {
               layout="container"
               widthMax="900px"
               minHeight="415px"
-              margin="40px 0 auto"
+              margin="40px 0 60px"
               key={`blog-placeholder-${i}`}
               loading={isLoading}
             >
@@ -85,7 +85,7 @@ export const BlogPostByHref: React.FC = () => {
               widthMax="900px"
               loading={isLoading}
               minHeight="415px"
-              margin="40px 0 auto"
+              margin="40px 0 60px"
               key={v.data.id}
             >
               <BlogPost data={v.data} />
