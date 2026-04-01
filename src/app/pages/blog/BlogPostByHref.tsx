@@ -2,6 +2,7 @@ import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { useImmediateThrottledQueries } from '@najwer23/hooks/useImmediateThrottledQueries';
 import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
+import { IconArrowLeft } from 'najwer23morsels/lib/icons';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
@@ -51,15 +52,13 @@ export const BlogPostByHref: React.FC = () => {
         type="button"
         onClick={handleBack}
         backgroundColor="orangered"
-        height="40px"
-        width="auto"
-        padding="0 10px"
+        height="50px"
+        width="50px"
         margin={'0 0 15px'}
+        title="Back"
         backgroundColorDisabled="#4d4d4d"
       >
-        <TextBox mobileSize={18} desktopSize={18} color="white">
-          Back
-        </TextBox>
+        <IconArrowLeft width={24} height={24} color="white" />
       </Button>
 
       {isLoading ? (
