@@ -6,6 +6,13 @@
     <description>Your blog RSS feed</description>
     <atom:link href="https://najwer23.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>#2 Hash Tables in JavaScript: Object, Map and WeakMap</title>
+      <link>https://najwer23.github.io/#/blog/post/2</link>
+      <guid>#2-Hash-Tables-in-JavaScript-Object-Map-and-WeakMap</guid>
+      <description>JavaScript gives us a few different ways to store and look up key-value data. Object, Map, and WeakMap all solve similar problems, but they do so in slightly different ways. In this article, we’ll look at how each of them works, when to use them, and why Object is often treated as a hash-table-like structure in everyday JavaScript code.</description>
+      <pubDate>Thu, 02 Apr 2026 18:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>#1 My first blog post</title>
       <link>https://najwer23.github.io/#/blog/post/1</link>
       <guid>#1-My-first-blog-post</guid>

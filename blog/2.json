@@ -1,0 +1,133 @@
+{
+  "id": 2,
+  "title": "#2 Hash Tables in JavaScript: Object, Map and WeakMap",
+  "sections": [
+    {
+      "name": "post-title",
+      "data": {
+        "title": "#2 Hash Tables in JavaScript: Object, Map and WeakMap",
+        "date": "2/04/2026"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "JavaScript gives us a few different ways to store and look up key-value data. Object, Map, and WeakMap all solve similar problems, but they do so in slightly different ways. In this article, we’ll look at how each of them works, when to use them, and why Object is often treated as a hash-table-like structure in everyday JavaScript code."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "1. Object"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "A JavaScript Object is a built-in data structure used to store related values as key-value pairs. Its keys can be strings or symbols, and any non-symbol key is converted to a string automatically. Objects can hold many different kinds of values, including strings, numbers, arrays, functions, and even other objects. They are dynamic, so you can add, update, or delete properties at runtime. When you iterate over object keys, you should not depend on a guaranteed order. This is because object properties are designed for keyed access, not for representing a strict sequence."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const witcherObject = {\n  title: \"The Witcher\",\n  [1]: 42,\n  hero: \"Geralt of Rivia\",\n  signs: [\"Aard\", \"Igni\", \"Quen\", \"Yrden\", \"Axii\"],\n  isMonsterHunter: true,\n  greet() {\n    return `Toss a coin to your witcher.`;\n  }\n};"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "1.1. Example: counting repeated values from an array"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This example shows how to count repeated values and store them in an object while comparing four common iteration styles. 'for...of' offers the best balance of readability and performance for simple iteration, 'reduce()' is more compact but introduces callback overhead, a classic 'for' loop is often the fastest because it provides direct indexed access with minimal abstraction, and 'forEach()' is readable for side-effect-driven logic but does not support early exit. Understanding these differences matters because the right method can make your code easier to read, easier to maintain, and better aligned with the size and shape of your data. It also helps you choose between clarity and speed depending on whether you are writing everyday application code or optimizing a performance-sensitive path."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const items = [\"a\", \"b\", \"a\", \"c\", \"b\", \"a\"];\n\nconst counts1 = {};\nfor (const item of items) {\n  counts1[item] = (counts1[item] || 0) + 1;\n}\n\nconst counts2 = items.reduce((acc, item) => {\n  acc[item] = (acc[item] || 0) + 1;\n  return acc;\n}, {});\n\nconst counts3 = {};\nfor (let i = 0; i < items.length; i++) {\n  const item = items[i];\n  counts3[item] = (counts3[item] || 0) + 1;\n}\n\nconst counts4 = {};\nitems.forEach((item) => {\n  counts4[item] = (counts4[item] || 0) + 1;\n});"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "2. Map"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "A JavaScript Map is a built-in data structure used to store key-value pairs with a more flexible key system than Object. Its keys can be any value, including objects, functions, numbers, or strings, and the key identity is preserved without automatic string conversion. Map is especially useful when you need frequent insertions, deletions, or lookups, or when your keys are not simple strings. Unlike plain objects, Map is designed for collection-style access and preserves insertion order during iteration."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const witcherMap = new Map([\n  [\"title\", \"The Witcher\"],\n  [1, 42],\n  [\"hero\", \"Geralt of Rivia\"],\n  [\"signs\", [\"Aard\", \"Igni\", \"Quen\", \"Yrden\", \"Axii\"]],\n  [\"isMonsterHunter\", true],\n  [\"greet\", () => `Toss a coin to your witcher.`],\n]);"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "2.1. Example: counting repeated values from an array"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const items = [\"a\", \"b\", \"a\", \"c\", \"b\", \"a\"];\n\nconst counts1 = new Map();\nfor (const item of items) {\n  counts1.set(item, (counts1.get(item) || 0) + 1);\n}\n\nconst counts2 = items.reduce((acc, item) => {\n  acc.set(item, (acc.get(item) || 0) + 1);\n  return acc;\n}, new Map());\n\nconst counts3 = new Map();\nfor (let i = 0; i < items.length; i++) {\n  const item = items[i];\n  counts3.set(item, (counts3.get(item) || 0) + 1);\n}\n\nconst counts4 = new Map();\nitems.forEach((item) => {\n  counts4.set(item, (counts4.get(item) || 0) + 1);\n});"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "3. WeakMap"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "A JavaScript WeakMap provides a built-in collection for key-value pairs where keys must be objects (or non-registered symbols) held weakly, so they don't prevent garbage collection. Unlike Map, WeakMap rejects primitive keys like strings or numbers and offers no iteration, size checking, or direct key access. This design makes WeakMap ideal for attaching private metadata, caches, or DOM-specific state to objects without causing memory leaks."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "let user = { name: \"Geralt\" };\n\nconst weakMap = new WeakMap();\nweakMap.set(user, \"secret data\");\n\nconst map = new Map();\nmap.set(user, \"secret data\");\n\nconsole.log(weakMap.get(user)); // \"secret data\"\nconsole.log(map.get(user)); // \"secret data\"\n\nuser = null;\n\n// WeakMap:\n// the object can be garbage collected, so the entry may disappear automatically.\n\n// Map:\n// the entry stays in the map, because Map keeps a strong reference to the key.\n\nconsole.log(map.size); // 1"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "3.1. Example: counting repeated values from an array"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const items = [\n  { id: 'a' }, { id: 'b' }, { id: 'a' }, \n  { id: 'c' }, { id: 'b' }, { id: 'a' }\n];\n\nconst counts1 = new WeakMap();\nfor (const item of items) {\n  counts1.set(item, (counts1.get(item) || 0) + 1);\n}\n\nconst counts2 = items.reduce((acc, item) => {\n  acc.set(item, (acc.get(item) || 0) + 1);\n  return acc;\n}, new WeakMap());\n\nconst counts3 = new WeakMap();\nfor (let i = 0; i < items.length; i++) {\n  const item = items[i];\n  counts3.set(item, (counts3.get(item) || 0) + 1);\n}\n\nconst counts4 = new WeakMap();\nitems.forEach((item) => {\n  counts4.set(item, (counts4.get(item) || 0) + 1);\n});"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "4. Summary & Final Thoughts"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Object, Map, and WeakMap each shine in their niche: Object for simple string/symbol keys and prototype familiarity; Map for any-key flexibility, order preservation, and iteration needs; WeakMap for memory-safe object metadata."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "In algorithmic problems, performance considerations are often as important as code clarity, and in some cases they dominate the choice of data structure. For hash-table-style use cases, Map is typically the safer default because it provides efficient updates, supports non-string keys, and exposes the collection size directly."
+      }
+    }
+  ]
+}
