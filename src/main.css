@@ -16,3 +16,16 @@ body {
   --n23mTextBoxColor: var(--linkColor);
   --n23mTextBoxColorHover: var(--linkColorHover);
 }
+
+@font-palette-values --n23CodeParserPalette {
+  font-family: "Monaspace";
+  override-colors:
+    0 hsl(220 25% 18%),
+    1 hsl(210 15% 38%),
+    2 hsl(0, 0%, 0%),
+    3 hsl(215 50% 55%),
+    4 hsl(210 30% 65%),
+    5 hsl(220 20% 28%),
+    6 hsl(210 15% 45%),
+    7 hsl(0, 0%, 0%);
+}

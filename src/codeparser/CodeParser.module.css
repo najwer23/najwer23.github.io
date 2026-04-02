@@ -1,0 +1,39 @@
+/*
+@font-palette-values --kung-fury {
+  font-family: 'Monaspace';
+  override-colors:
+    0 hsl(30 90% 50%),   // curlies and tags - warm orange 
+    1 hsl(40 90% 70%),   // punctuation or misc 
+    2 hsl(25 80% 45%),   // functions - deep orange
+    3 hsl(35 85% 55%),   // operators or misc
+    4 hsl(45 90% 50%),   // parentheses
+    5 hsl(20 60% 30%),   // property names - burnt orange
+    6 hsl(25 50% 40%),   // other tokens
+    7 hsl(10 90% 55%)    // numbers - bright red-orange
+  ;
+}
+*/
+
+@layer n23CodeParser {
+  @font-face {
+    font-family: "Monaspace";
+    src: url("https://najwer23.github.io/najwer23morsels/Monaspace.woff2") format("woff2");
+  }
+
+  .n23CodeParser {
+    code {
+      font-family: "Monaspace", monospace;
+      font-palette: --n23CodeParserPalette;
+      font-size: 16px;
+      color: hsl(0, 0%, 0%);
+    }
+
+    pre {
+      padding: 20px;
+      overflow-x: auto;
+      background: #f5f7fa;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

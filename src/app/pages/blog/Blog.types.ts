@@ -6,6 +6,12 @@ type BlogPostSectionMap = {
   'post-p': {
     text: string;
   };
+  'post-subheading': {
+    text: string;
+  };
+  'post-code': {
+    code: string;
+  };
   quote: {
     text: string;
   };

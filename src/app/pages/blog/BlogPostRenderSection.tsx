@@ -1,5 +1,7 @@
 import type { BlogPostSection } from './Blog.types';
+import { SectionCode } from './sections/SectionCode';
 import { SectionP } from './sections/SectionP';
+import { SectionSubheading } from './sections/SectionSubheading';
 import { SectionTitle } from './sections/SectionTitle';
 
 export const BlogPostRenderSection: React.FC<{
@@ -13,8 +15,11 @@ export const BlogPostRenderSection: React.FC<{
     case 'post-p':
       return <SectionP section={section} />;
 
-    case 'quote':
-      return <blockquote>{section.data.text}</blockquote>;
+    case 'post-code':
+      return <SectionCode section={section} />;
+
+    case 'post-subheading':
+      return <SectionSubheading section={section}></SectionSubheading>;
 
     case 'group':
       return (
