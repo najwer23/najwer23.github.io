@@ -24,7 +24,7 @@ export const Blog: React.FC = () => {
     0,
   );
 
-  const maxPost = resultQueryBlogManifest?.numberOfPosts ?? 1;
+  const maxPost = resultQueryBlogManifest?.numberOfPosts ?? 2;
   const maxPostPerPage = Math.min(maxPost, 3);
   const firstPage = 1;
   const lastPage = Math.ceil(maxPost / maxPostPerPage);
