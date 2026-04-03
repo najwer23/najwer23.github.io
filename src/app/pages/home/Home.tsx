@@ -258,7 +258,15 @@ export const Home: React.FC = () => {
                 tablet: 2,
               }}
             >
-              <div style={{ background: 'white', padding: '40px', boxSizing: 'border-box', borderRadius: '10px' }}>
+              <div
+                style={{
+                  background: 'white',
+                  padding: '40px',
+                  boxSizing: 'border-box',
+                  borderRadius: '10px',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+                }}
+              >
                 <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
                   APPLIED SYSTEMS INC.
                 </TextBox>
@@ -283,6 +291,7 @@ export const Home: React.FC = () => {
                   borderRadius: '10px',
                   display: 'flex',
                   flexDirection: 'column',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                 }}
               >
                 <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
@@ -323,6 +332,7 @@ export const Home: React.FC = () => {
                   padding: '40px',
                   boxSizing: 'border-box',
                   borderRadius: '10px',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                 }}
               >
                 <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
@@ -337,7 +347,15 @@ export const Home: React.FC = () => {
                   accessibility, measured and optimized using Lighthouse.
                 </TextBox>
               </div>
-              <div style={{ background: 'white', padding: '40px', boxSizing: 'border-box', borderRadius: '10px' }}>
+              <div
+                style={{
+                  background: 'white',
+                  padding: '40px',
+                  boxSizing: 'border-box',
+                  borderRadius: '10px',
+                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+                }}
+              >
                 <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
                   EUROPA UBEZPIECZENIA
                 </TextBox>

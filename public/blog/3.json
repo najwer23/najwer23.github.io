@@ -1,0 +1,433 @@
+{
+  "id": 3,
+  "title": "#3 Advanced Sorting in JavaScript: Beyond array.sort()",
+  "sections": [
+    {
+      "name": "post-title",
+      "data": {
+        "title": "#3 Advanced Sorting in JavaScript: Beyond array.sort()",
+        "date": "3/04/2026"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Sorting sounds simple until you try to use it in a real application. Then you run into strings sorted like numbers, objects that need multi-field ordering, locale-sensitive text, and arrays that get mutated when you least expect it. In this post, I’ll show how JavaScript sorting really works, where the common traps are, and how to build more reliable sorting logic for real-world data."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "The default sort is not what you think"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If you call sort() without a comparator, JavaScript converts elements to strings and sorts them lexicographically. That means numbers are not sorted numerically."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "[1, 20, 3, 100].sort();\n// [1, 100, 20, 3]\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "That result surprises a lot of people the first time they see it. If you want numeric sorting, you must provide a comparator."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "[1, 20, 3, 100].sort((a, b) => a - b);\n// [1, 3, 20, 100]\n"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "How comparators work"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "A comparator function decides the order of two items: return a negative value if a should come before b, return a positive value if a should come after b, and return 0 if their order should stay the same."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "A simple numeric comparator looks like this:"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const compareNumbers = (a, b) => a - b;"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "For descending order:"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const compareNumbersDesc = (a, b) => b - a;"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "For strings, using subtraction does not work, so you need string comparison methods."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const names = [\"Zoe\", \"Anna\", \"bob\"];\n\nnames.sort((a, b) => a.localeCompare(b));\n// [\"Anna\", \"bob\", \"Zoe\"]\n"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Sorting objects"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "In real applications, you usually sort arrays of objects instead of plain values. For example, you might sort users by age, score, name, or created date."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const users = [\n  { name: \"Anna\", age: 32 },\n  { name: \"Bob\", age: 28 },\n  { name: \"Cara\", age: 40 },\n];\n\nconst byAge = users.sort((a, b) => a.age - b.age);\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "That works well for a single key. But real datasets often need multiple rules."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Multi-key sorting"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "A common pattern is to sort by one field first, then use another field as a tie-breaker. For example, sort by age, and if two users have the same age, sort by name."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const users = [\n  { name: \"Anna\", age: 32 },\n  { name: \"Bob\", age: 32 },\n  { name: \"Cara\", age: 28 },\n  { name: \"Dave\", age: 28 },\n];\n\nconst sorted = users.sort((a, b) => {\n  const ageDiff = a.age - b.age;\n  if (ageDiff !== 0) return ageDiff;\n\n  return a.name.localeCompare(b.name);\n});\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This pattern is easy to read and scales well when you need several levels of ordering."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "You can also write it more compactly:"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const sorted = users.sort(\n  (a, b) => a.age - b.age || a.name.localeCompare(b.name)\n);\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "That works because the second expression runs only when the first one returns 0."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Sorting dates"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Dates are another classic case where a comparator is necessary. If you compare date strings directly, you may get incorrect results unless they are in a format that sorts naturally."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "The safer approach is to compare timestamps."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const events = [\n  { title: \"Conference\", date: new Date(\"2026-05-10\") },\n  { title: \"Meetup\", date: new Date(\"2026-03-01\") },\n  { title: \"Workshop\", date: new Date(\"2026-04-15\") },\n];\n\nconst byDate = events.sort((a, b) => a.date - b.date);\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Since Date objects can be converted to numeric timestamps, subtraction works here too."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Locale-aware sorting"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Sorting text is more subtle than it looks. Alphabetical order changes depending on language and locale rules. For example, accented characters may need special handling."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "localeCompare() is the right tool when you want human-friendly string sorting."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const cities = [\"Wrocław\", \"Zürich\", \"Amsterdam\", \"Łódź\"];\n\ncities.sort((a, b) => a.localeCompare(b, \"pl\"));\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This is especially useful in apps with international users, where plain ASCII ordering feels wrong."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If you need advanced locale behavior, you can also use Intl.Collator, which is often a better option for repeated comparisons."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const collator = new Intl.Collator(\"pl\", { sensitivity: \"base\" });\n\ncities.sort((a, b) => collator.compare(a, b));\n"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "sort() mutates the array"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "One of the most important details about sort() is that it changes the original array. That can lead to bugs when you expect immutability."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const numbers = [3, 1, 2];\nconst sorted = numbers.sort((a, b) => a - b);\n\nconsole.log(numbers);\n// [1, 2, 3]\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If you want a sorted copy instead, use toSorted()."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const numbers = [3, 1, 2];\nconst sorted = numbers.toSorted((a, b) => a - b);\n\nconsole.log(numbers);\n// [3, 1, 2]\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "That makes your code easier to reason about, especially in React, reducers, or any place where mutation is a problem."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Sorting nested properties"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Sometimes the field you need is buried inside a nested object. In that case, your comparator can safely reach into the structure."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const products = [\n  { name: \"Keyboard\", pricing: { amount: 120 } },\n  { name: \"Mouse\", pricing: { amount: 50 } },\n  { name: \"Monitor\", pricing: { amount: 300 } },\n];\n\nconst sorted = products.sort(\n  (a, b) => a.pricing.amount - b.pricing.amount\n);\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If a property may be missing, guard against undefined so your sort does not break."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const sorted = products.sort((a, b) => {\n  const aPrice = a.pricing?.amount ?? Infinity;\n  const bPrice = b.pricing?.amount ?? Infinity;\n\n  return aPrice - bPrice;\n});\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "That pushes items without a price to the end."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Nested arrays example"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Nested arrays are useful when each item is a pair or tuple and you want to order them by one specific position. For example, if your data looks like [id, score], you can sort by the second element with a simple comparator."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const pairs = [\n  [1, 2],\n  [2, 3],\n  [4, 1],\n];\n\nconst sortedPairs = pairs.toSorted((a, b) => a[1] - b[1]);\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "In this example, the arrays are sorted by their second value, so [4, 1] comes first, followed by [1, 2] and [2, 3]. This pattern works well for tuples, coordinates, scores, or any small fixed-shape data where one field determines the order."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Handling booleans and mixed values"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Booleans can be sorted too, but you need to decide what “true first” or “false first” means for your use case."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const tasks = [\n  { title: \"Write post\", done: true },\n  { title: \"Fix bug\", done: false },\n  { title: \"Review PR\", done: true },\n];\n\nconst sorted = tasks.sort((a, b) => Number(a.done) - Number(b.done));\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "That puts false before true. Reverse the expression if you want completed tasks first."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Mixed-value arrays are trickier. If your data is inconsistent, normalize it before sorting. That will make your comparator simpler and less fragile."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "A practical example"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Imagine you are building an admin dashboard and need to sort users by role, then by last login date, then by name."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const users = [\n  { name: \"Anna\", role: \"admin\", lastLogin: \"2026-03-20\" },\n  { name: \"Bob\", role: \"user\", lastLogin: \"2026-03-22\" },\n  { name: \"Cara\", role: \"admin\", lastLogin: \"2026-03-18\" },\n  { name: \"Dave\", role: \"user\", lastLogin: \"2026-03-20\" },\n];\n\nconst roleOrder = { admin: 0, user: 1 };\n\nconst sorted = users.toSorted((a, b) => {\n  const roleDiff = roleOrder[a.role] - roleOrder[b.role];\n  if (roleDiff !== 0) return roleDiff;\n\n  const dateDiff = new Date(b.lastLogin) - new Date(a.lastLogin);\n  if (dateDiff !== 0) return dateDiff;\n\n  return a.name.localeCompare(b.name);\n});\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This is a good example of a real-world comparator: it combines business rules, date handling, and alphabetical fallback order."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "When to stop writing custom comparators"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If your comparator starts getting long and hard to read, that is a signal to refactor. You can extract small helper functions, create reusable sort utilities, or precompute sort keys before sorting."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "For example:"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const compareBy = (selector) => (a, b) => {\n  const aValue = selector(a);\n  const bValue = selector(b);\n  return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;\n};\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "That kind of helper is useful when you sort many lists in the same application."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Final thoughts"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Advanced sorting in JavaScript is less about memorizing syntax and more about understanding data shape, comparison rules, and mutation. Once you get comfortable with comparators, you can sort almost anything in a predictable way."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If you remember just three things, make them these: sort() mutates the array, numbers strings dates and objects need different comparison logic, and multi-key sorting is usually just a chain of well-ordered comparisons."
+      }
+    }
+  ]
+}
