@@ -18,7 +18,7 @@ export const StockQuotes: React.FC = () => {
     enabled: true,
   }));
 
-  const { resultsArray, isLoading } = useImmediateThrottledQueries(queriesStockQuotes);
+  const { resultsArray, isLoading } = useImmediateThrottledQueries(queriesStockQuotes, 300);
 
   return (
     <>

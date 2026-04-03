@@ -29,14 +29,17 @@ export const Weather: React.FC = () => {
   const lat = coords.value.split(':')[0];
   const lon = coords.value.split(':')[1];
 
-  const { result, isLoading } = useImmediateThrottledQuery({
-    queryKey: ['queryWeatherCoords', 'queryWeatherCoords' + coords.value],
-    queryFn: () => queryWeatherCoords(lat, lon),
-    staleTime: 30 * 1000 * 60,
-    gcTime: 30 * 1000 * 60,
-    retry: 0,
-    enabled: true,
-  });
+  const { result, isLoading } = useImmediateThrottledQuery(
+    {
+      queryKey: ['queryWeatherCoords', 'queryWeatherCoords' + coords.value],
+      queryFn: () => queryWeatherCoords(lat, lon),
+      staleTime: 30 * 1000 * 60,
+      gcTime: 30 * 1000 * 60,
+      retry: 0,
+      enabled: true,
+    },
+    300,
+  );
 
   const townListForSelect = useMemo(() => {
     return sortArrOfObjByLabel([
