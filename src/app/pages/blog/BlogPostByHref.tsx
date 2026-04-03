@@ -26,24 +26,26 @@ export const BlogPostByHref: React.FC = () => {
     }
   };
 
-  const queriesBlogPost = postsArr.map((id) => ({
-    queryKey: ['queriesBlogPost', id],
-    queryFn: () => queryBlog(id),
-    staleTime: 30 * 60 * 1000,
-    gcTime: 30 * 60 * 1000,
-    retry: 0,
-    enabled: true,
-  }));
+  const { resultsArray: resultsArrayQueriesBlogPost, isLoading: isLoadingQueriesBlogPost } =
+    useImmediateThrottledQueries(
+      postsArr.map((id) => ({
+        queryKey: ['queriesBlogPost', id],
+        queryFn: () => queryBlog(id),
+        staleTime: 30 * 60 * 1000,
+        gcTime: 30 * 60 * 1000,
+        retry: 0,
+        enabled: true,
+      })),
+      300,
+    );
 
-  const { resultsArray, isLoading } = useImmediateThrottledQueries(queriesBlogPost);
-
-  const readyPosts = resultsArray.filter((v) => v.data);
+  const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.data);
 
   useEffect(() => {
-    if (!isLoading && readyPosts.length === 0) {
+    if (!isLoadingQueriesBlogPost && blogPosts.length === 0) {
       navigate('/blog', { replace: true });
     }
-  }, [isLoading, readyPosts.length, navigate]);
+  }, [isLoadingQueriesBlogPost, blogPosts.length, navigate]);
 
   return (
     <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
@@ -60,7 +62,7 @@ export const BlogPostByHref: React.FC = () => {
         <IconArrowLeft width={24} height={24} color="white" />
       </Button>
 
-      {isLoading ? (
+      {isLoadingQueriesBlogPost ? (
         <>
           {Array.from({ length: 1 }, (_, i) => (
             <Grid
@@ -69,7 +71,7 @@ export const BlogPostByHref: React.FC = () => {
               minHeight="415px"
               margin="40px 0 60px"
               key={`blog-placeholder-${i}`}
-              loading={isLoading}
+              loading={isLoadingQueriesBlogPost}
             >
               <div />
             </Grid>
@@ -77,11 +79,11 @@ export const BlogPostByHref: React.FC = () => {
         </>
       ) : (
         <>
-          {readyPosts.map((v) => (
+          {blogPosts.map((v) => (
             <Grid
               layout="container"
               widthMax="900px"
-              loading={isLoading}
+              loading={isLoadingQueriesBlogPost}
               minHeight="415px"
               margin="40px 0 60px"
               key={v.data.id}

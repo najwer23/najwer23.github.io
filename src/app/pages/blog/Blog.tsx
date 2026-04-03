@@ -55,6 +55,7 @@ export const Blog: React.FC = () => {
         retry: 0,
         enabled: !!resultQueryBlogManifest?.numberOfPosts,
       })),
+      300,
     );
 
   const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.data);
