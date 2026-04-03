@@ -18,6 +18,7 @@
   @font-face {
     font-family: "Monaspace";
     src: url("https://najwer23.github.io/najwer23morsels/Monaspace.woff2") format("woff2");
+    font-display: swap;
   }
 
   .n23CodeParser {
