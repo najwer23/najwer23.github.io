@@ -29,12 +29,25 @@
       color: hsl(0, 0%, 0%);
     }
 
-    pre {
-      padding: 20px;
-      overflow-x: auto;
+    .codeWrap {
       background: #f5f7fa;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    pre {
+      padding: 3px 20px 20px 20px;
+      overflow-x: auto;
+      margin-top: 0;
+    }
+
+    .copyButtonSticky {
+      padding-top: 20px;
+      width: calc(100% - 20px);
+      position: sticky;
+      left: 0;
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }
