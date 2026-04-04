@@ -6,7 +6,7 @@
       "name": "post-title",
       "data": {
         "title": "#3 Advanced Sorting in JavaScript: Beyond array.sort()",
-        "date": "3/04/2026"
+        "date": "7/04/2026"
       }
     },
     {
@@ -409,6 +409,66 @@
       "name": "post-p",
       "data": {
         "text": "That kind of helper is useful when you sort many lists in the same application."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Multiple sort keys"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "A very common advanced pattern is chaining comparators so the next rule runs only when the previous one returns 0. This keeps multi-key sorting readable and lets you express ordering rules step by step."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const compareByMany = (...rules) => (a, b) => {\n  for (const { selector, order = \"asc\" } of rules) {\n    const aValue = selector(a);\n    const bValue = selector(b);\n\n    let result = 0;\n\n    if (typeof aValue === \"string\" && typeof bValue === \"string\") {\n      result = aValue.localeCompare(bValue);\n    } else if (aValue instanceof Date && bValue instanceof Date) {\n      result = aValue - bValue;\n    } else if (aValue < bValue) {\n      result = -1;\n    } else if (aValue > bValue) {\n      result = 1;\n    }\n\n    if (result !== 0) {\n      return order === \"asc\" ? result : -result;\n    }\n  }\n\n  return 0;\n};\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "For example, you can sort users by age in ascending order, then score in descending order, and finally name in ascending order."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const users = [\n  { name: \"Anna\", age: 32, score: 10 },\n  { name: \"Bob\", age: 32, score: 7 },\n  { name: \"Cara\", age: 28, score: 9 },\n];\n\nconst sorted = users.toSorted(\n  compareByMany(\n    { selector: (user) => user.age, order: \"asc\" },\n    { selector: (user) => user.score, order: \"desc\" },\n    { selector: (user) => user.name, order: \"asc\" }\n  )\n);\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This pattern is especially useful when your data has several layers of ordering and you want to keep the comparator simple, reusable, and easy to extend."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Sorting nested arrays"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This helper also works with nested arrays as long as the selector points to the value you want to compare. For example, if each item looks like [id, score], you can sort by the second element with pair[1]."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const pairs = [\n  [1, 2],\n  [2, 3],\n  [4, 1],\n];\n\nconst sortedPairs = pairs.toSorted(\n  compareByMany(\n    { selector: (pair) => pair[1], order: \"asc\" }\n  )\n);\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "In this example, the arrays are sorted by their second value, so [4, 1] comes first, followed by [1, 2] and [2, 3]."
       }
     },
     {
