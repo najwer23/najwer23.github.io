@@ -426,7 +426,7 @@
     {
       "name": "post-code",
       "data": {
-        "code": "const compareByMany = (...rules) => (a, b) => {\n  for (const { selector, order = \"asc\" } of rules) {\n    const aValue = selector(a);\n    const bValue = selector(b);\n\n    let result = 0;\n\n    if (typeof aValue === \"string\" && typeof bValue === \"string\") {\n      result = aValue.localeCompare(bValue);\n    } else if (aValue instanceof Date && bValue instanceof Date) {\n      result = aValue - bValue;\n    } else if (aValue < bValue) {\n      result = -1;\n    } else if (aValue > bValue) {\n      result = 1;\n    }\n\n    if (result !== 0) {\n      return order === \"asc\" ? result : -result;\n    }\n  }\n\n  return 0;\n};\n"
+        "code": "const compareByMany = (...rules) => (a, b) => {\n  for (const { selector, order = \"asc\" } of rules) {\n    const aValue = selector(a);\n    const bValue = selector(b);\n\n    let result = 0;\n\n    if (typeof aValue === \"string\" && typeof bValue === \"string\") {\n      result = aValue.localeCompare(bValue);\n    } else {\n      result = aValue - bValue;\n    }\n\n    if (result !== 0) {\n      return order === \"asc\" ? result : -result;\n    }\n  }\n\n  return 0;\n};\n"
       }
     },
     {
