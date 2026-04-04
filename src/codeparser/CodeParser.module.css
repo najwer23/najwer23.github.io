@@ -36,13 +36,13 @@
     }
 
     pre {
-      padding: 3px 20px 20px 20px;
+      padding: 5px 20px 20px 20px;
       overflow-x: auto;
       margin-top: 0;
     }
 
     .copyButtonSticky {
-      padding-top: 20px;
+      padding-top: 15px;
       width: calc(100% - 20px);
       position: sticky;
       left: 0;
