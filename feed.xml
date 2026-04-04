@@ -6,6 +6,13 @@
     <description>Your blog RSS feed</description>
     <atom:link href="https://najwer23.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>#3 Advanced Sorting in JavaScript: Beyond array.sort()</title>
+      <link>https://najwer23.github.io/#/blog/post/3</link>
+      <guid>#3-advanced-sorting-in-javascript-beyond-array-sort</guid>
+      <description>Sorting sounds simple until you try to use it in a real application. Then you run into strings sorted like numbers, objects that need multi-field ordering, locale-sensitive text, and arrays that get mutated when you least expect it. In this post, I’ll show how JavaScript sorting really works, where the common traps are, and how to build more reliable sorting logic for real-world data.</description>
+      <pubDate>Tue, 07 Apr 2026 03:00:00 GMT</pubDate>
+    </item>
+    <item>
       <title>#2 Hash Tables in JavaScript: Object, Map and WeakMap</title>
       <link>https://najwer23.github.io/#/blog/post/2</link>
       <guid>#2-Hash-Tables-in-JavaScript-Object-Map-and-WeakMap</guid>
