@@ -42,7 +42,7 @@
     }
 
     .copyButtonSticky {
-      padding-top: 10px;
+      padding-top: 20px;
       width: calc(100% - 20px);
       position: sticky;
       left: 0;
