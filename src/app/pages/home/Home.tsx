@@ -436,7 +436,7 @@ export const Home: React.FC = () => {
       </div>
 
       <Grid layout="container" widthMax={'1600px'}>
-        <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 60px 20px'} minHeight="3000px">
+        <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 60px 20px'} minHeight="700px">
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'20px 0 40px'} textWrap="balance">
             Travel Snapshots in Pixels
           </TextBox>
