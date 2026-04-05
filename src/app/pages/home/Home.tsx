@@ -1,14 +1,37 @@
 import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { Grid } from 'najwer23morsels/lib/grid';
-import { Masonry } from 'najwer23morsels/lib/masonry';
 import { Picture } from 'najwer23morsels/lib/picture';
 import { Slider } from 'najwer23morsels/lib/slider';
 import { SliderScroll } from 'najwer23morsels/lib/sliderscroll';
 import { TextBox } from 'najwer23morsels/lib/textbox';
+import React, { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
+
+const Masonry = lazy(() => import('najwer23morsels/lib/masonry').then((m) => ({ default: m.Masonry })));
 
 export const Home: React.FC = () => {
   useDocumentTitle('Home | Mariusz Najwer');
+
+  const masonryTriggerRef = useRef<HTMLDivElement | null>(null);
+  const [loadMasonry, setLoadMasonry] = useState(false);
+
+  useEffect(() => {
+    const el = masonryTriggerRef.current;
+    if (!el || loadMasonry) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLoadMasonry(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '500px 0px', threshold: 0.1 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [loadMasonry]);
 
   return (
     <>
@@ -32,7 +55,7 @@ export const Home: React.FC = () => {
                 ar={1}
                 border
                 loading="eager"
-              ></Picture>
+              />
             </div>
           </div>
           <div
@@ -87,7 +110,8 @@ export const Home: React.FC = () => {
           </TextBox>
         </Grid>
       </Grid>
-      <Grid layout="container" widthMax={'1360px'} padding={'0'}>
+
+      <Grid layout="container" widthMax={'1360px'}>
         <div style={{ height: '260px', width: '100%' }}>
           <SliderScroll gap="10px" isCircular autoPlay autoPlaySpeed={0.5}>
             {[
@@ -112,6 +136,7 @@ export const Home: React.FC = () => {
           </SliderScroll>
         </div>
       </Grid>
+
       <div style={{ background: 'rgb(225, 223, 223)' }}>
         <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'120px auto 80px auto'}>
           <Grid layout="container" padding={'60px 0 60px 0'} margin={'0'}>
@@ -166,6 +191,7 @@ export const Home: React.FC = () => {
           </Grid>
         </Grid>
       </div>
+
       <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 0px 20px'}>
         <Grid layout="container" widthMax={'700px'} padding={'0 0 40px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
@@ -173,24 +199,16 @@ export const Home: React.FC = () => {
           </TextBox>
         </Grid>
       </Grid>
+
       <Grid layout="container" widthMax={'1360px'} padding={'0 0 0px 0'} className={styles.homeSliderProjects}>
         <div className={styles.homeSliderProjectsWrapper}>
           <Slider
             key={'homeSliderItemsDesktop'}
             isCircular
             slidesConfig={{
-              desktop: {
-                items: 1,
-                slidesToScroll: 1,
-              },
-              mobile: {
-                items: 1,
-                slidesToScroll: 1,
-              },
-              tablet: {
-                items: 1,
-                slidesToScroll: 1,
-              },
+              desktop: { items: 1, slidesToScroll: 1 },
+              mobile: { items: 1, slidesToScroll: 1 },
+              tablet: { items: 1, slidesToScroll: 1 },
             }}
           >
             <div className={styles.homeSliderProjectsPicture}>
@@ -203,7 +221,7 @@ export const Home: React.FC = () => {
                 maxHeightDesktop="600px"
                 alt={'Photo of tvn24.pl'}
                 loading="eager"
-              ></Picture>
+              />
             </div>
             <div className={styles.homeSliderProjectsPicture}>
               <Picture
@@ -215,7 +233,7 @@ export const Home: React.FC = () => {
                 maxHeightDesktop="600px"
                 alt={'Photo of stock quotes, tvn24.pl'}
                 loading="eager"
-              ></Picture>
+              />
             </div>
             <div className={styles.homeSliderProjectsPicture}>
               <Picture
@@ -227,7 +245,7 @@ export const Home: React.FC = () => {
                 maxHeightDesktop="600px"
                 alt={'Photo of Restilo'}
                 loading="eager"
-              ></Picture>
+              />
             </div>
             <div className={styles.homeSliderProjectsPicture}>
               <Picture
@@ -239,7 +257,7 @@ export const Home: React.FC = () => {
                 maxHeightDesktop="600px"
                 alt={'Photo of Europa Ubezpieczenia'}
                 loading="eager"
-              ></Picture>
+              />
             </div>
           </Slider>
         </div>
@@ -283,6 +301,7 @@ export const Home: React.FC = () => {
                   standards.
                 </TextBox>
               </div>
+
               <div
                 style={{
                   backgroundColor: '#FFF2D5',
@@ -321,7 +340,7 @@ export const Home: React.FC = () => {
                       alt={'Deathly Hallows'}
                       ar={259 / 225}
                       loading="eager"
-                    ></Picture>
+                    />
                   </div>
                 </Grid>
               </div>
@@ -347,6 +366,7 @@ export const Home: React.FC = () => {
                   accessibility, measured and optimized using Lighthouse.
                 </TextBox>
               </div>
+
               <div
                 style={{
                   background: 'white',
@@ -421,136 +441,123 @@ export const Home: React.FC = () => {
             Travel Snapshots in Pixels
           </TextBox>
 
-          <Masonry
-            gap={{
-              col: '20px',
-              row: '20px',
-            }}
-            col={{
-              mobile: 1,
-              smallDesktop: 3,
-              desktop: 3,
-              tablet: 2,
-            }}
-            delay={10}
-          >
-            {[
-              {
-                src: 'https://i.pinimg.com/originals/6d/a7/bf/6da7bf87e217fa0efe1bfdb290fa162e.jpg',
-                alt: 'The Da Vinci Glow',
-                ar: 296 / 443,
-              },
-              {
-                src: 'https://i.pinimg.com/originals/26/79/47/267947eeae9cc87f649f427cbf91ac98.jpg',
-                alt: 'A Night Sky over the Tatra Mountains..',
-                ar: 274 / 301,
-              },
-              {
-                src: 'https://i.pinimg.com/1200x/f9/c0/f0/f9c0f05a0f2b34e887de76158189c79f.jpg',
-                alt: 'Pyrenees from an airplane',
-                ar: 120 / 161,
-              },
-              {
-                src: 'https://i.pinimg.com/736x/ad/ee/00/adee00c3e14918e042d865545756c0be.jpg',
-                alt: 'Basketball museum in Madrid',
-                ar: 120 / 161,
-              },
-              {
-                src: 'https://i.pinimg.com/736x/9d/c0/86/9dc0865ba564486c6b206661873a44a5.jpg',
-                alt: 'Temple Expiatori de la Sagrada Família',
-                ar: 3 / 4,
-              },
-              {
-                src: 'https://i.ibb.co/PxQ2gPG/beach-1236581-1280.jpg',
-                alt: 'Let’s have some Margaritas and make some bad decisions!',
-                ar: 16 / 9,
-              },
-              {
-                src: 'https://i.ibb.co/HqDCPGd/nature-3279419-1280.jpg',
-                alt: 'Meteora in Greece',
-                ar: 1280 / 853,
-              },
-              {
-                src: 'https://i.ibb.co/XsgHyx3/guell-park-1157681-1280.jpg',
-                alt: 'Park Güell, Barcelona',
-                ar: 160 / 83,
-              },
-              {
-                src: 'https://i.ibb.co/8sQ3XdY/avignon-1521541-1280.jpg',
-                alt: 'Avinhon, France, Provence-Alpes-Côte d’Azur',
-                ar: 16 / 9,
-              },
-              {
-                src: 'https://i.ibb.co/71RfB42/sunset-6007980-1280.jpg',
-                alt: 'Lavender in Provence-Alpes-Côte d’Azur, France',
-                ar: 1280 / 853,
-              },
-              {
-                src: 'https://i.ibb.co/42tv8k2/great-way-968932-1280.jpg',
-                alt: 'Gran Vía nr 1, Madryt',
-                ar: 1280 / 853,
-              },
-              {
-                src: 'https://i.ibb.co/WySmVXZ/308961156-649702816779384-5607195473166324459-n.jpg',
-                alt: 'Camp Nou, Barcelona',
-                ar: 537 / 403,
-              },
-              {
-                src: 'https://i.ibb.co/C5XpQkh/barcelona-2371946-1280.jpg',
-                alt: 'Barcelona',
-                ar: 16 / 9,
-              },
-              {
-                src: 'https://i.ibb.co/tsCt9tX/el-born-5301517-1280.jpg',
-                alt: 'Barcelona',
-                ar: 427 / 640,
-              },
-              {
-                src: 'https://i.ibb.co/CKJcN53/santorini-4996901-1280.jpg',
-                alt: 'Santorini',
-                ar: 1280 / 853,
-              },
-              {
-                src: 'https://i.ibb.co/BLfrW0j/gordes-village-luberon-69-1024x682.jpg',
-                alt: 'Gordes, France',
-                ar: 512 / 341,
-              },
-              {
-                src: 'https://i.ibb.co/S5PV6qy/2df84435-ce2b-42d1-a9cc-e62e9e914441.webp',
-                alt: 'Lisboa',
-                ar: 400 / 267,
-              },
-              {
-                src: 'https://i.ibb.co/t8kdHrB/71c30ea8-2b4e-48ba-980b-b222c5dcaa38.webp',
-                alt: 'Zlatni Rat, Croatia',
-                ar: 800 / 533,
-              },
-              {
-                src: 'https://i.ibb.co/H4Mch3B/barcelona-1545605-640.jpg',
-                alt: 'La Pedrera / Casa Milà, Barcelona',
-                ar: 121 / 160,
-              },
-              {
-                src: 'https://i.ibb.co/sJxhNVC/quadrant-magic-subirachs-portada-1024x488.jpg',
-                alt: 'Magic square, Barcelona',
-                ar: 128 / 61,
-              },
-              {
-                src: 'https://i.ibb.co/9tT9wfq/wroclaw-1511660-640.jpg',
-                alt: 'Wrocław',
-                ar: 128 / 85,
-              },
-              {
-                src: 'https://i.ibb.co/Gs5K4pJ/318467739-179571174674590-2719368099439007366-n.jpg',
-                alt: 'Jakuszyce',
-                ar: 4 / 3,
-              },
-            ].map(({ src, alt, ar }, i) => (
-              <div key={i}>
-                <Picture src={src} alt={alt} key={i} ar={ar} border figcaption={alt} figcaptionColor="grey" />
-              </div>
-            ))}
-          </Masonry>
+          <div ref={masonryTriggerRef}>
+            {loadMasonry && (
+              <Suspense>
+                <Masonry
+                  gap={{ col: '20px', row: '20px' }}
+                  col={{
+                    mobile: 1,
+                    smallDesktop: 3,
+                    desktop: 3,
+                    tablet: 2,
+                  }}
+                  delay={100}
+                >
+                  {[
+                    {
+                      src: 'https://i.pinimg.com/originals/6d/a7/bf/6da7bf87e217fa0efe1bfdb290fa162e.jpg',
+                      alt: 'The Da Vinci Glow',
+                      ar: 296 / 443,
+                    },
+                    {
+                      src: 'https://i.pinimg.com/originals/26/79/47/267947eeae9cc87f649f427cbf91ac98.jpg',
+                      alt: 'A Night Sky over the Tatra Mountains..',
+                      ar: 274 / 301,
+                    },
+                    {
+                      src: 'https://i.pinimg.com/1200x/f9/c0/f0/f9c0f05a0f2b34e887de76158189c79f.jpg',
+                      alt: 'Pyrenees from an airplane',
+                      ar: 120 / 161,
+                    },
+                    {
+                      src: 'https://i.pinimg.com/736x/ad/ee/00/adee00c3e14918e042d865545756c0be.jpg',
+                      alt: 'Basketball museum in Madrid',
+                      ar: 120 / 161,
+                    },
+                    {
+                      src: 'https://i.pinimg.com/736x/9d/c0/86/9dc0865ba564486c6b206661873a44a5.jpg',
+                      alt: 'Temple Expiatori de la Sagrada Família',
+                      ar: 3 / 4,
+                    },
+                    {
+                      src: 'https://i.ibb.co/PxQ2gPG/beach-1236581-1280.jpg',
+                      alt: 'Let’s have some Margaritas and make some bad decisions!',
+                      ar: 16 / 9,
+                    },
+                    {
+                      src: 'https://i.ibb.co/HqDCPGd/nature-3279419-1280.jpg',
+                      alt: 'Meteora in Greece',
+                      ar: 1280 / 853,
+                    },
+                    {
+                      src: 'https://i.ibb.co/XsgHyx3/guell-park-1157681-1280.jpg',
+                      alt: 'Park Güell, Barcelona',
+                      ar: 160 / 83,
+                    },
+                    {
+                      src: 'https://i.ibb.co/8sQ3XdY/avignon-1521541-1280.jpg',
+                      alt: 'Avinhon, France, Provence-Alpes-Côte d’Azur',
+                      ar: 16 / 9,
+                    },
+                    {
+                      src: 'https://i.ibb.co/71RfB42/sunset-6007980-1280.jpg',
+                      alt: 'Lavender in Provence-Alpes-Côte d’Azur, France',
+                      ar: 1280 / 853,
+                    },
+                    {
+                      src: 'https://i.ibb.co/42tv8k2/great-way-968932-1280.jpg',
+                      alt: 'Gran Vía nr 1, Madryt',
+                      ar: 1280 / 853,
+                    },
+                    {
+                      src: 'https://i.ibb.co/WySmVXZ/308961156-649702816779384-5607195473166324459-n.jpg',
+                      alt: 'Camp Nou, Barcelona',
+                      ar: 537 / 403,
+                    },
+                    { src: 'https://i.ibb.co/C5XpQkh/barcelona-2371946-1280.jpg', alt: 'Barcelona', ar: 16 / 9 },
+                    { src: 'https://i.ibb.co/tsCt9tX/el-born-5301517-1280.jpg', alt: 'Barcelona', ar: 427 / 640 },
+                    { src: 'https://i.ibb.co/CKJcN53/santorini-4996901-1280.jpg', alt: 'Santorini', ar: 1280 / 853 },
+                    {
+                      src: 'https://i.ibb.co/BLfrW0j/gordes-village-luberon-69-1024x682.jpg',
+                      alt: 'Gordes, France',
+                      ar: 512 / 341,
+                    },
+                    {
+                      src: 'https://i.ibb.co/S5PV6qy/2df84435-ce2b-42d1-a9cc-e62e9e914441.webp',
+                      alt: 'Lisboa',
+                      ar: 400 / 267,
+                    },
+                    {
+                      src: 'https://i.ibb.co/t8kdHrB/71c30ea8-2b4e-48ba-980b-b222c5dcaa38.webp',
+                      alt: 'Zlatni Rat, Croatia',
+                      ar: 800 / 533,
+                    },
+                    {
+                      src: 'https://i.ibb.co/H4Mch3B/barcelona-1545605-640.jpg',
+                      alt: 'La Pedrera / Casa Milà, Barcelona',
+                      ar: 121 / 160,
+                    },
+                    {
+                      src: 'https://i.ibb.co/sJxhNVC/quadrant-magic-subirachs-portada-1024x488.jpg',
+                      alt: 'Magic square, Barcelona',
+                      ar: 128 / 61,
+                    },
+                    { src: 'https://i.ibb.co/9tT9wfq/wroclaw-1511660-640.jpg', alt: 'Wrocław', ar: 128 / 85 },
+                    {
+                      src: 'https://i.ibb.co/Gs5K4pJ/318467739-179571174674590-2719368099439007366-n.jpg',
+                      alt: 'Jakuszyce',
+                      ar: 4 / 3,
+                    },
+                  ].map(({ src, alt, ar }, i) => (
+                    <div key={i}>
+                      <Picture src={src} alt={alt} key={i} ar={ar} border figcaption={alt} figcaptionColor="grey" />
+                    </div>
+                  ))}
+                </Masonry>
+              </Suspense>
+            )}
+          </div>
         </Grid>
       </Grid>
     </>
