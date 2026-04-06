@@ -1,5 +1,6 @@
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from '../layout/Layout';
+import { Analytics } from '../pages/analytics/Analytics';
 import { Blog } from '../pages/blog/Blog';
 import { BlogPostByHref } from '../pages/blog/BlogPostByHref';
 import { Contact } from '../pages/contact/Contact';
@@ -54,6 +55,10 @@ const router = createHashRouter([
       {
         path: '/blog',
         element: <Blog />,
+      },
+      {
+        path: '/analytics',
+        element: <Analytics />,
       },
     ],
   },
