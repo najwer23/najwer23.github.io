@@ -3,35 +3,40 @@ import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
 import { useImmediateThrottledQuery } from '@najwer23/hooks/useImmediateThrottledQuery';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
+import React, { useMemo } from 'react';
 import { queryAnalyticsHits } from './Analytics.query';
+import { buildChartData, sortByDate, sumByDate } from './Analytics.utils';
 
 export const Analytics: React.FC = () => {
-  useDocumentTitle('Blog | Mariusz Najwer');
+  useDocumentTitle('Analytics | Mariusz Najwer');
 
-  const { result: resultQueryAnalytics, isLoading: isLoadingResultQueryAnalytics } = useImmediateThrottledQuery(
+  const { result, isLoading } = useImmediateThrottledQuery(
     {
-      queryKey: ['queryAnalytics', 'queryAnalytics'],
+      queryKey: ['queryAnalytics'],
       queryFn: () => queryAnalyticsHits(),
-      staleTime: 30 * 1000 * 60,
-      gcTime: 30 * 1000 * 60,
+      staleTime: 30 * 60 * 1000,
+      gcTime: 30 * 60 * 1000,
       retry: 0,
       enabled: true,
     },
     300,
   );
 
-  const analytics = resultQueryAnalytics?.data.items;
+  const analytics = result?.data.items ?? [];
 
-  const totalsByDate = analytics?.reduce<Record<string, number>>((acc, item) => {
-    for (const obj of item.data ?? []) {
-      for (const [date, value] of Object.entries(obj)) {
-        acc[date] = (acc[date] ?? 0) + value;
-      }
-    }
-    return acc;
-  }, {});
+  const pageViews = useMemo(() => {
+    return sortByDate(sumByDate(analytics));
+  }, [analytics]);
 
-  const pageviews = Object.entries(totalsByDate ?? []).sort(([a], [b]) => a.localeCompare(b));
+  const resumeViews = useMemo(() => {
+    const resumeItems = analytics.filter((item) => item.path === '/resume');
+    return sortByDate(sumByDate(resumeItems));
+  }, [analytics]);
+
+  const blogViews = useMemo(() => {
+    const resumeItems = analytics.filter((item) => item.path.startsWith('/blog'));
+    return sortByDate(sumByDate(resumeItems));
+  }, [analytics]);
 
   return (
     <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
@@ -41,27 +46,45 @@ export const Analytics: React.FC = () => {
 
       <Grid
         layout="container"
-        widthMax={'1400px'}
-        padding={'0 20px'}
-        margin={'30px auto 50px auto'}
+        widthMax="1400px"
+        padding="0 20px"
+        margin="30px auto 50px auto"
         minHeight="700px"
-        loading={isLoadingResultQueryAnalytics}
+        loading={isLoading}
       >
-        {!isLoadingResultQueryAnalytics && (
+        {!isLoading && (
           <div style={{ height: '700px' }}>
-            <ChartBar
-              title={'Daily Visitors Over Time'}
-              ySymbol={''}
-              data={{
-                labels: pageviews.map((x) => x[0]),
-                datasets: [
-                  {
-                    label: 'Visitors',
-                    data: pageviews.map((x) => x[1]),
-                  },
-                ],
-              }}
-            />
+            <ChartBar title="Daily Visitors Over Time" ySymbol="" data={buildChartData(pageViews)} />
+          </div>
+        )}
+      </Grid>
+
+      <Grid
+        layout="container"
+        widthMax="1400px"
+        padding="0 20px"
+        margin="30px auto 50px auto"
+        minHeight="700px"
+        loading={isLoading}
+      >
+        {!isLoading && (
+          <div style={{ height: '700px' }}>
+            <ChartBar title="Daily Visitors for /resume" ySymbol="" data={buildChartData(resumeViews)} />
+          </div>
+        )}
+      </Grid>
+
+      <Grid
+        layout="container"
+        widthMax="1400px"
+        padding="0 20px"
+        margin="30px auto 50px auto"
+        minHeight="700px"
+        loading={isLoading}
+      >
+        {!isLoading && (
+          <div style={{ height: '700px' }}>
+            <ChartBar title="Daily Visitors for /blog" ySymbol="" data={buildChartData(blogViews)} />
           </div>
         )}
       </Grid>
