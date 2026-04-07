@@ -12,11 +12,11 @@ const highlighter = createHighlighterCore({
   engine: createJavaScriptRegexEngine(),
 });
 
-interface CodeParserProps extends React.HTMLAttributes<HTMLDivElement> {
+interface SyntaxHighlightProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 
-export const CodeParser: React.FC<CodeParserProps> = ({ children, className, ...props }) => {
+export const SyntaxHighlight: React.FC<SyntaxHighlightProps> = ({ children, className, ...props }) => {
   const code = String(children ?? '');
   const [html, setHtml] = useState<string>('');
 

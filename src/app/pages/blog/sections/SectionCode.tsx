@@ -1,4 +1,4 @@
-import { CodeParser } from '@app/codeparser/CodeParser';
+import { SyntaxHighlight } from '@app/syntaxhighlight/SyntaxHighlight';
 import { Grid } from 'najwer23morsels/lib/grid';
 import type { BlogPostSection } from '../Blog.types';
 
@@ -7,7 +7,7 @@ export const SectionCode: React.FC<{
 }> = ({ section }) => {
   return (
     <Grid layout={'container'} margin={'30px 0 0 0'} minHeight="0">
-      <CodeParser>{section.data.code}</CodeParser>
+      <SyntaxHighlight>{section.data.code}</SyntaxHighlight>
     </Grid>
   );
 };
