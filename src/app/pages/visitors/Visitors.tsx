@@ -44,14 +44,7 @@ export const Visitors: React.FC = () => {
         Visitors
       </TextBox>
 
-      <Grid
-        layout="container"
-        widthMax="1400px"
-        padding="0 20px"
-        margin="30px auto 50px auto"
-        minHeight="700px"
-        loading={isLoading}
-      >
+      <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
         {!isLoading && (
           <div style={{ height: '700px' }}>
             <ChartBar title="Daily Visitors Over Time" ySymbol="" data={buildChartData(pageViews)} />
@@ -59,14 +52,7 @@ export const Visitors: React.FC = () => {
         )}
       </Grid>
 
-      <Grid
-        layout="container"
-        widthMax="1400px"
-        padding="0 20px"
-        margin="30px auto 50px auto"
-        minHeight="700px"
-        loading={isLoading}
-      >
+      <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
         {!isLoading && (
           <div style={{ height: '700px' }}>
             <ChartBar title="Daily Visitors for /resume" ySymbol="" data={buildChartData(resumeViews)} />
@@ -74,14 +60,7 @@ export const Visitors: React.FC = () => {
         )}
       </Grid>
 
-      <Grid
-        layout="container"
-        widthMax="1400px"
-        padding="0 20px"
-        margin="30px auto 50px auto"
-        minHeight="700px"
-        loading={isLoading}
-      >
+      <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
         {!isLoading && (
           <div style={{ height: '700px' }}>
             <ChartBar title="Daily Visitors for /blog" ySymbol="" data={buildChartData(blogViews)} />
