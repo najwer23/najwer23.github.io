@@ -3,7 +3,7 @@
   <channel>
     <title>najwer23 Blog</title>
     <link>https://najwer23.github.io/#/blog</link>
-    <description>Your blog RSS feed</description>
+    <description>Blog RSS feed</description>
     <atom:link href="https://najwer23.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>#3 Advanced Sorting in JavaScript: Beyond array.sort()</title>
