@@ -4,7 +4,7 @@ import { CopyButton } from 'najwer23morsels/lib/CopyButton';
 import { useLayoutEffect, useState } from 'react';
 import { createHighlighterCore } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
-import styles from './CodeParser.module.css';
+import styles from './SyntaxHighlight.module.css';
 
 const highlighter = createHighlighterCore({
   themes: [ayuLight],
