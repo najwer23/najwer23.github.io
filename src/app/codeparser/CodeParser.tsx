@@ -1,11 +1,15 @@
+import javascript from '@shikijs/langs/javascript';
+import ayuLight from '@shikijs/themes/ayu-light';
 import { CopyButton } from 'najwer23morsels/lib/CopyButton';
 import { useLayoutEffect, useState } from 'react';
-import { createHighlighter } from 'shiki';
+import { createHighlighterCore } from 'shiki/core';
+import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 import styles from './CodeParser.module.css';
 
-const highlighter = createHighlighter({
-  themes: ['ayu-light'],
-  langs: ['javascript'],
+const highlighter = createHighlighterCore({
+  themes: [ayuLight],
+  langs: [javascript],
+  engine: createJavaScriptRegexEngine(),
 });
 
 interface CodeParserProps extends React.HTMLAttributes<HTMLDivElement> {
