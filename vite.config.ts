@@ -14,7 +14,7 @@ export default defineConfig({
       channel: {
         title: 'najwer23 Blog',
         link: 'https://najwer23.github.io/#/blog',
-        description: 'Your blog RSS feed',
+        description: 'Blog RSS feed',
       },
       items: rssItems,
     }),

@@ -1,4 +1,4 @@
-import { queryAnalyticsHit } from '@najwer23/app/pages/analytics/Analytics.query';
+import { queryAnalyticsHit } from '@najwer23/app/analytics/Analytics.query';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useImmediateThrottledQuery } from './useImmediateThrottledQuery';

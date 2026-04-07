@@ -1,6 +1,9 @@
-import type { AnalyticsItem } from './Analytics.types';
-
-export const sumByDate = (items: AnalyticsItem[] = []) =>
+export const sumByDate = (
+  items: {
+    path: string;
+    data: Record<string, number>[];
+  }[] = [],
+) =>
   items.reduce<Record<string, number>>((acc, item) => {
     for (const entry of item.data ?? []) {
       for (const [date, value] of Object.entries(entry)) {

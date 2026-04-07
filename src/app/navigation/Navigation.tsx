@@ -77,7 +77,7 @@ export const Navigation: React.FC = () => {
                   { href: '/#/stock-quotes', label: 'Stock Quotes' },
                   // { href: '/#/tunes', label: 'Tunes' },
                   { href: '/#/blog', label: 'Blog' },
-                  { href: '/#/analytics', label: 'Analytics' },
+                  { href: '/#/visitors', label: 'Visitors' },
                   {
                     href: 'https://najwer23.github.io/resume/',
                     label: 'Résumé',
@@ -127,7 +127,7 @@ export const Navigation: React.FC = () => {
             { href: '/#/stock-quotes', label: 'Stock Quotes' },
             // { href: '/#/tunes', label: 'Tunes' },
             { href: '/#/blog', label: 'Blog' },
-            { href: '/#/analytics', label: 'Analytics' },
+            { href: '/#/visitors', label: 'Visitors' },
           ].map(({ href, label }) => (
             <div key={label}>
               <TextBox

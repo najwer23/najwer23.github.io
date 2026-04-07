@@ -4,16 +4,16 @@ import { useImmediateThrottledQuery } from '@najwer23/hooks/useImmediateThrottle
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import React, { useMemo } from 'react';
-import { queryAnalyticsHits } from './Analytics.query';
-import { buildChartData, sortByDate, sumByDate } from './Analytics.utils';
+import { queryVisitorsHits } from './Visitors.query';
+import { buildChartData, sortByDate, sumByDate } from './Visitors.utils';
 
-export const Analytics: React.FC = () => {
-  useDocumentTitle('Analytics | Mariusz Najwer');
+export const Visitors: React.FC = () => {
+  useDocumentTitle('Visitors | Mariusz Najwer');
 
   const { result, isLoading } = useImmediateThrottledQuery(
     {
-      queryKey: ['queryAnalytics'],
-      queryFn: () => queryAnalyticsHits(),
+      queryKey: ['queryVisitorsHits'],
+      queryFn: () => queryVisitorsHits(),
       staleTime: 30 * 60 * 1000,
       gcTime: 30 * 60 * 1000,
       retry: 0,
@@ -41,7 +41,7 @@ export const Analytics: React.FC = () => {
   return (
     <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
       <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin="0">
-        Analytics
+        Visitors
       </TextBox>
 
       <Grid
