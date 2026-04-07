@@ -1,5 +1,5 @@
-import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
-import { useImmediateThrottledQueries } from '@najwer23/hooks/useImmediateThrottledQueries';
+import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
+import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQueries';
 import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { IconArrowLeft } from 'najwer23morsels/lib/icons';

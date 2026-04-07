@@ -1,5 +1,5 @@
-import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
-import { useImmediateThrottledQuery } from '@najwer23/hooks/useImmediateThrottledQuery';
+import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
+import { useImmediateThrottledQuery } from '@app/hooks/useImmediateThrottledQuery';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { useEffect, useState } from 'react';

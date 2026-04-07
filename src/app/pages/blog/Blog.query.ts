@@ -1,4 +1,4 @@
-import { configFetch, executeFetch } from '@najwer23/config/configFetch';
+import { configFetch, executeFetch } from '@app/config/configFetch';
 
 export const queryBlog = async (id: number) => {
   const url = new URL(`${import.meta.env.BASE_URL}blog/${id}.json`, window.location.origin);

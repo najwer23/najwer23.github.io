@@ -24,10 +24,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    "baseUrl": ".",
     "rootDir": ".",
     "paths": {
-      "@najwer23/*": ["src/*"]
+      "@app/*": ["./src/app/*"]
     }
   },
   "include": ["src"]

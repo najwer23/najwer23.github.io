@@ -1,4 +1,4 @@
-import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
+import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { Picture } from 'najwer23morsels/lib/picture';
 import { Slider } from 'najwer23morsels/lib/slider';

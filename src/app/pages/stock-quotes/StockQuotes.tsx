@@ -1,6 +1,6 @@
-import { ChartLine } from '@najwer23/charts/ChartLine';
-import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
-import { useImmediateThrottledQueries } from '@najwer23/hooks/useImmediateThrottledQueries';
+import { ChartLine } from '@app/charts/ChartLine';
+import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
+import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQueries';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { chartDataCurrency } from './chartDataCurrency';

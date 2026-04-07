@@ -7,9 +7,9 @@ import { Input } from 'najwer23morsels/lib/input';
 import { TextBox } from 'najwer23morsels/lib/textbox';
 import { queryContact } from './Contact.query';
 import 'leaflet/dist/leaflet.css';
-import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
-import { CenterMapButton } from '@najwer23/leaflet/CenterMapButton';
-import { MarkerWithPopup } from '@najwer23/leaflet/MarkerWithPopup';
+import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
+import { CenterMapButton } from '@app/leaflet/CenterMapButton';
+import { MarkerWithPopup } from '@app/leaflet/MarkerWithPopup';
 import { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 

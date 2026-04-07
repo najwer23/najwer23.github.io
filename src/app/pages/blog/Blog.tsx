@@ -1,6 +1,6 @@
-import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
-import { useImmediateThrottledQueries } from '@najwer23/hooks/useImmediateThrottledQueries';
-import { useImmediateThrottledQuery } from '@najwer23/hooks/useImmediateThrottledQuery';
+import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
+import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQueries';
+import { useImmediateThrottledQuery } from '@app/hooks/useImmediateThrottledQuery';
 import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';

@@ -1,7 +1,7 @@
-import { ChartLine } from '@najwer23/charts/ChartLine';
-import { ChartMixed } from '@najwer23/charts/ChartMixed';
-import { useDocumentTitle } from '@najwer23/hooks/useDocumentTitle';
-import { useImmediateThrottledQuery } from '@najwer23/hooks/useImmediateThrottledQuery';
+import { ChartLine } from '@app/charts/ChartLine';
+import { ChartMixed } from '@app/charts/ChartMixed';
+import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
+import { useImmediateThrottledQuery } from '@app/hooks/useImmediateThrottledQuery';
 import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { useWindowSize } from 'najwer23morsels/lib/hooks';

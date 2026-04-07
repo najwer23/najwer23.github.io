@@ -1,4 +1,4 @@
-import { executeFetch } from '@najwer23/config/configFetch';
+import { executeFetch } from '@app/config/configFetch';
 
 type QueryStockQuotes = {
   code: string;

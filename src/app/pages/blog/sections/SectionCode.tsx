@@ -1,4 +1,4 @@
-import { CodeParser } from '@najwer23/codeparser/CodeParser';
+import { CodeParser } from '@app/codeparser/CodeParser';
 import { Grid } from 'najwer23morsels/lib/grid';
 import type { BlogPostSection } from '../Blog.types';
 
