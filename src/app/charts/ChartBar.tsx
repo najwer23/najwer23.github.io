@@ -35,6 +35,7 @@ export const ChartBar = ({ title, ySymbol, data }: Props) => {
   const options: ChartOptions<'bar'> = {
     maintainAspectRatio: false,
     responsive: true,
+    animation: false,
     plugins: {
       legend: {
         position: 'bottom',

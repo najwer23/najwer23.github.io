@@ -1,3 +1,19 @@
+export const sumByYear = (
+  items: {
+    path: string;
+    data: Record<string, number>[];
+  }[] = [],
+) =>
+  items.reduce<Record<string, number>>((acc, item) => {
+    for (const entry of item.data ?? []) {
+      for (const [date, value] of Object.entries(entry)) {
+        const year = date.slice(0, 4);
+        acc[year] = (acc[year] ?? 0) + value;
+      }
+    }
+    return acc;
+  }, {});
+
 export const sumByDate = (
   items: {
     path: string;
