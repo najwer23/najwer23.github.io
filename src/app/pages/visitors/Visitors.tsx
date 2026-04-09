@@ -96,7 +96,12 @@ export const Visitors: React.FC = () => {
           />
         </Grid>
 
-        <Grid layout="container" widthMax="1400px" minHeight="140px" loading={isLoading}>
+        <Grid
+          layout="container"
+          widthMax="1400px"
+          minHeight="clamp(134px, calc(380px - 20vw), 380px)"
+          loading={isLoading}
+        >
           <Grid
             layout="columns"
             gap={{ col: '100px', row: '20px' }}
