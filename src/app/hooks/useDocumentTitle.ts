@@ -12,10 +12,10 @@ export const useDocumentTitle = (title: string) => {
       queryKey: ['useDocumentTitle', 'useDocumentTitle' + location.pathname],
       queryFn: () =>
         queryAnalyticsHit({ appName: import.meta.env.VITE_ANALYTICS_APP_NAME, pageName: location.pathname }),
-      staleTime: Infinity,
-      gcTime: Infinity,
+      staleTime: 0,
+      gcTime: 0,
       retry: 0,
-      enabled: !currentUrl.includes('localhost'),
+      enabled: true,
     },
     0,
   );

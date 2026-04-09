@@ -17,8 +17,8 @@ export const Visitors: React.FC = () => {
     {
       queryKey: ['queryVisitorsHits', year],
       queryFn: () => queryVisitorsHits(year),
-      staleTime: 30 * 60 * 1000,
-      gcTime: 30 * 60 * 1000,
+      staleTime: 0,
+      gcTime: 0,
       retry: 0,
       enabled: true,
     },
