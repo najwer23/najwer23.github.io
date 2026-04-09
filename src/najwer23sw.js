@@ -12,6 +12,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   const currentCaches = [DEFAULT_CACHE, RESUME_CACHE];
+
   event.waitUntil(
     caches
       .keys()
@@ -21,6 +22,7 @@ self.addEventListener('activate', (event) => {
             if (!currentCaches.includes(cacheName)) {
               return caches.delete(cacheName);
             }
+            return undefined;
           }),
         ),
       )
@@ -29,18 +31,26 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
+  const { request } = event;
+  const url = new URL(request.url);
+
+  if (request.method !== 'GET') {
+    event.respondWith(fetch(request));
+    return;
+  }
 
   if (url.pathname.startsWith('/resume')) {
-    // Keep your existing cache-first strategy for /resume
     event.respondWith(
       caches.open(RESUME_CACHE).then((cache) =>
-        cache.match(event.request).then((cachedResponse) => {
+        cache.match(request).then((cachedResponse) => {
           if (cachedResponse) {
             return cachedResponse;
           }
-          return fetch(event.request).then((networkResponse) => {
-            cache.put(event.request, networkResponse.clone());
+
+          return fetch(request).then((networkResponse) => {
+            if (networkResponse && networkResponse.ok) {
+              cache.put(request, networkResponse.clone());
+            }
             return networkResponse;
           });
         }),
@@ -49,19 +59,16 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Network-first strategy for DEFAULT_CACHE
   event.respondWith(
     caches.open(DEFAULT_CACHE).then((cache) =>
-      fetch(event.request)
+      fetch(request)
         .then((networkResponse) => {
-          // Update cache with fresh response
-          cache.put(event.request, networkResponse.clone());
+          if (networkResponse && networkResponse.ok) {
+            cache.put(request, networkResponse.clone());
+          }
           return networkResponse;
         })
-        .catch(() =>
-          // If network fails, fallback to cache
-          cache.match(event.request),
-        ),
+        .catch(() => cache.match(request)),
     ),
   );
 });
