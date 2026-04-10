@@ -22,8 +22,6 @@ export const BlogArchive: React.FC = () => {
     }
   };
 
-  console.log(BlogRSS);
-
   return (
     <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
       <Button
