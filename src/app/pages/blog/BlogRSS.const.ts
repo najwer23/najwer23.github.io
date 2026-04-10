@@ -1,4 +1,4 @@
-export const rssItems = [
+export const BlogRSS = [
   {
     title: '#3 Advanced Sorting in JavaScript: Beyond array.sort()',
     link: 'https://najwer23.github.io/#/blog/post/3',

@@ -1,3 +1,4 @@
+import { BlogArchive } from '@app/pages/blog/BlogArchive';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { Layout } from '../layout/Layout';
 import { Blog } from '../pages/blog/Blog';
@@ -51,6 +52,10 @@ const router = createHashRouter([
       {
         path: '/blog/post/:id',
         element: <BlogPostByHref />,
+      },
+      {
+        path: '/blog/archive',
+        element: <BlogArchive />,
       },
       {
         path: '/blog',

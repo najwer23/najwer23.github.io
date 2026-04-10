@@ -86,6 +86,19 @@ export const Blog: React.FC = () => {
           RSS
         </TextBox>
 
+        <TextBox
+          tag="a"
+          href="/#/blog/archive"
+          desktopSize={12}
+          mobileSize={12}
+          fontWeight={600}
+          color="var(--linkColor)"
+          colorHover="var(--linkColor)"
+          margin={'0 0 0 15px'}
+        >
+          Archive
+        </TextBox>
+
         {isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest ? (
           <>
             {Array.from({ length: maxPostPerPage }, (_, i) => (

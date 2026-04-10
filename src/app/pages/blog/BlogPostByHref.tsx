@@ -18,6 +18,8 @@ export const BlogPostByHref: React.FC = () => {
   const from = location.state?.from as string | undefined;
   const postsArr = [Number(id)];
 
+  console.log(from);
+
   const handleBack = () => {
     if (from) {
       navigate(-1);

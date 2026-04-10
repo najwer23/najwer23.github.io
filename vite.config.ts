@@ -3,7 +3,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { rssPlugin } from 'vite-plugin-rss';
-import { rssItems } from './rss';
+import { BlogRSS } from './src/app/pages/blog/BlogRSS.const';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,7 +16,7 @@ export default defineConfig({
         link: 'https://najwer23.github.io/#/blog',
         description: 'Blog RSS feed',
       },
-      items: rssItems,
+      items: BlogRSS,
     }),
     VitePWA({
       registerType: 'autoUpdate',
