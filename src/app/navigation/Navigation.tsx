@@ -12,7 +12,7 @@ export const Navigation: React.FC = () => {
   const isActive = (href: string) => {
     if (location.pathname === '/') {
       return href === '/#/home';
-    } else if (location.pathname.includes('/blog/post')) {
+    } else if (location.pathname.includes('/blog/')) {
       return href === '/#/blog';
     } else {
       return href.includes(location.pathname);
