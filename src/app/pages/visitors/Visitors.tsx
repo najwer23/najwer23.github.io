@@ -133,7 +133,7 @@ export const Visitors: React.FC = () => {
                   fontWeight={400}
                   color={diff >= 0 ? 'green' : 'red'}
                 >
-                  {percent.toFixed(2)} %
+                  {percent.toFixed(2)}&nbsp;%
                 </TextBox>
               </TextBox>
             </div>
