@@ -4,7 +4,7 @@ import { Picture } from 'najwer23morsels/lib/picture';
 import { Slider } from 'najwer23morsels/lib/slider';
 import { SliderScroll } from 'najwer23morsels/lib/sliderscroll';
 import { TextBox } from 'najwer23morsels/lib/textbox';
-import React, { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import React, { lazy, Suspense } from 'react';
 import styles from './Home.module.css';
 
 const Masonry = lazy(() => import('najwer23morsels/lib/masonry').then((m) => ({ default: m.Masonry })));
