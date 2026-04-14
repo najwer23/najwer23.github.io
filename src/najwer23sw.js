@@ -4,6 +4,7 @@ import { precacheAndRoute } from 'workbox-precaching';
 precacheAndRoute(self.__WB_MANIFEST);
 
 const RESUME_CACHE = 'resume-cache-v1';
+const BLOG_POST_CREATOR_CACHE = 'blog-post-creator-cache-v1';
 const DEFAULT_CACHE = 'default-cache-v1';
 
 self.addEventListener('install', (event) => {
@@ -42,6 +43,26 @@ self.addEventListener('fetch', (event) => {
   if (url.pathname.startsWith('/resume')) {
     event.respondWith(
       caches.open(RESUME_CACHE).then((cache) =>
+        cache.match(request).then((cachedResponse) => {
+          if (cachedResponse) {
+            return cachedResponse;
+          }
+
+          return fetch(request).then((networkResponse) => {
+            if (networkResponse && networkResponse.ok) {
+              cache.put(request, networkResponse.clone());
+            }
+            return networkResponse;
+          });
+        }),
+      ),
+    );
+    return;
+  }
+
+  if (url.pathname.startsWith('/blog-post-creator')) {
+    event.respondWith(
+      caches.open(BLOG_POST_CREATOR_CACHE).then((cache) =>
         cache.match(request).then((cachedResponse) => {
           if (cachedResponse) {
             return cachedResponse;
