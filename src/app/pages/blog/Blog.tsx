@@ -75,6 +75,18 @@ export const Blog: React.FC = () => {
 
         <TextBox
           tag="a"
+          href="/#/blog/archive"
+          desktopSize={12}
+          mobileSize={12}
+          fontWeight={600}
+          color="var(--linkColor)"
+          colorHover="var(--linkColor)"
+        >
+          Archive
+        </TextBox>
+
+        <TextBox
+          tag="a"
           target="_blank"
           href="https://najwer23.github.io/feed.xml"
           desktopSize={12}
@@ -82,13 +94,15 @@ export const Blog: React.FC = () => {
           fontWeight={600}
           color="var(--linkColor)"
           colorHover="var(--linkColor)"
+          margin={'0 0 0 15px'}
         >
           RSS
         </TextBox>
 
         <TextBox
           tag="a"
-          href="/#/blog/archive"
+          target="_blank"
+          href="https://najwer23.github.io/blog-post-creator"
           desktopSize={12}
           mobileSize={12}
           fontWeight={600}
@@ -96,7 +110,7 @@ export const Blog: React.FC = () => {
           colorHover="var(--linkColor)"
           margin={'0 0 0 15px'}
         >
-          Archive
+          Post Creator
         </TextBox>
 
         {isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest ? (
