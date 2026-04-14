@@ -1,5 +1,5 @@
 @layer n23SyntaxHighlight {
-  .n23CodeParser {
+  .n23SyntaxHighlight {
     code {
       font-size: 16px;
     }

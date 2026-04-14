@@ -39,7 +39,7 @@ export const SyntaxHighlight: React.FC<SyntaxHighlightProps> = ({ children, clas
   }, [code]);
 
   return (
-    <div className={[styles.n23CodeParser, 'n23CodeParser', className].filter(Boolean).join(' ')} {...props}>
+    <div className={[styles.n23SyntaxHighlight, 'n23SyntaxHighlight', className].filter(Boolean).join(' ')} {...props}>
       <div className={styles.codeWrap}>
         <div className={styles.copyButtonSticky}>
           <CopyButton textToCopy={code} />

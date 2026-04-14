@@ -12,7 +12,6 @@ export const SectionTitle: React.FC<{
   return (
     <>
       <TextBox
-        tag="h3"
         href={`/#/blog/post/${id}`}
         mobileSize={20}
         desktopSize={28}
