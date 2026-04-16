@@ -103,12 +103,10 @@ export const Weather: React.FC = () => {
             <SliderScroll gap="10px">
               <div
                 style={{
-                  width: '258px',
                   background: 'darkgrey',
-                  padding: '10px',
-                  border: '1px solid black',
                   margin: width <= 767.98 ? '0 0 0 20px' : 0,
                 }}
+                className={styles.weatherTiles}
               >
                 <WeatherImg imgArr={weatherCurrent!.weather} />
                 <WeatherForecastData title={'dayOfWeek'} value={weatherCurrent!.dt} />
@@ -135,13 +133,11 @@ export const Weather: React.FC = () => {
                   .map((x: any, i: number, arr: any) => (
                     <div
                       style={{
-                        width: '258px',
                         background: '#cfcfcf',
-                        padding: '10px',
-                        border: '1px solid black',
                         margin: i === arr.length - 1 && width <= 767.98 ? '0 20px 0 0' : 0,
                       }}
                       key={x.dt}
+                      className={styles.weatherTiles}
                     >
                       <WeatherImg imgArr={x.weather} />
                       <WeatherForecastData title={'dayOfWeek'} value={x.dt} />

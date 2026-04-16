@@ -23,4 +23,12 @@
     width: 100px;
     height: 100px;
   }
+
+  .weatherTiles {
+    width: 258px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 12px;
+    corner-shape: squircle;
+  }
 }
