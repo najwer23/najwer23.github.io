@@ -38,8 +38,8 @@ export const Home: React.FC = () => {
             </div>
           </div>
           <div
-            className={styles.meDesc}
-            style={{ background: 'white', padding: '40px', boxSizing: 'border-box', borderRadius: '10px' }}
+            className={[styles.meDesc, styles.cornerShape].join(' ')}
+            style={{ background: 'white', padding: '40px', boxSizing: 'border-box' }}
           >
             <Grid layout="container" padding={'0 0 40px 0'} margin={0}>
               <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
@@ -106,7 +106,7 @@ export const Home: React.FC = () => {
               'Expo',
               'React Native',
             ].map((v) => (
-              <div key={v} className={styles.homeSliderTech}>
+              <div key={v} className={[styles.homeSliderTech, styles.cornerShape].join(' ')}>
                 <TextBox tag="p" desktopSize={48} mobileSize={35} fontWeight={400} color="black">
                   {v}
                 </TextBox>
@@ -190,7 +190,7 @@ export const Home: React.FC = () => {
               tablet: { items: 1, slidesToScroll: 1 },
             }}
           >
-            <div className={styles.homeSliderProjectsPicture}>
+            <div className={[styles.homeSliderProjectsPicture, styles.cornerShape].join(' ')}>
               <Picture
                 srcMobile="https://i.pinimg.com/1200x/77/ff/b4/77ffb4f3c2b432a22e51e25fe7dc255c.jpg"
                 arMobile={485 / 681}
@@ -202,7 +202,7 @@ export const Home: React.FC = () => {
                 loading="eager"
               />
             </div>
-            <div className={styles.homeSliderProjectsPicture}>
+            <div className={[styles.homeSliderProjectsPicture, styles.cornerShape].join(' ')}>
               <Picture
                 srcMobile="https://i.pinimg.com/1200x/8b/96/df/8b96dfc8a5c03b79263ab93b857e2325.jpg"
                 arMobile={481 / 680}
@@ -214,7 +214,7 @@ export const Home: React.FC = () => {
                 loading="eager"
               />
             </div>
-            <div className={styles.homeSliderProjectsPicture}>
+            <div className={[styles.homeSliderProjectsPicture, styles.cornerShape].join(' ')}>
               <Picture
                 srcMobile="https://i.pinimg.com/1200x/e5/d1/06/e5d106151ca82149c3b7c56cd99a1646.jpg"
                 arMobile={197 / 338}
@@ -226,7 +226,7 @@ export const Home: React.FC = () => {
                 loading="eager"
               />
             </div>
-            <div className={styles.homeSliderProjectsPicture}>
+            <div className={[styles.homeSliderProjectsPicture, styles.cornerShape].join(' ')}>
               <Picture
                 srcMobile="https://i.pinimg.com/1200x/21/14/c6/2114c62617df7f42b7f0ad6333369423.jpg"
                 arMobile={391 / 677}
@@ -260,9 +260,9 @@ export const Home: React.FC = () => {
                   background: 'white',
                   padding: '40px',
                   boxSizing: 'border-box',
-                  borderRadius: '10px',
                   boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                 }}
+                className={styles.cornerShape}
               >
                 <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
                   APPLIED SYSTEMS INC.
@@ -286,11 +286,11 @@ export const Home: React.FC = () => {
                   backgroundColor: '#FFF2D5',
                   padding: '40px',
                   boxSizing: 'border-box',
-                  borderRadius: '10px',
                   display: 'flex',
                   flexDirection: 'column',
                   boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                 }}
+                className={styles.cornerShape}
               >
                 <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
                   WARNER BROS. DISCOVERY, TVN24.pl
@@ -332,6 +332,7 @@ export const Home: React.FC = () => {
                   borderRadius: '10px',
                   boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                 }}
+                className={styles.cornerShape}
               >
                 <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
                   FLHF S.A
@@ -354,6 +355,7 @@ export const Home: React.FC = () => {
                   borderRadius: '10px',
                   boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                 }}
+                className={styles.cornerShape}
               >
                 <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
                   EUROPA UBEZPIECZENIA

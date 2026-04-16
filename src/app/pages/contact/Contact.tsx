@@ -12,6 +12,7 @@ import { CenterMapButton } from '@app/leaflet/CenterMapButton';
 import { MarkerWithPopup } from '@app/leaflet/MarkerWithPopup';
 import { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
+import styles from './Contact.module.css';
 
 export const Contact: React.FC = () => {
   const [mapIsFlying, setMapIsFlying] = useState(false);
@@ -128,14 +129,17 @@ export const Contact: React.FC = () => {
       </Grid>
 
       <Grid layout="container" widthMax={'100%'} margin={'60px 0 60px 0'}>
-        <div style={{ padding: '5px', border: '2px solid black' }}>
+        <div className={styles.mapContainerWrapper}>
           <MapContainer
             center={[51.094598, 17.020876]}
             zoom={13}
             style={{ height: '550px', width: '100%' }}
             closePopupOnClick={false}
           >
-            <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
+            <TileLayer
+              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+              className={styles.mapContainerWrapper}
+            />
             <MarkerWithPopup mapIsFlying={mapIsFlying} setMapIsFlying={setMapIsFlying} />
             <CenterMapButton center={[51.094598, 17.020876]} zoom={13} onCenter={() => setMapIsFlying(true)} />
           </MapContainer>

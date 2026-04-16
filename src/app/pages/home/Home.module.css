@@ -1,7 +1,14 @@
 @layer n23Home {
+  .cornerShape {
+    border-radius: 12px;
+    corner-shape: squircle;
+  }
+
   .meDesc {
     width: calc(100% - 460px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    corner-shape: squircle;
 
     @media (max-width: 949.98px) {
       width: 100%;
