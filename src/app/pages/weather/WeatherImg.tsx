@@ -1,4 +1,5 @@
 import { Picture } from 'najwer23morsels/lib/picture';
+import styles from './Weather.module.css';
 import { isEmpty } from './Weather.utils';
 
 export const WeatherImg: React.FC<{
@@ -8,7 +9,7 @@ export const WeatherImg: React.FC<{
     return <div style={{ width: '100px', height: '100px', marginBottom: '20px' }}> </div>;
   } else {
     return (
-      <div style={{ background: 'darkgrey', marginBottom: '20px', width: '100px', height: '100px' }}>
+      <div className={styles.pictureWrapper}>
         <Picture
           src={`https://openweathermap.org/img/wn/${imgArr[0].icon}@2x.png`}
           alt={`${imgArr[0].icon}`}
