@@ -135,7 +135,7 @@ export const Navigation: React.FC = () => {
                 href={href}
                 desktopSize={18}
                 mobileSize={18}
-                fontWeight={400}
+                fontWeight={500}
                 color={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
                 colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
               >
