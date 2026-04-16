@@ -4,13 +4,44 @@ import { Picture } from 'najwer23morsels/lib/picture';
 import { Slider } from 'najwer23morsels/lib/slider';
 import { SliderScroll } from 'najwer23morsels/lib/sliderscroll';
 import { TextBox } from 'najwer23morsels/lib/textbox';
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useMemo } from 'react';
 import styles from './Home.module.css';
 
 const Masonry = lazy(() => import('najwer23morsels/lib/masonry').then((m) => ({ default: m.Masonry })));
 
 export const Home: React.FC = () => {
   useDocumentTitle('Home | Mariusz Najwer');
+
+  const techSliderContent = useMemo(
+    () => (
+      <Grid layout="container" widthMax={'1360px'}>
+        <div style={{ height: '260px', width: '100%' }}>
+          <SliderScroll gap="10px" isCircular autoPlay autoPlaySpeed={0.5}>
+            {[
+              'Angular',
+              'React',
+              'Typescript',
+              'JavaScript',
+              'Node.js',
+              'Fastify',
+              'CSS',
+              'AWS',
+              'Next.js',
+              'Expo',
+              'React Native',
+            ].map((v) => (
+              <div key={v} className={[styles.homeSliderTech, styles.cornerShape].join(' ')}>
+                <TextBox tag="p" desktopSize={48} mobileSize={35} fontWeight={400} color="black">
+                  {v}
+                </TextBox>
+              </div>
+            ))}
+          </SliderScroll>
+        </div>
+      </Grid>
+    ),
+    [],
+  );
 
   return (
     <>
@@ -90,31 +121,7 @@ export const Home: React.FC = () => {
         </Grid>
       </Grid>
 
-      <Grid layout="container" widthMax={'1360px'}>
-        <div style={{ height: '260px', width: '100%' }}>
-          <SliderScroll gap="10px" isCircular autoPlay autoPlaySpeed={0.5}>
-            {[
-              'Angular',
-              'React',
-              'Typescript',
-              'JavaScript',
-              'Node.js',
-              'Fastify',
-              'CSS',
-              'AWS',
-              'Next.js',
-              'Expo',
-              'React Native',
-            ].map((v) => (
-              <div key={v} className={[styles.homeSliderTech, styles.cornerShape].join(' ')}>
-                <TextBox tag="p" desktopSize={48} mobileSize={35} fontWeight={400} color="black">
-                  {v}
-                </TextBox>
-              </div>
-            ))}
-          </SliderScroll>
-        </div>
-      </Grid>
+      {techSliderContent}
 
       <div style={{ background: 'rgb(225, 223, 223)' }}>
         <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'120px auto 80px auto'}>
