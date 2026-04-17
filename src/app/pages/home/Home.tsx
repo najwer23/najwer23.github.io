@@ -426,7 +426,11 @@ export const Home: React.FC = () => {
       <Grid layout="container" widthMax={'1600px'}>
         <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 60px 20px'} minHeight="2800px">
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'20px 0 40px'} textWrap="balance">
-            Travel Snapshots in Pixels
+            Beyond 5 PM ⛵️
+          </TextBox>
+
+          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={500} margin={'20px 0 40px'} textWrap="balance">
+            A curated collection of European evenings, city corners, and golden light.
           </TextBox>
 
           <div>
