@@ -1,5 +1,13 @@
 export const BlogRSS = [
   {
+    title: '#4 Currying in JavaScript: When it actually pays off',
+    link: 'https://najwer23.github.io/#/blog/post/4',
+    guid: '#4-Currying-in-JavaScript-When-it-actually-pays-off',
+    description:
+      'Currying looks weird at first, but it solves a very practical problem: reuse. Currying is one of those JavaScript patterns that feels unusual at first, but it can make your code much more flexible. Instead of passing all arguments at once, you pass them one by one: f(a)(b)(c). That makes it easier to reuse functions when some values stay the same and others change often.',
+    pubDate: new Date('2026-04-17T05:00:00+02:00'),
+  },
+  {
     title: '#3 Advanced Sorting in JavaScript: Beyond array.sort()',
     link: 'https://najwer23.github.io/#/blog/post/3',
     guid: '#3-advanced-sorting-in-javascript-beyond-array-sort',

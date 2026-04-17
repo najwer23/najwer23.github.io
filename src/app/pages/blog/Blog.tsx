@@ -61,10 +61,12 @@ export const Blog: React.FC = () => {
   const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.data);
 
   useEffect(() => {
-    if (!isLoadingResultQueryBlogManifest && !isLoadingQueriesBlogPost && blogPosts.length === 0) {
-      navigate('/blog', { replace: true });
+    if (!isLoadingResultQueryBlogManifest && !isLoadingQueriesBlogPost) {
+      if (blogPosts.length == 0) {
+        navigate('/blog', { replace: true });
+      }
     }
-  }, [isLoadingQueriesBlogPost, isLoadingResultQueryBlogManifest, blogPosts]);
+  }, [isLoadingQueriesBlogPost, isLoadingResultQueryBlogManifest]);
 
   return (
     <>

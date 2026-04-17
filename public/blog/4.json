@@ -1,0 +1,265 @@
+{
+  "title": "#4 Currying in JavaScript: When it actually pays off",
+  "id": 4,
+  "sections": [
+    {
+      "name": "post-title",
+      "data": {
+        "title": "#4 Currying in JavaScript: When it actually pays off",
+        "date": "16/04/2026"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying looks weird at first, but it solves a very practical problem: reuse."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying is one of those JavaScript patterns that feels unusual at first, but it can make your code much more flexible. Instead of passing all arguments at once, you pass them one by one: f(a)(b)(c). That makes it easier to reuse functions when some values stay the same and others change often."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Currying vs partial application"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying and partial application are related, but they are not the same."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const add = (a, b) => a + b;\n\n// currying\nconst curriedAdd = (a) => (b) => a + b;\nconsole.log(curriedAdd(2)(3)); // 5\n\n// partial application\nconst addTwo = (b) => add(2, b);\nconsole.log(addTwo(3)); // 5"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "They can look similar, but the shape is different. Currying is about function structure. Partial application is about pre-filling arguments."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Currying makes filters reusable"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying works nicely when you want to build reusable filter helpers."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const byField = (field) => (value) => (item) => item[field] === value;\n\nconst users = [\n  { name: \"Anna\", role: \"admin\", active: true, country: \"PL\" },\n  { name: \"Bob\", role: \"user\", active: true, country: \"DE\" },\n  { name: \"Cara\", role: \"admin\", active: false, country: \"PL\" },\n  { name: \"Dan\", role: \"admin\", active: true, country: \"DE\" },\n  { name: \"Eva\", role: \"user\", active: true, country: \"PL\" },\n];\n\nconst byRole = byField(\"role\");\nconst byActive = byField(\"active\");\nconst byCountry = byField(\"country\");\n\nconst isAdmin = byRole(\"admin\");\nconst isActive = byActive(true);\nconst isFromPoland = byCountry(\"PL\");\n\nconst activeAdmins = users.filter(isAdmin).filter(isActive);\nconst activeAdminsPoland = users.filter(isAdmin).filter(isActive).filter(isFromPoland);\n\nconsole.log(activeAdmins);\n/*\n[\n  { name: \"Anna\", role: \"admin\", active: true, country: \"PL\" },\n  { name: \"Dan\", role: \"admin\", active: true, country: \"DE\" }\n]\n*/\n\nconsole.log(activeAdminsPoland);\n/*\n[\n  { name: \"Anna\", role: \"admin\", active: true, country: \"PL\" }\n]\n*/\n\nconst byField = (field, value, item) => {\n  return item[field] === value;\n}\n\nconst activeAdminsFromPoland = users.filter(\n  (item) =>\n    byField(\"role\", \"admin\", item) &&\n    byField(\"active\", true, item) &&\n    byField(\"country\", \"PL\", item)\n);\n\nconsole.log(activeAdminsFromPoland);\n/*\n[\n  { name: \"Anna\", role: \"admin\", active: true, country: \"PL\" }\n]\n*/"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This is useful when you need the same kind of filtering in different places. Instead of rewriting the condition every time, you create one function that can adapt to different values."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Event handlers"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying is useful when one handler needs to work for many items, but each item still needs its own identifier. Instead of writing separate handlers by hand, you can create a function that takes the id first and returns the real event handler."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "import React, { useCallback, useState, memo } from \"react\";\n\nconst Child = memo(function Child({ onChange, label }) {\n  console.log(\"Child rendered:\", label);\n  return <input placeholder={label} onChange={onChange} />;\n});\n\nfunction MyForm() {\n  const [form, setForm] = useState({});\n  const [count, setCount] = useState(0);\n\n  const handleChangeWithId = useCallback(\n    (id) => (event) => {\n      const value = event.target.value;\n\n      setForm((prev) => ({\n        ...prev,\n        [id]: value,\n      }));\n    },\n    []\n  );\n\n  return (\n    <div>\n      <button onClick={() => setCount((c) => c + 1)}>\n        rerender {count}\n      </button>\n\n      <Child label=\"Item 1\" onChange={handleChangeWithId(1)} />\n      <Child label=\"Item 2\" onChange={handleChangeWithId(2)} />\n    </div>\n  );\n}"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This reads nicely because the logic stays in one place. You pass the id first, and the returned function handles the actual change event."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "There is one catch here. handleChangeWithId(1) creates a new function every time MyForm renders. That means the onChange prop is a fresh reference on each render, even though the outer function is memoized. When Child is wrapped with memo, that new function can still trigger a re-render. That is the part people often miss. useCallback memoizes the factory, but not the function returned by calling that factory."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If the goal is stable props and fewer child re-renders, create one stable handler per field instead of generating them inline."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "import React, { useCallback, useState, memo } from \"react\";\n\nconst Child = memo(function Child({ onChange, label }) {\n  console.log(\"Child rendered:\", label);\n  return <input placeholder={label} onChange={onChange} />;\n});\n\nfunction MyForm() {\n  const [form, setForm] = useState({});\n  const [count, setCount] = useState(0);\n\n  const handleItem1Change = useCallback((event) => {\n    const value = event.target.value;\n\n    setForm((prev) => ({\n      ...prev,\n      1: value,\n    }));\n  }, []);\n\n  const handleItem2Change = useCallback((event) => {\n    const value = event.target.value;\n\n    setForm((prev) => ({\n      ...prev,\n      2: value,\n    }));\n  }, []);\n\n  return (\n    <div>\n      <button onClick={() => setCount((c) => c + 1)}>\n        rerender {count}\n      </button>\n\n      <Child label=\"Item 1\" onChange={handleItem1Change} />\n      <Child label=\"Item 2\" onChange={handleItem2Change} />\n    </div>\n  );\n}"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Now each child gets a stable function reference, so memo can actually do its job and skip unnecessary renders when only count changes."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Use the curried version when clarity matters more than render stability. It is compact, reusable, and easy to scale when you have many similar inputs. Use the direct handler version when you care about preserving prop identity and reducing re-renders in memoized children."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Formatters and logging"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying also fits formatting helpers and log functions very well. You can lock in a prefix, locale, currency, or log namespace once and reuse it everywhere."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const formatWith = (prefix) => (value) => prefix + value;\nconst usd = formatWith(\"$\");\n\nconsole.log(usd(99));\n// $99"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const makeLogger = (scope) => (message) => {\n  console.log(\"[\" + scope + \"] \" + message);\n};\n\nconst logAuth = makeLogger(\"auth\");\n\nlogAuth(\"User signed in\");\n// [auth] User signed in"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This keeps the repeated part in one place and makes the final call short and readable."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Dependency setup"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying is also a nice fit for dependency injection when you want to configure a service once and then reuse it with different inputs. This is especially common with APIs, repositories, and small functional services."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const makeUserService = (api) => (log) => async (userId) => {\n  log.info(`Loading user ${userId}`);\n  return api.getUser(userId);\n};"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "That pattern is useful when api and log are stable dependencies, and userId is the changing runtime input."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "API example"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying can also make API helpers easier to reuse. You can preconfigure the base URL once and then reuse the resulting function for different endpoints."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const makeApi = (baseUrl) => (path) => async () => {\n  const response = await fetch(baseUrl + path);\n  return response.json();\n};\n\nconst api = makeApi(\"/api\");\n\nconst getUsers = api(\"/users\");\nconst getPosts = api(\"/posts\");\n\ngetUsers().then(console.log);\ngetPosts().then(console.log);"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Here the base URL is the setup, while the endpoint is the reusable part. That can be useful in apps that talk to the same backend in many places."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "When it starts to feel awkward"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying works best when the setup is clear and the final input comes last. If the function grows too many layers, it starts to feel like you are solving the syntax instead of the problem."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const format = (currency) => (locale) => (precision) => (amount) =>\n  new Intl.NumberFormat(locale, {\n    style: \"currency\",\n    currency,\n    minimumFractionDigits: precision,\n    maximumFractionDigits: precision,\n  }).format(amount);"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "That works, but it is not exactly relaxing to read. At some point, a plain function with an object argument is easier to follow."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Pitfalls of currying\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying can easily make code harder to read if it is used everywhere without a clear reason. Deeply nested arrows increase cognitive load, especially for developers who are more familiar with direct function calls.\n\n"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const f = a => b => c => d => e => doSomething(a, b, c, d, e);"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This kind of function may be technically elegant, but it is not always pleasant to maintain. Currying also requires careful argument order, because the “fix the early values first” style can feel unnatural in some APIs."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Final thought"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Currying is not something every project needs. It is most useful when you want to reuse the same logic in more than one place. It works well for filters, formatters, event handlers, API helpers, and small service factories. In those cases, it helps you separate setup from the final value. That can make your code easier to read and easier to reuse. It can also reduce repetition when the same pattern shows up often. Still, currying is only a good choice when the result stays clear. If it starts to add noise, a plain function is usually better."
+      }
+    }
+  ]
+}
