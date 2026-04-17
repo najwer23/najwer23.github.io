@@ -110,7 +110,7 @@ export const Home: React.FC = () => {
       <Grid layout="container" widthMax={'1400px'} padding={'clamp(30px, 8vw, 60px) 20px 20px 20px'}>
         <Grid layout="container" widthMax={'900px'} padding={'0 0 40px 0'} margin={0}>
           <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
-            The way I work is not an accident.
+            The way I work is not an accident
           </TextBox>
         </Grid>
         <Grid layout="container" widthMax={'700px'} padding={'0 0 clamp(40px, 8vw, 100px) 0'} margin={0}>
