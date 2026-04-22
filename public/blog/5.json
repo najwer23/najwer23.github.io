@@ -1,0 +1,307 @@
+{
+  "title": "#5 Monads in JavaScript. Taming nested checks and async flow",
+  "id": "5",
+  "sections": [
+    {
+      "name": "post-title",
+      "data": {
+        "title": "#5 Monads in JavaScript. Taming nested checks and async flow",
+        "date": "23/04/2026"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Have you ever looked at a function and felt it was turning into a maze of checks and edge cases? That is usually the point where code starts to feel heavier than it should. Monads offer a way to keep those flows cleaner, especially when values can fail, stay wrapped, or move through several steps. The idea may sound abstract at first, but it becomes much easier once you see it in plain JavaScript.\nIf you have ever heard Haskell developers talk about monads, this is the same concept in a more familiar setting. Haskell made monads famous, but you do not need to learn Haskell to understand the basic idea. In this post, I’ll show how the pattern helps with nested checks, validation, and async flow. By the end, monads should feel less like theory and more like a practical tool."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "A monad is a design pattern for safely chaining operations that may fail. Think of it as a wrapper with two special methods that let you transform values without manually checking whether something is null or has failed at every step.\n\n"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const Maybe = (value) => ({\n  map: (fn) => Maybe(value == null ? null : fn(value)),\n  chain: (fn) => (value == null ? Maybe(null) : fn(value)),\n  get: () => value,\n});\n\nconst result = Maybe(5)\n  .map((x) => x * 2)\n  .chain((x) => Maybe(x + 1));\n\nconsole.log(result.get()); // 11\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "The key difference is that map is for plain transformations, while chain is for functions that already return a wrapped value. If a step can fail or needs to keep the monadic shape, chain keeps the flow clean and prevents nested wrappers."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "It also helps separate safe value changes from unsafe operations. That means your code stays readable even when one step returns null, undefined, or another failure-like value."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const Maybe = (value) => ({\n  map: (fn) => Maybe(value == null ? null : fn(value)),\n  chain: (fn) => (value == null ? Maybe(null) : fn(value)),\n  get: () => value,\n});\n\nconst safeDivide = (divisor) => (x) =>\n  divisor === 0 ? Maybe(null) : Maybe(x / divisor);\n\nconst result = Maybe(10)\n  .chain(safeDivide(0))   // division by 0 -> null\n  .map((x) => x + 5);     // skipped because value is null\n\nconsole.log(result.get()); // null"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If the divisor is 0, the monad returns null instead of Infinity, so the rest of the chain stops safely."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This is why monads are useful in JavaScript. They let you keep the happy path linear while handling failure in one place instead of scattering checks across the code."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Promise as a built-in monad"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "JavaScript already gives you one very common example of this idea: Promise. It lets you chain async steps one after another, while keeping the flow readable and avoiding callback nesting."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "Promise.resolve(5)\n  .then((x) => x * 2)\n  .then((x) => x + 1)\n  .then(console.log); // 11"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This is useful because it shows that monads are not just theory. You are probably already using the same chaining idea whenever you work with async code."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Advanced example, ordering a pizza"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "To see why this matters, let’s first compare it with the traditional way of ordering a pizza. That will make it easier to see what the monad version is improving."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Traditional way:"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "function orderPizza(price, coupon, balance) {\n  if (price == null) {\n    return \"No price\";\n  }\n\n  const finalPrice = price - coupon;\n\n  if (finalPrice < 0) {\n    return \"Invalid discount\";\n  }\n\n  if (balance < finalPrice) {\n    return \"Not enough money\";\n  }\n\n  return `Pizza ordered for ${finalPrice}`;\n}"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This works, but the control flow is spread across the whole function. Each extra condition makes the code more nested and harder to extend."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "The monad idea:"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const Maybe = (value) => ({\n  map: (fn) => Maybe(value == null ? null : fn(value)),\n  chain: (fn) => (value == null ? Maybe(null) : fn(value)),\n  get: () => value,\n});\n\nconst safeSubtract = (a, b) =>\n  b > a ? Maybe(null) : Maybe(a - b);\n\nconst safePay = (balance) => (price) =>\n  balance < price ? Maybe(null) : Maybe(`Pizza ordered for ${price}`);\n\nconst result = Maybe(20)\n  .chain((price) => safeSubtract(price, 5))\n  .chain(safePay(15));\n\nconsole.log(result.get()); // \"Pizza ordered for 15\""
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "The real problem is not just saving a few lines. It is about keeping the main flow readable while isolating failure handling inside the monad. That is why monads are often used for nullable values, validation, and chaining operations that may fail."
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Validation without nested if statements"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "This example shows how a validator monad can keep user checks readable. Each step either passes the same user object forward or stops the chain with a clear error message."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const Validator = (value, error = null) => ({\n  map: (fn) => (error ? Validator(value, error) : Validator(fn(value))),\n  chain: (fn) => (error ? Validator(value, error) : fn(value)),\n  isValid: () => !error,\n  getError: () => error,\n  getValue: () => value,\n});\n\nconst success = (value) => Validator(value);\nconst failure = (error) => Validator(null, error);\n\nconst validateName = (user) =>\n  user.name && user.name.length >= 2\n    ? success(user)\n    : failure(\"Name too short\");\n\nconst validateEmail = (user) =>\n  /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(user.email)\n    ? success(user)\n    : failure(\"Invalid email\");\n\nconst validateAge = (user) =>\n  user.age >= 18\n    ? success(user)\n    : failure(\"Must be at least 18\");\n\nconst validateUser = (user) =>\n  success(user)\n    .chain(validateName)\n    .chain(validateEmail)\n    .chain(validateAge);\n\nconsole.log(\n  validateUser({ name: \"Anna\", email: \"anna@example.com\", age: 25 }).isValid()\n); // true\n\nconsole.log(\n  validateUser({ name: \"A\", email: \"anna@example.com\", age: 25 }).getError()\n); // \"Name too short\"\n\nconsole.log(\n  validateUser({ name: \"Anna\", email: \"bad-email\", age: 25 }).getError()\n); // \"Invalid email\"\n\nconsole.log(\n  validateUser({ name: \"Anna\", email: \"anna@example.com\", age: 15 }).getError()\n); // \"Must be at least 18\""
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "The 3 monad laws"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Monads follow three rules so chaining stays predictable. These laws are what make a monad behave consistently instead of feeling like a random wrapper."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "1. Left identity"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Wrapping a value and then chaining a function should be the same as calling that function directly."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "Monad(x).chain(f) === f(x)"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Example:"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "Monad(5).chain(x => Monad(x * 2))"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "is the same as:"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "Monad(10)"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "2. Right identity"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "If you already have a monad, chaining Maybe back into it should not change anything."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "m.chain(Maybe) === m"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "So the value stays in the same shape and nothing extra happens."
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "3. Associativity"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Associativity means that when you chain monadic operations, the result should stay the same no matter how you group them. In other words, you can write the chain in two different ways, but the meaning should not change. This law makes monads predictable and easy to compose. You do not need to worry about whether you split a pipeline into two steps or combine it into one longer step. The behavior stays consistent."
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "m.chain(f).chain(g) === m.chain(x => f(x).chain(g))\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Simple example:"
+      }
+    },
+    {
+      "name": "post-code",
+      "data": {
+        "code": "const Maybe = (value) => ({\n  chain: (fn) => (value == null ? Maybe(null) : fn(value)),\n  get: () => value,\n});\n\nconst f = (x) => Maybe(x + 1);\nconst g = (x) => Maybe(x * 2);\n\nconst left = Maybe(5).chain(f).chain(g).get();\nconst right = Maybe(5).chain((x) => f(x).chain(g)).get();\n\nconsole.log(left);  // 12\nconsole.log(right); // 12"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Disadvantages of monads\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Monads are useful, but they can be confusing at first. The main drawback is that they add another layer of abstraction, so the code may feel harder to understand if you are new to the idea.\n\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "They can also make very simple code look more complicated than necessary. For small tasks, plain if statements or direct function calls are often easier to read.\n\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Another issue is that monads only help when the problem is the right kind of problem. If you do not have many chained steps, failures, or async operations, the extra structure may not be worth it.\n\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "So the trade-off is simple: monads can make longer flows cleaner, but they may feel heavy when the task is small.\n\n"
+      }
+    },
+    {
+      "name": "post-subheading",
+      "data": {
+        "text": "Final thought"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "Monads are not about making code fancy. They are about making chains of operations safer and easier to follow when failure is part of the problem.\n\n"
+      }
+    },
+    {
+      "name": "post-p",
+      "data": {
+        "text": "For small tasks, they may feel unnecessary. But when you need to handle nullable values, validation, or async flow, they can keep the logic much cleaner.\n\n"
+      }
+    }
+  ]
+}

@@ -1,5 +1,13 @@
 export const BlogRSS = [
   {
+    title: '#5 Monads in JavaScript. Taming nested checks and async flow',
+    link: 'https://najwer23.github.io/#/blog/post/5',
+    guid: '#5-Monads-in-JavaScript-Taming-nested-checks-and-async-flow',
+    description:
+      'Have you ever looked at a function and felt it was turning into a maze of checks and edge cases? That is usually the point where code starts to feel heavier than it should. Monads offer a way to keep those flows cleaner, especially when values can fail, stay wrapped, or move through several steps. The idea may sound abstract at first, but it becomes much easier once you see it in plain JavaScript. If you have ever heard Haskell developers talk about monads, this is the same concept in a more familiar setting. Haskell made monads famous, but you do not need to learn Haskell to understand the basic idea. In this post, I’ll show how the pattern helps with nested checks, validation, and async flow. By the end, monads should feel less like theory and more like a practical tool.',
+    pubDate: new Date('2026-04-23T05:00:00+02:00'),
+  },
+  {
     title: '#4 Currying in JavaScript: When it actually pays off',
     link: 'https://najwer23.github.io/#/blog/post/4',
     guid: '#4-Currying-in-JavaScript-When-it-actually-pays-off',
