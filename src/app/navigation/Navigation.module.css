@@ -19,40 +19,34 @@
 
   .menu {
     width: 100vw;
-    height: 100vh;
-    background-color: rgb(225, 223, 223);
+    height: 100dvh;
     position: fixed;
     top: 0;
     left: 0;
-    clip-path: inset(
-      15px /* top */ calc((100% - clamp(0px, 100vw - 40px, 1400px)) / 2) /* right */
-        calc(100% - 15px) /* bottom 20px + top 20px */
-        calc(100% - (calc((100% - clamp(0px, 100vw - 60px, 1380px)) / 2) + 60px)) /* left: inverting right inset + 20px */
-    );
-    will-change: clip-path;
-    transition: clip-path 250ms ease-out;
     z-index: 9998;
-    transition-delay: 0s, 0s;
-    overflow: auto;
+    background-color: rgb(225, 223, 223);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    contain: strict;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 250ms ease-out;
+    will-change: transform;
 
     .menuContent {
       display: flex;
       flex-direction: column;
       gap: 20px;
       align-items: center;
-      padding: 150px 0px 150px 0px;
+      padding: 150px 0;
 
       a {
         opacity: 0;
-        will-change: opacity;
-        transition: opacity 0s ease-out !important;
-        transition-delay: 0s !important;
+        transition: opacity 0s ease-out;
+        transition-delay: 0s;
 
         -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
         user-select: none;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
@@ -66,10 +60,9 @@
   }
 
   .menuOpen {
-    will-change: clip-path;
-    clip-path: inset(0);
-    transition: clip-path 250ms ease-in;
-    transition-delay: 0s, 0s;
+    transform: scale(1);
+    transition: transform 250ms ease-in;
+    will-change: transform;
   }
 
   .menuItemMobile {

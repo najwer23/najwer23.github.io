@@ -1,12 +1,15 @@
 import { Button } from 'najwer23morsels/lib/button';
 import { Grid } from 'najwer23morsels/lib/grid';
 import { TextBox } from 'najwer23morsels/lib/textbox';
-import { useState } from 'react';
+import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import styles from './Navigation.module.css';
 
 export const Navigation: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const isMenuOpen = useRef(false);
+  const rafRef = useRef<number | null>(null);
   const location = useLocation();
 
   const isActive = (href: string) => {
@@ -19,18 +22,38 @@ export const Navigation: React.FC = () => {
     }
   };
 
+  const openMenu = () => {
+    isMenuOpen.current = true;
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = requestAnimationFrame(() => {
+        menuRef.current?.classList.add(styles.menuOpen);
+        contentRef.current?.querySelectorAll('a').forEach((a) => {
+          a.classList.add(styles.menuAnimation);
+        });
+      });
+    });
+  };
+
+  const closeMenu = () => {
+    isMenuOpen.current = false;
+    menuRef.current?.classList.remove(styles.menuOpen);
+    contentRef.current?.querySelectorAll('a').forEach((a) => {
+      a.classList.remove(styles.menuAnimation);
+    });
+  };
+
+  const toggleMenu = () => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    isMenuOpen.current ? closeMenu() : openMenu();
+  };
+
   return (
     <Grid layout="container" widthMax={'1600px'}>
       <Grid layout="container" widthMax={'1400px'} padding={'20px'} margin={'auto'}>
         <Grid
           layout="columns"
           gap={{ col: '20px', row: '20px' }}
-          col={{
-            smallDesktop: 2,
-            desktop: 2,
-            mobile: 2,
-            tablet: 2,
-          }}
+          col={{ smallDesktop: 2, desktop: 2, mobile: 2, tablet: 2 }}
         >
           <div>
             <TextBox desktopSize={20} mobileSize={20} fontWeight={500} tag="a" href="/#/">
@@ -56,26 +79,20 @@ export const Navigation: React.FC = () => {
 
           <div className={styles.menuItemMobile}>
             <div className={styles.menuPlaceholder}>
-              <Button
-                height={'40px'}
-                width={'70px'}
-                padding={0}
-                backgroundColor="orangered"
-                onClick={() => setMenuOpen((prevMenuOpen) => !prevMenuOpen)}
-              >
+              <Button height={'40px'} width={'70px'} padding={0} backgroundColor="orangered" onClick={toggleMenu}>
                 <TextBox tag="span" desktopSize={20} mobileSize={20} fontWeight={400} color="white">
                   Menu
                 </TextBox>
               </Button>
             </div>
-            <div className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''}`}>
-              <div className={styles.menuContent}>
+
+            <div ref={menuRef} className={styles.menu}>
+              <div ref={contentRef} className={styles.menuContent}>
                 {[
                   { href: '/#/home', label: 'Home' },
                   { href: '/#/contact', label: 'Contact' },
                   { href: '/#/weather', label: 'Weather' },
                   { href: '/#/stock-quotes', label: 'Stock Quotes' },
-                  // { href: '/#/tunes', label: 'Tunes' },
                   { href: '/#/blog', label: 'Blog' },
                   { href: '/#/visitors', label: 'Visitors' },
                   {
@@ -97,8 +114,7 @@ export const Navigation: React.FC = () => {
                     fontWeight={fontWeight}
                     color={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
                     colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
-                    className={menuOpen && styles.menuAnimation}
-                    onClick={() => setMenuOpen((prev) => !prev)}
+                    onClick={closeMenu}
                     target={target}
                     rel={rel}
                   >
@@ -110,6 +126,7 @@ export const Navigation: React.FC = () => {
           </div>
         </Grid>
       </Grid>
+
       <div className={styles.navigationLine}></div>
 
       <Grid
@@ -125,7 +142,6 @@ export const Navigation: React.FC = () => {
             { href: '/#/contact', label: 'Contact' },
             { href: '/#/weather', label: 'Weather' },
             { href: '/#/stock-quotes', label: 'Stock Quotes' },
-            // { href: '/#/tunes', label: 'Tunes' },
             { href: '/#/blog', label: 'Blog' },
             { href: '/#/visitors', label: 'Visitors' },
           ].map(({ href, label }) => (
