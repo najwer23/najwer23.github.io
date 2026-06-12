@@ -1,10 +1,10 @@
 import { useMutation } from '@tanstack/react-query';
-import { Button } from 'najwer23morsels/lib/button';
-import { Form } from 'najwer23morsels/lib/form';
-import type { FormType } from 'najwer23morsels/lib/form/Form';
-import { Grid } from 'najwer23morsels/lib/grid';
-import { Input } from 'najwer23morsels/lib/input';
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { Button } from 'najwer23morsels/lib/Button';
+import type { FormType } from 'najwer23morsels/lib/Form';
+import { Form } from 'najwer23morsels/lib/Form';
+import { Grid } from 'najwer23morsels/lib/Grid';
+import { Input } from 'najwer23morsels/lib/Input';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { queryContact } from './Contact.query';
 import 'leaflet/dist/leaflet.css';
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';

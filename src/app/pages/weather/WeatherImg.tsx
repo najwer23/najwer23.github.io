@@ -1,4 +1,4 @@
-import { Picture } from 'najwer23morsels/lib/picture';
+import { Picture } from 'najwer23morsels/lib/Picture';
 import styles from './Weather.module.css';
 import { isEmpty } from './Weather.utils';
 

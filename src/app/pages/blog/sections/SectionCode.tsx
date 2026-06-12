@@ -1,5 +1,5 @@
 import { SyntaxHighlight } from '@app/syntaxhighlight/SyntaxHighlight';
-import { Grid } from 'najwer23morsels/lib/grid';
+import { Grid } from 'najwer23morsels/lib/Grid';
 import type { BlogPostSection } from '../Blog.types';
 
 export const SectionCode: React.FC<{

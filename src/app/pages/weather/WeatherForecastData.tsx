@@ -1,4 +1,4 @@
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import styles from './Weather.module.css';
 import { forecastDataFormat, formatDateFromDt2 } from './Weather.utils';
 

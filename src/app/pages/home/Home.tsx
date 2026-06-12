@@ -1,13 +1,13 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
-import { Grid } from 'najwer23morsels/lib/grid';
-import { Picture } from 'najwer23morsels/lib/picture';
-import { Slider } from 'najwer23morsels/lib/slider';
-import { SliderScroll } from 'najwer23morsels/lib/sliderscroll';
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { Grid } from 'najwer23morsels/lib/Grid';
+import { Picture } from 'najwer23morsels/lib/Picture';
+import { Slider } from 'najwer23morsels/lib/Slider';
+import { SliderScroll } from 'najwer23morsels/lib/SliderScroll';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import React, { lazy, Suspense, useMemo } from 'react';
 import styles from './Home.module.css';
 
-const Masonry = lazy(() => import('najwer23morsels/lib/masonry').then((m) => ({ default: m.Masonry })));
+const Masonry = lazy(() => import('najwer23morsels/lib/Masonry').then((m) => ({ default: m.Masonry })));
 
 export const Home: React.FC = () => {
   useDocumentTitle('Home | Mariusz Najwer');

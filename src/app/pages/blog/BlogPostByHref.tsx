@@ -1,8 +1,8 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQueries';
-import { Button } from 'najwer23morsels/lib/button';
-import { Grid } from 'najwer23morsels/lib/grid';
-import { IconArrowLeft } from 'najwer23morsels/lib/icons';
+import { Button } from 'najwer23morsels/lib/Button';
+import { Grid } from 'najwer23morsels/lib/Grid';
+import { IconArrowLeft } from 'najwer23morsels/lib/Icons';
 import { useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { queryBlog } from './Blog.query';

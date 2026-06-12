@@ -1,8 +1,8 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
-import { Button } from 'najwer23morsels/lib/button';
-import { Grid } from 'najwer23morsels/lib/grid';
-import { IconArrowLeft } from 'najwer23morsels/lib/icons';
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { Button } from 'najwer23morsels/lib/Button';
+import { Grid } from 'najwer23morsels/lib/Grid';
+import { IconArrowLeft } from 'najwer23morsels/lib/Icons';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BlogRSS } from './BlogRSS.const';
 

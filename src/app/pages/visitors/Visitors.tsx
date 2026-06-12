@@ -1,9 +1,9 @@
 import { ChartBar } from '@app/charts/ChartBar';
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { useImmediateThrottledQuery } from '@app/hooks/useImmediateThrottledQuery';
-import { Grid } from 'najwer23morsels/lib/grid';
+import { Grid } from 'najwer23morsels/lib/Grid';
 import { Select } from 'najwer23morsels/lib/select';
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import React, { useMemo, useState } from 'react';
 import { queryVisitorsHits } from './Visitors.query';
 import { buildChartData, sortByDate, sumByDate, sumByYear } from './Visitors.utils';

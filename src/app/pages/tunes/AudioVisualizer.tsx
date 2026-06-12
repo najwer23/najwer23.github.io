@@ -1,6 +1,6 @@
-import { Button } from 'najwer23morsels/lib/button';
-import { Grid } from 'najwer23morsels/lib/grid';
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { Button } from 'najwer23morsels/lib/Button';
+import { Grid } from 'najwer23morsels/lib/Grid';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Song } from './Playlist.query';
 

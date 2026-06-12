@@ -1,4 +1,4 @@
-import { Footer } from 'najwer23morsels/lib/footer';
+import { Footer } from 'najwer23morsels/lib/Footer';
 import { Outlet } from 'react-router-dom';
 import { Navigation } from '../navigation/Navigation';
 

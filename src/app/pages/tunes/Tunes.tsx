@@ -1,7 +1,7 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { useImmediateThrottledQuery } from '@app/hooks/useImmediateThrottledQuery';
-import { Grid } from 'najwer23morsels/lib/grid';
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { Grid } from 'najwer23morsels/lib/Grid';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { useEffect, useState } from 'react';
 import AudioVisualizer from './AudioVisualizer';
 import { queryPlaylist, type Song } from './Playlist.query';

@@ -1,6 +1,6 @@
-import { Button } from 'najwer23morsels/lib/button';
-import { Grid } from 'najwer23morsels/lib/grid';
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { Button } from 'najwer23morsels/lib/Button';
+import { Grid } from 'najwer23morsels/lib/Grid';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import styles from './Navigation.module.css';

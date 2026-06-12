@@ -1,9 +1,9 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQueries';
 import { useImmediateThrottledQuery } from '@app/hooks/useImmediateThrottledQuery';
-import { Button } from 'najwer23morsels/lib/button';
-import { Grid } from 'najwer23morsels/lib/grid';
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { Button } from 'najwer23morsels/lib/Button';
+import { Grid } from 'najwer23morsels/lib/Grid';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { useEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { queryBlog, queryBlogManifest } from './Blog.query';

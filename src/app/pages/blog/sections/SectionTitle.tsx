@@ -1,4 +1,4 @@
-import { TextBox } from 'najwer23morsels/lib/textbox';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { useLocation, useNavigate } from 'react-router-dom';
 import type { BlogPostSection } from '../Blog.types';
 

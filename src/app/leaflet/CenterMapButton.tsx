@@ -1,6 +1,6 @@
 import L from 'leaflet';
-import { Button } from 'najwer23morsels/lib/button';
-import { IconLocate } from 'najwer23morsels/lib/icons';
+import { Button } from 'najwer23morsels/lib/Button';
+import { IconLocate } from 'najwer23morsels/lib/Icons';
 import { useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
 
