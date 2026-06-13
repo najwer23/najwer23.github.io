@@ -37,7 +37,7 @@ export const Contact: React.FC = () => {
         Get in touch
       </TextBox>
 
-      <TextBox tag="h2" desktopSize={14} mobileSize={14} fontWeight={500} margin={'0 0 40px 0'}>
+      <TextBox tag="h3" desktopSize={14} mobileSize={14} fontWeight={500} margin={'0 0 40px 0'}>
         All fields are required.
       </TextBox>
 
