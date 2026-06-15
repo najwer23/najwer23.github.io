@@ -102,7 +102,7 @@ export const Visitors: React.FC = () => {
 
         {!isError && (
           <Grid
-            margin={0}
+            margin={'0 0 30px'}
             layout="container"
             widthMax="1400px"
             minHeight="clamp(134px, calc(380px - 30vw), 380px)"
