@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 export function useImmediateThrottledQueries<TData>(
   queries: UseQueryOptions<TData, unknown, TData, any>[],
   minLoadingDurationMs = 1000,
-): { resultsArray: UseQueryResult<TData, unknown>[]; isLoading: boolean } {
+): { resultsArray: UseQueryResult<TData, unknown>[]; isLoading: boolean; isError: boolean } {
   const resultsArray = useQueries({ queries });
 
   const isPending = useMemo(() => resultsArray.some((r) => r.isFetching || r.isLoading), [resultsArray]);
@@ -50,5 +50,5 @@ export function useImmediateThrottledQueries<TData>(
     };
   }, []);
 
-  return { resultsArray, isLoading: visibleIsLoading };
+  return { resultsArray, isLoading: visibleIsLoading, isError: resultsArray.every((r) => r.isError) };
 }

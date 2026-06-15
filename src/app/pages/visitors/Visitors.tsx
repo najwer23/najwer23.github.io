@@ -9,11 +9,13 @@ import { queryVisitorsHits } from './Visitors.query';
 import { buildChartData, sortByDate, sumByDate, sumByYear } from './Visitors.utils';
 
 export const Visitors: React.FC = () => {
-  const [year, setYear] = useState('2026');
+  const currentYear = String(new Date().getFullYear());
+
+  const [year, setYear] = useState(currentYear);
 
   useDocumentTitle('Visitors | Mariusz Najwer');
 
-  const { result, isLoading } = useImmediateThrottledQuery(
+  const { result, isLoading, isError } = useImmediateThrottledQuery(
     {
       queryKey: ['queryVisitorsHits', year],
       queryFn: () => queryVisitorsHits(year),
@@ -86,100 +88,115 @@ export const Visitors: React.FC = () => {
           <Select
             label="Year"
             name={'year'}
-            options={[
-              { value: '2025', label: '2025' },
-              { value: '2026', label: '2026' },
-              { value: '2027', label: '2027' },
-            ]}
-            initialValue={{ value: '2026', label: '2026' }}
+            options={Array.from({ length: Number(currentYear) + 1 - 2024 }, (_, i) => {
+              const year = 2025 + i;
+              return {
+                value: year.toString(),
+                label: year.toString(),
+              };
+            })}
+            initialValue={{ value: currentYear, label: currentYear }}
             onBlur={(_, data) => setYear(data.value)}
           />
         </Grid>
 
-        <Grid
-          layout="container"
-          widthMax="1400px"
-          minHeight="clamp(134px, calc(380px - 20vw), 380px)"
-          loading={isLoading}
-        >
+        {!isError && (
           <Grid
-            layout="columns"
-            gap={{ col: '100px', row: '20px' }}
-            col={{
-              smallDesktop: 2,
-              desktop: 2,
-              mobile: 1,
-              tablet: 2,
-            }}
+            margin={0}
+            layout="container"
+            widthMax="1400px"
+            minHeight="clamp(134px, calc(380px - 30vw), 380px)"
+            loading={isLoading}
           >
-            <div>
-              <TextBox tag="p" desktopSize={22} mobileSize={18} fontWeight={200}>
-                Yearly Visits
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={600}>
-                {yearlyViews[year] ?? 0}
-              </TextBox>
-            </div>
-            <div>
-              <TextBox tag="p" desktopSize={22} mobileSize={18} fontWeight={200}>
-                Daily Change
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={600}>
-                {diff},&nbsp;
-                <TextBox
-                  tag="span"
-                  desktopSize={18}
-                  mobileSize={16}
-                  fontWeight={400}
-                  color={diff >= 0 ? 'green' : 'red'}
-                >
-                  {percent.toFixed(2)}&nbsp;%
+            <Grid
+              layout="columns"
+              gap={{ col: '100px', row: '20px' }}
+              col={{
+                smallDesktop: 2,
+                desktop: 2,
+                mobile: 1,
+                tablet: 2,
+              }}
+            >
+              <div>
+                <TextBox tag="p" desktopSize={22} mobileSize={18} fontWeight={200}>
+                  Yearly Visits
                 </TextBox>
-              </TextBox>
-            </div>
-            <div>
-              <TextBox tag="p" desktopSize={22} mobileSize={18} fontWeight={200}>
-                Max daily views
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={600}>
-                {maxDate}, <b>{maxViews}</b>
-              </TextBox>
-            </div>
-            <div>
-              <TextBox tag="p" desktopSize={22} mobileSize={18} fontWeight={200}>
-                Min daily views
-              </TextBox>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={600}>
-                {minDate}, <b>{minViews}</b>
-              </TextBox>
-            </div>
+                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={600}>
+                  {yearlyViews[year] ?? 0}
+                </TextBox>
+              </div>
+              <div>
+                <TextBox tag="p" desktopSize={22} mobileSize={18} fontWeight={200}>
+                  Daily Change
+                </TextBox>
+                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={600}>
+                  {diff},&nbsp;
+                  <TextBox
+                    tag="span"
+                    desktopSize={18}
+                    mobileSize={16}
+                    fontWeight={400}
+                    color={diff >= 0 ? 'green' : 'red'}
+                  >
+                    {percent.toFixed(2)}&nbsp;%
+                  </TextBox>
+                </TextBox>
+              </div>
+              <div>
+                <TextBox tag="p" desktopSize={22} mobileSize={18} fontWeight={200}>
+                  Max daily views
+                </TextBox>
+                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={600}>
+                  {maxDate}, <b>{maxViews}</b>
+                </TextBox>
+              </div>
+              <div>
+                <TextBox tag="p" desktopSize={22} mobileSize={18} fontWeight={200}>
+                  Min daily views
+                </TextBox>
+                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={600}>
+                  {minDate}, <b>{minViews}</b>
+                </TextBox>
+              </div>
+            </Grid>
           </Grid>
-        </Grid>
-      </Grid>
-
-      <Grid layout="container" widthMax="1400px" margin="100px auto 50px auto" minHeight="700px" loading={isLoading}>
-        {!isLoading && (
-          <div style={{ height: '700px' }}>
-            <ChartBar title="Daily Visitors Over Time" ySymbol="" data={buildChartData(pageViewsByDate)} />
-          </div>
         )}
       </Grid>
 
-      <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
-        {!isLoading && (
-          <div style={{ height: '700px' }}>
-            <ChartBar title="Daily Visitors for /resume" ySymbol="" data={buildChartData(resumeViews)} />
-          </div>
-        )}
-      </Grid>
+      {isError && (
+        <TextBox tag="p" desktopSize={16} mobileSize={16} fontWeight={500} margin={'30px 0 0'}>
+          No results
+        </TextBox>
+      )}
 
-      <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
-        {!isLoading && (
-          <div style={{ height: '700px' }}>
-            <ChartBar title="Daily Visitors for /blog" ySymbol="" data={buildChartData(blogViews)} />
-          </div>
-        )}
-      </Grid>
+      {!isError && (
+        <>
+          <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
+            {!isLoading && (
+              <div style={{ height: '700px' }}>
+                <ChartBar title="Daily Visitors Over Time" ySymbol="" data={buildChartData(pageViewsByDate)} />
+              </div>
+            )}
+          </Grid>
+
+          <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
+            {!isLoading && (
+              <div style={{ height: '700px' }}>
+                <ChartBar title="Daily Visitors for /resume" ySymbol="" data={buildChartData(resumeViews)} />
+              </div>
+            )}
+          </Grid>
+
+          <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
+            {!isLoading && (
+              <div style={{ height: '700px' }}>
+                <ChartBar title="Daily Visitors for /blog" ySymbol="" data={buildChartData(blogViews)} />
+              </div>
+            )}
+          </Grid>
+        </>
+      )}
     </Grid>
   );
 };
