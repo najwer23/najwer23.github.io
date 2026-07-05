@@ -3,10 +3,10 @@
     border-radius: 12px;
     corner-shape: squircle;
     padding: 5px;
-    border: 2px solid black;
   }
 
   .mapContainerWrapper :global(.leaflet-container) {
+    border: 2px solid black;
     border-radius: 12px;
     corner-shape: squircle;
   }
