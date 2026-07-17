@@ -1,6 +1,6 @@
 import javascript from '@shikijs/langs/javascript';
 import ayuLight from '@shikijs/themes/ayu-light';
-import { CopyButton } from 'najwer23morsels/lib/CopyButton';
+import { ButtonCopy } from 'najwer23morsels/lib/ButtonCopy';
 import { useLayoutEffect, useState } from 'react';
 import { createHighlighterCore } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
@@ -42,7 +42,7 @@ export const SyntaxHighlight: React.FC<SyntaxHighlightProps> = ({ children, clas
     <div className={[styles.n23SyntaxHighlight, 'n23SyntaxHighlight', className].filter(Boolean).join(' ')} {...props}>
       <div className={styles.codeWrap}>
         <div className={styles.copyButtonSticky}>
-          <CopyButton textToCopy={code} />
+          <ButtonCopy textToCopy={code} />
         </div>
 
         {html ? (
