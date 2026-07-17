@@ -11,20 +11,23 @@ export const SectionTitle: React.FC<{
 
   return (
     <>
-      <TextBox
-        href={`/#/blog/post/${id}`}
-        mobileSize={20}
-        desktopSize={28}
-        onClick={(e) => {
-          if (!location.pathname.includes(`/blog/post/${id}`)) {
-            e.preventDefault();
-            navigate(`/blog/post/${id}`, {
-              state: { from: 'blog', id },
-            });
-          }
-        }}
-      >
-        {section.data.title}
+      <TextBox tag={'h2'} mobileSize={20} desktopSize={28}>
+        <TextBox
+          tag="a"
+          href={`/#/blog/post/${id}`}
+          mobileSize={20}
+          desktopSize={28}
+          onClick={(e) => {
+            if (!location.pathname.includes(`/blog/post/${id}`)) {
+              e.preventDefault();
+              navigate(`/blog/post/${id}`, {
+                state: { from: 'blog', id },
+              });
+            }
+          }}
+        >
+          {section.data.title}
+        </TextBox>
       </TextBox>
       <TextBox mobileSize={14} desktopSize={14} tag="p" color="grey">
         {section.data.date}
