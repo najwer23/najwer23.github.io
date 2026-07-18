@@ -1,4 +1,5 @@
-import { TextBox } from 'najwer23morsels/lib/TextBox';
+import { Typography } from 'najwer23morsels/lib/Typography';
+
 import type { BlogPostSection } from '../Blog.types';
 
 export const SectionSubheading: React.FC<{
@@ -6,9 +7,9 @@ export const SectionSubheading: React.FC<{
 }> = ({ section }) => {
   return (
     <>
-      <TextBox mobileSize={18} desktopSize={20} tag="h3" margin={'30px 0 0'} color="black" fontWeight={800}>
+      <Typography appearance="light" variant="subheading">
         {section.data.text}
-      </TextBox>
+      </Typography>
     </>
   );
 };

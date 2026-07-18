@@ -1,4 +1,4 @@
-import { TextBox } from 'najwer23morsels/lib/TextBox';
+import { Typography } from 'najwer23morsels/lib/Typography';
 import { useLocation, useNavigate } from 'react-router-dom';
 import type { BlogPostSection } from '../Blog.types';
 
@@ -11,13 +11,12 @@ export const SectionTitle: React.FC<{
 
   return (
     <>
-      <TextBox tag={'h2'} mobileSize={20} desktopSize={28}>
-        <TextBox
-          tag="a"
+      <Typography appearance="light" variant="heading">
+        <Typography
+          appearance="light"
+          variant="link"
           href={`/#/blog/post/${id}`}
-          mobileSize={20}
-          desktopSize={28}
-          onClick={(e) => {
+          onClick={(e: { preventDefault: () => void }) => {
             if (!location.pathname.includes(`/blog/post/${id}`)) {
               e.preventDefault();
               navigate(`/blog/post/${id}`, {
@@ -27,11 +26,11 @@ export const SectionTitle: React.FC<{
           }}
         >
           {section.data.title}
-        </TextBox>
-      </TextBox>
-      <TextBox mobileSize={14} desktopSize={14} tag="p" color="grey">
+        </Typography>
+      </Typography>
+      <Typography appearance="light" variant="caption">
         {section.data.date}
-      </TextBox>
+      </Typography>
     </>
   );
 };
