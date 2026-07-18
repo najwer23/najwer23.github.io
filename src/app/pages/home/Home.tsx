@@ -52,120 +52,56 @@ export const Home: React.FC = () => {
       </Grid>
 
       <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 0px 20px'}>
-        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
+        <Grid layout="container" widthMax={'900px'} padding={'0 0 10px 0'} margin={0}>
           <Typography appearance="light" variant="heading">
             Projects
+          </Typography>
+
+          <Typography appearance="light" variant="subheading">
+            APPLIED SYSTEMS INC.
+          </Typography>
+          <Typography appearance="light" variant="body">
+            I was responsible for developing a React.js/TypeScript frontend for an insurance purchasing website built on
+            the Applied Systems design system, whose core technical challenge involved implementing a recursive DFS
+            algorithm to conditionally render a nested, graph-like Server Driven UI questionnaire from a ~60,000-line
+            JSON payload, while also contributing to an admin panel, user action tracking, statistical charts, and WCAG
+            2.1 AA accessibility compliance as part of an 8-person international team across Poland, India, Canada,
+            England, the USA, and Australia.
+          </Typography>
+          <Typography appearance="light" variant="subheading">
+            WARNER BROS. DISCOVERY, TVN24.pl
+          </Typography>
+          <Typography appearance="light" variant="body">
+            My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
+            technology. The architecture was inspired by the islands concept popularized by Astro.js, featuring
+            microfrontend applications implemented with React.js and Web Components. As part of the development team, I
+            contributed to building multiple interactive widgets, including stock quotes, weather forecasts, polls,
+            quizzes, election tools, TV program guides, and a custom SSR-based microfrontend rendering algorithm that
+            operates without relying on external libraries.
+          </Typography>
+          <Typography appearance="light" variant="subheading">
+            FLHF S.A
+          </Typography>
+          <Typography appearance="light" variant="body">
+            My responsibility was to enhance a website initially developed by a software house while simultaneously
+            refreshing its graphic design. The core focus was to develop ecommerce-specific components such as sliders,
+            carousels, product listings, search functionality, and a shopping cart. Key priorities included optimizing
+            for mobile view, improving SEO, descriptive markup and metadata, and enhancing performance metrics such as
+            Cumulative Layout Shift (CLS), page speed, and accessibility, measured and optimized using Lighthouse.
+          </Typography>
+          <Typography appearance="light" variant="subheading">
+            EUROPA UBEZPIECZENIA
+          </Typography>
+          <Typography appearance="light" variant="body">
+            My duty was to maintain and develop an internal system for managing insurance policies. The system was used
+            by insurance agents and office workers. My tasks included creating new modules, integrating external systems
+            (online payments, client data verification, insurance application creation), and optimizing application
+            performance. I worked on both the frontend (Angular) and backend (Java, Groovy, SQL) of the application.
           </Typography>
         </Grid>
       </Grid>
 
-      <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 20px 20px'} margin={'0px auto 0px auto'}>
-        <Grid layout="container" padding={0} margin={0}>
-          <Grid
-            layout="columns"
-            gap={{ col: '20px', row: '20px' }}
-            col={{
-              smallDesktop: 2,
-              desktop: 2,
-              mobile: 1,
-              tablet: 2,
-            }}
-          >
-            <div
-              style={{
-                background: 'white',
-                padding: '0 40px 40px 40px',
-                boxSizing: 'border-box',
-                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-              }}
-              className={styles.cornerShape}
-            >
-              <Typography appearance="light" variant="subheading">
-                APPLIED SYSTEMS INC.
-              </Typography>
-              <Typography appearance="light" variant="body">
-                I was responsible for developing a React.js/TypeScript frontend for an insurance purchasing website
-                built on the Applied Systems design system, whose core technical challenge involved implementing a
-                recursive DFS algorithm to conditionally render a nested, graph-like Server Driven UI questionnaire from
-                a ~60,000-line JSON payload, while also contributing to an admin panel, user action tracking,
-                statistical charts, and WCAG 2.1 AA accessibility compliance as part of an 8-person international team
-                across Poland, India, Canada, England, the USA, and Australia.
-              </Typography>
-            </div>
-
-            <div
-              style={{
-                backgroundColor: '#FFF2D5',
-                padding: '0 40px 40px 40px',
-                boxSizing: 'border-box',
-                display: 'flex',
-                flexDirection: 'column',
-                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-              }}
-              className={styles.cornerShape}
-            >
-              <Typography appearance="light" variant="subheading">
-                WARNER BROS. DISCOVERY, TVN24.pl
-              </Typography>
-              <Typography appearance="light" variant="body">
-                My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
-                technology. The architecture was inspired by the islands concept popularized by Astro.js, featuring
-                microfrontend applications implemented with React.js and Web Components. As part of the development
-                team, I contributed to building multiple interactive widgets, including stock quotes, weather forecasts,
-                polls, quizzes, election tools, TV program guides, and a custom SSR-based microfrontend rendering
-                algorithm that operates without relying on external libraries.
-              </Typography>
-            </div>
-
-            <div
-              style={{
-                backgroundColor: '#FFF2D5',
-                padding: '0 40px 40px 40px',
-                boxSizing: 'border-box',
-                borderRadius: '10px',
-                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-              }}
-              className={styles.cornerShape}
-            >
-              <Typography appearance="light" variant="subheading">
-                FLHF S.A
-              </Typography>
-              <Typography appearance="light" variant="body">
-                My responsibility was to enhance a website initially developed by a software house while simultaneously
-                refreshing its graphic design. The core focus was to develop ecommerce-specific components such as
-                sliders, carousels, product listings, search functionality, and a shopping cart. Key priorities included
-                optimizing for mobile view, improving SEO, descriptive markup and metadata, and enhancing performance
-                metrics such as Cumulative Layout Shift (CLS), page speed, and accessibility, measured and optimized
-                using Lighthouse.
-              </Typography>
-            </div>
-
-            <div
-              style={{
-                background: 'white',
-                padding: '0 40px 40px 40px',
-                boxSizing: 'border-box',
-                borderRadius: '10px',
-                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-              }}
-              className={styles.cornerShape}
-            >
-              <Typography appearance="light" variant="subheading">
-                EUROPA UBEZPIECZENIA
-              </Typography>
-              <Typography appearance="light" variant="body">
-                My duty was to maintain and develop an internal system for managing insurance policies. The system was
-                used by insurance agents and office workers. My tasks included creating new modules, integrating
-                external systems (online payments, client data verification, insurance application creation), and
-                optimizing application performance. I worked on both the frontend (Angular) and backend (Java, Groovy,
-                SQL) of the application.
-              </Typography>
-            </div>
-          </Grid>
-        </Grid>
-      </Grid>
-
-      <Grid layout="container" widthMax={'1360px'} padding={'0 0 40px 0'} className={styles.homeSliderProjects}>
+      <Grid layout="container" widthMax={'1360px'} padding={'40px 0 40px 0'} className={styles.homeSliderProjects}>
         <div className={styles.homeSliderProjectsWrapper}>
           <Slider
             key={'homeSliderItemsDesktop'}
