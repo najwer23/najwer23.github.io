@@ -1,46 +1,35 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
-import { Button } from 'najwer23morsels/lib/Button';
 import { Grid } from 'najwer23morsels/lib/Grid';
-import { IconArrowLeft } from 'najwer23morsels/lib/Icons';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
+import { Typography } from 'najwer23morsels/lib/Typography';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BlogRSS } from './BlogRSS.const';
 
 export const BlogArchive: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
 
   useDocumentTitle(`Blog, Archive | Mariusz Najwer`);
 
-  const from = location.state?.from as string | undefined;
-
-  const handleBack = () => {
-    if (from) {
-      navigate(-1);
-    } else {
-      navigate('/blog', { replace: true });
-    }
-  };
-
   return (
-    <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
-      <Button
-        type="button"
-        onClick={handleBack}
-        backgroundColor="orangered"
-        height="50px"
-        width="50px"
-        margin={'0 0 15px'}
-        title="Back"
-        backgroundColorDisabled="#4d4d4d"
-      >
-        <IconArrowLeft width={24} height={24} color="white" />
-      </Button>
+    <Grid layout="container" widthMax="1400px" padding="0 20px 40px 20px">
+      <Grid layout="container" widthMax="900px" minHeight="415px" margin="0 0 60px">
+        <Grid layout="container" widthMax="900px" margin={'0 0 40px 0'} minHeight={0}>
+          <Typography appearance="light" variant="display">
+            Archive
+          </Typography>
 
-      <Grid layout="container" widthMax="900px" minHeight="415px" margin="40px 0 60px">
-        <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin="0 0 40px">
-          Archive
-        </TextBox>
+          <TextBox
+            tag="a"
+            href="/#/blog"
+            desktopSize={12}
+            mobileSize={12}
+            fontWeight={600}
+            color="var(--linkColor)"
+            colorHover="var(--linkColor)"
+          >
+            Blog
+          </TextBox>
+        </Grid>
 
         {BlogRSS.map(({ title, link }) => (
           <div style={{ margin: '0 0 10px 0' }} key={link}>

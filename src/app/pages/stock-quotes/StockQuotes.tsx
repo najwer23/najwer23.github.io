@@ -3,6 +3,7 @@ import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQueries';
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
+import { Typography } from 'najwer23morsels/lib/Typography';
 import { chartDataCurrency } from './chartDataCurrency';
 import { queryStockQuotes } from './StockQuotes.query';
 
@@ -22,32 +23,35 @@ export const StockQuotes: React.FC = () => {
 
   return (
     <>
-      <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 40px 20px'}>
-        <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'0 0 10px 0'}>
-          Stock Quotes
-        </TextBox>
+      <Grid layout="container" widthMax={'1400px'} padding={'0 20px 0px 20px'}>
+        <Grid layout="container" widthMax="900px" margin={'0 0 40px 0'}>
+          <Typography appearance="light" variant="display">
+            Stock Quotes
+          </Typography>
+        </Grid>
         <Grid widthMax={'700'} layout="container" padding="0" margin="0">
-          <TextBox tag={'p'} desktopSize={14} mobileSize={14}>
-            Bid Price (3.9852): This means that the highest price buyers are willing to pay for the asset is 3.9852.
+          <Typography appearance="light" variant="body">
+            <b>Bid Price (3.9852)</b>: This means that the highest price buyers are willing to pay for the asset is
+            3.9852.
             <br />
             If you want to sell the asset, you can sell it at this price.
-          </TextBox>
-          <TextBox tag={'p'} desktopSize={14} mobileSize={14} margin={'20px 0 0 0'}>
-            Ask Price (4.0658): This indicates that the lowest price sellers are willing to accept is 4.0658.
+          </Typography>
+          <Typography appearance="light" variant="body">
+            <b>Ask Price (4.0658)</b>: This indicates that the lowest price sellers are willing to accept is 4.0658.
             <br />
             If you want to buy the asset, you will have to pay this price.
-          </TextBox>
+          </Typography>
         </Grid>
       </Grid>
 
-      <Grid layout="container" widthMax={'1400px'} padding={'0 0 80px 0px'}>
+      <Grid layout="container" widthMax={'1400px'} padding={'0 0 0px 0px'}>
         {resultsArray.map((v, i) => (
           <Grid
             key={i}
             layout="container"
             widthMax={'1400px'}
             padding={'0 20px'}
-            margin={'30px auto 50px auto'}
+            margin={'30px auto 80px auto'}
             minHeight="700px"
             loading={isLoading}
           >

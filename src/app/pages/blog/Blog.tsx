@@ -4,6 +4,7 @@ import { useImmediateThrottledQuery } from '@app/hooks/useImmediateThrottledQuer
 import { Button } from 'najwer23morsels/lib/Button';
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
+import { Typography } from 'najwer23morsels/lib/Typography';
 import { useEffect, useMemo } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import { queryBlog, queryBlogManifest } from './Blog.query';
@@ -70,10 +71,10 @@ export const Blog: React.FC = () => {
 
   return (
     <>
-      <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
-        <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin="0">
+      <Grid layout="container" widthMax="1400px" padding="0 20px 40px 20px">
+        <Typography appearance="light" variant="display">
           Blog
-        </TextBox>
+        </Typography>
 
         <TextBox
           tag="a"

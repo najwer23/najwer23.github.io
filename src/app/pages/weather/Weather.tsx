@@ -7,6 +7,7 @@ import { Grid } from 'najwer23morsels/lib/Grid';
 import { useWindowSize } from 'najwer23morsels/lib/Hooks';
 import { SliderScroll } from 'najwer23morsels/lib/SliderScroll';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
+import { Typography } from 'najwer23morsels/lib/Typography';
 import { useMemo, useState } from 'react';
 import { chartDataPressure } from './chartData/chartDataPressure';
 import { chartDataRainfall } from './chartData/chartDataRainfall';
@@ -60,10 +61,13 @@ export const Weather: React.FC = () => {
 
   return (
     <>
-      <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 40px 20px'}>
-        <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'0 0 10px 0'}>
-          Weather
-        </TextBox>
+      <Grid layout="container" widthMax={'1400px'} padding={'0 20px 0px 20px'}>
+        <Grid layout="container" widthMax="900px" margin={'0 0 40px 0'}>
+          <Typography appearance="light" variant="display">
+            Weather
+          </Typography>
+        </Grid>
+
         <div className={styles.weatherSelectWrapper}>
           {townListForSelect.map(({ value, label }) => (
             <Button

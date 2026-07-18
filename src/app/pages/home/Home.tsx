@@ -2,9 +2,9 @@ import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { Picture } from 'najwer23morsels/lib/Picture';
 import { Slider } from 'najwer23morsels/lib/Slider';
-import { SliderScroll } from 'najwer23morsels/lib/SliderScroll';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
-import React, { lazy, Suspense, useMemo } from 'react';
+import { Typography } from 'najwer23morsels/lib/Typography';
+import React, { lazy, Suspense } from 'react';
 import styles from './Home.module.css';
 
 const Masonry = lazy(() => import('najwer23morsels/lib/Masonry').then((m) => ({ default: m.Masonry })));
@@ -12,182 +12,160 @@ const Masonry = lazy(() => import('najwer23morsels/lib/Masonry').then((m) => ({ 
 export const Home: React.FC = () => {
   useDocumentTitle('Home | Mariusz Najwer');
 
-  const techSliderContent = useMemo(
-    () => (
-      <Grid layout="container" widthMax={'1360px'}>
-        <div style={{ height: '260px', width: '100%' }}>
-          <SliderScroll gap="10px" isCircular autoPlay autoPlaySpeed={0.5}>
-            {[
-              'Angular',
-              'React',
-              'Typescript',
-              'JavaScript',
-              'Node.js',
-              'Fastify',
-              'CSS',
-              'AWS',
-              'Next.js',
-              'Expo',
-              'React Native',
-            ].map((v) => (
-              <div key={v} className={[styles.homeSliderTech, styles.cornerShape].join(' ')}>
-                <TextBox tag="p" desktopSize={48} mobileSize={35} fontWeight={400} color="black">
-                  {v}
-                </TextBox>
-              </div>
-            ))}
-          </SliderScroll>
-        </div>
-      </Grid>
-    ),
-    [],
-  );
-
   return (
     <>
-      <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 0px 20px'}>
-        <Grid
-          layout="flex"
-          flexWrap="wrap"
-          justifyContent="flexstart"
-          alignItems="flexstart"
-          widthMax={'1400px'}
-          padding={'0 0 20px 0'}
-          gap={{ col: '60px', row: '40px' }}
-        >
-          <div style={{ width: 'min(400px, 100%)' }}>
-            <div className={styles.mePicture}>
-              <Picture
-                figcaption="I byte on both code and class."
-                figcaptionColor="grey"
-                src={'/me.jpg'}
-                alt={'Photo of Mariusz Najwer'}
-                ar={1}
-                border
-                loading="eager"
-              />
-            </div>
-          </div>
-          <div
-            className={[styles.meDesc, styles.cornerShape].join(' ')}
-            style={{ background: 'white', padding: '40px', boxSizing: 'border-box' }}
-          >
-            <Grid layout="container" padding={'0 0 40px 0'} margin={0}>
-              <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                Hello, World!
-              </TextBox>
-            </Grid>
-            <Grid layout="container" widthMax={'800px'} margin={0}>
-              <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400}>
-                I am a Software Engineer with extensive experience in frontend and full-stack development across
-                insurance, media, and tech domains. I build scalable web applications using React.js, Angular,
-                TypeScript, JavaScript, Node.js, and modern web technologies. I have contributed to design systems,
-                SSR-driven architectures, and microfrontend development, collaborating with international teams. Based
-                in Wrocław, Poland, open to remote opportunities.
-              </TextBox>
-            </Grid>
-            <Grid layout="container" widthMax={'700px'} padding={'40px 0 0px 0'} margin={0}>
-              <ul style={{ margin: 0, paddingLeft: 14 }}>
-                {[
-                  ['github.com/najwer23', 'https://github.com/najwer23'],
-                  ['x.com/najwer23', 'https://x.com/najwer23'],
-                  ['linkedin.com/in/najwer23', 'https://www.linkedin.com/in/najwer23'],
-                  ['npmjs.com/~najwer23', 'https://www.npmjs.com/~najwer23'],
-                  ['leetcode.com/u/najwer23', 'https://leetcode.com/u/najwer23'],
-                  ['najwer23gym.vercel.app', 'https://najwer23gym.vercel.app'],
-                ].map(([text, href]) => (
-                  <li key={href}>
-                    <TextBox tag="a" desktopSize={18} mobileSize={16} href={href} target="_blank">
-                      {text}
-                    </TextBox>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          </div>
+      <Grid layout="container" widthMax={'1400px'} padding={'0 20px 0px 20px'}>
+        <Grid layout="container" widthMax="900px" margin={0}>
+          <Typography appearance="light" variant="display">
+            Portfolio
+          </Typography>
+          <Typography appearance="light" variant="caption">
+            Software Engineer · Mariusz Najwer · Wrocław, Poland
+          </Typography>
+          <Typography appearance="light" variant="body">
+            I am a Software Engineer with extensive experience in frontend and full-stack development across insurance,
+            media, and tech domains. I build scalable web applications using React.js, Angular, TypeScript, JavaScript,
+            Node.js, and modern web technologies. I have contributed to design systems, SSR-driven architectures, and
+            microfrontend development, collaborating with international teams. Based in Wrocław, Poland, open to remote
+            opportunities.
+          </Typography>
+        </Grid>
+
+        <Grid layout="container" widthMax={'700px'} padding={0} margin={'10px 0 0 0'}>
+          <ul style={{ margin: 0, paddingLeft: 14 }}>
+            {[
+              ['github.com/najwer23', 'https://github.com/najwer23'],
+              ['x.com/najwer23', 'https://x.com/najwer23'],
+              ['linkedin.com/in/najwer23', 'https://www.linkedin.com/in/najwer23'],
+              ['npmjs.com/~najwer23', 'https://www.npmjs.com/~najwer23'],
+              ['leetcode.com/u/najwer23', 'https://leetcode.com/u/najwer23'],
+              ['najwer23gym.vercel.app', 'https://najwer23gym.vercel.app'],
+            ].map(([text, href]) => (
+              <li key={href}>
+                <Typography appearance="light" variant="link" href={href} target="_blank">
+                  {text}
+                </Typography>
+              </li>
+            ))}
+          </ul>
         </Grid>
       </Grid>
-
-      <Grid layout="container" widthMax={'1400px'} padding={'clamp(30px, 8vw, 60px) 20px 20px 20px'}>
-        <Grid layout="container" widthMax={'900px'} padding={'0 0 40px 0'} margin={0}>
-          <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
-            The way I work is not an accident
-          </TextBox>
-        </Grid>
-        <Grid layout="container" widthMax={'700px'} padding={'0 0 clamp(40px, 8vw, 100px) 0'} margin={0}>
-          <TextBox tag="p" desktopSize={28} mobileSize={22} fontWeight={400}>
-            My approach blends precision, creativity, and relentless focus, ensuring that every project I undertake
-            delivers beyond expectations.
-          </TextBox>
-        </Grid>
-      </Grid>
-
-      {techSliderContent}
-
-      <div style={{ background: 'rgb(225, 223, 223)' }}>
-        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'120px auto 80px auto'}>
-          <Grid layout="container" padding={'60px 0 60px 0'} margin={'0'}>
-            <Grid
-              layout="columns"
-              gap={{ col: '100px', row: '40px' }}
-              col={{
-                smallDesktop: 2,
-                desktop: 2,
-                mobile: 1,
-                tablet: 2,
-              }}
-            >
-              <>
-                {[
-                  {
-                    title: 'Deliberate Problem-Solving',
-                    text: 'I deeply analyze challenges to choose the best fit solutions rather than quick fixes.',
-                  },
-                  {
-                    title: 'Code Quality and Maintainability',
-                    text: 'I write clean, readable, well-documented code that is easy to understand and extend.',
-                  },
-                  {
-                    title: 'Continuous Learning and Improvement',
-                    text: 'I constantly update my skills to leverage the latest technology advancements.',
-                  },
-                  {
-                    title: 'Collaboration and Communication',
-                    text: 'I value open feedback and clear communication to align expectations and drive progress.',
-                  },
-                  {
-                    title: 'User-Centric Design',
-                    text: 'I prioritize accessibility and usability to create intuitive user experiences.',
-                  },
-                  {
-                    title: 'Efficiency and Scalability',
-                    text: 'I design solutions that are efficient today and scalable for future growth.',
-                  },
-                ].map(({ title, text }) => (
-                  <div key={title}>
-                    <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
-                      {title}
-                    </TextBox>
-                    <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="pretty">
-                      {text}
-                    </TextBox>
-                  </div>
-                ))}
-              </>
-            </Grid>
-          </Grid>
-        </Grid>
-      </div>
 
       <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 0px 20px'}>
-        <Grid layout="container" widthMax={'700px'} padding={'0 0 40px 0'} margin={0}>
-          <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500}>
-            Sample projects
-          </TextBox>
+        <Grid layout="container" widthMax={'700px'} padding={'0 0 10px 0'} margin={0}>
+          <Typography appearance="light" variant="heading">
+            Projects
+          </Typography>
         </Grid>
       </Grid>
 
-      <Grid layout="container" widthMax={'1360px'} padding={'0 0 0px 0'} className={styles.homeSliderProjects}>
+      <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 20px 20px'} margin={'0px auto 0px auto'}>
+        <Grid layout="container" padding={0} margin={0}>
+          <Grid
+            layout="columns"
+            gap={{ col: '20px', row: '20px' }}
+            col={{
+              smallDesktop: 2,
+              desktop: 2,
+              mobile: 1,
+              tablet: 2,
+            }}
+          >
+            <div
+              style={{
+                background: 'white',
+                padding: '0 40px 40px 40px',
+                boxSizing: 'border-box',
+                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+              }}
+              className={styles.cornerShape}
+            >
+              <Typography appearance="light" variant="subheading">
+                APPLIED SYSTEMS INC.
+              </Typography>
+              <Typography appearance="light" variant="body">
+                I was responsible for developing a React.js/TypeScript frontend for an insurance purchasing website
+                built on the Applied Systems design system, whose core technical challenge involved implementing a
+                recursive DFS algorithm to conditionally render a nested, graph-like Server Driven UI questionnaire from
+                a ~60,000-line JSON payload, while also contributing to an admin panel, user action tracking,
+                statistical charts, and WCAG 2.1 AA accessibility compliance as part of an 8-person international team
+                across Poland, India, Canada, England, the USA, and Australia.
+              </Typography>
+            </div>
+
+            <div
+              style={{
+                backgroundColor: '#FFF2D5',
+                padding: '0 40px 40px 40px',
+                boxSizing: 'border-box',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+              }}
+              className={styles.cornerShape}
+            >
+              <Typography appearance="light" variant="subheading">
+                WARNER BROS. DISCOVERY, TVN24.pl
+              </Typography>
+              <Typography appearance="light" variant="body">
+                My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
+                technology. The architecture was inspired by the islands concept popularized by Astro.js, featuring
+                microfrontend applications implemented with React.js and Web Components. As part of the development
+                team, I contributed to building multiple interactive widgets, including stock quotes, weather forecasts,
+                polls, quizzes, election tools, TV program guides, and a custom SSR-based microfrontend rendering
+                algorithm that operates without relying on external libraries.
+              </Typography>
+            </div>
+
+            <div
+              style={{
+                backgroundColor: '#FFF2D5',
+                padding: '0 40px 40px 40px',
+                boxSizing: 'border-box',
+                borderRadius: '10px',
+                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+              }}
+              className={styles.cornerShape}
+            >
+              <Typography appearance="light" variant="subheading">
+                FLHF S.A
+              </Typography>
+              <Typography appearance="light" variant="body">
+                My responsibility was to enhance a website initially developed by a software house while simultaneously
+                refreshing its graphic design. The core focus was to develop ecommerce-specific components such as
+                sliders, carousels, product listings, search functionality, and a shopping cart. Key priorities included
+                optimizing for mobile view, improving SEO, descriptive markup and metadata, and enhancing performance
+                metrics such as Cumulative Layout Shift (CLS), page speed, and accessibility, measured and optimized
+                using Lighthouse.
+              </Typography>
+            </div>
+
+            <div
+              style={{
+                background: 'white',
+                padding: '0 40px 40px 40px',
+                boxSizing: 'border-box',
+                borderRadius: '10px',
+                boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
+              }}
+              className={styles.cornerShape}
+            >
+              <Typography appearance="light" variant="subheading">
+                EUROPA UBEZPIECZENIA
+              </Typography>
+              <Typography appearance="light" variant="body">
+                My duty was to maintain and develop an internal system for managing insurance policies. The system was
+                used by insurance agents and office workers. My tasks included creating new modules, integrating
+                external systems (online payments, client data verification, insurance application creation), and
+                optimizing application performance. I worked on both the frontend (Angular) and backend (Java, Groovy,
+                SQL) of the application.
+              </Typography>
+            </div>
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid layout="container" widthMax={'1360px'} padding={'0 0 40px 0'} className={styles.homeSliderProjects}>
         <div className={styles.homeSliderProjectsWrapper}>
           <Slider
             key={'homeSliderItemsDesktop'}
@@ -250,139 +228,8 @@ export const Home: React.FC = () => {
         </div>
       </Grid>
 
-      <div>
-        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'0px auto 0px auto'}>
-          <Grid layout="container" padding={'60px 0 100px 0'} margin={'0'}>
-            <Grid
-              layout="columns"
-              gap={{ col: '40px', row: '40px' }}
-              col={{
-                smallDesktop: 2,
-                desktop: 2,
-                mobile: 1,
-                tablet: 2,
-              }}
-            >
-              <div
-                style={{
-                  background: 'white',
-                  padding: '40px',
-                  boxSizing: 'border-box',
-                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-                }}
-                className={styles.cornerShape}
-              >
-                <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
-                  APPLIED SYSTEMS INC.
-                </TextBox>
-                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
-                  My responsibility was to create a frontend application enabling the purchase of insurance through a
-                  website. The application was developed using React.js and TypeScript, leveraging the Applied Systems
-                  design system. The primary technical challenge was implementing a recursive Depth-First Search (DFS)
-                  algorithm to conditionally render a nested, graph-like structure of questions, where each question’s
-                  visibility depended on previous answers. The question data was fetched from the backend as a large
-                  JSON payload (around 60,000 lines), structured as a Server Driven UI model. The development was part
-                  of a 8-person international team spanning Poland, India, Canada, England, the USA, and Australia. In
-                  addition to the core questionnaire, I contributed to building an admin panel, implementing user action
-                  tracking scripts, creating statistical charts, and ensuring compliance with WCAG 2.1 AA accessibility
-                  standards.
-                </TextBox>
-              </div>
-
-              <div
-                style={{
-                  backgroundColor: '#FFF2D5',
-                  padding: '40px',
-                  boxSizing: 'border-box',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-                }}
-                className={styles.cornerShape}
-              >
-                <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
-                  WARNER BROS. DISCOVERY, TVN24.pl
-                </TextBox>
-                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
-                  My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
-                  technology. The architecture was inspired by the islands concept popularized by Astro.js, featuring
-                  microfrontend applications implemented with React.js and Web Components. As part of the development
-                  team, I contributed to building multiple interactive widgets, including stock quotes, weather
-                  forecasts, polls, quizzes, election tools, TV program guides, and a custom SSR-based microfrontend
-                  rendering algorithm that operates without relying on external libraries.
-                </TextBox>
-
-                <Grid
-                  layout="flex"
-                  widthMin="100%"
-                  widthMax="100%"
-                  justifyContent="flex-end"
-                  alignItems="flex-end"
-                  minHeight="fit-content"
-                  style={{ flexGrow: 1 }}
-                >
-                  <div style={{ width: '70px', margin: '20px 0 0 0' }}>
-                    <Picture
-                      src={'https://upload.wikimedia.org/wikipedia/commons/c/c0/Sign_of_the_Deathly_Hallows.svg'}
-                      alt={'Deathly Hallows'}
-                      ar={259 / 225}
-                      loading="eager"
-                    />
-                  </div>
-                </Grid>
-              </div>
-
-              <div
-                style={{
-                  backgroundColor: '#FFF2D5',
-                  padding: '40px',
-                  boxSizing: 'border-box',
-                  borderRadius: '10px',
-                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-                }}
-                className={styles.cornerShape}
-              >
-                <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
-                  FLHF S.A
-                </TextBox>
-                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
-                  My responsibility was to enhance a website initially developed by a software house while
-                  simultaneously refreshing its graphic design. The core focus was to develop ecommerce-specific
-                  components such as sliders, carousels, product listings, search functionality, and a shopping cart.
-                  Key priorities included optimizing for mobile view, improving SEO, descriptive markup and metadata,
-                  and enhancing performance metrics such as Cumulative Layout Shift (CLS), page speed, and
-                  accessibility, measured and optimized using Lighthouse.
-                </TextBox>
-              </div>
-
-              <div
-                style={{
-                  background: 'white',
-                  padding: '40px',
-                  boxSizing: 'border-box',
-                  borderRadius: '10px',
-                  boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
-                }}
-                className={styles.cornerShape}
-              >
-                <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} margin={'0 0 20px 0'}>
-                  EUROPA UBEZPIECZENIA
-                </TextBox>
-                <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} textWrap="balance">
-                  My duty was to maintain and develop an internal system for managing insurance policies. The system was
-                  used by insurance agents and office workers. My tasks included creating new modules, integrating
-                  external systems (online payments, client data verification, insurance application creation), and
-                  optimizing application performance. I worked on both the frontend (Angular) and backend (Java, Groovy,
-                  SQL) of the application.
-                </TextBox>
-              </div>
-            </Grid>
-          </Grid>
-        </Grid>
-      </div>
-
       <div style={{ background: '#FFE083' }}>
-        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'0px auto 80px auto'}>
+        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'40px auto 60px auto'}>
           <Grid
             layout="flex"
             widthMax={'1400px'}
@@ -425,15 +272,17 @@ export const Home: React.FC = () => {
       </div>
 
       <Grid layout="container" widthMax={'1600px'}>
-        <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 60px 20px'} minHeight="2800px">
-          <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'20px 0 40px'} textWrap="balance">
+        <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 20px 20px'}>
+          <Typography appearance="light" variant="heading">
             Beyond 5 PM ⛵️
-          </TextBox>
+          </Typography>
 
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={500} margin={'20px 0 40px'} textWrap="balance">
+          <Typography appearance="light" variant="body">
             A curated collection of European evenings, city corners, and golden light.
-          </TextBox>
+          </Typography>
+        </Grid>
 
+        <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 60px 20px'} minHeight="2800px">
           <div>
             <Suspense>
               <Masonry

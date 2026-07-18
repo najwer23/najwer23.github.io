@@ -10,6 +10,7 @@ import 'leaflet/dist/leaflet.css';
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { CenterMapButton } from '@app/leaflet/CenterMapButton';
 import { MarkerWithPopup } from '@app/leaflet/MarkerWithPopup';
+import { Typography } from 'najwer23morsels/lib/Typography';
 import { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import styles from './Contact.module.css';
@@ -32,14 +33,15 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <Grid layout="container" widthMax={'1400px'} padding={'clamp(40px, 8vw, 60px) 20px 40px 20px'}>
-      <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'0 0 10px 0'}>
-        Get in touch
-      </TextBox>
-
-      <TextBox tag="h3" desktopSize={14} mobileSize={14} fontWeight={500} margin={'0 0 40px 0'}>
-        All fields are required.
-      </TextBox>
+    <Grid layout="container" widthMax={'1400px'} padding={'0 20px 0px 20px'}>
+      <Grid layout="container" widthMax="900px" margin={'0 0 40px 0'}>
+        <Typography appearance="light" variant="display">
+          Get in touch
+        </Typography>
+        <Typography appearance="light" variant="caption">
+          All fields are required
+        </Typography>
+      </Grid>
 
       <Grid
         layout="columns"
@@ -96,39 +98,35 @@ export const Contact: React.FC = () => {
         </div>
 
         <div>
-          <TextBox tag="h3" desktopSize={25} mobileSize={25} fontWeight={500} margin={'0 0 10px 0'}>
+          <Typography appearance="light" variant="subheading" margin={'clamp(0px, 40px - 8vw, 40px) 0 0 0'}>
             Contact
-          </TextBox>
+          </Typography>
 
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} margin={'0'}>
+          <Typography appearance="light" variant="body">
             najwer23@live.com
-          </TextBox>
+          </Typography>
 
-          <TextBox tag="h3" desktopSize={25} mobileSize={25} fontWeight={500} margin={'30px 0 10px 0'}>
+          <Typography appearance="light" variant="subheading">
             Based in
-          </TextBox>
+          </Typography>
 
-          <TextBox tag="p" desktopSize={18} mobileSize={16} fontWeight={400} margin={'0 0 10px 0'}>
+          <Typography appearance="light" variant="body">
             Wrocław, Poland
-          </TextBox>
+          </Typography>
 
-          <TextBox tag="h3" desktopSize={25} mobileSize={25} fontWeight={500} margin={'30px 0 10px 0'}>
+          <Typography appearance="light" variant="subheading">
             Linkedin
-          </TextBox>
+          </Typography>
 
-          <TextBox
-            tag="a"
-            desktopSize={18}
-            mobileSize={16}
-            href={'https://www.linkedin.com/in/najwer23'}
-            target="_blank"
-          >
-            linkedin.com/in/najwer23
-          </TextBox>
+          <Typography appearance="light" variant="body">
+            <Typography appearance="light" variant="link" href={'https://www.linkedin.com/in/najwer23'} target="_blank">
+              linkedin.com/in/najwer23
+            </Typography>
+          </Typography>
         </div>
       </Grid>
 
-      <Grid layout="container" widthMax={'100%'} margin={'60px 0 60px 0'}>
+      <Grid layout="container" widthMax={'100%'} margin={'60px 0 80px 0'}>
         <div className={styles.mapContainerWrapper}>
           <MapContainer
             center={[51.094598, 17.020876]}

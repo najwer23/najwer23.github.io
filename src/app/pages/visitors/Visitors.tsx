@@ -4,6 +4,7 @@ import { useImmediateThrottledQuery } from '@app/hooks/useImmediateThrottledQuer
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { Select } from 'najwer23morsels/lib/select';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
+import { Typography } from 'najwer23morsels/lib/Typography';
 import React, { useMemo, useState } from 'react';
 import { queryVisitorsHits } from './Visitors.query';
 import { buildChartData, sortByDate, sumByDate, sumByYear } from './Visitors.utils';
@@ -69,10 +70,12 @@ export const Visitors: React.FC = () => {
   const [minDate, minViews] = minViewDay;
 
   return (
-    <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
-      <TextBox tag="h2" desktopSize={50} mobileSize={40} fontWeight={500} margin={'0 0 40px 0'}>
-        Visitors
-      </TextBox>
+    <Grid layout="container" widthMax="1400px" padding="0 20px 0px 20px">
+      <Grid layout="container" widthMax="900px" margin={'0 0 40px 0'}>
+        <Typography appearance="light" variant="display">
+          Visitors
+        </Typography>
+      </Grid>
 
       <Grid
         layout="columns"
@@ -188,7 +191,7 @@ export const Visitors: React.FC = () => {
             )}
           </Grid>
 
-          <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
+          <Grid layout="container" widthMax="1400px" margin="30px auto 80px auto" minHeight="700px" loading={isLoading}>
             {!isLoading && (
               <div style={{ height: '700px' }}>
                 <ChartBar title="Daily Visitors for /blog" ySymbol="" data={buildChartData(blogViews)} />

@@ -8,7 +8,7 @@ export const Navigation: React.FC = () => {
 
   const isActive = (href: string) => {
     if (location.pathname === '/') {
-      return href === '/#/home';
+      return href === '/#/portfolio';
     } else if (location.pathname.includes('/blog/')) {
       return href === '/#/blog';
     } else {
@@ -41,7 +41,7 @@ export const Navigation: React.FC = () => {
       menuMobile={
         <>
           {[
-            { href: '/#/home', label: 'Home' },
+            { href: '/#/portfolio', label: 'Portfolio' },
             { href: '/#/contact', label: 'Contact' },
             { href: '/#/weather', label: 'Weather' },
             { href: '/#/stock-quotes', label: 'Stock Quotes' },
@@ -77,7 +77,7 @@ export const Navigation: React.FC = () => {
       menuBottomTabs={
         <>
           {[
-            { href: '/#/home', label: 'Home' },
+            { href: '/#/portfolio', label: 'Portfolio' },
             { href: '/#/contact', label: 'Contact' },
             { href: '/#/weather', label: 'Weather' },
             { href: '/#/stock-quotes', label: 'Stock Quotes' },
