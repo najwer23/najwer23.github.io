@@ -15,39 +15,41 @@ export const Home: React.FC = () => {
   return (
     <>
       <Grid layout="container" widthMax={'1400px'} padding={'0 20px 0px 20px'}>
-        <Grid layout="container" widthMax="900px" margin={0}>
-          <Typography appearance="light" variant="display">
-            Portfolio
-          </Typography>
-          <Typography appearance="light" variant="caption">
-            Software Engineer · Mariusz Najwer · Wrocław, Poland
-          </Typography>
-          <Typography appearance="light" variant="body">
-            I am a Software Engineer with extensive experience in frontend and full-stack development across insurance,
-            media, and tech domains. I build scalable web applications using React.js, Angular, TypeScript, JavaScript,
-            Node.js, and modern web technologies. I have contributed to design systems, SSR-driven architectures, and
-            microfrontend development, collaborating with international teams. Based in Wrocław, Poland, open to remote
-            opportunities.
-          </Typography>
-        </Grid>
+        <Grid layout="flex" gap={{ col: '20px', row: '20px' }} flexWrap="wrap">
+          <Grid layout="container" margin={0} widthMax={'900px'}>
+            <Typography appearance="light" variant="display">
+              Portfolio
+            </Typography>
+            <Typography appearance="light" variant="caption">
+              Software Engineer · Mariusz Najwer · Wrocław, Poland
+            </Typography>
+            <Typography appearance="light" variant="body">
+              I am a Software Engineer with extensive experience in frontend and full-stack development across
+              insurance, media, and tech domains. I build scalable web applications using React.js, Angular, TypeScript,
+              JavaScript, Node.js, and modern web technologies. I have contributed to design systems, SSR-driven
+              architectures, and microfrontend development, collaborating with international teams. Based in Wrocław,
+              Poland, open to remote opportunities.
+            </Typography>
+          </Grid>
 
-        <Grid layout="container" widthMax={'700px'} padding={0} margin={'10px 0 0 0'}>
-          <ul style={{ margin: 0, paddingLeft: 14 }}>
-            {[
-              ['github.com/najwer23', 'https://github.com/najwer23'],
-              ['x.com/najwer23', 'https://x.com/najwer23'],
-              ['linkedin.com/in/najwer23', 'https://www.linkedin.com/in/najwer23'],
-              ['npmjs.com/~najwer23', 'https://www.npmjs.com/~najwer23'],
-              ['leetcode.com/u/najwer23', 'https://leetcode.com/u/najwer23'],
-              ['najwer23gym.vercel.app', 'https://najwer23gym.vercel.app'],
-            ].map(([text, href]) => (
-              <li key={href}>
-                <Typography appearance="light" variant="link" href={href} target="_blank">
-                  {text}
-                </Typography>
-              </li>
-            ))}
-          </ul>
+          <Grid layout="container" padding={0} margin={0}>
+            <ul className={styles.linkList}>
+              {[
+                ['github.com/najwer23', 'https://github.com/najwer23'],
+                ['x.com/najwer23', 'https://x.com/najwer23'],
+                ['linkedin.com/in/najwer23', 'https://www.linkedin.com/in/najwer23'],
+                ['npmjs.com/~najwer23', 'https://www.npmjs.com/~najwer23'],
+                ['leetcode.com/u/najwer23', 'https://leetcode.com/u/najwer23'],
+                ['najwer23gym.vercel.app', 'https://najwer23gym.vercel.app'],
+              ].map(([text, href]) => (
+                <li key={href} className={styles.linkListLi}>
+                  <TextBox tag={'a'} href={href} target="_blank" mobileSize={16} desktopSize={16}>
+                    {text}
+                  </TextBox>
+                </li>
+              ))}
+            </ul>
+          </Grid>
         </Grid>
       </Grid>
 

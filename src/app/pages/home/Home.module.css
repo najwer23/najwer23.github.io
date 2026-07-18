@@ -3,28 +3,6 @@
     border-radius: 12px;
     corner-shape: squircle;
   }
-
-  .meDesc {
-    width: calc(100% - 460px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    corner-shape: squircle;
-
-    @media (max-width: 949.98px) {
-      width: 100%;
-    }
-  }
-
-  .homeSliderTech {
-    align-items: center;
-    display: flex;
-    height: 240px;
-    width: 300px;
-    justify-content: center;
-    box-sizing: border-box;
-    border: 2px solid black;
-  }
-
   .homeSliderProjects {
     .homeSliderProjectsWrapper {
       height: 700px;
@@ -43,6 +21,26 @@
       justify-content: center;
       border: 2px solid black;
       box-sizing: border-box;
+    }
+  }
+
+  .linkList {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+
+    @media (max-width: 1143.98px) {
+      text-align: left;
+      list-style-type: disc;
+      padding-left: 14px;
+    }
+  }
+
+  .linkListLi {
+    text-align: right;
+
+    @media (max-width: 1143.98px) {
+      text-align: left;
     }
   }
 }
