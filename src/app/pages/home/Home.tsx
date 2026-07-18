@@ -210,7 +210,7 @@ export const Home: React.FC = () => {
       <Grid layout="container" widthMax={'1600px'}>
         <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 20px 20px'}>
           <Typography appearance="light" variant="heading">
-            Beyond 5 PM ⛵️
+            After Hours ⛵️
           </Typography>
 
           <Typography appearance="light" variant="body">
