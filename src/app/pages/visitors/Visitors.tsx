@@ -87,7 +87,7 @@ export const Visitors: React.FC = () => {
           tablet: 2,
         }}
       >
-        <Grid layout="container" widthMax="1400px" margin={0}>
+        <Grid layout="container" widthMax="1400px" margin={'0 0 20px'}>
           <Select
             label="Year"
             name={'year'}
@@ -102,22 +102,30 @@ export const Visitors: React.FC = () => {
             onBlur={(_, data) => setYear(data.value)}
           />
         </Grid>
+      </Grid>
 
-        {!isError && (
+      {isError && (
+        <TextBox tag="p" desktopSize={16} mobileSize={16} fontWeight={500} margin={'30px 0 0'}>
+          No results
+        </TextBox>
+      )}
+
+      {!isError && (
+        <>
           <Grid
             margin={'0 0 30px'}
             layout="container"
             widthMax="1400px"
-            minHeight="clamp(134px, calc(380px - 30vw), 380px)"
+            minHeight="clamp(70px, calc(200px - 13.4vw), 150px)"
             loading={isLoading}
           >
             <Grid
               layout="columns"
               gap={{ col: '100px', row: '20px' }}
               col={{
-                smallDesktop: 2,
-                desktop: 2,
-                mobile: 1,
+                smallDesktop: 4,
+                desktop: 4,
+                mobile: 2,
                 tablet: 2,
               }}
             >
@@ -164,17 +172,7 @@ export const Visitors: React.FC = () => {
               </div>
             </Grid>
           </Grid>
-        )}
-      </Grid>
 
-      {isError && (
-        <TextBox tag="p" desktopSize={16} mobileSize={16} fontWeight={500} margin={'30px 0 0'}>
-          No results
-        </TextBox>
-      )}
-
-      {!isError && (
-        <>
           <Grid layout="container" widthMax="1400px" margin="30px auto 50px auto" minHeight="700px" loading={isLoading}>
             {!isLoading && (
               <div style={{ height: '700px' }}>
