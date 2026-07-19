@@ -41,6 +41,7 @@ export const Home: React.FC = () => {
                 ['npmjs.com/~najwer23', 'https://www.npmjs.com/~najwer23'],
                 ['leetcode.com/u/najwer23', 'https://leetcode.com/u/najwer23'],
                 ['najwer23gym.vercel.app', 'https://najwer23gym.vercel.app'],
+                ['gitfut.com/najwer23', 'https://gitfut.com/najwer23'],
               ].map(([text, href]) => (
                 <li key={href} className={styles.linkListLi}>
                   <TextBox tag={'a'} href={href} target="_blank" mobileSize={16} desktopSize={16}>
