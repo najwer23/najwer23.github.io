@@ -12,7 +12,7 @@ import { CenterMapButton } from '@app/leaflet/CenterMapButton';
 import { MarkerWithPopup } from '@app/leaflet/MarkerWithPopup';
 import { Typography } from 'najwer23morsels/lib/Typography';
 import { useState } from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { AttributionControl, MapContainer, TileLayer } from 'react-leaflet';
 import styles from './Contact.module.css';
 
 export const Contact: React.FC = () => {
@@ -133,11 +133,15 @@ export const Contact: React.FC = () => {
             zoom={13}
             style={{ height: '550px', width: '100%' }}
             closePopupOnClick={false}
+            attributionControl={false}
           >
             <TileLayer
-              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_2e54_1_f2da3b477a787ddc0d5212ae"
               className={styles.mapContainerWrapper}
+              attribution='&copy; <a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>'
             />
+            <AttributionControl prefix={false} position="bottomright" />
+
             <MarkerWithPopup mapIsFlying={mapIsFlying} setMapIsFlying={setMapIsFlying} />
             <CenterMapButton center={[51.094598, 17.020876]} zoom={13} onCenter={() => setMapIsFlying(true)} />
           </MapContainer>
