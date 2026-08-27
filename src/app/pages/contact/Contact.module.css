@@ -2,7 +2,7 @@
   .mapContainerWrapper {
     border-radius: 12px;
     corner-shape: squircle;
-    padding: 5px;
+    padding: 0px;
   }
 
   .mapContainerWrapper :global(.leaflet-container) {
