@@ -85,17 +85,6 @@ yarn build
 yarn deploy
 ```
 
-## Troubleshooting
-
-**`zsh: command not found: yarn`**
-Mise isn't activated in your shell. Add the activation lines from [Prerequisites](#prerequisites) to `~/.zshrc` and restart the terminal. As a one-off, run `mise exec -- yarn install` or `mise setup`.
-
-**`zsh: command not found: compdef`**
-`compinit` must run before `mise activate` in `~/.zshrc`. Add `autoload -Uz compinit && compinit` above the `eval "$(mise activate zsh)"` line.
-
-**Tools don't apply in the project directory**
-Run `mise trust`. Mise ignores an untrusted `mise.toml`.
-
 ## Updating
 
 Update dependencies to the latest versions:
