@@ -13,11 +13,16 @@ Install mise:
 brew install mise
 ```
 
-Activate mise in your shell so `node` and `yarn` are available in this project. For zsh, add these lines to `~/.zshrc`, in this order (`compinit` must run before `mise activate`):
+Enable mise in Zsh by adding this line to `~/.zshrc`:
 
 ```sh
-autoload -Uz compinit && compinit
 eval "$(mise activate zsh)"
+```
+
+Reload your shell configuration:
+
+```sh
+source ~/.zshrc
 ```
 
 ## Getting Started
