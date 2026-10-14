@@ -19,7 +19,7 @@
     "bench": "vitest bench",
     "build": "tsc --build --clean && vite build",
     "deploy": "yarn run build && gh-pages -d build && rimraf build",
-    "format": "yarn exec biome check --write",
+    "format": "biome check --write",
     "god": "ncu -u && yarn install && yarn run start",
     "preview": "yarn build && vite preview --open --host",
     "sort": "npx sort-package-json",
