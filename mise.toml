@@ -4,10 +4,7 @@ yarn = "latest"
 
 [tasks.setup]
 description = "Show tool versions and install dependencies"
-run = [
-  "mise current",
-  "yarn install",
-]
+run = [ "mise current", "yarn install"]
 
 [tasks.start]
 description = "Start the Vite dev server"
