@@ -3,7 +3,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { rssPlugin } from 'vite-plugin-rss';
-import { BlogRSS } from './src/app/pages/blog/BlogRSS.const';
+import { BlogRSS } from './src/app/pages/blog/BlogRSS.const.ts';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -74,7 +74,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@app': path.resolve(__dirname, './src/app'),
+      '@app': path.resolve(import.meta.dirname, './src/app'),
     },
   },
 });

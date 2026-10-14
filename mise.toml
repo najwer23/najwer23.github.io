@@ -1,0 +1,38 @@
+[tools]
+node = "24"
+yarn = "latest"
+
+[tasks.setup]
+description = "Show tool versions and install dependencies"
+run = [
+  "mise current",
+  "yarn install",
+]
+
+[tasks.start]
+description = "Start the Vite dev server"
+run = "yarn start"
+
+[tasks.build]
+description = "Type-check and build"
+run = "yarn build"
+
+[tasks.deploy]
+description = "Build and publish to gh-pages"
+run = "yarn deploy"
+
+[tasks.preview]
+description = "Build and preview the production bundle"
+run = "yarn preview"
+
+[tasks.format]
+description = "Format and lint with Biome"
+run = "yarn format"
+
+[tasks.bench]
+description = "Run benchmarks"
+run = "yarn bench"
+
+[tasks.god]
+description = "Update dependencies, install, and start"
+run = "yarn god"
