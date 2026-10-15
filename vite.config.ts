@@ -23,6 +23,9 @@ export default defineConfig({
       strategies: 'injectManifest',
       srcDir: 'src',
       filename: 'najwer23sw.js',
+      injectManifest: {
+        globIgnores: ['**/@shikijs-*.js'],
+      },
       workbox: {
         // You can add Workbox options here if needed
         // e.g., navigateFallback: '/index.html'
