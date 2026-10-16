@@ -47,6 +47,12 @@ export const Navigation: React.FC = () => {
             { href: '/#/contact', label: 'Contact' },
             { href: '/#/blog', label: 'Blog' },
             {
+              href: 'https://najwer23.github.io/nook/',
+              label: 'Nook ↗',
+              target: '_blank',
+              rel: 'noreferrer',
+            },
+            {
               href: 'https://najwer23.github.io/resume/',
               label: 'Résumé ↗',
               desktopSize: 34,
