@@ -50,5 +50,9 @@ export function useImmediateThrottledQueries<TData>(
     };
   }, []);
 
-  return { resultsArray, isLoading: visibleIsLoading, isError: resultsArray.every((r) => r.isError) };
+  return {
+    resultsArray,
+    isLoading: visibleIsLoading || isPending,
+    isError: resultsArray.every((r) => r.isError),
+  };
 }
