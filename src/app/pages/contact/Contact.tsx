@@ -131,7 +131,7 @@ export const Contact: React.FC = () => {
           <MapContainer
             center={[51.094598, 17.020876]}
             zoom={13}
-            style={{ height: '550px', width: '100%' }}
+            style={{ height: '550px' }}
             closePopupOnClick={false}
             attributionControl={false}
           >
