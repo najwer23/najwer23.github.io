@@ -36,22 +36,19 @@ export const Navigation: React.FC = () => {
             rel="noreferrer"
             target="_blank"
           >
-            Résumé
+            Résumé ↗
           </TextBox>
         </Grid>
       }
       menuMobile={
-        <>
+        <Grid layout="flex" flexDirection="column">
           {[
             { href: '/#/portfolio', label: 'Portfolio' },
             { href: '/#/contact', label: 'Contact' },
-            { href: '/#/weather', label: 'Weather' },
-            { href: '/#/stock-quotes', label: 'Stock Quotes' },
             { href: '/#/blog', label: 'Blog' },
-            { href: '/#/visitors', label: 'Visitors' },
             {
               href: 'https://najwer23.github.io/resume/',
-              label: 'Résumé',
+              label: 'Résumé ↗',
               desktopSize: 34,
               mobileSize: 34,
               fontWeight: 600,
@@ -70,22 +67,29 @@ export const Navigation: React.FC = () => {
               colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
               target={target}
               rel={rel}
+              textAlign="center"
             >
               {label}
             </TextBox>
           ))}
-        </>
+        </Grid>
       }
       menuBottomTabs={
         <>
           {[
             { href: '/#/portfolio', label: 'Portfolio' },
             { href: '/#/contact', label: 'Contact' },
-            { href: '/#/weather', label: 'Weather' },
-            { href: '/#/stock-quotes', label: 'Stock Quotes' },
             { href: '/#/blog', label: 'Blog' },
-            { href: '/#/visitors', label: 'Visitors' },
-          ].map(({ href, label }) => (
+            {
+              href: 'https://najwer23.github.io/nook/',
+              label: 'Nook ↗',
+              desktopSize: 34,
+              mobileSize: 34,
+              fontWeight: 600,
+              target: '_blank',
+              rel: 'noreferrer',
+            },
+          ].map(({ href, label, target, rel }) => (
             <div key={label}>
               <TextBox
                 tag="a"
@@ -95,6 +99,8 @@ export const Navigation: React.FC = () => {
                 fontWeight={500}
                 color={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
                 colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
+                target={target}
+                rel={rel}
               >
                 {label}
               </TextBox>

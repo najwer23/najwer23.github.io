@@ -5,10 +5,7 @@ import { Blog } from '../pages/blog/Blog';
 import { BlogPostByHref } from '../pages/blog/BlogPostByHref';
 import { Contact } from '../pages/contact/Contact';
 import { Home } from '../pages/home/Home';
-import { StockQuotes } from '../pages/stock-quotes/StockQuotes';
 import { Tunes } from '../pages/tunes/Tunes';
-import { Visitors } from '../pages/visitors/Visitors';
-import { Weather } from '../pages/weather/Weather';
 import { ScrollToTop } from './ScrollToTop';
 
 const router = createHashRouter([
@@ -34,14 +31,6 @@ const router = createHashRouter([
         element: <Contact />,
       },
       {
-        path: '/weather',
-        element: <Weather />,
-      },
-      {
-        path: '/stock-quotes',
-        element: <StockQuotes />,
-      },
-      {
         path: '/tunes',
         element: <Tunes />,
       },
@@ -60,10 +49,6 @@ const router = createHashRouter([
       {
         path: '/blog',
         element: <Blog />,
-      },
-      {
-        path: '/visitors',
-        element: <Visitors />,
       },
     ],
   },
