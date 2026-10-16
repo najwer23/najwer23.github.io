@@ -99,19 +99,19 @@ export const Contact: React.FC = () => {
 
         <div>
           <Typography appearance="light" variant="subheading" margin={'clamp(0px, 40px - 8vw, 40px) 0 0 0'}>
-            Contact
-          </Typography>
-
-          <Typography appearance="light" variant="body">
-            najwer23@live.com
-          </Typography>
-
-          <Typography appearance="light" variant="subheading">
             Based in
           </Typography>
 
           <Typography appearance="light" variant="body">
             Wrocław, Poland
+          </Typography>
+
+          <Typography appearance="light" variant="subheading">
+            Contact
+          </Typography>
+
+          <Typography appearance="light" variant="body">
+            najwer23@live.com
           </Typography>
 
           <Typography appearance="light" variant="subheading">
