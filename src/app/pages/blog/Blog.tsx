@@ -105,7 +105,7 @@ export const Blog: React.FC = () => {
         <TextBox
           tag="a"
           target="_blank"
-          href="https://najwer23.github.io/blog-post-creator"
+          href="https://najwer23.github.io/nook/#/blog-post-creator"
           desktopSize={12}
           mobileSize={12}
           fontWeight={600}
@@ -113,7 +113,7 @@ export const Blog: React.FC = () => {
           colorHover="var(--linkColor)"
           margin={'0 0 0 15px'}
         >
-          Post Creator
+          Blog Post Creator
         </TextBox>
 
         {isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest ? (
