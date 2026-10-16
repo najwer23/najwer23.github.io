@@ -1,13 +1,10 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { Grid } from 'najwer23morsels/lib/Grid';
-import { Picture } from 'najwer23morsels/lib/Picture';
-import { Slider } from 'najwer23morsels/lib/Slider';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { Typography } from 'najwer23morsels/lib/Typography';
-import React, { lazy, Suspense } from 'react';
-import styles from './Home.module.css';
+import React from 'react';
 
-const Masonry = lazy(() => import('najwer23morsels/lib/Masonry').then((m) => ({ default: m.Masonry })));
+// const Masonry = lazy(() => import('najwer23morsels/lib/Masonry').then((m) => ({ default: m.Masonry })));
 
 export const Home: React.FC = () => {
   useDocumentTitle('Home | Mariusz Najwer');
@@ -24,32 +21,16 @@ export const Home: React.FC = () => {
               Software Engineer · Mariusz Najwer · Wrocław, Poland
             </Typography>
             <Typography appearance="light" variant="body">
-              I am a Software Engineer with extensive experience in frontend and full-stack development across
-              insurance, media, and tech domains. I build scalable web applications using React.js, Angular, TypeScript,
-              JavaScript, Node.js, and modern web technologies. I have contributed to design systems, SSR-driven
-              architectures, and microfrontend development, collaborating with international teams. Based in Wrocław,
-              Poland, open to remote opportunities.
+              I build fast, accessible web applications that reach millions of users. From the TVN24.pl news platform at
+              Warner Bros. Discovery to insurance purchase flows at Applied Systems.
+              <br />
+              <br />
+              Over 12+ years across media, insurance, and e-commerce, I've worked on SSR architectures, microfrontend
+              systems, design systems, and Server Driven UI. I have collaborated with international teams across Poland,
+              the US, India, Canada, and Australia.
+              <br />
+              <br />I care about real performance and shipping things that work.
             </Typography>
-          </Grid>
-
-          <Grid layout="container" padding={0} margin={0}>
-            <ul className={styles.linkList}>
-              {[
-                ['github.com/najwer23', 'https://github.com/najwer23'],
-                ['x.com/najwer23', 'https://x.com/najwer23'],
-                ['linkedin.com/in/najwer23', 'https://www.linkedin.com/in/najwer23'],
-                ['npmjs.com/~najwer23', 'https://www.npmjs.com/~najwer23'],
-                ['leetcode.com/u/najwer23', 'https://leetcode.com/u/najwer23'],
-                ['najwer23gym.vercel.app', 'https://najwer23gym.vercel.app'],
-                ['gitfut.com/najwer23', 'https://gitfut.com/najwer23'],
-              ].map(([text, href]) => (
-                <li key={href} className={styles.linkListLi}>
-                  <TextBox tag={'a'} href={href} target="_blank" mobileSize={16} desktopSize={16}>
-                    {text}
-                  </TextBox>
-                </li>
-              ))}
-            </ul>
           </Grid>
         </Grid>
       </Grid>
@@ -57,118 +38,48 @@ export const Home: React.FC = () => {
       <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 0px 20px'}>
         <Grid layout="container" widthMax={'900px'} padding={'0 0 10px 0'} margin={0}>
           <Typography appearance="light" variant="heading">
-            Projects
+            Selected Projects
           </Typography>
 
           <Typography appearance="light" variant="subheading">
             APPLIED SYSTEMS INC.
           </Typography>
           <Typography appearance="light" variant="body">
-            I was responsible for developing a React.js/TypeScript frontend for an insurance purchasing website built on
-            the Applied Systems design system, whose core technical challenge involved implementing a recursive DFS
-            algorithm to conditionally render a nested, graph-like Server Driven UI questionnaire from a ~60,000-line
-            JSON payload, while also contributing to an admin panel, user action tracking, statistical charts, and WCAG
-            2.1 AA accessibility compliance as part of an 8-person international team across Poland, India, Canada,
-            England, the USA, and Australia.
+            Built a Server Driven UI insurance purchase flow using a recursive DFS algorithm to render a nested graph of
+            ~60k-line JSON questions. Contributed to an admin panel, user tracking, statistical charts, and WCAG 2.1 AA
+            compliance in an 8-person international team. Kept the codebase maintainable through code reviews and close
+            collaboration with designers, QA, and backend engineers. Shared knowledge across the team by documenting
+            solutions and helping new developers get up to speed with the question graph. Also focused on rendering
+            performance, keeping the form smooth and responsive despite the large number of nested questions.
           </Typography>
           <Typography appearance="light" variant="subheading">
             WARNER BROS. DISCOVERY, TVN24.pl
           </Typography>
           <Typography appearance="light" variant="body">
-            My responsibility was to develop a new version of the TVN24.pl website from the ground up using SSR
-            technology. The architecture was inspired by the islands concept popularized by Astro.js, featuring
-            microfrontend applications implemented with React.js and Web Components. As part of the development team, I
-            contributed to building multiple interactive widgets, including stock quotes, weather forecasts, polls,
-            quizzes, election tools, TV program guides, and a custom SSR-based microfrontend rendering algorithm that
-            operates without relying on external libraries.
+            Built TVN24.pl from scratch using SSR and an islands architecture with microfrontend React + Web Components.
+            Delivered widgets for stocks, weather, polls, elections, TV guides, and a custom SSR rendering algorithm
+            without external libs.
           </Typography>
           <Typography appearance="light" variant="subheading">
             FLHF S.A
           </Typography>
           <Typography appearance="light" variant="body">
-            My responsibility was to enhance a website initially developed by a software house while simultaneously
-            refreshing its graphic design. The core focus was to develop ecommerce-specific components such as sliders,
-            carousels, product listings, search functionality, and a shopping cart. Key priorities included optimizing
-            for mobile view, improving SEO, descriptive markup and metadata, and enhancing performance metrics such as
-            Cumulative Layout Shift (CLS), page speed, and accessibility, measured and optimized using Lighthouse.
+            Enhanced an e-commerce site with sliders, carousels, product listings, and a shopping cart. Focused on
+            mobile optimization, SEO, CLS, page speed, and accessibility improvements via Lighthouse audits.
           </Typography>
           <Typography appearance="light" variant="subheading">
             EUROPA UBEZPIECZENIA
           </Typography>
           <Typography appearance="light" variant="body">
-            My duty was to maintain and develop an internal system for managing insurance policies. The system was used
-            by insurance agents and office workers. My tasks included creating new modules, integrating external systems
-            (online payments, client data verification, insurance application creation), and optimizing application
-            performance. I worked on both the frontend (Angular) and backend (Java, Groovy, SQL) of the application.
+            Maintained and developed an internal insurance policy management system for agents and office workers. Built
+            new modules, integrated payment and data verification systems, and worked across Angular frontend and
+            Java/Groovy backend.
           </Typography>
         </Grid>
       </Grid>
 
-      <Grid layout="container" widthMax={'1360px'} padding={'40px 0 40px 0'} className={styles.homeSliderProjects}>
-        <div className={styles.homeSliderProjectsWrapper}>
-          <Slider
-            key={'homeSliderItemsDesktop'}
-            isCircular
-            slidesConfig={{
-              desktop: { items: 1, slidesToScroll: 1 },
-              mobile: { items: 1, slidesToScroll: 1 },
-              tablet: { items: 1, slidesToScroll: 1 },
-            }}
-          >
-            <div className={[styles.homeSliderProjectsPicture, styles.cornerShape].join(' ')}>
-              <Picture
-                srcMobile="https://i.pinimg.com/1200x/77/ff/b4/77ffb4f3c2b432a22e51e25fe7dc255c.jpg"
-                arMobile={485 / 681}
-                maxHeightMobile="450px"
-                srcDesktop="https://i.pinimg.com/1200x/24/d1/e5/24d1e5325c8e3d5b7a0a295f919ea8d4.jpg"
-                arDesktop={1200 / 750}
-                maxHeightDesktop="600px"
-                alt={'Photo of tvn24.pl'}
-                loading="eager"
-              />
-            </div>
-            <div className={[styles.homeSliderProjectsPicture, styles.cornerShape].join(' ')}>
-              <Picture
-                srcMobile="https://i.pinimg.com/1200x/8b/96/df/8b96dfc8a5c03b79263ab93b857e2325.jpg"
-                arMobile={481 / 680}
-                maxHeightMobile="450px"
-                srcDesktop="https://i.pinimg.com/1200x/9b/f6/21/9bf621356954e8629d7e0177fd13fcf1.jpg"
-                arDesktop={1200 / 750}
-                maxHeightDesktop="600px"
-                alt={'Photo of stock quotes, tvn24.pl'}
-                loading="eager"
-              />
-            </div>
-            <div className={[styles.homeSliderProjectsPicture, styles.cornerShape].join(' ')}>
-              <Picture
-                srcMobile="https://i.pinimg.com/1200x/e5/d1/06/e5d106151ca82149c3b7c56cd99a1646.jpg"
-                arMobile={197 / 338}
-                maxHeightMobile="450px"
-                srcDesktop="https://i.pinimg.com/1200x/65/b2/d4/65b2d4d4779a740edb4e5c9b7b95f3d5.jpg"
-                arDesktop={1200 / 750}
-                maxHeightDesktop="600px"
-                alt={'Photo of Restilo'}
-                loading="eager"
-              />
-            </div>
-            <div className={[styles.homeSliderProjectsPicture, styles.cornerShape].join(' ')}>
-              <Picture
-                srcMobile="https://i.pinimg.com/1200x/21/14/c6/2114c62617df7f42b7f0ad6333369423.jpg"
-                arMobile={391 / 677}
-                maxHeightMobile="450px"
-                srcDesktop="https://i.pinimg.com/1200x/ce/81/67/ce8167dae6118358abfa038361209028.jpg"
-                arDesktop={1200 / 750}
-                maxHeightDesktop="600px"
-                alt={'Photo of Europa Ubezpieczenia'}
-                loading="eager"
-              />
-            </div>
-          </Slider>
-        </div>
-      </Grid>
-
       <div style={{ background: '#FFE083' }}>
-        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'40px auto 60px auto'}>
+        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'100px auto 0px auto'}>
           <Grid
             layout="flex"
             widthMax={'1400px'}
@@ -210,6 +121,7 @@ export const Home: React.FC = () => {
         </Grid>
       </div>
 
+      {/* 
       <Grid layout="container" widthMax={'1600px'}>
         <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 20px 20px'}>
           <Typography appearance="light" variant="heading">
@@ -338,6 +250,7 @@ export const Home: React.FC = () => {
           </div>
         </Grid>
       </Grid>
+       */}
     </>
   );
 };
