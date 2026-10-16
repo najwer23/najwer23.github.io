@@ -56,7 +56,7 @@ export const Blog: React.FC = () => {
         retry: 0,
         enabled: !!resultQueryBlogManifest?.numberOfPosts,
       })),
-      0,
+      300,
     );
 
   const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.data);
@@ -126,7 +126,7 @@ export const Blog: React.FC = () => {
                 margin="40px 0 auto"
                 padding={'20px 0 60px'}
                 key={`blog-placeholder-${i}`}
-                // loading={isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest}
+                loading={isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest}
               >
                 <div />
               </Grid>

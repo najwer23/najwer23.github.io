@@ -36,7 +36,7 @@ export const BlogPostByHref: React.FC = () => {
         retry: 0,
         enabled: true,
       })),
-      0,
+      300,
     );
 
   const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.data);
@@ -71,7 +71,7 @@ export const BlogPostByHref: React.FC = () => {
               minHeight="415px"
               margin="40px 0 60px"
               key={`blog-placeholder-${i}`}
-              // loading={isLoadingQueriesBlogPost}
+              loading={isLoadingQueriesBlogPost}
             >
               <div />
             </Grid>
@@ -83,7 +83,7 @@ export const BlogPostByHref: React.FC = () => {
             <Grid
               layout="container"
               widthMax="900px"
-              // loading={isLoadingQueriesBlogPost}
+              loading={isLoadingQueriesBlogPost}
               minHeight="415px"
               margin="40px 0 60px"
               key={v.data.id}
