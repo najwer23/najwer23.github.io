@@ -2,12 +2,23 @@ import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { Typography } from 'najwer23morsels/lib/Typography';
-import React from 'react';
+import React, { useMemo } from 'react';
+import { BlogRSS } from '../blog/BlogRSS.const';
 
 // const Masonry = lazy(() => import('najwer23morsels/lib/Masonry').then((m) => ({ default: m.Masonry })));
 
 export const Home: React.FC = () => {
   useDocumentTitle('Home | Mariusz Najwer');
+
+  const latestPosts = useMemo(
+    () => [...BlogRSS].sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime()).slice(0, 3),
+    [],
+  );
+
+  const formatDate = useMemo(
+    () => (date: Date) => date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }),
+    [],
+  );
 
   return (
     <>
@@ -75,6 +86,34 @@ export const Home: React.FC = () => {
             new modules, integrated payment and data verification systems, and worked across Angular frontend and
             Java/Groovy backend.
           </Typography>
+        </Grid>
+      </Grid>
+
+      <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 0px 20px'}>
+        <Grid layout="container" widthMax={'900px'} padding={'0 0 10px 0'} margin={0}>
+          <Typography appearance="light" variant="heading">
+            Latest{' '}
+            <Typography href="/#/blog" variant="link">
+              Blog
+            </Typography>{' '}
+            Posts
+          </Typography>
+
+          {latestPosts.map((post) => (
+            <React.Fragment key={post.guid}>
+              <Typography appearance="light" variant="subheading">
+                <Typography href={post.link} variant="link">
+                  {post.title}
+                </Typography>
+              </Typography>
+              <Typography appearance="light" variant="caption">
+                {formatDate(post.pubDate)}
+              </Typography>
+              <Typography appearance="light" variant="body">
+                {post.description}
+              </Typography>
+            </React.Fragment>
+          ))}
         </Grid>
       </Grid>
 
