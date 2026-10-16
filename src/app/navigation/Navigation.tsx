@@ -19,9 +19,11 @@ export const Navigation: React.FC = () => {
   return (
     <NavigationTabs
       menuTopLeftColumn={
-        <TextBox desktopSize={20} mobileSize={20} fontWeight={500} tag="a" href="/#/">
-          @najwer23
-        </TextBox>
+        <Grid layout="flex" justifyContent="flex-start" alignItems="center" minHeight={'100%'}>
+          <TextBox desktopSize={20} mobileSize={20} fontWeight={500} tag="a" href="/#/">
+            @najwer23
+          </TextBox>
+        </Grid>
       }
       menuTopRightColumn={
         <Grid layout="flex" justifyContent="flex-end">
