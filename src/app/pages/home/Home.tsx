@@ -118,7 +118,7 @@ export const Home: React.FC = () => {
       </Grid>
 
       <div style={{ background: '#FFE083' }}>
-        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'100px auto 0px auto'}>
+        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'75px auto 0px auto'}>
           <Grid
             layout="flex"
             widthMax={'1400px'}
