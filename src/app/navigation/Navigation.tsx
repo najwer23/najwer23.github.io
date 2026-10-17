@@ -36,7 +36,7 @@ export const Navigation: React.FC = () => {
             rel="noreferrer"
             target="_blank"
           >
-            Résumé ↗
+            Résumé
           </TextBox>
         </Grid>
       }
@@ -48,13 +48,13 @@ export const Navigation: React.FC = () => {
             { href: '/#/blog', label: 'Blog' },
             {
               href: 'https://najwer23.github.io/nook/',
-              label: 'Nook ↗',
+              label: 'Nook',
               target: '_blank',
               rel: 'noreferrer',
             },
             {
               href: 'https://najwer23.github.io/resume/',
-              label: 'Résumé ↗',
+              label: 'Résumé',
               desktopSize: 34,
               mobileSize: 34,
               fontWeight: 600,
@@ -88,7 +88,7 @@ export const Navigation: React.FC = () => {
             { href: '/#/blog', label: 'Blog' },
             {
               href: 'https://najwer23.github.io/nook/',
-              label: 'Nook ↗',
+              label: 'Nook',
               desktopSize: 34,
               mobileSize: 34,
               fontWeight: 600,
