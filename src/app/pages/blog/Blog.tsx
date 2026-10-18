@@ -59,7 +59,7 @@ export const Blog: React.FC = () => {
       300,
     );
 
-  const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.data);
+  const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.isSuccess);
 
   useEffect(() => {
     if (!isLoadingResultQueryBlogManifest && !isLoadingQueriesBlogPost) {

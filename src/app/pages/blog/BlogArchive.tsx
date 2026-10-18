@@ -2,7 +2,7 @@ import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { Typography } from 'najwer23morsels/lib/Typography';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { BlogRSS } from './BlogRSS.const';
 
 export const BlogArchive: React.FC = () => {
@@ -31,7 +31,7 @@ export const BlogArchive: React.FC = () => {
           </TextBox>
         </Grid>
 
-        {BlogRSS.map(({ title, link }) => (
+        {BlogRSS.map(({ title, link }, index) => (
           <div style={{ margin: '0 0 10px 0' }} key={link}>
             <TextBox
               tag="a"
@@ -46,6 +46,7 @@ export const BlogArchive: React.FC = () => {
               color="var(--linkColor)"
               colorHover="var(--linkColor)"
             >
+              {`#${BlogRSS.length - index} `}
               {title}
             </TextBox>
           </div>

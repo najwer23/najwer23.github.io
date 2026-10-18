@@ -1,11 +1,11 @@
 {
-  "title": "#1 My first blog post",
+  "title": "My first blog post",
   "id": 1,
   "sections": [
     {
       "name": "post-title",
       "data": {
-        "title": "#1 My first blog post",
+        "title": "My first blog post",
         "date": "29/03/2026"
       }
     },

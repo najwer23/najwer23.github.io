@@ -1,11 +1,11 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQueries';
-import { Button } from 'najwer23morsels/lib/Button';
 import { Grid } from 'najwer23morsels/lib/Grid';
-import { IconArrowLeft } from 'najwer23morsels/lib/Icons';
+import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { queryBlog } from './Blog.query';
+import { getBackLabel } from './Blog.utils';
 import { BlogPost } from './BlogPost';
 
 export const BlogPostByHref: React.FC = () => {
@@ -18,11 +18,17 @@ export const BlogPostByHref: React.FC = () => {
   const from = location.state?.from as string | undefined;
   const postsArr = [Number(id)];
 
-  const handleBack = () => {
+  const backPath = from ?? '/blog';
+  const backHref = `/#${backPath}`;
+  const backLabel = getBackLabel(backPath);
+
+  const handleBack = (e: React.MouseEvent) => {
+    e.preventDefault();
+
     if (from) {
       navigate(-1);
     } else {
-      navigate('/blog', { replace: true });
+      navigate(backPath, { replace: true });
     }
   };
 
@@ -39,7 +45,7 @@ export const BlogPostByHref: React.FC = () => {
       300,
     );
 
-  const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.data);
+  const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.isSuccess);
 
   useEffect(() => {
     if (!isLoadingQueriesBlogPost && blogPosts.length === 0) {
@@ -49,19 +55,6 @@ export const BlogPostByHref: React.FC = () => {
 
   return (
     <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
-      <Button
-        type="button"
-        onClick={handleBack}
-        backgroundColor="orangered"
-        height="50px"
-        width="50px"
-        margin={'0 0 15px'}
-        title="Back"
-        backgroundColorDisabled="#4d4d4d"
-      >
-        <IconArrowLeft width={24} height={24} color="white" />
-      </Button>
-
       {isLoadingQueriesBlogPost ? (
         <>
           {Array.from({ length: 1 }, (_, i) => (
@@ -69,7 +62,7 @@ export const BlogPostByHref: React.FC = () => {
               layout="container"
               widthMax="900px"
               minHeight="415px"
-              margin="40px 0 60px"
+              margin="0px 0 60px"
               key={`blog-placeholder-${i}`}
               loading={isLoadingQueriesBlogPost}
             >
@@ -79,15 +72,25 @@ export const BlogPostByHref: React.FC = () => {
         </>
       ) : (
         <>
-          {blogPosts.map((v) => (
-            <Grid
-              layout="container"
-              widthMax="900px"
-              loading={isLoadingQueriesBlogPost}
-              minHeight="415px"
-              margin="40px 0 60px"
-              key={v.data.id}
+          <div>
+            <TextBox
+              onClick={handleBack}
+              tag="a"
+              href={backHref}
+              desktopSize={12}
+              mobileSize={12}
+              fontWeight={600}
+              color="var(--linkColor)"
+              colorHover="var(--linkColor)"
             >
+              {backLabel}
+            </TextBox>
+            <TextBox desktopSize={12} mobileSize={12} fontWeight={600} tag="span" color="grey">{` · `}</TextBox>
+            <TextBox desktopSize={12} mobileSize={12} fontWeight={600} tag="span">{`#${id}`}</TextBox>
+          </div>
+
+          {blogPosts.map((v) => (
+            <Grid layout="container" widthMax="900px" minHeight="415px" margin="40px 0 60px" key={v.data.id}>
               <BlogPost data={v.data} />
             </Grid>
           ))}
