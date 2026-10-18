@@ -34,6 +34,13 @@ export const BlogArchive: React.FC = () => {
         {BlogRSS.map(({ title, link }, index) => (
           <div style={{ margin: '0 0 10px 0' }} key={link}>
             <TextBox
+              desktopSize={14}
+              mobileSize={14}
+              fontWeight={600}
+              tag="span"
+            >{`#${BlogRSS.length - index} `}</TextBox>
+
+            <TextBox
               tag="a"
               href={`#${link.split('#')[1]}`}
               onClick={(e) => {
@@ -46,7 +53,6 @@ export const BlogArchive: React.FC = () => {
               color="var(--linkColor)"
               colorHover="var(--linkColor)"
             >
-              {`#${BlogRSS.length - index} `}
               {title}
             </TextBox>
           </div>
