@@ -6,37 +6,37 @@
     <description>Blog RSS feed</description>
     <atom:link href="https://najwer23.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>#5 Monads in JavaScript. Taming nested checks and async flow</title>
+      <title>Monads in JavaScript. Taming nested checks and async flow</title>
       <link>https://najwer23.github.io/#/blog/post/5</link>
-      <guid>#5-Monads-in-JavaScript-Taming-nested-checks-and-async-flow</guid>
+      <guid>Monads-in-JavaScript-Taming-nested-checks-and-async-flow</guid>
       <description>Have you ever looked at a function and felt it was turning into a maze of checks and edge cases? That is usually the point where code starts to feel heavier than it should. Monads offer a way to keep those flows cleaner, especially when values can fail, stay wrapped, or move through several steps. The idea may sound abstract at first, but it becomes much easier once you see it in plain JavaScript. If you have ever heard Haskell developers talk about monads, this is the same concept in a more familiar setting. Haskell made monads famous, but you do not need to learn Haskell to understand the basic idea. In this post, I’ll show how the pattern helps with nested checks, validation, and async flow. By the end, monads should feel less like theory and more like a practical tool.</description>
       <pubDate>Thu, 23 Apr 2026 03:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>#4 Currying in JavaScript: When it actually pays off</title>
+      <title>Currying in JavaScript: When it actually pays off</title>
       <link>https://najwer23.github.io/#/blog/post/4</link>
-      <guid>#4-Currying-in-JavaScript-When-it-actually-pays-off</guid>
+      <guid>Currying-in-JavaScript-When-it-actually-pays-off</guid>
       <description>Currying looks weird at first, but it solves a very practical problem: reuse. Currying is one of those JavaScript patterns that feels unusual at first, but it can make your code much more flexible. Instead of passing all arguments at once, you pass them one by one: f(a)(b)(c). That makes it easier to reuse functions when some values stay the same and others change often.</description>
       <pubDate>Fri, 17 Apr 2026 03:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>#3 Advanced Sorting in JavaScript: Beyond array.sort()</title>
+      <title>Advanced Sorting in JavaScript: Beyond array.sort()</title>
       <link>https://najwer23.github.io/#/blog/post/3</link>
-      <guid>#3-advanced-sorting-in-javascript-beyond-array-sort</guid>
+      <guid>advanced-sorting-in-javascript-beyond-array-sort</guid>
       <description>Sorting sounds simple until you try to use it in a real application. Then you run into strings sorted like numbers, objects that need multi-field ordering, locale-sensitive text, and arrays that get mutated when you least expect it. In this post, I’ll show how JavaScript sorting really works, where the common traps are, and how to build more reliable sorting logic for real-world data.</description>
       <pubDate>Tue, 07 Apr 2026 03:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>#2 Hash Tables in JavaScript: Object, Map and WeakMap</title>
+      <title>Hash Tables in JavaScript: Object, Map and WeakMap</title>
       <link>https://najwer23.github.io/#/blog/post/2</link>
-      <guid>#2-Hash-Tables-in-JavaScript-Object-Map-and-WeakMap</guid>
+      <guid>Hash-Tables-in-JavaScript-Object-Map-and-WeakMap</guid>
       <description>JavaScript gives us a few different ways to store and look up key-value data. Object, Map, and WeakMap all solve similar problems, but they do so in slightly different ways. In this article, we’ll look at how each of them works, when to use them, and why Object is often treated as a hash-table-like structure in everyday JavaScript code.</description>
       <pubDate>Thu, 02 Apr 2026 18:00:00 GMT</pubDate>
     </item>
     <item>
-      <title>#1 My first blog post</title>
+      <title>My first blog post</title>
       <link>https://najwer23.github.io/#/blog/post/1</link>
-      <guid>#1-My-first-blog-post</guid>
+      <guid>My-first-blog-post</guid>
       <description>Hi, I’m Mariusz, and this is my new blog.</description>
       <pubDate>Sun, 29 Mar 2026 15:00:00 GMT</pubDate>
     </item>
