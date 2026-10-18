@@ -12,12 +12,25 @@ interface RequestOptions<T> {
   headers?: Record<string, string>;
 }
 
-export const executeFetch = async (url: URL, options?: RequestInit) => {
+export const executeFetchExternal = async <TResponse>(url: URL, options?: RequestInit): Promise<TResponse> => {
   const response = await fetch(url, options);
-  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(`External request failed with status ${response.status}`);
+  }
+
+  return response.json();
+};
+
+export const executeFetch = async <TResponse extends ResponseBase = ResponseBase>(
+  url: URL,
+  options?: RequestInit,
+): Promise<TResponse> => {
+  const response = await fetch(url, options);
+  const data: TResponse = await response.json();
 
   if (data.error) {
-    throw Error(data.message);
+    throw new Error(data.message);
   }
 
   return data;

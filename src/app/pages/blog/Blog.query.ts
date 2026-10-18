@@ -1,13 +1,10 @@
-import { configFetch, executeFetch } from '@app/config/configFetch';
+import { executeFetchExternal } from '@app/config/configFetch';
+import type { BlogManifest, BlogPost } from './Blog.types';
 
-export const queryBlog = async (id: number) => {
-  const url = new URL(`${import.meta.env.BASE_URL}blog/${id}.json`, window.location.origin);
-  const options = { ...configFetch({ method: 'GET' }) };
-  return await executeFetch(url, options);
-};
+const blogFileUrl = (fileName: string) =>
+  new URL(`${import.meta.env.BASE_URL}blog/${fileName}`, window.location.origin);
 
-export const queryBlogManifest = async () => {
-  const url = new URL(`${import.meta.env.BASE_URL}blog/0.config.json`, window.location.origin);
-  const options = { ...configFetch({ method: 'GET' }) };
-  return await executeFetch(url, options);
-};
+export const queryBlog = (id: number): Promise<BlogPost> => executeFetchExternal<BlogPost>(blogFileUrl(`${id}.json`));
+
+export const queryBlogManifest = (): Promise<BlogManifest> =>
+  executeFetchExternal<BlogManifest>(blogFileUrl('0.config.json'));

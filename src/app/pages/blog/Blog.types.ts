@@ -26,3 +26,15 @@ export type BlogPostSection = {
     data: BlogPostSectionMap[K];
   };
 }[keyof BlogPostSectionMap];
+
+export type BlogPostSectionName = BlogPostSection['name'];
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  sections: BlogPostSection[];
+}
+
+export interface BlogManifest {
+  numberOfPosts: number;
+}

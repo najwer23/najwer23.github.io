@@ -1,8 +1,11 @@
 import { configApiOrigin } from '@app/config/configApiOrigin';
 import { configFetch, executeFetch, type ResponseBase } from '@app/config/configFetch';
 
-export const queryContact = async (body: Record<string, string>): Promise<ResponseBase> => {
-  const url = new URL(`${configApiOrigin()}/mail/contact-me`);
-  const options = { ...configFetch({ method: 'POST', body: body }) };
-  return await executeFetch(url, options);
+export type ContactPayload = Record<string, string>;
+
+export type ContactResponse = ResponseBase;
+
+export const queryContact = (payload: ContactPayload): Promise<ContactResponse> => {
+  const endpointUrl = new URL(`${configApiOrigin()}/mail/contact-me`);
+  return executeFetch<ContactResponse>(endpointUrl, configFetch({ method: 'POST', body: payload }));
 };
