@@ -1,6 +1,7 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQueries';
 import { Grid } from 'najwer23morsels/lib/Grid';
+import { LoaderDots } from 'najwer23morsels/lib/LoaderDots';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
@@ -42,7 +43,7 @@ export const BlogPostByHref: React.FC = () => {
         retry: 0,
         enabled: true,
       })),
-      300,
+      500,
     );
 
   const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.isSuccess);
@@ -56,20 +57,7 @@ export const BlogPostByHref: React.FC = () => {
   return (
     <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
       {isLoadingQueriesBlogPost ? (
-        <>
-          {Array.from({ length: 1 }, (_, i) => (
-            <Grid
-              layout="container"
-              widthMax="900px"
-              minHeight="415px"
-              margin="0px 0 60px"
-              key={`blog-placeholder-${i}`}
-              loading={isLoadingQueriesBlogPost}
-            >
-              <div />
-            </Grid>
-          ))}
-        </>
+        <LoaderDots />
       ) : (
         <>
           <div>

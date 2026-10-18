@@ -3,6 +3,7 @@ import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQu
 import { useImmediateThrottledQuery } from '@app/hooks/useImmediateThrottledQuery';
 import { Button } from 'najwer23morsels/lib/Button';
 import { Grid } from 'najwer23morsels/lib/Grid';
+import { LoaderDots } from 'najwer23morsels/lib/LoaderDots';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { Typography } from 'najwer23morsels/lib/Typography';
 import { useEffect, useMemo } from 'react';
@@ -56,7 +57,7 @@ export const Blog: React.FC = () => {
         retry: 0,
         enabled: !!resultQueryBlogManifest?.numberOfPosts,
       })),
-      300,
+      500,
     );
 
   const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.isSuccess);
@@ -68,6 +69,8 @@ export const Blog: React.FC = () => {
       }
     }
   }, [isLoadingQueriesBlogPost, isLoadingResultQueryBlogManifest]);
+
+  const isLoading = isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest;
 
   return (
     <>
@@ -116,42 +119,27 @@ export const Blog: React.FC = () => {
           Blog Post Creator
         </TextBox>
 
-        {isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest ? (
-          <>
-            {Array.from({ length: maxPostPerPage }, (_, i) => (
-              <Grid
-                layout="container"
-                widthMax="900px"
-                minHeight="415px"
-                margin="40px 0 auto"
-                padding={'20px 0 60px'}
-                key={`blog-placeholder-${i}`}
-                loading={isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest}
-              >
-                <div />
-              </Grid>
-            ))}
-          </>
+        {isLoading ? (
+          <Grid layout="container" margin="40px 0 auto" padding={'20px 0 60px'}>
+            <LoaderDots />
+          </Grid>
         ) : (
-          <>
-            {blogPosts.map((v) => (
-              <Grid
-                layout="container"
-                widthMax="900px"
-                loading={isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest}
-                minHeight="415px"
-                margin="40px 0 auto"
-                padding={'20px 0 60px'}
-                key={v.data.id}
-              >
-                <BlogPost data={v.data} />
-              </Grid>
-            ))}
-          </>
+          blogPosts.map((v) => (
+            <Grid
+              layout="container"
+              widthMax="900px"
+              minHeight="415px"
+              margin="40px 0 auto"
+              padding={'20px 0 60px'}
+              key={v.data.id}
+            >
+              <BlogPost data={v.data} />
+            </Grid>
+          ))
         )}
       </Grid>
 
-      {(currentPage > firstPage || currentPage < lastPage) && (
+      {!isLoading && (currentPage > firstPage || currentPage < lastPage) && (
         <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 0px 20px">
           <Grid
             layout="flex"
