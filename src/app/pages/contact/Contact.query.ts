@@ -1,11 +1,20 @@
-import { configApiOrigin } from '@app/config/configApiOrigin';
-import { configFetch, executeFetch, type ResponseBase } from '@app/config/configFetch';
+import { apiOrigin } from '@app/api/apiOrigin';
+import type { FetchClientBaseResponse } from '@app/fetchClient/fetchClient.types';
+import { fetchClientConfig } from '@app/fetchClient/fetchClientConfig';
+import { fetchClientExecute } from '@app/fetchClient/fetchClientExecute';
 
-export type ContactPayload = Record<string, string>;
+export type QueryContactPayload = Record<string, string>;
 
-export type ContactResponse = ResponseBase;
+export type QueryContactResponse = FetchClientBaseResponse;
 
-export const queryContact = (payload: ContactPayload): Promise<ContactResponse> => {
-  const endpointUrl = new URL(`${configApiOrigin()}/mail/contact-me`);
-  return executeFetch<ContactResponse>(endpointUrl, configFetch({ method: 'POST', body: payload }));
+export const queryContact = (payload: QueryContactPayload): Promise<QueryContactResponse> => {
+  const endpointUrl = new URL(`${apiOrigin()}/mail/contact-me`);
+
+  return fetchClientExecute<QueryContactResponse>(
+    endpointUrl,
+    fetchClientConfig({
+      method: 'POST',
+      body: payload,
+    }),
+  );
 };

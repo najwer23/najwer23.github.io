@@ -1,5 +1,7 @@
-import { configApiOrigin } from '@app/config/configApiOrigin';
-import { configFetch, executeFetch, type ResponseBase } from '@app/config/configFetch';
+import { apiOrigin } from '@app/api/apiOrigin';
+import type { FetchClientBaseResponse } from '@app/fetchClient/fetchClient.types';
+import { fetchClientConfig } from '@app/fetchClient/fetchClientConfig';
+import { fetchClientExecute } from '@app/fetchClient/fetchClientExecute';
 
 export interface Song {
   id: number;
@@ -9,10 +11,19 @@ export interface Song {
   licence: string;
 }
 
-type QueryPlaylist = { data: { audios: Song[] } } & ResponseBase;
+export type QueryPlaylistResponse = FetchClientBaseResponse & {
+  data: {
+    audios: Song[];
+  };
+};
 
-export const queryPlaylist = async (): Promise<QueryPlaylist> => {
-  const url = new URL(`${configApiOrigin()}/audio/playlist`);
-  const options = { ...configFetch({ method: 'GET' }) };
-  return await executeFetch(url, options);
+export const queryPlaylist = (): Promise<QueryPlaylistResponse> => {
+  const endpointUrl = new URL(`${apiOrigin()}/audio/playlist`);
+
+  return fetchClientExecute<QueryPlaylistResponse>(
+    endpointUrl,
+    fetchClientConfig({
+      method: 'GET',
+    }),
+  );
 };

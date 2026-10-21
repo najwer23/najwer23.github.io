@@ -33,30 +33,29 @@ export const BlogPostByHref: React.FC = () => {
     }
   };
 
-  const { resultsArray: resultsArrayQueriesBlogPost, isLoading: isLoadingQueriesBlogPost } =
-    useImmediateThrottledQueries(
-      postsArr.map((id) => ({
-        queryKey: ['queriesBlogPost', id],
-        queryFn: () => queryBlog(id),
-        staleTime: 30 * 60 * 1000,
-        gcTime: 30 * 60 * 1000,
-        retry: 0,
-        enabled: true,
-      })),
-      500,
-    );
+  const { resultsArray: resultsArrayQueryBlogPost, isLoading: isLoadingQueryBlogPost } = useImmediateThrottledQueries(
+    postsArr.map((id) => ({
+      queryKey: ['queryBlogPost', id],
+      queryFn: () => queryBlog(id),
+      staleTime: 30 * 60 * 1000,
+      gcTime: 30 * 60 * 1000,
+      retry: 0,
+      enabled: true,
+    })),
+    500,
+  );
 
-  const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.isSuccess);
+  const blogPosts = resultsArrayQueryBlogPost.filter((v) => v.isSuccess);
 
   useEffect(() => {
-    if (!isLoadingQueriesBlogPost && blogPosts.length === 0) {
+    if (!isLoadingQueryBlogPost && blogPosts.length === 0) {
       navigate('/blog', { replace: true });
     }
-  }, [isLoadingQueriesBlogPost, blogPosts.length, navigate]);
+  }, [isLoadingQueryBlogPost, blogPosts.length, navigate]);
 
   return (
     <Grid layout="container" widthMax="1400px" padding="clamp(40px, 8vw, 60px) 20px 40px 20px">
-      {isLoadingQueriesBlogPost ? (
+      {isLoadingQueryBlogPost ? (
         <LoaderDots />
       ) : (
         <>

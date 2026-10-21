@@ -1,14 +1,23 @@
-import { configApiOrigin } from '../config/configApiOrigin';
-import { configFetch, executeFetch, type ResponseBase } from '../config/configFetch';
+import { apiOrigin } from '@app/api/apiOrigin';
+import type { FetchClientBaseResponse } from '@app/fetchClient/fetchClient.types';
+import { fetchClientConfig } from '@app/fetchClient/fetchClientConfig';
+import { fetchClientExecute } from '@app/fetchClient/fetchClientExecute';
 
-export interface AnalyticsHitPayload {
+export interface QueryAnalyticsHitPayload {
   appName: string;
   pageName: string;
 }
 
-export type AnalyticsHitResponse = ResponseBase;
+export type QueryAnalyticsHitResponse = FetchClientBaseResponse;
 
-export const queryAnalyticsHit = (payload: AnalyticsHitPayload): Promise<AnalyticsHitResponse> => {
-  const endpointUrl = new URL(`${configApiOrigin()}/analytics/hit`);
-  return executeFetch<AnalyticsHitResponse>(endpointUrl, configFetch({ method: 'POST', body: payload }));
+export const queryAnalyticsHit = (payload: QueryAnalyticsHitPayload): Promise<QueryAnalyticsHitResponse> => {
+  const endpointUrl = new URL(`${apiOrigin()}/analytics/hit`);
+
+  return fetchClientExecute<QueryAnalyticsHitResponse>(
+    endpointUrl,
+    fetchClientConfig({
+      method: 'POST',
+      body: payload,
+    }),
+  );
 };

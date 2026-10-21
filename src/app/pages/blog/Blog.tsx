@@ -14,7 +14,7 @@ import { BlogPost } from './BlogPost';
 export const Blog: React.FC = () => {
   useDocumentTitle('Blog | Mariusz Najwer');
 
-  const { result: resultQueryBlogManifest, isLoading: isLoadingResultQueryBlogManifest } = useImmediateThrottledQuery(
+  const { result: resultQueryBlogManifest, isLoading: isLoadingQueryBlogManifest } = useImmediateThrottledQuery(
     {
       queryKey: ['queryBlogManifest'],
       queryFn: () => queryBlogManifest(),
@@ -47,30 +47,29 @@ export const Blog: React.FC = () => {
   const end = start + maxPostPerPage - 1;
   const postsArr = Array.from({ length: end - start + 1 }, (_, i) => end - i).filter((id) => id > 0);
 
-  const { resultsArray: resultsArrayQueriesBlogPost, isLoading: isLoadingQueriesBlogPost } =
-    useImmediateThrottledQueries(
-      postsArr.map((id) => ({
-        queryKey: ['queriesBlogPost', id],
-        queryFn: () => queryBlog(id),
-        staleTime: 30 * 60 * 1000,
-        gcTime: 30 * 60 * 1000,
-        retry: 0,
-        enabled: !!resultQueryBlogManifest?.numberOfPosts,
-      })),
-      500,
-    );
+  const { resultsArray: resultsArrayQueryBlogPost, isLoading: isLoadingQueryBlogPost } = useImmediateThrottledQueries(
+    postsArr.map((id) => ({
+      queryKey: ['queryBlogPost', id],
+      queryFn: () => queryBlog(id),
+      staleTime: 30 * 60 * 1000,
+      gcTime: 30 * 60 * 1000,
+      retry: 0,
+      enabled: !!resultQueryBlogManifest?.numberOfPosts,
+    })),
+    500,
+  );
 
-  const blogPosts = resultsArrayQueriesBlogPost.filter((v) => v.isSuccess);
+  const blogPosts = resultsArrayQueryBlogPost.filter((v) => v.isSuccess);
 
   useEffect(() => {
-    if (!isLoadingResultQueryBlogManifest && !isLoadingQueriesBlogPost) {
+    if (!isLoadingQueryBlogManifest && !isLoadingQueryBlogPost) {
       if (blogPosts.length == 0) {
         navigate('/blog', { replace: true });
       }
     }
-  }, [isLoadingQueriesBlogPost, isLoadingResultQueryBlogManifest]);
+  }, [isLoadingQueryBlogPost, isLoadingQueryBlogManifest]);
 
-  const isLoading = isLoadingQueriesBlogPost || isLoadingResultQueryBlogManifest;
+  const isLoading = isLoadingQueryBlogPost || isLoadingQueryBlogManifest;
 
   return (
     <>

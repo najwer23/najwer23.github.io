@@ -20,16 +20,22 @@ export const Contact: React.FC = () => {
 
   useDocumentTitle('Contact | Mariusz Najwer');
 
-  const { mutate, isPending, isError, data, error } = useMutation({
+  const {
+    mutate: mutateQueryContact,
+    isPending: isPendingQueryContact,
+    isError: isErrorQueryContact,
+    data: dataQueryContact,
+    error: errorQueryContact,
+  } = useMutation({
     mutationKey: ['queryContact', 'queryContact'],
     mutationFn: queryContact,
   });
 
-  const handleOnSubmit = (form: FormType) => {
+  const handleOnSubmitContact = (form: FormType) => {
     if (Object.values(form).some(({ error }) => error)) return;
     const dataForm = Object.fromEntries(Object.entries(form).map(([key, { value }]) => [key, value]));
 
-    mutate(dataForm);
+    mutateQueryContact(dataForm);
   };
 
   return (
@@ -55,12 +61,12 @@ export const Contact: React.FC = () => {
       >
         <div>
           <Form
-            onSubmit={handleOnSubmit}
-            isError={isError}
-            isPending={isPending}
-            isSuccess={data?.code === 'OK'}
-            errorMsg={error?.message}
-            successMsg={data?.message}
+            onSubmit={handleOnSubmitContact}
+            isError={isErrorQueryContact}
+            isPending={isPendingQueryContact}
+            isSuccess={dataQueryContact?.code === 'OK'}
+            errorMsg={errorQueryContact?.message}
+            successMsg={dataQueryContact?.message}
           >
             <Input
               label="Email"
@@ -82,7 +88,7 @@ export const Contact: React.FC = () => {
             <Grid layout="flex" widthMax={'100%'} padding={'0'} justifyContent="left" alignItems="right">
               <Button
                 type="submit"
-                disabled={isPending}
+                disabled={isPendingQueryContact}
                 height={'40px'}
                 width={'80px'}
                 padding={0}
