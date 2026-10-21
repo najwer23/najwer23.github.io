@@ -2,13 +2,27 @@ import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { Typography } from 'najwer23morsels/lib/Typography';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { BlogRSS } from './BlogRSS.const';
 
 export const BlogArchive: React.FC = () => {
   const navigate = useNavigate();
 
   useDocumentTitle(`Blog, Archive | Mariusz Najwer`);
+
+  const location = useLocation();
+  const from = location.state?.from as string | undefined;
+  const backPath = from ?? '/blog';
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    if (from) {
+      navigate(-1);
+    } else {
+      navigate(backPath, { replace: true });
+    }
+  };
 
   return (
     <Grid layout="container" widthMax="1400px" padding="0 20px 40px 20px">
@@ -19,6 +33,7 @@ export const BlogArchive: React.FC = () => {
           </Typography>
 
           <TextBox
+            onClick={handleClick}
             tag="a"
             href="/#/blog"
             desktopSize={12}

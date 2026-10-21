@@ -23,7 +23,7 @@ export const BlogPostByHref: React.FC = () => {
   const backHref = `/#${backPath}`;
   const backLabel = getBackLabel(backPath);
 
-  const handleBack = (e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
 
     if (from) {
@@ -61,7 +61,7 @@ export const BlogPostByHref: React.FC = () => {
         <>
           <div>
             <TextBox
-              onClick={handleBack}
+              onClick={handleClick}
               tag="a"
               href={backHref}
               desktopSize={12}

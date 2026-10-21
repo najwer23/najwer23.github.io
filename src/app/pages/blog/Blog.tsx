@@ -86,6 +86,12 @@ export const Blog: React.FC = () => {
           fontWeight={600}
           color="var(--linkColor)"
           colorHover="var(--linkColor)"
+          onClick={(e: React.MouseEvent) => {
+            e.preventDefault();
+            navigate('/blog/archive', {
+              state: { from: location.pathname + location.search },
+            });
+          }}
         >
           Archive
         </TextBox>
