@@ -26,7 +26,7 @@
     "start": "vite --open --host"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.15",
+    "@biomejs/biome": "2.6.3",
     "@tanstack/react-query": "^5.104.5",
     "@tanstack/react-query-persist-client": "^5.104.5",
     "@types/chart.js": "^4.0.1",
@@ -35,10 +35,10 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
-    "chart.js": "^4.5.1",
+    "chart.js": "^4.6.1",
     "gh-pages": "^6.3.0",
     "leaflet": "1.9.4",
-    "najwer23morsels": "^1.9.36",
+    "najwer23morsels": "^1.9.38",
     "react": "^19.3.1",
     "react-chartjs-2": "5.3.1",
     "react-dom": "^19.3.1",
