@@ -5,7 +5,6 @@ import { Blog } from '../pages/blog/Blog';
 import { BlogPostByHref } from '../pages/blog/BlogPostByHref';
 import { Contact } from '../pages/contact/Contact';
 import { Home } from '../pages/home/Home';
-import { Tunes } from '../pages/tunes/Tunes';
 import { ScrollToTop } from './ScrollToTop';
 
 const router = createHashRouter([
@@ -29,10 +28,6 @@ const router = createHashRouter([
       {
         path: '/contact',
         element: <Contact />,
-      },
-      {
-        path: '/tunes',
-        element: <Tunes />,
       },
       {
         path: '/blog/page/:page',
