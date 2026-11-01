@@ -6,7 +6,7 @@ import React, { useMemo } from 'react';
 import { BlogRSS } from '../blog/BlogRSS.const';
 
 export const Home: React.FC = () => {
-  useDocumentTitle('Home | Mariusz Najwer');
+  useDocumentTitle('Portfolio | Mariusz Najwer');
 
   const latestPosts = useMemo(
     () => [...BlogRSS].sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime()).slice(0, 3),
