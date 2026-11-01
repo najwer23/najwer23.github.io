@@ -11,7 +11,7 @@ const ROUTES = [
   {
     cacheName: 'resume-cache-v1',
     match: section('/resume'),
-    strategy: 'staleWhileRevalidate',
+    strategy: 'networkFirst',
     maxEntries: 50,
     maxAge: 14 * DAY,
   },
