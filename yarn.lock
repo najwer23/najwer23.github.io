@@ -1135,20 +1135,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/biome@npm:2.6.3"
+"@biomejs/biome@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/biome@npm:2.6.4"
   dependencies:
-    "@biomejs/cli-android-arm64": "npm:2.6.3"
-    "@biomejs/cli-android-x64": "npm:2.6.3"
-    "@biomejs/cli-darwin-arm64": "npm:2.6.3"
-    "@biomejs/cli-darwin-x64": "npm:2.6.3"
-    "@biomejs/cli-linux-arm64": "npm:2.6.3"
-    "@biomejs/cli-linux-arm64-musl": "npm:2.6.3"
-    "@biomejs/cli-linux-x64": "npm:2.6.3"
-    "@biomejs/cli-linux-x64-musl": "npm:2.6.3"
-    "@biomejs/cli-win32-arm64": "npm:2.6.3"
-    "@biomejs/cli-win32-x64": "npm:2.6.3"
+    "@biomejs/cli-android-arm64": "npm:2.6.4"
+    "@biomejs/cli-android-x64": "npm:2.6.4"
+    "@biomejs/cli-darwin-arm64": "npm:2.6.4"
+    "@biomejs/cli-darwin-x64": "npm:2.6.4"
+    "@biomejs/cli-linux-arm64": "npm:2.6.4"
+    "@biomejs/cli-linux-arm64-musl": "npm:2.6.4"
+    "@biomejs/cli-linux-x64": "npm:2.6.4"
+    "@biomejs/cli-linux-x64-musl": "npm:2.6.4"
+    "@biomejs/cli-win32-arm64": "npm:2.6.4"
+    "@biomejs/cli-win32-x64": "npm:2.6.4"
   dependenciesMeta:
     "@biomejs/cli-android-arm64":
       optional: true
@@ -1172,76 +1172,76 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10c0/cbe3c3b5d4119dfd886e302d1c3d35eaac43f4a79b0cb81bea5ae450685e3c0480cd061c3af9ed374382c2e64bf7274b10179f3e13300c0d8f07802ca616fd7d
+  checksum: 10c0/72f6d58859628b06db4f53930dde1f443f8c3752f9dc597b32da61f1f467f3df128eb51f5272e46b5113e12b3390902e116d5e536afbe8a9fcb24dc86782fe63
   languageName: node
   linkType: hard
 
-"@biomejs/cli-android-arm64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-android-arm64@npm:2.6.3"
+"@biomejs/cli-android-arm64@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-android-arm64@npm:2.6.4"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-android-x64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-android-x64@npm:2.6.3"
+"@biomejs/cli-android-x64@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-android-x64@npm:2.6.4"
   conditions: os=android & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-darwin-arm64@npm:2.6.3"
+"@biomejs/cli-darwin-arm64@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-darwin-arm64@npm:2.6.4"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-darwin-x64@npm:2.6.3"
+"@biomejs/cli-darwin-x64@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-darwin-x64@npm:2.6.4"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.6.3"
+"@biomejs/cli-linux-arm64-musl@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.6.4"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-linux-arm64@npm:2.6.3"
+"@biomejs/cli-linux-arm64@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-linux-arm64@npm:2.6.4"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-linux-x64-musl@npm:2.6.3"
+"@biomejs/cli-linux-x64-musl@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-linux-x64-musl@npm:2.6.4"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-linux-x64@npm:2.6.3"
+"@biomejs/cli-linux-x64@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-linux-x64@npm:2.6.4"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-win32-arm64@npm:2.6.3"
+"@biomejs/cli-win32-arm64@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-win32-arm64@npm:2.6.4"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:2.6.3":
-  version: 2.6.3
-  resolution: "@biomejs/cli-win32-x64@npm:2.6.3"
+"@biomejs/cli-win32-x64@npm:2.6.4":
+  version: 2.6.4
+  resolution: "@biomejs/cli-win32-x64@npm:2.6.4"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -1819,50 +1819,50 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/query-core@npm:5.105.0":
-  version: 5.105.0
-  resolution: "@tanstack/query-core@npm:5.105.0"
-  checksum: 10c0/1b4baa128a95810b677d93f91156e3d32eb07dbe9e062fe0a2651089569f3fca275e43dc9fe569efd55b9e5a00d0d2e18b78de6fa9ed65b1ad54f24e5a90106e
+"@tanstack/query-core@npm:5.105.1":
+  version: 5.105.1
+  resolution: "@tanstack/query-core@npm:5.105.1"
+  checksum: 10c0/2e13312a127e82a54024230ccb3e3644141cebb51719443767de39e90188f9b235b87abd2c0074addd02bf226f9eebf0371fc3e39577bbfaa19545cd4402b5de
   languageName: node
   linkType: hard
 
-"@tanstack/query-persist-client-core@npm:5.105.0":
-  version: 5.105.0
-  resolution: "@tanstack/query-persist-client-core@npm:5.105.0"
+"@tanstack/query-persist-client-core@npm:5.105.1":
+  version: 5.105.1
+  resolution: "@tanstack/query-persist-client-core@npm:5.105.1"
   dependencies:
-    "@tanstack/query-core": "npm:5.105.0"
-  checksum: 10c0/6eef4db58f408f3f496153c42b678dbb010806517fc692c024129e6c86aa70f957609911f1d096da05a7d33030276b55876f69b3cf932979772b51f0118c1334
+    "@tanstack/query-core": "npm:5.105.1"
+  checksum: 10c0/033cc8b28f94907b04239bd818e34cd957594829a8e78262017494e6f58a33fa08de667439a8fe69103af2bc1cf8f46048a3fcc6ce7f089ad5962dc6ead6d012
   languageName: node
   linkType: hard
 
-"@tanstack/react-query-persist-client@npm:^5.105.0":
-  version: 5.105.0
-  resolution: "@tanstack/react-query-persist-client@npm:5.105.0"
+"@tanstack/react-query-persist-client@npm:^5.105.1":
+  version: 5.105.1
+  resolution: "@tanstack/react-query-persist-client@npm:5.105.1"
   dependencies:
-    "@tanstack/query-persist-client-core": "npm:5.105.0"
+    "@tanstack/query-persist-client-core": "npm:5.105.1"
   peerDependencies:
-    "@tanstack/react-query": ^5.105.0
+    "@tanstack/react-query": ^5.105.1
     "@types/react": ^18 || ^19
     react: ^18 || ^19
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10c0/42bd83b0dde0759ee440aaeb228ec62fa5daaecba38700bcbf3214919a25e96995c4d3f3e143476d890e1bf1021b310d4ef348960a14962619fdf0016d988d71
+  checksum: 10c0/2e4150cd833d5885a8d3366a7c2cde6ab826b0e358e08cdb998042f5bf049025d97a076d184ddba6f1ad2d5d830a3ec6fb1e677577eb4866c135e188f2b38537
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.105.0":
-  version: 5.105.0
-  resolution: "@tanstack/react-query@npm:5.105.0"
+"@tanstack/react-query@npm:^5.105.1":
+  version: 5.105.1
+  resolution: "@tanstack/react-query@npm:5.105.1"
   dependencies:
-    "@tanstack/query-core": "npm:5.105.0"
+    "@tanstack/query-core": "npm:5.105.1"
   peerDependencies:
     "@types/react": ^18 || ^19
     react: ^18 || ^19
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10c0/7c9e8d073a0a9192937d0996b18ff6c27a769efb93a3a9cf6cf31c811c9187229573c0746849f1f99c0c96af63e7d738c475e445e53cea6c3a8b0718d8b16f7d
+  checksum: 10c0/2cb228aa68476e743b3a39fc6e657aa6f8f8226427f3d92940feda671b147cd5ac417477f48eba670a360f1c563dc1f51c6a5dc2e43203d5d47f2b299a432a0b
   languageName: node
   linkType: hard
 
@@ -1937,12 +1937,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^26.6.5":
-  version: 26.6.5
-  resolution: "@types/node@npm:26.6.5"
+"@types/node@npm:^26.6.6":
+  version: 26.6.6
+  resolution: "@types/node@npm:26.6.6"
   dependencies:
     undici-types: "npm:~8.9.0"
-  checksum: 10c0/4f791f69466ace7842c09e7bef96cb1ddbb65cf3db916ef7e84f0e2b2a17220b6b816dc7539d01520cadfb17ed7169b8214910900493e0a83be8bc7d124ec20a
+  checksum: 10c0/5cb63f644f6e85a257a9cd2403cbcbe196760e2a35fd3ec9fb8b5cff663e14cc832b198cc17b53f870a2e30900ed45a1fb3f53e6589aba26b8e8c484aa672053
   languageName: node
   linkType: hard
 
@@ -3838,24 +3838,24 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "najwer23.github.io@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:2.6.3"
-    "@tanstack/react-query": "npm:^5.105.0"
-    "@tanstack/react-query-persist-client": "npm:^5.105.0"
+    "@biomejs/biome": "npm:2.6.4"
+    "@tanstack/react-query": "npm:^5.105.1"
+    "@tanstack/react-query-persist-client": "npm:^5.105.1"
     "@types/chart.js": "npm:^4.0.1"
     "@types/leaflet": "npm:^1.9.22"
-    "@types/node": "npm:^26.6.5"
+    "@types/node": "npm:^26.6.6"
     "@types/react": "npm:^19.3.0"
     "@types/react-dom": "npm:^19.3.0"
     "@vitejs/plugin-react": "npm:^6.1.2"
     chart.js: "npm:^4.6.1"
     gh-pages: "npm:^6.3.0"
     leaflet: "npm:1.9.4"
-    najwer23morsels: "npm:^1.9.41"
+    najwer23morsels: "npm:^1.10.14"
     react: "npm:^19.3.1"
     react-chartjs-2: "npm:5.3.1"
     react-dom: "npm:^19.3.1"
     react-leaflet: "npm:5.0.0"
-    react-router-dom: "npm:^7.18.4"
+    react-router-dom: "npm:^7.18.5"
     rimraf: "npm:^6.1.3"
     shiki: "npm:^4.5.0"
     typescript: "npm:^6.0.3"
@@ -3865,13 +3865,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"najwer23morsels@npm:^1.9.41":
-  version: 1.9.41
-  resolution: "najwer23morsels@npm:1.9.41"
+"najwer23morsels@npm:^1.10.14":
+  version: 1.10.14
+  resolution: "najwer23morsels@npm:1.10.14"
   peerDependencies:
     react: ^19.2.4
     react-dom: ^19.2.4
-  checksum: 10c0/7bf37aa3530ebcefd2f08bc64ea5e7db742e1a3e0940d1014ccc4cfd64afcf31c35d248c50ae7b7b6ec917d701098b469b5d15a54191d36deb385bdd48685882
+  checksum: 10c0/a7d9aeda0eb497f126d8ec36e8e326efa199395115c659244e719c3ffbfaf4056110bf3f84a9acfdb6a1a3aacf3f00ac42adf37ff168f581bb3b1c2f0e818917
   languageName: node
   linkType: hard
 
@@ -4180,21 +4180,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:^7.18.4":
-  version: 7.18.4
-  resolution: "react-router-dom@npm:7.18.4"
+"react-router-dom@npm:^7.18.5":
+  version: 7.18.5
+  resolution: "react-router-dom@npm:7.18.5"
   dependencies:
-    react-router: "npm:7.18.4"
+    react-router: "npm:7.18.5"
   peerDependencies:
     react: ">=18"
     react-dom: ">=18"
-  checksum: 10c0/b337acffb669fd977423e3ef2a0551a5d68c2447c718942b232cae367fd599723525e412b4ad0d08607189f962571dfc7ef0373d47fcf0ae301a860510e5e1f1
+  checksum: 10c0/9e19ccb3fa061d86ad90eb906657cab6b2e4313b4eb02882f7515493c3d61c978a383ee0954854f2a9238ac013bdd03c526a5de14819c8ecaae62b5280774030
   languageName: node
   linkType: hard
 
-"react-router@npm:7.18.4":
-  version: 7.18.4
-  resolution: "react-router@npm:7.18.4"
+"react-router@npm:7.18.5":
+  version: 7.18.5
+  resolution: "react-router@npm:7.18.5"
   dependencies:
     cookie: "npm:^1.0.1"
     set-cookie-parser: "npm:^2.6.0"
@@ -4204,7 +4204,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: 10c0/352d103f9d738c7bf56cbb135c0d3d44e6325d15e360f58b6e844c1f5f8cbcd4ccb2de347f14e53984683fc237505a045633e9cb92c5457a1162dae054e08a32
+  checksum: 10c0/dbed9b4d0019873615028e2fe7bf7782ab4f41d9f287595b9a82f4a6d619dc5d3b88449fb3e717282f9f558312f29f88325372a7bb67355472703291607f9280
   languageName: node
   linkType: hard
 
