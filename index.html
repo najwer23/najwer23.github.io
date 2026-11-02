@@ -5,6 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<!-- Hide the static fallback only when JS is running, until React mounts -->
+	<script>document.documentElement.classList.add('js');</script>
+	<style>.js #root > main { visibility: hidden; }</style>
+
 	<title>Mariusz Najwer | Software Engineer (React, Angular, Node.js)</title>
 	<meta name="description" content="Mariusz Najwer is a software engineer from Wrocław, Poland, building fast, accessible web apps with React, Angular and Node.js.">
 	<meta name="author" content="Mariusz Najwer">
@@ -70,12 +74,33 @@
 </head>
 
 <body>
-	<div id="root"></div>
-	<noscript>
-		<h1>Mariusz Najwer – Software Engineer</h1>
-		<p>Software engineer from Wrocław, Poland. React, Angular, Node.js, SSR, design systems.</p>
-		<p><a href="https://najwer23.github.io/resume/">Résumé</a></p>
-	</noscript>
+	<div id="root">
+		<main>
+			<h1>Mariusz Najwer – Software Engineer</h1>
+			<p>Software engineer from Wrocław, Poland (open to relocation). Building fast, accessible web apps with React, Angular, Node.js and SSR.</p>
+
+			<h2>Experience</h2>
+			<ul>
+				<li><strong>Frontend Software Engineer, Applied Systems Inc.</strong> (2024–2025): server-driven insurance purchase flow, admin panel, WCAG 2.1 AA, React, TypeScript.</li>
+				<li><strong>Frontend Software Engineer, Warner Bros. Discovery, TVN24.pl</strong> (2023–2024): SSR and islands architecture, microfrontends with React and Web Components.</li>
+				<li><strong>Frontend Web Developer, FLHF S.A.</strong> (2021–2023): e-commerce on Magento 2, PWA, SEO and Core Web Vitals.</li>
+				<li><strong>Full Stack Developer, Europa Ubezpieczenia</strong> (2019–2021): Angular and Java/Groovy insurance management system.</li>
+			</ul>
+
+			<h2>Projects</h2>
+			<ul>
+				<li><a href="https://najwer23.github.io/resume/">Résumé</a></li>
+				<li><a href="https://najwer23.github.io/nook/">Nook</a>: personal hub with bills, weather, stock quotes and gym log</li>
+				<li><a href="https://najwer23.github.io/najwer23morsels">React design system</a> (npm package)</li>
+				<li><a href="https://najwer23.github.io/#/blog">Blog</a>: JavaScript, React, Node.js and TypeScript</li>
+				<li><a href="https://leetcode.com/u/najwer23/">LeetCode</a></li>
+			</ul>
+
+			<h2>Links</h2>
+			<p><a href="https://github.com/najwer23">GitHub</a>, <a href="https://linkedin.com/in/najwer23">LinkedIn</a>, <a href="https://www.npmjs.com/~najwer23">npm</a>, <a href="https://x.com/najwer23">X</a>.</p>
+		</main>
+	</div>
+	<noscript>Please enable JavaScript to view the full portfolio.</noscript>
 	<script type="module" src="/src/main.tsx"></script>
 </body>
 
