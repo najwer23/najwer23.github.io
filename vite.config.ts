@@ -31,8 +31,12 @@ export default defineConfig({
         // e.g., navigateFallback: '/index.html'
       },
       manifest: {
-        name: 'Mariusz Najwer',
+        id: '/',
+        name: 'Mariusz Najwer | Software Engineer',
         short_name: 'Mariusz Najwer',
+        description:
+          'Software engineer from Wrocław, Poland, building fast, accessible web apps with React, Angular and Node.js.',
+        lang: 'en',
         display: 'standalone',
         start_url: '/',
         scope: '/',
@@ -51,6 +55,13 @@ export default defineConfig({
             type: 'image/png',
             purpose: 'any',
           },
+          // Optional: add a dedicated maskable icon (with safe-zone padding)
+          // {
+          //   src: 'icon/512-maskable.png',
+          //   sizes: '512x512',
+          //   type: 'image/png',
+          //   purpose: 'maskable',
+          // },
         ],
       },
     }),
