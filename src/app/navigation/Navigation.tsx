@@ -27,15 +27,7 @@ export const Navigation: React.FC = () => {
       }
       menuTopRightColumn={
         <Grid layout="flex" justifyContent="flex-end">
-          <TextBox
-            tag="a"
-            href="https://najwer23.github.io/resume/"
-            desktopSize={20}
-            mobileSize={20}
-            fontWeight={500}
-            rel="noreferrer"
-            target="_blank"
-          >
+          <TextBox tag="a" href="https://najwer23.github.io/resume/" desktopSize={20} mobileSize={20} fontWeight={500}>
             Résumé
           </TextBox>
         </Grid>
@@ -49,8 +41,6 @@ export const Navigation: React.FC = () => {
             {
               href: 'https://najwer23.github.io/nook/',
               label: 'Nook',
-              target: '_blank',
-              rel: 'noreferrer',
             },
             {
               href: 'https://najwer23.github.io/resume/',
@@ -58,10 +48,8 @@ export const Navigation: React.FC = () => {
               desktopSize: 34,
               mobileSize: 34,
               fontWeight: 600,
-              target: '_blank',
-              rel: 'noreferrer',
             },
-          ].map(({ href, label, desktopSize = 30, mobileSize = 30, fontWeight = 400, target, rel }) => (
+          ].map(({ href, label, desktopSize = 30, mobileSize = 30, fontWeight = 400 }) => (
             <TextBox
               key={label}
               tag="a"
@@ -71,8 +59,6 @@ export const Navigation: React.FC = () => {
               fontWeight={fontWeight}
               color={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
               colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
-              target={target}
-              rel={rel}
               textAlign="center"
             >
               {label}
@@ -92,10 +78,8 @@ export const Navigation: React.FC = () => {
               desktopSize: 34,
               mobileSize: 34,
               fontWeight: 600,
-              target: '_blank',
-              rel: 'noreferrer',
             },
-          ].map(({ href, label, target, rel }) => (
+          ].map(({ href, label }) => (
             <div key={label}>
               <TextBox
                 tag="a"
@@ -105,8 +89,6 @@ export const Navigation: React.FC = () => {
                 fontWeight={500}
                 color={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
                 colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
-                target={target}
-                rel={rel}
               >
                 {label}
               </TextBox>
