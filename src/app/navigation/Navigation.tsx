@@ -44,7 +44,7 @@ export const Navigation: React.FC = () => {
                 color: '#762121',
                 fontWeight: 'bold',
               },
-            ].map(({ href, label, color }) => (
+            ].map(({ href, label, color, fontWeight }) => (
               <div key={label}>
                 <Typography
                   variant="link"
@@ -52,7 +52,7 @@ export const Navigation: React.FC = () => {
                   color={color}
                   desktopSize={18}
                   mobileSize={18}
-                  fontWeight={600}
+                  fontWeight={fontWeight ?? (isActive(href) ? 800 : 600)}
                   colorHover={color}
                 >
                   {label}
@@ -91,7 +91,6 @@ export const Navigation: React.FC = () => {
                 href={href}
                 desktopSize={30}
                 mobileSize={30}
-                textAlign="center"
                 color={color}
                 fontWeight={fontWeight ?? (isActive(href) ? 600 : 400)}
               >
