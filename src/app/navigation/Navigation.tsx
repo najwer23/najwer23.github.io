@@ -52,7 +52,7 @@ export const Navigation: React.FC = () => {
                   color={color}
                   desktopSize={18}
                   mobileSize={18}
-                  fontWeight={fontWeight ?? (isActive(href) ? 800 : 600)}
+                  fontWeight={fontWeight ?? (isActive(href) ? 600 : 400)}
                   colorHover={color}
                 >
                   {label}
