@@ -41,18 +41,19 @@ export const Contact: React.FC = () => {
   return (
     <Grid layout="container" widthMax={'1400px'} padding={'0 20px 0px 20px'}>
       <Grid layout="container" widthMax="900px" margin={'0 0 40px 0'}>
-        <Typography variant="display">Get in touch</Typography>
-        <Typography variant="caption">All fields are required</Typography>
+        <Typography variant="display">Say Hello</Typography>
+        <Typography variant="subheading">I’m always open to new projects and collaborations.</Typography>
+        <Typography variant="body">Send me a message and I’ll reply soon.</Typography>
       </Grid>
 
       <Grid
-        layout="columns"
-        gap={{ col: '100px', row: '20px' }}
-        col={{
-          smallDesktop: 2,
-          desktop: 2,
-          mobile: 1,
-          tablet: 2,
+        margin="30px 0 50px 0"
+        layout="split"
+        gap={{ col: '50px', row: '30px' }}
+        split={{
+          mobile: '1fr',
+          tablet: ['350px', '1fr'],
+          smallDesktop: ['550px', '1fr'],
         }}
       >
         <div>
@@ -75,6 +76,7 @@ export const Contact: React.FC = () => {
             <Input
               kind="textarea"
               label="Message"
+              minHeight={'350px'}
               type="text"
               name="msg"
               validatorOptions={[{ type: 'empty' }]}
@@ -99,49 +101,31 @@ export const Contact: React.FC = () => {
         </div>
 
         <div>
-          <Typography variant="subheading" margin={'clamp(0px, 40px - 8vw, 40px) 0 0 0'}>
-            Based in
-          </Typography>
+          <Grid layout="container" widthMax={'100%'} margin={'18px 0 30px 0'}>
+            <div className={styles.mapContainerWrapper}>
+              <MapContainer
+                center={[51.094598, 17.020876]}
+                zoom={13}
+                style={{ height: '418px' }}
+                closePopupOnClick={false}
+                attributionControl={false}
+              >
+                <TileLayer
+                  url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_2e54_1_f2da3b477a787ddc0d5212ae"
+                  className={styles.mapContainerWrapper}
+                  attribution='&copy; <a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                />
+                <AttributionControl prefix={false} position="bottomright" />
 
-          <Typography variant="body">Wrocław, Poland</Typography>
-
-          <Typography variant="subheading">Contact</Typography>
-
-          <Typography variant="body">najwer23@live.com</Typography>
-
-          <Typography variant="subheading">Linkedin</Typography>
-
-          <Typography variant="body">
-            <Typography variant="link" href={'https://www.linkedin.com/in/najwer23'} target="_blank">
-              linkedin.com/in/najwer23
-            </Typography>
-          </Typography>
+                <MarkerWithPopup mapIsFlying={mapIsFlying} setMapIsFlying={setMapIsFlying} />
+                <CenterMapButton center={[51.094598, 17.020876]} zoom={13} onCenter={() => setMapIsFlying(true)} />
+              </MapContainer>
+            </div>
+            <TextBox mobileSize={12} desktopSize={12} color="grey" margin={'5px 0 0 0'} lineHeight={1}>
+              Sky Tower is one of Poland’s tallest and most iconic buildings, located in the heart of Wrocław.
+            </TextBox>
+          </Grid>
         </div>
-      </Grid>
-
-      <Grid layout="container" widthMax={'100%'} margin={'60px 0 80px 0'}>
-        <div className={styles.mapContainerWrapper}>
-          <MapContainer
-            center={[51.094598, 17.020876]}
-            zoom={13}
-            style={{ height: '550px' }}
-            closePopupOnClick={false}
-            attributionControl={false}
-          >
-            <TileLayer
-              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=cb1_2e54_1_f2da3b477a787ddc0d5212ae"
-              className={styles.mapContainerWrapper}
-              attribution='&copy; <a href="https://leafletjs.com" title="A JavaScript library for interactive maps">Leaflet</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            />
-            <AttributionControl prefix={false} position="bottomright" />
-
-            <MarkerWithPopup mapIsFlying={mapIsFlying} setMapIsFlying={setMapIsFlying} />
-            <CenterMapButton center={[51.094598, 17.020876]} zoom={13} onCenter={() => setMapIsFlying(true)} />
-          </MapContainer>
-        </div>
-        <TextBox mobileSize={12} desktopSize={12} color="grey" margin={'5px 0 0 0'} lineHeight={1}>
-          Sky Tower is one of Poland’s tallest and most iconic buildings, located in the heart of Wrocław.
-        </TextBox>
       </Grid>
     </Grid>
   );
