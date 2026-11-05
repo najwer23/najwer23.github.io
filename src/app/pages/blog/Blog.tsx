@@ -78,14 +78,12 @@ export const Blog: React.FC = () => {
           Blog
         </Typography>
 
-        <TextBox
-          tag="a"
+        <Typography
+          variant="link"
           href="/#/blog/archive"
           desktopSize={12}
           mobileSize={12}
           fontWeight={600}
-          color="var(--linkColor)"
-          colorHover="var(--linkColor)"
           onClick={(e: React.MouseEvent) => {
             e.preventDefault();
             navigate('/blog/archive', {
@@ -94,35 +92,31 @@ export const Blog: React.FC = () => {
           }}
         >
           Archive
-        </TextBox>
+        </Typography>
 
-        <TextBox
-          tag="a"
+        <Typography
+          variant="link"
           target="_blank"
           href="https://najwer23.github.io/feed.xml"
           desktopSize={12}
           mobileSize={12}
           fontWeight={600}
-          color="var(--linkColor)"
-          colorHover="var(--linkColor)"
           margin={'0 0 0 15px'}
         >
           RSS
-        </TextBox>
+        </Typography>
 
-        <TextBox
-          tag="a"
+        <Typography
+          variant="link"
           target="_blank"
           href="https://najwer23.github.io/nook/#/blog-post-creator"
           desktopSize={12}
           mobileSize={12}
           fontWeight={600}
-          color="var(--linkColor)"
-          colorHover="var(--linkColor)"
           margin={'0 0 0 15px'}
         >
           Blog Post Creator
-        </TextBox>
+        </Typography>
 
         {isLoading ? (
           <Grid layout="container" margin="40px 0 auto" padding={'20px 0 60px'}>
@@ -154,32 +148,16 @@ export const Blog: React.FC = () => {
             justifyContent={currentPage > firstPage ? 'space-between' : 'flex-end'}
           >
             {currentPage > firstPage && (
-              <Button
-                type="button"
-                onClick={() => goToPage(currentPage - 1)}
-                backgroundColor="orangered"
-                height="40px"
-                width="auto"
-                padding="0 10px"
-                backgroundColorDisabled="#4d4d4d"
-              >
-                <TextBox mobileSize={18} desktopSize={18} color="white">
+              <Button variant="secondary" onClick={() => goToPage(currentPage - 1)}>
+                <TextBox mobileSize={18} desktopSize={18} color="inherit">
                   Prev
                 </TextBox>
               </Button>
             )}
 
             {currentPage < lastPage && (
-              <Button
-                type="button"
-                onClick={() => goToPage(currentPage + 1)}
-                backgroundColor="orangered"
-                height="40px"
-                width="auto"
-                padding="0 10px"
-                backgroundColorDisabled="#4d4d4d"
-              >
-                <TextBox mobileSize={18} desktopSize={18} color="white">
+              <Button onClick={() => goToPage(currentPage + 1)} variant="secondary">
+                <TextBox mobileSize={18} desktopSize={18} color="inherit">
                   Next
                 </TextBox>
               </Button>

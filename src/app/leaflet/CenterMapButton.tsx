@@ -50,13 +50,12 @@ export const CenterMapButton = ({
         left: '10px',
         zIndex: 1000,
       }}
-      type="submit"
+      type="button"
+      variant="secondary"
       height={'40px'}
       width={'40px'}
       padding={0}
       margin={0}
-      backgroundColor="orangered"
-      backgroundColorDisabled="grey"
     >
       <IconLocate width={20} height={20} color="white" />
     </Button>

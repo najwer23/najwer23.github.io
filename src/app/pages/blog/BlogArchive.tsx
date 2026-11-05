@@ -32,18 +32,16 @@ export const BlogArchive: React.FC = () => {
             Archive
           </Typography>
 
-          <TextBox
+          <Typography
             onClick={handleClick}
-            tag="a"
+            variant="link"
             href="/#/blog"
             desktopSize={12}
             mobileSize={12}
             fontWeight={600}
-            color="var(--linkColor)"
-            colorHover="var(--linkColor)"
           >
             Blog
-          </TextBox>
+          </Typography>
         </Grid>
 
         {BlogRSS.map(({ title, link }, index) => (
@@ -55,8 +53,8 @@ export const BlogArchive: React.FC = () => {
               tag="span"
             >{`#${BlogRSS.length - index} `}</TextBox>
 
-            <TextBox
-              tag="a"
+            <Typography
+              variant="link"
               href={`#${link.split('#')[1]}`}
               onClick={(e) => {
                 e.preventDefault();
@@ -65,11 +63,9 @@ export const BlogArchive: React.FC = () => {
               desktopSize={14}
               mobileSize={14}
               fontWeight={600}
-              color="var(--linkColor)"
-              colorHover="var(--linkColor)"
             >
               {title}
-            </TextBox>
+            </Typography>
           </div>
         ))}
       </Grid>

@@ -92,10 +92,9 @@ export const Contact: React.FC = () => {
                 height={'40px'}
                 width={'80px'}
                 padding={0}
-                backgroundColor="orangered"
-                backgroundColorDisabled="grey"
+                variant="primary"
               >
-                <TextBox tag="span" desktopSize={16} mobileSize={16} fontWeight={400} color="white">
+                <TextBox desktopSize={16} mobileSize={16} fontWeight={400} color="inherit">
                   Submit
                 </TextBox>
               </Button>

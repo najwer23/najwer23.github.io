@@ -1,9 +1,5 @@
 :root {
   --surface: #eee;
-  --linkColor: orangered;
-  --linkColorHover: orangered;
-
-  --n23mTextBoxColor: black;
 }
 
 body {
@@ -16,9 +12,4 @@ html {
   @media (min-width: 768px) {
     overscroll-behavior: none;
   }
-}
-
-.n23mTextBoxLink {
-  --n23mTextBoxColor: var(--linkColor);
-  --n23mTextBoxColorHover: var(--linkColorHover);
 }

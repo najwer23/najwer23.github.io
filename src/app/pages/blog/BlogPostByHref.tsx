@@ -3,6 +3,7 @@ import { useImmediateThrottledQueries } from '@app/hooks/useImmediateThrottledQu
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { LoaderDots } from 'najwer23morsels/lib/LoaderDots';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
+import { Typography } from 'najwer23morsels/lib/Typography';
 import { useEffect } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { queryBlog } from './Blog.query';
@@ -60,18 +61,16 @@ export const BlogPostByHref: React.FC = () => {
       ) : (
         <>
           <div>
-            <TextBox
+            <Typography
               onClick={handleClick}
-              tag="a"
+              variant="link"
               href={backHref}
               desktopSize={12}
               mobileSize={12}
               fontWeight={600}
-              color="var(--linkColor)"
-              colorHover="var(--linkColor)"
             >
               {backLabel}
-            </TextBox>
+            </Typography>
             <TextBox desktopSize={12} mobileSize={12} fontWeight={600} tag="span" color="grey">{` · `}</TextBox>
             <TextBox desktopSize={12} mobileSize={12} fontWeight={600} tag="span">{`#${id}`}</TextBox>
           </div>

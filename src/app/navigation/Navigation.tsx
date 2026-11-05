@@ -1,6 +1,7 @@
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { NavigationTabs } from 'najwer23morsels/lib/NavigationTabs';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
+import { Typography } from 'najwer23morsels/lib/Typography';
 import { useLocation } from 'react-router-dom';
 
 export const Navigation: React.FC = () => {
@@ -20,20 +21,31 @@ export const Navigation: React.FC = () => {
     <NavigationTabs
       menuTopLeftColumn={
         <Grid layout="flex" justifyContent="flex-start" alignItems="center" minHeight={'100%'}>
-          <TextBox desktopSize={20} mobileSize={20} fontWeight={500} tag="a" href="/#/">
+          <Typography variant="link" desktopSize={20} mobileSize={20} fontWeight={500} href="/#/">
             @najwer23
-          </TextBox>
+          </Typography>
         </Grid>
       }
       menuTopRightColumn={
         <Grid layout="flex" justifyContent="flex-end">
-          <TextBox tag="a" href="https://najwer23.github.io/resume/" desktopSize={20} mobileSize={20} fontWeight={500}>
+          <Typography
+            variant="link"
+            href="https://najwer23.github.io/resume/"
+            desktopSize={20}
+            mobileSize={20}
+            fontWeight={500}
+          >
             Résumé
-          </TextBox>
+          </Typography>
         </Grid>
       }
       menuMobile={
-        <Grid layout="flex" flexDirection="column">
+        <Grid key={'Menu'} layout="container" margin="0 0 24px 0">
+          <Grid layout="container" margin="0 0 8px 0">
+            <TextBox tag="p" desktopSize={20} mobileSize={20} fontWeight={600} color="grey">
+              Menu
+            </TextBox>
+          </Grid>
           {[
             { href: '/#/portfolio', label: 'Portfolio' },
             { href: '/#/contact', label: 'Contact' },
@@ -45,24 +57,21 @@ export const Navigation: React.FC = () => {
             {
               href: 'https://najwer23.github.io/resume/',
               label: 'Résumé',
-              desktopSize: 34,
-              mobileSize: 34,
-              fontWeight: 600,
             },
-          ].map(({ href, label, desktopSize = 30, mobileSize = 30, fontWeight = 400 }) => (
-            <TextBox
-              key={label}
-              tag="a"
-              href={href}
-              desktopSize={desktopSize}
-              mobileSize={mobileSize}
-              fontWeight={fontWeight}
-              color={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
-              colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
-              textAlign="center"
-            >
-              {label}
-            </TextBox>
+          ].map(({ href, label }) => (
+            <Grid key={href} layout="container" margin="0 0 8px 0">
+              <Typography
+                variant="link"
+                key={label}
+                href={href}
+                desktopSize={30}
+                mobileSize={30}
+                textAlign="center"
+                fontWeight={isActive(href) ? 600 : 400}
+              >
+                {label}
+              </Typography>
+            </Grid>
           ))}
         </Grid>
       }
@@ -81,17 +90,15 @@ export const Navigation: React.FC = () => {
             },
           ].map(({ href, label }) => (
             <div key={label}>
-              <TextBox
-                tag="a"
+              <Typography
+                variant="link"
                 href={href}
                 desktopSize={18}
                 mobileSize={18}
-                fontWeight={500}
-                color={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
-                colorHover={isActive(href) ? 'grey' : 'var(--n23mTextBoxColor)'}
+                fontWeight={isActive(href) ? 600 : 400}
               >
                 {label}
-              </TextBox>
+              </Typography>
             </div>
           ))}
         </>
