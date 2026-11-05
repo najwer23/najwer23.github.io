@@ -28,9 +28,7 @@ export const BlogArchive: React.FC = () => {
     <Grid layout="container" widthMax="1400px" padding="0 20px 40px 20px">
       <Grid layout="container" widthMax="900px" minHeight="415px" margin="0 0 60px">
         <Grid layout="container" widthMax="900px" margin={'0 0 40px 0'} minHeight={0}>
-          <Typography appearance="light" variant="display">
-            Archive
-          </Typography>
+          <Typography variant="display">Archive</Typography>
 
           <Typography
             onClick={handleClick}

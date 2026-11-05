@@ -7,9 +7,7 @@ export const SectionSubheading: React.FC<{
 }> = ({ section }) => {
   return (
     <>
-      <Typography appearance="light" variant="subheading">
-        {section.data.text}
-      </Typography>
+      <Typography variant="subheading">{section.data.text}</Typography>
     </>
   );
 };

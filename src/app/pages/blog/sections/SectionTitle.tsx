@@ -11,9 +11,8 @@ export const SectionTitle: React.FC<{
 
   return (
     <>
-      <Typography appearance="light" variant="heading">
+      <Typography variant="heading">
         <Typography
-          appearance="light"
           variant="link"
           href={`/#/blog/post/${id}`}
           onClick={(e: { preventDefault: () => void }) => {
@@ -28,9 +27,7 @@ export const SectionTitle: React.FC<{
           {section.data.title}
         </Typography>
       </Typography>
-      <Typography appearance="light" variant="caption">
-        {section.data.date}
-      </Typography>
+      <Typography variant="caption">{section.data.date}</Typography>
     </>
   );
 };

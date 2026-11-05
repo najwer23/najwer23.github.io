@@ -6,9 +6,7 @@ export const SectionP: React.FC<{
 }> = ({ section }) => {
   return (
     <>
-      <Typography appearance="light" variant="body">
-        {section.data.text}
-      </Typography>
+      <Typography variant="body">{section.data.text}</Typography>
     </>
   );
 };

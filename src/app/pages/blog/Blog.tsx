@@ -74,9 +74,7 @@ export const Blog: React.FC = () => {
   return (
     <>
       <Grid layout="container" widthMax="1400px" padding="0 20px 40px 20px">
-        <Typography appearance="light" variant="display">
-          Blog
-        </Typography>
+        <Typography variant="display">Blog</Typography>
 
         <Typography
           variant="link"

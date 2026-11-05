@@ -41,12 +41,8 @@ export const Contact: React.FC = () => {
   return (
     <Grid layout="container" widthMax={'1400px'} padding={'0 20px 0px 20px'}>
       <Grid layout="container" widthMax="900px" margin={'0 0 40px 0'}>
-        <Typography appearance="light" variant="display">
-          Get in touch
-        </Typography>
-        <Typography appearance="light" variant="caption">
-          All fields are required
-        </Typography>
+        <Typography variant="display">Get in touch</Typography>
+        <Typography variant="caption">All fields are required</Typography>
       </Grid>
 
       <Grid
@@ -103,28 +99,20 @@ export const Contact: React.FC = () => {
         </div>
 
         <div>
-          <Typography appearance="light" variant="subheading" margin={'clamp(0px, 40px - 8vw, 40px) 0 0 0'}>
+          <Typography variant="subheading" margin={'clamp(0px, 40px - 8vw, 40px) 0 0 0'}>
             Based in
           </Typography>
 
-          <Typography appearance="light" variant="body">
-            Wrocław, Poland
-          </Typography>
+          <Typography variant="body">Wrocław, Poland</Typography>
 
-          <Typography appearance="light" variant="subheading">
-            Contact
-          </Typography>
+          <Typography variant="subheading">Contact</Typography>
 
-          <Typography appearance="light" variant="body">
-            najwer23@live.com
-          </Typography>
+          <Typography variant="body">najwer23@live.com</Typography>
 
-          <Typography appearance="light" variant="subheading">
-            Linkedin
-          </Typography>
+          <Typography variant="subheading">Linkedin</Typography>
 
-          <Typography appearance="light" variant="body">
-            <Typography appearance="light" variant="link" href={'https://www.linkedin.com/in/najwer23'} target="_blank">
+          <Typography variant="body">
+            <Typography variant="link" href={'https://www.linkedin.com/in/najwer23'} target="_blank">
               linkedin.com/in/najwer23
             </Typography>
           </Typography>
