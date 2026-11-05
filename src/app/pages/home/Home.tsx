@@ -1,12 +1,15 @@
 import { useDocumentTitle } from '@app/hooks/useDocumentTitle';
+import { Button } from 'najwer23morsels/lib/Button';
 import { Grid } from 'najwer23morsels/lib/Grid';
 import { TextBox } from 'najwer23morsels/lib/TextBox';
 import { Typography } from 'najwer23morsels/lib/Typography';
 import React, { useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BlogRSS } from '../blog/BlogRSS.const';
 
 export const Home: React.FC = () => {
   useDocumentTitle('Portfolio | Mariusz Najwer');
+  const navigate = useNavigate();
 
   const latestPosts = useMemo(
     () => [...BlogRSS].sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime()).slice(0, 3),
@@ -55,7 +58,7 @@ export const Home: React.FC = () => {
         <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
 
         <Grid
-          margin="30px 0 30px 0"
+          margin="50px 0 50px 0"
           layout="split"
           split={{
             mobile: '1fr',
@@ -99,7 +102,7 @@ export const Home: React.FC = () => {
         <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
 
         <Grid
-          margin="30px 0 30px 0"
+          margin="50px 0 50px 0"
           layout="split"
           split={{
             mobile: '1fr',
@@ -141,7 +144,7 @@ export const Home: React.FC = () => {
         <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
 
         <Grid
-          margin="30px 0 30px 0"
+          margin="50px 0 50px 0"
           layout="split"
           split={{
             mobile: '1fr',
@@ -182,7 +185,7 @@ export const Home: React.FC = () => {
         <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
 
         <Grid
-          margin="30px 0 30px 0"
+          margin="50px 0 50px 0"
           layout="split"
           split={{
             mobile: '1fr',
@@ -218,78 +221,70 @@ export const Home: React.FC = () => {
             </Typography>
           </Grid>
         </Grid>
-
-        <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
       </Grid>
 
-      <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 0px 20px'}>
-        <Grid layout="container" widthMax={'900px'} padding={'0 0 10px 0'} margin={0}>
-          <Typography appearance="light" variant="heading">
-            Latest{' '}
-            <Typography href="/#/blog" variant="link">
-              Blog
-            </Typography>{' '}
-            Posts
+      <Grid layout="container" widthMax="1400px" padding="50px 20px 0px 20px">
+        <Typography appearance="light" variant="heading">
+          Latest posts on the{' '}
+          <Typography href="/#/blog" variant="link">
+            Blog
           </Typography>
+        </Typography>
 
-          {latestPosts.map((post) => (
-            <React.Fragment key={post.guid}>
-              <Typography appearance="light" variant="subheading">
-                <Typography href={post.link} variant="link">
-                  {post.title}
+        {latestPosts.map((post) => (
+          <React.Fragment key={post.guid}>
+            <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
+            <Grid
+              margin="50px 0 50px 0"
+              layout="split"
+              split={{
+                mobile: '1fr',
+                tablet: ['300px', '1fr'],
+                smallDesktop: ['400px', '1fr'],
+              }}
+            >
+              <Grid layout="container" widthMax="100%" margin={0} padding="0">
+                <Typography appearance="light" variant="subheading" style={{ marginTop: 0, marginBottom: '10px' }}>
+                  <b>{formatDate(post.pubDate)}</b>
                 </Typography>
-              </Typography>
-              <Typography appearance="light" variant="caption">
-                {formatDate(post.pubDate)}
-              </Typography>
-              <Typography appearance="light" variant="body">
-                {post.description}
-              </Typography>
-            </React.Fragment>
-          ))}
-        </Grid>
+              </Grid>
+              <Grid layout="container" widthMax="100%" margin={0} padding="0">
+                <Typography appearance="light" variant="subheading" style={{ marginTop: 0 }}>
+                  <Typography href={post.link} variant="link">
+                    {post.title}
+                  </Typography>
+                </Typography>
+                <Typography appearance="light" variant="body">
+                  {post.description}
+                </Typography>
+              </Grid>
+            </Grid>
+          </React.Fragment>
+        ))}
       </Grid>
 
-      <div style={{ background: '#FFE083' }}>
-        <Grid layout="container" widthMax={'1400px'} padding={'20px 20px 20px 20px'} margin={'75px auto 0px auto'}>
-          <Grid
-            layout="flex"
-            widthMax={'1400px'}
-            padding={'50px 20px 50px 20px'}
-            margin={'auto'}
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Grid layout="container" widthMax={'850px'} padding={'40px 0px 20px 0px'}>
-              <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500} textAlign="center">
-                Have questions or want to collaborate? Feel free to reach out! Click the link below to go to the contact
-                form, and I'll get back to you as soon as possible. Let's start a conversation!
-              </TextBox>
-            </Grid>
+      <div style={{ background: '#FFE083', padding: '100px 20px 150px 20px', marginTop: '100px' }}>
+        <Grid layout="container" widthMax="1400px">
+          <Typography appearance="light" variant="display">
+            Let's start a conversation
+          </Typography>
+          <Grid layout="container" widthMax={'850px'} padding={'40px 0px 20px 0px'} margin={0}>
+            <TextBox tag="h2" desktopSize={30} mobileSize={24} fontWeight={500}>
+              Have questions or want to collaborate? Send a message and I'll get back to you as soon as possible.
+            </TextBox>
           </Grid>
 
-          <Grid
-            layout="flex"
-            widthMax={'1400px'}
-            padding={'0 0 80px 0'}
-            margin={'auto'}
-            justifyContent="center"
-            alignItems="center"
+          <Button
+            variant="primary"
+            onClick={(e: React.MouseEvent) => {
+              e.preventDefault();
+              navigate('/contact');
+            }}
           >
-            <Grid layout="container" widthMax={'850px'} padding={'0'}>
-              <TextBox
-                tag="a"
-                href="/#/contact"
-                desktopSize={30}
-                mobileSize={24}
-                fontWeight={800}
-                color="black"
-                colorHover="black"
-              >
-                Contact Me
-              </TextBox>
-            </Grid>
-          </Grid>
+            <TextBox desktopSize={16} mobileSize={16} fontWeight={400} color="inherit">
+              Contact Me
+            </TextBox>
+          </Button>
         </Grid>
       </div>
     </>
