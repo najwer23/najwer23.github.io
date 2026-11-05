@@ -48,47 +48,178 @@ export const Home: React.FC = () => {
         </Grid>
       </Grid>
 
-      <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 0px 20px'}>
-        <Grid layout="container" widthMax={'900px'} padding={'0 0 10px 0'} margin={0}>
-          <Typography appearance="light" variant="heading">
-            Selected Projects
-          </Typography>
+      <Grid layout="container" widthMax="1400px" padding="50px 20px 0px 20px">
+        <Typography appearance="light" variant="heading">
+          Selected Projects
+        </Typography>
+        <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
 
-          <Typography appearance="light" variant="subheading">
-            APPLIED SYSTEMS INC.
-          </Typography>
-          <Typography appearance="light" variant="body">
-            Built a Server Driven UI insurance purchase flow using a recursive DFS algorithm to render a nested graph of
-            ~60k-line JSON questions. Contributed to an admin panel, user tracking, statistical charts, and WCAG 2.1 AA
-            compliance in an 8-person international team. Kept the codebase maintainable through code reviews and close
-            collaboration with designers, QA, and backend engineers. Shared knowledge across the team by documenting
-            solutions and helping new developers get up to speed with the question graph. Also focused on rendering
-            performance, keeping the form smooth and responsive despite the large number of nested questions.
-          </Typography>
-          <Typography appearance="light" variant="subheading">
-            WARNER BROS. DISCOVERY, TVN24.pl
-          </Typography>
-          <Typography appearance="light" variant="body">
-            Built TVN24.pl from scratch using SSR and an islands architecture with microfrontend React + Web Components.
-            Delivered widgets for stocks, weather, polls, elections, TV guides, and a custom SSR rendering algorithm
-            without external libs.
-          </Typography>
-          <Typography appearance="light" variant="subheading">
-            FLHF S.A
-          </Typography>
-          <Typography appearance="light" variant="body">
-            Enhanced an e-commerce site with sliders, carousels, product listings, and a shopping cart. Focused on
-            mobile optimization, SEO, CLS, page speed, and accessibility improvements via Lighthouse audits.
-          </Typography>
-          <Typography appearance="light" variant="subheading">
-            EUROPA UBEZPIECZENIA
-          </Typography>
-          <Typography appearance="light" variant="body">
-            Maintained and developed an internal insurance policy management system for agents and office workers. Built
-            new modules, integrated payment and data verification systems, and worked across Angular frontend and
-            Java/Groovy backend.
-          </Typography>
+        <Grid
+          margin="30px 0 30px 0"
+          layout="split"
+          split={{
+            mobile: '1fr',
+            tablet: ['300px', '1fr'],
+            smallDesktop: ['400px', '1fr'],
+          }}
+        >
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography appearance="light" variant="subheading" style={{ marginTop: 0, marginBottom: '10px' }}>
+              <b>APPLIED SYSTEMS INC.</b>
+            </Typography>
+            <Typography appearance="light" variant="body" style={{ marginTop: 0, marginBottom: '4px' }}>
+              Frontend Software Engineer
+            </Typography>
+            <Typography appearance="light" variant="body" style={{ marginTop: 0, marginBottom: '30px' }}>
+              2024.06 – 2025.10 · 1 year, 5 months
+              <br />
+              Austin, United States / Remote
+            </Typography>
+          </Grid>
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography appearance="light" variant="subheading" style={{ marginTop: 0 }}>
+              Built a Server Driven UI insurance purchase flow that renders a nested graph of ~60k lines of JSON
+              questions with a recursive DFS algorithm.
+            </Typography>
+            <Typography appearance="light" variant="body">
+              Built a Server Driven UI insurance purchase flow using a recursive DFS algorithm to render a nested graph
+              of ~60k-line JSON questions. Contributed to an admin panel, user tracking, statistical charts, and WCAG
+              2.1 AA compliance in an 8-person international team. Kept the codebase maintainable through code reviews
+              and close collaboration with designers, QA, and backend engineers. Shared knowledge across the team by
+              documenting solutions and helping new developers get up to speed with the question graph. Also focused on
+              rendering performance, keeping the form smooth and responsive despite the large number of nested
+              questions.
+            </Typography>
+            <Typography appearance="light" variant="body">
+              <b>Stack:</b> React.js, TypeScript, JavaScript, HTML, CSS modules, Storybook, Pendo, Sentry, Angular
+            </Typography>
+          </Grid>
         </Grid>
+
+        <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
+
+        <Grid
+          margin="30px 0 30px 0"
+          layout="split"
+          split={{
+            mobile: '1fr',
+            tablet: ['300px', '1fr'],
+            smallDesktop: ['400px', '1fr'],
+          }}
+        >
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography appearance="light" variant="subheading" style={{ marginTop: 0, marginBottom: '10px' }}>
+              <b>WARNER BROS. DISCOVERY, TVN24.pl</b>
+            </Typography>
+            <Typography appearance="light" variant="body" style={{ marginTop: 0, marginBottom: '4px' }}>
+              Frontend Software Engineer
+            </Typography>
+            <Typography appearance="light" variant="body" style={{ marginTop: 0, marginBottom: '30px' }}>
+              2023.08 – 2024.08 · 1 year
+              <br />
+              Warsaw, Poland / Remote
+            </Typography>
+          </Grid>
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography appearance="light" variant="subheading" style={{ marginTop: 0 }}>
+              Built the TVN24.pl news portal from scratch with SSR, an islands architecture and microfrontends, without
+              relying on external rendering libraries.
+            </Typography>
+            <Typography appearance="light" variant="body">
+              Built TVN24.pl from scratch using SSR and an islands architecture with microfrontend React + Web
+              Components. Delivered widgets for stocks, weather, polls, elections, TV guides, and a custom SSR rendering
+              algorithm without external libs. Each widget was developed and shipped independently, so the editorial
+              team could embed them across the site while keeping pages fast and the codebase easy to maintain.
+            </Typography>
+            <Typography appearance="light" variant="body">
+              <b>Stack:</b> React.js, Next.js, TypeScript, JavaScript, HTML, CSS modules, Storybook, Node.js, Fastify,
+              Google Analytics
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
+
+        <Grid
+          margin="30px 0 30px 0"
+          layout="split"
+          split={{
+            mobile: '1fr',
+            tablet: ['300px', '1fr'],
+            smallDesktop: ['400px', '1fr'],
+          }}
+        >
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography appearance="light" variant="subheading" style={{ marginTop: 0, marginBottom: '10px' }}>
+              <b>FLHF S.A.</b>
+            </Typography>
+            <Typography appearance="light" variant="body" style={{ marginTop: 0, marginBottom: '4px' }}>
+              Frontend Web Developer
+            </Typography>
+            <Typography appearance="light" variant="body" style={{ marginTop: 0, marginBottom: '30px' }}>
+              2021.11 – 2023.04 · 1 year, 6 months
+              <br />
+              Wrocław, Poland / Remote
+            </Typography>
+          </Grid>
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography appearance="light" variant="subheading" style={{ marginTop: 0 }}>
+              Improved an e-commerce storefront with new UI features and measurable gains in speed, SEO and
+              accessibility.
+            </Typography>
+            <Typography appearance="light" variant="body">
+              Enhanced an e-commerce site with sliders, carousels, product listings, and a shopping cart. Focused on
+              mobile optimization, SEO, CLS, page speed, and accessibility improvements via Lighthouse audits. Worked on
+              a PWA built on Magento 2 with a GraphQL API, keeping the shopping experience fast and stable on mobile
+              devices.
+            </Typography>
+            <Typography appearance="light" variant="body">
+              <b>Stack:</b> React.js, PWA, TypeScript, JavaScript, HTML, CSS, Magento 2, GraphQL
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
+
+        <Grid
+          margin="30px 0 30px 0"
+          layout="split"
+          split={{
+            mobile: '1fr',
+            tablet: ['300px', '1fr'],
+            smallDesktop: ['400px', '1fr'],
+          }}
+        >
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography appearance="light" variant="subheading" style={{ marginTop: 0, marginBottom: '10px' }}>
+              <b>EUROPA UBEZPIECZENIA</b>
+            </Typography>
+            <Typography appearance="light" variant="body" style={{ marginTop: 0, marginBottom: '4px' }}>
+              Full Stack Developer
+            </Typography>
+            <Typography appearance="light" variant="body" style={{ marginTop: 0, marginBottom: '30px' }}>
+              2019.09 – 2021.10 · 2 years, 2 months
+              <br />
+              Wrocław, Poland / Remote
+            </Typography>
+          </Grid>
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography appearance="light" variant="subheading" style={{ marginTop: 0 }}>
+              Developed an internal insurance policy management system used daily by agents and office workers.
+            </Typography>
+            <Typography appearance="light" variant="body">
+              Maintained and developed an internal insurance policy management system for agents and office workers.
+              Built new modules, integrated payment and data verification systems, and worked across Angular frontend
+              and Java/Groovy backend. Delivered features end to end, from database and API changes to the user
+              interface.
+            </Typography>
+            <Typography appearance="light" variant="body">
+              <b>Stack:</b> Angular, Java, Groovy
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
       </Grid>
 
       <Grid layout="container" widthMax={'1400px'} padding={'0px 20px 0px 20px'}>
