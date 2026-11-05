@@ -27,7 +27,7 @@ export const Home: React.FC = () => {
           </Typography>
         </Grid>
 
-        <Grid layout="container" margin={0} widthMax={'900px'} padding={'0 0 50px'}>
+        <Grid layout="container" margin={0} widthMax={'900px'} padding={'0 0 30px'}>
           <Typography appearance="light" variant="subheading">
             Mariusz Najwer, Software Engineer in Wrocław, Poland
           </Typography>
