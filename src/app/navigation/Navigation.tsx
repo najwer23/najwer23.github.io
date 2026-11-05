@@ -31,17 +31,17 @@ export const Navigation: React.FC = () => {
         <Grid layout="flex" justifyContent="flex-end" gap={{ col: '30px' }}>
           <>
             {[
-              { href: '/#/portfolio', label: 'Portfolio' },
-              { href: '/#/contact', label: 'Contact' },
-              { href: '/#/blog', label: 'Blog' },
+              { href: '/#/portfolio', label: 'Portfolio', color: 'black' },
+              { href: '/#/contact', label: 'Contact', color: 'black' },
+              { href: '/#/blog', label: 'Blog', color: 'black' },
               {
                 href: 'https://najwer23.github.io/nook/',
                 label: 'Nook',
+                color: 'black',
               },
               {
                 href: 'https://najwer23.github.io/resume/',
                 label: 'Résumé',
-                color: '#762121',
                 fontWeight: 'bold',
               },
             ].map(({ href, label, color, fontWeight }) => (
@@ -70,18 +70,18 @@ export const Navigation: React.FC = () => {
             </TextBox>
           </Grid>
           {[
-            { href: '/#/portfolio', label: 'Portfolio' },
-            { href: '/#/contact', label: 'Contact' },
-            { href: '/#/blog', label: 'Blog' },
+            { href: '/#/portfolio', label: 'Portfolio', color: 'black' },
+            { href: '/#/contact', label: 'Contact', color: 'black' },
+            { href: '/#/blog', label: 'Blog', color: 'black' },
             {
               href: 'https://najwer23.github.io/nook/',
               label: 'Nook',
+              color: 'black',
             },
             {
               href: 'https://najwer23.github.io/resume/',
               label: 'Résumé',
               fontWeight: 'bold',
-              color: '#762121',
             },
           ].map(({ href, label, color, fontWeight }) => (
             <Grid key={href} layout="container" margin="0 0 8px 0">
