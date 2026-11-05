@@ -16,16 +16,9 @@ const ROUTES = [
     maxAge: 14 * DAY,
   },
   {
-    cacheName: 'blog-post-creator-cache-v1',
-    match: section('/blog-post-creator'),
-    strategy: 'staleWhileRevalidate',
-    maxEntries: 50,
-    maxAge: 14 * DAY,
-  },
-  {
     cacheName: 'nook-cache-v1',
     match: section('/nook'),
-    strategy: 'staleWhileRevalidate',
+    strategy: 'networkFirst',
     maxEntries: 60,
     maxAge: 14 * DAY,
   },
