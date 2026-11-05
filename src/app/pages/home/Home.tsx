@@ -27,7 +27,7 @@ export const Home: React.FC = () => {
           </Typography>
         </Grid>
 
-        <Grid layout="container" margin={0} widthMax={'900px'} padding={'0 0 30px'}>
+        <Grid layout="container" margin={0} widthMax={'900px'}>
           <Typography appearance="light" variant="subheading">
             Mariusz Najwer, Software Engineer in Wrocław, Poland
           </Typography>
@@ -40,7 +40,7 @@ export const Home: React.FC = () => {
             microfrontend systems, design systems and Server Driven UI.
           </Typography>
         </Grid>
-        <Grid layout="container" margin={0} widthMax={'900px'} padding={'0 0 30px'}>
+        <Grid layout="container" margin={0} widthMax={'900px'}>
           <Typography appearance="light" variant="body">
             I have collaborated with international teams across Poland, the US, India, Canada and Australia. I care
             about real performance and shipping things that work.
