@@ -21,26 +21,30 @@ export const Home: React.FC = () => {
   return (
     <>
       <Grid layout="container" widthMax={'1400px'} padding={'0 20px 0px 20px'}>
-        <Grid layout="flex" gap={{ col: '20px', row: '20px' }} flexWrap="wrap">
-          <Grid layout="container" margin={0} widthMax={'900px'}>
-            <Typography appearance="light" variant="display">
-              Portfolio
-            </Typography>
-            <Typography appearance="light" variant="caption">
-              Software Engineer · Mariusz Najwer · Wrocław, Poland
-            </Typography>
-            <Typography appearance="light" variant="body">
-              I build fast, accessible web applications that reach millions of users. From the TVN24.pl news platform at
-              Warner Bros. Discovery to insurance purchase flows at Applied Systems.
-              <br />
-              <br />
-              Over 12+ years across media, insurance, and e-commerce, I've worked on SSR architectures, microfrontend
-              systems, design systems, and Server Driven UI. I have collaborated with international teams across Poland,
-              the US, India, Canada, and Australia.
-              <br />
-              <br />I care about real performance and shipping things that work.
-            </Typography>
-          </Grid>
+        <Grid layout="container" margin={0} widthMax={'600px'}>
+          <Typography appearance="light" variant="display">
+            I build fast, accessible web applications that reach millions of users.
+          </Typography>
+        </Grid>
+
+        <Grid layout="container" margin={0} widthMax={'900px'} padding={'0 0 50px'}>
+          <Typography appearance="light" variant="subheading">
+            Mariusz Najwer, Software Engineer in Wrocław, Poland
+          </Typography>
+        </Grid>
+
+        <Grid layout="container" margin={0} widthMax={'900px'}>
+          <Typography appearance="light" variant="body">
+            From the TVN24.pl news platform at Warner Bros. Discovery to insurance purchase flows at Applied Systems, I
+            have spent over 12 years across media, insurance and e-commerce. I have worked on SSR architectures,
+            microfrontend systems, design systems and Server Driven UI.
+          </Typography>
+        </Grid>
+        <Grid layout="container" margin={0} widthMax={'900px'} padding={'0 0 30px'}>
+          <Typography appearance="light" variant="body">
+            I have collaborated with international teams across Poland, the US, India, Canada and Australia. I care
+            about real performance and shipping things that work.
+          </Typography>
         </Grid>
       </Grid>
 

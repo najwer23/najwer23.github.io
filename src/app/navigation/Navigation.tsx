@@ -19,6 +19,7 @@ export const Navigation: React.FC = () => {
 
   return (
     <NavigationTabs
+      menuOnlyTop
       menuTopLeftColumn={
         <Grid layout="flex" justifyContent="flex-start" alignItems="center" minHeight={'100%'}>
           <Typography variant="link" desktopSize={20} mobileSize={20} fontWeight={500} href="/#/">
@@ -27,16 +28,38 @@ export const Navigation: React.FC = () => {
         </Grid>
       }
       menuTopRightColumn={
-        <Grid layout="flex" justifyContent="flex-end">
-          <Typography
-            variant="link"
-            href="https://najwer23.github.io/resume/"
-            desktopSize={20}
-            mobileSize={20}
-            fontWeight={500}
-          >
-            Résumé
-          </Typography>
+        <Grid layout="flex" justifyContent="flex-end" gap={{ col: '30px' }}>
+          <>
+            {[
+              { href: '/#/portfolio', label: 'Portfolio' },
+              { href: '/#/contact', label: 'Contact' },
+              { href: '/#/blog', label: 'Blog' },
+              {
+                href: 'https://najwer23.github.io/nook/',
+                label: 'Nook',
+              },
+              {
+                href: 'https://najwer23.github.io/resume/',
+                label: 'Résumé',
+                color: '#762121',
+                fontWeight: 'bold',
+              },
+            ].map(({ href, label, color }) => (
+              <div key={label}>
+                <Typography
+                  variant="link"
+                  href={href}
+                  color={color}
+                  desktopSize={18}
+                  mobileSize={18}
+                  fontWeight={600}
+                  colorHover={color}
+                >
+                  {label}
+                </Typography>
+              </div>
+            ))}
+          </>
         </Grid>
       }
       menuMobile={
@@ -57,8 +80,10 @@ export const Navigation: React.FC = () => {
             {
               href: 'https://najwer23.github.io/resume/',
               label: 'Résumé',
+              fontWeight: 'bold',
+              color: '#762121',
             },
-          ].map(({ href, label }) => (
+          ].map(({ href, label, color, fontWeight }) => (
             <Grid key={href} layout="container" margin="0 0 8px 0">
               <Typography
                 variant="link"
@@ -67,41 +92,14 @@ export const Navigation: React.FC = () => {
                 desktopSize={30}
                 mobileSize={30}
                 textAlign="center"
-                fontWeight={isActive(href) ? 600 : 400}
+                color={color}
+                fontWeight={fontWeight ?? (isActive(href) ? 600 : 400)}
               >
                 {label}
               </Typography>
             </Grid>
           ))}
         </Grid>
-      }
-      menuBottomTabs={
-        <>
-          {[
-            { href: '/#/portfolio', label: 'Portfolio' },
-            { href: '/#/contact', label: 'Contact' },
-            { href: '/#/blog', label: 'Blog' },
-            {
-              href: 'https://najwer23.github.io/nook/',
-              label: 'Nook',
-              desktopSize: 34,
-              mobileSize: 34,
-              fontWeight: 600,
-            },
-          ].map(({ href, label }) => (
-            <div key={label}>
-              <Typography
-                variant="link"
-                href={href}
-                desktopSize={18}
-                mobileSize={18}
-                fontWeight={isActive(href) ? 600 : 400}
-              >
-                {label}
-              </Typography>
-            </div>
-          ))}
-        </>
       }
     ></NavigationTabs>
   );
