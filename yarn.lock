@@ -1135,20 +1135,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/biome@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/biome@npm:2.6.5"
+"@biomejs/biome@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/biome@npm:2.6.6"
   dependencies:
-    "@biomejs/cli-android-arm64": "npm:2.6.5"
-    "@biomejs/cli-android-x64": "npm:2.6.5"
-    "@biomejs/cli-darwin-arm64": "npm:2.6.5"
-    "@biomejs/cli-darwin-x64": "npm:2.6.5"
-    "@biomejs/cli-linux-arm64": "npm:2.6.5"
-    "@biomejs/cli-linux-arm64-musl": "npm:2.6.5"
-    "@biomejs/cli-linux-x64": "npm:2.6.5"
-    "@biomejs/cli-linux-x64-musl": "npm:2.6.5"
-    "@biomejs/cli-win32-arm64": "npm:2.6.5"
-    "@biomejs/cli-win32-x64": "npm:2.6.5"
+    "@biomejs/cli-android-arm64": "npm:2.6.6"
+    "@biomejs/cli-android-x64": "npm:2.6.6"
+    "@biomejs/cli-darwin-arm64": "npm:2.6.6"
+    "@biomejs/cli-darwin-x64": "npm:2.6.6"
+    "@biomejs/cli-linux-arm64": "npm:2.6.6"
+    "@biomejs/cli-linux-arm64-musl": "npm:2.6.6"
+    "@biomejs/cli-linux-x64": "npm:2.6.6"
+    "@biomejs/cli-linux-x64-musl": "npm:2.6.6"
+    "@biomejs/cli-win32-arm64": "npm:2.6.6"
+    "@biomejs/cli-win32-x64": "npm:2.6.6"
   dependenciesMeta:
     "@biomejs/cli-android-arm64":
       optional: true
@@ -1172,76 +1172,76 @@ __metadata:
       optional: true
   bin:
     biome: bin/biome
-  checksum: 10c0/33c28cda87d0f247c95b806de64d42205d12a3adcb742a19d6c42f4d5fdcfb1255adffbf0228794b3bc60c0d21516c80213f26603f802b20e4776bbc16ae8756
+  checksum: 10c0/1040bceed5464784420157781daabb3408017b5ced3acd7cbe86934b9e8ef41638b6544fde21a64b7353afaa4d6be390938fb40d5c17f698df1e349b2b0b70ea
   languageName: node
   linkType: hard
 
-"@biomejs/cli-android-arm64@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-android-arm64@npm:2.6.5"
+"@biomejs/cli-android-arm64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-android-arm64@npm:2.6.6"
   conditions: os=android & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-android-x64@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-android-x64@npm:2.6.5"
+"@biomejs/cli-android-x64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-android-x64@npm:2.6.6"
   conditions: os=android & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-arm64@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-darwin-arm64@npm:2.6.5"
+"@biomejs/cli-darwin-arm64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-darwin-arm64@npm:2.6.6"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-darwin-x64@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-darwin-x64@npm:2.6.5"
+"@biomejs/cli-darwin-x64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-darwin-x64@npm:2.6.6"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64-musl@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.6.5"
+"@biomejs/cli-linux-arm64-musl@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-linux-arm64-musl@npm:2.6.6"
   conditions: os=linux & cpu=arm64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-arm64@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-linux-arm64@npm:2.6.5"
+"@biomejs/cli-linux-arm64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-linux-arm64@npm:2.6.6"
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64-musl@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-linux-x64-musl@npm:2.6.5"
+"@biomejs/cli-linux-x64-musl@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-linux-x64-musl@npm:2.6.6"
   conditions: os=linux & cpu=x64 & libc=musl
   languageName: node
   linkType: hard
 
-"@biomejs/cli-linux-x64@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-linux-x64@npm:2.6.5"
+"@biomejs/cli-linux-x64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-linux-x64@npm:2.6.6"
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-arm64@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-win32-arm64@npm:2.6.5"
+"@biomejs/cli-win32-arm64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-win32-arm64@npm:2.6.6"
   conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
-"@biomejs/cli-win32-x64@npm:2.6.5":
-  version: 2.6.5
-  resolution: "@biomejs/cli-win32-x64@npm:2.6.5"
+"@biomejs/cli-win32-x64@npm:2.6.6":
+  version: 2.6.6
+  resolution: "@biomejs/cli-win32-x64@npm:2.6.6"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -3864,7 +3864,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "najwer23.github.io@workspace:."
   dependencies:
-    "@biomejs/biome": "npm:2.6.5"
+    "@biomejs/biome": "npm:2.6.6"
     "@tanstack/react-query": "npm:^5.106.1"
     "@tanstack/react-query-persist-client": "npm:^5.106.1"
     "@types/chart.js": "npm:^4.0.1"
@@ -3876,7 +3876,7 @@ __metadata:
     chart.js: "npm:^4.6.1"
     gh-pages: "npm:^6.3.0"
     leaflet: "npm:1.9.4"
-    najwer23morsels: "npm:^2.0.3"
+    najwer23morsels: "npm:^2.0.7"
     react: "npm:^19.3.1"
     react-chartjs-2: "npm:5.3.1"
     react-dom: "npm:^19.3.1"
@@ -3891,13 +3891,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"najwer23morsels@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "najwer23morsels@npm:2.0.3"
+"najwer23morsels@npm:^2.0.7":
+  version: 2.0.7
+  resolution: "najwer23morsels@npm:2.0.7"
   peerDependencies:
     react: ^19.2.4
     react-dom: ^19.2.4
-  checksum: 10c0/64142bbcba80e4533a4d2714d26213f16dbb862742b216fb8063a38df6c7ea8fbbd06f1a98049e48162db02dce8282681683cee1635bd7b9fb2abe7e929a7e77
+  checksum: 10c0/655460ce4263c02a9d9427ee9404452ccd2d2603711a81c59bd610ee6eb9afbe89198e780c97dbf241fd47e4b5ff2f842f3fb3bf5880803b52dbf28026c64800
   languageName: node
   linkType: hard
 
