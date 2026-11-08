@@ -220,6 +220,51 @@ export const Home: React.FC = () => {
       </Grid>
 
       <Grid layout="container" widthMax="1400px" padding="50px 20px 0px 20px">
+        <Typography variant="heading">Personal Project</Typography>
+        <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
+
+        <Grid
+          margin="50px 0 50px 0"
+          layout="split"
+          split={{
+            mobile: '1fr',
+            tablet: ['300px', '1fr'],
+            smallDesktop: ['400px', '1fr'],
+          }}
+        >
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography variant="subheading" style={{ marginTop: 0, marginBottom: '10px' }}>
+              <b>NAJWER23MORSELS</b>
+            </Typography>
+            <Typography variant="body" style={{ marginTop: 0, marginBottom: '4px' }}>
+              Author & Maintainer
+            </Typography>
+            <Typography variant="body" style={{ marginTop: 0, marginBottom: '30px' }}>
+              Ongoing
+              <br />
+              Open source / Side project
+            </Typography>
+          </Grid>
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography variant="subheading" style={{ marginTop: 0 }}>
+              I design, build and maintain my own React design system with a themeable foundation, and use it across my
+              personal projects.
+            </Typography>
+            <Typography variant="body">
+              A personal design system of reusable React components, built around consistent design tokens and a
+              flexible theme. It covers the building blocks of everyday interfaces, from layout and typography to form
+              controls, dialogs and data display. Components are accessible by default, documented and tested visually
+              in Storybook, and easy to restyle through CSS variables. I use it as a place to practice what I do at
+              work: small, predictable APIs and components that stay fast as they grow.
+            </Typography>
+            <Typography variant="body">
+              <b>Stack:</b> React.js, TypeScript, CSS modules, Storybook
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+
+      <Grid layout="container" widthMax="1400px" padding="50px 20px 0px 20px">
         <Typography variant="heading">
           Latest posts on the{' '}
           <Typography href="/#/blog" variant="link">
