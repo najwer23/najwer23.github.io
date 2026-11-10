@@ -233,8 +233,15 @@ export const Home: React.FC = () => {
           }}
         >
           <Grid layout="container" widthMax="100%" margin={0} padding="0">
-            <Typography variant="subheading" style={{ marginTop: 0, marginBottom: '10px' }}>
-              <b>NAJWER23MORSELS</b>
+            <Typography variant="subheading" style={{ marginTop: 0, marginBottom: '10px' }} fontWeight={'bold'}>
+              <Typography
+                href={'https://najwer23.github.io/najwer23morsels'}
+                variant="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NAJWER23MORSELS
+              </Typography>
             </Typography>
             <Typography variant="body" style={{ marginTop: 0, marginBottom: '4px' }}>
               Author & Maintainer
@@ -259,6 +266,56 @@ export const Home: React.FC = () => {
             </Typography>
             <Typography variant="body">
               <b>Stack:</b> React.js, TypeScript, CSS modules, Storybook
+            </Typography>
+          </Grid>
+        </Grid>
+
+        <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
+
+        <Grid
+          margin="50px 0 50px 0"
+          layout="split"
+          split={{
+            mobile: '1fr',
+            tablet: ['300px', '1fr'],
+            smallDesktop: ['400px', '1fr'],
+          }}
+        >
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography variant="subheading" style={{ marginTop: 0, marginBottom: '10px' }} fontWeight={'bold'}>
+              <Typography
+                href={'https://www.npmjs.com/package/najwer23lang'}
+                variant="link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                NAJWER23LANG
+              </Typography>
+            </Typography>
+            <Typography variant="body" style={{ marginTop: 0, marginBottom: '4px' }}>
+              Author & Maintainer
+            </Typography>
+            <Typography variant="body" style={{ marginTop: 0, marginBottom: '30px' }}>
+              Ongoing
+              <br />
+              Open source / Published on npm
+            </Typography>
+          </Grid>
+          <Grid layout="container" widthMax="100%" margin={0} padding="0">
+            <Typography variant="subheading" style={{ marginTop: 0 }}>
+              I built and maintain a zero-dependency i18n tool where plain English written in code becomes the
+              translation key, extracted to JSON automatically.
+            </Typography>
+            <Typography variant="body">
+              A small, framework-agnostic library for translating apps without inventing key names or jumping between
+              code and JSON files. You write the sentence where it is used, run a single CLI command, and fill in the
+              empty values. Re-runs are safe: translated phrases that are edited or removed move to an unused section
+              instead of being deleted, and a check mode fails CI on empty translations or stale files. It warns about
+              calls it cannot extract, supports a configurable function name, and ships optional React bindings with a
+              provider and hooks. No Babel, no build step.
+            </Typography>
+            <Typography variant="body">
+              <b>Stack:</b> Node.js, React.js, JavaScript, npm
             </Typography>
           </Grid>
         </Grid>
