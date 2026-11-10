@@ -34,11 +34,11 @@
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^6.2.1",
+    "@vitejs/plugin-react": "^6.3.0",
     "chart.js": "^4.6.1",
     "gh-pages": "^6.3.0",
     "leaflet": "1.9.4",
-    "najwer23morsels": "^2.0.16",
+    "najwer23morsels": "^2.0.29",
     "react": "^19.3.1",
     "react-chartjs-2": "5.3.1",
     "react-dom": "^19.3.1",
@@ -47,7 +47,7 @@
     "rimraf": "^6.1.4",
     "shiki": "^4.6.0",
     "typescript": "^6.0.3",
-    "vite": "^8.3.6",
+    "vite": "^8.3.7",
     "vite-plugin-pwa": "^2.0.0",
     "vite-plugin-rss": "^0.0.6"
   }
