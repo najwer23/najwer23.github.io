@@ -26,9 +26,9 @@
     "start": "vite --open --host"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.6",
-    "@tanstack/react-query": "^5.107.1",
-    "@tanstack/react-query-persist-client": "^5.107.1",
+    "@biomejs/biome": "2.6.8",
+    "@tanstack/react-query": "^5.108.0",
+    "@tanstack/react-query-persist-client": "^5.108.0",
     "@types/chart.js": "^4.0.1",
     "@types/leaflet": "^1.9.22",
     "@types/node": "^26.6.6",
@@ -43,11 +43,11 @@
     "react-chartjs-2": "5.3.1",
     "react-dom": "^19.3.1",
     "react-leaflet": "5.0.0",
-    "react-router-dom": "^7.18.5",
+    "react-router-dom": "^7.18.6",
     "rimraf": "^6.1.4",
     "shiki": "^4.6.0",
     "typescript": "^6.0.3",
-    "vite": "^8.3.7",
+    "vite": "^8.3.8",
     "vite-plugin-pwa": "^2.0.0",
     "vite-plugin-rss": "^0.0.6"
   }
