@@ -36,9 +36,11 @@ export const Home: React.FC = () => {
 
         <Grid layout="container" margin={0} widthMax={'900px'}>
           <Typography variant="body">
-            From the TVN24.pl news platform at Warner Bros. Discovery to insurance purchase flows at Applied Systems, I
-            have spent over 12 years across media, insurance and e-commerce. I have worked on SSR architectures,
-            microfrontend systems, design systems and Server Driven UI.
+            Frontend-leaning full-stack engineer (React, Angular, TypeScript, Node.js) who builds the hard parts of a
+            product: a server-driven UI that renders an insurance purchase flow from backend data, a news portal built
+            from scratch with a custom SSR algorithm (widget load time cut from 14 seconds to near-instant), and
+            serverless backends on AWS Lambda and DynamoDB. Focused on performance (Core Web Vitals), accessibility
+            (WCAG), and maintainable architecture.
           </Typography>
         </Grid>
         <Grid layout="container" margin={0} widthMax={'900px'}>
@@ -50,7 +52,7 @@ export const Home: React.FC = () => {
       </Grid>
 
       <Grid layout="container" widthMax="1400px" padding="50px 20px 0px 20px">
-        <Typography variant="heading">Selected Projects</Typography>
+        <Typography variant="heading">Projects</Typography>
         <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
 
         <Grid
@@ -77,20 +79,29 @@ export const Home: React.FC = () => {
           </Grid>
           <Grid layout="container" widthMax="100%" margin={0} padding="0">
             <Typography variant="subheading" style={{ marginTop: 0 }}>
-              Built a Server Driven UI insurance purchase flow that renders a nested graph of ~60k lines of JSON
-              questions with a recursive DFS algorithm.
+              I built the engine behind an insurance purchase flow: a server-driven UI that turns backend data into a
+              fast, accessible form.
             </Typography>
+
             <Typography variant="body">
-              Built a Server Driven UI insurance purchase flow using a recursive DFS algorithm to render a nested graph
-              of ~60k-line JSON questions. Contributed to an admin panel, user tracking, statistical charts, and WCAG
-              2.1 AA compliance in an 8-person international team. Kept the codebase maintainable through code reviews
-              and close collaboration with designers, QA, and backend engineers. Shared knowledge across the team by
-              documenting solutions and helping new developers get up to speed with the question graph. Also focused on
-              rendering performance, keeping the form smooth and responsive despite the large number of nested
-              questions.
+              <b>Challenge:</b> a huge, deeply nested question graph that was hard to build and maintain as frontend
+              code.
             </Typography>
+
             <Typography variant="body">
-              <b>Stack:</b> React.js, TypeScript, JavaScript, HTML, CSS modules, Storybook, Pendo, Sentry, Angular
+              <b>Solution:</b> I designed and built a server-driven UI from scratch: a recursive DFS renderer that turns
+              the backend's question graph into a working, accessible (WCAG 2.1 AA) form. I shipped it in Angular, then
+              rewrote it in React to adopt the company's new design system.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Result:</b> I cut load time from 14s to 3s by profiling and fixing slow re-renders (memoization, state
+              splitting, DFS caching). I also onboarded new developers, documented reusable solutions, and took over the
+              Playwright E2E tests from QA, so the 8-person international team could extend the flow with confidence.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Stack:</b> React.js, TypeScript, JavaScript, Angular, HTML, CSS modules, Storybook, Pendo, Sentry
             </Typography>
           </Grid>
         </Grid>
@@ -121,15 +132,28 @@ export const Home: React.FC = () => {
           </Grid>
           <Grid layout="container" widthMax="100%" margin={0} padding="0">
             <Typography variant="subheading" style={{ marginTop: 0 }}>
-              Built the TVN24.pl news portal from scratch with SSR, an islands architecture and microfrontends, without
-              relying on external rendering libraries.
+              I built the widgets and the custom SSR engine behind TVN24.pl, and they held up on election night under
+              peak traffic.
             </Typography>
+
             <Typography variant="body">
-              Built TVN24.pl from scratch using SSR and an islands architecture with microfrontend React + Web
-              Components. Delivered widgets for stocks, weather, polls, elections, TV guides, and a custom SSR rendering
-              algorithm without external libs. Each widget was developed and shipped independently, so the editorial
-              team could embed them across the site while keeping pages fast and the codebase easy to maintain.
+              <b>Challenge:</b> a major news portal needed fast, interactive widgets (stocks, weather, polls, TV guide,
+              elections) on immovable deadlines, with pages that stay quick under heavy traffic.
             </Typography>
+
+            <Typography variant="body">
+              <b>Solution:</b> I built TVN24.pl from scratch with server-side rendering and an islands architecture,
+              combining React microfrontends and Web Components. I designed a custom SSR rendering algorithm without
+              external rendering libraries, added request caching and CloudFront, and integrated independently developed
+              components into one unified frontend.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Result:</b> I cut widget load time from 14 seconds to near-instant. The election-night widgets I
+              delivered ran with zero downtime and zero errors at peak traffic, and the modular setup made components
+              easy to reuse.
+            </Typography>
+
             <Typography variant="body">
               <b>Stack:</b> React.js, Next.js, TypeScript, JavaScript, HTML, CSS modules, Storybook, Node.js, Fastify,
               Google Analytics
@@ -163,15 +187,26 @@ export const Home: React.FC = () => {
           </Grid>
           <Grid layout="container" widthMax="100%" margin={0} padding="0">
             <Typography variant="subheading" style={{ marginTop: 0 }}>
-              Improved an e-commerce storefront with new UI features and measurable gains in speed, SEO and
-              accessibility.
+              I built the storefront features and ran the Lighthouse-driven fixes that made an e-commerce PWA faster,
+              more accessible and better for SEO.
             </Typography>
+
             <Typography variant="body">
-              Enhanced an e-commerce site with sliders, carousels, product listings, and a shopping cart. Focused on
-              mobile optimization, SEO, CLS, page speed, and accessibility improvements via Lighthouse audits. Worked on
-              a PWA built on Magento 2 with a GraphQL API, keeping the shopping experience fast and stable on mobile
-              devices.
+              <b>Challenge:</b> an e-commerce store on Magento 2 needed to feel fast and stable on mobile, rank better
+              in search, and give shoppers a smoother path to purchase.
             </Typography>
+
+            <Typography variant="body">
+              <b>Solution:</b> I developed interactive sliders, carousels and product listing components in a React PWA
+              on top of Magento 2 and its GraphQL API. I implemented and improved the shopping cart, and optimized the
+              app for mobile devices across screen sizes.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Result:</b> I used Lighthouse audits to improve SEO, page speed, Cumulative Layout Shift (CLS) and
+              accessibility, which gave shoppers a faster, more stable and easier-to-use store on mobile.
+            </Typography>
+
             <Typography variant="body">
               <b>Stack:</b> React.js, PWA, TypeScript, JavaScript, HTML, CSS, Magento 2, GraphQL
             </Typography>
@@ -204,23 +239,35 @@ export const Home: React.FC = () => {
           </Grid>
           <Grid layout="container" widthMax="100%" margin={0} padding="0">
             <Typography variant="subheading" style={{ marginTop: 0 }}>
-              Developed an internal insurance policy management system used daily by agents and office workers.
+              I built new modules and integrations for the internal system that insurance agents and office staff use to
+              manage policies.
             </Typography>
+
             <Typography variant="body">
-              Maintained and developed an internal insurance policy management system for agents and office workers.
-              Built new modules, integrated payment and data verification systems, and worked across Angular frontend
-              and Java/Groovy backend. Delivered features end to end, from database and API changes to the user
-              interface.
+              <b>Challenge:</b> an internal policy management system had to keep supporting agents and office staff
+              while new business workflows, payments and data checks were added to it.
             </Typography>
+
             <Typography variant="body">
-              <b>Stack:</b> Angular, Java, Groovy
+              <b>Solution:</b> I designed and implemented new application modules for policy management and business
+              workflows, working across the full stack: Angular on the frontend, Java and Groovy on the backend. I also
+              integrated external payment gateways and data verification services.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Result:</b> the integrations streamlined insurance-related processes, and I kept the system running and
+              growing for over two years while owning features across both frontend and backend.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Stack:</b> Angular, TypeScript, JavaScript, jQuery, HTML, CSS, Java (Groovy), SQL, SOAP
             </Typography>
           </Grid>
         </Grid>
       </Grid>
 
       <Grid layout="container" widthMax="1400px" padding="50px 20px 0px 20px">
-        <Typography variant="heading">Personal Project</Typography>
+        <Typography variant="heading">NPM packages</Typography>
         <div style={{ width: '100%', height: '2px', background: 'black', marginTop: '30px' }} />
 
         <Grid
@@ -254,18 +301,30 @@ export const Home: React.FC = () => {
           </Grid>
           <Grid layout="container" widthMax="100%" margin={0} padding="0">
             <Typography variant="subheading" style={{ marginTop: 0 }}>
-              I design, build and maintain my own React design system with a themeable foundation, and use it across my
-              personal projects.
+              I designed and built a React design system, published as an npm package, that powers my own apps with one
+              consistent, themeable UI.
             </Typography>
+
             <Typography variant="body">
-              A personal design system of reusable React components, built around consistent design tokens and a
-              flexible theme. It covers the building blocks of everyday interfaces, from layout and typography to form
-              controls, dialogs and data display. Components are accessible by default, documented and tested visually
-              in Storybook, and easy to restyle through CSS variables. I use it as a place to practice what I do at
-              work: small, predictable APIs and components that stay fast as they grow.
+              <b>Challenge:</b> every new app needs the same buttons, forms, dialogs and layouts, and rebuilding them
+              each time leads to inconsistent styling and slow progress.
             </Typography>
+
             <Typography variant="body">
-              <b>Stack:</b> React.js, TypeScript, CSS modules, Storybook
+              <b>Solution:</b> I built a reusable component library around design tokens and a flexible theming system.
+              I wrote a recursive algorithm that turns nested tokens into CSS variables, so themes scale and every
+              component stays consistent. The library covers layout, typography, form controls, dialogs and data
+              display, with predictable APIs and accessible components.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Result:</b> a documented package, with every component tested visually in Storybook, that I reuse
+              across my projects such as my blog, resume, portfolio and NookK. Restyling an app means changing CSS
+              variables, not rewriting components.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Stack:</b> React.js, TypeScript, JavaScript, CSS modules, Storybook, Vite, Rollup.js, Biome.js
             </Typography>
           </Grid>
         </Grid>
@@ -303,19 +362,32 @@ export const Home: React.FC = () => {
           </Grid>
           <Grid layout="container" widthMax="100%" margin={0} padding="0">
             <Typography variant="subheading" style={{ marginTop: 0 }}>
-              I built and maintain a zero-dependency i18n tool where plain English written in code becomes the
-              translation key, extracted to JSON automatically.
+              I built and published najwer23lang, a zero-dependency i18n library where the English sentence in your code
+              becomes the translation key, extracted to JSON automatically.
             </Typography>
+
             <Typography variant="body">
-              A small, framework-agnostic library for translating apps without inventing key names or jumping between
-              code and JSON files. You write the sentence where it is used, run a single CLI command, and fill in the
-              empty values. Re-runs are safe: translated phrases that are edited or removed move to an unused section
-              instead of being deleted, and a check mode fails CI on empty translations or stale files. It warns about
-              calls it cannot extract, supports a configurable function name, and ships optional React bindings with a
-              provider and hooks. No Babel, no build step.
+              <b>Challenge:</b> translating a small app usually means inventing key names, jumping between code and JSON
+              files, and pulling in heavy tooling like Babel plugins or build steps.
             </Typography>
+
             <Typography variant="body">
-              <b>Stack:</b> Node.js, React.js, JavaScript, npm
+              <b>Solution:</b> I wrote a regex-based extraction engine that scans JavaScript, TypeScript and React
+              files, collects the English phrases from translation calls (with a configurable function name) and
+              generates the JSON catalogs. A safe sync algorithm keeps existing translations, moves outdated entries to
+              an <code>__unused</code> section and restores them if the phrase comes back. I added a CLI for init,
+              extraction and configurable scanning, plus a framework-agnostic core with optional React bindings:
+              provider, hooks, dynamic language switching and variable interpolation.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Result:</b> a lightweight package on npm that needs no dependencies, no Babel config and no build step.
+              You write the sentence where it is used, run one command and fill in the empty values. A check mode fails
+              CI on missing translations or outdated catalogs, so nothing goes stale unnoticed.
+            </Typography>
+
+            <Typography variant="body">
+              <b>Stack:</b> Node.js, React.js, TypeScript, JavaScript, npm, Biome.js
             </Typography>
           </Grid>
         </Grid>
