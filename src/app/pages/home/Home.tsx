@@ -296,7 +296,7 @@ export const Home: React.FC = () => {
             <Typography variant="body" style={{ marginTop: 0, marginBottom: '30px' }}>
               Ongoing
               <br />
-              Open source / Side project
+              Open source / Published on npm
             </Typography>
           </Grid>
           <Grid layout="container" widthMax="100%" margin={0} padding="0">
